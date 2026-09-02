@@ -7,6 +7,11 @@ this copy is the source it is kept in sync with.
 
 Changing a redirect means opening a pull request there with the new file.
 
+`README-for-w3id.md` next to it is the README that goes into the same
+directory: w3id asks for one alongside every `.htaccess`, holding the
+maintainer details and what the namespace is for. It is a copy of this
+repository's README, cut down to what belongs in a redirect directory.
+
 ## What it does
 
 An IRI resolves differently depending on what asks for it. A browser gets the
