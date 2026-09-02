@@ -1,0 +1,20 @@
+# CQ 16: Which signals carry which information parameters?
+#
+# Entry 351-42-24 defines the signal as a physical variable of which one or
+# more parameters carry information about one or more variables. The
+# information parameter, 351-42-25, is that parameter.
+#
+# The distinction is what separates the carrier from what is carried: the same
+# current carries a temperature or a position depending on what its magnitude
+# is taken to mean, and a model that states only the current has not said what
+# it is a signal of.
+#
+# Empty on the three cases, which describe their chains in terms of variables
+# rather than of the signals conveying them. That is the level Figures 1 and 2
+# work at, and the question is here for a model that goes below it.
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+SELECT ?signal ?informationParameter
+WHERE {
+  ?signal a iec60050:Signal .
+  OPTIONAL { ?signal iec60050:carriesInformationParameter ?informationParameter }
+} ORDER BY ?signal

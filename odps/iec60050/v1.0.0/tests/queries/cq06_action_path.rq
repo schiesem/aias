@@ -1,0 +1,15 @@
+# CQ 06: Over which action path does a control run, and of which kind is it?
+#
+# 351-47-03 and 351-47-05. Structure, not behaviour: whether an action path goes
+# back from the output variable to the input variable. The behavioural half is
+# asked by CQ 06.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?path ?pathKind
+WHERE {
+  ?control iec60050:runsOverActionPath ?path .
+  ?path a ?pathKind .
+  FILTER(?pathKind IN (iec60050:OpenActionPath, iec60050:ClosedActionPath))
+} ORDER BY ?control ?path

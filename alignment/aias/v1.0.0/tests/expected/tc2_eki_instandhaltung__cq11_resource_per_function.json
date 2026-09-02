@@ -1,0 +1,19 @@
+[
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|https://w3id.org/aias/example/eki1#Anlagensteuerung|https://w3id.org/aias/odp/iso22989#Automate",
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|https://w3id.org/aias/example/eki1#Datensatzerstellung|https://w3id.org/aias/odp/iso22989#Merging",
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|https://w3id.org/aias/example/eki1#Ergebnisabruf|https://w3id.org/aias/odp/iso22989#Inference",
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|https://w3id.org/aias/example/eki1#Zeitaufnahme|https://w3id.org/aias/odp/iso22989#Acquisition",
+  "https://w3id.org/aias/example/eki1#Motorsteuerung|https://w3id.org/aias#Controller|https://w3id.org/aias/example/eki1#Positionsregelung|https://w3id.org/aias/odp/iso22989#Automate",
+  "https://w3id.org/aias/example/eki1#PositionssensorLinks|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/eki1#Oeffnen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/eki1#PositionssensorLinks|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/eki1#Positionsdatenaufnahme1|https://w3id.org/aias/odp/iso22989#Acquisition",
+  "https://w3id.org/aias/example/eki1#PositionssensorLinks|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/eki1#Schliessen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/eki1#PositionssensorRechts|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/eki1#Oeffnen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/eki1#PositionssensorRechts|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/eki1#Positionsdatenaufnahme2|https://w3id.org/aias/odp/iso22989#Acquisition",
+  "https://w3id.org/aias/example/eki1#PositionssensorRechts|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/eki1#Schliessen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/eki1#Datennachverarbeitung|https://w3id.org/aias/odp/iso22989#DataProcess",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/eki1#Datenvorverarbeitung|https://w3id.org/aias/odp/iso22989#DataProcess",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/eki1#Modellevaluation|https://w3id.org/aias/odp/iso22989#Evaluation",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/eki1#Modellinferenz|https://w3id.org/aias/odp/iso22989#Inference",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/eki1#Modelltraining|https://w3id.org/aias/odp/iso22989#Training",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/eki1#Speicherung|https://w3id.org/aias/odp/iso22989#Storing"
+]

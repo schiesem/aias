@@ -1,0 +1,169 @@
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix ex:      <https://w3id.org/aias/example/tc1#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+# Test case 1: base description and decomposition.
+#
+# After VDI/VDE 3682 Part 1, Figure 4 and Figure 5. Element names follow the
+# figure labels, so ex:O11 is the operator the standard calls ID (O11).
+#
+# Figure 5 shows two views of one process at different levels of detail. The
+# resources T11 and T12 of the refined operators are modelled; T1 of the
+# undecomposed view is not, since assigning a resource on both levels would
+# count the same work twice.
+
+<https://w3id.org/aias/example/tc1>
+    a owl:Ontology ;
+    rdfs:label "VDI 3682 test case 1: decomposition"@en ;
+    rdfs:comment "Base description and decomposition, after VDI/VDE 3682 Part 1, Figures 4 and 5."@en ;
+    owl:imports <https://w3id.org/aias/odp/vdi3682/2.0.0> .
+
+#################################################################
+#    Parent process, Figure 5 left
+#################################################################
+
+ex:Process0
+    a vdi3682:Process ;
+    rdfs:label "Process 0"@en ;
+    vdi3682:isIdentifiedBy ex:ID_Process0 ;
+    vdi3682:consistsOf
+        ex:S0 ,
+        ex:O1 ,
+        ex:P1 , ex:E1 , ex:I1 ,
+        ex:P2 , ex:P3 , ex:E2 , ex:I2 ,
+        ex:F_P1_O1 , ex:F_E1_O1 , ex:F_I1_O1 ,
+        ex:F_O1_P2 , ex:F_O1_P3 , ex:F_O1_E2 , ex:F_O1_I2 .
+
+ex:S0
+    a vdi3682:SystemLimit ;
+    rdfs:label "S0"@en ;
+    vdi3682:isIdentifiedBy ex:ID_S0 .
+
+# Inputs of the parent process, identical on both levels
+ex:P1 a vdi3682:Product     ; rdfs:label "P1"@en ; vdi3682:isWithin ex:S0 ; vdi3682:isIdentifiedBy ex:ID_P1 .
+ex:E1 a vdi3682:Energy      ; rdfs:label "E1"@en ; vdi3682:isWithin ex:S0 .
+ex:I1 a vdi3682:Information ; rdfs:label "I1"@en ; vdi3682:isWithin ex:S0 .
+
+# Outputs of the parent process, identical on both levels
+ex:P3 a vdi3682:Product     ; rdfs:label "P3"@en ; vdi3682:isWithin ex:S0 .
+ex:E2 a vdi3682:Energy      ; rdfs:label "E2"@en ; vdi3682:isWithin ex:S0 .
+ex:I2 a vdi3682:Information ; rdfs:label "I2"@en ; vdi3682:isWithin ex:S0 .
+
+# P2 leaves the process on both levels. In the decomposition it comes out of
+# the first refined operator, see Figure 5 right.
+ex:P2 a vdi3682:Product     ; rdfs:label "P2"@en ; vdi3682:isWithin ex:S0 .
+
+ex:O1
+    a vdi3682:ProcessOperator ;
+    rdfs:label "O1"@en ;
+    vdi3682:isWithin ex:S0 ;
+    vdi3682:isIdentifiedBy ex:ID_O1 ;
+    vdi3682:isComposedOf ex:O11 , ex:O12 .
+
+ex:F_P1_O1 a vdi3682:Flow ; rdfs:label "P1 to O1"@en ; vdi3682:hasStateSource ex:P1 ; vdi3682:hasOperatorTarget ex:O1 ; vdi3682:isWithin ex:S0 .
+ex:F_E1_O1 a vdi3682:Flow ; rdfs:label "E1 to O1"@en ; vdi3682:hasStateSource ex:E1 ; vdi3682:hasOperatorTarget ex:O1 ; vdi3682:isWithin ex:S0 .
+ex:F_I1_O1 a vdi3682:Flow ; rdfs:label "I1 to O1"@en ; vdi3682:hasStateSource ex:I1 ; vdi3682:hasOperatorTarget ex:O1 ; vdi3682:isWithin ex:S0 .
+ex:F_O1_P2 a vdi3682:Flow ; rdfs:label "O1 to P2"@en ; vdi3682:hasOperatorSource ex:O1 ; vdi3682:hasStateTarget ex:P2 ; vdi3682:isWithin ex:S0 .
+ex:F_O1_P3 a vdi3682:Flow ; rdfs:label "O1 to P3"@en ; vdi3682:hasOperatorSource ex:O1 ; vdi3682:hasStateTarget ex:P3 ; vdi3682:isWithin ex:S0 .
+ex:F_O1_E2 a vdi3682:Flow ; rdfs:label "O1 to E2"@en ; vdi3682:hasOperatorSource ex:O1 ; vdi3682:hasStateTarget ex:E2 ; vdi3682:isWithin ex:S0 .
+ex:F_O1_I2 a vdi3682:Flow ; rdfs:label "O1 to I2"@en ; vdi3682:hasOperatorSource ex:O1 ; vdi3682:hasStateTarget ex:I2 ; vdi3682:isWithin ex:S0 .
+
+#################################################################
+#    Decomposition of O1, Figure 5 right
+#################################################################
+
+ex:Process1
+    a vdi3682:Process ;
+    rdfs:label "Process 1"@en ;
+    rdfs:comment "The decomposition of process operator O1."@en ;
+    vdi3682:consistsOf
+        ex:S1 ,
+        ex:O11 , ex:O12 ,
+        ex:P1 , ex:E1 , ex:I1 ,
+        ex:P2 , ex:P4 , ex:E3 ,
+        ex:P3 , ex:E2 , ex:I2 ,
+        ex:F_P1_O11 , ex:F_E1_O11 , ex:F_I1_O11 ,
+        ex:F_O11_P2 , ex:F_O11_P4 , ex:F_O11_E3 ,
+        ex:F_P4_O12 , ex:F_E3_O12 ,
+        ex:F_O12_P3 , ex:F_O12_E2 , ex:F_O12_I2 .
+
+ex:S1 a vdi3682:SystemLimit ; rdfs:label "S1"@en .
+
+# Intermediate states, present only inside the decomposition
+ex:P4 a vdi3682:Product ; rdfs:label "P4"@en ; vdi3682:isWithin ex:S1 ;
+    rdfs:comment "Intermediate product, exists only within the decomposition."@en .
+ex:E3 a vdi3682:Energy  ; rdfs:label "E3"@en ; vdi3682:isWithin ex:S1 ;
+    rdfs:comment "Intermediate energy, exists only within the decomposition."@en .
+
+ex:O11
+    a vdi3682:ProcessOperator ;
+    rdfs:label "O11"@en ;
+    vdi3682:isWithin ex:S1 ;
+    vdi3682:hasAssignment ex:AS_O11_T11 .
+
+ex:O12
+    a vdi3682:ProcessOperator ;
+    rdfs:label "O12"@en ;
+    vdi3682:isWithin ex:S1 ;
+    vdi3682:hasAssignment ex:AS_O12_T12 .
+
+ex:F_P1_O11 a vdi3682:Flow ; rdfs:label "P1 to O11"@en ; vdi3682:hasStateSource ex:P1 ; vdi3682:hasOperatorTarget ex:O11 ; vdi3682:isWithin ex:S1 .
+ex:F_E1_O11 a vdi3682:Flow ; rdfs:label "E1 to O11"@en ; vdi3682:hasStateSource ex:E1 ; vdi3682:hasOperatorTarget ex:O11 ; vdi3682:isWithin ex:S1 .
+ex:F_I1_O11 a vdi3682:Flow ; rdfs:label "I1 to O11"@en ; vdi3682:hasStateSource ex:I1 ; vdi3682:hasOperatorTarget ex:O11 ; vdi3682:isWithin ex:S1 .
+
+ex:F_O11_P2 a vdi3682:Flow ; rdfs:label "O11 to P2"@en ; vdi3682:hasOperatorSource ex:O11 ; vdi3682:hasStateTarget ex:P2 ; vdi3682:isWithin ex:S1 .
+ex:F_O11_P4 a vdi3682:Flow ; rdfs:label "O11 to P4"@en ; vdi3682:hasOperatorSource ex:O11 ; vdi3682:hasStateTarget ex:P4 ; vdi3682:isWithin ex:S1 .
+ex:F_O11_E3 a vdi3682:Flow ; rdfs:label "O11 to E3"@en ; vdi3682:hasOperatorSource ex:O11 ; vdi3682:hasStateTarget ex:E3 ; vdi3682:isWithin ex:S1 .
+
+ex:F_P4_O12 a vdi3682:Flow ; rdfs:label "P4 to O12"@en ; vdi3682:hasStateSource ex:P4 ; vdi3682:hasOperatorTarget ex:O12 ; vdi3682:isWithin ex:S1 .
+ex:F_E3_O12 a vdi3682:Flow ; rdfs:label "E3 to O12"@en ; vdi3682:hasStateSource ex:E3 ; vdi3682:hasOperatorTarget ex:O12 ; vdi3682:isWithin ex:S1 .
+
+ex:F_O12_P3 a vdi3682:Flow ; rdfs:label "O12 to P3"@en ; vdi3682:hasOperatorSource ex:O12 ; vdi3682:hasStateTarget ex:P3 ; vdi3682:isWithin ex:S1 .
+ex:F_O12_E2 a vdi3682:Flow ; rdfs:label "O12 to E2"@en ; vdi3682:hasOperatorSource ex:O12 ; vdi3682:hasStateTarget ex:E2 ; vdi3682:isWithin ex:S1 .
+ex:F_O12_I2 a vdi3682:Flow ; rdfs:label "O12 to I2"@en ; vdi3682:hasOperatorSource ex:O12 ; vdi3682:hasStateTarget ex:I2 ; vdi3682:isWithin ex:S1 .
+
+#################################################################
+#    Technical resources and assignments
+#################################################################
+
+ex:T11 a vdi3682:TechnicalResource ; rdfs:label "T11"@en ;
+    vdi3682:isIdentifiedBy ex:ID_T11 ;
+    vdi3682:isCharacterizedBy ex:CH_T11_Throughput .
+
+# One characteristic, so that the attribute structure of Part 2 Section 5.2 is
+# exercised rather than only declared. The standard fixes the three parts but
+# prescribes no vocabulary for them, which is why the values are generic here.
+ex:CH_T11_Throughput a vdi3682:Characteristic ;
+    rdfs:label "Throughput of T11"@en ;
+    vdi3682:category "Throughput" ;
+    vdi3682:descriptiveElement "setpoint value with validity limits" ;
+    vdi3682:relationalElement "view: process optimisation" .
+ex:T12 a vdi3682:TechnicalResource ; rdfs:label "T12"@en .
+
+ex:AS_O11_T11 a vdi3682:Assignment ; rdfs:label "O11 uses T11"@en ; vdi3682:assignedResource ex:T11 .
+ex:AS_O12_T12 a vdi3682:Assignment ; rdfs:label "O12 uses T12"@en ; vdi3682:assignedResource ex:T12 .
+
+#################################################################
+#    Identifications, after Part 2 Section 5.1
+#################################################################
+
+ex:ID_Process0 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "PR-000" ; vdi3682:longName "Parent process of Figure 5" ;
+    vdi3682:shortName "PR0" ; vdi3682:versionNumber "1" ; vdi3682:revisionNumber "0" .
+
+ex:ID_S0 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "S-000" ; vdi3682:longName "System limit of the parent process" ;
+    vdi3682:shortName "S0" .
+
+ex:ID_O1 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "O-001" ; vdi3682:longName "Process operator 1" ;
+    vdi3682:shortName "O1" .
+
+ex:ID_P1 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "P-001" ; vdi3682:longName "Input product 1" ;
+    vdi3682:shortName "P1" .
+
+ex:ID_T11 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "T-011" ; vdi3682:longName "Technical resource 1.1" ;
+    vdi3682:shortName "T11" ; vdi3682:externalReference "AKZ:=EX01.T11" .

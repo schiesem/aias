@@ -1,0 +1,29 @@
+# CQ 21: Which data units of a case sit at which layer?
+#
+# Clause 5.6 places a data unit at the layer that formed it, and a refined
+# model shows the same payload appearing once per layer it passes through.
+#
+# Restricted to the units a case reaches: those a communication transmits, and
+# those a transmitted unit is built from or maps onto. The catalogue supplies
+# the named kinds per layer, frame, packet, segment and the rest, and those say
+# what a unit at a layer is called rather than what a communication carried.
+#
+# The reachable set is collected in one property path rather than in a union of
+# class patterns. A union whose branches bind the unit by its class alone would
+# match every individual of that class, the catalogue included, since nothing
+# in such a branch ties it to the transmission.
+#
+# Test case 2 is the one that answers in full, having refined its architecture
+# down to the three lower layers.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?layerNumber ?dataUnit ?kind
+WHERE {
+  ?communication iso7498:transmits
+    /(iso7498:hasUserData|iso7498:hasControlInformation|iso7498:mapsToServiceDataUnit)* ?u .
+  ?u a ?class . ?class rdfs:subClassOf* iso7498:DataUnit .
+  FILTER NOT EXISTS { ?u a ?narrower . ?narrower rdfs:subClassOf+ ?class }
+  OPTIONAL { ?u iso7498:atLayer/iso7498:layerNumber ?layerNumber }
+  BIND(REPLACE(STR(?class), ".*#", "") AS ?kind)
+  BIND(REPLACE(STR(?u),     ".*#", "") AS ?dataUnit)
+} ORDER BY DESC(?layerNumber) ?dataUnit

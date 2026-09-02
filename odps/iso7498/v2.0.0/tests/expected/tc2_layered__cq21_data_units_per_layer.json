@@ -1,0 +1,6 @@
+[
+  "3|NetworkSDU|ServiceDataUnit",
+  "4|TransportPCI|ProtocolControlInformation",
+  "4|TransportPDU|ProtocolDataUnit",
+  "7|ApplicationData|UserData"
+]

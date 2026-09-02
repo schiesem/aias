@@ -1,0 +1,24 @@
+# CQ 22: Which user data does a communication carry, and through which
+# protocol data unit?
+#
+# The chain from a communication to its payload: a communication transmits a
+# protocol data unit, 5.6.1 splits that unit into control information and user
+# data, and the user data is what the sender actually wanted to send.
+#
+# The question exists for the alignment. aias:carriesData starts at exactly
+# this user data and reaches the dataset of the ISO/IEC 22989 pattern, so a
+# model can ask which communications carry a given dataset. The chain has to be
+# walkable from this end for that to work.
+#
+# The control information is reported alongside, since a unit carrying only
+# control information and no user data is a legitimate case: an acknowledgement
+# conveys no payload.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?communication ?pdu ?userData ?controlInformation ?layerNumber
+WHERE {
+  ?communication iso7498:transmits ?pdu .
+  ?pdu a iso7498:ProtocolDataUnit .
+  OPTIONAL { ?pdu iso7498:hasUserData ?userData }
+  OPTIONAL { ?pdu iso7498:hasControlInformation ?controlInformation }
+  OPTIONAL { ?pdu iso7498:atLayer/iso7498:layerNumber ?layerNumber }
+} ORDER BY ?communication ?pdu

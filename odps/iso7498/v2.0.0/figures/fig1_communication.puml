@@ -1,0 +1,96 @@
+@startuml fig1_communication
+' Diagram 1 of the ISO/IEC 7498-1 pattern: a communication and what it promises.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: what a communication connects, the two transmission modes, the
+' direction it runs in, and the quality of service it states.
+'
+' The association is the anchor of the pattern. Everything a model says about a
+' communication hangs off it, and the two subclasses are the one distinction
+' the standard makes that changes what else can be said: a connectionless
+' transmission carries no state between units, 5.8.4.
+'
+' The quality of service is reified twice over. A communication has one, that
+' one holds values, and each value names the parameter it quantifies. Without
+' that a model could state a number and not what it is a number of.
+'
+' Left out on purpose:
+'  - the architecture inside an open system: diagram 2
+'  - the data units a communication transmits: diagram 3
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  What a communication is, and between what
+' ===================================================================
+
+class Association
+class ConnectionModeAssociation
+class ConnectionlessModeAssociation
+class OpenSystem
+class Technology
+
+Association <|-- ConnectionModeAssociation
+Association <|-- ConnectionlessModeAssociation
+
+Association --> "*" OpenSystem : connects
+Association --> "*" Technology : usesTechnology
+
+class CommunicationDirection {
+  «enum»
+  OneWay
+  TwoWayAlternate
+  TwoWaySimultaneous
+}
+
+Association --> "1" CommunicationDirection : hasDirection
+
+' ===================================================================
+'  What it promises
+' ===================================================================
+
+class QualityOfService
+class QoSValue {
+  dataProp: quantity
+  dataProp: unit
+}
+class QoSParameter {
+  «enum»
+  Throughput
+  TransitDelay
+  EstablishmentDelay
+  ResidualErrorRate
+  Availability
+  Jitter
+  Priority
+}
+
+Association      --> "*" QualityOfService : hasQualityOfService
+QualityOfService --> "*" QoSValue         : hasValue
+QoSValue         --> "1" QoSParameter     : forParameter
+
+' Layout only.
+ConnectionModeAssociation -[hidden]right- ConnectionlessModeAssociation
+
+@enduml

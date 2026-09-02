@@ -1,0 +1,14 @@
+# CQ 20: How does a protocol data unit map onto a service data unit?
+#
+# ISO/IEC 7498-1, Figure 9: a protocol data unit of one layer becomes the
+# service data unit of the layer below. This is the claim the practice terms
+# frame and packet only gesture at.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?fromNumber ?protocolDataUnit ?serviceDataUnit ?toNumber WHERE {
+  ?pdu iso7498:mapsToServiceDataUnit ?sdu .
+  ?pdu iso7498:atLayer ?lf . ?lf iso7498:layerNumber ?fromNumber .
+  ?sdu iso7498:atLayer ?lt . ?lt iso7498:layerNumber ?toNumber .
+  BIND(REPLACE(STR(?pdu), ".*#", "") AS ?protocolDataUnit)
+  BIND(REPLACE(STR(?sdu), ".*#", "") AS ?serviceDataUnit)
+} ORDER BY DESC(?fromNumber)

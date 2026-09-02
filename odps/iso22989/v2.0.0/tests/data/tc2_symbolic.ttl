@@ -1,0 +1,150 @@
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/tc2#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 2: a symbolic system, after ISO/IEC 22989, 3.1.33 and 3.1.23.
+#
+# A system whose model is a set of explicitly defined rules. Nothing is
+# learned, and the case exists to show what the pattern records when nothing
+# is:
+#
+#   Acquisition -> Inference -> Prediction
+#
+# This is what justifies keeping Model, 3.1.23, apart from MLModel, 3.3.7. Both
+# 3.1.33 and 3.1.34 reference the general entry rather than the machine learning
+# one, so a rule-based system has a model without ever having been trained. A
+# pattern that knew only the learned kind could not record such a system at all.
+#
+# Read against test case 1, the two show what training adds: the parameters,
+# the data kinds that exist only for it, and the functions around it.
+
+<https://w3id.org/aias/example/iso22989/tc2>
+    a owl:Ontology ;
+    rdfs:label "ISO 22989 test case 2: a symbolic system"@en ;
+    rdfs:comment "A model without training, after ISO/IEC 22989, 3.1.33 and 3.1.23."@en ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+
+#################################################################
+#    The system, its kind and its task
+#################################################################
+
+ex:SystemB
+    a iso:AISystem ;
+    rdfs:label "System B"@en ;
+    rdfs:comment "A system manipulating symbols and structures according to explicitly defined rules to obtain inferences, 3.1.33."@en ;
+    iso:hasType   iso:SymbolicAI ;
+    iso:hasTask   ex:TaskB ;
+    iso:hasDesign iso:Edge ;
+    iso:hasFunction ex:AcquisitionB , ex:InferenceB ;
+    iso:hasCharacteristicValue ex:CV_Explainability ;
+    iso:hasControllability ex:ControllabilityB ;
+    iso:hasRisk ex:RiskB .
+
+ex:TaskB
+    a iso:Classification ;
+    rdfs:label "Task B"@en ;
+    rdfs:comment "The same kind of task as in test case 1, addressed by other means."@en .
+
+ex:ControllabilityB
+    a iso:Controllability ;
+    rdfs:label "Controllability B"@en ;
+    rdfs:comment "The rules can be inspected and changed by an operator, 3.5.6."@en .
+
+ex:RiskB
+    a iso:Risk ;
+    rdfs:label "Risk B"@en ;
+    rdfs:comment "The effect of uncertainty on objectives, 3.5.11. Here the rules may not cover a state that occurs."@en .
+
+#################################################################
+#    The model, and what it is based on
+#
+#    A Model, not an MLModel. 3.3.7 defines the machine learning model as the
+#    result of training, and nothing was trained here.
+#################################################################
+
+ex:ModelB
+    a iso:Model ;
+    rdfs:label "Model B"@en ;
+    rdfs:comment "A logical representation, 3.1.23. A set of rules, arrived at by stating them rather than by learning them."@en ;
+    iso:basedOnAlgorithm ex:RuleAlgB .
+
+ex:RuleAlgB
+    a iso:ModelAlgorithm ;
+    rdfs:label "Rule set B"@en ;
+    rdfs:comment "The procedure describing the structure of the model, here a set of explicitly defined rules rather than a network architecture."@en ;
+    iso:hasHyperparameter ex:HP_Threshold , ex:HP_Hysteresis .
+
+#################################################################
+#    The parameters are hyperparameters, not model parameters
+#
+#    3.3.8 defines the model parameter as an internal variable of a model,
+#    determined by training. A rule threshold is chosen in advance and steers
+#    the behaviour of the procedure, which is what 3.3.4 describes.
+#
+#    The wording of 3.3.4 names the machine learning algorithm specifically, so
+#    applying it to a rule set is a reading of the entry rather than the entry
+#    itself. The note on the class records that.
+#################################################################
+
+ex:HP_Threshold
+    a iso:Hyperparameter ;
+    rdfs:label "Hyperparameter: limit value"@en ;
+    rdfs:comment "The value a rule compares against. Chosen by a person before the system runs, 3.3.4."@en .
+
+ex:HP_Hysteresis
+    a iso:Hyperparameter ;
+    rdfs:label "Hyperparameter: hysteresis"@en ;
+    rdfs:comment "How far a value has to fall back before the rule releases again."@en .
+
+#################################################################
+#    The two functions
+#################################################################
+
+ex:AcquisitionB
+    a iso:Acquisition ;
+    rdfs:label "Acquisition B"@en ;
+    iso:hasDataSource ex:SourceB .
+
+ex:InferenceB
+    a iso:Inference ;
+    rdfs:label "Inference B"@en ;
+    rdfs:comment "Reasoning by which conclusions are derived from known premises, 3.1.17. Note 1 to the entry states that a premise is either a fact, a rule, a model, a feature or raw data, which is why a rule-based system performs inference just as a learned one does."@en ;
+    iso:usesData     ex:ProdDataB ;
+    iso:isExecutedBy ex:ModelB ;
+    iso:creates      ex:PredictionB .
+
+ex:PredictionB
+    a iso:Prediction ;
+    rdfs:label "Prediction B"@en ;
+    rdfs:comment "The primary output, 3.1.27. Note 1 to 3.1.33 adds that symbolic AI produces declarative outputs, as against the statistical ones of subsymbolic AI."@en ;
+    iso:fulfilsTask ex:TaskB .
+
+#################################################################
+#    The data
+#
+#    Only production data. There is nothing to train on, nothing to compare
+#    candidate models with, and no final model to assess.
+#################################################################
+
+ex:ProdDataB
+    a iso:ProductionData , iso:InputData ;
+    rdfs:label "Production data B"@en ;
+    rdfs:comment "Data arising during operation, 3.2.12, and the input data the inference runs on, 3.2.9."@en ;
+    iso:isLabelled false ;
+    iso:isAcquiredBy ex:AcquisitionB .
+
+ex:SourceB a iso:DataSource ; rdfs:label "Data source B"@en .
+
+#################################################################
+#    A quality
+#################################################################
+
+ex:CV_Explainability
+    a iso:CharacteristicValue ;
+    rdfs:label "explainability 1.0"@en ;
+    rdfs:comment "3.5.7. A rule set expresses the factors influencing its results directly, which is the property symbolic systems are usually chosen for."@en ;
+    iso:forCharacteristic inst:Explainability ;
+    iso:quantity "1.0"^^xsd:decimal .

@@ -1,0 +1,23 @@
+# CQ 06: Which resources perform AI functions, and which perform process
+# operations only?
+#
+# Separates the plant that computes from the plant that produces. The answer is
+# what a deployment decision acts on, and it is the first place the two test
+# cases differ: one names a cloud, the other a cloud and an edge device.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?resource
+       (IF(BOUND(?ai), "yes", "no") AS ?carriesAI)
+       (IF(BOUND(?pr), "yes", "no") AS ?carriesProcess)
+WHERE {
+  ?resource a ?rk . ?rk rdfs:subClassOf* aias:Resource .
+  OPTIONAL { ?a1 vdi3682:assignedResource ?resource ; aias:assignedFunction ?f1 .
+             ?f1 a ?k1 . ?k1 rdfs:subClassOf* iso22989:AIFunction . BIND(1 AS ?ai) }
+  OPTIONAL { ?a2 vdi3682:assignedResource ?resource ; aias:assignedFunction ?f2 .
+             ?f2 a vdi3682:ProcessOperator . BIND(1 AS ?pr) }
+} ORDER BY ?resource

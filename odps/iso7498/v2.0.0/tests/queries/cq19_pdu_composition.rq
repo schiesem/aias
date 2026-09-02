@@ -1,0 +1,20 @@
+# CQ 19: What is a protocol data unit of a case made of?
+#
+# Clause 5.6.1 splits the unit into protocol control information and user data.
+# The composition is what makes the layered architecture work: each layer adds
+# its own control information and treats what it received as user data.
+#
+# Restricted to the units a case states something about. The catalogue supplies
+# the named kinds of unit per layer, frame, packet, segment and the rest, and
+# those describe what a unit at a layer is called rather than what a given
+# communication carried. Anchoring on the transmission is what keeps the answer
+# about the case.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?pdu ?controlInformation ?userData ?layerNumber
+WHERE {
+  ?communication iso7498:transmits ?pdu .
+  ?pdu a iso7498:ProtocolDataUnit .
+  OPTIONAL { ?pdu iso7498:hasControlInformation ?controlInformation }
+  OPTIONAL { ?pdu iso7498:hasUserData ?userData }
+  OPTIONAL { ?pdu iso7498:atLayer/iso7498:layerNumber ?layerNumber }
+} ORDER BY ?pdu

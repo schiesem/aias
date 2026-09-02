@@ -1,0 +1,15 @@
+# CQ 25: Which real-time capability is stated, and what is it bound to?
+#
+# 351-54-06. Real time is the capability of a system to keep tasks in a runnable
+# state so that they react within a pre-determined time interval, not a property
+# of time itself. The pattern follows that reading, so the capability is
+# instantiated and the interval stated separately as a characteristic value.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?item ?capability
+WHERE {
+  ?item iec60050:hasProperty ?capability .
+  ?capability a iec60050:RealTimeCapability .
+} ORDER BY ?item

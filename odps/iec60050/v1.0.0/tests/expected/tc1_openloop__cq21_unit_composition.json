@@ -1,0 +1,9 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc1#ControlSystemA|https://w3id.org/aias/odp/iec60050#ControlSystem|https://w3id.org/aias/example/iec60050/tc1#ControlledSystemA|https://w3id.org/aias/odp/iec60050#ControlledSystem",
+  "https://w3id.org/aias/example/iec60050/tc1#ControlSystemA|https://w3id.org/aias/odp/iec60050#ControlSystem|https://w3id.org/aias/example/iec60050/tc1#ControllingSystemA|https://w3id.org/aias/odp/iec60050#ControllingSystem",
+  "https://w3id.org/aias/example/iec60050/tc1#ControlSystemA|https://w3id.org/aias/odp/iec60050#ControlSystem|https://w3id.org/aias/example/iec60050/tc1#FinalVariableGenerationA|https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration",
+  "https://w3id.org/aias/example/iec60050/tc1#ControllingSystemA|https://w3id.org/aias/odp/iec60050#ControllingSystem|https://w3id.org/aias/example/iec60050/tc1#ControllingElementA|https://w3id.org/aias/odp/iec60050#ControllingElement",
+  "https://w3id.org/aias/example/iec60050/tc1#ControllingSystemA|https://w3id.org/aias/odp/iec60050#ControllingSystem|https://w3id.org/aias/example/iec60050/tc1#FinalControllingEquipmentA|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment",
+  "https://w3id.org/aias/example/iec60050/tc1#FinalControllingEquipmentA|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment|https://w3id.org/aias/example/iec60050/tc1#ActuatorA|https://w3id.org/aias/odp/iec60050#Actuator",
+  "https://w3id.org/aias/example/iec60050/tc1#FinalControllingEquipmentA|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment|https://w3id.org/aias/example/iec60050/tc1#ValveA|https://w3id.org/aias/odp/iec60050#FinalControllingElement"
+]

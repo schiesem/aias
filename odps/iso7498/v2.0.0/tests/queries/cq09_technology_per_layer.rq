@@ -1,0 +1,12 @@
+# CQ 09: Which technology realises which layer in a case?
+#
+# The layer per technology is asserted once in the instances file, so a model
+# need only name the technology.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?communication ?layerNumber ?technology WHERE {
+  ?communication iso7498:usesTechnology ?t .
+  ?t iso7498:realisesLayer ?l .
+  ?l iso7498:layerNumber ?layerNumber .
+  BIND(REPLACE(STR(?t), ".*#", "") AS ?technology)
+} ORDER BY ?communication DESC(?layerNumber)

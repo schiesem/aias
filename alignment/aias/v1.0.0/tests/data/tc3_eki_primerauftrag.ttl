@@ -1,0 +1,393 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:       <https://w3id.org/aias/example/eki2#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Case study 2 of the evaluation: finding gaps in a primer coat.
+#
+# Before a glass pane is foamed with polyurethane, a primer is applied to the
+# faces that will be covered, so that the foam adheres. A gap in that coat
+# raises the risk of the polyurethane coming loose later, and the quality has
+# to be documented rather than merely assumed.
+#
+# The cell holds a robot, an application unit with a sponge, and a dosing unit.
+# A camera is added, and the panes carry RFID tags so that a picture can be
+# tied to the pane it shows.
+#
+#   level 0  one step, a pane with an RFID tag and the primer
+#   level 1  the application unit, the camera and the RFID reader
+#   level 2  the robot control and a Raspberry Pi at the edge
+#   level 3  the ProCube cloud
+#
+# What sets this case apart from case 1 is the architecture, and the reason
+# for it. The inference has to finish inside the production cycle of one pane
+# and has to keep working when the internet does not, so it sits on the edge
+# device. Training on image data is computationally heavy and stays in the
+# cloud. The design is therefore hybrid, and both halves follow from the
+# application rather than from the technology.
+#
+# The rework closes the loop: the inference classifies each segment of the
+# path, and an automation function turns a faulty segment back into a movement
+# command for the robot. The AI acts on the plant rather than reporting to it.
+#
+# Built from the concept model of the modelling assistance together with the
+# description in the evaluation chapter. There is no deployment model for this
+# case, so the concept model is the last state that exists.
+
+<https://w3id.org/aias/example/eki2>
+    a owl:Ontology ;
+    rdfs:label "AIAS case study 2: gaps in a primer coat"@en ;
+    rdfs:label "AIAS-Fallbeispiel 2: Fehlstellen im Primerauftrag"@de ;
+    owl:imports <https://w3id.org/aias/1.0.0> .
+
+#################################################################
+#    The AI system
+#################################################################
+
+ex:EKI2
+    a iso22989:AISystem ;
+    rdfs:label "Fallbeispiel 2 EKI, concept model"@en ;
+    rdfs:label "Fallbeispiel 2 EKI, Konzept-Modell"@de ;
+    iso22989:hasTask   ex:Fehlstellenerkennung ;
+    iso22989:hasType   ex:Subsymbolisch ;
+    iso22989:hasDesign ex:HybrideArchitektur ;
+    aias:hasFunction   ex:Bilddatenaufnahme , ex:RFIDAufnahme , ex:Positionsaufnahme ,
+                       ex:Zusammenfuehren , ex:Vorverarbeitung , ex:Datenspeicherung ,
+                       ex:Modelltraining , ex:Modelevaluation , ex:Modelausfuehrung ,
+                       ex:SegmentUndDosiersteuerung , ex:Segmentnacharbeitssteuerung ,
+                       ex:Primerauftrag ;
+    aias:hasComponent  ex:Auftragseinheit , ex:Kamera , ex:RFIDReader ,
+                       ex:Robotersteuerung , ex:RaspberryPI5 , ex:ProCube ,
+                       ex:ScheibeMitRFID , ex:Primer , ex:ScheibeGrundiert ;
+    aias:hasRelation   ex:ZuwAuftragseinheit , ex:ZuwKameraProzess ,
+                       ex:ZuwBilddaten , ex:ZuwRFID , ex:ZuwPositionsaufnahme ,
+                       ex:ZuwZusammenfuehren , ex:ZuwVorverarbeitung ,
+                       ex:ZuwSpeicherung , ex:ZuwTraining , ex:ZuwEvaluation ,
+                       ex:ZuwInferenz , ex:ZuwSegmentsteuerung , ex:ZuwNacharbeit ,
+                       ex:RoboterZuAuftragseinheit , ex:KameraZuEdge ,
+                       ex:RFIDZuEdge , ex:ScheibeZuRFIDReader ,
+                       ex:RoboterZuEdge , ex:EdgeZuCloud .
+
+ex:Fehlstellenerkennung
+    a iso22989:Classification ;
+    rdfs:label "Detect gaps in the primer coat"@en ;
+    rdfs:label "Fehlstellen im Primerauftrag erkennen"@de .
+
+ex:Subsymbolisch
+    a iso22989:SubSymbolicAI ;
+    rdfs:label "A learned model"@en ; rdfs:label "Gelerntes Modell"@de .
+
+ex:HybrideArchitektur
+    a iso22989:Hybrid ;
+    rdfs:label "Hybrid architecture"@en ; rdfs:label "Hybride Architektur"@de ;
+    rdfs:comment "The inference has to finish inside the production cycle of one pane and has to keep working without an internet connection, so it runs on the edge device. Training on image data is computationally heavy and stays in the cloud."@en .
+
+#################################################################
+#    Level 0: the process
+#################################################################
+
+ex:Primerauftrag
+    a vdi3682:ProcessOperator ;
+    rdfs:label "Applying the primer"@en ; rdfs:label "Primerauftrag"@de .
+
+ex:ScheibeMitRFID
+    a vdi3682:Product ;
+    rdfs:label "Glass pane with an RFID tag"@en ; rdfs:label "Scheibe mit RFID"@de .
+
+ex:Primer
+    a vdi3682:Product ;
+    rdfs:label "Primer"@en ; rdfs:label "Primer"@de .
+
+ex:ScheibeGrundiert
+    a vdi3682:Product ;
+    rdfs:label "Pane with primer applied"@en ; rdfs:label "Scheibe grundiert"@de .
+
+ex:F01 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeMitRFID ;   vdi3682:isInput  ex:Primerauftrag .
+ex:F02 a vdi3682:Flow ; vdi3682:hasState ex:Primer ;           vdi3682:isInput  ex:Primerauftrag .
+ex:F03 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeGrundiert ; vdi3682:isOutput ex:Primerauftrag .
+
+#################################################################
+#    The devices
+#################################################################
+
+ex:Auftragseinheit
+    a aias:Actuator ;
+    rdfs:label "Application unit with a sponge"@en ; rdfs:label "Auftragseinheit"@de .
+
+ex:Kamera
+    a aias:Sensor ;
+    rdfs:label "Camera"@en ; rdfs:label "Kamera"@de ;
+    rdfs:comment "Added for this application; the cell had none before."@en .
+
+ex:RFIDReader
+    a aias:Sensor ;
+    rdfs:label "RFID reader"@en ; rdfs:label "RFID-Reader"@de .
+
+ex:Robotersteuerung
+    a aias:Controller ;
+    rdfs:label "Robot control"@en ; rdfs:label "Robotersteuerung"@de ;
+    rdfs:comment "Runs the trajectories of the robot and drives the dosing unit."@en .
+
+ex:RaspberryPI5
+    a aias:EdgeDevice ;
+    rdfs:label "Raspberry Pi 5"@en ; rdfs:label "RaspberryPI 5"@de .
+
+ex:ProCube
+    a aias:ExternalCloud ;
+    rdfs:label "ProCube"@en ; rdfs:label "ProCube"@de .
+
+ex:ZuwAuftragseinheit a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Auftragseinheit .
+ex:ZuwKameraProzess   a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Kamera .
+
+ex:Primerauftrag vdi3682:isAssignedTo ex:ZuwAuftragseinheit , ex:ZuwKameraProzess .
+
+#################################################################
+#    Communication
+#
+#    The pane itself takes part in one of them. It carries an RFID tag, and
+#    the reader picks its identification up as it passes, which is what ties a
+#    picture to the pane it shows.
+#
+#    That is why a communication reaches a component rather than a resource:
+#    a product may communicate.
+#################################################################
+
+ex:ScheibeZuRFIDReader
+    a iso7498:Communication ;
+    rdfs:label "The RFID tag of the pane is read"@en ;
+    rdfs:label "Auslesen des RFID-Tags der Scheibe"@de ;
+    iso7498:hasLayer    iso7498:Physical , iso7498:DataLink ;
+    iso7498:hasDataUnit ex:RFIDDaten .
+
+ex:KameraZuEdge
+    a iso7498:Communication ;
+    rdfs:label "Camera to the edge device"@en ;
+    iso7498:hasLayer    iso7498:Physical , iso7498:DataLink ,
+                        iso7498:Network , iso7498:Transport ;
+    iso7498:hasDataUnit ex:Bilddaten .
+
+ex:RFIDZuEdge
+    a iso7498:Communication ;
+    rdfs:label "RFID reader to the edge device"@en ;
+    iso7498:hasDataUnit ex:RFIDDaten .
+
+ex:RoboterZuEdge
+    a iso7498:Communication ;
+    rdfs:label "Robot control and edge device"@en ;
+    rdfs:comment "Carries the position data one way and the movement commands of the rework the other."@en ;
+    iso7498:hasDataUnit ex:Positionsdaten , ex:Nacharbeitsauftrag .
+
+ex:RoboterZuAuftragseinheit
+    a iso7498:Communication ;
+    rdfs:label "Robot control to the application unit"@en ;
+    iso7498:hasDataUnit ex:Dosierbefehl .
+
+ex:EdgeZuCloud
+    a iso7498:Communication ;
+    rdfs:label "Edge device to the cloud"@en ;
+    iso7498:hasLayer    iso7498:Network , iso7498:Transport , iso7498:Application ;
+    iso7498:hasDataUnit ex:Zusammengefuehrt .
+
+ex:ScheibeMitRFID  aias:hasOutputCommunication ex:ScheibeZuRFIDReader .
+ex:RFIDReader      aias:hasInputCommunication  ex:ScheibeZuRFIDReader .
+ex:RFIDReader      aias:hasOutputCommunication ex:RFIDZuEdge .
+ex:Kamera          aias:hasOutputCommunication ex:KameraZuEdge .
+ex:RaspberryPI5    aias:hasInputCommunication  ex:KameraZuEdge , ex:RFIDZuEdge .
+ex:RaspberryPI5    aias:hasCommunication       ex:RoboterZuEdge , ex:EdgeZuCloud .
+ex:Robotersteuerung aias:hasCommunication      ex:RoboterZuEdge .
+ex:Robotersteuerung aias:hasOutputCommunication ex:RoboterZuAuftragseinheit .
+ex:Auftragseinheit aias:hasInputCommunication  ex:RoboterZuAuftragseinheit .
+ex:ProCube         aias:hasCommunication       ex:EdgeZuCloud .
+
+#################################################################
+#    Data
+#
+#    Three sources feed one merging, and the reason is the application: to
+#    place a gap on a pane a model needs the picture, the identification of
+#    the pane and the segment of the path the picture was taken at.
+#################################################################
+
+ex:Bilddaten
+    a iso22989:ProductionData ;
+    rdfs:label "Camera images"@en ; rdfs:label "Bilddaten"@de ;
+    iso22989:isAcquiredBy  ex:Bilddatenaufnahme ;
+    iso22989:isProcessedBy ex:Zusammenfuehren .
+
+ex:RFIDDaten
+    a iso22989:ProductionData ;
+    rdfs:label "Identification of the pane"@en ; rdfs:label "Scheibenidentifikation"@de ;
+    iso22989:isAcquiredBy  ex:RFIDAufnahme ;
+    iso22989:isProcessedBy ex:Zusammenfuehren .
+
+ex:Positionsdaten
+    a iso22989:ProductionData ;
+    rdfs:label "Segment of the path"@en ; rdfs:label "Positionsdaten des Segments"@de ;
+    rdfs:comment "The robot control divides the path over the pane into a fixed number of segments, which is what lets a picture be tied to a place."@en ;
+    iso22989:isAcquiredBy  ex:Positionsaufnahme ;
+    iso22989:isProcessedBy ex:Zusammenfuehren .
+
+ex:Zusammengefuehrt
+    a iso22989:ProductionData ;
+    rdfs:label "Image, identification and segment, joined"@en ;
+    rdfs:label "Zusammengeführte Daten"@de ;
+    iso22989:isProcessedBy ex:Vorverarbeitung ;
+    iso22989:isStoredBy    ex:Datenspeicherung .
+
+ex:Trainingsdaten a iso22989:TrainingData   ; rdfs:label "Training data of segments"@en .
+ex:Testdaten      a iso22989:EvaluationData ; rdfs:label "TestData"@en .
+ex:Inferenzeingabe a iso22989:ProductionData ; rdfs:label "Segments to be classified"@en .
+
+ex:Segmentklassifikation
+    a iso22989:ProductionData ;
+    rdfs:label "InferenceOutput_Model_segmentation"@en ;
+    rdfs:comment "One class per segment of the path: coated or faulty. The rework function reads it."@en .
+
+ex:Nacharbeitsauftrag
+    a iso22989:ProductionData ;
+    rdfs:label "Movement commands for the faulty segments"@en ;
+    rdfs:label "Nacharbeitsauftrag"@de .
+
+ex:Dosierbefehl
+    a iso22989:ProductionData ;
+    rdfs:label "Dosing commands for the application unit"@en ;
+    rdfs:label "Dosierbefehl"@de .
+
+ex:Bilddatenaufnahme
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire the images"@en ; rdfs:label "Bilddatenaufnahme"@de ;
+    iso22989:hasDataSource ex:QuelleKamera .
+
+ex:RFIDAufnahme
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire the identification of the pane"@en ; rdfs:label "RFID-Aufnahme"@de ;
+    iso22989:hasDataSource ex:QuelleRFID .
+
+ex:Positionsaufnahme
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire the segment of the path"@en ; rdfs:label "Positionsaufnahme"@de ;
+    iso22989:hasDataSource ex:QuelleRoboter .
+
+ex:QuelleKamera  a iso22989:DataSource ; rdfs:label "The camera as a source"@en .
+ex:QuelleRFID    a iso22989:DataSource ; rdfs:label "The RFID reader as a source"@en .
+ex:QuelleRoboter a iso22989:DataSource ; rdfs:label "The robot control as a source"@en .
+
+ex:Zusammenfuehren
+    a iso22989:Merging ;
+    rdfs:label "Joining image, identification and segment"@en ;
+    rdfs:label "Zusammenführen"@de ;
+    rdfs:comment "Runs on the edge device, since what it produces is the input of an inference that must finish inside the cycle."@en ;
+    iso22989:createsProcessedData ex:Zusammengefuehrt .
+
+ex:Vorverarbeitung
+    a iso22989:DataProcess ;
+    rdfs:label "Preparation of the data"@en ; rdfs:label "Vorverarbeitung"@de ;
+    iso22989:createsProcessedData ex:Trainingsdaten , ex:Testdaten , ex:Inferenzeingabe .
+
+ex:Datenspeicherung
+    a iso22989:Storing ;
+    rdfs:label "Storing in the cloud"@en ; rdfs:label "Datenspeicherung"@de ;
+    iso22989:hasDataSink ex:SenkeProCube .
+
+ex:SenkeProCube a iso22989:DataSink ; rdfs:label "ProCube as a sink"@en .
+
+#################################################################
+#    Model, training, evaluation, inference
+#################################################################
+
+ex:Modellalgorithmus
+    a iso22989:MLAlgorithm ;
+    rdfs:label "Feedforward network for segment classification"@en ;
+    iso22989:basedOnLearning ex:UeberwachtesLernen .
+
+ex:UeberwachtesLernen a iso22989:SupervisedLearning ; rdfs:label "Supervised learning"@en .
+
+ex:Modelltraining
+    a iso22989:Training ;
+    rdfs:label "Training of the segmentation model"@en ; rdfs:label "Modeltraining"@de ;
+    rdfs:comment "In the cloud: training on image data is computationally heavy."@en ;
+    iso22989:usesData         ex:Trainingsdaten ;
+    iso22989:basedOnAlgorithm ex:Modellalgorithmus ;
+    iso22989:determines       ex:Modellparameter .
+
+ex:Modellparameter a iso22989:ModelParameter ; rdfs:label "Weights of the network"@en .
+
+ex:FNNv1
+    a iso22989:Model ;
+    rdfs:label "FNN_v1"@en ;
+    iso22989:isCreatedBy   ex:Modelltraining ;
+    iso22989:hasParameter  ex:Modellparameter ;
+    iso22989:isEvaluatedBy ex:Modelevaluation ;
+    iso22989:executes      ex:Modelausfuehrung .
+
+ex:Modelevaluation
+    a iso22989:Evaluation ;
+    rdfs:label "Evaluation of the model"@en ; rdfs:label "Modelevaluation"@de ;
+    iso22989:usesData ex:Testdaten .
+
+ex:Modelausfuehrung
+    a iso22989:Inference ;
+    rdfs:label "Inference inside the production cycle"@en ; rdfs:label "Modelausführung"@de ;
+    rdfs:comment "On the edge device: it has to finish while the pane is still in the cell, and it has to work without an internet connection."@en ;
+    iso22989:usesData ex:Inferenzeingabe ;
+    iso22989:creates  ex:Segmentbewertung .
+
+ex:Segmentbewertung
+    a iso22989:Prediction ;
+    rdfs:label "Which segments are faulty"@en ;
+    rdfs:label "Segmentbewertung"@de ;
+    iso22989:fulfillsTask ex:Fehlstellenerkennung .
+
+#################################################################
+#    The AI acts on the plant
+#
+#    This is what separates case 2 from case 1. There the AI reports a state to
+#    an operator; here its output becomes the input of a function that moves
+#    the robot, and the rework happens inside the same production cycle.
+#################################################################
+
+ex:SegmentUndDosiersteuerung
+    a iso22989:Automate ;
+    rdfs:label "Segment and dosing control"@en ;
+    rdfs:label "Segment- und Dosiersteuerung"@de ;
+    rdfs:comment "Divides the path over the pane into segments and drives the dosing unit."@en .
+
+ex:Segmentnacharbeitssteuerung
+    a iso22989:Automate ;
+    rdfs:label "Rework control for faulty segments"@en ;
+    rdfs:label "Segmentnacharbeitssteuerung"@de ;
+    rdfs:comment "Takes the classification of the segments and turns a faulty one into a movement command for the robot."@en ;
+    iso22989:usesData ex:Segmentklassifikation .
+
+#################################################################
+#    Which resource carries which function
+#
+#    The split is the architecture. Storing, training and evaluation in the
+#    cloud; merging, preparation, inference and the rework on the edge device.
+#################################################################
+
+ex:ZuwBilddaten        a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Kamera .
+ex:ZuwRFID             a vdi3682:Assignment ; vdi3682:isAssignedTo ex:RFIDReader .
+ex:ZuwPositionsaufnahme a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Robotersteuerung .
+ex:ZuwSegmentsteuerung a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Robotersteuerung .
+ex:ZuwZusammenfuehren  a vdi3682:Assignment ; vdi3682:isAssignedTo ex:RaspberryPI5 .
+ex:ZuwVorverarbeitung  a vdi3682:Assignment ; vdi3682:isAssignedTo ex:RaspberryPI5 .
+ex:ZuwInferenz         a vdi3682:Assignment ; vdi3682:isAssignedTo ex:RaspberryPI5 .
+ex:ZuwNacharbeit       a vdi3682:Assignment ; vdi3682:isAssignedTo ex:RaspberryPI5 .
+ex:ZuwSpeicherung      a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwTraining         a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwEvaluation       a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+
+ex:Bilddatenaufnahme           aias:isAssignedTo ex:ZuwBilddaten .
+ex:RFIDAufnahme                aias:isAssignedTo ex:ZuwRFID .
+ex:Positionsaufnahme           aias:isAssignedTo ex:ZuwPositionsaufnahme .
+ex:SegmentUndDosiersteuerung   aias:isAssignedTo ex:ZuwSegmentsteuerung .
+ex:Zusammenfuehren             aias:isAssignedTo ex:ZuwZusammenfuehren .
+ex:Vorverarbeitung             aias:isAssignedTo ex:ZuwVorverarbeitung .
+ex:Modelausfuehrung            aias:isAssignedTo ex:ZuwInferenz .
+ex:Segmentnacharbeitssteuerung aias:isAssignedTo ex:ZuwNacharbeit .
+ex:Datenspeicherung            aias:isAssignedTo ex:ZuwSpeicherung .
+ex:Modelltraining              aias:isAssignedTo ex:ZuwTraining .
+ex:Modelevaluation             aias:isAssignedTo ex:ZuwEvaluation .

@@ -1,0 +1,27 @@
+# CQ 24: Which data have no stated origin?
+#
+# Clause 8.6.1 has data acquired from a source, and isAcquiredBy records that.
+# Data without it appears in a model with no account of where it came from.
+#
+# For an audit this is the first question. A dataset a system was trained on
+# and whose origin is unrecorded cannot be checked for the licence it came
+# under, the consent it rests on, or the population it represents.
+#
+# Test case 3 answers with all four of its datasets, and that is a property of
+# the case rather than of the pattern: it describes a hybrid architecture and
+# leaves the data pipeline to the other two cases.
+#
+# The kinds are collected per dataset. A dataset may carry more than one, as
+# production data that is also input data, and reporting each on its own row
+# would say the same thing twice.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?data (GROUP_CONCAT(DISTINCT ?kindName; separator=", ") AS ?kinds)
+WHERE {
+  ?data a ?dataKind . ?dataKind rdfs:subClassOf* iso:Data .
+  FILTER NOT EXISTS { ?data a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?dataKind ;
+                                rdfs:subClassOf* iso:Data }
+  FILTER NOT EXISTS { ?data iso:isAcquiredBy ?any }
+  BIND(REPLACE(STR(?dataKind), ".*#", "") AS ?kindName)
+} GROUP BY ?data ORDER BY ?data

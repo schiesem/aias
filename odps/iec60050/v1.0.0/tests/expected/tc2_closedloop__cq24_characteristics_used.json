@@ -1,0 +1,15 @@
+[
+  "ControlRiseTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||",
+  "ControlSettlingTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|stated|2.5|s",
+  "DeadBand|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|not stated||",
+  "DeadTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||",
+  "EquivalentDeadTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||",
+  "GainMargin|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|not stated||",
+  "InterruptReactionTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||",
+  "ManipulatingTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||",
+  "Overshoot|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|stated|8.0|%",
+  "PhaseMargin|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|not stated||",
+  "SamplingPeriod|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|stated|100.0|ms",
+  "SettlingTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||",
+  "TimeConstant|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|not stated||"
+]

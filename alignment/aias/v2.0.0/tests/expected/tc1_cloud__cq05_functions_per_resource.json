@@ -1,0 +1,14 @@
+[
+  "https://w3id.org/aias/example/tc1#Cloud|https://w3id.org/aias/example/tc1#Evaluation|ISO 22989",
+  "https://w3id.org/aias/example/tc1#Cloud|https://w3id.org/aias/example/tc1#Inference|ISO 22989",
+  "https://w3id.org/aias/example/tc1#Cloud|https://w3id.org/aias/example/tc1#Processing|ISO 22989",
+  "https://w3id.org/aias/example/tc1#Cloud|https://w3id.org/aias/example/tc1#Storing|ISO 22989",
+  "https://w3id.org/aias/example/tc1#Cloud|https://w3id.org/aias/example/tc1#Training|ISO 22989",
+  "https://w3id.org/aias/example/tc1#MachineControl|https://w3id.org/aias/example/tc1#AcqTime|ISO 22989",
+  "https://w3id.org/aias/example/tc1#MachineControl|https://w3id.org/aias/example/tc1#Step2|VDI 3682",
+  "https://w3id.org/aias/example/tc1#MotorControl|https://w3id.org/aias/example/tc1#PositionControl|IEC 60050",
+  "https://w3id.org/aias/example/tc1#MotorControl|https://w3id.org/aias/example/tc1#Step1|VDI 3682",
+  "https://w3id.org/aias/example/tc1#MotorControl|https://w3id.org/aias/example/tc1#Step3|VDI 3682",
+  "https://w3id.org/aias/example/tc1#SensorLeft|https://w3id.org/aias/example/tc1#AcqLeft|ISO 22989",
+  "https://w3id.org/aias/example/tc1#SensorRight|https://w3id.org/aias/example/tc1#AcqRight|ISO 22989"
+]

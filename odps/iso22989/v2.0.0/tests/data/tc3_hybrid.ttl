@@ -1,0 +1,182 @@
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/tc3#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 3: one system using both approaches, after 3.1.33, 3.1.34 and
+# clause 5.9.
+#
+# Two components: one carrying a learned model, one carrying a rule set. The
+# prediction of the first is the input of the second.
+#
+#   [Component 1]  subsymbolic, MLModel  -> Prediction 1
+#                                              |
+#   [Component 2]  symbolic, Model       <-----+
+#                                          -> Prediction 2 -> Task
+#
+# The system also performs a control, 3.5.5, which is a function alongside the
+# inferences rather than a quality. The definition of that entry is word for
+# word the one IEC 60050-351 gives in 351-42-19, and the alignment relates the
+# two. Recording it here is what lets a model say that the system acts on a
+# process rather than only computing outputs.
+#
+# What it puts under test is that the two kinds of AI are NOT disjoint. Neither
+# 3.1.33 nor 3.1.34 excludes the other, and clause 5.9 discusses combining
+# them. A pattern declaring them disjoint would reject a system the standard
+# describes, so the model asserts both types on one system and has to stay
+# consistent.
+
+<https://w3id.org/aias/example/iso22989/tc3>
+    a owl:Ontology ;
+    rdfs:label "ISO 22989 test case 3: a system using both approaches"@en ;
+    rdfs:comment "Symbolic and subsymbolic AI in one system, after ISO/IEC 22989, 3.1.33, 3.1.34 and clause 5.9."@en ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+
+#################################################################
+#    The system, typed as both kinds
+#################################################################
+
+ex:SystemC
+    a iso:AISystem ;
+    rdfs:label "System C"@en ;
+    rdfs:comment "A system combining a learned classifier with a rule-based decision. Typed as both kinds of AI, which the standard admits and this pattern therefore does not forbid."@en ;
+    iso:hasType    iso:SubsymbolicAI , iso:SymbolicAI ;
+    iso:hasTask    ex:TaskC ;
+    iso:hasDesign  iso:Hybrid ;
+    iso:consistsOf ex:ComponentC1 , ex:ComponentC2 ;
+    iso:hasFunction ex:ControlC ;
+    iso:hasCharacteristicValue ex:CV_Trustworthiness .
+
+ex:TaskC
+    a iso:Classification ;
+    rdfs:label "Task C"@en .
+
+ex:ControlC
+    a iso:Control ;
+    rdfs:label "Control C"@en ;
+    rdfs:comment "Purposeful action on or in a process to meet specified objectives, 3.5.5. The system does not only compute an output, it acts on something, which is what the rule-based component decides from the prediction of the learned one."@en .
+
+#################################################################
+#    Component 1: subsymbolic
+#
+#    The functions are related to the component rather than to the system.
+#    With two components performing the same kind of function, relating them
+#    to the system would leave no way to tell which one performs which.
+#################################################################
+
+ex:ComponentC1
+    a iso:AIComponent ;
+    rdfs:label "Component C1"@en ;
+    rdfs:comment "A functional element constructing the system, 3.1.2. This one carries the learned model."@en ;
+    iso:hasType         iso:SubsymbolicAI ;
+    iso:hasFunction     ex:InferenceC1 ;
+    iso:realisedByModel ex:ModelC1 .
+
+ex:ModelC1
+    a iso:MLModel ;
+    rdfs:label "Model C1"@en ;
+    iso:basedOnAlgorithm ex:ModelAlgC1 ;
+    iso:hasParameter     ex:MP_WeightsC ;
+    iso:isCreatedBy      ex:TrainingC .
+
+ex:ModelAlgC1 a iso:ModelAlgorithm ; rdfs:label "Model algorithm C1"@en .
+ex:MP_WeightsC a iso:ModelParameter ; rdfs:label "Model parameters C"@en .
+
+ex:TrainingC
+    a iso:MachineLearning ;
+    rdfs:label "Training C"@en ;
+    iso:basedOnAlgorithm ex:TrainAlgC ;
+    iso:usesData         ex:TrainDataC ;
+    iso:determines       ex:MP_WeightsC .
+
+ex:TrainAlgC
+    a iso:MLAlgorithm ;
+    rdfs:label "Training algorithm C"@en ;
+    iso:basedOnLearning iso:SupervisedLearning .
+
+ex:InferenceC1
+    a iso:Inference ;
+    rdfs:label "Inference C1"@en ;
+    iso:usesData     ex:ProdDataC ;
+    iso:isExecutedBy ex:ModelC1 ;
+    iso:creates      ex:PredictionC1 .
+
+ex:PredictionC1
+    a iso:Prediction ;
+    rdfs:label "Prediction C1"@en ;
+    rdfs:comment "The output of the learned component. Note 1 to 3.1.27 states that predictions can be followed by further outputs such as recommendations, decisions and actions, which is what the second component produces from this one."@en .
+
+#################################################################
+#    Component 2: symbolic
+#
+#    Takes the prediction of the first component and decides by rule what
+#    follows from it.
+#################################################################
+
+ex:ComponentC2
+    a iso:AIComponent ;
+    rdfs:label "Component C2"@en ;
+    rdfs:comment "The second functional element, carrying the rule set."@en ;
+    iso:hasType         iso:SymbolicAI ;
+    iso:hasFunction     ex:InferenceC2 ;
+    iso:realisedByModel ex:ModelC2 .
+
+ex:ModelC2
+    a iso:Model ;
+    rdfs:label "Model C2"@en ;
+    rdfs:comment "A rule set, 3.1.23. Not an MLModel, since nothing trained it, as in test case 2."@en ;
+    iso:basedOnAlgorithm ex:RuleAlgC .
+
+ex:RuleAlgC
+    a iso:ModelAlgorithm ;
+    rdfs:label "Rule set C"@en ;
+    iso:hasHyperparameter ex:HP_ThresholdC .
+
+ex:HP_ThresholdC a iso:Hyperparameter ; rdfs:label "Hyperparameter: decision threshold"@en .
+
+ex:InferenceC2
+    a iso:Inference ;
+    rdfs:label "Inference C2"@en ;
+    rdfs:comment "Reasoning over the prediction of the first component together with the rules of the second."@en ;
+    iso:usesData     ex:PredDataC ;
+    iso:isExecutedBy ex:ModelC2 ;
+    iso:creates      ex:PredictionC2 .
+
+ex:PredictionC2
+    a iso:Prediction ;
+    rdfs:label "Prediction C2"@en ;
+    rdfs:comment "The output of the system as a whole, and the one that addresses the task."@en ;
+    iso:fulfilsTask ex:TaskC .
+
+#################################################################
+#    Data
+#################################################################
+
+ex:TrainDataC
+    a iso:TrainingData ;
+    rdfs:label "Training data C"@en ;
+    iso:isLabelled true .
+
+ex:ProdDataC
+    a iso:ProductionData , iso:InputData ;
+    rdfs:label "Production data C"@en ;
+    iso:isLabelled false .
+
+ex:PredDataC
+    a iso:InputData ;
+    rdfs:label "Prediction data C"@en ;
+    rdfs:comment "What the second component reasons over, that is the output of the first one carried forward as input data, 3.2.9."@en ;
+    iso:isLabelled false .
+
+#################################################################
+#    A quality of the system as a whole
+#################################################################
+
+ex:CV_Trustworthiness
+    a iso:CharacteristicValue ;
+    rdfs:label "trustworthiness 0.8"@en ;
+    rdfs:comment "3.5.16 defines it as the ability to meet stakeholder expectations in a verifiable way. Clause 5.15 treats it as the sum of the other qualities rather than as one alongside them."@en ;
+    iso:forCharacteristic inst:Trustworthiness ;
+    iso:quantity "0.8"^^xsd:decimal .

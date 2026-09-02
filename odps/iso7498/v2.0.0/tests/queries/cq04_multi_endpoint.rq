@@ -1,0 +1,16 @@
+# CQ 04: Which communications have more than two participants?
+#
+# ISO/IEC 7498-1, 5.3.1.4 calls a connection with more than two connection
+# endpoints a multi-endpoint connection, and 5.3.1.9 defines data transmission
+# as conveying service data units from one entity to one or more entities. The
+# pattern asserts no cardinality on connects for that reason, so one
+# communication can carry a whole bus segment rather than one object per pair.
+#
+# The count reads connects, which generalises the source and target properties,
+# so a participant is counted once however it is named.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?communication (COUNT(DISTINCT ?system) AS ?participants)
+       (IF(COUNT(DISTINCT ?system) > 2, "multi-endpoint", "two endpoints") AS ?kind)
+WHERE {
+  ?communication iso7498:connects ?system .
+} GROUP BY ?communication ORDER BY DESC(?participants) ?communication

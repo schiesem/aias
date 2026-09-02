@@ -1,0 +1,128 @@
+@startuml fig3_data_view
+' Diagram 3 of the ISO/IEC 22989 pattern: the data view.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: the third of the three views. What data is, how it is grouped,
+' which kinds the standard distinguishes, and what is done to it before it is
+' used.
+'
+' The disjointness of training, validation and evaluation data is asserted in
+' the pattern, after the notes to 3.2.14 and 3.2.15. It cannot be drawn here
+' without an edge between every pair, so the caption states it instead.
+' Production data is not part of it, since it arises only during operation.
+'
+' Left out on purpose:
+'  - the system, its tasks and its functions: diagram 1
+'  - algorithms, models and parameters: diagram 2
+'  - the qualities of clause 3.5: diagram 4
+'
+' Read left to right: where data comes from, what it is made of, what is done
+' to it, and where it goes.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 24
+skinparam ranksep 42
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  What data is, and how it is grouped
+' ===================================================================
+
+class Data {
+  dataProp: isLabelled
+}
+class DataSet
+class Sample
+class Label
+
+DataSet --> "*" Data   : isComposedOf
+Data    --> "*" Sample : isComposedOf
+Sample  --> "*" Label  : hasLabel
+
+' ===================================================================
+'  The kinds the standard distinguishes
+' ===================================================================
+
+class InputData
+class TrainingData
+class ValidationData
+class EvaluationData
+class ProductionData
+
+Data <|-- InputData
+Data <|-- TrainingData
+Data <|-- ValidationData
+Data <|-- EvaluationData
+Data <|-- ProductionData
+
+' ===================================================================
+'  Where data comes from and where it goes
+' ===================================================================
+
+class Acquisition
+class Storing
+class DataSource
+class DataSink
+
+Data        --> "*" Acquisition : isAcquiredBy
+Data        --> "*" Storing     : isStoredBy
+Acquisition --> "*" DataSource  : hasDataSource
+Storing     --> "*" DataSink    : hasDataSink
+
+' ===================================================================
+'  What is done to it
+' ===================================================================
+
+class DataProcessing
+class DataProcess
+class Annotation
+class Augmentation
+class Sampling
+class Imputation
+class Filtering
+class Normalization
+class Labelling
+
+DataProcess <|-- Annotation
+DataProcess <|-- Augmentation
+DataProcess <|-- Sampling
+DataProcess <|-- Imputation
+DataProcess <|-- Filtering
+DataProcess <|-- Normalization
+DataProcess <|-- Labelling
+
+Data           --> "*" DataProcess : isProcessedBy
+DataProcessing --> "*" DataProcess : consistsOfStep
+
+' Layout only: keep each fan of siblings on one row.
+InputData      -[hidden]right- TrainingData
+TrainingData   -[hidden]right- ValidationData
+ValidationData -[hidden]right- EvaluationData
+EvaluationData -[hidden]right- ProductionData
+
+Annotation   -[hidden]right- Augmentation
+Augmentation -[hidden]right- Sampling
+Sampling     -[hidden]right- Imputation
+Imputation   -[hidden]right- Filtering
+Filtering    -[hidden]right- Normalization
+Normalization -[hidden]right- Labelling
+
+@enduml

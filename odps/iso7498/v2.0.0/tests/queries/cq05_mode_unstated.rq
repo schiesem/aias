@@ -1,0 +1,14 @@
+# CQ 05: Which communications state no transmission mode?
+#
+# The mode is optional in this pattern, since a model may not know it yet.
+#
+# The subClassOf* step is required: a communication is typed as one of the two
+# modes, and the reasoner does not materialise the superclass as a further type,
+# so matching "a iso7498:Association" alone would find nothing.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?communication WHERE {
+  ?communication a/rdfs:subClassOf* iso7498:Association .
+  FILTER NOT EXISTS { ?communication a iso7498:ConnectionModeAssociation }
+  FILTER NOT EXISTS { ?communication a iso7498:ConnectionlessModeAssociation }
+} ORDER BY ?communication

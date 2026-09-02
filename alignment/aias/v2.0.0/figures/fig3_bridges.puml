@@ -1,0 +1,97 @@
+@startuml fig3_bridges
+' Diagram 3 of the AIAS alignment: the bridges between the subdomains.
+'
+' Conventions: shared/FIGURES.md, with prefixes for the reason diagram 1 gives.
+'
+' What it shows: every relation and every equivalence this ontology adds, and
+' nothing else. Read as a whole it is the answer to what the alignment
+' actually states, as against what the four patterns state on their own.
+'
+' Four groups, one per question the alignment answers:
+'
+'   assignment   which resource performs which function
+'   control      what a control acts on, and who performs it
+'   data         which dataset a transmission carries
+'   system       which resource takes part in a communication
+'
+' Left out on purpose: the class hierarchies of diagrams 1 and 2, and
+' everything internal to the four patterns.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam linetype ortho
+skinparam nodesep 24
+skinparam ranksep 48
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+
+' ===================================================================
+'  Which resource performs which function
+'
+'  VDI 3682 states the assignment from the process operator, which cannot
+'  reach an AI function. aias:assignedFunction is what closes that gap.
+' ===================================================================
+
+class "vdi3682:Assignment" as Assignment
+class "aias:Function"      as Function
+class "aias:Resource"      as Resource
+
+Assignment --> "*" Function : aias:assignedFunction
+Assignment --> "*" Resource : vdi3682:assignedResource
+
+' ===================================================================
+'  What a control acts on
+' ===================================================================
+
+class "iso22989:Control"        as IsoControl
+class "iec60050:Control"        as IecControl
+class "vdi3682:ProcessOperator" as ProcessOperator
+
+IsoControl -right- IecControl : owl:equivalentClass
+IecControl --> "*" ProcessOperator : aias:actsOnProcessOperator
+
+' ===================================================================
+'  Which dataset a transmission carries
+'
+'  A relation rather than an equivalence. The payload of one transmission and
+'  a collection of samples are not the same thing, and keeping them apart is
+'  what lets a model ask which communications carry a given dataset.
+' ===================================================================
+
+class "iso7498:Association"      as Association
+class "iso7498:ProtocolDataUnit" as Pdu
+class "iso7498:UserData"         as UserData
+class "iso22989:Data"            as Data
+
+Association --> "*" Pdu      : iso7498:transmits
+Pdu         --> "*" UserData : iso7498:hasUserData
+UserData    --> "1" Data     : aias:carriesData
+
+' ===================================================================
+'  Which resource takes part in a communication
+' ===================================================================
+
+class "iso7498:OpenSystem" as OpenSystem
+class "aias:Component"     as Component
+
+Component   --> "*" OpenSystem : aias:appearsAsOpenSystem
+Association --> "1" OpenSystem : iso7498:hasSourceSystem
+
+' Layout only.
+Assignment -[hidden]right- IsoControl
+UserData   -[hidden]right- Data
+
+@enduml

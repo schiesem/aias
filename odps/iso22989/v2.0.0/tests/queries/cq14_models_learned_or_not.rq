@@ -1,0 +1,31 @@
+# CQ 14: Which models exist, and which of them were learned?
+#
+# The distinction the pattern is built around. Entry 3.1.23 defines the model
+# in general and 3.3.7 the machine learning model, and the pattern keeps the
+# second below the first rather than treating the two as one.
+#
+# A rule-based system has a model. It was written rather than trained, and a
+# pattern equating model with machine learning model would have no way to say
+# so: it would either force a training that never happened or leave the system
+# without a model at all.
+#
+# Test case 2 is the case that needs it. Its model is a Model and not an
+# MLModel, and the second column reads no. Test case 3 carries both kinds at
+# once, which is what a hybrid system is.
+#
+# Whether a model was learned is read off its class rather than off the
+# presence of a training, so a model recorded before its training is stated
+# still answers correctly.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?model ?modelKind ?learned ?algorithm ?createdBy
+WHERE {
+  ?model a ?modelKind . ?modelKind rdfs:subClassOf* iso:Model .
+  FILTER NOT EXISTS { ?model a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?modelKind ;
+                                rdfs:subClassOf* iso:Model }
+  BIND(IF(EXISTS { ?model a ?ml . ?ml rdfs:subClassOf* iso:MLModel },
+          "yes", "no") AS ?learned)
+  OPTIONAL { ?model iso:basedOnAlgorithm ?algorithm }
+  OPTIONAL { ?model iso:isCreatedBy      ?createdBy }
+} ORDER BY ?learned ?model

@@ -1,0 +1,15 @@
+[
+  "https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|T_cr",
+  "https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|T_cs",
+  "https://w3id.org/aias/odp/iec60050/instances#DeadBand|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|",
+  "https://w3id.org/aias/odp/iec60050/instances#DeadTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|T_t",
+  "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|T_u",
+  "https://w3id.org/aias/odp/iec60050/instances#GainMargin|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|G_m",
+  "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|",
+  "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|",
+  "https://w3id.org/aias/odp/iec60050/instances#Overshoot|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|X_m",
+  "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin|https://w3id.org/aias/odp/iec60050#QualityCharacteristic|phi_m",
+  "https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|",
+  "https://w3id.org/aias/odp/iec60050/instances#SettlingTime|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|",
+  "https://w3id.org/aias/odp/iec60050/instances#TimeConstant|https://w3id.org/aias/odp/iec60050#TimeCharacteristic|T"
+]

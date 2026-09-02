@@ -1,0 +1,20 @@
+# CQ 06: Which artefact is a model, and which training produced it?
+#
+# The label of a model instance is the relative path of the file it stands for,
+# models/ProductionNet_v1.onnx in the worked example. That is how the
+# dissertation ties the abstract model to what is actually deployed: a name in
+# the graph is a path in the project.
+#
+# The question therefore asks for the name rather than for a place. A model has
+# no relation to a resource, and adding one would state something the model
+# does not know: where a file lies is a matter for the deployment, not for the
+# description of the system.
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?model ?artefact ?training ?algorithm
+WHERE {
+  ?model a ?mk . ?mk rdfs:subClassOf* iso22989:Model .
+  OPTIONAL { ?model rdfs:label ?artefact . FILTER(lang(?artefact) = "en") }
+  OPTIONAL { ?model iso22989:isCreatedBy ?training .
+             OPTIONAL { ?training iso22989:basedOnAlgorithm ?algorithm } }
+} ORDER BY ?model

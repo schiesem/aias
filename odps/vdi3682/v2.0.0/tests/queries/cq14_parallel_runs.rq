@@ -1,0 +1,19 @@
+# CQ 14: Which states feed a parallel run, and into which operators?
+#
+# Part 1, 4.2.1 models a parallel run as a partially shared flow: one state
+# enters more than one operator, and the operators run alongside each other.
+# The parallelism is therefore a property of the arrangement rather than of a
+# single edge, and the question reports the arrangement.
+#
+# The dependency is reported where it is stated. It says that two states arise
+# together, which is what holds the parallel branches to each other, and it may
+# sit on the feeding states or on the produced ones.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?state (GROUP_CONCAT(DISTINCT ?operator; separator=", ") AS ?operators)
+              (COUNT(DISTINCT ?operator) AS ?branches)
+              (GROUP_CONCAT(DISTINCT COALESCE(STR(?heldWith), ""); separator=", ") AS ?dependencies)
+WHERE {
+  ?flow a vdi3682:ParallelFlow ;
+        vdi3682:hasStateSource ?state ; vdi3682:hasOperatorTarget ?operator .
+  OPTIONAL { ?state vdi3682:dependency ?heldWith }
+} GROUP BY ?state ORDER BY ?state

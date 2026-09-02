@@ -1,0 +1,7 @@
+[
+  "https://w3id.org/aias/example/tc2#Correction|https://w3id.org/aias/example/tc2#PredictionData|https://w3id.org/aias/example/tc2#AcqImage|https://w3id.org/aias/example/tc2#SrcCamera|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#Evaluation|https://w3id.org/aias/example/tc2#EvalData|https://w3id.org/aias/example/tc2#AcqImage|https://w3id.org/aias/example/tc2#SrcCamera|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#Inference|https://w3id.org/aias/example/tc2#ProdData|https://w3id.org/aias/example/tc2#AcqImage|https://w3id.org/aias/example/tc2#SrcCamera|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#Merging|https://w3id.org/aias/example/tc2#ImageData|https://w3id.org/aias/example/tc2#AcqImage|https://w3id.org/aias/example/tc2#SrcCamera|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#Training|https://w3id.org/aias/example/tc2#TrainData|https://w3id.org/aias/example/tc2#AcqImage|https://w3id.org/aias/example/tc2#SrcCamera|https://w3id.org/aias/example/tc2#Camera"
+]

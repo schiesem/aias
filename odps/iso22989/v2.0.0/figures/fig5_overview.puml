@@ -1,0 +1,222 @@
+@startuml fig5_overview
+' Diagram 5 of the ISO/IEC 22989 pattern: everything needed to describe an AI
+' system.
+'
+' Conventions: shared/FIGURES.md, section 7. This diagram is for the
+' documentation, not for a paper, and it therefore shows the whole of the
+' pattern rather than one statement. Diagrams 1 to 4 are the readable cuts
+' through it.
+'
+' What it shows: the three views the pattern is built in, and how they connect.
+'
+'   1  the system, its tasks and its functions    what it is and what it does
+'   2  algorithms, models and parameters          what carries the behaviour
+'   3  data, its kinds and its preparation        what it runs on
+'   4  qualities                                  how well it does it
+'
+' Left out on purpose: the leaves of three taxonomies, that is the four task
+' kinds, the four learning types and the seven data process steps. Each is a
+' flat fan under a class that is shown, they add nothing to the structure this
+' drawing is about, and diagrams 1 to 3 carry them.
+'
+' Also left out: the disjointness of training, validation and evaluation data,
+' which cannot be drawn without an edge between every pair. The pattern asserts
+' it after the notes to 3.2.14 and 3.2.15.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam linetype ortho
+skinparam nodesep 20
+skinparam ranksep 40
+skinparam padding 2
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #8A98A8
+  BackgroundColor #FCFDFE
+  FontColor #33475B
+  FontSize 12
+  FontStyle italic
+}
+
+' ===================================================================
+'  1  The system, its tasks and its functions
+' ===================================================================
+
+package "What it is and what it does" {
+  class AISystem
+  class AIComponent
+  class AIType
+  class SymbolicAI
+  class SubsymbolicAI
+  class SystemDesign
+  class Task
+  class Prediction
+
+  class AIFunction
+  class Acquisition
+  class Storing
+  class DataProcessing
+  class Training
+  class Validation
+  class Verification
+  class Evaluation
+  class Inference
+  class Control
+
+  AIType <|-- SymbolicAI
+  AIType <|-- SubsymbolicAI
+
+  AIFunction <|-- Acquisition
+  AIFunction <|-- Storing
+  AIFunction <|-- DataProcessing
+  AIFunction <|-- Training
+  AIFunction <|-- Validation
+  AIFunction <|-- Verification
+  AIFunction <|-- Evaluation
+  AIFunction <|-- Inference
+  AIFunction <|-- Control
+
+  Acquisition -[hidden]right- Storing
+  Storing -[hidden]right- DataProcessing
+  DataProcessing -[hidden]right- Training
+  Training -[hidden]right- Validation
+  Validation -[hidden]right- Verification
+  Verification -[hidden]right- Evaluation
+  Evaluation -[hidden]right- Inference
+  Inference -[hidden]right- Control
+}
+
+note bottom of Task
+  Four kinds sit below Task,
+  see diagram 1.
+end note
+
+' ===================================================================
+'  2  Algorithms, models and parameters
+' ===================================================================
+
+package "What carries the behaviour" {
+  class Algorithm
+  class ModelAlgorithm
+  class TrainingAlgorithm
+  class MLAlgorithm
+  class EvaluationAlgorithm
+  class EvaluationMetric
+  class LearningType
+  class Model
+  class MLModel
+  class ModelParameter
+  class Hyperparameter
+  class MachineLearning
+  class Retraining
+
+  Algorithm <|-- ModelAlgorithm
+  Algorithm <|-- TrainingAlgorithm
+  Algorithm <|-- EvaluationAlgorithm
+  TrainingAlgorithm <|-- MLAlgorithm
+  Model <|-- MLModel
+
+  ModelAlgorithm -[hidden]right- TrainingAlgorithm
+  TrainingAlgorithm -[hidden]right- EvaluationAlgorithm
+}
+
+' ===================================================================
+'  3  Data
+' ===================================================================
+
+package "What it runs on" {
+  class Data
+  class DataSet
+  class Sample
+  class Label
+  class InputData
+  class TrainingData
+  class ValidationData
+  class EvaluationData
+  class ProductionData
+  class DataProcess
+  class DataSource
+  class DataSink
+
+  Data <|-- InputData
+  Data <|-- TrainingData
+  Data <|-- ValidationData
+  Data <|-- EvaluationData
+  Data <|-- ProductionData
+
+  InputData -[hidden]right- TrainingData
+  TrainingData -[hidden]right- ValidationData
+  ValidationData -[hidden]right- EvaluationData
+  EvaluationData -[hidden]right- ProductionData
+}
+
+note bottom of DataProcess
+  Seven steps sit below
+  DataProcess, see diagram 3.
+end note
+
+' ===================================================================
+'  4  Qualities, and what reaches beyond the subdomain
+' ===================================================================
+
+package "How well it does it" {
+  class CharacteristicValue
+  class Characteristic
+  class Controllability
+  class Risk
+}
+
+' ===================================================================
+'  The relations that tie the views together
+' ===================================================================
+
+AISystem --> AIComponent  : consistsOf
+AISystem --> AIType       : hasType
+AISystem --> SystemDesign : hasDesign
+AISystem --> Task         : hasTask
+AISystem --> AIFunction   : hasFunction
+AIComponent --> AIFunction : hasFunction
+AIComponent --> Model      : realisedByModel
+
+Inference  --> Prediction : creates
+Prediction --> Task       : fulfilsTask
+Inference  --> Model      : isExecutedBy
+
+Model     --> Algorithm      : basedOnAlgorithm
+Model     --> ModelParameter : hasParameter
+Algorithm --> Hyperparameter : hasHyperparameter
+Hyperparameter --> CharacteristicValue : hasSetting
+MLAlgorithm --> LearningType : basedOnLearning
+Training  --> ModelParameter : determines
+MLModel   --> Training       : isCreatedBy
+Training <|-- MachineLearning
+Training <|-- Retraining
+EvaluationAlgorithm --> EvaluationMetric : usesMetric
+
+AIFunction --> Data       : usesData
+DataSet    --> Data       : isComposedOf
+Data       --> Sample     : isComposedOf
+Sample     --> Label      : hasLabel
+Data       --> DataProcess : isProcessedBy
+Acquisition --> DataSource : hasDataSource
+Storing     --> DataSink   : hasDataSink
+
+AISystem --> CharacteristicValue : hasCharacteristicValue
+CharacteristicValue --> Characteristic : forCharacteristic
+AISystem --> Controllability : hasControllability
+AISystem --> Risk            : hasRisk
+
+@enduml

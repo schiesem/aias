@@ -1,0 +1,30 @@
+# CQ 06: Which operators begin a chain, which end one, and which state no order?
+#
+# The counterpart of question 05. That one reports the order, this one reports
+# where it starts and stops, and where it was never stated.
+#
+# An operator without a predecessor begins a chain and one without a successor
+# ends it. Both are ordinary, and each level of a decomposed process has one of
+# each.
+#
+# An operator with neither states no order at all, and whether that is a gap
+# depends on where it sits. A decomposed operator carries its order on the
+# level below, as O1 of Figure 5 does: the coarse view shows one step, the
+# refined view orders the two it consists of. An elementary operator with no
+# order is the case worth finding, since nothing else states when it runs.
+#
+# The two are therefore reported apart. The role is computed rather than
+# asserted, so a model states its order once and this answer follows from it.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT DISTINCT ?operator ?role
+WHERE {
+  ?operator a vdi3682:ProcessOperator .
+  OPTIONAL { ?operator vdi3682:hasPredecessor ?pred }
+  OPTIONAL { ?operator vdi3682:hasSuccessor   ?succ }
+  BIND(EXISTS { ?operator vdi3682:isComposedOf ?anySub } AS ?isDecomposed)
+  BIND(IF(!BOUND(?pred) && !BOUND(?succ),
+          IF(?isDecomposed, "no order, ordered one level down", "no order stated"),
+       IF(!BOUND(?pred), "starts a chain",
+       IF(!BOUND(?succ), "ends a chain", ""))) AS ?role)
+  FILTER(?role != "")
+} ORDER BY ?role ?operator

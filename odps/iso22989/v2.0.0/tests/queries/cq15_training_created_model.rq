@@ -1,0 +1,18 @@
+# CQ 17: Which training created a model, and which parameters did it determine?
+#
+# 3.3.15 defines training as determining or improving the parameters of a
+# model, 3.3.14 calls the result a trained model.
+#
+# The distinction between an algorithm and a model is what the parameters make:
+# the algorithm without them is a procedure, with them it is a model that
+# computes something. On test case 2 the answer is empty for the same reason as
+# question 15.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?model ?training (GROUP_CONCAT(DISTINCT ?parameter; separator=", ") AS ?parameters)
+WHERE {
+  ?model iso:isCreatedBy ?training .
+  OPTIONAL { ?training iso:determines ?parameter }
+} GROUP BY ?model ?training ORDER BY ?model

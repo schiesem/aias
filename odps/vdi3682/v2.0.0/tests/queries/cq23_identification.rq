@@ -1,0 +1,6 @@
+# CQ 23: How is an element identified, and with which entries?
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?object ?ident ?longName ?shortName WHERE {
+  ?object vdi3682:isIdentifiedBy ?id .
+  ?id vdi3682:uniqueIdent ?ident ; vdi3682:longName ?longName ; vdi3682:shortName ?shortName .
+} ORDER BY ?ident

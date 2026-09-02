@@ -1,0 +1,24 @@
+# CQ 24: Which values does a quality of service carry, for which parameter and
+# in which unit?
+#
+# Clause 5.5.5 characterises a communication by parameters, and the value is
+# reified so that it can carry the parameter it belongs to alongside the
+# quantity and the unit. Without that reification a model could state a number
+# and not what it is a number of.
+#
+# forParameter is functional: one value quantifies one parameter, which
+# negative model 03 tests.
+#
+# Test cases 1 and 3 state three values, case 4 two. Reading them across the
+# cases shows what changes with the transmission mode, and question 27
+# compares them per parameter.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?communication ?parameter ?quantity ?unit
+WHERE {
+  ?communication iso7498:hasQualityOfService ?qos .
+  ?qos iso7498:hasValue ?v .
+  ?v iso7498:forParameter ?p .
+  OPTIONAL { ?v iso7498:quantity ?quantity }
+  OPTIONAL { ?v iso7498:unit     ?unit }
+  BIND(REPLACE(STR(?p), ".*#", "") AS ?parameter)
+} ORDER BY ?communication ?parameter

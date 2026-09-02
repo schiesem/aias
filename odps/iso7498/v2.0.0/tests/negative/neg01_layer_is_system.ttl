@@ -1,0 +1,10 @@
+# MUST BE INCONSISTENT: Layer and OpenSystem are disjoint. A layer is a
+# subdivision of the architecture, 5.2.1.2; an open system is an entity of the
+# real world, 4.1.3.
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst: <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix ex: <https://w3id.org/aias/example/iso7498/neg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso7498/neg01> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+ex:Thing1 a iso7498:Layer , iso7498:OpenSystem .

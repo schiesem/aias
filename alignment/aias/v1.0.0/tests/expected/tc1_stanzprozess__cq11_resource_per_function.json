@@ -1,0 +1,14 @@
+[
+  "https://w3id.org/aias/example/stanzprozess#Elektromotor1|https://w3id.org/aias#Actuator|https://w3id.org/aias/example/stanzprozess#Stanzen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/stanzprozess#Elektromotor2|https://w3id.org/aias#Actuator|https://w3id.org/aias/example/stanzprozess#Stanzen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/stanzprozess#Positionssensor|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/stanzprozess#PositionDataAcquisition|https://w3id.org/aias/odp/iso22989#Acquisition",
+  "https://w3id.org/aias/example/stanzprozess#Positionssensor|https://w3id.org/aias#Sensor|https://w3id.org/aias/example/stanzprozess#Stanzen|https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+  "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/stanzprozess#Evaluation1|https://w3id.org/aias/odp/iso22989#Evaluation",
+  "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/stanzprozess#Inferenz1|https://w3id.org/aias/odp/iso22989#Inference",
+  "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/stanzprozess#Speicherung|https://w3id.org/aias/odp/iso22989#Storing",
+  "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/stanzprozess#Training1|https://w3id.org/aias/odp/iso22989#Training",
+  "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/stanzprozess#Zusammenfuehrung|https://w3id.org/aias/odp/iso22989#Merging",
+  "https://w3id.org/aias/example/stanzprozess#RaspberryPI4|https://w3id.org/aias#EdgeDevice|https://w3id.org/aias/example/stanzprozess#Vorverarbeitung|https://w3id.org/aias/odp/iso22989#DataProcess",
+  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|https://w3id.org/aias/example/stanzprozess#MotorDataAcquisition|https://w3id.org/aias/odp/iso22989#Acquisition",
+  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|https://w3id.org/aias/example/stanzprozess#Stanzprozessautomatisierung|https://w3id.org/aias/odp/iso22989#Automate"
+]

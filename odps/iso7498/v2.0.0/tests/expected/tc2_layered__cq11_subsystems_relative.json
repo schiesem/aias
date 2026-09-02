@@ -1,0 +1,14 @@
+[
+  "https://w3id.org/aias/example/iso7498/tc2#SystemA|https://w3id.org/aias/example/iso7498/tc2#A_DataLink|2|above|https://w3id.org/aias/example/iso7498/tc2#A_Network|3",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemA|https://w3id.org/aias/example/iso7498/tc2#A_DataLink|2|above|https://w3id.org/aias/example/iso7498/tc2#A_Transport|4",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemA|https://w3id.org/aias/example/iso7498/tc2#A_Network|3|above|https://w3id.org/aias/example/iso7498/tc2#A_Transport|4",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemA|https://w3id.org/aias/example/iso7498/tc2#A_Network|3|below|https://w3id.org/aias/example/iso7498/tc2#A_DataLink|2",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemA|https://w3id.org/aias/example/iso7498/tc2#A_Transport|4|below|https://w3id.org/aias/example/iso7498/tc2#A_DataLink|2",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemA|https://w3id.org/aias/example/iso7498/tc2#A_Transport|4|below|https://w3id.org/aias/example/iso7498/tc2#A_Network|3",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemB|https://w3id.org/aias/example/iso7498/tc2#B_DataLink|2|above|https://w3id.org/aias/example/iso7498/tc2#B_Network|3",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemB|https://w3id.org/aias/example/iso7498/tc2#B_DataLink|2|above|https://w3id.org/aias/example/iso7498/tc2#B_Transport|4",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemB|https://w3id.org/aias/example/iso7498/tc2#B_Network|3|above|https://w3id.org/aias/example/iso7498/tc2#B_Transport|4",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemB|https://w3id.org/aias/example/iso7498/tc2#B_Network|3|below|https://w3id.org/aias/example/iso7498/tc2#B_DataLink|2",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemB|https://w3id.org/aias/example/iso7498/tc2#B_Transport|4|below|https://w3id.org/aias/example/iso7498/tc2#B_DataLink|2",
+  "https://w3id.org/aias/example/iso7498/tc2#SystemB|https://w3id.org/aias/example/iso7498/tc2#B_Transport|4|below|https://w3id.org/aias/example/iso7498/tc2#B_Network|3"
+]

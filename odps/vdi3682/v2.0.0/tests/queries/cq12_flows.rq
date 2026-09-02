@@ -1,0 +1,13 @@
+# CQ 12: Which flows connect which elements?
+#
+# Reads the reified flows directly. These are the objects the graphical notation
+# draws and the annotation mechanism attaches to, which is why they are classes
+# rather than plain edges.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator ?direction ?flow ?state WHERE {
+  { ?flow vdi3682:hasOperatorTarget ?operator ; vdi3682:hasStateSource ?state .
+    BIND("incoming" AS ?direction) }
+  UNION
+  { ?flow vdi3682:hasOperatorSource ?operator ; vdi3682:hasStateTarget ?state .
+    BIND("outgoing" AS ?direction) }
+} ORDER BY ?operator ?direction ?flow

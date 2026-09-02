@@ -1,0 +1,22 @@
+# CQ 11: Which subsystems lie above and below a given one?
+#
+# Clause 5.2 arranges the subsystems of an open system into layers, and the
+# architecture rests on what is above and below rather than on absolute
+# numbers: an entity uses the service of the layer below and provides one to
+# the layer above.
+#
+# The question is therefore asked relative to a subsystem of the case rather
+# than to a fixed layer. It reports the neighbours within one open system,
+# since the relation only means something inside one stack.
+#
+# Test case 1 answers empty, having no subsystems. Test case 2 answers with the
+# three lower layers of its two systems.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?system ?subsystem ?layerNumber ?position ?otherSubsystem ?otherLayer
+WHERE {
+  ?system iso7498:hasSubsystem ?subsystem , ?otherSubsystem .
+  ?subsystem      iso7498:atLayer/iso7498:layerNumber ?layerNumber .
+  ?otherSubsystem iso7498:atLayer/iso7498:layerNumber ?otherLayer .
+  FILTER(?subsystem != ?otherSubsystem)
+  BIND(IF(?otherLayer > ?layerNumber, "above", "below") AS ?position)
+} ORDER BY ?system DESC(?layerNumber) ?position ?otherLayer

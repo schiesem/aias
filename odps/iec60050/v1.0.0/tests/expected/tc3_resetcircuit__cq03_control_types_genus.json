@@ -1,0 +1,16 @@
+[
+  "https://w3id.org/aias/odp/iec60050#AdaptiveControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#CascadeControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#ClosedLoopControl|https://w3id.org/aias/odp/iec60050#Control",
+  "https://w3id.org/aias/odp/iec60050#ComputerControl|https://w3id.org/aias/odp/iec60050#Control",
+  "https://w3id.org/aias/odp/iec60050#FuzzyControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#ModelBasedControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#MultivariableControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#OpenLoopControl|https://w3id.org/aias/odp/iec60050#Control",
+  "https://w3id.org/aias/odp/iec60050#OptimalControl|https://w3id.org/aias/odp/iec60050#Control",
+  "https://w3id.org/aias/odp/iec60050#ProgrammedControl|https://w3id.org/aias/odp/iec60050#Control",
+  "https://w3id.org/aias/odp/iec60050#RobustControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#RuleBasedControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#SamplingControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+  "https://w3id.org/aias/odp/iec60050#SequentialControl|https://w3id.org/aias/odp/iec60050#OpenLoopControl"
+]

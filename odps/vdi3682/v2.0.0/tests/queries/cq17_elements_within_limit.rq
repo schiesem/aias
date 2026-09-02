@@ -1,0 +1,12 @@
+# CQ 17: Which elements lie within which system limit?
+#
+# Runs over every system limit rather than one fixed instance, so the query
+# works on any model. The type column separates operators, states and flows.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?systemLimit ?elementType ?element WHERE {
+  ?element vdi3682:isWithin ?systemLimit ; a ?elementType .
+  FILTER(?elementType IN (vdi3682:ProcessOperator, vdi3682:Product,
+                          vdi3682:Energy, vdi3682:Information,
+                          vdi3682:Flow, vdi3682:ParallelFlow,
+                          vdi3682:AlternativeFlow))
+} ORDER BY ?systemLimit ?elementType ?element

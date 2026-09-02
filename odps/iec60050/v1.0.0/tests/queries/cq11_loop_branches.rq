@@ -1,0 +1,17 @@
+# CQ 11: Which branches does a control loop have?
+#
+# 351-47-07 defines the forward path from the output of the comparing element to
+# the output of the controlled system, 351-47-08 the feedback path from an
+# output of the controlled system back to the comparing element. Only a control
+# loop has both, so the answer is empty for a control chain, which is the
+# expected result on test cases 1 and 3.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?loop ?forwardPath ?feedbackPath
+WHERE {
+  ?loop a iec60050:ControlLoop .
+  OPTIONAL { ?loop iec60050:hasForwardPath  ?forwardPath  }
+  OPTIONAL { ?loop iec60050:hasFeedbackPath ?feedbackPath }
+} ORDER BY ?loop

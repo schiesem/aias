@@ -1,0 +1,158 @@
+@startuml fig4_overview
+' Diagram 4 of the AIAS alignment: the whole of it.
+'
+' Conventions: shared/FIGURES.md, section 8. This diagram is for the
+' documentation rather than for a paper, and it therefore shows everything the
+' alignment states. Diagrams 1 to 3 are the readable cuts through it.
+'
+' Prefixes are carried on every class, as in the other diagrams of this
+' package, because here the namespace is the statement.
+'
+' What it shows: the three main classes, what hangs below each, the devices,
+' and every bridge. Grouped by which subdomain a class comes from, so that the
+' shape of the alignment is visible: everything of this ontology in the middle,
+' the four patterns around it.
+'
+' Left out on purpose: everything internal to the four patterns. Each of them
+' carries its own overview diagram, and repeating any of it here would make
+' this drawing about the patterns rather than about what joins them.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam linetype ortho
+skinparam nodesep 20
+skinparam ranksep 42
+skinparam padding 2
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 11
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 12
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #8A98A8
+  BackgroundColor #FCFDFE
+  FontColor #33475B
+  FontSize 12
+  FontStyle italic
+}
+
+' ===================================================================
+'  What this ontology adds
+' ===================================================================
+
+package "The alignment" {
+  class "aias:Function"  as Function
+  class "aias:Component" as Component
+  class "aias:Relation"  as Relation
+  class "aias:Resource"  as Resource
+  class "aias:Product"   as Product
+
+  class "aias:Sensor"        as Sensor
+  class "aias:Actuator"      as Actuator
+  class "aias:Controller"    as Controller
+  class "aias:EdgeDevice"    as EdgeDevice
+  class "aias:Computer"      as Computer
+  class "aias:InternalCloud" as InternalCloud
+  class "aias:ExternalCloud" as ExternalCloud
+
+  Component <|-- Resource
+  Component <|-- Product
+
+  Resource <|-- Sensor
+  Resource <|-- Actuator
+  Resource <|-- Controller
+  Resource <|-- EdgeDevice
+  Resource <|-- Computer
+  Resource <|-- InternalCloud
+  Resource <|-- ExternalCloud
+
+  Sensor        -[hidden]right- Actuator
+  Actuator      -[hidden]right- Controller
+  Controller    -[hidden]right- EdgeDevice
+  Computer      -[hidden]right- InternalCloud
+  InternalCloud -[hidden]right- ExternalCloud
+  Sensor        -[hidden]down-  Computer
+}
+
+' ===================================================================
+'  What the patterns contribute
+' ===================================================================
+
+package "VDI 3682" {
+  class "vdi3682:ProcessOperator"   as ProcessOperator
+  class "vdi3682:TechnicalResource" as TechnicalResource
+  class "vdi3682:Product"           as VdiProduct
+  class "vdi3682:Assignment"        as Assignment
+  class "vdi3682:Flow"              as Flow
+}
+
+package "ISO 22989" {
+  class "iso22989:AISystem"   as AISystem
+  class "iso22989:AIFunction" as AIFunction
+  class "iso22989:Control"    as IsoControl
+  class "iso22989:Data"       as Data
+}
+
+package "IEC 60050" {
+  class "iec60050:Control"      as IecControl
+  class "iec60050:PhysicalUnit" as PhysicalUnit
+}
+
+package "ISO 7498" {
+  class "iso7498:Association"      as Association
+  class "iso7498:ProtocolDataUnit" as Pdu
+  class "iso7498:UserData"         as UserData
+  class "iso7498:OpenSystem"       as OpenSystem
+}
+
+' ===================================================================
+'  What hangs below the three main classes
+' ===================================================================
+
+Function <|-- ProcessOperator
+Function <|-- AIFunction
+Function <|-- IecControl
+Product  <|-- VdiProduct
+Relation <|-- Assignment
+Relation <|-- Association
+Relation <|-- Flow
+
+' A resource is a physical unit as well, which is what carries the chain from a
+' device to the role it plays in a control. Not an equivalence: see diagram 2.
+PhysicalUnit <|-- Resource
+
+' ===================================================================
+'  The two equivalences
+' ===================================================================
+
+Resource   -- TechnicalResource : owl:equivalentClass
+IsoControl -- IecControl        : owl:equivalentClass
+
+' ===================================================================
+'  The relations
+' ===================================================================
+
+AISystem --> Function  : aias:hasFunction
+AISystem --> Component : aias:hasComponent
+AISystem --> Relation  : aias:hasRelation
+
+Assignment --> Function : aias:assignedFunction
+Assignment --> Resource : vdi3682:assignedResource
+
+IecControl --> ProcessOperator : aias:actsOnProcessOperator
+Component  --> OpenSystem      : aias:appearsAsOpenSystem
+UserData   --> Data            : aias:carriesData
+
+Association --> Pdu      : iso7498:transmits
+Pdu         --> UserData : iso7498:hasUserData
+
+@enduml

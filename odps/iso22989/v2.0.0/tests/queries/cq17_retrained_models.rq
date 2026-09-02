@@ -1,0 +1,19 @@
+# CQ 20: Which models were retrained, and on which data?
+#
+# 3.3.10 defines retraining as updating a trained model by training with
+# different training data. Clause 6.2.7 and 6.2.8 ask for continuous validation
+# and re-evaluation, and a model recording this can tell a deployed model from
+# the one it replaced.
+#
+# Empty on all three test cases, which is the expected result: none of them
+# records a second round of training.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?model ?retraining ?data
+WHERE {
+  ?retraining a iso:Retraining .
+  OPTIONAL { ?model iso:isCreatedBy ?retraining }
+  OPTIONAL { ?retraining iso:usesData ?data }
+} ORDER BY ?model

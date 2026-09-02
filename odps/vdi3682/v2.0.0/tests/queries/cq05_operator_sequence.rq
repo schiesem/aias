@@ -1,0 +1,5 @@
+# CQ 05: In which order do the operators run?
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator ?successor WHERE {
+  ?operator vdi3682:hasSuccessor ?successor .
+} ORDER BY ?operator ?successor

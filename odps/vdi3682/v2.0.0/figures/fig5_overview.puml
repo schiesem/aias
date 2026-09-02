@@ -1,0 +1,101 @@
+@startuml fig5_overview
+' Diagram 5 of the VDI 3682 pattern: the whole of it.
+'
+' Conventions: shared/FIGURES.md, section 8. This diagram is for the
+' documentation rather than for a paper, and it therefore shows every class of
+' the pattern. Diagrams 1 to 4 are the readable cuts through it.
+'
+' What it shows: all fifteen classes and the relations between them, grouped by
+' the three questions the pattern answers: what the process is, what passes
+' through it, and what performs it.
+'
+' Left out on purpose: the data properties of the two attribute classes, which
+' diagram 4 carries, and the general hasSource and hasTarget of the flow, which
+' say nothing the four specific relations do not.
+'
+' Of each inverse pair only one direction is drawn, as in diagram 1. The
+' ontology declares hasUpperProcess alongside hasSubProcess and hasPredecessor
+' alongside hasSuccessor.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam linetype ortho
+skinparam nodesep 20
+skinparam ranksep 42
+skinparam padding 2
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 11
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 12
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #8A98A8
+  BackgroundColor #FCFDFE
+  FontColor #33475B
+  FontSize 12
+  FontStyle italic
+}
+
+package "What the process is" {
+  class Process
+  class ProcessOperator
+  class SystemLimit
+}
+
+package "What passes through it" {
+  class State
+  class Product
+  class Energy
+  class Information
+  class Flow
+  class ParallelFlow
+  class AlternativeFlow
+}
+
+package "What performs it" {
+  class Assignment
+  class TechnicalResource
+  class Attribute
+  class Identification
+  class Characteristic
+}
+
+State <|-- Product
+State <|-- Energy
+State <|-- Information
+Flow  <|-- ParallelFlow
+Flow  <|-- AlternativeFlow
+Attribute <|-- Identification
+Attribute <|-- Characteristic
+
+Process         --> ProcessOperator : consistsOf
+ProcessOperator --> Process         : hasSubProcess
+ProcessOperator --> ProcessOperator : isComposedOf
+ProcessOperator --> ProcessOperator : hasSuccessor
+ProcessOperator --> SystemLimit     : isWithin
+
+ProcessOperator --> State : hasInput
+ProcessOperator --> State : hasOutput
+State           --> State : dependency
+
+Flow --> State           : hasStateSource
+Flow --> ProcessOperator : hasOperatorTarget
+Flow --> ProcessOperator : hasOperatorSource
+Flow --> State           : hasStateTarget
+
+ProcessOperator   --> Assignment        : hasAssignment
+Assignment        --> TechnicalResource : assignedResource
+ProcessOperator   --> TechnicalResource : isAssignedTo
+TechnicalResource --> Identification    : isIdentifiedBy
+TechnicalResource --> Characteristic    : isCharacterizedBy
+
+@enduml

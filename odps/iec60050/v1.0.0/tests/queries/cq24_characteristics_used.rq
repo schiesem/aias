@@ -1,0 +1,33 @@
+# A-box check: catalogue as yardstick. The characteristics of 351-45 are
+# supplied as named individuals and the answer reports, per characteristic,
+# whether the case states a value for it. Without a case every one reads as not
+# stated, which is what the question asks rather than an answer from the
+# pattern.
+#
+# CQ 24: Which characteristics of the catalogue does a case state a value for,
+# and which does it leave open?
+#
+# Clause 351-45 names the time and quality characteristics a control may be
+# described by, and they are supplied as named individuals. A model states a
+# value for as many as it cares about.
+#
+# Listing them would report the same thirteen whatever case is loaded. Holding
+# them against the case reports what this control actually specifies, and the
+# unstated half is the useful one: a control with no stated dead time carries
+# no timing a requirement could be checked against.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?characteristic ?kind ?standing ?quantity ?unit
+WHERE {
+  ?c a ?kind . ?kind rdfs:subClassOf* iec60050:Characteristic .
+  FILTER NOT EXISTS { ?c a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?kind ;
+                                rdfs:subClassOf* iec60050:Characteristic }
+  OPTIONAL {
+    ?value iec60050:forCharacteristic ?c .
+    OPTIONAL { ?value iec60050:quantity ?quantity }
+    OPTIONAL { ?value iec60050:unit     ?unit }
+  }
+  BIND(IF(BOUND(?value), "stated", "not stated") AS ?standing)
+  BIND(REPLACE(STR(?c), ".*#", "") AS ?characteristic)
+} ORDER BY ?standing ?kind ?characteristic

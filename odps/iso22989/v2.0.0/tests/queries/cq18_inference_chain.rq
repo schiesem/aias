@@ -1,0 +1,19 @@
+# CQ 19: Which model executes which inference, on which input data, and which
+# prediction does it create?
+#
+# 3.1.17 defines inference as reasoning deriving conclusions from known
+# premises, 3.2.9 the input data as what a system calculates an output for, and
+# 3.1.27 the prediction as that output.
+#
+# Note 1 to 3.1.17 states that a premise is either a fact, a rule, a model, a
+# feature or raw data, which is why both a symbolic and a subsymbolic system
+# perform inference.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?model ?inference ?inputData ?prediction
+WHERE {
+  ?inference iso:isExecutedBy ?model ; iso:creates ?prediction .
+  OPTIONAL { ?inference iso:usesData ?inputData }
+} ORDER BY ?model ?inference

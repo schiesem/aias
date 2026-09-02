@@ -1,0 +1,315 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix bibo:     <http://purl.org/ontology/bibo/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <https://schema.org/> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    dcterms:title "AIAS Alignment Ontology"@en ;
+    dcterms:abstract """An alignment ontology describing artificial intelligence applications in automated plants together with the plant and the technical process it runs. It imports three subdomain patterns, for the technical process after VDI/VDE 3682, for communication after ISO/IEC 7498-1 and for artificial intelligence after ISO/IEC 22989, and ties them together through three collecting classes: a function, a component and a relation. Placing a process operator and an inference under one function class is what makes them comparable, so that the same assignment states which resource carries out which function, whichever subdomain that function comes from. Twelve own classes and eight own relations. Nothing here is normative: the patterns rest on standards, the alignment rests on design decisions."""@en ;
+    dcterms:created "2024-09-01"^^xsd:date ;
+    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:creator "Marvin Schieseck" ;
+    dcterms:creator "Philip Topalis" ;
+    dcterms:creator "Lasse Reinpold" ;
+    dcterms:creator "Felix Gehlhoff" ;
+    dcterms:creator "Alexander Fay" ;
+    dcterms:publisher "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
+    dcterms:rights """This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"""@en ;
+    foaf:fundedBy <https://dtecbw.de/> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:bibliographicCitation """M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"""@en ;
+    bibo:doi "10.1109/ETFA61755.2024.10710890" ;
+    dcterms:references """R. Haberfellner, O. de Weck, E. Fricke and S. Vössner, Systems Engineering. Springer, 2019. ISBN 978-3-030-13430-3"""@en ;
+    dcterms:subject "Ontology Alignment"@en ;
+    dcterms:subject "Artificial Intelligence"@en ;
+    dcterms:subject "Automated Plant"@en ;
+    dcterms:subject "Industrial Automation"@en ;
+    dcterms:subject "System Architecture"@en ;
+    schema:codeRepository <https://github.com/schiesem/aias> ;
+    dcterms:hasVersion <https://w3id.org/aias> ;
+    bibo:status "Draft"@en ;
+    vann:preferredNamespaceUri "https://w3id.org/aias#" ;
+    vann:preferredNamespacePrefix "aias" ;
+    owl:imports <https://w3id.org/aias/odp/vdi3682/1.0.0> ,
+                <https://w3id.org/aias/odp/iso7498/1.0.0> ,
+                <https://w3id.org/aias/odp/iso22989/1.0.0> ;
+    rdfs:comment """Nothing here is normative. The three patterns rest on standards, this ontology rests on design decisions of the work.
+
+Three subdomains are joined: the technical process after VDI 3682, the communication after ISO/IEC 7498-1, and the AI after ISO/IEC 22989.
+
+Scope: the three patterns named above and the classes that tie them together. The payload of a transmission is equated with a dataset rather than kept apart from it."""@en .
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:abstract a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+foaf:fundedBy a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+bibo:doi a owl:AnnotationProperty .
+dcterms:references a owl:AnnotationProperty .
+dcterms:subject a owl:AnnotationProperty .
+schema:codeRepository a owl:AnnotationProperty .
+dcterms:hasVersion a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+
+#################################################################
+#    The three collecting classes
+#
+#    Everything of the three patterns is placed below one of them, which is
+#    what makes elements of different subdomains comparable.
+#################################################################
+
+aias:Function
+    a owl:Class ;
+    rdfs:label "Function"@en ;
+    rdfs:label "Funktion"@de ;
+    rdfs:comment "Describes transformations by which inputs are turned into outputs in order to reach the objectives of a system."@en ;
+    rdfs:comment "Beschreibt Transformationen, durch die Eingaben in Ausgaben überführt werden, um Systemziele zu erreichen."@de ;
+    skos:note """A construct of this work, following the system elements of Haberfellner et al., Systems Engineering, Springer 2019. The notion of a function is the general one of a purposeful transformation.
+
+Without this class a process operator of VDI 3682 and an inference of ISO/IEC 22989 are unrelated things, and nothing can be said about both at once. Under one superclass they become comparable and are treated by the same mechanisms, above all the assignment to a component."""@en .
+
+aias:Component
+    a owl:Class ;
+    rdfs:label "Component"@en ;
+    rdfs:label "Komponente"@de ;
+    rdfs:comment "Describes physical system elements that perform functions or are transformed by them."@en ;
+    rdfs:comment "Beschreibt physische Systemelemente, die Funktionen ausführen oder durch sie umgewandelt werden."@de ;
+    skos:note """A construct of this work, following the system elements of Haberfellner. It covers physical elements only.
+
+Software artefacts such as models or AI components are deliberately not modelled as components. They stay in the AI subdomain, and their place in the whole is recorded through the functions they realise and the assignment of those functions to a resource."""@en .
+
+aias:Relation
+    a owl:Class ;
+    rdfs:label "Relation"@en ;
+    rdfs:label "Relation"@de ;
+    rdfs:comment "Describes structured relationships and dependencies between functions and components."@en ;
+    rdfs:comment "Beschreibt strukturierte Beziehungen und Abhängigkeiten zwischen Funktionen und Komponenten."@de ;
+    skos:note """A construct of this work, following the system elements of Haberfellner.
+
+Three specialisations concretise it, each taken from a subdomain pattern: the assignment and the flow of VDI 3682, and the communication of ISO/IEC 7498-1. Relations are classes rather than object properties so that a model can annotate one: an assignment is a thing, not an arrow."""@en .
+
+#################################################################
+#    The resource and the devices of a plant
+#
+#    Seven kinds of device, flat below the resource.
+#################################################################
+
+aias:Resource
+    a owl:Class ;
+    rdfs:label "Resource"@en ;
+    rdfs:label "Ressource"@de ;
+    rdfs:comment "A physical component performing a function."@en ;
+    rdfs:comment "Physische Komponente, die eine Funktion ausführt."@de ;
+    skos:note """A construct of this work, equated with the technical resource of VDI 3682: a resource is what performs a function, which is what that standard defines the technical resource as.
+
+The kinds of resource below are the devices of a plant. They come from no standard and can be refined further through a classification of equipment such as ECLASS."""@en ;
+    rdfs:subClassOf aias:Component ;
+    owl:equivalentClass vdi3682:TechnicalResource .
+
+aias:Product
+    a owl:Class ;
+    rdfs:label "Product"@en ;
+    rdfs:label "Produkt"@de ;
+    rdfs:comment "Physical objects created, changed or consumed in the course of a technical process."@en ;
+    rdfs:comment "Physische Objekte, die im Verlauf eines technischen Prozesses erzeugt, verändert oder verbraucht werden."@de ;
+    skos:note """A construct of this work, corresponding to the product of VDI 3682.
+
+Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them."""@en ;
+    rdfs:subClassOf aias:Component ;
+    owl:equivalentClass vdi3682:Product .
+
+aias:Sensor
+    a owl:Class ;
+    rdfs:label "Sensor"@en ; rdfs:label "Sensor"@de ;
+    rdfs:comment "Devices acquiring measured values from the technical process and digitising them."@en ;
+    rdfs:comment "Geräte, die Messwerte aus dem technischen Prozess erfassen und digitalisieren."@de ;
+    skos:note "A construct of this work. None of the seven device classes rests on a standard."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Actuator
+    a owl:Class ;
+    rdfs:label "Actuator"@en ; rdfs:label "Aktor"@de ;
+    rdfs:comment "Devices intervening physically in the technical process."@en ;
+    rdfs:comment "Geräte, die physisch in den technischen Prozess eingreifen."@de ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Controller
+    a owl:Class ;
+    rdfs:label "Controller"@en ; rdfs:label "Steuerung"@de ;
+    rdfs:comment "Devices for the deterministic and time-critical processing of signals in order to control the automated system or process."@en ;
+    rdfs:comment "Geräte zur deterministischen und echtzeitkritischen Verarbeitung von Signalen zur Steuerung und Regelung des automatisierten Systems beziehungsweise Prozesses."@de ;
+    rdfs:subClassOf aias:Resource .
+
+aias:EdgeDevice
+    a owl:Class ;
+    rdfs:label "Edge Device"@en ; rdfs:label "Edge-Gerät"@de ;
+    rdfs:comment "Microcontrollers or compact industrial computers with limited computing capacity available locally in the plant network or the company network."@en ;
+    rdfs:comment "Mikrocontroller oder kompakte Industriecomputer mit begrenzter, lokal verfügbarer Rechenleistung im Anlagennetzwerk oder Unternehmensnetzwerk."@de ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Computer
+    a owl:Class ;
+    rdfs:label "Computer"@en ; rdfs:label "Rechner"@de ;
+    rdfs:comment "Devices with fixed, higher computing capacity that can be extended by additional hardware."@en ;
+    rdfs:comment "Geräte mit fester, höherer Rechenleistung, die durch zusätzliche Hardware erweiterbar sind."@de ;
+    rdfs:subClassOf aias:Resource .
+
+aias:InternalCloud
+    a owl:Class ;
+    rdfs:label "Internal Cloud"@en ; rdfs:label "Interne Cloud"@de ;
+    rdfs:comment "Flexibly scalable computing resources inside the plant or company network."@en ;
+    rdfs:comment "Flexibel skalierbare Rechenressourcen innerhalb des Anlagen- oder Unternehmensnetzes."@de ;
+    rdfs:subClassOf aias:Resource .
+
+aias:ExternalCloud
+    a owl:Class ;
+    rdfs:label "External Cloud"@en ; rdfs:label "Externe Cloud"@de ;
+    rdfs:comment "Flexibly scalable computing resources outside the plant or company network, reaching which typically requires an external network such as an internet connection."@en ;
+    rdfs:comment "Flexibel skalierbare Rechenressourcen außerhalb des Anlagen- oder Unternehmensnetzes, deren Zugriff typischerweise ein externes Netzwerk, etwa eine Internetverbindung, erfordert."@de ;
+    skos:note "A function running here leaves the organisation, which is what separates it from the internal cloud."@en ;
+    rdfs:subClassOf aias:Resource .
+
+#################################################################
+#    What the patterns contribute to the function level
+#################################################################
+
+vdi3682:ProcessOperator rdfs:subClassOf aias:Function .
+iso22989:AIFunction     rdfs:subClassOf aias:Function .
+
+#################################################################
+#    What the patterns contribute to the relation level
+#
+#    Three specialisations, one per subdomain:
+#
+#      Assignment     the assignment of a function to a resource. An instance
+#                     states that a given function is carried out by a given
+#                     component, for example an inference by an edge device.
+#      Communication  the exchange of information between at least two
+#                     resources. An instance ties the components taking part
+#                     and makes the technical realisation of a data flow
+#                     explicit.
+#      Flow           directed flows of products or information within a
+#                     technical process.
+#
+#    All three keep the properties of their own pattern alongside the ones
+#    they gain here, which is what lets a dependency be described across the
+#    subdomains.
+#################################################################
+
+vdi3682:Assignment    rdfs:subClassOf aias:Relation .
+vdi3682:Flow          rdfs:subClassOf aias:Relation .
+iso7498:Communication rdfs:subClassOf aias:Relation .
+
+#################################################################
+#    Data as the arguments of functions
+#
+#    The data classes of ISO/IEC 22989 are not lifted into this ontology. They
+#    stay in the AI subdomain and act as the inputs and outputs of the
+#    functions defined there, reached through relations such as usesData.
+#
+#    Equating the two kinds of data is what lets a dataset be tied to a
+#    communication as well, so that a model can state which kind of data is
+#    used in which phase of the life cycle and where in the plant it sits or
+#    is communicated.
+#################################################################
+
+iso7498:Data owl:equivalentClass iso22989:Data .
+
+#################################################################
+#    Object properties
+#################################################################
+
+aias:hasFunction
+    a owl:ObjectProperty ;
+    rdfs:label "has function"@en ; rdfs:label "hat Funktion"@de ;
+    rdfs:comment "Relates an AI system to a function it carries out, whichever subdomain the function comes from."@en ;
+    rdfs:comment "Verbindet ein KI-System mit einer Funktion, die es ausführt, aus welchem Teilbereich sie auch stammt."@de ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range aias:Function .
+
+aias:hasComponent
+    a owl:ObjectProperty ;
+    rdfs:label "has component"@en ; rdfs:label "hat Komponente"@de ;
+    rdfs:comment "Relates an AI system to a physical component it is built from."@en ;
+    rdfs:comment "Verbindet ein KI-System mit einer physischen Komponente, aus der es aufgebaut ist."@de ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range aias:Component .
+
+aias:hasRelation
+    a owl:ObjectProperty ;
+    rdfs:label "has relation"@en ; rdfs:label "hat Relation"@de ;
+    rdfs:comment "Relates an AI system to a tie between its functions and its components."@en ;
+    rdfs:comment "Verbindet ein KI-System mit einer Verbindung zwischen seinen Funktionen und Komponenten."@de ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range aias:Relation .
+
+aias:isAssignedTo
+    a owl:ObjectProperty ;
+    rdfs:label "is assigned to"@en ; rdfs:label "ist zugeordnet"@de ;
+    rdfs:comment "Relates a function or a component to the assignment stating which resource carries out which function."@en ;
+    rdfs:comment "Verbindet eine Funktion oder eine Komponente mit der Zuordnung, die angibt, welche Ressource welche Funktion ausführt."@de ;
+    skos:note "VDI 3682 states the assignment from the process operator, which cannot reach a function of another subdomain. This relation is what closes that gap."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( aias:Function aias:Component ) ] ;
+    rdfs:range vdi3682:Assignment .
+
+aias:hasCommunication
+    a owl:ObjectProperty ;
+    rdfs:label "has communication"@en ; rdfs:label "hat Kommunikation"@de ;
+    rdfs:comment "Relates a component to a communication it takes part in. States a bidirectional use."@en ;
+    rdfs:comment "Verbindet eine Komponente mit einer Kommunikation, an der sie teilnimmt. Definiert eine bidirektionale Nutzung."@de ;
+    skos:note """A communication describes the exchange of information between at least two resources, and an instance of it is tied to the components taking part, which makes the technical realisation of a data flow explicit.
+
+The two relations below differentiate the direction. They are not subproperties of this one: a sensor that only sends carries hasOutputCommunication and nothing else, and a reasoner that inferred hasCommunication from it would report the sensor as bidirectional, which is the opposite of what the model states.
+
+The domain is the component rather than the resource on purpose. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and restricting the relation to resources would rule that out."""@en ;
+    rdfs:domain aias:Component ;
+    rdfs:range iso7498:Communication .
+
+aias:hasInputCommunication
+    a owl:ObjectProperty ;
+    rdfs:label "has input communication"@en ; rdfs:label "hat eingehende Kommunikation"@de ;
+    rdfs:comment "Describes a unidirectional use as a receiver."@en ;
+    rdfs:comment "Beschreibt eine unidirektionale Nutzung als Empfänger."@de ;
+    rdfs:domain aias:Component ;
+    rdfs:range iso7498:Communication .
+
+aias:hasOutputCommunication
+    a owl:ObjectProperty ;
+    rdfs:label "has output communication"@en ; rdfs:label "hat ausgehende Kommunikation"@de ;
+    rdfs:comment "Describes a unidirectional use as a sender."@en ;
+    rdfs:comment "Beschreibt eine unidirektionale Nutzung als Sender."@de ;
+    rdfs:domain aias:Component ;
+    rdfs:range iso7498:Communication .
+
+aias:hasFlow
+    a owl:ObjectProperty ;
+    rdfs:label "has flow"@en ; rdfs:label "hat Fluss"@de ;
+    rdfs:comment "Relates a function, a component or a product to a flow it takes part in."@en ;
+    rdfs:comment "Verbindet eine Funktion, eine Komponente oder ein Produkt mit einem Fluss, an dem sie teilnimmt."@de ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( aias:Function aias:Component ) ] ;
+    rdfs:range vdi3682:Flow .

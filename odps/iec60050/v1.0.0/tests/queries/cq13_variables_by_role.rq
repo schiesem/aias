@@ -1,0 +1,15 @@
+# CQ 13: Which variables occur in a case, and in which role?
+#
+# 351-48-01 to 351-48-09. The role is carried by the relation, not by the class
+# alone, so the query reports the relation used. The super property hasVariable
+# is left out of the report, since it would otherwise list every variable a
+# second time without its role.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?role ?variable
+WHERE {
+  ?control iec60050:hasVariable ?variable ; ?role ?variable .
+  ?role rdfs:subPropertyOf iec60050:hasVariable .
+} ORDER BY ?control ?role ?variable

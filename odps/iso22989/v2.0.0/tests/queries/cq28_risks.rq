@@ -1,0 +1,12 @@
+# CQ 30: Which risks does a model record for an AI system?
+#
+# 3.5.11 defines risk as the effect of uncertainty on objectives. Clause 6.2.2
+# asks stakeholders to assess risks across the whole life cycle, and this is
+# where a model records the result.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?risk
+WHERE { ?system iso:hasRisk ?risk }
+ORDER BY ?system

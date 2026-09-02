@@ -1,0 +1,18 @@
+# CQ 07: Which action does a control exert, and over which path?
+#
+# The question the pattern exists for. Closed-loop control requires the closed
+# action, 351-47-04, not merely the closed path. A closed path carrying an open
+# action, 351-47-06, is open-loop control, which is what test case 3 asserts and
+# what this query separates from test case 2.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?pathKind ?actionKind ?controlKind
+WHERE {
+  ?control iec60050:runsOverActionPath ?path ; iec60050:hasAction ?action .
+  ?path   a ?pathKind   . FILTER(?pathKind   IN (iec60050:OpenActionPath, iec60050:ClosedActionPath))
+  ?action a ?actionKind . FILTER(?actionKind IN (iec60050:OpenAction,     iec60050:ClosedAction))
+  ?control a ?controlKind .
+  FILTER(?controlKind IN (iec60050:OpenLoopControl, iec60050:ClosedLoopControl))
+} ORDER BY ?control

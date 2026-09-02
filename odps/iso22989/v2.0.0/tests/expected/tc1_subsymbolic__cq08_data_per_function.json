@@ -1,0 +1,7 @@
+[
+  "https://w3id.org/aias/example/iso22989/tc1#EvaluationA|https://w3id.org/aias/odp/iso22989#Evaluation|https://w3id.org/aias/example/iso22989/tc1#EvalDataA|https://w3id.org/aias/odp/iso22989#EvaluationData",
+  "https://w3id.org/aias/example/iso22989/tc1#InferenceA|https://w3id.org/aias/odp/iso22989#Inference|https://w3id.org/aias/example/iso22989/tc1#ProdDataA|https://w3id.org/aias/odp/iso22989#InputData",
+  "https://w3id.org/aias/example/iso22989/tc1#InferenceA|https://w3id.org/aias/odp/iso22989#Inference|https://w3id.org/aias/example/iso22989/tc1#ProdDataA|https://w3id.org/aias/odp/iso22989#ProductionData",
+  "https://w3id.org/aias/example/iso22989/tc1#TrainingA|https://w3id.org/aias/odp/iso22989#MachineLearning|https://w3id.org/aias/example/iso22989/tc1#TrainDataA|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/iso22989/tc1#ValidationA|https://w3id.org/aias/odp/iso22989#Validation|https://w3id.org/aias/example/iso22989/tc1#ValDataA|https://w3id.org/aias/odp/iso22989#ValidationData"
+]

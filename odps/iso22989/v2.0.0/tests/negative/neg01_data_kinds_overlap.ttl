@@ -1,0 +1,14 @@
+# MUST BE INCONSISTENT: TrainingData, ValidationData and EvaluationData are
+# pairwise disjoint. Note 1 to ISO/IEC 22989, 3.2.14 states that test data is
+# disjoint from training data and validation data, and note 1 to 3.2.15 says
+# the same of validation data.
+#
+# The axiom is what keeps an evaluation honest. A model assessed on data it
+# was trained on says nothing about its performance.
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/neg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso22989/neg01> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+ex:Data1 a iso:TrainingData , iso:EvaluationData .

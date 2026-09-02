@@ -1,0 +1,23 @@
+# CQ 17: Which data travels over which communication?
+#
+# The chain the alignment builds instead of the equivalence the dissertation
+# assumed: an association transmits a protocol data unit, the unit carries a
+# payload, and the payload carries a dataset.
+#
+# The chain works only because the payload and the dataset stay apart. Under an
+# equivalence a dataset would be the payload of one transmission, and asking
+# which communications carry it would be meaningless.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?communication ?data ?dataKind
+WHERE {
+  ?communication iso7498:transmits ?pdu .
+  ?pdu iso7498:hasUserData ?payload .
+  ?payload aias:carriesData ?data .
+  ?data a ?dataKind . ?dataKind rdfs:subClassOf iso22989:Data .
+} ORDER BY ?communication ?data

@@ -1,0 +1,18 @@
+# CQ 23: Which data is labelled, and with which label?
+#
+# 3.2.10 defines the label as a target variable assigned to a sample. Whether
+# data is labelled is what separates supervised learning, 3.3.12, from
+# unsupervised learning, 3.3.17.
+#
+# The pattern states it on the data rather than deriving it from the presence
+# of labels, so that a model can record the intent before the labels exist.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?data ?isLabelled (GROUP_CONCAT(DISTINCT ?l; separator=", ") AS ?labels)
+WHERE {
+  ?data iso:isLabelled ?isLabelled .
+  OPTIONAL { ?data iso:isComposedOf ?sample . ?sample iso:hasLabel ?label }
+  BIND(COALESCE(STR(?label), "") AS ?l)
+} GROUP BY ?data ?isLabelled ORDER BY ?data

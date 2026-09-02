@@ -1,0 +1,13 @@
+# CQ 13: Which learning type does a machine learning algorithm use?
+#
+# 3.3.9, 3.3.11, 3.3.12 and 3.3.17 define the four kinds. The relation is
+# functional: an algorithm performs one kind of learning, and a case needing
+# both labelled and unlabelled data states semi-supervised learning, 3.3.11,
+# rather than two kinds at once. Negative model 03 tests that.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?algorithm ?learningType
+WHERE { ?algorithm iso:basedOnLearning ?learningType }
+ORDER BY ?algorithm

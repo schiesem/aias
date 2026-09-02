@@ -1,0 +1,103 @@
+@startuml fig4_qualities
+' Diagram 4 of the ISO/IEC 22989 pattern: the qualities, and what reaches
+' beyond the AI subdomain.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: how a model states a quality of an AI system, and the two
+' terms of clause 3.5 that are modelled as things rather than as measured
+' values.
+'
+' The named individuals come from ISO22989-instances.ttl, which a model imports
+' separately. A model taking only the pattern gets the classes without the
+' vocabulary.
+'
+' Control is not shown here. Its entry sits in clause 3.5 with the terms
+' below, but the definition says action, so the pattern models it as a
+' function and diagram 1 carries it.
+'
+' Left out on purpose: everything of diagrams 1 to 3 except the three classes
+' the qualities attach to.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  What a quality attaches to
+' ===================================================================
+
+class AISystem
+class AIComponent
+class Model
+
+' ===================================================================
+'  How a value is stated
+' ===================================================================
+
+class CharacteristicValue {
+  dataProp: quantity
+  dataProp: unit
+}
+
+class Characteristic {
+  <<enum>>
+  Robustness
+  Reliability
+  Availability
+  Resilience
+  Explainability
+  Predictability
+  Bias
+  Trustworthiness
+  Performance
+}
+
+' Three holders, one relation. Labelling every edge writes the same name three
+' times into the same space, so only the middle one carries it.
+AISystem    --> "*" CharacteristicValue
+AIComponent --> "*" CharacteristicValue : hasCharacteristicValue
+Model       --> "*" CharacteristicValue
+
+CharacteristicValue --> "1" Characteristic : forCharacteristic
+
+' The second way into the same class, and what separates a value that was
+' measured from one that was set. A quality of clause 3.5 is established by a
+' system and reached through forCharacteristic; a hyperparameter is chosen
+' before a training and reaches its value through hasSetting.
+class Hyperparameter
+Hyperparameter --> "1" CharacteristicValue : hasSetting
+
+' ===================================================================
+'  The three terms modelled as things
+' ===================================================================
+
+class Controllability
+class Risk
+
+AISystem -left-> "*" Controllability : hasControllability
+AISystem -left-> "*" Risk            : hasRisk
+
+' Layout only.
+AISystem -[hidden]right- AIComponent
+AIComponent -[hidden]right- Model
+
+@enduml

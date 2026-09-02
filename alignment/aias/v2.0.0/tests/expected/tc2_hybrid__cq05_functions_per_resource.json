@@ -1,0 +1,13 @@
+[
+  "https://w3id.org/aias/example/tc2#Camera|https://w3id.org/aias/example/tc2#AcqImage|ISO 22989",
+  "https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias/example/tc2#Evaluation|ISO 22989",
+  "https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias/example/tc2#Storing|ISO 22989",
+  "https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias/example/tc2#Training|ISO 22989",
+  "https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias/example/tc2#Correction|IEC 60050",
+  "https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias/example/tc2#Inference|ISO 22989",
+  "https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias/example/tc2#Merging|ISO 22989",
+  "https://w3id.org/aias/example/tc2#IdReader|https://w3id.org/aias/example/tc2#AcqId|ISO 22989",
+  "https://w3id.org/aias/example/tc2#RobotControl|https://w3id.org/aias/example/tc2#AcqPosition|ISO 22989",
+  "https://w3id.org/aias/example/tc2#RobotControl|https://w3id.org/aias/example/tc2#PathControl|IEC 60050",
+  "https://w3id.org/aias/example/tc2#RobotControl|https://w3id.org/aias/example/tc2#Step1|VDI 3682"
+]

@@ -1,0 +1,14 @@
+[
+  "https://w3id.org/aias/example/tc1#AcqLeft|https://w3id.org/aias/example/tc1#SensorLeft",
+  "https://w3id.org/aias/example/tc1#AcqRight|https://w3id.org/aias/example/tc1#SensorRight",
+  "https://w3id.org/aias/example/tc1#AcqTime|https://w3id.org/aias/example/tc1#MachineControl",
+  "https://w3id.org/aias/example/tc1#Evaluation|https://w3id.org/aias/example/tc1#Cloud",
+  "https://w3id.org/aias/example/tc1#Inference|https://w3id.org/aias/example/tc1#Cloud",
+  "https://w3id.org/aias/example/tc1#PositionControl|https://w3id.org/aias/example/tc1#MotorControl",
+  "https://w3id.org/aias/example/tc1#Processing|https://w3id.org/aias/example/tc1#Cloud",
+  "https://w3id.org/aias/example/tc1#Step1|https://w3id.org/aias/example/tc1#MotorControl",
+  "https://w3id.org/aias/example/tc1#Step2|https://w3id.org/aias/example/tc1#MachineControl",
+  "https://w3id.org/aias/example/tc1#Step3|https://w3id.org/aias/example/tc1#MotorControl",
+  "https://w3id.org/aias/example/tc1#Storing|https://w3id.org/aias/example/tc1#Cloud",
+  "https://w3id.org/aias/example/tc1#Training|https://w3id.org/aias/example/tc1#Cloud"
+]

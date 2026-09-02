@@ -1,0 +1,20 @@
+# CQ 12: Which action lines belong to no action path?
+#
+# Entry 351-44-04 has an action path composed of action lines. A line outside
+# every path connects two functional units without taking part in the chain a
+# control runs over, so nothing reaches it and it reaches nothing.
+#
+# The two units are reported alongside, since that is what identifies the line:
+# a line has no name of its own in the standard, it is the connection from one
+# unit to another.
+#
+# Empty on the three cases, which is the intended state.
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+SELECT ?line ?from ?to ?variable
+WHERE {
+  ?line a iec60050:ActionLine .
+  OPTIONAL { ?line iec60050:fromUnit ?from }
+  OPTIONAL { ?line iec60050:toUnit   ?to }
+  OPTIONAL { ?line iec60050:carriesVariable ?variable }
+  FILTER NOT EXISTS { ?line iec60050:partOfActionPath ?any }
+} ORDER BY ?line

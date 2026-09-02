@@ -1,0 +1,10 @@
+# CQ 12: Which entities does a subsystem contain?
+#
+# ISO/IEC 7498-1, 5.2.2.1: a subsystem consists of one or several entities.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?subsystem ?entity WHERE {
+  ?s iso7498:hasEntity ?e .
+  BIND(REPLACE(STR(?s), ".*#", "") AS ?subsystem)
+  BIND(REPLACE(STR(?e), ".*#", "") AS ?entity)
+} ORDER BY ?subsystem ?entity

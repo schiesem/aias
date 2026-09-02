@@ -1,0 +1,13 @@
+# CQ 02: Which communications are connection-mode, which connectionless?
+#
+# ISO/IEC 7498-1, 5.3 and 5.8.4. The two are disjoint, which the negative models
+# check, so a communication carries at most one of them.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?communication ?mode WHERE {
+  { ?communication a iso7498:ConnectionModeAssociation .
+    BIND("connection-mode" AS ?mode) }
+  UNION
+  { ?communication a iso7498:ConnectionlessModeAssociation .
+    BIND("connectionless-mode" AS ?mode) }
+} ORDER BY ?communication

@@ -1,0 +1,23 @@
+# CQ 07: Which functions are not assigned to any resource?
+#
+# A model that names a function without saying what carries it is unfinished.
+# An empty answer means the model is complete in that respect.
+#
+# The query reports rather than enforces. OWL cannot require that every
+# function be assigned, and stating it as a cardinality would make a model
+# under construction inconsistent rather than incomplete.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?kind
+WHERE {
+  ?function a ?kind .
+  ?kind rdfs:subClassOf* aias:Function .
+  FILTER NOT EXISTS { ?function a ?n . ?n rdfs:subClassOf+ ?kind .
+                      ?n rdfs:subClassOf* aias:Function }
+  FILTER NOT EXISTS { ?any aias:assignedFunction ?function }
+} ORDER BY ?function

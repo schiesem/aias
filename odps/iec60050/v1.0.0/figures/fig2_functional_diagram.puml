@@ -1,0 +1,93 @@
+@startuml fig2_functional_diagram
+' Diagram 2 of the IEC 60050-351 pattern: the functional diagram.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: how an action path is resolved into the chain of functional
+' units it runs through, after Figures 1 and 2 of the standard, and how a
+' functional unit relates to the hardware realising it.
+'
+' Left out on purpose:
+'  - the kinds of control and the action: diagram 1
+'  - functions and characteristics: diagram 3
+'  - the variable taxonomy below VariableQuantity, which would double the box
+'    count without adding to the structure the diagram is about
+'  - the twelve subclasses of FunctionalUnit that Figures 1 and 2 name: those
+'    are diagram 2b, since twelve boxes on one node crowd out the mechanism
+'    this diagram is about
+'
+' Read left to right: the path decomposes into lines, a line runs between two
+' functional units, and a functional unit is realised by physical units.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  The path decomposes into lines
+' ===================================================================
+
+class ActionPath
+class ActionLine
+class ForwardPath
+class FeedbackPath
+class ControlLoop
+
+ActionPath <|-- ForwardPath
+ActionPath <|-- FeedbackPath
+
+ActionPath  --> "1..*" ActionLine   : hasActionLine
+ControlLoop --> "1"    ForwardPath  : hasForwardPath
+ControlLoop --> "1"    FeedbackPath : hasFeedbackPath
+
+' ===================================================================
+'  A line runs between two units and carries one variable
+' ===================================================================
+
+class FunctionalUnit
+class VariableQuantity
+
+' Two parallel edges to the same class. Given the same direction they are drawn
+' on top of each other and their labels collide, so the second is routed the
+' other way round. It therefore reads as isTargetOfActionLine, the inverse the
+' pattern declares for toUnit: the same statement seen from the unit.
+ActionLine     -down->  "1" FunctionalUnit   : fromUnit
+FunctionalUnit -up->    "*" ActionLine       : isTargetOfActionLine
+ActionLine     -left->  "1" VariableQuantity : carriesVariable
+
+' ===================================================================
+'  The two views of an item under consideration
+' ===================================================================
+
+class ItemUnderConsideration
+class PhysicalUnit
+
+ItemUnderConsideration <|-- FunctionalUnit
+ItemUnderConsideration <|-- PhysicalUnit
+
+' ===================================================================
+'  Composition and realisation
+' ===================================================================
+
+FunctionalUnit --> "*" FunctionalUnit : consistsOfUnit
+FunctionalUnit --> "*" PhysicalUnit   : realisedByPhysicalUnit
+
+@enduml

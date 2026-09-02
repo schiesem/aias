@@ -1,0 +1,13 @@
+# CQ 09: Which component performs a given function?
+#
+# The step from what happens to what does it. An empty answer means a model
+# records a life cycle without saying what carries it, which cases 1 and 2 do
+# on purpose: with one component of each kind there is nothing to tell apart.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?component ?function
+WHERE { ?component iso:hasFunction ?function .
+        ?component a iso:AIComponent }
+ORDER BY ?component ?function

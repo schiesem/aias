@@ -1,0 +1,16 @@
+# CQ 29: Which AI systems state a controllability, and what does it allow?
+#
+# 3.5.6 defines controllability as the property of an AI system that allows a
+# human or another external agent to intervene in its functioning.
+#
+# The entry that matters most for an AI system inside an automated plant, since
+# it says whether the plant can take over. Recorded as a relation to a thing
+# rather than as a value, because what matters is what the intervention
+# consists of.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?controllability
+WHERE { ?system iso:hasControllability ?controllability }
+ORDER BY ?system

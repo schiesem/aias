@@ -1,0 +1,24 @@
+# CQ 24: Which AI functions use data that no resource of the plant acquires?
+#
+# Question 08 of the ISO/IEC 22989 pattern asks which data a function uses, and
+# question 26 which data lacks an acquisition. This one asks whether the
+# acquisition reaches a resource, which neither pattern can answer alone.
+#
+# Data without an origin in the plant is not wrong. It may come from a
+# supplier, a simulation or an earlier project. The question names it so that
+# a reviewer can ask where it did come from.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?data
+WHERE {
+  ?function iso22989:usesData ?data .
+  FILTER NOT EXISTS {
+    ?data iso22989:isAcquiredBy ?acq .
+    ?assignment aias:assignedFunction ?acq ; vdi3682:assignedResource ?res .
+  }
+} ORDER BY ?function ?data

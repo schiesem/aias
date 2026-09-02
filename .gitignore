@@ -1,0 +1,48 @@
+# The roadmap is a working document: what is built, what the rules are,
+# what is still open. It stays local.
+ROADMAP.md
+
+# Ontology tooling: fetched on demand, not versioned (140 MB together).
+# shared/README.md says where each one comes from.
+*.jar
+__pycache__/
+
+# Widoco output: regenerate with shared/make_docs.py.
+# Publishing to GitHub Pages happens from a branch of its own, so the
+# generated files are kept out of the source history.
+odps/*/v*/docs/
+odps/*/v*/docs-*/
+alignment/*/v*/docs/
+alignment/*/v*/docs-*/
+
+# Widoco unpacks its LODE templates into a directory named after a timestamp
+# and leaves it behind when a run is interrupted.
+tmp[0-9]*/
+
+# Rendered diagrams: regenerate with shared/make_figures.py.
+# The PlantUML sources are versioned, the renderings are not.
+odps/*/v*/figures/*.png
+odps/*/v*/figures/*.svg
+odps/*/v*/figures/*.eps
+odps/*/v*/figures/*.pdf
+alignment/*/v*/figures/*.png
+alignment/*/v*/figures/*.svg
+alignment/*/v*/figures/*.eps
+alignment/*/v*/figures/*.pdf
+
+# The hand drawn figures of version 1.0.0 are not rendered, so they stay.
+!odps/*/v1.0.0/figures/figures-*.pdf
+!alignment/*/v1.0.0/figures/figures-*.pdf
+
+# Excerpts from purchased standards: kept locally while working on a pattern,
+# never committed. The package TESTCASE.md says which figure each one holds.
+odps/*/v*/figures/norm-*.png
+odps/*/v*/figures/norm-*.pdf
+
+# Editor and OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+*~
+*.bak

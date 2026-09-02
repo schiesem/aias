@@ -1,0 +1,13 @@
+# CQ 25: Which characteristics are recorded on which elements?
+#
+# Part 2, Section 5.2 fixes a characteristic as category, descriptive element
+# and relational element. The standard does not prescribe which properties may
+# appear, only this structure, so a vocabulary of non-functional properties has
+# to come from a further standard.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?object ?category ?descriptiveElement ?relationalElement WHERE {
+  ?object vdi3682:isCharacterizedBy ?characteristic .
+  OPTIONAL { ?characteristic vdi3682:category           ?category }
+  OPTIONAL { ?characteristic vdi3682:descriptiveElement ?descriptiveElement }
+  OPTIONAL { ?characteristic vdi3682:relationalElement  ?relationalElement }
+} ORDER BY ?object ?category

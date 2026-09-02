@@ -1,0 +1,22 @@
+# CQ 12: Which data leaves the organisation?
+#
+# A function running on an external cloud takes its data out of the
+# organisation. The question follows the assignment to that kind of resource
+# and reports what each such function works on.
+#
+# For a plant this is the first question a review asks, and the answer is an
+# argument about the architecture rather than about the technology: moving the
+# training to an internal cloud would empty this table.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?resource ?function ?data ?dataKind
+WHERE {
+  ?resource a aias:ExternalCloud .
+  ?assignment vdi3682:isAssignedTo ?resource .
+  ?function aias:isAssignedTo ?assignment .
+  OPTIONAL { ?function iso22989:usesData ?data .
+             ?data a ?dataKind . ?dataKind rdfs:subClassOf* iso22989:Data .
+             FILTER NOT EXISTS { ?data a ?n . ?n rdfs:subClassOf+ ?dataKind } }
+} ORDER BY ?function ?data

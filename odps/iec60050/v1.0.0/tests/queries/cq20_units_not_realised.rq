@@ -1,0 +1,24 @@
+# CQ 20: Which functional units are realised by no physical unit?
+#
+# Entries 351-56-02 and 351-56-03 keep the functional and the physical view
+# apart, and realisedByPhysicalUnit joins them. A functional unit without one
+# is a function nothing performs.
+#
+# Legitimate in one case and a gap in every other, and the class is what tells
+# them apart. The controlled system, 351-49-01, is the part of the plant being
+# influenced: it is the process itself rather than a device, so nothing
+# realises it and nothing should. A comparing element without a device, on the
+# other hand, is a function with no equipment behind it.
+#
+# The answer therefore needs reading rather than clearing. OWL cannot require
+# the realisation, so this reports where a model has stayed silent.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?unit ?kind
+WHERE {
+  ?unit a ?kind . ?kind rdfs:subClassOf* iec60050:FunctionalUnit .
+  FILTER NOT EXISTS { ?unit a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?kind ;
+                                rdfs:subClassOf* iec60050:FunctionalUnit }
+  FILTER NOT EXISTS { ?unit iec60050:realisedByPhysicalUnit ?any }
+} ORDER BY ?kind ?unit

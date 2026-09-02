@@ -1,0 +1,23 @@
+# CQ 13: How is a component tied to a communication?
+#
+# Three relations, and the direction is what tells them apart: hasCommunication
+# states a bidirectional use, hasInputCommunication a use as a receiver,
+# hasOutputCommunication a use as a sender.
+#
+# The distinction is what makes a data flow readable. On one fieldbus the
+# motors receive commands and send process data, the position sensor only
+# sends, and the control does both, which no single relation could express.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?component ?componentKind ?use ?communication
+WHERE {
+  VALUES (?relation ?use) {
+    (aias:hasCommunication       "both directions")
+    (aias:hasInputCommunication  "receives")
+    (aias:hasOutputCommunication "sends")
+  }
+  ?component ?relation ?communication .
+  ?component a ?componentKind . ?componentKind rdfs:subClassOf* aias:Component .
+  FILTER NOT EXISTS { ?component a ?n . ?n rdfs:subClassOf+ ?componentKind }
+} ORDER BY ?communication ?component

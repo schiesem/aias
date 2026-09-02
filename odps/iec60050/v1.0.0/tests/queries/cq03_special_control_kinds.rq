@@ -1,0 +1,23 @@
+# CQ 03: Which special kinds of control does a case use?
+#
+# Below the open and closed loop the standard names further kinds: sampling
+# control 351-47-20, cascade control 351-47-25, adaptive, fuzzy, robust,
+# model-based and rule-based control among them. They say how a control works
+# rather than whether its path returns.
+#
+# Asked of the case rather than of the class hierarchy. Listing the kinds the
+# pattern knows would answer the same whichever model is loaded; reporting the
+# ones a case uses says what this control is.
+#
+# The genus is reported alongside, since every special kind sits under the open
+# or the closed loop and the answer is only readable against that: a sampling
+# control is a closed loop that acts at intervals rather than continuously.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?control ?specialKind ?genus
+WHERE {
+  ?control a ?specialKind .
+  ?specialKind rdfs:subClassOf+ iec60050:Control ; rdfs:subClassOf ?genus .
+  FILTER(?specialKind NOT IN (iec60050:OpenLoopControl, iec60050:ClosedLoopControl))
+  FILTER(isIRI(?genus))
+} ORDER BY ?control ?specialKind

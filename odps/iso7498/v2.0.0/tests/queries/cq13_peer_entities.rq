@@ -1,0 +1,13 @@
+# CQ 13: Which entities are peers, and at which layer?
+#
+# ISO/IEC 7498-1, 5.2.1.3. The relation is symmetric, so asserting it once
+# yields both directions after reasoning.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?layerNumber ?entity ?peer WHERE {
+  ?e iso7498:peerEntity ?p .
+  ?e iso7498:atLayer ?l .
+  ?l iso7498:layerNumber ?layerNumber .
+  BIND(REPLACE(STR(?e), ".*#", "") AS ?entity)
+  BIND(REPLACE(STR(?p), ".*#", "") AS ?peer)
+} ORDER BY ?layerNumber ?entity

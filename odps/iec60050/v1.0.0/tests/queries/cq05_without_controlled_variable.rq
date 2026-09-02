@@ -1,0 +1,24 @@
+# CQ 05: Which controls state no controlled variable?
+#
+# Entry 351-42-09 defines the controlled variable as the variable of the
+# controlled system that the control acts on. A control without one acts on
+# nothing a model can name, so nothing can be said about what it achieves.
+#
+# Legitimate while a description is being sketched and questionable once it is
+# finished. A sequential control, 351-47-04, is the case worth allowing for: it
+# runs through steps rather than holding a variable, and a model of one may
+# well name none.
+#
+# The kind is reported alongside so the two can be told apart. OWL cannot
+# require the variable under the open world assumption, so this reports rather
+# than enforces.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?control ?kind
+WHERE {
+  ?control a ?kind . ?kind rdfs:subClassOf* iec60050:Control .
+  FILTER NOT EXISTS { ?control a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?kind ;
+                                rdfs:subClassOf* iec60050:Control }
+  FILTER NOT EXISTS { ?control iec60050:hasControlledVariable ?any }
+} ORDER BY ?control

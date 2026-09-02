@@ -1,0 +1,90 @@
+@startuml fig1_control_kinds
+' Diagram 1 of the IEC 60050-351 pattern: kind of control, action path, action.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' Left out on purpose:
+'  - the action line and what it runs between, the forward and feedback paths
+'    of a control loop, and the units of Figures 1 and 2: diagram 2
+'  - functions and characteristics: diagram 3
+'  - OptimalControl, ProgrammedControl and ComputerControl, which sit directly
+'    under Control because 351-47-20 and 351-47-52 name no genus, and the eight
+'    kinds below ClosedLoopControl: diagram 5 carries the full hierarchy
+'
+' No class for automating stands between Control and the two kinds of control.
+' The standard defines automating in 351-43 as a task, not in 351-47 as a kind
+' of control, and a hand-operated closed-loop control is one without being
+' automated. That notion belongs to the AI pattern and to the alignment.
+'
+' Read top to bottom: the kind of control, then the two conditions that decide
+' it, then what carries it out. Structure and behaviour are two columns, since
+' the point of the pattern is that they are two conditions and not one.
+'
+' The four relations start at Control, not at Automation, because that is their
+' domain in the ontology. Automation inherits them. Drawing them at Automation
+' would claim a restriction the model does not make.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+class Control
+class OpenLoopControl
+class ClosedLoopControl
+
+class Action
+class OpenAction
+class ClosedAction
+
+class ActionPath
+class OpenActionPath
+class ClosedActionPath
+
+class ControlChain
+class ControlLoop
+
+' --- the kind of control -------------------------------------------
+Control <|-- OpenLoopControl
+Control <|-- ClosedLoopControl
+
+' --- the two conditions ---------------------------------------------
+Action <|-- OpenAction
+Action <|-- ClosedAction
+
+ActionPath <|-- OpenActionPath
+ActionPath <|-- ClosedActionPath
+
+' --- what carries out the automation --------------------------------
+' --- relations -------------------------------------------------------
+Control --> "1" Action      : hasAction
+Control --> "1" ActionPath  : runsOverActionPath
+Action     -down-> "1" ActionPath  : actionOverPath
+Control --> ControlChain    : realisedBy
+Control --> ControlLoop     : realisedBy
+
+' Layout only. Each pair of leaves stays under its own superclass, and the two
+' arrangements that carry an automation stay out of the path between Action and
+' ActionPath, where three edges already meet.
+OpenAction     -[hidden]right- ClosedAction
+OpenActionPath -[hidden]right- ClosedActionPath
+ControlChain   -[hidden]right- ControlLoop
+
+@enduml

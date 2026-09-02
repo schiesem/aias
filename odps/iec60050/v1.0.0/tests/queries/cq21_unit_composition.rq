@@ -1,0 +1,24 @@
+# CQ 21: Which functional units are composed of others?
+#
+# Entry 351-56-02 allows a functional unit to consist of further units, and the
+# standard uses that in its own definitions: the controller, 351-49-11, is a
+# unit consisting of a comparing and a controlling element.
+#
+# The composition is what lets a model describe the same arrangement at two
+# levels. A case may state a controller and stop there, or it may open it up
+# and state the two elements inside it, and both are complete descriptions at
+# their level.
+#
+# Reported with the kind of each, since the composition is only readable
+# against what the parts are: a controller made of a comparing and a
+# controlling element follows the standard, one made of two measuring elements
+# does not, and the pattern asserts no such rule.
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+SELECT ?unit ?unitKind ?partOfIt ?partKind
+WHERE {
+  ?unit iec60050:consistsOfUnit ?partOfIt .
+  ?unit     a ?unitKind . ?unitKind rdfs:subClassOf* iec60050:FunctionalUnit .
+  ?partOfIt a ?partKind . ?partKind rdfs:subClassOf* iec60050:FunctionalUnit .
+  FILTER NOT EXISTS { ?unit a ?n1 . ?n1 rdfs:subClassOf+ ?unitKind }
+  FILTER NOT EXISTS { ?partOfIt a ?n2 . ?n2 rdfs:subClassOf+ ?partKind }
+} ORDER BY ?unit ?partOfIt

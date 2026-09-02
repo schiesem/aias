@@ -1,0 +1,6 @@
+# MUST BE INCONSISTENT: Product and Energy are disjoint subclasses of State.
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix ex: <https://w3id.org/aias/example/neg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/neg02> a owl:Ontology ; owl:imports <https://w3id.org/aias/odp/vdi3682/2.0.0> .
+ex:Thing2 a vdi3682:Product , vdi3682:Energy .

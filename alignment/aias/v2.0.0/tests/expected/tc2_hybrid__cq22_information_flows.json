@@ -1,0 +1,8 @@
+[
+  "https://w3id.org/aias/example/tc2#FlowIn||https://w3id.org/aias/example/tc2#Step1|https://w3id.org/aias/example/tc2#CommCameraToEdge",
+  "https://w3id.org/aias/example/tc2#FlowIn||https://w3id.org/aias/example/tc2#Step1|https://w3id.org/aias/example/tc2#CommEdgeToCloud",
+  "https://w3id.org/aias/example/tc2#FlowIn||https://w3id.org/aias/example/tc2#Step1|https://w3id.org/aias/example/tc2#CommEdgeToControl",
+  "https://w3id.org/aias/example/tc2#FlowOut|https://w3id.org/aias/example/tc2#Step1||https://w3id.org/aias/example/tc2#CommCameraToEdge",
+  "https://w3id.org/aias/example/tc2#FlowOut|https://w3id.org/aias/example/tc2#Step1||https://w3id.org/aias/example/tc2#CommEdgeToCloud",
+  "https://w3id.org/aias/example/tc2#FlowOut|https://w3id.org/aias/example/tc2#Step1||https://w3id.org/aias/example/tc2#CommEdgeToControl"
+]

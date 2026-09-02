@@ -1,0 +1,76 @@
+@startuml fig3_flows
+' Diagram 3 of the VDI 3682 pattern: the flow, and the two forms it takes.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: how a flow connects a state with an operator, and the two
+' special forms Part 1 gives it.
+'
+' The flow is a class rather than an edge. Part 1 draws it as an arrow, and
+' reifying it is what lets a model identify one, annotate it, and mark it as
+' parallel or alternative. That is why it needs a diagram of its own: four
+' source and target relations run between the same three classes, and drawing
+' them alongside the states of diagram 2 stacks their labels.
+'
+' A flow runs from a state to an operator or from an operator to a state, never
+' from an operator to an operator. The four relations below are what states
+' that, and the general hasSource and hasTarget above them are left out: they
+' carry no information a drawing can show.
+'
+' State and ProcessOperator each appear in two boxes, once per role. Drawing
+' them once would put four edges between two boxes and stack their labels, and
+' the roles are what the diagram is about.
+'
+' Left out on purpose:
+'  - the kinds of state: diagram 2
+'  - resources and their assignment: diagram 4
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 50
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' The two directions a flow can run are drawn as two rows rather than as four
+' edges between two boxes. State and ProcessOperator each appear twice, once as
+' a source and once as a target, which is what a flow connects: the classes are
+' the same, the roles are not.
+class "State" as SourceState
+class "ProcessOperator" as TargetOperator
+class "ProcessOperator" as SourceOperator
+class "State" as TargetState
+
+class Flow
+class ParallelFlow
+class AlternativeFlow
+
+Flow <|-- ParallelFlow
+Flow <|-- AlternativeFlow
+
+Flow --> "1" SourceState    : hasStateSource
+Flow --> "1" TargetOperator : hasOperatorTarget
+Flow --> "1" SourceOperator : hasOperatorSource
+Flow --> "1" TargetState    : hasStateTarget
+
+' Layout only: the incoming pair on one row, the outgoing pair on the next.
+SourceState    -[hidden]right- TargetOperator
+SourceOperator -[hidden]right- TargetState
+ParallelFlow   -[hidden]right- AlternativeFlow
+
+@enduml

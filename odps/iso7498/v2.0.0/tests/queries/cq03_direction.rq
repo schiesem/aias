@@ -1,0 +1,18 @@
+# CQ 03: In which direction does a communication run?
+#
+# ISO/IEC 7498-1, 6.5.1.1 calls the ultimate source or destination of data an
+# end system, and 5.3.1.14 to 5.3.1.16 name the three directions.
+#
+# Direction is stated twice over, on purpose. The source and target systems say
+# who sends and who receives; hasDirection says whether both directions are
+# possible at once or only in turn, which the systems alone cannot express.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?communication ?direction
+       (GROUP_CONCAT(DISTINCT ?src; separator=", ") AS ?sources)
+       (GROUP_CONCAT(DISTINCT ?tgt; separator=", ") AS ?targets) WHERE {
+  ?communication iso7498:hasSourceSystem ?s ; iso7498:hasTargetSystem ?t .
+  OPTIONAL { ?communication iso7498:hasDirection ?d .
+             BIND(REPLACE(STR(?d), ".*#", "") AS ?direction) }
+  BIND(REPLACE(STR(?s), ".*#", "") AS ?src)
+  BIND(REPLACE(STR(?t), ".*#", "") AS ?tgt)
+} GROUP BY ?communication ?direction ORDER BY ?communication

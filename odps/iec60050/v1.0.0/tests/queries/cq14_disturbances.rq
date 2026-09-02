@@ -1,0 +1,11 @@
+# CQ 14: Which disturbance variables act, and on which unit?
+#
+# 351-48-08: undesired, independent and mostly unpredictable input variables
+# acting on the system from the outside.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?disturbance
+WHERE { ?system iec60050:hasDisturbanceVariable ?disturbance }
+ORDER BY ?system ?disturbance

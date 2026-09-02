@@ -1,0 +1,256 @@
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/tc1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 1: a subsymbolic system, after ISO/IEC 22989, 3.1.34.
+#
+# The full machine learning life cycle, from acquisition through training to
+# inference, and the case the other two are read against.
+#
+#   Acquisition -> DataProcessing -> Training -> Validation -> Evaluation
+#                                                                  |
+#                                                              Inference -> Prediction
+#
+# The elements stay generic, since the standard is a vocabulary rather than a
+# set of worked examples.
+
+<https://w3id.org/aias/example/iso22989/tc1>
+    a owl:Ontology ;
+    rdfs:label "ISO 22989 test case 1: a subsymbolic system"@en ;
+    rdfs:comment "The full machine learning life cycle, after ISO/IEC 22989, 3.1.34, 3.3.5, 3.3.7 and 3.3.15."@en ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+
+#################################################################
+#    The system, its kind and its task
+#################################################################
+
+ex:SystemA
+    a iso:AISystem ;
+    rdfs:label "System A"@en ;
+    rdfs:comment "An engineered system generating outputs for a given set of human-defined objectives, 3.1.4."@en ;
+    iso:hasType   iso:SubsymbolicAI ;
+    iso:hasTask   ex:TaskA ;
+    iso:hasDesign iso:Edge ;
+    iso:hasFunction ex:AcquisitionA , ex:ProcessingA , ex:TrainingA ,
+                    ex:ValidationA , ex:EvaluationA , ex:InferenceA , ex:StoringA ;
+    iso:hasCharacteristicValue ex:CV_Robustness , ex:CV_Performance ;
+    iso:hasControllability ex:ControllabilityA .
+
+ex:TaskA
+    a iso:Classification ;
+    rdfs:label "Task A"@en ;
+    rdfs:comment "Assigning inputs to discrete classes, named in note 2 to 3.1.35."@en .
+
+ex:ControllabilityA
+    a iso:Controllability ;
+    rdfs:label "Controllability A"@en ;
+    rdfs:comment "A recorded way for an external agent to intervene, 3.5.6. Here the system can be switched to a fixed output."@en .
+
+#################################################################
+#    The algorithms
+#
+#    All three kinds appear. Only the machine learning algorithm has an entry,
+#    3.3.6, and REFERENCE.md records the other two as constructs of this work.
+#################################################################
+
+ex:ModelAlgA
+    a iso:ModelAlgorithm ;
+    rdfs:label "Model algorithm A"@en ;
+    rdfs:comment "The structure of the model, without the parameters a training determines."@en ;
+    iso:hasHyperparameter ex:HP_Layers .
+
+ex:TrainAlgA
+    a iso:MLAlgorithm ;
+    rdfs:label "Training algorithm A"@en ;
+    rdfs:comment "An algorithm determining the parameters of a model from data according to given criteria, 3.3.6."@en ;
+    iso:basedOnLearning iso:SupervisedLearning ;
+    iso:hasHyperparameter ex:HP_LearningRate .
+
+ex:EvalAlgA
+    a iso:EvaluationAlgorithm ;
+    rdfs:label "Evaluation algorithm A"@en ;
+    iso:usesMetric ex:MetricA ;
+    iso:hasHyperparameter ex:HP_Threshold .
+
+ex:MetricA a iso:EvaluationMetric ; rdfs:label "Metric A"@en .
+
+#    Each of the three carries the value it was set to. The value is reached by
+#    hasSetting rather than by forCharacteristic, since it was chosen before
+#    the training rather than established by one. Asking a model which of its
+#    values were stated and which were measured is what the two relations keep
+#    answerable.
+
+ex:HP_Layers a iso:Hyperparameter ; rdfs:label "Hyperparameter: number of layers"@en ;
+    iso:hasSetting ex:SetLayers .
+ex:HP_LearningRate a iso:Hyperparameter ; rdfs:label "Hyperparameter: learning rate"@en ;
+    iso:hasSetting ex:SetLearningRate .
+ex:HP_Threshold a iso:Hyperparameter ; rdfs:label "Hyperparameter: metric threshold"@en ;
+    iso:hasSetting ex:SetThreshold .
+
+ex:SetLayers a iso:CharacteristicValue ;
+    rdfs:label "Setting: 12 layers"@en ;
+    iso:quantity "12"^^xsd:decimal .
+
+ex:SetLearningRate a iso:CharacteristicValue ;
+    rdfs:label "Setting: learning rate 0.001"@en ;
+    iso:quantity "0.001"^^xsd:decimal .
+
+ex:SetThreshold a iso:CharacteristicValue ;
+    rdfs:label "Setting: threshold 0.8"@en ;
+    iso:quantity "0.8"^^xsd:decimal .
+
+#################################################################
+#    Training produces the model
+#
+#    The step where the difference between an algorithm and a model arises:
+#    the algorithm without parameters is a procedure, with them it is a model.
+#################################################################
+
+ex:TrainingA
+    a iso:MachineLearning ;
+    rdfs:label "Training A"@en ;
+    rdfs:comment "Optimising the model parameters computationally, 3.3.5, which is the machine learning case of training, 3.3.15."@en ;
+    iso:basedOnAlgorithm ex:TrainAlgA ;
+    iso:usesData         ex:TrainDataA ;
+    iso:determines       ex:MP_Weights .
+
+ex:MP_Weights
+    a iso:ModelParameter ;
+    rdfs:label "Model parameters A"@en ;
+    rdfs:comment "Internal variables affecting how the model computes its outputs, 3.3.8. Determined by the training, not chosen."@en .
+
+ex:ModelA
+    a iso:MLModel ;
+    rdfs:label "Model A"@en ;
+    rdfs:comment "A mathematical construct generating an inference or prediction from input data, 3.3.7. The result of a training, which 3.3.14 calls a trained model."@en ;
+    iso:basedOnAlgorithm ex:ModelAlgA ;
+    iso:hasParameter     ex:MP_Weights ;
+    iso:isCreatedBy      ex:TrainingA ;
+    iso:isValidatedBy    ex:ValidationA ;
+    iso:isEvaluatedBy    ex:EvaluationA .
+
+#################################################################
+#    The remaining functions
+#################################################################
+
+ex:AcquisitionA
+    a iso:Acquisition ;
+    rdfs:label "Acquisition A"@en ;
+    iso:hasDataSource ex:SourceA .
+
+ex:StoringA
+    a iso:Storing ;
+    rdfs:label "Storing A"@en ;
+    iso:hasDataSink ex:SinkA .
+
+ex:ProcessingA
+    a iso:DataProcessing ;
+    rdfs:label "Processing A"@en ;
+    rdfs:comment "Transforming input data into output data, clause 5.10. What it consists of is recorded through its steps."@en ;
+    iso:consistsOfStep ex:StepNorm , ex:StepLabel , ex:StepSample .
+
+ex:StepNorm   a iso:Normalization ; rdfs:label "Normalisation step"@en .
+ex:StepLabel  a iso:Labelling ;     rdfs:label "Labelling step"@en .
+ex:StepSample a iso:Sampling ;      rdfs:label "Sampling step"@en .
+
+ex:ValidationA
+    a iso:Validation ;
+    rdfs:label "Validation A"@en ;
+    rdfs:comment "Confirming that the requirements for the intended use are fulfilled, 3.5.18."@en ;
+    iso:usesData ex:ValDataA .
+
+ex:EvaluationA
+    a iso:Evaluation ;
+    rdfs:label "Evaluation A"@en ;
+    rdfs:comment "Assessing the performance of the final model before deployment, clause 5.10."@en ;
+    iso:usesData         ex:EvalDataA ;
+    iso:basedOnAlgorithm ex:EvalAlgA ;
+    iso:usesMetric       ex:MetricA .
+
+ex:InferenceA
+    a iso:Inference ;
+    rdfs:label "Inference A"@en ;
+    rdfs:comment "Reasoning by which conclusions are derived from known premises, 3.1.17."@en ;
+    iso:usesData     ex:ProdDataA ;
+    iso:isExecutedBy ex:ModelA ;
+    iso:creates      ex:PredictionA .
+
+ex:PredictionA
+    a iso:Prediction ;
+    rdfs:label "Prediction A"@en ;
+    rdfs:comment "The primary output of the system when provided with input data, 3.1.27."@en ;
+    iso:fulfilsTask ex:TaskA .
+
+#################################################################
+#    The data
+#
+#    Training, validation and evaluation data are disjoint by the notes to
+#    3.2.14 and 3.2.15, which negative model 01 tests. Production data is not
+#    part of that disjointness, since it arises only during operation.
+#################################################################
+
+ex:TrainDataA
+    a iso:TrainingData ;
+    rdfs:label "Training data A"@en ;
+    rdfs:comment "Data used to train the model, 3.3.16. Labelled, which is what supervised learning requires, 3.3.12."@en ;
+    iso:isLabelled true ;
+    iso:isComposedOf ex:Sample1 , ex:Sample2 ;
+    iso:isAcquiredBy ex:AcquisitionA ;
+    iso:isStoredBy   ex:StoringA ;
+    iso:isProcessedBy ex:StepNorm , ex:StepLabel .
+
+ex:ValDataA
+    a iso:ValidationData ;
+    rdfs:label "Validation data A"@en ;
+    rdfs:comment "Data used to compare candidate models, 3.2.15."@en ;
+    iso:isLabelled true ;
+    iso:isAcquiredBy ex:AcquisitionA .
+
+ex:EvalDataA
+    a iso:EvaluationData ;
+    rdfs:label "Evaluation data A"@en ;
+    rdfs:comment "Data used to assess the final model, 3.2.14. Disjoint from the two above."@en ;
+    iso:isLabelled true ;
+    iso:isAcquiredBy ex:AcquisitionA .
+
+ex:ProdDataA
+    a iso:ProductionData , iso:InputData ;
+    rdfs:label "Production data A"@en ;
+    rdfs:comment "Data arising during operation, for which the deployed system calculates an output, 3.2.12. Also input data, 3.2.9, since that is what the inference runs on."@en ;
+    iso:isLabelled false ;
+    iso:isAcquiredBy ex:AcquisitionA .
+
+ex:DataSetA
+    a iso:DataSet ;
+    rdfs:label "Data set A"@en ;
+    rdfs:comment "A collection of data with a shared format, 3.2.5."@en ;
+    iso:isComposedOf ex:TrainDataA , ex:ValDataA , ex:EvalDataA .
+
+ex:Sample1 a iso:Sample ; rdfs:label "Sample 1"@en ; iso:hasLabel ex:Label1 .
+ex:Sample2 a iso:Sample ; rdfs:label "Sample 2"@en ; iso:hasLabel ex:Label2 .
+
+ex:Label1 a iso:Label ; rdfs:label "Label 1"@en .
+ex:Label2 a iso:Label ; rdfs:label "Label 2"@en .
+
+ex:SourceA a iso:DataSource ; rdfs:label "Data source A"@en .
+ex:SinkA   a iso:DataSink ;   rdfs:label "Data sink A"@en .
+
+#################################################################
+#    Qualities
+#################################################################
+
+ex:CV_Robustness
+    a iso:CharacteristicValue ;
+    rdfs:label "robustness 0.92"@en ;
+    iso:forCharacteristic inst:Robustness ;
+    iso:quantity "0.92"^^xsd:decimal .
+
+ex:CV_Performance
+    a iso:CharacteristicValue ;
+    rdfs:label "performance 0.87"@en ;
+    rdfs:comment "A measurable result, 3.1.25. The pattern prescribes no scale, so the model states one through the value alone."@en ;
+    iso:forCharacteristic inst:Performance ;
+    iso:quantity "0.87"^^xsd:decimal .

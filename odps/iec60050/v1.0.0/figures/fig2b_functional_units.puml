@@ -1,0 +1,95 @@
+@startuml fig2b_functional_units
+' Diagram 2b of the IEC 60050-351 pattern: the functional units of Figures 1
+' and 2 of the standard.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: which functional units the standard names, and the two
+' relations that hold between them, composition and the membership of the final
+' controlling element in the controlled system.
+'
+' The sensing element and the measuring element stand apart on purpose. They
+' are separate entries, 351-56-26 and 351-49-05, and the standard states no
+' composition between them, so none is drawn. The measuring transmitter,
+' 351-56-29, is the unit whose output is a standardised signal, which is where
+' the communication subdomain begins.
+'
+' Left out on purpose:
+'  - how a unit is reached by an action line, and how it is realised by
+'    hardware: diagram 2
+'  - the kinds of control: diagram 1
+'
+' Split off from diagram 2 because twelve subclasses on one node crowd out the
+' mechanism that diagram is about.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 42
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+class FunctionalUnit
+
+' --- the systems ----------------------------------------------------
+class ControlSystem
+class ControllingSystem
+class ControlledSystem
+
+' --- the elements of the forward branch ------------------------------
+class ReferenceVariableGeneratingElement
+class ComparingElement
+class ControllingElement
+class Controller
+
+' --- the manipulating side -------------------------------------------
+class FinalControllingEquipment
+class Actuator
+class FinalControllingElement
+
+' --- the measuring side ----------------------------------------------
+class MeasuringElement
+class SensingElement
+class MeasuringTransmitter
+
+FunctionalUnit <|-- ControlSystem
+FunctionalUnit <|-- ControllingSystem
+FunctionalUnit <|-- ControlledSystem
+FunctionalUnit <|-- ReferenceVariableGeneratingElement
+FunctionalUnit <|-- ComparingElement
+FunctionalUnit <|-- ControllingElement
+FunctionalUnit <|-- Controller
+FunctionalUnit <|-- FinalControllingEquipment
+FunctionalUnit <|-- Actuator
+FunctionalUnit <|-- FinalControllingElement
+FunctionalUnit <|-- MeasuringElement
+FunctionalUnit <|-- SensingElement
+FunctionalUnit <|-- MeasuringTransmitter
+
+' --- what the standard composes from what -----------------------------
+ControlSystem              --> ControllingSystem       : consistsOfUnit
+ControlSystem              --> ControlledSystem        : consistsOfUnit
+Controller                 --> ComparingElement        : consistsOfUnit
+Controller                 --> ControllingElement      : consistsOfUnit
+FinalControllingEquipment  --> Actuator                : consistsOfUnit
+FinalControllingEquipment  --> FinalControllingElement : consistsOfUnit
+
+' --- the membership the standard states explicitly --------------------
+FinalControllingElement --> "1" ControlledSystem : partOfControlledSystem
+
+@enduml

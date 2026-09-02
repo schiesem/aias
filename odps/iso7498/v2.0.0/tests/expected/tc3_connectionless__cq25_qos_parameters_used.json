@@ -1,0 +1,9 @@
+[
+  "Availability|not stated|||",
+  "EstablishmentDelay|not stated|||",
+  "Jitter|not stated|||",
+  "Priority|not stated|||",
+  "ResidualErrorRate|stated|https://w3id.org/aias/example/iso7498/tc3#CommunicationAB|0.001|1",
+  "Throughput|stated|https://w3id.org/aias/example/iso7498/tc3#CommunicationAB|100.0|Mbit/s",
+  "TransitDelay|stated|https://w3id.org/aias/example/iso7498/tc3#CommunicationAB|3.0|ms"
+]

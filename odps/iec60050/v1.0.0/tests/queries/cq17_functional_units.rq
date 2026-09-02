@@ -1,0 +1,23 @@
+# CQ 17: Which functional units occur, and of which kind?
+#
+# 351-56-01 to 351-56-03. The two views are orthogonal: an item under
+# consideration seen by function against the same item seen by construction. One
+# item may fall under both, which is why the query reports the two as separate
+# columns and not as one kind.
+#
+# The pattern class is reached over the subclass hierarchy rather than by
+# asking for it as a type. The reasoner materialises the direct type of an
+# individual, so a query anchored on the general class alone returns nothing.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?item
+       (IF(BOUND(?f), "yes", "no") AS ?functionalUnit)
+       (IF(BOUND(?p), "yes", "no") AS ?physicalUnit)
+WHERE {
+  ?item a ?type .
+  ?type rdfs:subClassOf* iec60050:ItemUnderConsideration .
+  OPTIONAL { ?item a ?ft . ?ft rdfs:subClassOf* iec60050:FunctionalUnit . BIND(1 AS ?f) }
+  OPTIONAL { ?item a ?pt . ?pt rdfs:subClassOf* iec60050:PhysicalUnit   . BIND(1 AS ?p) }
+} ORDER BY ?item

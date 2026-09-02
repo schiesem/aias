@@ -1,0 +1,10 @@
+# CQ 01: Which communications exist, and which systems do they connect?
+#
+# Baseline question of the pattern, ISO/IEC 7498-1, 5.1.3 c). Participants are
+# collected per communication, so a communication appears once.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?communication (GROUP_CONCAT(DISTINCT ?systemName; separator=", ") AS ?systems) WHERE {
+  ?communication iso7498:connects ?system .
+  BIND(REPLACE(STR(?system), ".*#", "") AS ?systemName)
+} GROUP BY ?communication ORDER BY ?communication

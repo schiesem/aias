@@ -1,0 +1,6 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc2#ControlB|https://w3id.org/aias/odp/iec60050#hasControlledVariable|https://w3id.org/aias/example/iec60050/tc2#x",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlB|https://w3id.org/aias/odp/iec60050#hasManipulatedVariable|https://w3id.org/aias/example/iec60050/tc2#y",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlB|https://w3id.org/aias/odp/iec60050#hasReferenceVariable|https://w3id.org/aias/example/iec60050/tc2#w",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlledSystemB|https://w3id.org/aias/odp/iec60050#hasDisturbanceVariable|https://w3id.org/aias/example/iec60050/tc2#z"
+]

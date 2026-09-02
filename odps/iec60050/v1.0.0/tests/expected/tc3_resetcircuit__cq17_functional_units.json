@@ -1,0 +1,12 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc3#CommandSourceC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlSystemC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlledSystemC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#ControllingElementC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#ControllingSystemC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#DeviceG|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc3#DeviceH|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc3#FinalVariableGenerationC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#StorageElementC|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc3#ValveC|yes|no"
+]

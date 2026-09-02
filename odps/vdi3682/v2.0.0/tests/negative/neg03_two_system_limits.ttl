@@ -1,0 +1,9 @@
+# MUST BE INCONSISTENT: a process has exactly one system limit (VDI 3682 Part 2, Fig. 2).
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix ex: <https://w3id.org/aias/example/neg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/neg03> a owl:Ontology ; owl:imports <https://w3id.org/aias/odp/vdi3682/2.0.0> .
+ex:P a vdi3682:Process ; vdi3682:consistsOf ex:SL1 , ex:SL2 .
+ex:SL1 a vdi3682:SystemLimit .
+ex:SL2 a vdi3682:SystemLimit .
+ex:SL1 owl:differentFrom ex:SL2 .

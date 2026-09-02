@@ -1,0 +1,350 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:       <https://w3id.org/aias/example/tc2#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 2: an AI that acts.
+#
+# The same kind of plant, a different task. A property of the product is
+# checked during production, and where the check fails a correction is
+# triggered within the same production cycle.
+#
+# That deadline is why the inference cannot run in a cloud. Training on image
+# data is computationally heavy and stays there, so the two are split. The
+# architecture follows from the requirement, and the model records both.
+#
+# Generalised from the second case study of the dissertation this work
+# rebuilds. The structure is kept, the industry is dropped.
+#
+#   Level 3   cloud: storing, training, evaluation
+#   Level 2   control with a closed-loop control of the plant, its chain
+#             resolved into the units of Figure 2 of IEC 60050-351
+#             edge device: inference, merging, and a control acting back
+#   Level 1   two sensors, one actuator
+#   Level 0   one process step, two products
+#
+# What sets it apart from case 1: the output of the inference is the input of
+# a function that acts on the plant. Questions 11 and 12 report that, and it is
+# the question a safety review asks first.
+
+<https://w3id.org/aias/example/tc2>
+    a owl:Ontology ;
+    rdfs:label "AIAS test case 2: an AI that acts"@en ;
+    rdfs:comment "A hybrid architecture where the inference runs at the edge and acts back on the control of the plant."@en ;
+    owl:imports <https://w3id.org/aias/2.0.0> .
+
+#################################################################
+#    The system
+#################################################################
+
+ex:System a iso22989:AISystem ;
+    rdfs:label "System 2"@en ;
+    iso22989:hasType   iso22989:SubsymbolicAI ;
+    iso22989:hasTask   ex:Task ;
+    iso22989:hasDesign iso22989:Hybrid ;
+    aias:hasFunction   ex:AcqImage , ex:AcqId , ex:AcqPosition ,
+                       ex:Merging , ex:Inference , ex:Correction ,
+                       ex:Storing , ex:Training , ex:Evaluation ,
+                       ex:Step1 , ex:PathControl ;
+    aias:hasComponent  ex:Camera , ex:IdReader , ex:ApplicationUnit ,
+                       ex:RobotControl , ex:EdgeDevice , ex:Cloud ,
+                       ex:WorkpieceIn , ex:MaterialIn , ex:PartOut ;
+    aias:hasRelation   ex:AssignAcqImage , ex:AssignAcqId , ex:AssignAcqPosition ,
+                       ex:AssignMerging , ex:AssignInference , ex:AssignCorrection ,
+                       ex:AssignStoring , ex:AssignTraining , ex:AssignEvaluation ,
+                       ex:AssignStep1 , ex:AssignPathControl ,
+                       ex:CommCameraToEdge , ex:CommEdgeToControl , ex:CommEdgeToCloud .
+
+ex:Task a iso22989:Classification ; rdfs:label "Defect classification"@en .
+
+#################################################################
+#    Level 0: the technical process
+#################################################################
+
+ex:Process a vdi3682:Process ;
+    rdfs:label "Process"@en ;
+    vdi3682:consistsOf ex:Step1 .
+
+ex:Step1 a vdi3682:ProcessOperator ; rdfs:label "Step 1, applying"@en .
+
+ex:WorkpieceIn a vdi3682:Product ; rdfs:label "Workpiece"@en .
+ex:MaterialIn  a vdi3682:Product ; rdfs:label "Material"@en .
+ex:PartOut     a vdi3682:Product ; rdfs:label "Finished part"@en .
+
+ex:FlowIn a vdi3682:Flow ;
+    vdi3682:hasStateSource ex:WorkpieceIn ;
+    vdi3682:hasOperatorTarget ex:Step1 .
+
+ex:FlowOut a vdi3682:Flow ;
+    vdi3682:hasOperatorSource ex:Step1 ;
+    vdi3682:hasStateTarget ex:PartOut .
+
+#################################################################
+#    Level 1: the field devices
+#################################################################
+
+ex:Camera   a aias:Sensor ; rdfs:label "Camera"@en ;
+    aias:appearsAsOpenSystem ex:OsCamera .
+ex:IdReader a aias:Sensor ; rdfs:label "Identification reader"@en ;
+    aias:appearsAsOpenSystem ex:OsIdReader .
+ex:ApplicationUnit a aias:Actuator ; rdfs:label "Application unit"@en ;
+    rdfs:comment "Acts on the material flow. The element the standard calls a final controlling element, which is what aias:Actuator means here."@en .
+
+ex:AcqImage a iso22989:Acquisition ; rdfs:label "Acquire images"@en ;
+    iso22989:hasDataSource ex:SrcCamera .
+ex:AcqId    a iso22989:Acquisition ; rdfs:label "Acquire identification"@en ;
+    iso22989:hasDataSource ex:SrcIdReader .
+
+ex:SrcCamera   a iso22989:DataSource ; rdfs:label "Camera as data source"@en .
+ex:SrcIdReader a iso22989:DataSource ; rdfs:label "Reader as data source"@en .
+
+ex:AssignAcqImage a vdi3682:Assignment ;
+    vdi3682:assignedResource ex:Camera ;
+    aias:assignedFunction    ex:AcqImage .
+
+ex:AssignAcqId a vdi3682:Assignment ;
+    vdi3682:assignedResource ex:IdReader ;
+    aias:assignedFunction    ex:AcqId .
+
+#################################################################
+#    Level 2: the control of the plant
+#
+#    A closed-loop control performed without the AI, as in case 1. What is new
+#    is the second control below, which the AI does perform.
+#################################################################
+
+ex:RobotControl a aias:Controller ; rdfs:label "Robot control"@en ;
+    aias:appearsAsOpenSystem ex:OsRobotControl .
+
+ex:PathControl a iec60050:ClosedLoopControl ;
+    rdfs:label "Path control"@en ;
+    rdfs:comment "The plant controls the movement, without any AI taking part in it."@en ;
+    iec60050:runsOverActionPath ex:PathMove ;
+    iec60050:hasAction          ex:ActionMove ;
+    aias:actsOnProcessOperator  ex:Step1 .
+
+ex:PathMove   a iec60050:ClosedActionPath ; rdfs:label "Movement action path"@en ;
+    iec60050:hasActionLine ex:L1 , ex:L2 , ex:L3 , ex:L4 .
+ex:ActionMove a iec60050:ClosedAction ; rdfs:label "Movement action"@en ;
+    iec60050:actionOverPath ex:PathMove .
+
+#################################################################
+#    The chain of the plant control, resolved
+#
+#    Every other part of this model describes an architecture: which function
+#    runs on which device. This section describes one control loop in the
+#    detail the IEC 60050-351 pattern provides for, so that the chain from a
+#    device to its role becomes walkable.
+#
+#    It works because aias:Resource is a subclass of iec60050:PhysicalUnit.
+#    A model states a resource, the reasoner infers a physical unit, and the
+#    inverse relations lead from there to the functional units it realises.
+#
+#    The functional units are the ones of Figure 2 of that standard. The robot
+#    control realises three of them at once, which is the case 351-56-02 and
+#    351-56-03 keep apart on purpose: one device, several functions.
+#################################################################
+
+ex:ComparingElement a iec60050:ComparingElement ;
+    rdfs:label "Comparing element"@en ;
+    iec60050:realisedByPhysicalUnit ex:RobotControl .
+
+ex:ControllingElement a iec60050:ControllingElement ;
+    rdfs:label "Controlling element"@en ;
+    iec60050:realisedByPhysicalUnit ex:RobotControl .
+
+ex:MeasuringElement a iec60050:MeasuringElement ;
+    rdfs:label "Measuring element"@en ;
+    rdfs:comment "Forms the feedback variable from the controlled variable, 351-49-05. Realised by the same device as the two above, which is what makes the robot control answer question 13 with three roles."@en ;
+    iec60050:realisedByPhysicalUnit ex:RobotControl .
+
+ex:FinalElement a iec60050:FinalControllingElement ;
+    rdfs:label "Final controlling element"@en ;
+    rdfs:comment "The element acting on the flow, 351-49-08. Realised by the application unit, which is what aias:Actuator means in this ontology."@en ;
+    iec60050:realisedByPhysicalUnit ex:ApplicationUnit .
+
+ex:ControlledSystem a iec60050:ControlledSystem ;
+    rdfs:label "Controlled system"@en ;
+    rdfs:comment "The part of the plant being influenced, 351-49-01. The process itself, which is why no device realises it."@en .
+
+ex:L1 a iec60050:ActionLine ; rdfs:label "e to the controlling element"@en ;
+    iec60050:fromUnit ex:ComparingElement ; iec60050:toUnit ex:ControllingElement ;
+    iec60050:carriesVariable ex:VarError .
+
+ex:L2 a iec60050:ActionLine ; rdfs:label "y to the final controlling element"@en ;
+    iec60050:fromUnit ex:ControllingElement ; iec60050:toUnit ex:FinalElement ;
+    iec60050:carriesVariable ex:VarManipulated .
+
+ex:L3 a iec60050:ActionLine ; rdfs:label "x out of the controlled system"@en ;
+    iec60050:fromUnit ex:FinalElement ; iec60050:toUnit ex:MeasuringElement ;
+    iec60050:carriesVariable ex:VarControlled .
+
+ex:L4 a iec60050:ActionLine ; rdfs:label "r back to the comparing element"@en ;
+    rdfs:comment "The line that closes the path. It ends where L1 starts, so the chain is a cycle."@en ;
+    iec60050:fromUnit ex:MeasuringElement ; iec60050:toUnit ex:ComparingElement ;
+    iec60050:carriesVariable ex:VarFeedback .
+
+ex:VarError       a iec60050:ControlDifferenceVariable ; rdfs:label "e"@en .
+ex:VarManipulated a iec60050:ManipulatedVariable       ; rdfs:label "y"@en .
+ex:VarControlled  a iec60050:ControlledVariable        ; rdfs:label "x"@en .
+ex:VarFeedback    a iec60050:FeedbackVariable          ; rdfs:label "r"@en .
+
+ex:AcqPosition a iso22989:Acquisition ; rdfs:label "Acquire positions"@en .
+
+ex:AssignPathControl a vdi3682:Assignment ;
+    vdi3682:assignedResource ex:RobotControl ;
+    aias:assignedFunction    ex:PathControl .
+
+ex:AssignAcqPosition a vdi3682:Assignment ;
+    vdi3682:assignedResource ex:RobotControl ;
+    aias:assignedFunction    ex:AcqPosition .
+
+ex:AssignStep1 a vdi3682:Assignment ;
+    vdi3682:assignedResource ex:RobotControl ;
+    aias:assignedFunction    ex:Step1 .
+
+#################################################################
+#    Level 2: the edge device
+#
+#    Inside the production cycle. The inference sits here because a cloud
+#    could not meet the deadline, and the correction sits here because it acts
+#    on the result of that inference.
+#################################################################
+
+ex:EdgeDevice a aias:EdgeDevice ; rdfs:label "Edge device"@en ;
+    aias:appearsAsOpenSystem ex:OsEdge .
+
+ex:Merging a iso22989:DataProcessing ; rdfs:label "Merging"@en ;
+    iso22989:usesData ex:ImageData .
+
+ex:Inference a iso22989:Inference ; rdfs:label "Inference"@en ;
+    iso22989:usesData     ex:ProdData ;
+    iso22989:isExecutedBy ex:Model ;
+    iso22989:creates      ex:Prediction .
+
+ex:Prediction a iso22989:Prediction ; rdfs:label "Prediction"@en ;
+    iso22989:fulfilsTask ex:Task .
+
+#################################################################
+#    Where the AI acts on the plant
+#
+#    The difference to case 1. The output of the inference is the input of a
+#    control, and that control acts on the process step.
+#
+#    Because iso22989:Control and iec60050:Control are equivalent classes, one
+#    statement is seen by both subdomains. A model states the control once and
+#    both the AI view and the control view answer for it.
+#################################################################
+
+ex:Correction a iso22989:Control , iec60050:OpenLoopControl ;
+    rdfs:label "Correction"@en ;
+    rdfs:comment "Purposeful action on the process, triggered on the result of the inference. Open-loop, since the correction is triggered on a result rather than continuously influencing what it measures."@en ;
+    iso22989:usesData ex:PredictionData ;
+    iec60050:runsOverActionPath ex:PathCorrection ;
+    iec60050:hasAction          ex:ActionCorrection ;
+    aias:actsOnProcessOperator  ex:Step1 .
+
+ex:PathCorrection a iec60050:OpenActionPath ; rdfs:label "Correction action path"@en .
+ex:ActionCorrection a iec60050:OpenAction ; rdfs:label "Correction action"@en ;
+    iec60050:actionOverPath ex:PathCorrection .
+
+ex:AssignMerging    a vdi3682:Assignment ; vdi3682:assignedResource ex:EdgeDevice ; aias:assignedFunction ex:Merging .
+ex:AssignInference  a vdi3682:Assignment ; vdi3682:assignedResource ex:EdgeDevice ; aias:assignedFunction ex:Inference .
+ex:AssignCorrection a vdi3682:Assignment ; vdi3682:assignedResource ex:EdgeDevice ; aias:assignedFunction ex:Correction .
+
+#################################################################
+#    Level 3: the cloud
+#
+#    Outside the cycle. Training on image data is heavy, and nothing here has
+#    to meet the deadline.
+#################################################################
+
+ex:Cloud a aias:ExternalCloud ; rdfs:label "External cloud"@en ;
+    aias:appearsAsOpenSystem ex:OsCloud .
+
+ex:Storing    a iso22989:Storing ; rdfs:label "Storing"@en ;
+    iso22989:hasDataSink ex:Sink .
+ex:Training   a iso22989:MachineLearning ; rdfs:label "Training"@en ;
+    iso22989:basedOnAlgorithm ex:TrainAlg ;
+    iso22989:usesData ex:TrainData ;
+    iso22989:determines ex:Weights .
+ex:Evaluation a iso22989:Evaluation ; rdfs:label "Evaluation"@en ;
+    iso22989:usesData ex:EvalData .
+
+ex:Sink a iso22989:DataSink ; rdfs:label "Data sink"@en .
+
+ex:TrainAlg a iso22989:MLAlgorithm ; rdfs:label "Training algorithm"@en ;
+    iso22989:basedOnLearning iso22989:SupervisedLearning .
+ex:Weights  a iso22989:ModelParameter ; rdfs:label "Model parameters"@en .
+ex:ModelAlg a iso22989:ModelAlgorithm ; rdfs:label "Model algorithm"@en .
+
+ex:Model a iso22989:MLModel ; rdfs:label "Model"@en ;
+    iso22989:basedOnAlgorithm ex:ModelAlg ;
+    iso22989:hasParameter     ex:Weights ;
+    iso22989:isCreatedBy      ex:Training .
+
+ex:AssignStoring    a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Storing .
+ex:AssignTraining   a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Training .
+ex:AssignEvaluation a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Evaluation .
+
+#################################################################
+#    The data
+#################################################################
+
+ex:ImageData a iso22989:TrainingData ; rdfs:label "Image data"@en ;
+    iso22989:isLabelled true ;
+    iso22989:isAcquiredBy ex:AcqImage .
+ex:TrainData a iso22989:TrainingData ; rdfs:label "Training data"@en ;
+    iso22989:isLabelled true ;
+    iso22989:isAcquiredBy ex:AcqImage .
+ex:EvalData  a iso22989:EvaluationData ; rdfs:label "Evaluation data"@en ;
+    iso22989:isAcquiredBy ex:AcqImage .
+ex:ProdData  a iso22989:ProductionData , iso22989:InputData ; rdfs:label "Production data"@en ;
+    iso22989:isAcquiredBy ex:AcqImage .
+ex:PredictionData a iso22989:InputData ; rdfs:label "Prediction output as input"@en ;
+    rdfs:comment "The output of the inference, carried forward as the input of the correction. This is what makes the AI act rather than only report."@en ;
+    iso22989:isAcquiredBy ex:AcqImage .
+
+#################################################################
+#    The communication chain
+#################################################################
+
+ex:OsCamera       a iso7498:OpenSystem ; rdfs:label "Camera as open system"@en .
+ex:OsIdReader     a iso7498:OpenSystem ; rdfs:label "Reader as open system"@en .
+ex:OsRobotControl a iso7498:OpenSystem ; rdfs:label "Robot control as open system"@en .
+ex:OsEdge         a iso7498:OpenSystem ; rdfs:label "Edge device as open system"@en .
+ex:OsCloud        a iso7498:OpenSystem ; rdfs:label "Cloud as open system"@en .
+
+ex:CommCameraToEdge a iso7498:Association ; rdfs:label "Camera to edge device"@en ;
+    iso7498:hasSourceSystem ex:OsCamera ;
+    iso7498:hasTargetSystem ex:OsEdge ;
+    iso7498:transmits       ex:PduImage ;
+    iso7498:hasQualityOfService ex:QosCycle .
+
+ex:CommEdgeToControl a iso7498:Association ; rdfs:label "Edge device to robot control"@en ;
+    rdfs:comment "The link carrying the correction back into the plant. Without it the AI could not act."@en ;
+    iso7498:hasSourceSystem ex:OsEdge ;
+    iso7498:hasTargetSystem ex:OsRobotControl ;
+    iso7498:transmits       ex:PduCorrection ;
+    iso7498:hasQualityOfService ex:QosCycle .
+
+ex:CommEdgeToCloud a iso7498:Association ; rdfs:label "Edge device to cloud"@en ;
+    iso7498:hasSourceSystem ex:OsEdge ;
+    iso7498:hasTargetSystem ex:OsCloud ;
+    iso7498:transmits       ex:PduCloud .
+
+ex:PduImage      a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadImage .
+ex:PduCorrection a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadCorrection .
+ex:PduCloud      a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadCloud .
+
+ex:PayloadImage      a iso7498:UserData ; aias:carriesData ex:ImageData .
+ex:PayloadCorrection a iso7498:UserData ; aias:carriesData ex:PredictionData .
+ex:PayloadCloud      a iso7498:UserData ; aias:carriesData ex:TrainData .
+
+ex:QosCycle a iso7498:QualityOfService ; rdfs:label "Within the production cycle"@en ;
+    rdfs:comment "The deadline that puts the inference on the edge device rather than in the cloud."@en .

@@ -1,0 +1,21 @@
+# CQ 07: Which states enter an operator, and which leave it?
+# process operator?
+#
+# Part 1, Figure 2 shows the transformation principle: an operator turns a
+# status ante into a status post. Both are sets of products, energies and
+# information, and the standard does not pair an individual input with an
+# individual output. Asking which input becomes which output therefore has no
+# answer in VDI 3682, and a query joining hasInput with hasOutput would return
+# their cartesian product, which reads as a pairing that was never asserted.
+#
+# The query reports the two sets separately, one row per operator, which is
+# what the standard does state.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator
+       (GROUP_CONCAT(DISTINCT ?ante; separator=", ") AS ?statusAnte)
+       (GROUP_CONCAT(DISTINCT ?post; separator=", ") AS ?statusPost)
+WHERE {
+  ?operator a vdi3682:ProcessOperator .
+  OPTIONAL { ?operator vdi3682:hasInput  ?ante }
+  OPTIONAL { ?operator vdi3682:hasOutput ?post }
+} GROUP BY ?operator ORDER BY ?operator

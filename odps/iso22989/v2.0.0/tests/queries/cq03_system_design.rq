@@ -1,0 +1,12 @@
+# CQ 03: Where does an AI system run?
+#
+# Clause 8.6.2 discusses cloud and edge computing. The choice is what connects
+# an AI system to the plant it runs in, since it says which device carries it,
+# and it is therefore the handover the alignment needs.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?design
+WHERE { ?system iso:hasDesign ?design }
+ORDER BY ?system

@@ -1,0 +1,125 @@
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix ex:      <https://w3id.org/aias/example/tc2#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+# Test case 2: parallel process runs.
+#
+# After VDI/VDE 3682 Part 1, Figure 7, decomposed in the manner of Figure 5.
+# Same structure as test case 1, with one parallel step added before the
+# decomposition, so that the two cases differ in exactly one construct.
+#
+# Part 1 Section 4.2.1 models parallel runs as a partially shared flow. This
+# pattern states the same in two complementary ways: ParallelFlow qualifies the
+# individual connection, and dependency states that the two outputs arise
+# together rather than as alternatives.
+
+<https://w3id.org/aias/example/tc2>
+    a owl:Ontology ;
+    rdfs:label "VDI 3682 test case 2: parallel runs"@en ;
+    rdfs:comment "Parallel process runs, after VDI/VDE 3682 Part 1, Figure 7, decomposed as in Figure 5."@en ;
+    owl:imports <https://w3id.org/aias/odp/vdi3682/2.0.0> .
+
+#################################################################
+#    Parent process with two parallel operators
+#################################################################
+
+ex:Process0
+    a vdi3682:Process ;
+    rdfs:label "Process 0"@en ;
+    vdi3682:isIdentifiedBy ex:ID_Process0 ;
+    vdi3682:consistsOf
+        ex:S0 ,
+        ex:O1a , ex:O1b ,
+        ex:P1 ,
+        ex:P2a , ex:P2b ,
+        ex:F_P1_O1a ,
+        ex:F_P1_O1b ,
+        ex:F_O1a_P2a , ex:F_O1b_P2b .
+
+ex:S0 a vdi3682:SystemLimit ; rdfs:label "S0"@en ; vdi3682:isIdentifiedBy ex:ID_S0 .
+
+ex:P1 a vdi3682:Product     ; rdfs:label "P1"@en ; vdi3682:isWithin ex:S0 .
+
+ex:P2a a vdi3682:Product ; rdfs:label "P2a"@en ; vdi3682:isWithin ex:S0 .
+ex:P2b a vdi3682:Product ; rdfs:label "P2b"@en ; vdi3682:isWithin ex:S0 .
+
+# The two outputs arise together. Without this the open world assumption reads
+# several outputs as alternatives, which is the reading of test case 3.
+ex:P2a vdi3682:dependency ex:P2b .
+
+ex:O1a
+    a vdi3682:ProcessOperator ;
+    rdfs:label "O1a"@en ;
+    vdi3682:isWithin ex:S0 ;
+    vdi3682:isComposedOf ex:O11a , ex:O12a .
+
+ex:O1b
+    a vdi3682:ProcessOperator ;
+    rdfs:label "O1b"@en ;
+    vdi3682:isWithin ex:S0 ;
+    vdi3682:hasAssignment ex:AS_O1b_T1b .
+
+# Inputs feed both operators, which is the partially shared flow of Figure 7
+ex:F_P1_O1a a vdi3682:ParallelFlow ; rdfs:label "P1 to O1a"@en ; vdi3682:hasStateSource ex:P1 ; vdi3682:hasOperatorTarget ex:O1a ; vdi3682:isWithin ex:S0 .
+
+ex:F_P1_O1b a vdi3682:ParallelFlow ; rdfs:label "P1 to O1b"@en ; vdi3682:hasStateSource ex:P1 ; vdi3682:hasOperatorTarget ex:O1b ; vdi3682:isWithin ex:S0 .
+
+ex:F_O1a_P2a a vdi3682:ParallelFlow ; rdfs:label "O1a to P2a"@en ; vdi3682:hasOperatorSource ex:O1a ; vdi3682:hasStateTarget ex:P2a ; vdi3682:isWithin ex:S0 .
+ex:F_O1b_P2b a vdi3682:ParallelFlow ; rdfs:label "O1b to P2b"@en ; vdi3682:hasOperatorSource ex:O1b ; vdi3682:hasStateTarget ex:P2b ; vdi3682:isWithin ex:S0 .
+
+#################################################################
+#    Decomposition of O1a, in the manner of Figure 5
+#################################################################
+
+ex:Process1
+    a vdi3682:Process ;
+    rdfs:label "Process 1"@en ;
+    rdfs:comment "The decomposition of process operator O1a."@en ;
+    vdi3682:consistsOf
+        ex:S1 ,
+        ex:O11a , ex:O12a ,
+        ex:P1 ,
+        ex:P4a , ex:P2a ,
+        ex:F_P1_O11a ,
+        ex:F_O11a_P4a , ex:F_P4a_O12a , ex:F_O12a_P2a .
+
+ex:S1 a vdi3682:SystemLimit ; rdfs:label "S1"@en .
+
+ex:P4a a vdi3682:Product ; rdfs:label "P4a"@en ; vdi3682:isWithin ex:S1 ;
+    rdfs:comment "Intermediate product, exists only within the decomposition."@en .
+
+ex:O11a a vdi3682:ProcessOperator ; rdfs:label "O11a"@en ; vdi3682:isWithin ex:S1 ;
+    vdi3682:hasAssignment ex:AS_O11a_T11a .
+ex:O12a a vdi3682:ProcessOperator ; rdfs:label "O12a"@en ; vdi3682:isWithin ex:S1 ;
+    vdi3682:hasAssignment ex:AS_O12a_T12a .
+
+ex:F_P1_O11a a vdi3682:Flow ; rdfs:label "P1 to O11a"@en ; vdi3682:hasStateSource ex:P1 ; vdi3682:hasOperatorTarget ex:O11a ; vdi3682:isWithin ex:S1 .
+
+ex:F_O11a_P4a a vdi3682:Flow ; rdfs:label "O11a to P4a"@en ; vdi3682:hasOperatorSource ex:O11a ; vdi3682:hasStateTarget ex:P4a ; vdi3682:isWithin ex:S1 .
+ex:F_P4a_O12a a vdi3682:Flow ; rdfs:label "P4a to O12a"@en ; vdi3682:hasStateSource ex:P4a ; vdi3682:hasOperatorTarget ex:O12a ; vdi3682:isWithin ex:S1 .
+ex:F_O12a_P2a a vdi3682:Flow ; rdfs:label "O12a to P2a"@en ; vdi3682:hasOperatorSource ex:O12a ; vdi3682:hasStateTarget ex:P2a ; vdi3682:isWithin ex:S1 .
+
+#################################################################
+#    Technical resources and assignments
+#################################################################
+
+ex:T1b  a vdi3682:TechnicalResource ; rdfs:label "T1b"@en .
+ex:T11a a vdi3682:TechnicalResource ; rdfs:label "T11a"@en .
+ex:T12a a vdi3682:TechnicalResource ; rdfs:label "T12a"@en .
+
+ex:AS_O1b_T1b   a vdi3682:Assignment ; rdfs:label "O1b uses T1b"@en   ; vdi3682:assignedResource ex:T1b .
+ex:AS_O11a_T11a a vdi3682:Assignment ; rdfs:label "O11a uses T11a"@en ; vdi3682:assignedResource ex:T11a .
+ex:AS_O12a_T12a a vdi3682:Assignment ; rdfs:label "O12a uses T12a"@en ; vdi3682:assignedResource ex:T12a .
+
+#################################################################
+#    Identifications
+#################################################################
+
+ex:ID_Process0 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "PR-000" ; vdi3682:longName "Parent process with parallel runs" ;
+    vdi3682:shortName "PR0" ; vdi3682:versionNumber "1" ; vdi3682:revisionNumber "0" .
+
+ex:ID_S0 a vdi3682:Identification ;
+    vdi3682:uniqueIdent "S-000" ; vdi3682:longName "System limit of the parent process" ;
+    vdi3682:shortName "S0" .

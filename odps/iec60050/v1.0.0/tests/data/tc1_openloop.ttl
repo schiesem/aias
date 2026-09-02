@@ -1,0 +1,187 @@
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/tc1#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 1: open-loop control, after Figure 1 of IEC 60050-351.
+#
+# The chain of Figure 1, with the letters of its legend:
+#
+#   c -> [ControllingElement] -m-> [Actuator] -y-> [FinalControllingElement]
+#                                                            |
+#                                                            x
+#                                                            v
+#                                                   [ControlledSystem] -> q
+#                                                            ^
+#                                                            z
+#
+# Open action path and open action: no action line ends at a unit that an
+# earlier line starts from, so nothing returns. The control is open-loop
+# control, 351-47-02, and its elements form a control chain, 351-47-12.
+
+<https://w3id.org/aias/example/iec60050/tc1>
+    a owl:Ontology ;
+    rdfs:label "IEC 60050 test case 1: open-loop control"@en ;
+    rdfs:comment "Open-loop control over an open action path, after IEC 60050-351, 351-47-02 and Figure 1."@en ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+
+#################################################################
+#    The control
+#################################################################
+
+ex:ControlA
+    a iec60050:OpenLoopControl ;
+    rdfs:label "Control A"@en ;
+    rdfs:comment "An open-loop control: the input variables influence the output variables in accordance with the proper laws of the system, and nothing returns."@en ;
+    iec60050:runsOverActionPath ex:PathA ;
+    iec60050:hasAction ex:ActionA ;
+    iec60050:realisedBy ex:ChainA ;
+    iec60050:actsOn ex:ControlledSystemA ;
+    iec60050:hasManipulatedVariable ex:y ;
+    iec60050:performsFunction iec60050:Manipulate ;
+    iec60050:hasCharacteristicValue ex:CV_ManipulatingTime .
+
+#################################################################
+#    Path and action: both open
+#################################################################
+
+ex:PathA
+    a iec60050:OpenActionPath ;
+    rdfs:label "Action path A"@en ;
+    rdfs:comment "No action path goes back from the output variable to the input variable, 351-47-05."@en ;
+    iec60050:hasActionLine ex:L1 , ex:L2 , ex:L3 , ex:L4 , ex:L5 .
+
+ex:ActionA
+    a iec60050:OpenAction ;
+    rdfs:label "Action A"@en ;
+    rdfs:comment "An action in an open action path, 351-47-06."@en ;
+    iec60050:actionOverPath ex:PathA .
+
+ex:ChainA
+    a iec60050:ControlChain ;
+    rdfs:label "Control chain A"@en ;
+    rdfs:comment "The elements act upon one another in a series structure, 351-47-12."@en .
+
+#################################################################
+#    The action lines, after Figure 1
+#
+#    Each line runs between two functional units and carries one variable.
+#    No line ends at a unit an earlier line starts from, which is what makes
+#    the path open.
+#################################################################
+
+ex:L1 a iec60050:ActionLine ; rdfs:label "c into the controlling element"@en ;
+    iec60050:fromUnit ex:CommandSourceA ; iec60050:toUnit ex:ControllingElementA ;
+    iec60050:carriesVariable ex:c .
+
+ex:L2 a iec60050:ActionLine ; rdfs:label "m to the actuator"@en ;
+    iec60050:fromUnit ex:ControllingElementA ; iec60050:toUnit ex:ActuatorA ;
+    iec60050:carriesVariable ex:m .
+
+ex:L3 a iec60050:ActionLine ; rdfs:label "y to the final controlling element"@en ;
+    iec60050:fromUnit ex:ActuatorA ; iec60050:toUnit ex:ValveA ;
+    iec60050:carriesVariable ex:y .
+
+ex:L4 a iec60050:ActionLine ; rdfs:label "x out of the controlled system"@en ;
+    iec60050:fromUnit ex:ValveA ; iec60050:toUnit ex:ControlledSystemA ;
+    iec60050:carriesVariable ex:x .
+
+ex:L5 a iec60050:ActionLine ; rdfs:label "q leaves the control system"@en ;
+    rdfs:comment "The last step of Figure 1: the controlled variable enters the unit that forms the final controlled variable, which leaves the control system as q."@en ;
+    iec60050:fromUnit ex:ControlledSystemA ; iec60050:toUnit ex:FinalVariableGenerationA ;
+    iec60050:carriesVariable ex:q .
+
+#################################################################
+#    Functional units, after Figure 1
+#################################################################
+
+ex:ControlSystemA
+    a iec60050:ControlSystem ;
+    rdfs:label "Control system A"@en ;
+    rdfs:comment "The outermost frame of Figure 1, 351-49-06."@en ;
+    iec60050:consistsOfUnit ex:ControllingSystemA , ex:ControlledSystemA , ex:FinalVariableGenerationA .
+
+ex:ControllingSystemA
+    a iec60050:ControllingSystem ;
+    rdfs:label "Controlling system A"@en ;
+    rdfs:comment "Steuereinrichtung, 351-49-02."@en ;
+    iec60050:consistsOfUnit ex:ControllingElementA , ex:FinalControllingEquipmentA ;
+    iec60050:realisedByPhysicalUnit ex:DeviceA ;
+    iec60050:actsOn ex:ControlledSystemA .
+
+ex:CommandSourceA
+    a iec60050:FunctionalUnit ;
+    rdfs:label "Command source A"@en ;
+    rdfs:comment "Where the command variable enters the control system. Figure 1 shows c arriving without naming a unit for it, so the model records a plain functional unit rather than inventing a term."@en .
+
+ex:ControllingElementA
+    a iec60050:ControllingElement ;
+    rdfs:label "Controlling element A"@en ;
+    rdfs:comment "Steuerglied, 351-49-04. In open-loop control it forms its output variable from the command variable."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceA .
+
+ex:FinalControllingEquipmentA
+    a iec60050:FinalControllingEquipment ;
+    rdfs:label "Final controlling equipment A"@en ;
+    rdfs:comment "Stelleinrichtung, 351-49-09, the dashed grouping of Figure 1."@en ;
+    iec60050:consistsOfUnit ex:ActuatorA , ex:ValveA .
+
+ex:ActuatorA
+    a iec60050:Actuator ;
+    rdfs:label "Actuator A"@en ;
+    rdfs:comment "Steller, 351-49-07, the signal side of the manipulating equipment."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceB .
+
+ex:ValveA
+    a iec60050:FinalControllingElement ;
+    rdfs:label "Final controlling element A"@en ;
+    rdfs:comment "Stellglied, 351-49-08, driven by the manipulated variable and manipulating the flow."@en ;
+    iec60050:partOfControlledSystem ex:ControlledSystemA ;
+    iec60050:realisedByPhysicalUnit ex:DeviceC .
+
+ex:FinalVariableGenerationA
+    a iec60050:FinalControlledVariableGeneration ;
+    rdfs:label "Generation of the final controlled variable A"@en ;
+    rdfs:comment "The unit at the right-hand edge of Figure 1, forming q from x."@en .
+
+ex:ControlledSystemA
+    a iec60050:ControlledSystem ;
+    rdfs:label "Controlled system A"@en ;
+    rdfs:comment "Steuerstrecke, 351-49-01. The process itself, which is why no physical unit realises it."@en ;
+    iec60050:hasDisturbanceVariable ex:z .
+
+#################################################################
+#    Physical units, 351-56-03
+#
+#    One device realises the controlling system and the controlling element
+#    inside it, which is the many to one direction of the realisation relation.
+#################################################################
+
+ex:DeviceA a iec60050:PhysicalUnit ; rdfs:label "Device A"@en ;
+    rdfs:comment "Realises the controlling system and the controlling element within it."@en .
+ex:DeviceB a iec60050:PhysicalUnit ; rdfs:label "Device B"@en .
+ex:DeviceC a iec60050:PhysicalUnit ; rdfs:label "Device C"@en .
+
+#################################################################
+#    Variables, with the letters of the legend of Figure 1
+#################################################################
+
+ex:c a iec60050:CommandVariable          ; rdfs:label "c, command variable"@en .
+ex:m a iec60050:ControllerOutputVariable ; rdfs:label "m, output variable of the controlling element"@en .
+ex:y a iec60050:ManipulatedVariable      ; rdfs:label "y, manipulated variable"@en .
+ex:z a iec60050:DisturbanceVariable      ; rdfs:label "z, disturbance variable"@en .
+ex:x a iec60050:ControlledVariable       ; rdfs:label "x, controlled variable"@en .
+ex:q a iec60050:FinalControlledVariable  ; rdfs:label "q, final controlled variable"@en .
+
+#################################################################
+#    A characteristic
+#################################################################
+
+ex:CV_ManipulatingTime
+    a iec60050:CharacteristicValue ;
+    rdfs:label "manipulating time 4 s"@en ;
+    iec60050:forCharacteristic inst:ManipulatingTime ;
+    iec60050:quantity "4"^^xsd:decimal ;
+    iec60050:unit "s" .

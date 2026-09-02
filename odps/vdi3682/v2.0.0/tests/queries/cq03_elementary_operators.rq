@@ -1,0 +1,6 @@
+# CQ 03: Which operators are not decomposed any further?
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator WHERE {
+  ?operator a vdi3682:ProcessOperator .
+  FILTER NOT EXISTS { ?operator vdi3682:isComposedOf ?any }
+} ORDER BY ?operator

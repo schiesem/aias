@@ -1,0 +1,14 @@
+# MUST BE INCONSISTENT: basedOnLearning is functional. An algorithm performs
+# one kind of learning. 3.3.11 defines semi-supervised learning as the case
+# using both labelled and unlabelled data, so a model needing that states it
+# rather than claiming two kinds at once.
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/neg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso22989/neg03> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+ex:Alg1 a iso:MLAlgorithm ;
+    iso:basedOnLearning iso:SupervisedLearning , iso:UnsupervisedLearning .
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( iso:SupervisedLearning iso:UnsupervisedLearning ) .

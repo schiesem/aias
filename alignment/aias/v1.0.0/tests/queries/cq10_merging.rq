@@ -1,0 +1,20 @@
+# CQ 10: Where is data merged, and out of what?
+#
+# A merging takes several datasets and produces one. Both ends are reported:
+# isProcessedBy names what goes in, createsProcessedData what comes out, and
+# the assignment names the device doing it.
+#
+# The question matters for provenance. A merged dataset has more than one
+# origin, and a model trained on it inherits every one of them.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+SELECT ?merging ?resource
+       (GROUP_CONCAT(DISTINCT ?input;  separator=", ") AS ?inputs)
+       (GROUP_CONCAT(DISTINCT ?output; separator=", ") AS ?outputs)
+WHERE {
+  ?merging a iso22989:Merging .
+  OPTIONAL { ?input iso22989:isProcessedBy ?merging }
+  OPTIONAL { ?merging iso22989:createsProcessedData ?output }
+  OPTIONAL { ?merging aias:isAssignedTo/vdi3682:isAssignedTo ?resource }
+} GROUP BY ?merging ?resource ORDER BY ?merging

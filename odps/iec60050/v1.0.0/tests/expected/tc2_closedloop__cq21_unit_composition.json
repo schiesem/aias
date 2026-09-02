@@ -1,0 +1,11 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc2#ControlSystemB|https://w3id.org/aias/odp/iec60050#ControlSystem|https://w3id.org/aias/example/iec60050/tc2#ControlledSystemB|https://w3id.org/aias/odp/iec60050#ControlledSystem",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlSystemB|https://w3id.org/aias/odp/iec60050#ControlSystem|https://w3id.org/aias/example/iec60050/tc2#ControllingSystemB|https://w3id.org/aias/odp/iec60050#ControllingSystem",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlSystemB|https://w3id.org/aias/odp/iec60050#ControlSystem|https://w3id.org/aias/example/iec60050/tc2#FinalVariableGenerationB|https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllerB|https://w3id.org/aias/odp/iec60050#ProgrammableController|https://w3id.org/aias/example/iec60050/tc2#ComparingElementB|https://w3id.org/aias/odp/iec60050#ComparingElement",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllerB|https://w3id.org/aias/odp/iec60050#ProgrammableController|https://w3id.org/aias/example/iec60050/tc2#ControllingElementB|https://w3id.org/aias/odp/iec60050#ControllingElement",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllingSystemB|https://w3id.org/aias/odp/iec60050#ControllingSystem|https://w3id.org/aias/example/iec60050/tc2#ControllerB|https://w3id.org/aias/odp/iec60050#ProgrammableController",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllingSystemB|https://w3id.org/aias/odp/iec60050#ControllingSystem|https://w3id.org/aias/example/iec60050/tc2#FinalControllingEquipmentB|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment",
+  "https://w3id.org/aias/example/iec60050/tc2#FinalControllingEquipmentB|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment|https://w3id.org/aias/example/iec60050/tc2#ActuatorB|https://w3id.org/aias/odp/iec60050#Actuator",
+  "https://w3id.org/aias/example/iec60050/tc2#FinalControllingEquipmentB|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment|https://w3id.org/aias/example/iec60050/tc2#ValveB|https://w3id.org/aias/odp/iec60050#FinalControllingElement"
+]

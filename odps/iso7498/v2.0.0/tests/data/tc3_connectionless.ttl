@@ -1,0 +1,97 @@
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst:    <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix ex:      <https://w3id.org/aias/example/iso7498/tc3#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 3: connectionless mode.
+#
+# After ISO/IEC 7498-1, 5.8.4 and 6.4. Test case 1 with the transmission mode
+# changed and nothing else, so the two cases differ in exactly one construct.
+#
+# Two consequences follow from the mode and are modelled rather than described.
+# The transport technology is UDP instead of TCP. And the quality of service
+# states no establishment delay: 7.4.4 defines that parameter for
+# connection-mode communication, and connectionless mode establishes nothing.
+# A residual error rate takes its place, which is what a connectionless service
+# leaves to the layer above.
+
+<https://w3id.org/aias/example/iso7498/tc3>
+    a owl:Ontology ;
+    rdfs:label "ISO 7498 test case 3: connectionless mode"@en ;
+    rdfs:comment "A connectionless-mode communication, after ISO/IEC 7498-1, 5.8.4 and 6.4."@en ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+
+#################################################################
+#    Open systems
+#################################################################
+
+ex:SystemA
+    a iso7498:OpenSystem ;
+    rdfs:label "System A"@en ;
+    rdfs:comment "An open system, the initial source of data in this communication."@en .
+
+ex:SystemB
+    a iso7498:OpenSystem ;
+    rdfs:label "System B"@en ;
+    rdfs:comment "An open system, the final destination of data in this communication."@en .
+
+#################################################################
+#    The communication
+#################################################################
+
+ex:CommunicationAB
+    a iso7498:ConnectionlessModeAssociation ;
+    rdfs:label "Communication A to B"@en ;
+    rdfs:comment "A connectionless-mode communication: each transmission is independent and carries all the information needed to deliver it, 5.8.4.1. It runs one way, from A to B, with nothing returning."@en ;
+    iso7498:hasSourceSystem ex:SystemA ;
+    iso7498:hasTargetSystem ex:SystemB ;
+    iso7498:hasDirection inst:OneWay ;
+    iso7498:usesLayer inst:ApplicationLayer ;
+    iso7498:usesTechnology inst:MQTT , inst:UDP , inst:IPv4 , inst:Ethernet ;
+    iso7498:hasQualityOfService ex:QoS_AB ;
+    iso7498:transmits ex:MeasurementDatagram .
+
+#################################################################
+#    Quality of service
+#
+#    No establishment delay, since nothing is established. The residual error
+#    rate is what a connectionless service leaves to the layer above.
+#################################################################
+
+ex:QoS_AB
+    a iso7498:QualityOfService ;
+    rdfs:label "Quality of service of communication A to B"@en ;
+    iso7498:hasValue ex:QoSV_TransitDelay , ex:QoSV_Throughput , ex:QoSV_ErrorRate .
+
+ex:QoSV_TransitDelay
+    a iso7498:QoSValue ;
+    rdfs:label "transit delay 3 ms"@en ;
+    iso7498:forParameter inst:TransitDelay ;
+    iso7498:quantity "3"^^xsd:decimal ;
+    iso7498:unit "ms" .
+
+ex:QoSV_Throughput
+    a iso7498:QoSValue ;
+    rdfs:label "throughput 100 Mbit/s"@en ;
+    iso7498:forParameter inst:Throughput ;
+    iso7498:quantity "100"^^xsd:decimal ;
+    iso7498:unit "Mbit/s" .
+
+ex:QoSV_ErrorRate
+    a iso7498:QoSValue ;
+    rdfs:label "residual error rate 0.001"@en ;
+    iso7498:forParameter inst:ResidualErrorRate ;
+    iso7498:quantity "0.001"^^xsd:decimal ;
+    iso7498:unit "1" .
+
+#################################################################
+#    Data unit carried
+#################################################################
+
+ex:MeasurementDatagram
+    a iso7498:ProtocolDataUnit ;
+    rdfs:label "Application PDU"@en ;
+    rdfs:comment "The protocol data unit exchanged between the application entities, carried without a connection."@en ;
+    iso7498:atLayer inst:ApplicationLayer .

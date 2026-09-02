@@ -1,0 +1,27 @@
+# CQ 12: Which hyperparameters does an algorithm have, and what were they set to?
+#
+# 3.3.4 defines the hyperparameter as a characteristic of a machine learning
+# algorithm affecting its learning process, selected prior to training.
+#
+# The pattern places it on the algorithm superclass, so a model algorithm and
+# an evaluation algorithm may carry one as well. Test case 2 uses that: a rule
+# threshold is chosen in advance and steers the behaviour of the procedure, so
+# it is a hyperparameter rather than a model parameter.
+#
+# The value comes through hasSetting rather than through forCharacteristic. A
+# hyperparameter is chosen before a training and a quality of clause 3.5 is
+# established by one, and the answer stays readable as a list of settings for
+# that reason. Optional, since an algorithm may be recorded before its values
+# are fixed.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?algorithm ?algorithmKind ?hyperparameter ?setting
+WHERE {
+  ?algorithm iso:hasHyperparameter ?hyperparameter .
+  ?algorithm a ?algorithmKind . ?algorithmKind rdfs:subClassOf* iso:Algorithm .
+  FILTER NOT EXISTS { ?algorithm a ?n . ?n rdfs:subClassOf+ ?algorithmKind .
+                      ?n rdfs:subClassOf* iso:Algorithm }
+  OPTIONAL { ?hyperparameter iso:hasSetting/iso:quantity ?setting }
+} ORDER BY ?algorithm ?hyperparameter

@@ -1,0 +1,288 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:       <https://w3id.org/aias/example/tc1#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 1: an AI that reports.
+#
+# A plant is monitored so that maintenance can be planned before a part fails.
+# Sensor data is collected, sent to a cloud and analysed there. The result is
+# displayed to an operator, who decides what to do with it.
+#
+# Response times of minutes are acceptable, and the analysis being unavailable
+# for a while is acceptable too. That is why everything runs in the cloud, and
+# the model records the reason as much as the result.
+#
+# Generalised from the first case study of the dissertation this work rebuilds.
+# The structure is kept, the industry is dropped.
+#
+#   Level 3   cloud: storing, processing, training, evaluation, inference
+#   Level 2   two controls, one of them a closed-loop position control
+#             edge device, only as a bridge to the cloud
+#   Level 1   two sensors, each with an acquisition
+#   Level 0   three process steps, two products
+#
+# What sets it apart from case 2: no AI function acts on the process. The
+# plant controls, the AI reports.
+
+<https://w3id.org/aias/example/tc1>
+    a owl:Ontology ;
+    rdfs:label "AIAS test case 1: an AI that reports"@en ;
+    rdfs:comment "A cloud architecture where the AI analyses and an operator decides."@en ;
+    owl:imports <https://w3id.org/aias/2.0.0> .
+
+#################################################################
+#    The system
+#################################################################
+
+ex:System a iso22989:AISystem ;
+    rdfs:label "System 1"@en ;
+    iso22989:hasType   iso22989:SubsymbolicAI ;
+    iso22989:hasTask   ex:Task ;
+    iso22989:hasDesign iso22989:Cloud ;
+    aias:hasFunction   ex:AcqLeft , ex:AcqRight , ex:AcqTime ,
+                       ex:Storing , ex:Processing , ex:Training ,
+                       ex:Evaluation , ex:Inference ,
+                       ex:Step1 , ex:Step2 , ex:Step3 , ex:PositionControl ;
+    aias:hasComponent  ex:SensorLeft , ex:SensorRight , ex:MotorControl ,
+                       ex:MachineControl , ex:EdgeDevice , ex:Cloud ,
+                       ex:WorkpieceIn , ex:MaterialIn , ex:PartOut ;
+    aias:hasRelation   ex:AssignAcqLeft , ex:AssignAcqRight , ex:AssignAcqTime ,
+                       ex:AssignStoring , ex:AssignProcessing , ex:AssignTraining ,
+                       ex:AssignEvaluation , ex:AssignInference ,
+                       ex:AssignStep1 , ex:AssignStep2 , ex:AssignStep3 ,
+                       ex:AssignPositionControl ,
+                       ex:CommSensorLeft , ex:CommSensorRight ,
+                       ex:CommControlToEdge , ex:CommEdgeToCloud .
+
+ex:Task a iso22989:Classification ; rdfs:label "Condition classification"@en .
+
+#################################################################
+#    Level 0: the technical process
+#################################################################
+
+ex:Process a vdi3682:Process ;
+    rdfs:label "Process"@en ;
+    vdi3682:consistsOf ex:Step1 , ex:Step2 , ex:Step3 .
+
+ex:Step1 a vdi3682:ProcessOperator ; rdfs:label "Step 1, closing"@en ;
+    vdi3682:hasSuccessor ex:Step2 .
+ex:Step2 a vdi3682:ProcessOperator ; rdfs:label "Step 2, processing"@en ;
+    vdi3682:hasSuccessor ex:Step3 .
+ex:Step3 a vdi3682:ProcessOperator ; rdfs:label "Step 3, opening"@en .
+
+ex:WorkpieceIn a vdi3682:Product ; rdfs:label "Workpiece"@en .
+ex:MaterialIn  a vdi3682:Product ; rdfs:label "Material"@en .
+ex:PartOut     a vdi3682:Product ; rdfs:label "Finished part"@en .
+
+ex:FlowIn a vdi3682:Flow ; rdfs:label "Workpiece into step 1"@en ;
+    vdi3682:hasStateSource ex:WorkpieceIn ;
+    vdi3682:hasOperatorTarget ex:Step1 .
+
+ex:FlowOut a vdi3682:Flow ; rdfs:label "Finished part out of step 3"@en ;
+    vdi3682:hasOperatorSource ex:Step3 ;
+    vdi3682:hasStateTarget ex:PartOut .
+
+#################################################################
+#    Level 1: the sensors
+#
+#    Each sensor is a resource, and each carries an acquisition function. The
+#    assignment is what ties the two, and it is the same class that ties a
+#    process operator to a resource. That is the point of the common function
+#    level: one mechanism for both.
+#################################################################
+
+ex:SensorLeft  a aias:Sensor ; rdfs:label "Sensor left"@en ;
+    aias:appearsAsOpenSystem ex:OsSensorLeft .
+ex:SensorRight a aias:Sensor ; rdfs:label "Sensor right"@en ;
+    aias:appearsAsOpenSystem ex:OsSensorRight .
+
+ex:AcqLeft  a iso22989:Acquisition ; rdfs:label "Acquire position left"@en ;
+    iso22989:hasDataSource ex:SrcLeft .
+ex:AcqRight a iso22989:Acquisition ; rdfs:label "Acquire position right"@en ;
+    iso22989:hasDataSource ex:SrcRight .
+
+ex:SrcLeft  a iso22989:DataSource ; rdfs:label "Data source left"@en .
+ex:SrcRight a iso22989:DataSource ; rdfs:label "Data source right"@en .
+
+ex:AssignAcqLeft a vdi3682:Assignment ; rdfs:label "Acquisition left on sensor left"@en ;
+    vdi3682:assignedResource ex:SensorLeft ;
+    aias:assignedFunction    ex:AcqLeft .
+
+ex:AssignAcqRight a vdi3682:Assignment ; rdfs:label "Acquisition right on sensor right"@en ;
+    vdi3682:assignedResource ex:SensorRight ;
+    aias:assignedFunction    ex:AcqRight .
+
+#################################################################
+#    Level 2: the controls
+#
+#    The motor control performs a closed-loop position control. No AI is
+#    involved in it, which is what questions 11 and 12 report. Case 2 differs
+#    exactly there.
+#################################################################
+
+ex:MotorControl   a aias:Controller ; rdfs:label "Motor control"@en ;
+    aias:appearsAsOpenSystem ex:OsMotorControl .
+ex:MachineControl a aias:Controller ; rdfs:label "Machine control"@en ;
+    aias:appearsAsOpenSystem ex:OsMachineControl .
+
+ex:PositionControl a iec60050:ClosedLoopControl ;
+    rdfs:label "Position control"@en ;
+    rdfs:comment "A closed-loop control of the plant, performed without any AI taking part in it."@en ;
+    iec60050:runsOverActionPath ex:PathPos ;
+    iec60050:hasAction          ex:ActionPos ;
+    iec60050:realisedBy         ex:LoopPos ;
+    aias:actsOnProcessOperator  ex:Step1 .
+
+ex:PathPos   a iec60050:ClosedActionPath ; rdfs:label "Position action path"@en .
+ex:ActionPos a iec60050:ClosedAction ; rdfs:label "Position action"@en ;
+    iec60050:actionOverPath ex:PathPos .
+ex:LoopPos   a iec60050:ControlLoop ; rdfs:label "Position control loop"@en .
+
+ex:AssignPositionControl a vdi3682:Assignment ;
+    rdfs:label "Position control on the motor control"@en ;
+    vdi3682:assignedResource ex:MotorControl ;
+    aias:assignedFunction    ex:PositionControl .
+
+ex:AcqTime a iso22989:Acquisition ; rdfs:label "Acquire timestamps"@en .
+
+ex:AssignAcqTime a vdi3682:Assignment ;
+    vdi3682:assignedResource ex:MachineControl ;
+    aias:assignedFunction    ex:AcqTime .
+
+ex:AssignStep1 a vdi3682:Assignment ;
+    rdfs:label "Step 1 on the motor control"@en ;
+    vdi3682:assignedResource ex:MotorControl ;
+    aias:assignedFunction    ex:Step1 .
+
+ex:AssignStep2 a vdi3682:Assignment ;
+    rdfs:label "Step 2 on the machine control"@en ;
+    vdi3682:assignedResource ex:MachineControl ;
+    aias:assignedFunction    ex:Step2 .
+
+ex:AssignStep3 a vdi3682:Assignment ;
+    rdfs:label "Step 3 on the motor control"@en ;
+    vdi3682:assignedResource ex:MotorControl ;
+    aias:assignedFunction    ex:Step3 .
+
+# The edge device carries no AI function. It exists because the machine
+# control cannot reach the cloud on its own, which is a fact about the plant
+# rather than about the AI.
+ex:EdgeDevice a aias:EdgeDevice ; rdfs:label "Edge device"@en ;
+    aias:appearsAsOpenSystem ex:OsEdge .
+
+#################################################################
+#    Level 3: the cloud
+#
+#    All five AI functions sit here. The system states Cloud as its design,
+#    and question 09 checks that claim against these assignments.
+#################################################################
+
+ex:Cloud a aias:ExternalCloud ; rdfs:label "External cloud"@en ;
+    aias:appearsAsOpenSystem ex:OsCloud .
+
+ex:Storing    a iso22989:Storing ; rdfs:label "Storing"@en ;
+    iso22989:hasDataSink ex:Sink .
+ex:Processing a iso22989:DataProcessing ; rdfs:label "Preprocessing"@en ;
+    iso22989:consistsOfStep ex:StepNorm .
+ex:Training   a iso22989:MachineLearning ; rdfs:label "Training"@en ;
+    iso22989:basedOnAlgorithm ex:TrainAlg ;
+    iso22989:usesData ex:TrainData ;
+    iso22989:determines ex:Weights .
+ex:Evaluation a iso22989:Evaluation ; rdfs:label "Evaluation"@en ;
+    iso22989:usesData ex:EvalData .
+ex:Inference  a iso22989:Inference ; rdfs:label "Inference"@en ;
+    iso22989:usesData ex:ProdData ;
+    iso22989:isExecutedBy ex:Model ;
+    iso22989:creates ex:Prediction .
+
+ex:Sink     a iso22989:DataSink ; rdfs:label "Data sink"@en .
+ex:StepNorm a iso22989:Normalization ; rdfs:label "Normalisation"@en .
+
+ex:TrainAlg a iso22989:MLAlgorithm ; rdfs:label "Training algorithm"@en ;
+    iso22989:basedOnLearning iso22989:SupervisedLearning .
+ex:Weights  a iso22989:ModelParameter ; rdfs:label "Model parameters"@en .
+ex:ModelAlg a iso22989:ModelAlgorithm ; rdfs:label "Model algorithm"@en .
+
+ex:Model a iso22989:MLModel ; rdfs:label "Model"@en ;
+    iso22989:basedOnAlgorithm ex:ModelAlg ;
+    iso22989:hasParameter     ex:Weights ;
+    iso22989:isCreatedBy      ex:Training .
+
+ex:Prediction a iso22989:Prediction ; rdfs:label "Prediction"@en ;
+    iso22989:fulfilsTask ex:Task .
+
+ex:AssignStoring    a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Storing .
+ex:AssignProcessing a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Processing .
+ex:AssignTraining   a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Training .
+ex:AssignEvaluation a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Evaluation .
+ex:AssignInference  a vdi3682:Assignment ; vdi3682:assignedResource ex:Cloud ; aias:assignedFunction ex:Inference .
+
+#################################################################
+#    The data
+#################################################################
+
+ex:PositionData a iso22989:TrainingData ; rdfs:label "Position data"@en ;
+    iso22989:isLabelled true ;
+    iso22989:isAcquiredBy ex:AcqLeft .
+ex:TrainData a iso22989:TrainingData ; rdfs:label "Training data"@en ;
+    iso22989:isLabelled true ;
+    iso22989:isAcquiredBy ex:AcqLeft .
+ex:EvalData  a iso22989:EvaluationData ; rdfs:label "Evaluation data"@en ;
+    iso22989:isAcquiredBy ex:AcqRight .
+ex:ProdData  a iso22989:ProductionData , iso22989:InputData ; rdfs:label "Production data"@en ;
+    iso22989:isAcquiredBy ex:AcqTime .
+
+#################################################################
+#    The communication chain
+#
+#    A resource appears as an open system when its communication is described,
+#    which the ISO 7498 pattern states on that class. The payload carries the
+#    dataset, and the dataset keeps its identity across every transmission.
+#################################################################
+
+ex:OsSensorLeft    a iso7498:OpenSystem ; rdfs:label "Sensor left as open system"@en .
+ex:OsSensorRight   a iso7498:OpenSystem ; rdfs:label "Sensor right as open system"@en .
+ex:OsMotorControl  a iso7498:OpenSystem ; rdfs:label "Motor control as open system"@en .
+ex:OsMachineControl a iso7498:OpenSystem ; rdfs:label "Machine control as open system"@en .
+ex:OsEdge          a iso7498:OpenSystem ; rdfs:label "Edge device as open system"@en .
+ex:OsCloud         a iso7498:OpenSystem ; rdfs:label "Cloud as open system"@en .
+
+ex:CommSensorLeft a iso7498:Association ; rdfs:label "Sensor left to motor control"@en ;
+    iso7498:hasSourceSystem ex:OsSensorLeft ;
+    iso7498:hasTargetSystem ex:OsMotorControl ;
+    iso7498:transmits       ex:PduLeft .
+
+ex:CommSensorRight a iso7498:Association ; rdfs:label "Sensor right to motor control"@en ;
+    iso7498:hasSourceSystem ex:OsSensorRight ;
+    iso7498:hasTargetSystem ex:OsMotorControl ;
+    iso7498:transmits       ex:PduRight .
+
+ex:CommControlToEdge a iso7498:Association ; rdfs:label "Machine control to edge device"@en ;
+    iso7498:hasSourceSystem ex:OsMachineControl ;
+    iso7498:hasTargetSystem ex:OsEdge ;
+    iso7498:transmits       ex:PduMerged .
+
+ex:CommEdgeToCloud a iso7498:Association ; rdfs:label "Edge device to cloud"@en ;
+    iso7498:hasSourceSystem ex:OsEdge ;
+    iso7498:hasTargetSystem ex:OsCloud ;
+    iso7498:transmits       ex:PduCloud ;
+    iso7498:hasQualityOfService ex:QosCloud .
+
+ex:PduLeft   a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadLeft .
+ex:PduRight  a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadRight .
+ex:PduMerged a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadMerged .
+ex:PduCloud  a iso7498:ProtocolDataUnit ; iso7498:hasUserData ex:PayloadCloud .
+
+ex:PayloadLeft   a iso7498:UserData ; aias:carriesData ex:PositionData .
+ex:PayloadRight  a iso7498:UserData ; aias:carriesData ex:PositionData .
+ex:PayloadMerged a iso7498:UserData ; aias:carriesData ex:TrainData .
+ex:PayloadCloud  a iso7498:UserData ; aias:carriesData ex:TrainData .
+
+ex:QosCloud a iso7498:QualityOfService ; rdfs:label "Quality of service to the cloud"@en ;
+    rdfs:comment "Minutes are acceptable here, which is the reason the whole analysis may sit in a cloud."@en .

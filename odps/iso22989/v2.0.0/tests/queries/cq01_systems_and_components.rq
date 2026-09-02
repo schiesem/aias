@@ -1,0 +1,21 @@
+# CQ 01: Which AI systems does a model contain, and which components make up
+# each?
+#
+# 3.1.4 defines the AI system as an engineered system generating outputs for a
+# given set of human-defined objectives, 3.1.2 the component as a functional
+# element constructing it.
+#
+# A system without components is not an error. Cases 1 and 2 relate their
+# functions to the system directly, which suffices while there is one of each
+# kind. Case 3 needs the components, since two of them perform the same kind of
+# function differently.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system (GROUP_CONCAT(DISTINCT ?c; separator=", ") AS ?components)
+WHERE {
+  ?system a iso:AISystem .
+  OPTIONAL { ?system iso:consistsOf ?component }
+  BIND(COALESCE(STR(?component), "") AS ?c)
+} GROUP BY ?system ORDER BY ?system

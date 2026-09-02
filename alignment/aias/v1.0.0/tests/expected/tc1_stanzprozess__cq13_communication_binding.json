@@ -1,0 +1,10 @@
+[
+  "https://w3id.org/aias/example/stanzprozess#Elektromotor1|https://w3id.org/aias#Actuator|both directions|https://w3id.org/aias/example/stanzprozess#Profibus1",
+  "https://w3id.org/aias/example/stanzprozess#Elektromotor2|https://w3id.org/aias#Actuator|both directions|https://w3id.org/aias/example/stanzprozess#Profibus1",
+  "https://w3id.org/aias/example/stanzprozess#Positionssensor|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/stanzprozess#Profibus1",
+  "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|receives|https://w3id.org/aias/example/stanzprozess#Internet1",
+  "https://w3id.org/aias/example/stanzprozess#RaspberryPI4|https://w3id.org/aias#EdgeDevice|both directions|https://w3id.org/aias/example/stanzprozess#Ethernet1",
+  "https://w3id.org/aias/example/stanzprozess#RaspberryPI4|https://w3id.org/aias#EdgeDevice|both directions|https://w3id.org/aias/example/stanzprozess#Internet1",
+  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|both directions|https://w3id.org/aias/example/stanzprozess#Ethernet1",
+  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|both directions|https://w3id.org/aias/example/stanzprozess#Profibus1"
+]

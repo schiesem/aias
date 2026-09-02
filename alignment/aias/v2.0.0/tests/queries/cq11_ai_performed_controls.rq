@@ -1,0 +1,25 @@
+# CQ 11: Which controls of the plant are carried out by an AI system, and which
+# are not?
+#
+# The question the two test cases turn on. Case 1 answers that the plant
+# controls and the AI does not. Case 2 answers that one control is performed by
+# an AI function.
+#
+# It is answerable because iso22989:Control and iec60050:Control are equivalent
+# classes: one statement, seen by both subdomains. A control stated in either
+# namespace answers here.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?kind (IF(BOUND(?byAI), "yes", "no") AS ?performedByAI)
+WHERE {
+  ?control a ?kind .
+  ?kind rdfs:subClassOf* iec60050:Control .
+  FILTER NOT EXISTS { ?control a ?n . ?n rdfs:subClassOf+ ?kind .
+                      ?n rdfs:subClassOf* iec60050:Control }
+  OPTIONAL { ?control a iso22989:Control . BIND(1 AS ?byAI) }
+} ORDER BY ?control

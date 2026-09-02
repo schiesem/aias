@@ -1,0 +1,20 @@
+# CQ 01: Which process operators does a process consist of, and what enters and leaves each?
+#
+# The baseline question of the pattern, answered per process: which operators a
+# process contains, and what enters and leaves each of them.
+#
+# Inputs and outputs are collected per operator rather than listed as separate
+# columns of one row. Listing them separately would join the two sets into
+# their cartesian product, which reads as a pairing of an individual input with
+# an individual output, and VDI 3682 asserts no such pairing. Question 07 records
+# that limit.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?process ?operator
+       (GROUP_CONCAT(DISTINCT ?input;  separator=", ") AS ?inputs)
+       (GROUP_CONCAT(DISTINCT ?output; separator=", ") AS ?outputs)
+WHERE {
+  ?process a vdi3682:Process ; vdi3682:consistsOf ?operator .
+  ?operator a vdi3682:ProcessOperator .
+  OPTIONAL { ?operator vdi3682:hasInput  ?input }
+  OPTIONAL { ?operator vdi3682:hasOutput ?output }
+} GROUP BY ?process ?operator ORDER BY ?process ?operator

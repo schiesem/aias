@@ -1,0 +1,20 @@
+# CQ 15: Which variables are carried by no action line?
+#
+# A variable of 351-42 exists in a model to be acted on or to act. One that no
+# line carries is stated and then never used: the model names it and shows no
+# place where it flows.
+#
+# Not always a defect. A disturbance variable acts on a unit from outside the
+# chain, 351-42-13, so it is reached by actsOn rather than by a line, and it
+# appears here correctly. The role is reported so a reader can tell that case
+# from a forgotten connection.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?variable ?role
+WHERE {
+  ?variable a ?role . ?role rdfs:subClassOf* iec60050:VariableQuantity .
+  FILTER NOT EXISTS { ?variable a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?role ;
+                                rdfs:subClassOf* iec60050:VariableQuantity }
+  FILTER NOT EXISTS { ?line iec60050:carriesVariable ?variable }
+} ORDER BY ?role ?variable

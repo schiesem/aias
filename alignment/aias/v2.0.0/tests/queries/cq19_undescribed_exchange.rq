@@ -1,0 +1,29 @@
+# CQ 19: Which resources exchange data without a recorded communication?
+#
+# Finds what a model assumes but does not state. Two functions on different
+# resources working on the same dataset imply that the data got from one to the
+# other, and if no association says how, the model is silent about it.
+#
+# An empty answer means every exchange is described. A non-empty one is a
+# finding rather than an error.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?resource1 ?resource2 ?data
+WHERE {
+  ?a1 vdi3682:assignedResource ?resource1 ; aias:assignedFunction ?f1 .
+  ?a2 vdi3682:assignedResource ?resource2 ; aias:assignedFunction ?f2 .
+  ?f1 iso22989:usesData ?data .
+  ?f2 iso22989:usesData ?data .
+  FILTER(STR(?resource1) < STR(?resource2))
+  FILTER NOT EXISTS {
+    ?resource1 aias:appearsAsOpenSystem ?os1 .
+    ?resource2 aias:appearsAsOpenSystem ?os2 .
+    { ?c iso7498:hasSourceSystem ?os1 ; iso7498:hasTargetSystem ?os2 } UNION
+    { ?c iso7498:hasSourceSystem ?os2 ; iso7498:hasTargetSystem ?os1 }
+  }
+} ORDER BY ?resource1 ?resource2

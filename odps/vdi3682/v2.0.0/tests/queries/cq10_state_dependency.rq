@@ -1,0 +1,19 @@
+# CQ 10: Which states depend on which others?
+#
+# Part 1, 4.1.2 carries the dependency alongside the flow, and the two say
+# different things. A flow states that something passes from one element to
+# another. A dependency states that one state is bound to another without
+# anything passing between them, as a piece of information is bound to the
+# product it describes.
+#
+# The relation is not transitive in the standard, so the answer reports the
+# stated pairs rather than a closure over them. A model needing the chain would
+# have to walk it explicitly, and question 14 does so for the parallel case.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?state ?stateKind ?dependsOn ?dependsOnKind
+WHERE {
+  ?state vdi3682:dependency ?dependsOn .
+  ?state     a ?stateKind     . ?stateKind     rdfs:subClassOf* vdi3682:State .
+  ?dependsOn a ?dependsOnKind . ?dependsOnKind rdfs:subClassOf* vdi3682:State .
+} ORDER BY ?state ?dependsOn

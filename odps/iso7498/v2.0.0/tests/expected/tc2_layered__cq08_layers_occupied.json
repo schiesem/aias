@@ -1,0 +1,9 @@
+[
+  "1|PhysicalLayer|named only",
+  "2|DataLinkLayer|refined into subsystems",
+  "3|NetworkLayer|refined into subsystems",
+  "4|TransportLayer|refined into subsystems",
+  "5|SessionLayer|empty",
+  "6|PresentationLayer|empty",
+  "7|ApplicationLayer|named only"
+]

@@ -1,0 +1,11 @@
+# CQ 04: Which process is above an operator, and across how many levels?
+#
+# The parent process comes from the inferred hasUpperProcess chain, the parent
+# operator from isComposedOf. The pattern carries no depth counter, so an
+# operator without a parent sits at the top level and one with a parent below it.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator ?parentOperator ?parentProcess WHERE {
+  ?operator a vdi3682:ProcessOperator .
+  OPTIONAL { ?parentOperator vdi3682:isComposedOf ?operator }
+  OPTIONAL { ?operator vdi3682:hasUpperProcess ?parentProcess }
+} ORDER BY ?operator

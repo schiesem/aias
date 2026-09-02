@@ -1,0 +1,27 @@
+# CQ 24: Which of the named elements carry no identification?
+#
+# The counterpart of question 23. Part 1, 4.4 provides the identification for
+# the elements a description names, and isIdentifiedBy is functional, so an
+# element carries at most one.
+#
+# Restricted to the four kinds a reader refers to by name: the process, its
+# operators, the states passing between them, and the resources performing
+# them. The flow is deliberately left out. It is the line between two named
+# things and is read off its endpoints, so an unidentified flow is the normal
+# case and reporting it would bury the cases that matter.
+#
+# What the standard does not do is require an identification. A model may leave
+# one out, and OWL cannot object under the open world assumption: an absent
+# identification means unstated, not absent. The answer therefore reports what
+# a model has left open rather than what it has got wrong, and enforcing it is
+# a matter for SHACL.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?element ?elementKind
+WHERE {
+  VALUES ?root { vdi3682:ProcessOperator vdi3682:Process vdi3682:State
+                 vdi3682:TechnicalResource }
+  ?element a ?elementKind . ?elementKind rdfs:subClassOf* ?root .
+  FILTER NOT EXISTS { ?element vdi3682:isIdentifiedBy ?any }
+  FILTER NOT EXISTS { ?element a ?narrower . ?narrower rdfs:subClassOf+ ?elementKind }
+} ORDER BY ?elementKind ?element

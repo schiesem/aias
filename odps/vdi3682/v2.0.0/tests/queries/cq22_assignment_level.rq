@@ -1,0 +1,25 @@
+# CQ 22: On which decomposition level is each resource assigned?
+#
+# Figure 5 shows one process at two levels of detail. A resource may be
+# assigned on either, and assigning it on both counts the same work twice: the
+# refined operators T11 and T12 do the work that T1 does in the coarse view,
+# not work in addition to it.
+#
+# Test case 1 follows that rule and models T11 and T12 only. The question makes
+# the rule checkable instead of leaving it in a comment: an answer naming one
+# resource on an operator and on its parent is the double count.
+#
+# The level is the number of steps up to an operator that has no parent.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?resource ?operator (COUNT(?ancestor) AS ?level) ?parentAlsoAssigned
+WHERE {
+  ?operator vdi3682:hasAssignment ?assignment .
+  ?assignment vdi3682:assignedResource ?resource .
+  OPTIONAL { ?operator (^vdi3682:isComposedOf)+ ?ancestor }
+  OPTIONAL {
+    ?parent vdi3682:isComposedOf ?operator ; vdi3682:hasAssignment ?pa .
+    ?pa vdi3682:assignedResource ?resource .
+    BIND(?parent AS ?parentAlsoAssigned)
+  }
+} GROUP BY ?resource ?operator ?parentAlsoAssigned
+  ORDER BY ?resource ?operator

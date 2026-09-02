@@ -1,0 +1,34 @@
+# CQ 08: Which layers does a case occupy, and which stay empty?
+#
+# The seven layers of clause 6 are supplied as named individuals, and a model
+# fills as many of them as it needs. Test case 1 describes a communication
+# without naming a layer at all, test case 2 refines the same communication
+# down to the three lower ones.
+#
+# The catalogue is used as the yardstick here rather than as the answer. The
+# question is which of the seven a case has anything to say about, so the
+# answer moves with the case even though the layers do not.
+#
+# How a layer is occupied is reported rather than reduced to a yes. A case may
+# name a technology for a layer and say nothing else about it, or it may open
+# the layer up into subsystems and entities, and the two are different depths
+# of description. Test case 1 names four technologies and reaches five layers
+# that way without describing any of them; test case 2 refines three of them
+# into an architecture.
+# A-box check: catalogue as yardstick. The seven layers are supplied and the
+# answer reports, per layer, whether the case occupies it. Without a case
+# every layer reads as empty, which is the correct answer rather than a
+# finding: the question is about the case, the rows are the scale it is
+# measured on.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?layerNumber ?layer ?occupied
+WHERE {
+  ?l a iso7498:Layer ; iso7498:layerNumber ?layerNumber .
+  BIND(EXISTS { ?s a iso7498:Subsystem ; iso7498:atLayer ?l }     AS ?refined)
+  BIND(EXISTS { ?t iso7498:realisesLayer ?l }                     AS ?viaTechnology)
+  BIND(EXISTS { ?c iso7498:usesLayer ?l }                         AS ?stated)
+  BIND(EXISTS { ?u a iso7498:DataUnit ; iso7498:atLayer ?l }       AS ?viaDataUnit)
+  BIND(IF(?refined, "refined into subsystems",
+       IF(?stated || ?viaTechnology || ?viaDataUnit, "named only", "empty")) AS ?occupied)
+  BIND(REPLACE(STR(?l), ".*#", "") AS ?layer)
+} ORDER BY DESC(?layerNumber)

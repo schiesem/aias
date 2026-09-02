@@ -1,0 +1,62 @@
+@startuml fig4_action_chain
+' Diagram 4 of the IEC 60050-351 pattern: the action chain of test case 2,
+' after Figure 2 of the standard.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: the nine action lines of test case 2 as the chain of
+' functional units they run between, with the letter of the figure legend each
+' line carries. Line M8 ends at the comparing element that M3 starts from, so
+' the chain is a cycle. Test case 3 has the same property with an open action,
+' which is the point the caption has to make.
+'
+' Drawn as a flow rather than as a class diagram, since what matters here is
+' the shape of the chain, not the class hierarchy. Each box is one functional
+' unit of the test model, each edge one action line.
+'
+' Left out on purpose: the physical units realising these functional units, the
+' groupings the standard draws as dashed frames, and the variables as
+' individuals. All three are in the test model and in diagram 2.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam nodesep 26
+skinparam ranksep 34
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+skinparam rectangle {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+
+rectangle "CommandSourceB" as SRC
+rectangle "ReferenceGeneratorB" as REF
+rectangle "ComparingElementB" as CMP
+rectangle "ControllingElementB" as CTL
+rectangle "ActuatorB" as ACT
+rectangle "ValveB" as VAL
+rectangle "ControlledSystemB" as SYS
+rectangle "MeasuringElementB" as MSR
+rectangle "FinalVariableGenerationB" as FIN
+
+' Top to bottom, so the returning line M8 is the only edge running upwards and
+' the cycle is visible as such.
+SRC --> REF : "M1  c"
+REF --> CMP : "M2  w"
+CMP --> CTL : "M3  e"
+CTL --> ACT : "M4  m"
+ACT --> VAL : "M5  y"
+VAL --> SYS : "M6  y"
+SYS --> MSR : "M7  x"
+MSR --> CMP : "M8  r"
+SYS --> FIN : "M9  q"
+
+@enduml

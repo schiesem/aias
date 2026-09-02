@@ -1,0 +1,144 @@
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix bibo:     <http://purl.org/ontology/bibo/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias/odp/iec60050/instances>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/odp/iec60050/instances/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/1.0.0> ;
+    dcterms:title "IEC 60050-351 Pattern: Named Individuals"@en ;
+    dcterms:description """Named individuals for the IEC 60050-351 ontology design pattern: the time and quality characteristics a model states about the behaviour of a control.
+
+They are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well."""@en ;
+    dcterms:created "2026-08-18"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "TODO: author name, ORCID" ;
+    dcterms:publisher "TODO: institution" ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/iec60050/instances#" ;
+    vann:preferredNamespacePrefix "iec60050-inst" ;
+    bibo:status "Draft"@en ;
+    rdfs:comment """Every individual here carries the clause of DIN IEC 60050-351:2014 that defines it, and where the standard gives a formula symbol that symbol is recorded as well, so a model stays checkable against the figures of the standard.
+
+Seven of the definitions are reconstructed from the German text. Their English wording is interrupted by formula figures in the printed standard, which the extraction could not resolve, and the note on each affected individual says so."""@en .
+
+dcterms:created a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+
+#################################################################
+#    Time characteristics
+#################################################################
+
+inst:SamplingPeriod a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Sampling Period"@en ;
+    rdfs:comment "The duration of the time interval between two consecutive observations in a periodic sampling control system."@en ;
+    skos:note "IEC 60050-351, 351-47-16. The normative equivalent of what practice calls cycle time, a term the standard does not define."@en .
+
+inst:TimeConstant a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Time Constant"@en ;
+    rdfs:comment "For a quantity growing or decaying exponentially towards a constant value, the duration of a time interval at the end of which the absolute difference to that value has decreased to 1/e of its initial amount."@en ;
+    skos:note "IEC 60050-351, 351-45-32."@en ;
+    iec60050:symbol "T" .
+
+inst:DeadTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Dead Time"@en ;
+    rdfs:comment "In a dead-time element, the duration of the time interval by which the output variable is shifted relative to the input variable."@en ;
+    skos:note "IEC 60050-351, 351-50-30. The interval by which a processing step delays what passes through it."@en ;
+    iec60050:symbol "T_t" .
+
+inst:EquivalentDeadTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Equivalent Dead Time"@en ;
+    rdfs:comment "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."@en ;
+    skos:note "IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot."@en ;
+    iec60050:symbol "T_u" .
+
+inst:SettlingTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Settling Time"@en ;
+    rdfs:comment "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."@en ;
+    skos:note "IEC 60050-351, 351-45-37. English wording reconstructed from the German entry."@en .
+
+inst:ControlRiseTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Control Rise Time"@en ;
+    rdfs:comment "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it first returns into that band."@en ;
+    skos:note "IEC 60050-351, 351-46-01. English wording reconstructed from the German entry. It ends at the first return, whereas the control settling time requires the controlled variable to stay inside."@en ;
+    iec60050:symbol "T_cr" .
+
+inst:ControlSettlingTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Control Settling Time"@en ;
+    rdfs:comment "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it returns into that band and remains within it."@en ;
+    skos:note "IEC 60050-351, 351-46-02. English wording reconstructed from the German entry. The sharper of the two criteria, since it requires the controlled variable to stay inside the band."@en ;
+    iec60050:symbol "T_cs" .
+
+inst:InterruptReactionTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Interrupt Reaction Time"@en ;
+    rdfs:comment "The duration of the time interval that elapses between the arrival of an interrupt signal at the interrupt input unit and the instant of decision whether the interrupt is handled or not."@en ;
+    skos:note "IEC 60050-351, 351-54-18. The only latency measure the standard defines."@en .
+
+inst:ManipulatingTime a owl:NamedIndividual, iec60050:TimeCharacteristic ;
+    rdfs:label "Manipulating Time"@en ;
+    rdfs:comment "The duration of the time interval in which the manipulated variable runs with the highest speed through its whole range."@en ;
+    skos:note "IEC 60050-351, 351-48-17. The time measure closest to a device, since it belongs to the manipulating equipment."@en .
+
+#################################################################
+#    Quality characteristics
+#################################################################
+
+inst:Overshoot a owl:NamedIndividual, iec60050:QualityCharacteristic ;
+    rdfs:label "Overshoot"@en ;
+    rdfs:comment "In a step response, the largest transient deviation of the output variable from its final steady-state value, usually expressed as a percentage of the difference between its final and its initial steady-state value."@en ;
+    skos:note "IEC 60050-351, 351-45-38. English wording reconstructed from the German entry."@en ;
+    iec60050:symbol "X_m" .
+
+inst:PhaseMargin a owl:NamedIndividual, iec60050:QualityCharacteristic ;
+    rdfs:label "Phase Margin"@en ;
+    rdfs:comment "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."@en ;
+    skos:note "IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable."@en ;
+    iec60050:symbol "phi_m" .
+
+inst:GainMargin a owl:NamedIndividual, iec60050:QualityCharacteristic ;
+    rdfs:label "Gain Margin"@en ;
+    rdfs:comment "The reciprocal of the gain response of the open control loop at the phase crossover angular frequency."@en ;
+    skos:note "IEC 60050-351, 351-46-07. English wording reconstructed from the German entry. The second stability reserve, alongside the phase margin."@en ;
+    iec60050:symbol "G_m" .
+
+inst:DeadBand a owl:NamedIndividual, iec60050:QualityCharacteristic ;
+    rdfs:label "Dead Band"@en ;
+    skos:altLabel "dead zone"@en ;
+    rdfs:comment "A finite range of values of the input variable within which a variation of the input variable does not produce any measurable change in the output variable."@en ;
+    skos:note "IEC 60050-351, 351-45-15. The range in which an output has no effect, which matters when a control writes a value too small to act."@en .
+
+#################################################################
+#    All characteristics are distinct
+#
+#    Two names do not denote two things in OWL unless said so. Without this the
+#    functional property forCharacteristic would not bite when a value claims
+#    two characteristics.
+#################################################################
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( inst:SamplingPeriod inst:TimeConstant inst:DeadTime
+                         inst:EquivalentDeadTime inst:SettlingTime
+                         inst:ControlRiseTime inst:ControlSettlingTime
+                         inst:InterruptReactionTime inst:ManipulatingTime
+                         inst:Overshoot inst:PhaseMargin inst:GainMargin
+                         inst:DeadBand ) .

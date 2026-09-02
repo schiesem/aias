@@ -1,0 +1,24 @@
+# CQ 05: Which functions does a given resource perform, and from which
+# subdomains?
+#
+# Asked from the other end. An edge device carrying an inference and a process
+# step answers with both, which is what makes a mixed architecture visible.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?resource ?function ?origin
+WHERE {
+  ?assignment vdi3682:assignedResource ?resource ;
+              aias:assignedFunction    ?function .
+  ?function a ?kind .
+  ?kind rdfs:subClassOf* aias:Function .
+  FILTER NOT EXISTS { ?function a ?n . ?n rdfs:subClassOf+ ?kind .
+                      ?n rdfs:subClassOf* aias:Function }
+  BIND(IF(STRSTARTS(STR(?kind), STR(vdi3682:)),  "VDI 3682",
+       IF(STRSTARTS(STR(?kind), STR(iso22989:)), "ISO 22989",
+       IF(STRSTARTS(STR(?kind), STR(iec60050:)), "IEC 60050", "AIAS"))) AS ?origin)
+} ORDER BY ?resource ?function

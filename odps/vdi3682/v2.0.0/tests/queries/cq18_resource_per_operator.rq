@@ -1,0 +1,5 @@
+# CQ 18: Which resource performs which operator?
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator ?resource WHERE {
+  ?operator vdi3682:isAssignedTo ?resource .
+} ORDER BY ?operator ?resource

@@ -1,0 +1,19 @@
+# CQ 06: Which prediction fulfils which task?
+#
+# What closes the circle from the output back to the objective the system was
+# built for. 3.1.27 defines the prediction as the primary output of an AI
+# system when provided with input data.
+#
+# In test case 3 only the second prediction fulfils the task. The first is
+# carried forward as input to the symbolic component, which is what note 1 to
+# 3.1.27 describes: predictions can be followed by further outputs.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?prediction ?task ?taskKind
+WHERE {
+  ?prediction iso:fulfilsTask ?task .
+  ?task a ?taskKind .
+  ?taskKind rdfs:subClassOf iso:Task .
+} ORDER BY ?prediction

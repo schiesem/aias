@@ -1,0 +1,21 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc2#ActuatorB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#CommandSourceB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ComparingElementB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlSystemB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ControlledSystemB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllerB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllingElementB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ControllingSystemB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#DeviceC|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc2#DeviceD1|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc2#DeviceD2|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc2#DeviceE|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc2#DeviceF|no|yes",
+  "https://w3id.org/aias/example/iec60050/tc2#FinalControllingEquipmentB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#FinalVariableGenerationB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#MeasuringElementB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ReferenceGeneratorB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#SensingElementB|yes|no",
+  "https://w3id.org/aias/example/iec60050/tc2#ValveB|yes|no"
+]

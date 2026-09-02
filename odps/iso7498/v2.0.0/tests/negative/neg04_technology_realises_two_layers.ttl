@@ -1,0 +1,11 @@
+# MUST BE INCONSISTENT: realisesLayer is functional. A technology realises the
+# services of one layer; a protocol spanning two is modelled as two
+# technologies.
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst: <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix ex: <https://w3id.org/aias/example/iso7498/neg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso7498/neg04> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+ex:SomeTech a iso7498:Technology ;
+    iso7498:realisesLayer inst:NetworkLayer , inst:TransportLayer .

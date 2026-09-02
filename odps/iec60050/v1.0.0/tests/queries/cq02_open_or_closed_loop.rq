@@ -1,0 +1,23 @@
+# CQ 02: Which controls are open-loop, which closed-loop?
+#
+# 351-47-01 and 351-47-02. The two are deliberately not disjoint, since
+# 351-47-02 admits open-loop control inside a closed action path. An control
+# may therefore fall under both, and the query reports that rather than forcing
+# a choice between them.
+#
+# The pattern class is reached over the subclass hierarchy rather than by
+# asking for it as a type. The reasoner materialises the direct type of an
+# individual, so a query anchored on the general class alone returns nothing.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?control
+       (IF(BOUND(?o), "yes", "no") AS ?openLoop)
+       (IF(BOUND(?c), "yes", "no") AS ?closedLoop)
+WHERE {
+  ?control a ?type .
+  ?type rdfs:subClassOf* iec60050:Control .
+  OPTIONAL { ?control a ?ot . ?ot rdfs:subClassOf* iec60050:OpenLoopControl   . BIND(1 AS ?o) }
+  OPTIONAL { ?control a ?ct . ?ct rdfs:subClassOf* iec60050:ClosedLoopControl . BIND(1 AS ?c) }
+} ORDER BY ?control

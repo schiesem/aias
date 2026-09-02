@@ -1,0 +1,26 @@
+# CQ 03: Which resources does a model contain, and of which kind is each?
+#
+# Sensors, actuators, controllers, edge devices, computers and the two cloud
+# kinds. They are classes of this work rather than of a standard, which
+# ALIGNMENT.md records.
+#
+# The class is reached over the subclass hierarchy rather than by asking for it
+# as a type. The reasoner materialises the direct type of an individual, so a
+# query anchored on a general class alone returns nothing.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?resource ?kind
+WHERE {
+  ?resource a ?kind .
+  ?kind rdfs:subClassOf* aias:Resource .
+  FILTER NOT EXISTS {
+    ?resource a ?narrower .
+    ?narrower rdfs:subClassOf+ ?kind .
+    ?narrower rdfs:subClassOf* aias:Resource .
+  }
+} ORDER BY ?kind ?resource

@@ -1,0 +1,12 @@
+[
+  "https://w3id.org/aias/example/tc2#AcqId|https://w3id.org/aias/odp/iso22989#Acquisition|https://w3id.org/aias/example/tc2#IdReader|https://w3id.org/aias#Sensor",
+  "https://w3id.org/aias/example/tc2#AcqImage|https://w3id.org/aias/odp/iso22989#Acquisition|https://w3id.org/aias/example/tc2#Camera|https://w3id.org/aias#Sensor",
+  "https://w3id.org/aias/example/tc2#AcqPosition|https://w3id.org/aias/odp/iso22989#Acquisition|https://w3id.org/aias/example/tc2#RobotControl|https://w3id.org/aias#Controller",
+  "https://w3id.org/aias/example/tc2#Correction|https://w3id.org/aias/odp/iec60050#OpenLoopControl|https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias#EdgeDevice",
+  "https://w3id.org/aias/example/tc2#Evaluation|https://w3id.org/aias/odp/iso22989#Evaluation|https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias#ExternalCloud",
+  "https://w3id.org/aias/example/tc2#Inference|https://w3id.org/aias/odp/iso22989#Inference|https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias#EdgeDevice",
+  "https://w3id.org/aias/example/tc2#Merging|https://w3id.org/aias/odp/iso22989#DataProcessing|https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias#EdgeDevice",
+  "https://w3id.org/aias/example/tc2#PathControl|https://w3id.org/aias/odp/iec60050#ClosedLoopControl|https://w3id.org/aias/example/tc2#RobotControl|https://w3id.org/aias#Controller",
+  "https://w3id.org/aias/example/tc2#Storing|https://w3id.org/aias/odp/iso22989#Storing|https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias#ExternalCloud",
+  "https://w3id.org/aias/example/tc2#Training|https://w3id.org/aias/odp/iso22989#MachineLearning|https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias#ExternalCloud"
+]

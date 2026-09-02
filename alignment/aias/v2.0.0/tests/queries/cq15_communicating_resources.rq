@@ -1,0 +1,20 @@
+# CQ 15: Which resources communicate with one another, and in which direction?
+#
+# A resource appears as an open system when its communication is described,
+# which the ISO 7498 pattern states on that class. The alignment records the
+# appearance through appearsAsOpenSystem, so that a model can go from a device
+# to its communication.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?source ?target ?communication
+WHERE {
+  ?source aias:appearsAsOpenSystem ?os1 .
+  ?target aias:appearsAsOpenSystem ?os2 .
+  ?communication iso7498:hasSourceSystem ?os1 ;
+                 iso7498:hasTargetSystem ?os2 .
+} ORDER BY ?source ?target

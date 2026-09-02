@@ -1,0 +1,10 @@
+[
+  "https://w3id.org/aias/example/tc1#P1|consumed by|https://w3id.org/aias/example/tc1#O1",
+  "https://w3id.org/aias/example/tc1#P1|consumed by|https://w3id.org/aias/example/tc1#O11",
+  "https://w3id.org/aias/example/tc1#P2|produced by|https://w3id.org/aias/example/tc1#O1",
+  "https://w3id.org/aias/example/tc1#P2|produced by|https://w3id.org/aias/example/tc1#O11",
+  "https://w3id.org/aias/example/tc1#P3|produced by|https://w3id.org/aias/example/tc1#O1",
+  "https://w3id.org/aias/example/tc1#P3|produced by|https://w3id.org/aias/example/tc1#O12",
+  "https://w3id.org/aias/example/tc1#P4|consumed by|https://w3id.org/aias/example/tc1#O12",
+  "https://w3id.org/aias/example/tc1#P4|produced by|https://w3id.org/aias/example/tc1#O11"
+]

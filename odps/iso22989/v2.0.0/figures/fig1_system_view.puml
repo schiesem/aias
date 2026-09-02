@@ -1,0 +1,139 @@
+@startuml fig1_system_view
+' Diagram 1 of the ISO/IEC 22989 pattern: the system, its tasks and its
+' functions.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: the first of the three views the pattern is built in. What an
+' AI system is made of, what it is for, and which activities of the life cycle
+' it performs.
+'
+' Left out on purpose:
+'  - algorithms, models and parameters: diagram 2
+'  - data and the processes preparing it: diagram 3
+'  - the qualities of clause 3.5: diagram 4
+'
+' Control appears here among the functions. Its entry sits in clause 3.5 among
+' the terms related to trustworthiness, but the definition says action, which
+' is what the other functions are as well.
+'  - Retraining and MachineLearning below Training, which belong to the
+'    algorithmic view and appear in diagram 2
+'
+' Read top to bottom: the system, what it addresses, what it does.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 42
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  The system and what it is made of
+' ===================================================================
+
+class AISystem
+class AIComponent
+
+class AIType
+class SymbolicAI
+class SubsymbolicAI
+
+class SystemDesign {
+  <<enum>>
+  Cloud
+  Edge
+  Hybrid
+}
+
+AIType <|-- SymbolicAI
+AIType <|-- SubsymbolicAI
+
+AISystem --> "*" AIComponent  : consistsOf
+AISystem --> "*" AIType       : hasType
+AISystem --> "1" SystemDesign : hasDesign
+
+' ===================================================================
+'  What the system is for
+' ===================================================================
+
+class Task
+class Classification
+class Regression
+class Clustering
+class Generation
+class Prediction
+
+Task <|-- Classification
+Task <|-- Regression
+Task <|-- Clustering
+Task <|-- Generation
+
+AISystem   --> "*" Task : hasTask
+Prediction --> "1" Task : fulfilsTask
+
+' ===================================================================
+'  What the system does
+' ===================================================================
+
+class AIFunction
+class Acquisition
+class Storing
+class DataProcessing
+class Training
+class Validation
+class Verification
+class Evaluation
+class Inference
+class Control
+
+AIFunction <|-- Acquisition
+AIFunction <|-- Storing
+AIFunction <|-- DataProcessing
+AIFunction <|-- Training
+AIFunction <|-- Validation
+AIFunction <|-- Verification
+AIFunction <|-- Evaluation
+AIFunction <|-- Inference
+AIFunction <|-- Control
+
+' The same relation runs from both. The edge from the system passes the
+' AIComponent box on its way down, so its label was landing on top of that box.
+' Labelling the shorter edge instead puts the name where the relation is
+' readable, and the long edge carries the multiplicity alone.
+AISystem    --> "*" AIFunction
+AIComponent --> "*" AIFunction : hasFunction
+Inference   --> "*" Prediction : creates
+
+' Layout only: keep each fan of siblings on one row.
+Acquisition -[hidden]right- Storing
+Storing     -[hidden]right- DataProcessing
+DataProcessing -[hidden]right- Training
+Training    -[hidden]right- Validation
+Validation  -[hidden]right- Verification
+Verification -[hidden]right- Evaluation
+Evaluation  -[hidden]right- Inference
+Inference   -[hidden]right- Control
+
+Classification -[hidden]right- Regression
+Regression     -[hidden]right- Clustering
+Clustering     -[hidden]right- Generation
+
+SymbolicAI -[hidden]right- SubsymbolicAI
+
+@enduml

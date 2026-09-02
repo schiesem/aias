@@ -1,0 +1,18 @@
+# CQ 10: Which functions run outside the plant?
+#
+# The question a data protection review asks first. What makes a cloud external
+# is who operates it, which is a matter of organisation rather than of
+# technology, and the class says so.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?resource
+WHERE {
+  ?assignment aias:assignedFunction ?function ;
+              vdi3682:assignedResource ?resource .
+  ?resource a aias:ExternalCloud .
+} ORDER BY ?function

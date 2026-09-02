@@ -1,0 +1,10 @@
+# CQ 18: Which data units does a communication transmit?
+#
+# Connects the reference model of clause 6 with the data units of 5.6.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?communication ?dataUnit ?layerNumber WHERE {
+  ?communication iso7498:transmits ?u .
+  OPTIONAL { ?u iso7498:atLayer ?l . ?l iso7498:layerNumber ?layerNumber }
+  BIND(REPLACE(STR(?u), ".*#", "") AS ?dataUnit)
+} ORDER BY ?communication

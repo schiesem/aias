@@ -1,0 +1,97 @@
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst:    <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix ex:      <https://w3id.org/aias/example/iso7498/tc1#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 1: two open systems communicating, level 1.
+#
+# After ISO/IEC 7498-1, Figure 11. The systems stay neutral, as the figures of
+# the standard do, since 1.3 states that the reference model implies no
+# particular implementation or technology.
+#
+# This is the level at which an engineering model normally works: who talks to
+# whom, over which layer, with which technology, and what the communication
+# delivers. Nothing of clause 5 appears here; test case 2 adds it.
+
+<https://w3id.org/aias/example/iso7498/tc1>
+    a owl:Ontology ;
+    rdfs:label "ISO 7498 test case 1: communication at level 1"@en ;
+    rdfs:comment "Two open systems communicating over the application layer, after ISO/IEC 7498-1, Figure 11."@en ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+
+#################################################################
+#    Open systems
+#################################################################
+
+ex:SystemA
+    a iso7498:OpenSystem ;
+    rdfs:label "System A"@en ;
+    rdfs:comment "An open system, the initial source of data in this communication."@en .
+
+ex:SystemB
+    a iso7498:OpenSystem ;
+    rdfs:label "System B"@en ;
+    rdfs:comment "An open system, the final destination of data in this communication."@en .
+
+#################################################################
+#    The communication
+#################################################################
+
+ex:CommunicationAB
+    a iso7498:ConnectionModeAssociation ;
+    rdfs:label "Communication A to B"@en ;
+    rdfs:comment "A connection-mode communication between the two systems, described at the application layer. Both systems send and receive, which is what makes it bidirectional."@en ;
+    iso7498:hasSourceSystem ex:SystemA , ex:SystemB ;
+    iso7498:hasTargetSystem ex:SystemA , ex:SystemB ;
+    iso7498:hasDirection inst:TwoWaySimultaneous ;
+    iso7498:usesLayer inst:ApplicationLayer ;
+    iso7498:usesTechnology inst:MQTT , inst:TCP , inst:IPv4 , inst:Ethernet ;
+    iso7498:hasQualityOfService ex:QoS_AB .
+
+#################################################################
+#    Quality of service
+#
+#    Three parameters. Transit delay and throughput are named in 7.4.4, as is
+#    establishment delay, which applies here because the communication is
+#    connection-mode. Test case 3 drops it for that reason.
+#################################################################
+
+ex:QoS_AB
+    a iso7498:QualityOfService ;
+    rdfs:label "Quality of service of communication A to B"@en ;
+    iso7498:hasValue ex:QoSV_TransitDelay , ex:QoSV_Throughput , ex:QoSV_Establishment .
+
+ex:QoSV_TransitDelay
+    a iso7498:QoSValue ;
+    rdfs:label "transit delay 12 ms"@en ;
+    iso7498:forParameter inst:TransitDelay ;
+    iso7498:quantity "12"^^xsd:decimal ;
+    iso7498:unit "ms" .
+
+ex:QoSV_Throughput
+    a iso7498:QoSValue ;
+    rdfs:label "throughput 100 Mbit/s"@en ;
+    iso7498:forParameter inst:Throughput ;
+    iso7498:quantity "100"^^xsd:decimal ;
+    iso7498:unit "Mbit/s" .
+
+ex:QoSV_Establishment
+    a iso7498:QoSValue ;
+    rdfs:label "establishment delay 250 ms"@en ;
+    iso7498:forParameter inst:EstablishmentDelay ;
+    iso7498:quantity "250"^^xsd:decimal ;
+    iso7498:unit "ms" .
+
+#################################################################
+#    Data units carried
+#################################################################
+
+ex:CommunicationAB iso7498:transmits ex:MeasurementPDU .
+
+ex:MeasurementPDU
+    a iso7498:ProtocolDataUnit ;
+    rdfs:label "Application PDU"@en ;
+    rdfs:comment "The protocol data unit exchanged between the application entities."@en ;
+    iso7498:atLayer inst:ApplicationLayer .

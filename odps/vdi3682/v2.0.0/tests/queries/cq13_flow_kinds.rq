@@ -1,0 +1,22 @@
+# CQ 13: Which flows are simple, which parallel, and which alternative?
+#
+# The distinction the three test cases are built around. Part 1, 4.2.1 models a
+# parallel run as a partially shared flow and Figure 8 models an alternative as
+# a product arising from one path or the other, and both are subclasses of the
+# plain flow.
+#
+# Anchored on the flow rather than on one of the two subclasses, so a simple
+# flow appears as well. A model that states no parallelism answers with simple
+# flows only, which is the correct answer rather than an empty one.
+#
+# The direct class is reported: the reasoner materialises ParallelFlow, and
+# reporting Flow alongside it would say nothing.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?flow ?flowKind ?source ?target
+WHERE {
+  ?flow a ?flowKind . ?flowKind rdfs:subClassOf* vdi3682:Flow .
+  FILTER NOT EXISTS { ?flow a ?narrower . ?narrower rdfs:subClassOf+ ?flowKind }
+  OPTIONAL { ?flow vdi3682:hasSource ?source }
+  OPTIONAL { ?flow vdi3682:hasTarget ?target }
+} ORDER BY ?flowKind ?flow

@@ -1,0 +1,383 @@
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <https://schema.org/> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias/odp/iso7498>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/odp/iso7498/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    dcterms:title "ISO/IEC 7498-1 Ontology Design Pattern"@en ;
+    dcterms:abstract """An ontology design pattern for describing the communication between the components of an automated plant, following the layered architecture of ISO/IEC 7498-1, the Basic Reference Model of Open Systems Interconnection. A communication is structured into the seven layers of the reference model, each layer is realised by a technology such as Ethernet, IP or MQTT, and the content carried is a data unit assigned either to a layer or to the communication itself. The layers, the technologies and the kinds of data unit are modelled as subclasses. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."""@en ;
+    dcterms:created "2024-09-01"^^xsd:date ;
+    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:creator "Marvin Schieseck" ;
+    dcterms:creator "Philip Topalis" ;
+    dcterms:creator "Lasse Reinpold" ;
+    dcterms:creator "Felix Gehlhoff" ;
+    dcterms:creator "Alexander Fay" ;
+    dcterms:publisher "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
+    dcterms:rights """This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"""@en ;
+    foaf:fundedBy <https://dtecbw.de/> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:bibliographicCitation """M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"""@en ;
+    bibo:doi "10.1109/ETFA61755.2024.10710890" ;
+    dcterms:source <https://www.iso.org/standard/20269.html> ;
+    dcterms:subject "OSI Reference Model"@en ;
+    dcterms:subject "ISO/IEC 7498-1"@en ;
+    dcterms:subject "Ontology Design Pattern"@en ;
+    dcterms:subject "Industrial Communication"@en ;
+    dcterms:subject "Network Protocol"@en ;
+    schema:codeRepository <https://github.com/schiesem/aias> ;
+    dcterms:hasVersion <https://w3id.org/aias/odp/iso7498> ;
+    bibo:status "Draft"@en ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/iso7498#" ;
+    vann:preferredNamespacePrefix "iso7498" ;
+    rdfs:comment """Normative basis: ISO/IEC 7498-1:1994.
+
+Twenty-six classes and four relations. Every definition carries a German wording alongside its English translation.
+
+The layers, the technologies and the kinds of data unit are modelled as subclasses.
+
+Scope: the layered structure of a communication and what travels over it. The open system with its subsystems and entities, services and protocols, the transmission modes and the quality of service are not covered."""@en .
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:abstract a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+foaf:fundedBy a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+bibo:doi a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+dcterms:subject a owl:AnnotationProperty .
+schema:codeRepository a owl:AnnotationProperty .
+dcterms:hasVersion a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+
+#################################################################
+#    The communication and what describes it
+#################################################################
+
+iso7498:Communication
+    a owl:Class ;
+    rdfs:label "Communication"@en ;
+    rdfs:label "Kommunikation"@de ;
+    rdfs:comment "A connection between at least two system components describing the directed exchange of data."@en ;
+    rdfs:comment "Verbindung zwischen mindestens zwei Systemkomponenten, die den gerichteten Austausch von Daten beschreibt."@de ;
+    skos:note "ISO/IEC 7498-1, definition 4.2.10. The standard itself calls this an association. Communication is the plainer term, and is the one used here."@en .
+
+iso7498:Name
+    a owl:Class ;
+    rdfs:label "Name"@en ;
+    rdfs:label "Name"@de ;
+    rdfs:comment "The designation under which a communication is known."@en ;
+    rdfs:comment "Bezeichnung, unter der eine Kommunikation bekannt ist."@de ;
+    skos:note "Not a class of ISO/IEC 7498-1. A construct of this model, so that a communication can be referred to by a name of its own."@en .
+
+#################################################################
+#    Layers
+#
+#    The seven layers of the reference model, as subclasses.
+#################################################################
+
+iso7498:Layer
+    a owl:Class ;
+    rdfs:label "Layer"@en ;
+    rdfs:label "Schicht"@de ;
+    rdfs:comment "A delimited group of functions carrying out defined communication tasks at a given level of abstraction."@en ;
+    rdfs:comment "Abgegrenzte Funktionsgruppe, die auf einem bestimmten Abstraktionsniveau definierte Kommunikationsaufgaben erfüllt."@de ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers."@en .
+
+iso7498:Physical
+    a owl:Class ;
+    rdfs:label "Physical Layer"@en ;
+    rdfs:label "Bitübertragungsschicht"@de ;
+    rdfs:comment "Transmits raw bits as electrical, optical or radio signals over a physical medium."@en ;
+    rdfs:comment "Überträgt rohe Bits als elektrische, optische oder Funksignale über ein physisches Medium."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.7."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+iso7498:DataLink
+    a owl:Class ;
+    rdfs:label "Data Link Layer"@en ;
+    rdfs:label "Sicherungsschicht"@de ;
+    rdfs:comment "Forms frames out of bits and governs access to the transmission medium."@en ;
+    rdfs:comment "Bildet aus Bits Datenrahmen und regelt den Zugriff auf das Übertragungsmedium."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.6."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+iso7498:Network
+    a owl:Class ;
+    rdfs:label "Network Layer"@en ;
+    rdfs:label "Vermittlungsschicht"@de ;
+    rdfs:comment "Organises the forwarding of data packet by packet across several networks."@en ;
+    rdfs:comment "Organisiert die paketweise Weiterleitung von Daten über mehrere Netze hinweg."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.5."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+iso7498:Transport
+    a owl:Class ;
+    rdfs:label "Transport Layer"@en ;
+    rdfs:label "Transportschicht"@de ;
+    rdfs:comment "Provides end-to-end connections between communicating partners and segments data streams."@en ;
+    rdfs:comment "Stellt Ende-zu-Ende-Verbindungen zwischen Kommunikationspartnern bereit und segmentiert Datenströme."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.4."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+iso7498:Session
+    a owl:Class ;
+    rdfs:label "Session Layer"@en ;
+    rdfs:label "Sitzungsschicht"@de ;
+    rdfs:comment "Manages sessions between applications, their establishment, control and synchronisation."@en ;
+    rdfs:comment "Verwaltet Sitzungen zwischen Anwendungen, deren Aufbau, Steuerung und Synchronisation."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.3."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+iso7498:Presentation
+    a owl:Class ;
+    rdfs:label "Presentation Layer"@en ;
+    rdfs:label "Darstellungsschicht"@de ;
+    rdfs:comment "Converts data into a common format and carries out coding, compression and where required encryption."@en ;
+    rdfs:comment "Wandelt Daten in ein gemeinsames Format und übernimmt Codierung, Kompression und gegebenenfalls Verschlüsselung."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.2."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+iso7498:Application
+    a owl:Class ;
+    rdfs:label "Application Layer"@en ;
+    rdfs:label "Anwendungsschicht"@de ;
+    rdfs:comment "Provides services such as file transfer or remote access directly to the application, using the services of the layers below."@en ;
+    rdfs:comment "Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten."@de ;
+    skos:note "ISO/IEC 7498-1, clause 7.1."@en ;
+    rdfs:subClassOf iso7498:Layer .
+
+#################################################################
+#    Data units
+#
+#    What a layer processes or transmits as one piece. The kinds below are the
+#    names practice gives to the data unit of a particular layer: only the bit
+#    is a term of the standard, and the note on each says so.
+#################################################################
+
+iso7498:DataUnit
+    a owl:Class ;
+    rdfs:label "Data Unit"@en ;
+    rdfs:label "Dateneinheit"@de ;
+    skos:altLabel "DU"@en ;
+    rdfs:comment "A delimited, coherent quantity of data processed or transmitted by a layer of the OSI model as one unit."@en ;
+    rdfs:comment "Abgegrenzte, zusammenhängende Datenmenge, die von einer Schicht des OSI-Modells als Einheit verarbeitet oder übertragen wird."@de ;
+    skos:note "ISO/IEC 7498-1, clause 5.6."@en .
+
+iso7498:Bit
+    a owl:Class ;
+    rdfs:label "Bit"@en ;
+    rdfs:label "Bit"@de ;
+    rdfs:comment "The data unit of the physical layer."@en ;
+    rdfs:comment "Dateneinheit der Bitübertragungsschicht."@de ;
+    skos:note "The one practice term ISO/IEC 7498-1 names: 7.7.3.3.1 refers to the transparent transmission of bit streams."@en ;
+    rdfs:subClassOf iso7498:DataUnit .
+
+iso7498:Frame
+    a owl:Class ;
+    rdfs:label "Frame"@en ;
+    rdfs:label "Datenrahmen"@de ;
+    rdfs:comment "The data unit of the data link layer."@en ;
+    rdfs:comment "Dateneinheit der Sicherungsschicht."@de ;
+    skos:note "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting function of the data link layer is sometimes referred to as framing, but the standard defines no such data unit."@en ;
+    rdfs:subClassOf iso7498:DataUnit .
+
+iso7498:Packet
+    a owl:Class ;
+    rdfs:label "Packet"@en ;
+    rdfs:label "Paket"@de ;
+    rdfs:comment "The data unit of the network layer."@en ;
+    rdfs:comment "Dateneinheit der Vermittlungsschicht."@de ;
+    skos:note "Not a term of ISO/IEC 7498-1, but of the network layer protocol standards."@en ;
+    rdfs:subClassOf iso7498:DataUnit .
+
+iso7498:Segment
+    a owl:Class ;
+    rdfs:label "Segment"@en ;
+    rdfs:label "Segment"@de ;
+    rdfs:comment "The data unit of the transport layer."@en ;
+    rdfs:comment "Dateneinheit der Transportschicht."@de ;
+    skos:note "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto several protocol data units."@en ;
+    rdfs:subClassOf iso7498:DataUnit .
+
+iso7498:Data
+    a owl:Class ;
+    rdfs:label "Data"@en ;
+    rdfs:label "Daten"@de ;
+    rdfs:comment "The data unit of the upper layers, that is what an application exchanges."@en ;
+    rdfs:comment "Dateneinheit der oberen Schichten, also das, was eine Anwendung austauscht."@de ;
+    skos:note "Not a term of ISO/IEC 7498-1 for a data unit. It stands for what an application exchanges, without separating the payload of a single transmission from a dataset as a whole."@en ;
+    rdfs:subClassOf iso7498:DataUnit .
+
+#################################################################
+#    Technologies
+#
+#    What realises a layer. ISO/IEC 7498-1, 1.3 states that the reference
+#    model implies no particular technology, so none of these is a term of the
+#    standard. An engineering model needs them all the same.
+#################################################################
+
+iso7498:Technology
+    a owl:Class ;
+    rdfs:label "Technology"@en ;
+    rdfs:label "Technologie"@de ;
+    rdfs:comment "A concrete protocol or transmission technique realising the tasks of a layer."@en ;
+    rdfs:comment "Konkretes Protokoll oder Übertragungsverfahren, das die Aufgaben einer Schicht realisiert."@de ;
+    skos:note "Not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular implementation or technology, so the standard names none."@en .
+
+iso7498:Ethernet
+    a owl:Class ;
+    rdfs:label "Ethernet"@en ; rdfs:label "Ethernet"@de ;
+    rdfs:comment "A family of technologies of the data link layer."@en ;
+    rdfs:comment "Technologiefamilie der Sicherungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:Ethernet1000BASET
+    a owl:Class ;
+    rdfs:label "1000BASE-T"@en ; rdfs:label "1000BASE-T"@de ;
+    rdfs:comment "Gigabit Ethernet over twisted pair cabling, a technology of the physical layer."@en ;
+    rdfs:comment "Gigabit-Ethernet über Twisted-Pair-Verkabelung, eine Technologie der Bitübertragungsschicht."@de ;
+    skos:note "A class name beginning with a digit is awkward in a namespace, so the class is called Ethernet1000BASET and carries the practice name 1000BASE-T as its label."@en ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:IP
+    a owl:Class ;
+    rdfs:label "IP"@en ; rdfs:label "IP"@de ;
+    rdfs:comment "The Internet Protocol, a technology of the network layer."@en ;
+    rdfs:comment "Internet Protocol, eine Technologie der Vermittlungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:TCP
+    a owl:Class ;
+    rdfs:label "TCP"@en ; rdfs:label "TCP"@de ;
+    rdfs:comment "The Transmission Control Protocol, a technology of the transport layer."@en ;
+    rdfs:comment "Transmission Control Protocol, eine Technologie der Transportschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:HTTP
+    a owl:Class ;
+    rdfs:label "HTTP"@en ; rdfs:label "HTTP"@de ;
+    rdfs:comment "The Hypertext Transfer Protocol, a technology of the application layer."@en ;
+    rdfs:comment "Hypertext Transfer Protocol, eine Technologie der Anwendungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:HTTPS
+    a owl:Class ;
+    rdfs:label "HTTPS"@en ; rdfs:label "HTTPS"@de ;
+    rdfs:comment "HTTP over a secured connection, a technology of the application layer."@en ;
+    rdfs:comment "HTTP über eine gesicherte Verbindung, eine Technologie der Anwendungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:FTP
+    a owl:Class ;
+    rdfs:label "FTP"@en ; rdfs:label "FTP"@de ;
+    rdfs:comment "The File Transfer Protocol, a technology of the application layer."@en ;
+    rdfs:comment "File Transfer Protocol, eine Technologie der Anwendungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:MQTT
+    a owl:Class ;
+    rdfs:label "MQTT"@en ; rdfs:label "MQTT"@de ;
+    rdfs:comment "A publish and subscribe protocol of the application layer."@en ;
+    rdfs:comment "Publish-Subscribe-Protokoll der Anwendungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+iso7498:DHCP
+    a owl:Class ;
+    rdfs:label "DHCP"@en ; rdfs:label "DHCP"@de ;
+    rdfs:comment "The Dynamic Host Configuration Protocol, a technology of the application layer."@en ;
+    rdfs:comment "Dynamic Host Configuration Protocol, eine Technologie der Anwendungsschicht."@de ;
+    rdfs:subClassOf iso7498:Technology .
+
+#################################################################
+#    Disjointness
+#
+#    The five root classes are pairwise disjoint, and so are the members of
+#    each of the three sets of subclasses.
+#################################################################
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( iso7498:Communication iso7498:Layer iso7498:DataUnit
+                 iso7498:Technology iso7498:Name ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( iso7498:Physical iso7498:DataLink iso7498:Network
+                 iso7498:Transport iso7498:Session iso7498:Presentation
+                 iso7498:Application ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( iso7498:Bit iso7498:Frame iso7498:Packet
+                 iso7498:Segment iso7498:Data ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( iso7498:Ethernet iso7498:Ethernet1000BASET iso7498:IP
+                 iso7498:TCP iso7498:HTTP iso7498:HTTPS iso7498:FTP
+                 iso7498:MQTT iso7498:DHCP ) .
+
+#################################################################
+#    Object properties
+#################################################################
+
+iso7498:hasName
+    a owl:ObjectProperty ;
+    rdfs:label "has name"@en ;
+    rdfs:label "hat Namen"@de ;
+    rdfs:comment "Relates a communication to its designation."@en ;
+    rdfs:comment "Verbindet eine Kommunikation mit ihrer Bezeichnung."@de ;
+    rdfs:domain iso7498:Communication ;
+    rdfs:range iso7498:Name .
+
+iso7498:hasLayer
+    a owl:ObjectProperty ;
+    rdfs:label "has layer"@en ;
+    rdfs:label "hat Schicht"@de ;
+    rdfs:comment "Relates a communication to a layer it is structured into."@en ;
+    rdfs:comment "Verbindet eine Kommunikation mit einer Schicht, in die sie gegliedert ist."@de ;
+    rdfs:domain iso7498:Communication ;
+    rdfs:range iso7498:Layer .
+
+iso7498:usesTechnology
+    a owl:ObjectProperty ;
+    rdfs:label "uses technology"@en ;
+    rdfs:label "nutzt Technologie"@de ;
+    rdfs:comment "Relates a layer to the technology realising it."@en ;
+    rdfs:comment "Verbindet eine Schicht mit der Technologie, die sie realisiert."@de ;
+    skos:note "Whether a given technology fits the layer it is claimed for is not checked here. Nothing stops a model from placing MQTT at the network layer."@en ;
+    rdfs:domain iso7498:Layer ;
+    rdfs:range iso7498:Technology .
+
+iso7498:hasDataUnit
+    a owl:ObjectProperty ;
+    rdfs:label "has data unit"@en ;
+    rdfs:label "hat Dateneinheit"@de ;
+    skos:altLabel "hasDU"@en ;
+    rdfs:comment "Relates a layer, or a communication itself, to the data unit it processes or transmits."@en ;
+    rdfs:comment "Verbindet eine Schicht oder die Kommunikation selbst mit der Dateneinheit, die sie verarbeitet oder überträgt."@de ;
+    skos:note """One relation with two domains: the content transmitted is assigned to the respective layer, or to the communication directly.
+
+hasDU is kept as an alternative label, since that is the short form the relation is commonly written as."""@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( iso7498:Layer iso7498:Communication ) ] ;
+    rdfs:range iso7498:DataUnit .

@@ -1,0 +1,7 @@
+[
+  "1|PhysicalLayer|Ethernet1000BASE-T, Ethernet100BASE-TX, WLAN",
+  "2|DataLinkLayer|CANopen, EtherCAT, Ethernet, IOLink, Profibus, Profinet",
+  "3|NetworkLayer|IPv4, IPv6",
+  "4|TransportLayer|TCP, UDP",
+  "7|ApplicationLayer|AMQP, DHCP, FTP, HTTP, HTTPS, MQTT, Modbus, OPCUA"
+]

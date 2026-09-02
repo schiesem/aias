@@ -1,0 +1,141 @@
+@startuml fig2_algorithm_view
+' Diagram 2 of the ISO/IEC 22989 pattern: algorithms, models and parameters.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: the second of the three views. The distinction the pattern
+' turns on, between a procedure and a model, and between the parameters chosen
+' in advance and those a training determines.
+'
+' The two pairs to read together:
+'
+'   Model      is what MLModel is a case of, and only the second is learned
+'   Parameter  is either chosen before training or determined by it
+'
+' Left out on purpose:
+'  - the system, its tasks and its functions: diagram 1
+'  - data and the processes preparing it: diagram 3
+'  - the qualities of clause 3.5: diagram 4
+'
+' Only the machine learning algorithm has an entry in clause 3. The superclass
+' and the other two kinds are constructs of this work, which REFERENCE.md
+' records apart from the entries.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  The procedures
+' ===================================================================
+
+class Algorithm
+class ModelAlgorithm
+class TrainingAlgorithm
+class MLAlgorithm
+class EvaluationAlgorithm
+class EvaluationMetric
+
+Algorithm <|-- ModelAlgorithm
+Algorithm <|-- TrainingAlgorithm
+Algorithm <|-- EvaluationAlgorithm
+TrainingAlgorithm <|-- MLAlgorithm
+
+EvaluationAlgorithm --> "*" EvaluationMetric : usesMetric
+
+' ===================================================================
+'  What kind of learning
+' ===================================================================
+
+class LearningType
+class SupervisedLearning
+class UnsupervisedLearning
+class SemiSupervisedLearning
+class ReinforcementLearning
+
+LearningType <|-- SupervisedLearning
+LearningType <|-- UnsupervisedLearning
+LearningType <|-- SemiSupervisedLearning
+LearningType <|-- ReinforcementLearning
+
+MLAlgorithm --> "1" LearningType : basedOnLearning
+
+' ===================================================================
+'  The models
+' ===================================================================
+
+class Model
+class MLModel
+
+Model <|-- MLModel
+
+Model --> "*" Algorithm : basedOnAlgorithm
+
+' ===================================================================
+'  The two kinds of parameter
+' ===================================================================
+
+class Hyperparameter
+class ModelParameter
+class CharacteristicValue
+
+Algorithm --> "*" Hyperparameter : hasHyperparameter
+Model     --> "*" ModelParameter : hasParameter
+
+' The value a hyperparameter was set to. Reached by a relation of its own
+' rather than by forCharacteristic, since it is chosen before a training
+' whereas a quality of clause 3.5 is established by one. Diagram 4 shows the
+' other way into the same class.
+Hyperparameter --> "1" CharacteristicValue : hasSetting
+
+' ===================================================================
+'  What produces a model, and what a model does
+' ===================================================================
+
+class Training
+class MachineLearning
+class Retraining
+class Inference
+class Prediction
+class Validation
+class Evaluation
+
+Training <|-- MachineLearning
+Training <|-- Retraining
+
+Training  --> "*" ModelParameter : determines
+MLModel   --> "*" Training       : isCreatedBy
+Model     --> "*" Validation     : isValidatedBy
+Model     --> "*" Evaluation     : isEvaluatedBy
+Inference --> "*" Model          : isExecutedBy
+Inference --> "*" Prediction     : creates
+
+' Layout only: keep each fan of siblings on one row.
+ModelAlgorithm -[hidden]right- TrainingAlgorithm
+TrainingAlgorithm -[hidden]right- EvaluationAlgorithm
+
+SupervisedLearning -[hidden]right- UnsupervisedLearning
+UnsupervisedLearning -[hidden]right- SemiSupervisedLearning
+SemiSupervisedLearning -[hidden]right- ReinforcementLearning
+
+MachineLearning -[hidden]right- Retraining
+
+@enduml

@@ -1,0 +1,69 @@
+@startuml fig1_process_structure
+' Diagram 1 of the VDI 3682 pattern: the process and how it decomposes.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: what a process consists of, how an operator is refined into
+' further operators, and how the operators are ordered in time.
+'
+' Two relations that look alike are kept apart here. consistsOf reaches from a
+' process to what it holds, isComposedOf refines one operator into others, and
+' hasUpperProcess and hasSubProcess tie the levels of Figure 5 together. A
+' model uses all three at once, which is why they appear side by side.
+'
+' The order relations are drawn as self-edges on the operator, since a
+' predecessor and a successor are operators like any other. Part 1, Figure 4
+' connects operators through states rather than directly, so the order is
+' stated alongside the flow rather than derived from it.
+'
+' Of each inverse pair only one is drawn. hasUpperProcess and hasPredecessor
+' say what hasSubProcess and hasSuccessor already say, read from the other end,
+' and drawing both would put two labels in one place for one statement. The
+' ontology declares all four.
+'
+' Left out on purpose:
+'  - the states themselves and what carries them: diagram 2
+'  - resources and their assignment: diagram 3
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+class Process
+class ProcessOperator
+class SystemLimit
+
+' A process holds operators. Only one direction of the level relation is drawn:
+' hasSubProcess and hasUpperProcess are two readings of the same tie between
+' the coarse and the refined view of Figure 5, and drawing both puts two labels
+' in one place for one statement.
+Process         -down->  "*" ProcessOperator : consistsOf
+ProcessOperator -right-> "*" Process         : hasSubProcess
+
+' Refinement and order both run from an operator to an operator, so both are
+' self-edges. hasPredecessor is left out for the same reason as above: it is
+' hasSuccessor read backwards.
+ProcessOperator -left->  "*" ProcessOperator : isComposedOf
+ProcessOperator -up->    "*" ProcessOperator : hasSuccessor
+
+ProcessOperator --> "*" SystemLimit : isWithin
+
+@enduml

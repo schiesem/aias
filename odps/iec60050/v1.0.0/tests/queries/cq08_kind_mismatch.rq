@@ -1,0 +1,30 @@
+# CQ 08: Where do the kind of action and the kind of path differ?
+#
+# The case the standard warns about. Entry 351-47-06 defines the reset circuit
+# as a switching system with a closed action path containing at least one
+# binary storage element, and its note states that it has an open action
+# despite the closed path.
+#
+# A model reading a closed path as a closed loop would type it wrongly, and
+# test case 3 is built to be exactly that trap. The three kinds are reported
+# side by side so the divergence is visible rather than inferred: the path is
+# closed, the action is open, and the control is an open-loop control.
+#
+# Cases 1 and 2 agree in all three and answer empty. That the question returns
+# nothing there is what makes the one row of case 3 mean something.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?control ?controlKind ?actionKind ?pathKind
+WHERE {
+  ?control iec60050:runsOverActionPath ?path ; iec60050:hasAction ?action .
+  ?path   a ?pathKind   . FILTER(?pathKind   IN (iec60050:OpenActionPath, iec60050:ClosedActionPath))
+  ?action a ?actionKind . FILTER(?actionKind IN (iec60050:OpenAction,     iec60050:ClosedAction))
+  ?control a ?controlKind .
+  FILTER(?controlKind IN (iec60050:OpenLoopControl, iec60050:ClosedLoopControl))
+  FILTER(
+    (?pathKind = iec60050:ClosedActionPath && ?actionKind = iec60050:OpenAction) ||
+    (?pathKind = iec60050:OpenActionPath   && ?actionKind = iec60050:ClosedAction) ||
+    (?actionKind = iec60050:ClosedAction   && ?controlKind = iec60050:OpenLoopControl) ||
+    (?actionKind = iec60050:OpenAction     && ?controlKind = iec60050:ClosedLoopControl)
+  )
+} ORDER BY ?control

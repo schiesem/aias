@@ -1,0 +1,251 @@
+@startuml fig5_overview
+' Diagram 5 of the IEC 60050-351 pattern: everything needed to describe a
+' control process.
+'
+' Conventions: shared/FIGURES.md, with one deliberate exception. This diagram
+' is for the documentation, not for the paper, and it therefore shows the whole
+' of the pattern rather than one statement. Diagrams 1 to 4 are the readable
+' cuts through it.
+'
+' What it shows: the five strands a model needs to describe an open-loop or a
+' closed-loop control, and how they connect.
+'
+'   1  the control and its kind          what runs
+'   2  path, line and action             over what, and how it behaves
+'   3  functional and physical units     through what, and on what hardware
+'   4  variable quantities               what is carried
+'   5  functions and characteristics     what it does and how it performs
+'
+' Left out on purpose: the four role specific sub relations of hasVariable,
+' that is hasControlledVariable, hasReferenceVariable, hasManipulatedVariable
+' and hasDisturbanceVariable. Each would cross the drawing to reach one leaf of
+' the variable taxonomy, and the super relation already shows that a control
+' relates to variables. TESTCASE.md records which role belongs to which case.
+'
+' Also left out: the classes that carry no relation in the pattern, that
+' is the properties of a system such as Stability or Redundancy, the fault and
+' safety terms, and Automaton, Model, Prediction and TechnicalProcess. They are
+' vocabulary a model may instantiate, and REFERENCE.md records why each is
+' present. Including them would add boxes without adding structure.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam linetype ortho
+skinparam wrapWidth 200
+skinparam nodesep 20
+skinparam ranksep 40
+skinparam padding 2
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #8A98A8
+  BackgroundColor #FCFDFE
+  FontColor #33475B
+  FontSize 12
+  FontStyle italic
+}
+
+' ===================================================================
+'  1  The control and its kind
+' ===================================================================
+
+package "What runs" {
+  class Control
+  class OpenLoopControl
+  class ClosedLoopControl
+  class SequentialControl
+  class SamplingControl
+  class ControlChain
+  class ControlLoop
+
+  Control <|-- OpenLoopControl
+  Control <|-- ClosedLoopControl
+  OpenLoopControl   <|-- SequentialControl
+  ClosedLoopControl <|-- SamplingControl
+}
+
+note bottom of ClosedLoopControl
+  Seven further kinds sit under
+  closed-loop control, three
+  directly under Control.
+end note
+
+' ===================================================================
+'  2  Path, line and action
+' ===================================================================
+
+package "Over what, and how it behaves" {
+  class ActionPath
+  class OpenActionPath
+  class ClosedActionPath
+  class ForwardPath
+  class FeedbackPath
+  class ActionLine
+  class Action
+  class OpenAction
+  class ClosedAction
+
+  ActionPath <|-- OpenActionPath
+  ActionPath <|-- ClosedActionPath
+  ActionPath <|-- ForwardPath
+  ActionPath <|-- FeedbackPath
+  Action <|-- OpenAction
+  Action <|-- ClosedAction
+}
+
+' ===================================================================
+'  3  Units
+' ===================================================================
+
+package "Through what, and on what hardware" {
+  class ItemUnderConsideration
+  class FunctionalUnit
+  class PhysicalUnit
+
+  class ControlSystem
+  class ControllingSystem
+  class ControlledSystem
+  class ReferenceVariableGeneratingElement
+  class ComparingElement
+  class ControllingElement
+  class Controller
+  class FinalControllingEquipment
+  class Actuator
+  class FinalControllingElement
+  class MeasuringElement
+  class SensingElement
+  class MeasuringTransmitter
+  class FinalControlledVariableGeneration
+
+  ItemUnderConsideration <|-- FunctionalUnit
+  ItemUnderConsideration <|-- PhysicalUnit
+
+  FunctionalUnit <|-- ControlSystem
+  FunctionalUnit <|-- ControllingSystem
+  FunctionalUnit <|-- ControlledSystem
+  FunctionalUnit <|-- ReferenceVariableGeneratingElement
+  FunctionalUnit <|-- ComparingElement
+  FunctionalUnit <|-- ControllingElement
+  FunctionalUnit <|-- Controller
+  FunctionalUnit <|-- FinalControllingEquipment
+  FunctionalUnit <|-- Actuator
+  FunctionalUnit <|-- FinalControllingElement
+  FunctionalUnit <|-- MeasuringElement
+  FunctionalUnit <|-- SensingElement
+  FunctionalUnit <|-- MeasuringTransmitter
+  FunctionalUnit <|-- FinalControlledVariableGeneration
+
+  ' Layout only: four rows of three, so the fan of twelve units does not push
+  ' the drawing past the width of a documentation page.
+  ControlSystem     -[hidden]right- ControllingSystem
+  ControllingSystem -[hidden]right- ControlledSystem
+  ReferenceVariableGeneratingElement -[hidden]right- ComparingElement
+  ComparingElement  -[hidden]right- ControllingElement
+  Controller        -[hidden]right- FinalControllingEquipment
+  FinalControllingEquipment -[hidden]right- Actuator
+  FinalControllingElement -[hidden]right- MeasuringElement
+  MeasuringElement  -[hidden]right- SensingElement
+  SensingElement    -[hidden]right- MeasuringTransmitter
+  MeasuringTransmitter -[hidden]right- FinalControlledVariableGeneration
+
+  ControlSystem -[hidden]down- ReferenceVariableGeneratingElement
+  ReferenceVariableGeneratingElement -[hidden]down- Controller
+  Controller -[hidden]down- FinalControllingElement
+}
+
+' ===================================================================
+'  4  Variables
+' ===================================================================
+
+package "What is carried" {
+  class VariableQuantity
+  class InputVariable
+  class OutputVariable
+  class CommandVariable
+  class ReferenceVariable
+  class DisturbanceVariable
+  class ControlDifferenceVariable
+  class ControllerOutputVariable
+  class ManipulatedVariable
+  class ControlledVariable
+  class FinalControlledVariable
+  class FeedbackVariable
+
+  VariableQuantity <|-- InputVariable
+  VariableQuantity <|-- OutputVariable
+  VariableQuantity <|-- ManipulatedVariable
+  VariableQuantity <|-- ControlDifferenceVariable
+  VariableQuantity <|-- FeedbackVariable
+  InputVariable  <|-- CommandVariable
+  InputVariable  <|-- ReferenceVariable
+  InputVariable  <|-- DisturbanceVariable
+  OutputVariable <|-- ControlledVariable
+  OutputVariable <|-- ControllerOutputVariable
+  OutputVariable <|-- FinalControlledVariable
+
+  ' Layout only, as above.
+  CommandVariable   -[hidden]right- ReferenceVariable
+  ReferenceVariable -[hidden]right- DisturbanceVariable
+  ControlledVariable -[hidden]right- ControllerOutputVariable
+  ControllerOutputVariable -[hidden]right- FinalControlledVariable
+  CommandVariable -[hidden]down- ControlledVariable
+}
+
+' ===================================================================
+'  5  Functions and characteristics
+' ===================================================================
+
+package "What it does and how it performs" {
+  class ControlFunction
+  class Characteristic
+  class TimeCharacteristic
+  class QualityCharacteristic
+  class CharacteristicValue
+
+  Characteristic <|-- TimeCharacteristic
+  Characteristic <|-- QualityCharacteristic
+}
+
+' ===================================================================
+'  The relations that tie the strands together
+' ===================================================================
+
+Control --> "1" ActionPath : runsOverActionPath
+Control --> "1" Action     : hasAction
+Control --> ControlChain   : realisedBy
+Control --> ControlLoop    : realisedBy
+Control --> ControlledSystem : actsOn
+
+Action     --> "1" ActionPath : actionOverPath
+ActionPath --> "1..*" ActionLine : hasActionLine
+ControlLoop --> "1" ForwardPath  : hasForwardPath
+ControlLoop --> "1" FeedbackPath : hasFeedbackPath
+
+ActionLine --> "1" FunctionalUnit   : fromUnit
+ActionLine --> "1" FunctionalUnit   : toUnit
+ActionLine --> "1" VariableQuantity : carriesVariable
+
+' The two run alongside each other and their labels collided. The realisation
+' is routed the other way round, reading as the inverse the pattern declares.
+FunctionalUnit --> "*" FunctionalUnit : consistsOfUnit
+PhysicalUnit   --> "*" FunctionalUnit : realisesFunctionalUnit
+FinalControllingElement --> "1" ControlledSystem : partOfControlledSystem
+
+Control --> VariableQuantity : hasVariable
+Control --> ControlFunction  : performsFunction
+Control --> CharacteristicValue : hasCharacteristicValue
+CharacteristicValue --> "1" Characteristic : forCharacteristic
+
+@enduml

@@ -1,0 +1,21 @@
+# CQ 17: Which entities provide no service?
+#
+# Clause 5.2.2 has an entity of one layer provide a service to the layer above
+# it. An entity providing none is either the topmost of a stack, where there is
+# no layer above to serve, or a gap in the description.
+#
+# The layer is reported alongside for that reason. An application entity
+# providing no service is ordinary, and a network entity providing none is
+# usually unfinished, and the answer alone cannot tell the two apart.
+#
+# OWL cannot require the service under the open world assumption: an entity
+# without one is unstated rather than serviceless. The answer therefore reports
+# where a model has stayed silent, and SHACL is where it would become a rule.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?entity ?layerNumber ?subsystem
+WHERE {
+  ?entity a iso7498:Entity .
+  OPTIONAL { ?subsystem iso7498:hasEntity ?entity ;
+                        iso7498:atLayer/iso7498:layerNumber ?layerNumber }
+  FILTER NOT EXISTS { ?entity iso7498:providesService ?any }
+} ORDER BY DESC(?layerNumber) ?entity

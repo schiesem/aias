@@ -1,0 +1,23 @@
+# MUST BE INCONSISTENT: hasSetting is functional. A hyperparameter carries one
+# value. A learning rate claiming to be both 0.001 and 0.01 records no training
+# that ever ran, and two runs at different rates are two hyperparameters rather
+# than one holding both.
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/neg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+<https://w3id.org/aias/example/iso22989/neg06> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/2.0.0> .
+
+ex:LearningRate a iso:Hyperparameter ;
+    rdfs:label "Learning rate"@en ;
+    iso:hasSetting ex:Setting1 , ex:Setting2 .
+
+ex:Setting1 a iso:CharacteristicValue ; iso:quantity "0.001"^^xsd:decimal .
+ex:Setting2 a iso:CharacteristicValue ; iso:quantity "0.01"^^xsd:decimal .
+
+# Without this the two values may be the same individual under two names, and
+# the model stays consistent. The functional property bites only on things
+# known to differ.
+[] a owl:AllDifferent ; owl:distinctMembers ( ex:Setting1 ex:Setting2 ) .

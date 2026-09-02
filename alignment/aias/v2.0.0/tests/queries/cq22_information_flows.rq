@@ -1,0 +1,25 @@
+# CQ 22: Which information flows of the process are carried by which
+# communication?
+#
+# VDI 3682 states that information flows between process steps. ISO 7498 states
+# how it gets there. Neither says it alone, and a model that records both can
+# answer whether a flow the process needs has a link to carry it.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?flow ?source ?target ?communication
+WHERE {
+  ?flow a ?fk . ?fk rdfs:subClassOf* vdi3682:Flow .
+  OPTIONAL { ?flow vdi3682:hasOperatorSource ?source }
+  OPTIONAL { ?flow vdi3682:hasOperatorTarget ?target }
+  OPTIONAL {
+    ?communication a ?ck . ?ck rdfs:subClassOf* iso7498:Association .
+    ?communication iso7498:transmits ?pdu .
+    ?pdu iso7498:hasUserData ?payload .
+    ?payload aias:carriesData ?data .
+  }
+} ORDER BY ?flow

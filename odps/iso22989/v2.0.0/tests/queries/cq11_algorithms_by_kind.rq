@@ -1,0 +1,23 @@
+# CQ 11: Which algorithms does a model contain, and of which kind is each?
+#
+# Only the machine learning algorithm has an entry, 3.3.6. The superclass and
+# the other two kinds are constructs of this work, which `REFERENCE.md`
+# records.
+#
+# The pattern class is reached over the subclass hierarchy rather than by
+# asking for it as a type. The reasoner materialises the direct type of an
+# individual, so a query anchored on the general class alone returns nothing.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?algorithm ?kind
+WHERE {
+  ?algorithm a ?kind .
+  ?kind rdfs:subClassOf* iso:Algorithm .
+  FILTER NOT EXISTS {
+    ?algorithm a ?narrower .
+    ?narrower rdfs:subClassOf+ ?kind .
+    ?narrower rdfs:subClassOf* iso:Algorithm .
+  }
+} ORDER BY ?kind ?algorithm

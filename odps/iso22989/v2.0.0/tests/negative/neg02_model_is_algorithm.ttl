@@ -1,0 +1,11 @@
+# MUST BE INCONSISTENT: Model and Algorithm are disjoint. 3.1.23 defines the
+# model as a representation of a system, entity, phenomenon, process or data,
+# 3.3.6 the algorithm as a procedure determining parameters. A representation
+# is not a procedure, and the difference between them is what training makes.
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/neg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso22989/neg02> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+ex:Thing1 a iso:Model , iso:Algorithm .

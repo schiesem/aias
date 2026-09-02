@@ -1,0 +1,22 @@
+# CQ 10: Which communications name no technology?
+#
+# The counterpart of question 09. Clause 1.3 states that the reference model
+# implies no particular implementation or technology, so a communication
+# without one is described completely as far as the standard is concerned.
+#
+# Test cases 1, 3 and 4 answer here, and that is not a defect in them: they
+# describe the architecture of a communication and leave open what carries it,
+# which is exactly what the reference model is for.
+#
+# The question matters once the pattern is used for a plant. A communication
+# with no technology cannot be checked against a cable, a bus or a bandwidth,
+# so the answer is the list of what a deployment still has to decide.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?communication ?mode
+WHERE {
+  ?communication a ?kind . ?kind rdfs:subClassOf* iso7498:Association .
+  FILTER NOT EXISTS { ?communication a ?narrower . ?narrower rdfs:subClassOf+ ?kind }
+  FILTER NOT EXISTS { ?communication iso7498:usesTechnology ?any }
+  BIND(REPLACE(STR(?kind), ".*#", "") AS ?mode)
+} ORDER BY ?communication

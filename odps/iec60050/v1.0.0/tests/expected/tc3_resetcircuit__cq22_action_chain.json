@@ -1,0 +1,8 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc3#ControlC|https://w3id.org/aias/odp/iec60050#ClosedActionPath|https://w3id.org/aias/example/iec60050/tc3#CommandSourceC|https://w3id.org/aias/example/iec60050/tc3#c|https://w3id.org/aias/example/iec60050/tc3#ControllingElementC",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlC|https://w3id.org/aias/odp/iec60050#ClosedActionPath|https://w3id.org/aias/example/iec60050/tc3#ControlledSystemC|https://w3id.org/aias/example/iec60050/tc3#q|https://w3id.org/aias/example/iec60050/tc3#FinalVariableGenerationC",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlC|https://w3id.org/aias/odp/iec60050#ClosedActionPath|https://w3id.org/aias/example/iec60050/tc3#ControllingElementC|https://w3id.org/aias/example/iec60050/tc3#m|https://w3id.org/aias/example/iec60050/tc3#StorageElementC",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlC|https://w3id.org/aias/odp/iec60050#ClosedActionPath|https://w3id.org/aias/example/iec60050/tc3#StorageElementC|https://w3id.org/aias/example/iec60050/tc3#reset|https://w3id.org/aias/example/iec60050/tc3#ControllingElementC",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlC|https://w3id.org/aias/odp/iec60050#ClosedActionPath|https://w3id.org/aias/example/iec60050/tc3#StorageElementC|https://w3id.org/aias/example/iec60050/tc3#y|https://w3id.org/aias/example/iec60050/tc3#ValveC",
+  "https://w3id.org/aias/example/iec60050/tc3#ControlC|https://w3id.org/aias/odp/iec60050#ClosedActionPath|https://w3id.org/aias/example/iec60050/tc3#ValveC|https://w3id.org/aias/example/iec60050/tc3#x|https://w3id.org/aias/example/iec60050/tc3#ControlledSystemC"
+]

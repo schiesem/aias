@@ -1,0 +1,20 @@
+# CQ 03: What does a training take in, and what does it produce?
+#
+# The counterpart of question 02, and the asymmetry is the point. A training
+# takes data and produces parameters, not data: determines names the model
+# parameters it fixes, and the model carrying them is reached from the other
+# side through isCreatedBy.
+#
+# A model is therefore not the output of a training in the way a prediction is
+# the output of an inference. It is the thing the parameters end up in.
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?training ?input ?inputKind ?parameter ?model
+WHERE {
+  ?training a ?tk . ?tk rdfs:subClassOf* iso22989:Training .
+  OPTIONAL { ?training iso22989:usesData ?input .
+             ?input a ?inputKind . ?inputKind rdfs:subClassOf* iso22989:Data .
+             FILTER NOT EXISTS { ?input a ?n . ?n rdfs:subClassOf+ ?inputKind } }
+  OPTIONAL { ?training iso22989:determines ?parameter }
+  OPTIONAL { ?model iso22989:isCreatedBy ?training }
+} ORDER BY ?training ?input

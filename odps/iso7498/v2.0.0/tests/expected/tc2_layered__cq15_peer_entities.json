@@ -1,0 +1,8 @@
+[
+  "2|A_DataLinkEntity|B_DataLinkEntity",
+  "2|B_DataLinkEntity|A_DataLinkEntity",
+  "3|A_NetworkEntity|B_NetworkEntity",
+  "3|B_NetworkEntity|A_NetworkEntity",
+  "4|A_TransportEntity|B_TransportEntity",
+  "4|B_TransportEntity|A_TransportEntity"
+]

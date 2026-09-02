@@ -1,0 +1,25 @@
+# CQ 25: Which parts of a model belong to no subdomain pattern?
+#
+# What a model states beyond the four standards. A large answer means the
+# standards cover less of the case than intended, which is a finding about the
+# selection rather than about the model.
+#
+# The devices are the expected answer, since aias:Sensor and its siblings come
+# from no standard. Anything else in the answer is worth looking at.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?instance ?kind
+WHERE {
+  ?instance a ?kind .
+  FILTER(STRSTARTS(STR(?kind), STR(aias:)))
+  FILTER NOT EXISTS {
+    ?instance a ?other .
+    FILTER(?other != ?kind)
+    FILTER(STRSTARTS(STR(?other), "https://w3id.org/aias/odp/"))
+  }
+} ORDER BY ?kind ?instance

@@ -1,0 +1,21 @@
+# CQ 01: Where is the AI trained?
+#
+# The training is a function like any other, so it reaches its resource through
+# the same assignment that ties a stamping step to a motor. That is what the
+# common function level of the alignment is for.
+#
+# The kind of resource is reported alongside, since the answer to this question
+# is an architectural fact: training in an external cloud means the data leaves
+# the organisation.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?training ?resource ?resourceKind
+WHERE {
+  ?training a ?tk . ?tk rdfs:subClassOf* iso22989:Training .
+  ?training aias:isAssignedTo ?assignment .
+  ?assignment vdi3682:isAssignedTo ?resource .
+  ?resource a ?resourceKind . ?resourceKind rdfs:subClassOf* aias:Resource .
+  FILTER NOT EXISTS { ?resource a ?n . ?n rdfs:subClassOf+ ?resourceKind }
+} ORDER BY ?training ?resource

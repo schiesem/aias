@@ -1,0 +1,394 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:       <https://w3id.org/aias/example/stanzprozess#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+# The worked example of the dissertation: classifying the wear of a drive belt.
+#
+# A stamping machine produces sheet metal parts. A movable punch is driven by
+# two electric motors through a belt, and a position sensor records where the
+# punch is. As the belt wears the punch positions less accurately and the parts
+# leave their tolerance, so the belt is replaced at fixed intervals, which
+# costs more than it needs to.
+#
+# The AI classifies the state of the belt so that maintenance can follow the
+# condition rather than the calendar.
+#
+#   field    two motors and one position sensor on a fieldbus
+#   control  a Siemens S7, reached over the fieldbus and over Ethernet
+#   edge     a Raspberry Pi, where the data is prepared
+#   cloud    ProCube, where the data is stored, a model is trained, evaluated
+#            and then used for inference
+#
+# The classified state travels back to the control, where an operator sees it.
+#
+# Instance names follow the dissertation, which writes them in German. The
+# figures of section 7 draw this model in five parts, and this file is those
+# five parts written out.
+
+<https://w3id.org/aias/example/stanzprozess>
+    a owl:Ontology ;
+    rdfs:label "AIAS example: stamping process with belt wear"@en ;
+    rdfs:label "AIAS-Beispiel: Stanzprozess mit Riemenverschleiß"@de ;
+    owl:imports <https://w3id.org/aias/1.0.0> .
+
+#################################################################
+#    The AI system
+#################################################################
+
+ex:StanzKI
+    a iso22989:AISystem ;
+    rdfs:label "Wear classification of the stamping machine"@en ;
+    rdfs:label "Verschleißklassifikation der Stanzmaschine"@de ;
+    iso22989:hasTask   ex:Verschleissklassifikation ;
+    iso22989:hasType   ex:SubsymbolischerAnsatz ;
+    iso22989:hasDesign ex:CloudAuslegung ;
+    aias:hasFunction   ex:PositionDataAcquisition , ex:Vorverarbeitung ,
+                       ex:Speicherung , ex:Zusammenfuehrung ,
+                       ex:MotorDataAcquisition , ex:Training1 , ex:Evaluation1 ,
+                       ex:Inferenz1 , ex:Stanzprozessautomatisierung ;
+    aias:hasComponent  ex:Elektromotor1 , ex:Elektromotor2 , ex:Positionssensor ,
+                       ex:SiemensS7 , ex:RaspberryPI4 , ex:ProCube ,
+                       ex:Blech , ex:Fertigteil ;
+    aias:hasRelation   ex:ZuwMotor1 , ex:ZuwMotor2 , ex:ZuwPosSens1 ,
+                       ex:ZuwVorverarbeitung , ex:ZuwProCube , ex:ZuwRaspberryPI4 ,
+                       ex:InputStanze , ex:OutputStanze ,
+                       ex:Profibus1 , ex:Ethernet1 , ex:Internet1 .
+
+ex:Verschleissklassifikation
+    a iso22989:Classification ;
+    rdfs:label "Classify the state of the drive belt"@en ;
+    rdfs:label "Verschleißzustand des Antriebsriemens klassifizieren"@de .
+
+ex:SubsymbolischerAnsatz
+    a iso22989:SubSymbolicAI ;
+    rdfs:label "Learned model"@en ;
+    rdfs:label "Gelerntes Modell"@de .
+
+ex:CloudAuslegung
+    a iso22989:Cloud ;
+    rdfs:label "Training and inference in the cloud"@en ;
+    rdfs:label "Training und Inferenz in der Cloud"@de ;
+    rdfs:comment "The inference runs in the cloud rather than at the edge. Only the preparation of the data sits on the Raspberry Pi."@en .
+
+#################################################################
+#    The technical process
+#
+#    Figure: wissensgraph-process. A flow carries a state and enters or leaves
+#    a process operator, which is how version 1.0.0 models it.
+#################################################################
+
+ex:Stanzen
+    a vdi3682:ProcessOperator ;
+    rdfs:label "Stamping"@en ; rdfs:label "Stanzen"@de .
+
+ex:Blech
+    a vdi3682:Product ;
+    rdfs:label "Sheet metal"@en ; rdfs:label "Blech"@de .
+
+ex:Fertigteil
+    a vdi3682:Product ;
+    rdfs:label "Finished part"@en ; rdfs:label "Fertigteil"@de .
+
+ex:InputStanze
+    a vdi3682:Flow ;
+    rdfs:label "Sheet metal into the stamping"@en ;
+    rdfs:label "Zufluss des Blechs"@de ;
+    vdi3682:isInput  ex:Stanzen ;
+    vdi3682:hasState ex:Blech .
+
+ex:OutputStanze
+    a vdi3682:Flow ;
+    rdfs:label "Finished part out of the stamping"@en ;
+    rdfs:label "Abfluss des Fertigteils"@de ;
+    vdi3682:isOutput ex:Stanzen ;
+    vdi3682:hasState ex:Fertigteil .
+
+#################################################################
+#    The devices of the plant
+#
+#    Figure: wissensgraph-resources. An assignment ties an operator to the
+#    resource performing it, and isAssignedTo runs along both steps of that
+#    chain, which is how version 1.0.0 states it.
+#################################################################
+
+ex:Elektromotor1
+    a aias:Actuator ;
+    rdfs:label "Electric motor 1"@en ; rdfs:label "Elektromotor 1"@de .
+
+ex:Elektromotor2
+    a aias:Actuator ;
+    rdfs:label "Electric motor 2"@en ; rdfs:label "Elektromotor 2"@de .
+
+ex:Positionssensor
+    a aias:Sensor ;
+    rdfs:label "Position sensor of the punch"@en ;
+    rdfs:label "Positionssensor des Stempels"@de .
+
+ex:SiemensS7
+    a aias:Controller ;
+    rdfs:label "Siemens S7"@en ; rdfs:label "Siemens S7"@de .
+
+ex:RaspberryPI4
+    a aias:EdgeDevice ;
+    rdfs:label "Raspberry Pi 4"@en ; rdfs:label "Raspberry Pi 4"@de .
+
+ex:ProCube
+    a aias:ExternalCloud ;
+    rdfs:label "ProCube"@en ; rdfs:label "ProCube"@de .
+
+ex:ZuwMotor1
+    a vdi3682:Assignment ;
+    rdfs:label "Motor 1 performs the stamping"@en ;
+    vdi3682:isAssignedTo ex:Elektromotor1 .
+
+ex:ZuwMotor2
+    a vdi3682:Assignment ;
+    rdfs:label "Motor 2 performs the stamping"@en ;
+    vdi3682:isAssignedTo ex:Elektromotor2 .
+
+ex:ZuwPosSens1
+    a vdi3682:Assignment ;
+    rdfs:label "The position sensor observes the stamping"@en ;
+    vdi3682:isAssignedTo ex:Positionssensor .
+
+ex:Stanzen vdi3682:isAssignedTo ex:ZuwMotor1 , ex:ZuwMotor2 , ex:ZuwPosSens1 .
+
+#################################################################
+#    Communication
+#
+#    Figure: wissensgraph-communication. Three ways of taking part, and the
+#    direction is what tells them apart. The motors receive commands and send
+#    process data, so they use the fieldbus in both directions. The sensor only
+#    sends. The control does both.
+#################################################################
+
+ex:Profibus1
+    a iso7498:Communication ;
+    rdfs:label "Fieldbus of the stamping machine"@en ;
+    rdfs:label "Feldbus der Stanzmaschine"@de ;
+    iso7498:hasLayer      iso7498:Physical , iso7498:DataLink , iso7498:Application ;
+    iso7498:hasDataUnit   ex:RawPositionData , ex:RawMotorData .
+
+ex:Ethernet1
+    a iso7498:Communication ;
+    rdfs:label "Ethernet between control and edge device"@en ;
+    rdfs:label "Ethernet zwischen Steuerung und Edge-Gerät"@de ;
+    iso7498:hasLayer      iso7498:Physical , iso7498:DataLink ,
+                          iso7498:Network , iso7498:Transport ;
+    iso7498:hasDataUnit   ex:RawPositionData .
+
+ex:Internet1
+    a iso7498:Communication ;
+    rdfs:label "Internet connection to the external cloud"@en ;
+    rdfs:label "Internetverbindung zur externen Cloud"@de ;
+    iso7498:hasLayer      iso7498:Network , iso7498:Transport , iso7498:Application ;
+    iso7498:hasDataUnit   ex:VorverarbeiteteDaten .
+
+ex:Elektromotor1  aias:hasCommunication       ex:Profibus1 .
+ex:Elektromotor2  aias:hasCommunication       ex:Profibus1 .
+ex:Positionssensor aias:hasOutputCommunication ex:Profibus1 .
+ex:SiemensS7      aias:hasCommunication       ex:Profibus1 , ex:Ethernet1 .
+ex:RaspberryPI4   aias:hasCommunication       ex:Ethernet1 , ex:Internet1 .
+ex:ProCube        aias:hasInputCommunication  ex:Internet1 .
+
+#################################################################
+#    Data and the functions working on them
+#
+#    Figure: wissensgraph-dataflow. One dataset is acquired once, travels over
+#    two communications and is then prepared. That the same instance appears in
+#    all four places is the point: it records where a given dataset comes from,
+#    what carries it and what is done with it.
+#################################################################
+
+ex:RawPositionData
+    a iso22989:ProductionData ;
+    rdfs:label "Raw position data of the punch"@en ;
+    rdfs:label "Rohe Positionsdaten des Stempels"@de ;
+    iso22989:isAcquiredBy  ex:PositionDataAcquisition ;
+    iso22989:isProcessedBy ex:Vorverarbeitung ;
+    iso22989:isStoredBy    ex:Speicherung .
+
+ex:VorverarbeiteteDaten
+    a iso22989:ProductionData ;
+    rdfs:label "Prepared position data"@en ;
+    rdfs:label "Vorverarbeitete Positionsdaten"@de .
+
+ex:RawMotorData
+    a iso22989:ProductionData ;
+    rdfs:label "Raw control data of the motors"@en ;
+    rdfs:label "Rohe Steuerungsdaten der Elektromotoren"@de ;
+    iso22989:isAcquiredBy ex:MotorDataAcquisition ;
+    iso22989:isStoredBy   ex:Speicherung .
+
+ex:MotorDataAcquisition
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire the control data of the motors"@en ;
+    rdfs:label "Erfassung der Steuerungsdaten"@de ;
+    iso22989:hasDataSource ex:SteuerungAlsQuelle .
+
+ex:SteuerungAlsQuelle
+    a iso22989:DataSource ;
+    rdfs:label "The control as a data source"@en .
+
+ex:Zusammengefuehrt
+    a iso22989:ProductionData ;
+    rdfs:label "Position and motor data merged"@en ;
+    rdfs:label "Zusammengeführte Positions- und Motordaten"@de ;
+    iso22989:isStoredBy ex:Speicherung .
+
+ex:Zusammenfuehrung
+    a iso22989:Merging ;
+    rdfs:label "Merging in the cloud"@en ;
+    rdfs:label "Zusammenführung in der Cloud"@de ;
+    rdfs:comment "The prepared position data and the control data of the motors describe the same stroke and are joined before the training uses them."@en ;
+    iso22989:createsProcessedData ex:Zusammengefuehrt .
+
+ex:PositionDataAcquisition
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire the position data"@en ;
+    rdfs:label "Erfassung der Positionsdaten"@de ;
+    iso22989:hasDataSource ex:SensorAlsQuelle .
+
+ex:SensorAlsQuelle
+    a iso22989:DataSource ;
+    rdfs:label "The position sensor as a data source"@en .
+
+ex:VorverarbeiteteDaten iso22989:isProcessedBy ex:Zusammenfuehrung .
+ex:RawMotorData         iso22989:isProcessedBy ex:Zusammenfuehrung .
+
+ex:Vorverarbeitung
+    a iso22989:DataProcess ;
+    rdfs:label "Preparation of the data"@en ;
+    rdfs:label "Vorverarbeitung"@de ;
+    iso22989:createsProcessedData ex:VorverarbeiteteDaten .
+
+ex:Speicherung
+    a iso22989:Storing ;
+    rdfs:label "Storing in the cloud"@en ;
+    rdfs:label "Speicherung in der Cloud"@de ;
+    iso22989:hasDataSink ex:CloudAlsSenke .
+
+ex:CloudAlsSenke
+    a iso22989:DataSink ;
+    rdfs:label "ProCube as a data sink"@en .
+
+ex:Stanzprozessautomatisierung
+    a iso22989:Automate ;
+    rdfs:label "Automation of the stamping process"@en ;
+    rdfs:label "Automatisierung des Stanzprozesses"@de .
+
+#################################################################
+#    Training, evaluation and inference
+#
+#    Figure: wissensgraph-ai. The instances point at real artefacts, a
+#    configuration file and a model file, which is how the dissertation ties
+#    the abstract model to what is actually deployed.
+#################################################################
+
+ex:TrainingData1
+    a iso22989:TrainingData ;
+    rdfs:label "data/trainingData1.pickle"@en .
+
+ex:EvaluationData1
+    a iso22989:EvaluationData ;
+    rdfs:label "data/evaluationData1.pickle"@en .
+
+ex:MLFlow_Hyperparameter1
+    a iso22989:Hyperparameter ;
+    rdfs:label "config/MLflowHyperParameter1.json"@en .
+
+ex:Trainingsalgorithmus1
+    a iso22989:MLAlgorithm ;
+    rdfs:label "Training algorithm of the wear model"@en ;
+    iso22989:basedOnLearning ex:UeberwachtesLernen ;
+    iso22989:hasParameter    ex:MLFlow_Hyperparameter1 .
+
+ex:UeberwachtesLernen
+    a iso22989:SupervisedLearning ;
+    rdfs:label "Supervised learning"@en ; rdfs:label "Überwachtes Lernen"@de .
+
+ex:Training1
+    a iso22989:Training ;
+    rdfs:label "Training of the wear model"@en ;
+    rdfs:label "Training des Verschleißmodells"@de ;
+    iso22989:usesData         ex:TrainingData1 , ex:Zusammengefuehrt ;
+    iso22989:basedOnAlgorithm ex:Trainingsalgorithmus1 ;
+    iso22989:determines       ex:ModelParam1 .
+
+ex:ModelParam1
+    a iso22989:ModelParameter ;
+    rdfs:label "Parameters learned for the wear model"@en .
+
+ex:ProductionNet_v1
+    a iso22989:Model ;
+    rdfs:label "models/ProductionNet_v1.onnx"@en ;
+    iso22989:isCreatedBy   ex:Training1 ;
+    iso22989:hasParameter  ex:ModelParam1 ;
+    iso22989:isEvaluatedBy ex:Evaluation1 ;
+    iso22989:executes      ex:Inferenz1 .
+
+ex:Evaluation1
+    a iso22989:Evaluation ;
+    rdfs:label "Evaluation of the wear model"@en ;
+    rdfs:label "Evaluation des Verschleißmodells"@de ;
+    iso22989:usesData    ex:EvaluationData1 ;
+    iso22989:usesMetric  ex:F1Wert .
+
+ex:F1Wert
+    a iso22989:F1Score ;
+    rdfs:label "F1 score"@en ; rdfs:label "F1-Maß"@de .
+
+ex:Inferenz1
+    a iso22989:Inference ;
+    rdfs:label "Inference during operation"@en ;
+    rdfs:label "Inferenz im Betrieb"@de ;
+    iso22989:usesData ex:VorverarbeiteteDaten ;
+    iso22989:creates  ex:Verschleisszustand .
+
+ex:Verschleisszustand
+    a iso22989:Prediction ;
+    rdfs:label "The classified state of the belt"@en ;
+    rdfs:label "Klassifizierter Verschleißzustand"@de ;
+    iso22989:fulfillsTask ex:Verschleissklassifikation .
+
+#################################################################
+#    Which resource carries which function
+#
+#    The assignment is the same class that ties a process operator to a
+#    resource, which is what the common function level is for: one mechanism
+#    for a stamping step and for an inference alike.
+#################################################################
+
+ex:ZuwVorverarbeitung
+    a vdi3682:Assignment ;
+    rdfs:label "The Raspberry Pi prepares the data"@en ;
+    vdi3682:isAssignedTo ex:RaspberryPI4 .
+
+ex:ZuwProCube
+    a vdi3682:Assignment ;
+    rdfs:label "ProCube stores, trains, evaluates and infers"@en ;
+    vdi3682:isAssignedTo ex:ProCube .
+
+ex:ZuwRaspberryPI4
+    a vdi3682:Assignment ;
+    rdfs:label "The position sensor acquires the data"@en ;
+    vdi3682:isAssignedTo ex:Positionssensor .
+
+ex:Vorverarbeitung  aias:isAssignedTo ex:ZuwVorverarbeitung .
+ex:Speicherung      aias:isAssignedTo ex:ZuwProCube .
+ex:Zusammenfuehrung aias:isAssignedTo ex:ZuwProCube .
+ex:Training1        aias:isAssignedTo ex:ZuwProCube .
+ex:Evaluation1      aias:isAssignedTo ex:ZuwProCube .
+ex:Inferenz1        aias:isAssignedTo ex:ZuwProCube .
+ex:PositionDataAcquisition aias:isAssignedTo ex:ZuwRaspberryPI4 .
+ex:MotorDataAcquisition    aias:isAssignedTo ex:ZuwSiemensS7 .
+ex:Stanzprozessautomatisierung aias:isAssignedTo ex:ZuwSiemensS7 .
+
+ex:ZuwSiemensS7
+    a vdi3682:Assignment ;
+    rdfs:label "The Siemens S7 automates the stamping process"@en ;
+    vdi3682:isAssignedTo ex:SiemensS7 .

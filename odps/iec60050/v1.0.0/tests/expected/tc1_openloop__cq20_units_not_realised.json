@@ -1,0 +1,7 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc1#CommandSourceA|https://w3id.org/aias/odp/iec60050#FunctionalUnit",
+  "https://w3id.org/aias/example/iec60050/tc1#ControlSystemA|https://w3id.org/aias/odp/iec60050#ControlSystem",
+  "https://w3id.org/aias/example/iec60050/tc1#ControlledSystemA|https://w3id.org/aias/odp/iec60050#ControlledSystem",
+  "https://w3id.org/aias/example/iec60050/tc1#FinalControllingEquipmentA|https://w3id.org/aias/odp/iec60050#FinalControllingEquipment",
+  "https://w3id.org/aias/example/iec60050/tc1#FinalVariableGenerationA|https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration"
+]

@@ -1,0 +1,5 @@
+[
+  "https://w3id.org/aias/example/tc2#Camera|https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias/example/tc2#CommCameraToEdge",
+  "https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias/example/tc2#Cloud|https://w3id.org/aias/example/tc2#CommEdgeToCloud",
+  "https://w3id.org/aias/example/tc2#EdgeDevice|https://w3id.org/aias/example/tc2#RobotControl|https://w3id.org/aias/example/tc2#CommEdgeToControl"
+]

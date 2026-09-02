@@ -1,0 +1,15 @@
+# CQ 16: Which flows cross a system limit?
+#
+# A flow crosses when its endpoints do not lie within the same system limit,
+# which includes an endpoint lying within none.
+#
+# The subClassOf* step catches parallel and alternative flows, which are never
+# typed as Flow directly.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?flow ?source ?target WHERE {
+  ?flow a/rdfs:subClassOf* vdi3682:Flow ; vdi3682:hasSource ?source ; vdi3682:hasTarget ?target .
+  OPTIONAL { ?source vdi3682:isWithin ?sourceLimit }
+  OPTIONAL { ?target vdi3682:isWithin ?targetLimit }
+  FILTER(!BOUND(?sourceLimit) || !BOUND(?targetLimit) || ?sourceLimit != ?targetLimit)
+} ORDER BY ?flow

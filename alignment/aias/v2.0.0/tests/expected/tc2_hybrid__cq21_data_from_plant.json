@@ -1,0 +1,8 @@
+[
+  "https://w3id.org/aias/example/tc2#EvalData|https://w3id.org/aias/odp/iso22989#EvaluationData|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#ImageData|https://w3id.org/aias/odp/iso22989#TrainingData|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#PredictionData|https://w3id.org/aias/odp/iso22989#InputData|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#ProdData|https://w3id.org/aias/odp/iso22989#InputData|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#ProdData|https://w3id.org/aias/odp/iso22989#ProductionData|https://w3id.org/aias/example/tc2#Camera",
+  "https://w3id.org/aias/example/tc2#TrainData|https://w3id.org/aias/odp/iso22989#TrainingData|https://w3id.org/aias/example/tc2#Camera"
+]

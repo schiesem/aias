@@ -1,0 +1,30 @@
+# CQ 04: Which reference, manipulated and controlled variable does a control
+# have?
+#
+# The three variables of 351-42 that make a control describable: the reference
+# variable states what is wanted, 351-42-05, the manipulated variable is what
+# the control sets, 351-42-08, and the controlled variable is what it acts on,
+# 351-42-09.
+#
+# Reported in one row per control, with the three collected rather than joined.
+# Listing them as separate rows would repeat the control three times and say
+# nothing more.
+#
+# An open-loop control may state fewer of them, and that is the point of asking
+# all three together: the answer shows which of the three a case has committed
+# to.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?control ?controlKind
+       (GROUP_CONCAT(DISTINCT COALESCE(STR(?reference),   ""); separator=", ") AS ?referenceVariable)
+       (GROUP_CONCAT(DISTINCT COALESCE(STR(?manipulated), ""); separator=", ") AS ?manipulatedVariable)
+       (GROUP_CONCAT(DISTINCT COALESCE(STR(?controlled),  ""); separator=", ") AS ?controlledVariable)
+WHERE {
+  ?control a ?controlKind . ?controlKind rdfs:subClassOf* iec60050:Control .
+  FILTER NOT EXISTS { ?control a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?controlKind ;
+                                rdfs:subClassOf* iec60050:Control }
+  OPTIONAL { ?control iec60050:hasReferenceVariable   ?reference }
+  OPTIONAL { ?control iec60050:hasManipulatedVariable ?manipulated }
+  OPTIONAL { ?control iec60050:hasControlledVariable  ?controlled }
+} GROUP BY ?control ?controlKind ORDER BY ?control

@@ -1,0 +1,11 @@
+# MUST BE INCONSISTENT: forCharacteristic is functional. One characteristic
+# value quantifies exactly one characteristic; a value claiming to be both a
+# settling time and an overshoot states nothing.
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/neg#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iec60050/neg05> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+ex:Value1 a iec60050:CharacteristicValue ;
+    iec60050:forCharacteristic inst:SettlingTime , inst:Overshoot .

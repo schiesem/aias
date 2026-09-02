@@ -1,0 +1,12 @@
+# MUST BE INCONSISTENT: ActionPath and Action are disjoint. IEC 60050-351,
+# 351-44-03 defines a path as structure, a directed path connecting two
+# variable quantities, and 351-42-24 an action as behaviour, the influence of
+# one variable quantity on another. Keeping them apart is what lets the
+# pattern tell a closed path from a closed action.
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/neg#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iec60050/neg01> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+ex:Thing1 a iec60050:ActionPath , iec60050:Action .

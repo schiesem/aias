@@ -1,0 +1,30 @@
+# CQ 09: Does the system design stated for an AI system agree with where its
+# functions actually run?
+#
+# The design is a claim. The assignments are what it has to bear out. A model
+# claiming Edge while training sits in a cloud is wrong, and nothing in OWL
+# objects to it.
+#
+# The query reports the design beside the resource kinds carrying AI functions,
+# so that a reader can compare the two. Enforcing the agreement belongs to
+# SHACL, which the open points of the catalogue record.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?design (GROUP_CONCAT(DISTINCT ?rk; separator=", ") AS ?resourceKinds)
+WHERE {
+  ?system iso22989:hasDesign ?design .
+  OPTIONAL {
+    ?system aias:hasFunction ?function .
+    ?function a ?fk . ?fk rdfs:subClassOf* iso22989:AIFunction .
+    ?assignment aias:assignedFunction ?function ; vdi3682:assignedResource ?resource .
+    ?resource a ?resourceKind . ?resourceKind rdfs:subClassOf* aias:Resource .
+    FILTER NOT EXISTS { ?resource a ?rn . ?rn rdfs:subClassOf+ ?resourceKind .
+                        ?rn rdfs:subClassOf* aias:Resource }
+    BIND(STRAFTER(STR(?resourceKind), "#") AS ?rk)
+  }
+} GROUP BY ?system ?design ORDER BY ?system

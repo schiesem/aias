@@ -1,0 +1,25 @@
+# CQ 10: Which functions use no data?
+#
+# An AI function without data is a function nothing flows through. Clause 5.10
+# has the activities of the life cycle transform input data into output data,
+# so a function stating none has either not been described or does not belong
+# to that chain.
+#
+# The kind is what tells the two apart. An inference without data is
+# incomplete, since it computes a prediction from something. A control, 3.5.5,
+# may legitimately state none: it acts on a process rather than on a dataset,
+# and the AIAS alignment reaches what it acts on through a relation of its own.
+#
+# OWL cannot require the data under the open world assumption, so this reports
+# where a model has stayed silent rather than where it is wrong.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?function ?kind ?system
+WHERE {
+  ?function a ?kind . ?kind rdfs:subClassOf* iso:AIFunction .
+  FILTER NOT EXISTS { ?function a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?kind ;
+                                rdfs:subClassOf* iso:AIFunction }
+  FILTER NOT EXISTS { ?function iso:usesData ?any }
+  OPTIONAL { ?system iso:hasFunction ?function }
+} ORDER BY ?kind ?function

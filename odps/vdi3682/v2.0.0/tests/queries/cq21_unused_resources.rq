@@ -1,0 +1,9 @@
+# CQ 21: Which resources are modelled but assigned to no operator?
+#
+# The counterpart of question 19. A resource without an operator is either a modelling
+# gap or a spare, which the pattern cannot tell apart.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?resource WHERE {
+  ?resource a vdi3682:TechnicalResource .
+  FILTER NOT EXISTS { ?op vdi3682:isAssignedTo ?resource }
+} ORDER BY ?resource

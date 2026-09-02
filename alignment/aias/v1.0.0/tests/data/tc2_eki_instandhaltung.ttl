@@ -1,0 +1,417 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:       <https://w3id.org/aias/example/eki1#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Case study 1 of the evaluation: condition-based maintenance of drive belts.
+#
+# A plant foams glass panes with polyurethane. A carrier frame holds a fixed
+# lower and a movable upper die; two electric motors move the upper die through
+# drive belts, and position sensors record where it is. A belt in need of
+# maintenance makes the position data oscillate while the tool opens and
+# closes, so the wear can be read from the movement itself.
+#
+# The worked example of the concept chapter is derived from this case. This one
+# is the full model: five process steps rather than one, two sensors rather
+# than one, and the data of three acquisitions merged into one dataset.
+#
+#   level 0  five steps, eight product states
+#   level 1  two position sensors
+#   level 2  a machine control and a motor control
+#   level 3  a Raspberry Pi at the edge and the ProCube cloud
+#
+# The application has no real-time requirement: answers within minutes are
+# acceptable and the analysis may be unavailable for a while. That is why the
+# architecture is a cloud one, and the model records the reason as much as the
+# result.
+#
+# Built from the deployment model of the modelling assistance together with the
+# description in the evaluation chapter. Where the two differ the description
+# was followed, and TESTCASE.md records each such place.
+
+<https://w3id.org/aias/example/eki1>
+    a owl:Ontology ;
+    rdfs:label "AIAS case study 1: condition-based maintenance"@en ;
+    rdfs:label "AIAS-Fallbeispiel 1: Zustandsbasierte Instandhaltung"@de ;
+    owl:imports <https://w3id.org/aias/1.0.0> .
+
+#################################################################
+#    The AI system
+#################################################################
+
+ex:EKI1
+    a iso22989:AISystem ;
+    rdfs:label "Fallbeispiel 1 EKI, deployment model"@en ;
+    rdfs:label "Fallbeispiel 1 EKI, Deployment-Modell"@de ;
+    iso22989:hasTask   ex:Riemenzustand ;
+    iso22989:hasType   ex:Subsymbolisch ;
+    iso22989:hasDesign ex:CloudArchitektur ;
+    aias:hasFunction   ex:Positionsdatenaufnahme1 , ex:Positionsdatenaufnahme2 ,
+                       ex:Zeitaufnahme , ex:Datensatzerstellung ,
+                       ex:Datenvorverarbeitung , ex:Datennachverarbeitung ,
+                       ex:Speicherung , ex:Modelltraining , ex:Modellevaluation ,
+                       ex:Modellinferenz , ex:Ergebnisabruf ,
+                       ex:Anlagensteuerung , ex:Positionsregelung ,
+                       ex:Schliessen , ex:Umschaeumen , ex:Oeffnen ,
+                       ex:Einlegen , ex:Entnehmen ;
+    aias:hasComponent  ex:PositionssensorLinks , ex:PositionssensorRechts ,
+                       ex:Maschinensteuerung , ex:Motorsteuerung ,
+                       ex:RaspberryPI , ex:ProCube ,
+                       ex:Scheibe , ex:ScheibePositioniert , ex:ScheibeFixiert ,
+                       ex:PUR , ex:ScheibeUmschaeumt , ex:ScheibeUmschaeumtLocker ,
+                       ex:ScheibeFertigteil , ex:PURReste ;
+    aias:hasRelation   ex:ZuwSensorLinksSchliessen , ex:ZuwSensorRechtsSchliessen ,
+                       ex:ZuwSensorLinksOeffnen , ex:ZuwSensorRechtsOeffnen ,
+                       ex:ZuwAufnahme1 , ex:ZuwAufnahme2 , ex:ZuwZeitaufnahme ,
+                       ex:ZuwAnlagensteuerung , ex:ZuwPositionsregelung ,
+                       ex:ZuwDatensatzerstellung , ex:ZuwVorverarbeitung ,
+                       ex:ZuwNachverarbeitung , ex:ZuwSpeicherung ,
+                       ex:ZuwTraining , ex:ZuwEvaluation , ex:ZuwInferenz ,
+                       ex:ZuwErgebnisabruf ,
+                       ex:Feldbus , ex:MotorZuMaschine ,
+                       ex:SteuerungZuEdge , ex:EdgeZuCloud ,
+                       ex:SensorLinksZuMotor , ex:SensorRechtsZuMotor .
+
+ex:Riemenzustand
+    a iso22989:Classification ;
+    rdfs:label "Classify the state of the drive belts"@en ;
+    rdfs:label "Zustand der Antriebsriemen klassifizieren"@de .
+
+ex:Subsymbolisch
+    a iso22989:SubSymbolicAI ;
+    rdfs:label "A learned model"@en ; rdfs:label "Gelerntes Modell"@de .
+
+ex:CloudArchitektur
+    a iso22989:Cloud ;
+    rdfs:label "Cloud architecture"@en ; rdfs:label "Cloud-Architektur"@de ;
+    rdfs:comment "The application has no real-time requirement: answers within minutes are acceptable and the analysis may be unavailable for a while. Every AI function therefore sits in the cloud."@en .
+
+#################################################################
+#    Level 0: the process
+#
+#    Five steps. The description of the evaluation names three, closing,
+#    foaming and opening; the deployment model adds the loading and the
+#    unloading that bracket them.
+#################################################################
+
+ex:Einlegen   a vdi3682:ProcessOperator ; rdfs:label "Loading"@en ; rdfs:label "Einlegen"@de .
+ex:Schliessen a vdi3682:ProcessOperator ; rdfs:label "Closing the tool"@en ; rdfs:label "Schließen"@de .
+ex:Umschaeumen a vdi3682:ProcessOperator ; rdfs:label "Foaming with polyurethane"@en ; rdfs:label "Umschäumen"@de .
+ex:Oeffnen    a vdi3682:ProcessOperator ; rdfs:label "Opening the tool"@en ; rdfs:label "Öffnen"@de .
+ex:Entnehmen  a vdi3682:ProcessOperator ; rdfs:label "Unloading"@en ; rdfs:label "Entnehmen"@de .
+
+ex:Scheibe                a vdi3682:Product ; rdfs:label "Glass pane"@en ; rdfs:label "Scheibe"@de .
+ex:ScheibePositioniert    a vdi3682:Product ; rdfs:label "Pane positioned"@en ; rdfs:label "Scheibe positioniert"@de .
+ex:ScheibeFixiert         a vdi3682:Product ; rdfs:label "Pane fixed"@en ; rdfs:label "Scheibe fixiert"@de .
+ex:PUR                    a vdi3682:Product ; rdfs:label "Polyurethane"@en ; rdfs:label "PUR"@de .
+ex:ScheibeUmschaeumt      a vdi3682:Product ; rdfs:label "Pane foamed"@en ; rdfs:label "Scheibe umschäumt"@de .
+ex:ScheibeUmschaeumtLocker a vdi3682:Product ; rdfs:label "Pane foamed, tool open"@en ; rdfs:label "Scheibe umschäumt locker"@de .
+ex:ScheibeFertigteil      a vdi3682:Product ; rdfs:label "Finished part"@en ; rdfs:label "Scheibe Fertigteil"@de .
+ex:PURReste               a vdi3682:Product ; rdfs:label "Polyurethane residue"@en ; rdfs:label "PUR Reste"@de .
+
+# The chain of flows. A flow carries a state and enters or leaves an operator,
+# which is how version 1.0.0 models it.
+ex:F01 a vdi3682:Flow ; vdi3682:hasState ex:Scheibe ;                 vdi3682:isInput  ex:Einlegen .
+ex:F02 a vdi3682:Flow ; vdi3682:hasState ex:ScheibePositioniert ;     vdi3682:isOutput ex:Einlegen .
+ex:F03 a vdi3682:Flow ; vdi3682:hasState ex:ScheibePositioniert ;     vdi3682:isInput  ex:Schliessen .
+ex:F04 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeFixiert ;          vdi3682:isOutput ex:Schliessen .
+ex:F05 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeFixiert ;          vdi3682:isInput  ex:Umschaeumen .
+ex:F06 a vdi3682:Flow ; vdi3682:hasState ex:PUR ;                     vdi3682:isInput  ex:Umschaeumen .
+ex:F07 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeUmschaeumt ;       vdi3682:isOutput ex:Umschaeumen .
+ex:F08 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeUmschaeumt ;       vdi3682:isInput  ex:Oeffnen .
+ex:F09 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeUmschaeumtLocker ; vdi3682:isOutput ex:Oeffnen .
+ex:F10 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeUmschaeumtLocker ; vdi3682:isInput  ex:Entnehmen .
+ex:F11 a vdi3682:Flow ; vdi3682:hasState ex:ScheibeFertigteil ;       vdi3682:isOutput ex:Entnehmen .
+ex:F12 a vdi3682:Flow ; vdi3682:hasState ex:PURReste ;                vdi3682:isOutput ex:Entnehmen .
+
+#################################################################
+#    Level 1 and 2: the devices
+#
+#    Two sensors, two controls, an edge device and a cloud. No actuator: the
+#    deployment model records the motors through the control that drives them
+#    rather than as devices of their own.
+#################################################################
+
+ex:PositionssensorLinks
+    a aias:Sensor ;
+    rdfs:label "Position sensor, left"@en ; rdfs:label "Positionssensor links"@de .
+
+ex:PositionssensorRechts
+    a aias:Sensor ;
+    rdfs:label "Position sensor, right"@en ; rdfs:label "Positionssensor rechts"@de .
+
+ex:Maschinensteuerung
+    a aias:Controller ;
+    rdfs:label "Machine control"@en ; rdfs:label "Maschinensteuerung"@de .
+
+ex:Motorsteuerung
+    a aias:Controller ;
+    rdfs:label "Motor control"@en ; rdfs:label "Motorsteuerung"@de .
+
+ex:RaspberryPI
+    a aias:EdgeDevice ;
+    rdfs:label "Raspberry Pi"@en ; rdfs:label "RaspberryPI"@de .
+
+ex:ProCube
+    a aias:ExternalCloud ;
+    rdfs:label "ProCube"@en ; rdfs:label "ProCube"@de .
+
+# Both sensors observe the two steps that move the tool. A belt in need of
+# maintenance shows itself while opening and closing, not while foaming.
+ex:ZuwSensorLinksSchliessen  a vdi3682:Assignment ; vdi3682:isAssignedTo ex:PositionssensorLinks .
+ex:ZuwSensorRechtsSchliessen a vdi3682:Assignment ; vdi3682:isAssignedTo ex:PositionssensorRechts .
+ex:ZuwSensorLinksOeffnen     a vdi3682:Assignment ; vdi3682:isAssignedTo ex:PositionssensorLinks .
+ex:ZuwSensorRechtsOeffnen    a vdi3682:Assignment ; vdi3682:isAssignedTo ex:PositionssensorRechts .
+
+ex:Schliessen vdi3682:isAssignedTo ex:ZuwSensorLinksSchliessen , ex:ZuwSensorRechtsSchliessen .
+ex:Oeffnen    vdi3682:isAssignedTo ex:ZuwSensorLinksOeffnen , ex:ZuwSensorRechtsOeffnen .
+
+#################################################################
+#    Communication
+#################################################################
+
+ex:Feldbus
+    a iso7498:Communication ;
+    rdfs:label "Fieldbus of the plant"@en ; rdfs:label "Feldbus der Anlage"@de ;
+    iso7498:hasLayer    iso7498:Physical , iso7498:DataLink , iso7498:Application ;
+    iso7498:hasDataUnit ex:PositionsdatenLinks , ex:PositionsdatenRechts .
+
+ex:SensorLinksZuMotor
+    a iso7498:Communication ;
+    rdfs:label "Left sensor to the motor control"@en ;
+    iso7498:hasDataUnit ex:PositionsdatenLinks .
+
+ex:SensorRechtsZuMotor
+    a iso7498:Communication ;
+    rdfs:label "Right sensor to the motor control"@en ;
+    iso7498:hasDataUnit ex:PositionsdatenRechts .
+
+ex:MotorZuMaschine
+    a iso7498:Communication ;
+    rdfs:label "Motor control to the machine control"@en ;
+    iso7498:hasDataUnit ex:PositionsdatenLinks , ex:PositionsdatenRechts .
+
+ex:SteuerungZuEdge
+    a iso7498:Communication ;
+    rdfs:label "Machine control to the edge device"@en ;
+    iso7498:hasLayer    iso7498:Physical , iso7498:DataLink ,
+                        iso7498:Network , iso7498:Transport ;
+    iso7498:hasDataUnit ex:PositionsProduktionsdaten .
+
+ex:EdgeZuCloud
+    a iso7498:Communication ;
+    rdfs:label "Edge device to the cloud"@en ;
+    iso7498:hasLayer    iso7498:Network , iso7498:Transport , iso7498:Application ;
+    iso7498:hasDataUnit ex:PositionsProduktionsdaten .
+
+# The direction of each use. Both sensors only send; the controls and the edge
+# device take part in both directions where they do.
+ex:PositionssensorLinks  aias:hasOutputCommunication ex:SensorLinksZuMotor , ex:Feldbus .
+ex:PositionssensorRechts aias:hasOutputCommunication ex:SensorRechtsZuMotor , ex:Feldbus .
+ex:Motorsteuerung        aias:hasInputCommunication  ex:SensorLinksZuMotor , ex:SensorRechtsZuMotor .
+ex:Motorsteuerung        aias:hasCommunication       ex:Feldbus .
+ex:Motorsteuerung        aias:hasOutputCommunication ex:MotorZuMaschine .
+ex:Maschinensteuerung    aias:hasInputCommunication  ex:MotorZuMaschine .
+ex:Maschinensteuerung    aias:hasCommunication       ex:Feldbus .
+ex:Maschinensteuerung    aias:hasOutputCommunication ex:SteuerungZuEdge .
+ex:RaspberryPI           aias:hasInputCommunication  ex:SteuerungZuEdge .
+ex:RaspberryPI           aias:hasCommunication       ex:EdgeZuCloud .
+ex:ProCube               aias:hasCommunication       ex:EdgeZuCloud .
+
+#################################################################
+#    Data and what is done with it
+#
+#    Three acquisitions feed one merging, and everything downstream works on
+#    its result. That chain is what lets the model say where a training set
+#    came from, which is the question a review asks first.
+#################################################################
+
+ex:PositionsdatenLinks
+    a iso22989:Data ;
+    rdfs:label "Position data, left"@en ; rdfs:label "Positionsdaten links"@de ;
+    iso22989:isAcquiredBy  ex:Positionsdatenaufnahme1 ;
+    iso22989:isProcessedBy ex:Datensatzerstellung .
+
+ex:PositionsdatenRechts
+    a iso22989:Data ;
+    rdfs:label "Position data, right"@en ; rdfs:label "Positionsdaten rechts"@de ;
+    iso22989:isAcquiredBy  ex:Positionsdatenaufnahme2 ;
+    iso22989:isProcessedBy ex:Datensatzerstellung .
+
+ex:Zeitstempel
+    a iso22989:Data ;
+    rdfs:label "Time stamps"@en ; rdfs:label "Zeitstempel"@de ;
+    iso22989:isAcquiredBy  ex:Zeitaufnahme ;
+    iso22989:isProcessedBy ex:Datensatzerstellung .
+
+ex:PositionsProduktionsdaten
+    a iso22989:ProductionData ;
+    rdfs:label "Position production data"@en ; rdfs:label "Positions-Produktionsdaten"@de ;
+    iso22989:isProcessedBy ex:Datenvorverarbeitung ;
+    iso22989:isStoredBy    ex:Speicherung .
+
+ex:Trainingsdaten
+    a iso22989:TrainingData ;
+    rdfs:label "PositionProductionData_Training"@en .
+
+ex:Evaluationsdaten
+    a iso22989:EvaluationData ;
+    rdfs:label "PositionProductionData_Evaluation"@en .
+
+ex:Inferenzdaten
+    a iso22989:ProductionData ;
+    rdfs:label "PositionProductionData_Inferenz"@en .
+
+ex:Positionsdatenaufnahme1
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire position data, left"@en ; rdfs:label "Positionsdatenaufnahme 1"@de ;
+    iso22989:hasDataSource ex:QuelleSensorLinks .
+
+ex:Positionsdatenaufnahme2
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire position data, right"@en ; rdfs:label "Positionsdatenaufnahme 2"@de ;
+    iso22989:hasDataSource ex:QuelleSensorRechts .
+
+ex:Zeitaufnahme
+    a iso22989:Acquisition ;
+    rdfs:label "Acquire time stamps"@en ; rdfs:label "Zeitaufnahme"@de ;
+    iso22989:hasDataSource ex:QuelleMaschinensteuerung .
+
+ex:QuelleSensorLinks        a iso22989:DataSource ; rdfs:label "The left sensor as a source"@en .
+ex:QuelleSensorRechts       a iso22989:DataSource ; rdfs:label "The right sensor as a source"@en .
+ex:QuelleMaschinensteuerung a iso22989:DataSource ; rdfs:label "The machine control as a source"@en .
+
+ex:Datensatzerstellung
+    a iso22989:Merging ;
+    rdfs:label "Building the dataset"@en ; rdfs:label "Datensatzerstellung"@de ;
+    rdfs:comment "The two position signals and the time stamps describe one stroke of the tool and are joined into one dataset before anything is trained on them."@en ;
+    iso22989:createsProcessedData ex:PositionsProduktionsdaten .
+
+ex:Datenvorverarbeitung
+    a iso22989:DataProcess ;
+    rdfs:label "Preparation of the data"@en ; rdfs:label "Datenvorverarbeitung"@de ;
+    iso22989:createsProcessedData ex:Trainingsdaten , ex:Evaluationsdaten , ex:Inferenzdaten .
+
+ex:Datennachverarbeitung
+    a iso22989:DataProcess ;
+    rdfs:label "Post-processing of the result"@en ; rdfs:label "Datennachverarbeitung"@de .
+
+ex:Speicherung
+    a iso22989:Storing ;
+    rdfs:label "Storing in the cloud"@en ; rdfs:label "Speicherung"@de ;
+    iso22989:hasDataSink ex:SenkeProCube .
+
+ex:SenkeProCube a iso22989:DataSink ; rdfs:label "ProCube as a sink"@en .
+
+#################################################################
+#    Model, training, evaluation, inference
+#################################################################
+
+ex:Hyperparameter
+    a iso22989:Hyperparameter ;
+    rdfs:label "fnn_pred_belt_wear_hyperparameter.json"@en .
+
+ex:Trainingsalgorithmus
+    a iso22989:MLAlgorithm ;
+    rdfs:label "Feedforward network for belt wear"@en ;
+    iso22989:basedOnLearning ex:UeberwachtesLernen ;
+    iso22989:hasParameter    ex:Hyperparameter .
+
+ex:UeberwachtesLernen a iso22989:SupervisedLearning ; rdfs:label "Supervised learning"@en .
+
+ex:Modelltraining
+    a iso22989:Training ;
+    rdfs:label "Training of the wear model"@en ; rdfs:label "Modelltraining"@de ;
+    iso22989:usesData         ex:Trainingsdaten ;
+    iso22989:basedOnAlgorithm ex:Trainingsalgorithmus ;
+    iso22989:determines       ex:Modellparameter .
+
+ex:Modellparameter a iso22989:ModelParameter ; rdfs:label "Weights of the network"@en .
+
+ex:Modell
+    a iso22989:Model ;
+    rdfs:label "fnn_pred_belt_wear.onnx"@en ;
+    iso22989:isCreatedBy   ex:Modelltraining ;
+    iso22989:hasParameter  ex:Modellparameter ;
+    iso22989:isEvaluatedBy ex:Modellevaluation ;
+    iso22989:executes      ex:Modellinferenz .
+
+ex:Modellevaluation
+    a iso22989:Evaluation ;
+    rdfs:label "Evaluation of the model"@en ; rdfs:label "Modellevaluation"@de ;
+    iso22989:usesData   ex:Evaluationsdaten ;
+    iso22989:usesMetric ex:Bewertungsmass .
+
+ex:Bewertungsmass
+    a iso22989:EvaluationMetric ;
+    rdfs:label "fnn_pred_belt_wear_evaluation.json"@en .
+
+ex:Modellinferenz
+    a iso22989:Inference ;
+    rdfs:label "Inference during operation"@en ; rdfs:label "Modellinferenz"@de ;
+    iso22989:usesData ex:Inferenzdaten ;
+    iso22989:creates  ex:Ergebnisdarstellung .
+
+ex:Ergebnisabruf
+    a iso22989:Inference ;
+    rdfs:label "Fetch and display the result"@en ;
+    rdfs:label "Ergebnisabruf und Darstellung"@de ;
+    rdfs:comment "The machine control asks the cloud for the analysis when an operator calls it up. The existing control cannot reach the cloud on its own, which is why the edge device sits between them."@en .
+
+ex:Ergebnisdarstellung
+    a iso22989:Prediction ;
+    rdfs:label "The state of the belts, shown to an operator"@en ;
+    rdfs:label "Ergebnisdarstellung"@de ;
+    iso22989:fulfillsTask ex:Riemenzustand .
+
+#################################################################
+#    Control functions of the plant
+#################################################################
+
+ex:Anlagensteuerung
+    a iso22989:Automate ;
+    rdfs:label "Control of the plant"@en ; rdfs:label "Anlagensteuerung"@de .
+
+ex:Positionsregelung
+    a iso22989:Automate ;
+    rdfs:label "Position control of the upper die"@en ; rdfs:label "Positionsregelung"@de .
+
+#################################################################
+#    Which resource carries which function
+#
+#    Every AI function sits on the cloud, which is the architectural decision
+#    of this case. The two acquisitions of the sensors and the time stamps stay
+#    where the data arises.
+#################################################################
+
+ex:ZuwAufnahme1        a vdi3682:Assignment ; vdi3682:isAssignedTo ex:PositionssensorLinks .
+ex:ZuwAufnahme2        a vdi3682:Assignment ; vdi3682:isAssignedTo ex:PositionssensorRechts .
+ex:ZuwZeitaufnahme     a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Maschinensteuerung .
+ex:ZuwAnlagensteuerung a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Maschinensteuerung .
+ex:ZuwPositionsregelung a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Motorsteuerung .
+ex:ZuwDatensatzerstellung a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Maschinensteuerung .
+ex:ZuwVorverarbeitung  a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwNachverarbeitung a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwSpeicherung      a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwTraining         a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwEvaluation       a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+ex:ZuwInferenz         a vdi3682:Assignment ; vdi3682:isAssignedTo ex:ProCube .
+
+ex:Positionsdatenaufnahme1 aias:isAssignedTo ex:ZuwAufnahme1 .
+ex:Positionsdatenaufnahme2 aias:isAssignedTo ex:ZuwAufnahme2 .
+ex:Zeitaufnahme            aias:isAssignedTo ex:ZuwZeitaufnahme .
+ex:Anlagensteuerung        aias:isAssignedTo ex:ZuwAnlagensteuerung .
+ex:Positionsregelung       aias:isAssignedTo ex:ZuwPositionsregelung .
+ex:Datensatzerstellung     aias:isAssignedTo ex:ZuwDatensatzerstellung .
+ex:Datenvorverarbeitung    aias:isAssignedTo ex:ZuwVorverarbeitung .
+ex:Datennachverarbeitung   aias:isAssignedTo ex:ZuwNachverarbeitung .
+ex:Speicherung             aias:isAssignedTo ex:ZuwSpeicherung .
+ex:Modelltraining          aias:isAssignedTo ex:ZuwTraining .
+ex:Modellevaluation        aias:isAssignedTo ex:ZuwEvaluation .
+ex:Modellinferenz          aias:isAssignedTo ex:ZuwInferenz .
+ex:Ergebnisabruf           aias:isAssignedTo ex:ZuwErgebnisabruf .
+
+ex:ZuwErgebnisabruf a vdi3682:Assignment ; vdi3682:isAssignedTo ex:Maschinensteuerung .

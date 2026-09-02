@@ -1,0 +1,20 @@
+# CQ 04: Which task does an AI system address?
+#
+# 3.1.35 defines the task as an action required to achieve a specific goal. The
+# most specific asserted kind is reported, since reporting the chain up to Task
+# would repeat what the class hierarchy already states.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?task ?kind
+WHERE {
+  ?system iso:hasTask ?task .
+  ?task a ?kind .
+  ?kind rdfs:subClassOf* iso:Task .
+  FILTER NOT EXISTS {
+    ?task a ?narrower .
+    ?narrower rdfs:subClassOf+ ?kind .
+    ?narrower rdfs:subClassOf* iso:Task .
+  }
+} ORDER BY ?system ?task

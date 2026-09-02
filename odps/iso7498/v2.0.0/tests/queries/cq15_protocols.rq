@@ -1,0 +1,22 @@
+# CQ 15: Which protocols do the entities employ?
+#
+# Clause 5.2.3 defines the protocol as the rules governing the exchange between
+# peer entities. Where question 14 reports the vertical relation, this one
+# reports what governs the horizontal one.
+#
+# Reported per protocol rather than per entity, so the entities sharing one
+# appear together. Two peer entities employing the same protocol is the normal
+# case and the reason the concept exists: 5.2.3 has peer entities communicate
+# by a protocol they both follow.
+#
+# A protocol employed by one entity alone is worth noticing. Either the peer is
+# not modelled, or the model states a rule that nothing on the other side
+# follows.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?protocol (COUNT(DISTINCT ?entity) AS ?entityCount)
+       (GROUP_CONCAT(DISTINCT ?entityName; separator=", ") AS ?entities)
+WHERE {
+  ?entity iso7498:employsProtocol ?p .
+  BIND(REPLACE(STR(?p), ".*#", "") AS ?protocol)
+  BIND(REPLACE(STR(?entity), ".*#", "") AS ?entityName)
+} GROUP BY ?protocol ORDER BY ?protocol

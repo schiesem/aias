@@ -1,0 +1,30 @@
+# CQ 12: Which AI functions take part in a control?
+#
+# Whether an inference feeds a control or only reports is the difference
+# between an assistant and a controller, and it is what a safety review looks
+# at first.
+#
+# Two ways of taking part are reported: being a control, and producing the data
+# a control uses. The second is the indirect case, and it is the one the second
+# test case exhibits.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?control ?how
+WHERE {
+  {
+    ?function a iso22989:Control ; a ?ck .
+    ?ck rdfs:subClassOf* iec60050:Control .
+    BIND(?function AS ?control) BIND("is a control" AS ?how)
+  } UNION {
+    ?control a iso22989:Control ; iso22989:usesData ?data .
+    ?function a ?fk . ?fk rdfs:subClassOf* iso22989:AIFunction .
+    ?function iso22989:creates ?prediction .
+    FILTER(?function != ?control)
+    BIND("produces what a control uses" AS ?how)
+  }
+} ORDER BY ?function

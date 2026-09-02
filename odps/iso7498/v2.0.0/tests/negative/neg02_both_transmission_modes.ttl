@@ -1,0 +1,9 @@
+# MUST BE INCONSISTENT: the two transmission modes are disjoint. ISO/IEC
+# 7498-1, 6.4 treats connection-mode and connectionless-mode as alternatives.
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst: <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix ex: <https://w3id.org/aias/example/iso7498/neg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso7498/neg02> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+ex:Comm a iso7498:ConnectionModeAssociation , iso7498:ConnectionlessModeAssociation .

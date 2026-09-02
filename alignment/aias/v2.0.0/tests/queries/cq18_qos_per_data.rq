@@ -1,0 +1,20 @@
+# CQ 18: What quality of service does the communication carrying a given
+# dataset have?
+#
+# The question that only the chain makes answerable, and it spans three
+# subdomains. A dataset with a latency requirement is an architectural
+# constraint rather than a property of the data, and this is where the two meet.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?data ?communication ?qos
+WHERE {
+  ?payload aias:carriesData ?data .
+  ?pdu iso7498:hasUserData ?payload .
+  ?communication iso7498:transmits ?pdu .
+  OPTIONAL { ?communication iso7498:hasQualityOfService ?qos }
+} ORDER BY ?data ?communication

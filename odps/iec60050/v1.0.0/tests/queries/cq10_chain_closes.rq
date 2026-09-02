@@ -1,0 +1,45 @@
+# CQ 10: Does the chain of a path close into a cycle?
+#
+# The question that separates test case 2 from test case 3. A chain closes when
+# a functional unit can be reached from itself by following action lines of the
+# same path, that is when the chain contains a cycle. That is the returning
+# path of 351-47-03.
+#
+# The test is reachability, not adjacency. In any chain the end of one line is
+# the start of the next, so adjacency alone would report every path as closing.
+# A cycle requires a unit to lie both before and after itself.
+#
+# All three cases are reported, closing or not, together with the kind of
+# action and the kind of control, so the answer shows the combination:
+#
+#   case 1: chain does not close, open action,   open-loop control
+#   case 2: chain closes,         closed action, closed-loop control
+#   case 3: chain closes,         open action,   open-loop control
+#
+# Cases 2 and 3 have the same structural answer and differ in the action alone.
+# That is what 351-47-01 turns on: the closed action, not the closed path.
+#
+# The query reports a mismatch, it does not forbid one. OWL cannot require a
+# closed action path to contain a cycle, so a model may assert a closed path
+# over an open chain. Catching that is a task for SHACL.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?pathKind
+       (IF(COUNT(?cyclicUnit) > 0, "yes", "no") AS ?chainCloses)
+       ?actionKind ?controlKind
+WHERE {
+  ?control iec60050:runsOverActionPath ?path ; iec60050:hasAction ?action .
+  ?path   a ?pathKind   . FILTER(?pathKind   IN (iec60050:OpenActionPath, iec60050:ClosedActionPath))
+  ?action a ?actionKind . FILTER(?actionKind IN (iec60050:OpenAction,     iec60050:ClosedAction))
+  ?control a ?controlKind .
+  FILTER(?controlKind IN (iec60050:OpenLoopControl, iec60050:ClosedLoopControl))
+  OPTIONAL {
+    # A unit reachable from itself along the lines of this path.
+    ?path iec60050:hasActionLine ?anyLine .
+    ?anyLine iec60050:fromUnit ?cyclicUnit .
+    ?cyclicUnit (^iec60050:fromUnit/iec60050:toUnit)+ ?cyclicUnit .
+  }
+} GROUP BY ?control ?pathKind ?actionKind ?controlKind
+ORDER BY ?control

@@ -1,0 +1,11 @@
+# MUST BE INCONSISTENT: VariableQuantity and ItemUnderConsideration are
+# disjoint. 351-41-01 defines a variable quantity as a physical quantity
+# whose value changes, 351-56-01 an item under consideration as an object
+# defined by function and scope. A quantity is not a thing.
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/neg#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iec60050/neg04> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+ex:Thing2 a iec60050:VariableQuantity , iec60050:ItemUnderConsideration .

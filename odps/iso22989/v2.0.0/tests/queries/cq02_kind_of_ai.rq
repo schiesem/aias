@@ -1,0 +1,22 @@
+# CQ 02: Which kind of AI does a system use?
+#
+# 3.1.33 and 3.1.34. The two are deliberately not disjoint: neither entry
+# excludes the other, and clause 5.9 discusses combining them. Test case 3
+# asserts both on one system and has to stay consistent, which is what this
+# query makes visible.
+#
+# The pattern class is reached over the subclass hierarchy rather than by
+# asking for it as a type. The reasoner materialises the direct type of an
+# individual, so a query anchored on the general class alone returns nothing.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?system
+       (IF(BOUND(?sym), "yes", "no") AS ?symbolic)
+       (IF(BOUND(?sub), "yes", "no") AS ?subsymbolic)
+WHERE {
+  ?system a iso:AISystem .
+  OPTIONAL { ?system iso:hasType iso:SymbolicAI    . BIND(1 AS ?sym) }
+  OPTIONAL { ?system iso:hasType iso:SubsymbolicAI . BIND(1 AS ?sub) }
+} ORDER BY ?system

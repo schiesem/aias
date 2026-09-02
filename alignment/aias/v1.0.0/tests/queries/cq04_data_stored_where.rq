@@ -1,0 +1,20 @@
+# CQ 04: Which data is stored, and where?
+#
+# Two steps. isStoredBy names the storing function, and that function reaches
+# a sink through hasDataSink and a resource through the assignment. The sink
+# says what the data is written to, the resource says which device holds it.
+#
+# Data with no storing at all appears with an empty storing column, which is
+# the answer for anything that only passes through.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?data ?dataKind ?storing ?sink ?resource
+WHERE {
+  ?data a ?dataKind . ?dataKind rdfs:subClassOf* iso22989:Data .
+  FILTER NOT EXISTS { ?data a ?n . ?n rdfs:subClassOf+ ?dataKind }
+  ?data iso22989:isStoredBy ?storing .
+  OPTIONAL { ?storing iso22989:hasDataSink ?sink }
+  OPTIONAL { ?storing aias:isAssignedTo/vdi3682:isAssignedTo ?resource }
+} ORDER BY ?data

@@ -1,0 +1,97 @@
+@startuml fig2_resources
+' Diagram 2 of the AIAS alignment: the resources of a plant.
+'
+' Conventions: shared/FIGURES.md, with prefixes for the reason diagram 1 gives.
+'
+' What it shows: the device classes a model of a plant uses, and the two
+' bridges a resource has into other subdomains.
+'
+' All seven device classes come from no standard. They are constructs of this
+' work, and ALIGNMENT.md records them apart from the bridges that do rest on
+' one. Relating them to a classification of equipment such as ECLASS is open
+' work, and the note in the drawing says so.
+'
+' Left out on purpose: the three main classes, which diagram 1 shows, and the
+' relations of the function level, which diagram 3 shows.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 42
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+skinparam NoteBackgroundColor #FFF8E1
+skinparam NoteBorderColor #C9A227
+skinparam NoteFontSize 12
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+
+class "aias:Component" as Component
+class "aias:Resource"  as Resource
+class "aias:Product"   as Product
+
+Component <|-- Resource
+Component <|-- Product
+
+class "aias:Sensor"        as Sensor
+class "aias:Actuator"      as Actuator
+class "aias:Controller"    as Controller
+class "aias:EdgeDevice"    as EdgeDevice
+class "aias:Computer"      as Computer
+class "aias:InternalCloud" as InternalCloud
+class "aias:ExternalCloud" as ExternalCloud
+
+Resource <|-- Sensor
+Resource <|-- Actuator
+Resource <|-- Controller
+Resource <|-- EdgeDevice
+Resource <|-- Computer
+Resource <|-- InternalCloud
+Resource <|-- ExternalCloud
+
+note bottom of Actuator
+  Means the element acting on the flow.
+  IEC 60050-351 uses actuator, 351-49-07,
+  for the signal side driving it, so the
+  two are deliberately not related.
+end note
+
+' ===================================================================
+'  Where a resource reaches into other subdomains
+' ===================================================================
+
+class "vdi3682:TechnicalResource" as TechnicalResource
+class "iso7498:OpenSystem"        as OpenSystem
+class "iec60050:PhysicalUnit"     as PhysicalUnit
+
+Resource -up- TechnicalResource : owl:equivalentClass
+Component -up-> "*" OpenSystem : aias:appearsAsOpenSystem
+Resource -up-|> PhysicalUnit
+
+TechnicalResource -[hidden]right- PhysicalUnit
+PhysicalUnit      -[hidden]right- OpenSystem
+
+note right of PhysicalUnit
+  A subclass, not an equivalence. Every
+  resource is a physical unit, but not
+  every physical unit performs a
+  transformation, so an equivalence would
+  be wrong in one direction.
+end note
+
+' Layout only. The device fan is left to the renderer: Resource carries four
+' edges upwards, and forcing rows against them pushes Component out of place.
+
+@enduml

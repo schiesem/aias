@@ -1,0 +1,10 @@
+# MUST BE INCONSISTENT: isIdentifiedBy is functional, so two distinct
+# identifications for one object contradict (VDI 3682 Part 2, Fig. 3).
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix ex: <https://w3id.org/aias/example/neg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/neg05> a owl:Ontology ; owl:imports <https://w3id.org/aias/odp/vdi3682/2.0.0> .
+ex:Obj vdi3682:isIdentifiedBy ex:ID1 , ex:ID2 .
+ex:ID1 a vdi3682:Identification .
+ex:ID2 a vdi3682:Identification .
+ex:ID1 owl:differentFrom ex:ID2 .

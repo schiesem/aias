@@ -1,0 +1,351 @@
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix bibo:     <http://purl.org/ontology/bibo/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/2.0.0> ;
+    owl:versionInfo "2.0.0" ;
+    owl:imports <https://w3id.org/aias/odp/vdi3682/2.0.0> ,
+                <https://w3id.org/aias/odp/iso7498/2.0.0> ,
+                <https://w3id.org/aias/odp/iec60050/1.0.0> ,
+                <https://w3id.org/aias/odp/iso22989/2.0.0> ;
+    dcterms:title "AIAS Alignment Ontology"@en ;
+    dcterms:description """The alignment ontology of the AIAS information model. It joins the four subdomain patterns into one model of an AI application in an automated plant.
+
+The four patterns stand on their own and import nothing from one another. Each rests on a standard, and each is usable without the others. This ontology is the only place where classes of different namespaces are related, which keeps a pattern free of everything it does not need.
+
+It is built around the system elements of Haberfellner: a function transforms, a component is transformed or performs a transformation, and a relation ties the two together. What each subdomain contributes hangs below one of those three, so that a process step of VDI 3682 and an inference of ISO/IEC 22989 become comparable without either standard having to know about the other.
+
+ALIGNMENT.md records every bridge this ontology builds, the reason for it and the strength it is stated at."""@en ;
+    dcterms:created "2026-08-24"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "TODO: author name, ORCID" ;
+    dcterms:contributor "TODO: co-authors" ;
+    dcterms:publisher "TODO: institution" ;
+    dcterms:rights "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" ;
+    dcterms:bibliographicCitation "TODO: citation of the accompanying publication" ;
+    vann:preferredNamespaceUri "https://w3id.org/aias#" ;
+    vann:preferredNamespacePrefix "aias" ;
+    bibo:status "Draft"@en ;
+    rdfs:comment """Nothing here is normative. The patterns rest on standards, this ontology rests on design decisions of this work, and every class and relation says which of the two it is.
+
+Two classes are related with owl:equivalentClass, and only where the definitions are word for word the same. Control is one of them: ISO/IEC 22989, 3.5.5 and IEC 60050-351, 351-42-19 carry the identical wording and trace back to the same source, which makes the two the same concept rather than similar ones. Everything else is a subclass relation or a relation of its own, because an equivalence claims more than an overlap supports.
+
+Two traps are recorded rather than resolved. Controllability appears in two patterns with the same spelling and different meanings, one a property of a dynamic system and one a property of an AI system, and they are deliberately not related. The actuator of IEC 60050-351 is the signal side driving a valve, not the valve, so the device class of this ontology matches the final controlling element instead. ALIGNMENT.md gives both in full."""@en .
+
+dcterms:created a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:contributor a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+
+#################################################################
+#    The three main classes
+#
+#    After the system elements of Haberfellner. They are the reason the
+#    alignment exists: without a common function class a process step and an
+#    inference are unrelated things, and nothing can be said about both at
+#    once.
+#################################################################
+
+aias:Function
+    a owl:Class ;
+    rdfs:label "Function"@en ;
+    rdfs:comment "A purposeful transformation, turning inputs into outputs to meet an objective of the system."@en ;
+    skos:note """**Construct of this work**, after the system elements of Haberfellner.
+
+The class is what makes the alignment work. A process operator of VDI 3682 transforms products, an inference of ISO/IEC 22989 derives a conclusion, and a control of IEC 60050-351 acts on a process. In their own standards the three have nothing in common. Below this class they are assigned to a resource through one mechanism, and a question asking what a device does answers with all of them."""@en ;
+    owl:disjointWith aias:Component, aias:Relation .
+
+aias:Component
+    a owl:Class ;
+    rdfs:label "Component"@en ;
+    rdfs:comment "A physical element of a system, either performing functions or being transformed by them."@en ;
+    skos:note """**Construct of this work**, after Haberfellner.
+
+Physical on purpose. A model, a dataset or an AI component is not a component here, since none of them is a thing one can point at in a plant. Their place in the whole is recorded through the functions they carry and the assignment of those functions to a resource."""@en ;
+    owl:disjointWith aias:Relation .
+
+aias:Relation
+    a owl:Class ;
+    rdfs:label "Relation"@en ;
+    rdfs:comment "A recorded tie between functions and components, or between components."@en ;
+    skos:note """**Construct of this work**, after Haberfellner.
+
+Relations are classes rather than object properties, so that a tie can carry properties of its own. An assignment is a thing a model annotates with a reason or a date, not an arrow between two boxes."""@en .
+
+#################################################################
+#    The component level
+#################################################################
+
+aias:Resource
+    a owl:Class ;
+    rdfs:label "Resource"@en ;
+    rdfs:comment "A physical component of a plant that performs functions."@en ;
+    skos:note """**Construct of this work**, equivalent to the technical resource of VDI 3682.
+
+A resource is what a function is assigned to. Where its communication is described it also appears as an open system in the sense of ISO/IEC 7498-1, 4.1.3, which that pattern states on its own class.
+
+**A subclass of the physical unit, not equivalent to it.** IEC 60050-351, 351-56-03 defines the physical unit as an item under consideration seen by construction, and every resource is one: VDI 3682 calls the technical resource a physical component of an automated plant. The reverse does not hold. A terminal block or a power supply is a physical unit and realises no transformation, so it is no technical resource, and an equivalence would be wrong in that direction.
+
+The subclass axiom is what makes the chain from a device to its role in a control walkable. A model states a resource, the reasoner infers a physical unit, and the inverse relations of the IEC 60050-351 pattern lead from there through the functional units it realises to the action lines and the kind of path."""@en ;
+    rdfs:subClassOf aias:Component , iec60050:PhysicalUnit ;
+    owl:equivalentClass vdi3682:TechnicalResource .
+
+aias:Product
+    a owl:Class ;
+    rdfs:label "Product"@en ;
+    rdfs:comment "A physical component that a function transforms, produces or consumes."@en ;
+    skos:note "**Construct of this work**, matching the product of VDI 3682. Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them."@en ;
+    rdfs:subClassOf aias:Component ;
+    owl:disjointWith aias:Resource .
+
+vdi3682:Product rdfs:subClassOf aias:Product .
+
+#################################################################
+#    The devices
+#
+#    Classes of this work with no basis in a standard, which ALIGNMENT.md
+#    records rather than hides. Relating them to a classification of equipment
+#    such as ECLASS is open work.
+#################################################################
+
+aias:Sensor
+    a owl:Class ;
+    rdfs:label "Sensor"@en ;
+    rdfs:comment "A resource that senses a physical quantity and makes it available as data."@en ;
+    skos:note """**Construct of this work.** IEC 60050-351 defines a sensing element, 351-56-26, but as a functional unit rather than as a device, so the two are not related here.
+
+A model relating this class to a catalogue of equipment would give it the basis it currently lacks."""@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Actuator
+    a owl:Class ;
+    rdfs:label "Actuator"@en ;
+    rdfs:comment "A resource that acts on a mass flow, an energy flow or a movement."@en ;
+    skos:note """**Construct of this work**, and a name that has to be read with care.
+
+IEC 60050-351 uses actuator, 351-49-07, for the **signal side**: the unit generating the manipulated variable that drives the element acting on the flow. The element acting on the flow is the final controlling element, 351-49-08, and that is what this class means.
+
+Relating this class to iec60050:Actuator would therefore state the opposite of what is intended. The nearest match is the final controlling element, and even that is a functional unit rather than a device."""@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Controller
+    a owl:Class ;
+    rdfs:label "Controller"@en ;
+    rdfs:comment "A resource running control programs, such as a programmable logic controller."@en ;
+    skos:note "**Construct of this work.** IEC 60050-351 defines a controller, 351-49-11, as a functional unit consisting of a comparing and a controlling element. A device may realise such a unit, which is what realisedByPhysicalUnit records in that pattern, but the two are not the same thing."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:EdgeDevice
+    a owl:Class ;
+    rdfs:label "Edge Device"@en ;
+    rdfs:comment "A resource with computing capacity placed near the process it serves."@en ;
+    skos:note "**Construct of this work.** Clause 8.6.2 of ISO/IEC 22989 discusses edge computing without defining a device for it. What makes a device an edge device here is where it sits, not what it is built from."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Computer
+    a owl:Class ;
+    rdfs:label "Computer"@en ;
+    rdfs:comment "A general purpose computing resource within the plant."@en ;
+    skos:note "**Construct of this work.**"@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:InternalCloud
+    a owl:Class ;
+    rdfs:label "Internal Cloud"@en ;
+    rdfs:comment "Computing infrastructure operated by the plant operator, away from the process but inside the organisation."@en ;
+    skos:note "**Construct of this work.** The distinction from the external cloud is who operates it, which is what a data protection review turns on rather than any technical property."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:ExternalCloud
+    a owl:Class ;
+    rdfs:label "External Cloud"@en ;
+    rdfs:comment "Computing infrastructure operated by a third party."@en ;
+    skos:note "**Construct of this work.** A function running here leaves the organisation, which is what separates it from the internal cloud."@en ;
+    rdfs:subClassOf aias:Resource .
+
+#################################################################
+#    The function level
+#
+#    Everything that transforms something, from whichever subdomain. This is
+#    the level the alignment is built for: below it a process step and an
+#    inference are assigned to a resource through one mechanism.
+#################################################################
+
+vdi3682:ProcessOperator rdfs:subClassOf aias:Function .
+
+iso22989:AIFunction rdfs:subClassOf aias:Function .
+
+iec60050:Control rdfs:subClassOf aias:Function .
+
+#################################################################
+#    The two control classes are the same concept
+#
+#    ISO/IEC 22989, 3.5.5 gives the definition as purposeful action on or in a
+#    process to meet specified objectives, taken from IEC 61800-7-1:2015.
+#    IEC 60050-351, 351-42-19 carries the identical wording, with national
+#    footnote N1 confirming it as the general term of which Regeln and Steuern
+#    are the narrower cases.
+#
+#    Two standards, one concept. This is the only equivalence in this ontology
+#    that rests on a standard rather than on a decision of this work.
+#################################################################
+
+iso22989:Control owl:equivalentClass iec60050:Control .
+
+#################################################################
+#    Where the automating function went
+#
+#    The information model this work rebuilds carried a class Automate here.
+#    It is gone, because both standards define automating as an adjective:
+#    ISO/IEC 22989, 3.1.7 and IEC 60050-351, 351-42-30 both say pertaining to a
+#    process or system that functions without human intervention, and neither
+#    defines a thing a model instantiates.
+#
+#    Control takes its place, and it does more than the removed class could.
+#    Because iec60050:Control is the superclass of OpenLoopControl and
+#    ClosedLoopControl, the two inherit the function property, and the
+#    distinction between them reaches the function view. That distinction is
+#    the reason the IEC 60050-351 pattern was built.
+#################################################################
+
+#################################################################
+#    The relation level
+#################################################################
+
+vdi3682:Assignment rdfs:subClassOf aias:Relation .
+
+iso7498:Association rdfs:subClassOf aias:Relation .
+
+vdi3682:Flow rdfs:subClassOf aias:Relation .
+
+#################################################################
+#    Relations of the alignment
+#################################################################
+
+aias:hasFunction
+    a owl:ObjectProperty ;
+    rdfs:label "has function"@en ;
+    rdfs:comment "Relates a modelled system to a function it performs."@en ;
+    skos:note "The entry point into the function view. An AI system relates to its functions through this rather than through the relation of any one pattern, so that functions of every subdomain answer alike."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range aias:Function .
+
+aias:hasComponent
+    a owl:ObjectProperty ;
+    rdfs:label "has component"@en ;
+    rdfs:comment "Relates a modelled system to a component it is built from."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range aias:Component .
+
+aias:hasRelation
+    a owl:ObjectProperty ;
+    rdfs:label "has relation"@en ;
+    rdfs:comment "Relates a modelled system to a recorded tie between its parts."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range aias:Relation .
+
+aias:assignedFunction
+    a owl:ObjectProperty ;
+    rdfs:label "assigned function"@en ;
+    rdfs:comment "Relates an assignment to the function it assigns to a resource."@en ;
+    skos:note """VDI 3682 states the assignment from the process operator: hasAssignment runs from the process operator to the assignment, and assignedResource from there to the resource. Both follow the guideline, and neither reaches a function that is not a process operator.
+
+This relation closes that gap. It says which function an assignment carries, whatever subdomain the function comes from, and it is what makes the common function level usable rather than merely stated. Without it a model could group a process operator and an inference under one superclass and still have no way to assign the second to a device.
+
+Deliberately not a superproperty of hasAssignment. The two run in opposite directions, from the function and from the assignment, and relating them would require an inverse the pattern does not state."""@en ;
+    rdfs:domain vdi3682:Assignment ;
+    rdfs:range aias:Function .
+
+aias:carriesData
+    a owl:ObjectProperty ;
+    rdfs:label "carries data"@en ;
+    rdfs:comment "Relates the payload of a transmission to the dataset it carries."@en ;
+    skos:note """The bridge between the communication subdomain and the AI subdomain, and a relation rather than an equivalence on purpose.
+
+Setting the data of the two subdomains equal does not hold. ISO/IEC 7498-1, 5.6.1.2 defines user data as the payload of one transmission, ISO/IEC 22989 defines data as a collection of samples, and the two differ in what determines them and in how many of them there are. A ping carries payload with no dataset involved, and a training dataset exists whether or not it is ever transmitted.
+
+Keeping them apart is what makes a question answerable: which communications carry a given dataset, on which layer and with which quality of service. Under an equivalence the dataset would be the payload of one transmission, and the question would be meaningless."""@en ;
+    rdfs:domain iso7498:UserData ;
+    rdfs:range iso22989:Data .
+
+#################################################################
+#    The payload of a transmission is not the dataset it carries
+#
+#    Stated as an axiom rather than left to the note above, so that the
+#    equivalence the information model of the dissertation assumed is rejected
+#    rather than merely advised against. A model asserting one thing as both
+#    becomes inconsistent, and negative model 04 tests that.
+#################################################################
+
+iso7498:UserData owl:disjointWith iso22989:Data .
+
+aias:appearsAsOpenSystem
+    a owl:ObjectProperty ;
+    rdfs:label "appears as open system"@en ;
+    rdfs:comment "Relates a component to the open system it appears as when its communication is described."@en ;
+    skos:note """ISO/IEC 7498-1, 4.1.3 defines the open system as the representation of those aspects of a real system that are pertinent to open systems interconnection. A thing is not an open system in itself, it is one under that view, which is why this is a relation rather than a subclass axiom.
+
+The domain is the component rather than the resource. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and narrowing this to resources would rule that out.
+
+The ISO 7498 pattern already states the intent on its own class. This relation is what a model uses to record it."""@en ;
+    rdfs:domain aias:Component ;
+    rdfs:range iso7498:OpenSystem .
+
+aias:actsOnProcessOperator
+    a owl:ObjectProperty ;
+    rdfs:label "acts on process operator"@en ;
+    rdfs:comment "Relates a control to the process step it acts on."@en ;
+    skos:note """IEC 60050-351 has a control act on a controlled system, 351-49-01, which is a functional unit rather than a process step. VDI 3682 describes what happens in that system as a process operator.
+
+The relation joins the two, so that a model can answer which step of the technical process a control influences. Neither standard states it, since neither knows the other."""@en ;
+    rdfs:domain iec60050:Control ;
+    rdfs:range vdi3682:ProcessOperator .
+
+#################################################################
+#    What is deliberately not related
+#
+#    Recorded as axioms would be wrong here, so these are notes on the classes
+#    concerned. ALIGNMENT.md gives both in full.
+#
+#    Controllability appears in two patterns with the same spelling and
+#    different meanings. IEC 60050-351, 351-42-22 defines it as the property of
+#    a system whose state variables may be changed from an initial into a
+#    desired final state within a finite time interval, which is a mathematical
+#    property of a dynamic system. ISO/IEC 22989, 3.5.6 defines it as the
+#    property of an AI system that allows a human or another external agent to
+#    intervene in its functioning, which is a question of governance. A query
+#    asking which systems are controllable would otherwise return controlled
+#    systems and AI systems with a stop button in one answer.
+#
+#    aias:Actuator and iec60050:Actuator are not related either. The standard
+#    uses the term for the signal side driving the element that acts on the
+#    flow, 351-49-07, whereas this ontology means the element itself. The
+#    nearest match is the final controlling element, 351-49-08, and even that
+#    is a functional unit rather than a device.
+#################################################################

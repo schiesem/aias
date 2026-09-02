@@ -1,0 +1,9 @@
+[
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceA|https://w3id.org/aias/example/iec60050/tc1#ControllingElementA|https://w3id.org/aias/example/iec60050/tc1#L1|https://w3id.org/aias/example/iec60050/tc1#c|https://w3id.org/aias/odp/iec60050#OpenActionPath",
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceA|https://w3id.org/aias/example/iec60050/tc1#ControllingElementA|https://w3id.org/aias/example/iec60050/tc1#L2|https://w3id.org/aias/example/iec60050/tc1#m|https://w3id.org/aias/odp/iec60050#OpenActionPath",
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceA|https://w3id.org/aias/example/iec60050/tc1#ControllingSystemA|||",
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceB|https://w3id.org/aias/example/iec60050/tc1#ActuatorA|https://w3id.org/aias/example/iec60050/tc1#L2|https://w3id.org/aias/example/iec60050/tc1#m|https://w3id.org/aias/odp/iec60050#OpenActionPath",
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceB|https://w3id.org/aias/example/iec60050/tc1#ActuatorA|https://w3id.org/aias/example/iec60050/tc1#L3|https://w3id.org/aias/example/iec60050/tc1#y|https://w3id.org/aias/odp/iec60050#OpenActionPath",
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceC|https://w3id.org/aias/example/iec60050/tc1#ValveA|https://w3id.org/aias/example/iec60050/tc1#L3|https://w3id.org/aias/example/iec60050/tc1#y|https://w3id.org/aias/odp/iec60050#OpenActionPath",
+  "https://w3id.org/aias/example/iec60050/tc1#DeviceC|https://w3id.org/aias/example/iec60050/tc1#ValveA|https://w3id.org/aias/example/iec60050/tc1#L4|https://w3id.org/aias/example/iec60050/tc1#x|https://w3id.org/aias/odp/iec60050#OpenActionPath"
+]

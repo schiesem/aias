@@ -1,0 +1,23 @@
+# CQ 19: Which data occur in a case, and of which kind?
+#
+# Clause 3.2 separates the data of a machine learning life cycle by the part
+# they play: training data 3.2.17, validation data 3.2.19, evaluation and
+# production data. They are disjoint in the pattern, since a set used for
+# training and for evaluating at once would make the evaluation meaningless.
+#
+# Asked of the case rather than of the disjointness axioms. Reporting which
+# kinds the pattern keeps apart would answer the same whichever model is
+# loaded; reporting the data a case holds says what this system was built on.
+#
+# The direct kind is reported. The reasoner materialises the narrowest class,
+# and naming Data alongside it would say nothing.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?data ?kind ?usedBy
+WHERE {
+  ?data a ?kind . ?kind rdfs:subClassOf* iso:Data .
+  FILTER NOT EXISTS { ?data a ?narrower .
+                      ?narrower rdfs:subClassOf+ ?kind ;
+                                rdfs:subClassOf* iso:Data }
+  OPTIONAL { ?usedBy iso:usesData ?data }
+} ORDER BY ?kind ?data

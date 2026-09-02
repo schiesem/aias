@@ -1,0 +1,18 @@
+# CQ 10: Which functions verify or validate, and what do they act on?
+#
+# 3.5.17 and 3.5.18. Verification confirms that specified requirements are met,
+# validation that the requirements for an intended use are met. Clause 6.2.4
+# treats them as one stage of the life cycle.
+#
+# Validation asks whether the right system was built, verification whether the
+# system was built right.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?kind ?model
+WHERE {
+  ?function a ?kind .
+  FILTER(?kind IN (iso:Validation, iso:Verification))
+  OPTIONAL { ?model iso:isValidatedBy ?function }
+} ORDER BY ?kind ?function

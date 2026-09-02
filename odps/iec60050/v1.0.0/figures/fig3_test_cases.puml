@@ -1,0 +1,78 @@
+@startuml fig3_test_cases
+' Diagram 3 of the IEC 60050-351 pattern: the three test cases.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing. The
+' comparison between the cases belongs in the caption.
+'
+' What it shows: the path, the action and the kind of control of each case,
+' with the instance names of the test models, so the drawing can be checked
+' against the Turtle in tests/data/.
+'
+' Left out on purpose: the chains of action lines, which are the subject of
+' diagram 4. This diagram is about the three-way distinction alone.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 38
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam object {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #8A98A8
+  BackgroundColor #FCFDFE
+  FontColor #33475B
+  FontSize 13
+}
+
+package "Case 1" {
+  object "ControlA : OpenLoopControl" as A1
+  object "PathA : OpenActionPath" as P1
+  object "ActionA : OpenAction" as X1
+  object "ChainA : ControlChain" as C1
+
+  A1 --> P1 : runsOverActionPath
+  A1 --> X1 : hasAction
+  A1 --> C1 : realisedBy
+  X1 --> P1 : actionOverPath
+}
+
+package "Case 2" {
+  object "ControlB : ClosedLoopControl" as A2
+  object "PathB : ClosedActionPath" as P2
+  object "ActionB : ClosedAction" as X2
+  object "LoopB : ControlLoop" as C2
+
+  A2 --> P2 : runsOverActionPath
+  A2 --> X2 : hasAction
+  A2 --> C2 : realisedBy
+  X2 --> P2 : actionOverPath
+}
+
+package "Case 3" {
+  object "ControlC : OpenLoopControl" as A3
+  object "PathC : ClosedActionPath" as P3
+  object "ActionC : OpenAction" as X3
+  object "ChainC : ControlChain" as C3
+
+  A3 --> P3 : runsOverActionPath
+  A3 --> X3 : hasAction
+  A3 --> C3 : realisedBy
+  X3 --> P3 : actionOverPath
+}
+
+@enduml

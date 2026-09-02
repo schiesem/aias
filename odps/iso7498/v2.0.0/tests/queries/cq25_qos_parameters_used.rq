@@ -1,0 +1,32 @@
+# CQ 25: Which quality of service parameters does a case state, and which does
+# it leave open?
+#
+# Clause 5.5.5 names the parameters a communication may be characterised by,
+# and they are supplied as named individuals. A model states a value for as
+# many as it cares about.
+#
+# The catalogue serves as the yardstick rather than as the answer, which is the
+# point of asking it this way. Listing the parameters would report the same
+# seven whatever case is loaded; comparing them against the case reports what
+# this communication actually promises and what it says nothing about.
+#
+# The unstated ones are the interesting half. A communication with no stated
+# transit delay carries no timing guarantee that a model could check a deadline
+# against, and for a plant that is the question worth asking first.
+# A-box check: catalogue as yardstick. The parameters of 5.5.5 are supplied
+# and the answer reports, per parameter, whether the case states a value.
+# Without a case every parameter reads as not stated, which is what the
+# question asks rather than an answer from the pattern.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?parameter ?standing ?communication ?quantity ?unit
+WHERE {
+  ?p a iso7498:QoSParameter .
+  OPTIONAL {
+    ?communication iso7498:hasQualityOfService/iso7498:hasValue ?v .
+    ?v iso7498:forParameter ?p .
+    OPTIONAL { ?v iso7498:quantity ?quantity }
+    OPTIONAL { ?v iso7498:unit     ?unit }
+  }
+  BIND(IF(BOUND(?v), "stated", "not stated") AS ?standing)
+  BIND(REPLACE(STR(?p), ".*#", "") AS ?parameter)
+} ORDER BY ?standing ?parameter ?communication

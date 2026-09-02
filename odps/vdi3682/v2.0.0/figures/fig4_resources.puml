@@ -1,0 +1,86 @@
+@startuml fig4_resources
+' Diagram 4 of the VDI 3682 pattern: what performs an operator, and what
+' identifies an element.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: the assignment tying an operator to the resource performing
+' it, and the two ways an element says more about itself.
+'
+' The assignment is a class rather than an edge, for the same reason the flow
+' is: it is a thing a model can annotate. That reification is what the AIAS
+' alignment builds on, since aias:assignedFunction starts from this class in
+' order to reach a function that is not a process operator.
+'
+' isAssignedTo runs straight from the operator to the resource, alongside the
+' reified path. Both are in the pattern, and a model may state either.
+'
+' The two attribute relations carry no domain in the pattern: an identification
+' and a characteristic attach to any element of a description, not to resources
+' alone. The resource stands here as one holder among several, because drawing
+' every class that may carry one would say the same thing five times.
+'
+' Left out on purpose:
+'  - process structure: diagram 1
+'  - states and flows: diagrams 2 and 3
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  Who performs what
+' ===================================================================
+
+class ProcessOperator
+class Assignment
+class TechnicalResource
+
+ProcessOperator --> "*" Assignment        : hasAssignment
+Assignment      --> "1" TechnicalResource : assignedResource
+ProcessOperator --> "*" TechnicalResource : isAssignedTo
+
+' ===================================================================
+'  What an element says about itself
+' ===================================================================
+
+class Attribute
+class Identification {
+  dataProp: shortName
+  dataProp: longName
+  dataProp: uniqueIdent
+  dataProp: versionNumber
+  dataProp: revisionNumber
+  dataProp: externalReference
+}
+class Characteristic {
+  dataProp: category
+  dataProp: descriptiveElement
+  dataProp: relationalElement
+}
+
+Attribute <|-- Identification
+Attribute <|-- Characteristic
+
+TechnicalResource --> "1" Identification : isIdentifiedBy
+TechnicalResource --> "*" Characteristic : isCharacterizedBy
+
+@enduml

@@ -1,0 +1,24 @@
+# CQ 11: Which resource carries out which function?
+#
+# The question the whole alignment is built for. One assignment ties a stamping
+# step to a motor and an inference to a cloud, and this answer shows both in
+# one table.
+#
+# Reading it is how an architecture becomes visible: which functions sit on the
+# edge device, which in the cloud, and what that means for the data leaving the
+# organisation.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?resource ?resourceKind ?function ?functionKind
+WHERE {
+  { ?function aias:isAssignedTo ?assignment }
+  UNION
+  { ?function vdi3682:isAssignedTo ?assignment . ?assignment a vdi3682:Assignment }
+  ?assignment vdi3682:isAssignedTo ?resource .
+  ?resource a ?resourceKind . ?resourceKind rdfs:subClassOf* aias:Resource .
+  FILTER NOT EXISTS { ?resource a ?nr . ?nr rdfs:subClassOf+ ?resourceKind }
+  ?function a ?functionKind . ?functionKind rdfs:subClassOf* aias:Function .
+  FILTER NOT EXISTS { ?function a ?nf . ?nf rdfs:subClassOf+ ?functionKind ;
+                                           rdfs:subClassOf* aias:Function }
+} ORDER BY ?resource ?function

@@ -1,0 +1,27 @@
+# CQ 09: Which data is recorded, and where?
+#
+# Where data comes from is two steps away: the acquisition names the source it
+# was taken from, and the assignment names the device carrying out that
+# acquisition.
+#
+# Source and device answer different questions. The source says what the data
+# is about, the device says where in the plant it was taken. The two often
+# nearly coincide, but they need not: an acquisition running on an edge device
+# may well read a sensor two levels below.
+#
+# Anchored on the data rather than on the production data. What an acquisition
+# yields is not always typed as production data: in case 2 the three
+# acquisitions deliver plain data, and only the result of merging them is
+# production data. Asking for the narrower class would have missed all three.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?data ?dataKind ?acquisition ?source ?resource
+WHERE {
+  ?data iso22989:isAcquiredBy ?acquisition .
+  ?data a ?dataKind . ?dataKind rdfs:subClassOf* iso22989:Data .
+  FILTER NOT EXISTS { ?data a ?n . ?n rdfs:subClassOf+ ?dataKind }
+  OPTIONAL { ?acquisition iso22989:hasDataSource ?source }
+  OPTIONAL { ?acquisition aias:isAssignedTo/vdi3682:isAssignedTo ?resource }
+} ORDER BY ?data

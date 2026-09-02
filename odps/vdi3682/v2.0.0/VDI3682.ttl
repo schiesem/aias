@@ -1,0 +1,494 @@
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias/odp/vdi3682>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/odp/vdi3682/2.0.0> ;
+    owl:versionInfo "2.0.0" ;
+    dcterms:title "VDI 3682 Ontology Design Pattern"@en ;
+    dcterms:description """Ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 Part 1 (concept and graphic representation) and Part 2 (information model), issue May 2015.
+
+The pattern covers the process network of states and process operators, the technical resources realising the operators, the system limit bounding the observation horizon, and the attribute structure of identification and characteristics.
+
+The pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology."""@en ;
+    dcterms:created "2026-08-14"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "TODO: author name, ORCID" ;
+    dcterms:contributor "TODO: co-authors" ;
+    dcterms:publisher "TODO: institution" ;
+    dcterms:rights "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" ;
+    dcterms:bibliographicCitation "TODO: citation of the accompanying publication" ;
+    dcterms:source <https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung> ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/vdi3682#" ;
+    vann:preferredNamespacePrefix "vdi3682" ;
+    bibo:status "Draft"@en ;
+    rdfs:comment """Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.
+
+Relation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.
+
+Structural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."""@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+dcterms:contributor a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+
+#################################################################
+#    Classes
+#################################################################
+
+vdi3682:Process
+    a owl:Class ;
+    rdfs:label "Process"@en ;
+    rdfs:comment "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1. Part 2, Figure 2 constrains a process to exactly one system limit, at least one process operator and at least two states."@en ;
+    owl:disjointWith vdi3682:State, vdi3682:SystemLimit, vdi3682:TechnicalResource, vdi3682:Flow, vdi3682:Assignment, vdi3682:Attribute ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty vdi3682:consistsOf ;
+        owl:onClass vdi3682:SystemLimit ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty vdi3682:consistsOf ;
+        owl:onClass vdi3682:State ;
+        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+    ] ,
+    [
+        a owl:Restriction ;
+        owl:onProperty vdi3682:consistsOf ;
+        owl:onClass vdi3682:ProcessOperator ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+vdi3682:ProcessOperator
+    a owl:Class ;
+    rdfs:label "Process Operator"@en ;
+    rdfs:comment "An operation transforming the input state of products, energies or information into an output state. The process operator realises this transformation by means of technical resources."@en ;
+    skos:note """VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed; states are not decomposed (Part 1, Section 2).
+
+The defined class axiom follows the VDI 3682 ODP of Helmut Schmidt University: anything with an input and an output that is contained in a process is a process operator. Anything with an input and an output alone may also be a process."""@en ;
+    owl:disjointWith vdi3682:State, vdi3682:SystemLimit, vdi3682:TechnicalResource, vdi3682:Flow, vdi3682:Assignment, vdi3682:Attribute ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            [ a owl:Restriction ; owl:onProperty vdi3682:hasInput ; owl:someValuesFrom owl:Thing ]
+            [ a owl:Restriction ; owl:onProperty vdi3682:hasOutput ; owl:someValuesFrom owl:Thing ]
+            [ a owl:Restriction ; owl:onProperty [ owl:inverseOf vdi3682:consistsOf ] ; owl:someValuesFrom vdi3682:Process ]
+        )
+    ] ;
+    rdfs:subClassOf [
+        a owl:Class ;
+        owl:intersectionOf (
+            [ a owl:Restriction ; owl:onProperty vdi3682:hasInput ; owl:someValuesFrom owl:Thing ]
+            [ a owl:Restriction ; owl:onProperty vdi3682:hasOutput ; owl:someValuesFrom owl:Thing ]
+        )
+    ] .
+
+vdi3682:State
+    a owl:Class ;
+    rdfs:label "State"@en ;
+    rdfs:comment "The condition of a product, an energy or an information at a given point of a process, either as the status ante operationem before a transformation or as the status post operationem after it."@en ;
+    skos:note "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1, Section 4.1 deliberately avoids the term in the graphical notation because it is considered ambiguous there, and works with product, energy and information directly. This pattern follows Part 2."@en ;
+    owl:disjointWith vdi3682:SystemLimit, vdi3682:TechnicalResource, vdi3682:Flow, vdi3682:Assignment, vdi3682:Attribute .
+
+vdi3682:Product
+    a owl:Class ;
+    rdfs:label "Product"@en ;
+    rdfs:comment "Things of the real world that are transformed within a technical process. The generic term also covers flows of materials and substances."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1."@en ;
+    rdfs:subClassOf vdi3682:State ;
+    owl:disjointWith vdi3682:Energy, vdi3682:Information .
+
+vdi3682:Energy
+    a owl:Class ;
+    rdfs:label "Energy"@en ;
+    rdfs:comment "Energy required or released by a process operator, for example electrical energy or heat. Energy occurs as input and as output of a process."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1."@en ;
+    rdfs:subClassOf vdi3682:State ;
+    owl:disjointWith vdi3682:Information .
+
+vdi3682:Information
+    a owl:Class ;
+    rdfs:label "Information"@en ;
+    rdfs:comment "Information required by a process operator to carry out its transformation, or information created by it."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1. One of the three kinds of state a process moves, alongside product and energy."@en ;
+    rdfs:subClassOf vdi3682:State .
+
+vdi3682:TechnicalResource
+    a owl:Class ;
+    rdfs:label "Technical Resource"@en ;
+    rdfs:comment "A physical component of an automated plant that realises the transformation carried out by a process operator."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.2. The class is what a process needs to say who does the work: an operator states what happens, a resource states what performs it, and the assignment ties the two."@en ;
+    owl:disjointWith vdi3682:SystemLimit, vdi3682:Flow, vdi3682:Assignment, vdi3682:Attribute .
+
+vdi3682:SystemLimit
+    a owl:Class ;
+    rdfs:label "System Limit"@en ;
+    rdfs:comment "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1. The system limit must not be used as a balance limit when alternative process runs are described."@en ;
+    owl:disjointWith vdi3682:Flow, vdi3682:Assignment, vdi3682:Attribute .
+
+vdi3682:Flow
+    a owl:Class ;
+    rdfs:label "Flow"@en ;
+    rdfs:comment "A directed connection transporting a product, an energy or an information between a state and a process operator."@en ;
+    skos:note """VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.
+
+Reifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. A reified flow can be identified, annotated and marked as parallel or alternative, none of which an edge can carry.
+
+The direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification."""@en ;
+    owl:disjointWith vdi3682:Assignment, vdi3682:Attribute .
+
+vdi3682:ParallelFlow
+    a owl:Class ;
+    rdfs:label "Parallel Flow"@en ;
+    rdfs:comment "A flow that is part of a partially shared flow denoting process steps running concurrently."@en ;
+    skos:note """VDI 3682 Part 1, Section 4.2.1 recommends modelling parallel process runs as a partially shared flow and explicitly requires no additional graphical elements for them. Introducing a class for the parallel flow is therefore a design decision of this pattern rather than an adoption from the standard.
+
+A parallel flow states that a single connection belongs to a concurrent run. Grouping several connections into one conjunction is expressed through the dependency property between the states involved."""@en ;
+    rdfs:subClassOf vdi3682:Flow ;
+    owl:disjointWith vdi3682:AlternativeFlow .
+
+vdi3682:AlternativeFlow
+    a owl:Class ;
+    rdfs:label "Alternative Flow"@en ;
+    rdfs:comment "A flow that is part of a separate flow denoting mutually exclusive process paths."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. Introducing a class for the alternative flow is a design decision of this pattern. Where alternative flows are present, the system limit must not be used as a balance limit."@en ;
+    rdfs:subClassOf vdi3682:Flow .
+
+vdi3682:Assignment
+    a owl:Class ;
+    rdfs:label "Assignment"@en ;
+    rdfs:comment "The structural connection through which the execution of a process operator is assigned to a technical resource."@en ;
+    skos:note """VDI 3682 Part 1, Figure 3 carries this relation as the usage symbol, an edge of the graphical notation.
+
+Reifying the assignment as a class is a design decision of this pattern, taken for the same reasons as the reification of the flow. The VDI 3682 ODP of Helmut Schmidt University models it as the object property isAssignedTo."""@en ;
+    owl:disjointWith vdi3682:Attribute .
+
+vdi3682:Attribute
+    a owl:Class ;
+    rdfs:label "Attribute"@en ;
+    rdfs:comment "A property of an object of the formalised process description. Two kinds of attribute exist, the identification and the characteristics."@en ;
+    skos:note "VDI 3682 Part 2, Section 5 and Figure 3."@en .
+
+vdi3682:Identification
+    a owl:Class ;
+    rdfs:label "Identification"@en ;
+    rdfs:comment "The attribute uniquely identifying an object and its characteristics over the life cycle of a process description."@en ;
+    skos:note "VDI 3682 Part 2, Section 5.1, after IEC 61360-1. It carries a unique ident, a long name, a short name, references to external identification systems, a version number and a revision number."@en ;
+    rdfs:subClassOf vdi3682:Attribute ;
+    owl:disjointWith vdi3682:Characteristic .
+
+vdi3682:Characteristic
+    a owl:Class ;
+    rdfs:label "Characteristic"@en ;
+    rdfs:comment "An attribute describing a process specific property of an object. It consists of a category, a descriptive element and a relational element."@en ;
+    skos:note """VDI 3682 Part 2, Section 5.2 and Figures 5 to 7.
+
+The standard fixes this three-part structure but does not prescribe a vocabulary of properties. The entries shown in its figures, such as setpoint value or validity limits, are examples closed by an open placeholder. Non-functional properties of resources therefore have to draw their vocabulary from a further standard."""@en ;
+    rdfs:subClassOf vdi3682:Attribute .
+
+#################################################################
+#    Object properties: composition
+#################################################################
+
+vdi3682:consistsOf
+    a owl:ObjectProperty ;
+    rdfs:label "consists of"@en ;
+    rdfs:comment "Relates a process to the elements it contains, namely its states, process operators and its system limit."@en ;
+    skos:note "VDI 3682 Part 2, Figure 2, aggregation."@en ;
+    rdfs:domain vdi3682:Process ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( vdi3682:ProcessOperator vdi3682:State vdi3682:SystemLimit vdi3682:Flow ) ] .
+
+vdi3682:isComposedOf
+    a owl:ObjectProperty ;
+    rdfs:label "is composed of"@en ;
+    rdfs:comment "Relates a process operator to the more detailed process operators it decomposes into."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed."@en ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:ProcessOperator .
+
+vdi3682:hasSubProcess
+    a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "has sub process"@en ;
+    rdfs:comment "Relates a process operator to the process describing its decomposition. Inferred, not modelled."@en ;
+    skos:note "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows isComposedOf and the inverse of consistsOf."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:Process vdi3682:ProcessOperator ) ] ;
+    rdfs:range vdi3682:Process ;
+    owl:propertyChainAxiom ( vdi3682:isComposedOf [ owl:inverseOf vdi3682:consistsOf ] ) .
+
+vdi3682:hasUpperProcess
+    a owl:ObjectProperty ;
+    rdfs:label "has upper process"@en ;
+    rdfs:comment "Relates a process operator to its parent process. Inferred, not modelled."@en ;
+    skos:note "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows the inverse of isComposedOf and the inverse of consistsOf."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:Process vdi3682:ProcessOperator ) ] ;
+    rdfs:range vdi3682:Process ;
+    owl:propertyChainAxiom ( [ owl:inverseOf vdi3682:isComposedOf ] [ owl:inverseOf vdi3682:consistsOf ] ) .
+
+vdi3682:isWithin
+    a owl:ObjectProperty ;
+    rdfs:label "is within"@en ;
+    rdfs:comment "Relates a state, a process operator or a flow to the system limit enclosing it."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:ProcessOperator vdi3682:State vdi3682:Flow ) ] ;
+    rdfs:range vdi3682:SystemLimit .
+
+#################################################################
+#    Object properties: flows, reified
+#################################################################
+
+vdi3682:hasSource
+    a owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    rdfs:comment "Relates a flow to the element it originates from."@en ;
+    skos:note "Super property of the two typed source properties. Chains are defined on the typed sub properties only, so that inference cannot fire between two elements of the same kind."@en ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( vdi3682:ProcessOperator vdi3682:State ) ] .
+
+vdi3682:hasTarget
+    a owl:ObjectProperty ;
+    rdfs:label "has target"@en ;
+    rdfs:comment "Relates a flow to the element it leads to."@en ;
+    skos:note "Super property of the two typed target properties."@en ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( vdi3682:ProcessOperator vdi3682:State ) ] .
+
+vdi3682:hasStateSource
+    a owl:ObjectProperty ;
+    rdfs:label "has state source"@en ;
+    rdfs:comment "Relates a flow to the state it originates from."@en ;
+    skos:note "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."@en ;
+    rdfs:subPropertyOf vdi3682:hasSource ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range vdi3682:State .
+
+vdi3682:hasOperatorSource
+    a owl:ObjectProperty ;
+    rdfs:label "has operator source"@en ;
+    rdfs:comment "Relates a flow to the process operator it originates from."@en ;
+    skos:note "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."@en ;
+    rdfs:subPropertyOf vdi3682:hasSource ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range vdi3682:ProcessOperator .
+
+vdi3682:hasStateTarget
+    a owl:ObjectProperty ;
+    rdfs:label "has state target"@en ;
+    rdfs:comment "Relates a flow to the state it leads to."@en ;
+    skos:note "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."@en ;
+    rdfs:subPropertyOf vdi3682:hasTarget ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range vdi3682:State .
+
+vdi3682:hasOperatorTarget
+    a owl:ObjectProperty ;
+    rdfs:label "has operator target"@en ;
+    rdfs:comment "Relates a flow to the process operator it leads to."@en ;
+    skos:note "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."@en ;
+    rdfs:subPropertyOf vdi3682:hasTarget ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range vdi3682:ProcessOperator .
+
+#################################################################
+#    Object properties: flows, inferred direct form
+#################################################################
+
+vdi3682:hasInput
+    a owl:ObjectProperty ;
+    rdfs:label "has input"@en ;
+    rdfs:comment "Relates a process operator to a state entering it. Inferred from the reified flows, not modelled directly."@en ;
+    skos:note "The chain reads: a flow leading to this operator originates from that state. Typed sub properties keep the inference from firing between two states or two operators."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:Process vdi3682:ProcessOperator ) ] ;
+    rdfs:range vdi3682:State ;
+    owl:propertyChainAxiom ( [ owl:inverseOf vdi3682:hasOperatorTarget ] vdi3682:hasStateSource ) .
+
+vdi3682:hasOutput
+    a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    rdfs:comment "Relates a process operator to a state leaving it. Inferred from the reified flows, not modelled directly."@en ;
+    skos:note "The chain reads: a flow originating from this operator leads to that state."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:Process vdi3682:ProcessOperator ) ] ;
+    rdfs:range vdi3682:State ;
+    owl:propertyChainAxiom ( [ owl:inverseOf vdi3682:hasOperatorSource ] vdi3682:hasStateTarget ) .
+
+vdi3682:hasPredecessor
+    a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "has predecessor"@en ;
+    rdfs:comment "Relates a process operator to a process operator preceding it. Inferred, not modelled."@en ;
+    skos:note "Adopted from the VDI 3682 ODP of Helmut Schmidt University. Two operators are never adjacent directly; the chain passes through the shared state."@en ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:ProcessOperator ;
+    owl:inverseOf vdi3682:hasSuccessor ;
+    owl:propertyChainAxiom ( vdi3682:hasInput [ owl:inverseOf vdi3682:hasOutput ] ) .
+
+vdi3682:hasSuccessor
+    a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "has successor"@en ;
+    rdfs:comment "Relates a process operator to a process operator following it. Inferred, not modelled."@en ;
+    skos:note "Adopted from the VDI 3682 ODP of Helmut Schmidt University."@en ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:ProcessOperator ;
+    owl:propertyChainAxiom ( vdi3682:hasOutput [ owl:inverseOf vdi3682:hasInput ] ) .
+
+vdi3682:dependency
+    a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label "dependency"@en ;
+    rdfs:comment "Expresses that two states are required together rather than as alternatives to one another."@en ;
+    skos:note """Adopted from the VDI 3682 ODP of Helmut Schmidt University and not contained in the standard itself.
+
+Under the open world assumption several inputs of one process operator always denote alternatives. Where inputs are required jointly, this has to be stated explicitly. The property acts as a conjunction between states, so that an expression such as "A and B, or C and D" becomes representable: dependency is asserted between A and B and between C and D.
+
+The property complements ParallelFlow. A parallel flow qualifies a single connection, whereas dependency groups several connections into one conjunction."""@en ;
+    rdfs:domain vdi3682:State ;
+    rdfs:range vdi3682:State .
+
+#################################################################
+#    Object properties: assignment, reified
+#################################################################
+
+vdi3682:hasAssignment
+    a owl:ObjectProperty ;
+    rdfs:label "has assignment"@en ;
+    rdfs:comment "Relates a process operator to an assignment describing which technical resource realises it."@en ;
+    skos:note "Directed counterpart of the usage symbol of VDI 3682 Part 1, Figure 3."@en ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:Assignment .
+
+vdi3682:assignedResource
+    a owl:ObjectProperty ;
+    rdfs:label "assigned resource"@en ;
+    rdfs:comment "Relates an assignment to the technical resource realising the assigned process operator."@en ;
+    rdfs:domain vdi3682:Assignment ;
+    rdfs:range vdi3682:TechnicalResource .
+
+vdi3682:isAssignedTo
+    a owl:ObjectProperty ;
+    rdfs:label "is assigned to"@en ;
+    rdfs:comment "Relates a process operator directly to the technical resource realising it. Inferred from the reified assignment, not modelled directly."@en ;
+    skos:note "Shortcut across the reified assignment, provided so that queries need not traverse the reification. The VDI 3682 ODP of Helmut Schmidt University carries this property as the primary modelling construct."@en ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:TechnicalResource ;
+    owl:propertyChainAxiom ( vdi3682:hasAssignment vdi3682:assignedResource ) .
+
+#################################################################
+#    Object properties: attributes
+#################################################################
+
+vdi3682:isIdentifiedBy
+    a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "is identified by"@en ;
+    rdfs:comment "Relates an object of the formalised process description to its identification."@en ;
+    skos:note "VDI 3682 Part 2, Figure 3, cardinality one."@en ;
+    rdfs:range vdi3682:Identification .
+
+vdi3682:isCharacterizedBy
+    a owl:ObjectProperty ;
+    rdfs:label "is characterized by"@en ;
+    rdfs:comment "Relates an object of the formalised process description to one of its characteristics."@en ;
+    skos:note "VDI 3682 Part 2, Figure 3."@en ;
+    rdfs:range vdi3682:Characteristic .
+
+#################################################################
+#    Data properties
+#################################################################
+
+vdi3682:uniqueIdent
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "unique ident"@en ;
+    rdfs:comment "The unique code identifying an object."@en ;
+    skos:note "VDI 3682 Part 2, Section 5.1, after IEC 61360-1."@en ;
+    rdfs:domain vdi3682:Identification ;
+    rdfs:range xsd:string .
+
+vdi3682:longName
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "long name"@en ;
+    rdfs:comment "The preferred name of an object."@en ;
+    skos:note "VDI 3682 Part 2, Section 5.1."@en ;
+    rdfs:domain vdi3682:Identification ;
+    rdfs:range xsd:string .
+
+vdi3682:shortName
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "short name"@en ;
+    rdfs:comment "The coded name of an object."@en ;
+    skos:note "VDI 3682 Part 2, Section 5.1."@en ;
+    rdfs:domain vdi3682:Identification ;
+    rdfs:range xsd:string .
+
+vdi3682:versionNumber
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "version number"@en ;
+    rdfs:comment "The version of an object. A new version arises when the values of its attributes change."@en ;
+    skos:note "VDI 3682 Part 2, Section 5.1. This property is a standard backed anchor for tracking the model states of an AI application across the engineering method."@en ;
+    rdfs:domain vdi3682:Identification ;
+    rdfs:range xsd:string .
+
+vdi3682:revisionNumber
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "revision number"@en ;
+    rdfs:comment "The revision of an object, describing its accredited version."@en ;
+    skos:note "VDI 3682 Part 2, Section 5.1."@en ;
+    rdfs:domain vdi3682:Identification ;
+    rdfs:range xsd:string .
+
+vdi3682:externalReference
+    a owl:DatatypeProperty ;
+    rdfs:label "external reference"@en ;
+    rdfs:comment "A reference from an object to an external identification system such as AKZ, KKS or NE 100."@en ;
+    skos:note "VDI 3682 Part 1, Section 4.1 and Part 2, Section 5.1."@en ;
+    rdfs:domain vdi3682:Identification ;
+    rdfs:range xsd:string .
+
+vdi3682:category
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "category"@en ;
+    rdfs:comment "The name of a characteristic."@en ;
+    skos:note "VDI 3682 Part 2, Figure 5."@en ;
+    rdfs:domain vdi3682:Characteristic ;
+    rdfs:range xsd:string .
+
+vdi3682:descriptiveElement
+    a owl:DatatypeProperty ;
+    rdfs:label "descriptive element"@en ;
+    rdfs:comment "The describing part of a characteristic."@en ;
+    skos:note "VDI 3682 Part 2, Figure 5 and Figure 6. The standard fixes the part but leaves its content open."@en ;
+    rdfs:domain vdi3682:Characteristic ;
+    rdfs:range xsd:string .
+
+vdi3682:relationalElement
+    a owl:DatatypeProperty ;
+    rdfs:label "relational element"@en ;
+    rdfs:comment "The relation establishing part of a characteristic."@en ;
+    skos:note "VDI 3682 Part 2, Figure 5 and Figure 7."@en ;
+    rdfs:domain vdi3682:Characteristic ;
+    rdfs:range xsd:string .

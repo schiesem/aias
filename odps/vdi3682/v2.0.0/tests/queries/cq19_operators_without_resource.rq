@@ -1,0 +1,11 @@
+# CQ 19: Which operators have no resource?
+#
+# Restricted to elementary operators. A decomposed operator is realised by the
+# resources of its sub steps, so demanding an assignment of its own would count
+# the same work twice and would report every decomposition as a gap.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?operator WHERE {
+  ?operator a vdi3682:ProcessOperator .
+  FILTER NOT EXISTS { ?operator vdi3682:isAssignedTo ?r }
+  FILTER NOT EXISTS { ?operator vdi3682:isComposedOf ?sub }
+} ORDER BY ?operator

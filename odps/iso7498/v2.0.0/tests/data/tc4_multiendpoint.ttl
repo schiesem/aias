@@ -1,0 +1,108 @@
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst:    <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix ex:      <https://w3id.org/aias/example/iso7498/tc4#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 4: a communication with more than two participants.
+#
+# After ISO/IEC 7498-1, 5.3.1.4, which calls a connection with more than two
+# connection endpoints a multi-endpoint connection, and 5.3.1.9, which defines
+# data transmission as conveying service data units from one entity to one or
+# more entities.
+#
+# A fieldbus segment in the manner of a master and its slaves. One
+# communication carries the whole segment rather than one object per pair,
+# which is what the absence of a cardinality on connects is for. The systems
+# stay neutral, as in the other cases.
+#
+# Direction is two-way alternate, 5.3.1.15: both sides send, but never at the
+# same time, which is what master and slave access amounts to.
+
+<https://w3id.org/aias/example/iso7498/tc4>
+    a owl:Ontology ;
+    rdfs:label "ISO 7498 test case 4: a multi-endpoint communication"@en ;
+    rdfs:comment "One communication carrying a bus segment with four participants, after ISO/IEC 7498-1, 5.3.1.4."@en ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+
+#################################################################
+#    Open systems: one initiating, three responding
+#################################################################
+
+ex:SystemA
+    a iso7498:OpenSystem ;
+    rdfs:label "System A"@en ;
+    rdfs:comment "The system initiating the exchange on the segment."@en .
+
+ex:SystemB
+    a iso7498:OpenSystem ;
+    rdfs:label "System B"@en ;
+    rdfs:comment "A responding system on the segment."@en .
+
+ex:SystemC
+    a iso7498:OpenSystem ;
+    rdfs:label "System C"@en ;
+    rdfs:comment "A responding system on the segment."@en .
+
+ex:SystemD
+    a iso7498:OpenSystem ;
+    rdfs:label "System D"@en ;
+    rdfs:comment "A responding system on the segment."@en .
+
+#################################################################
+#    One communication for the whole segment
+#
+#    A names itself as source and the other three as targets, which records
+#    that it initiates. All four are also targets and sources respectively,
+#    since the responders answer: the segment carries data both ways, one
+#    direction at a time.
+#################################################################
+
+ex:BusSegment
+    a iso7498:ConnectionModeAssociation ;
+    rdfs:label "Bus segment"@en ;
+    rdfs:comment "A fieldbus segment joining four systems over one communication. ISO/IEC 7498-1, 5.3.1.4 calls a connection with more than two endpoints a multi-endpoint connection."@en ;
+    iso7498:hasSourceSystem ex:SystemA , ex:SystemB , ex:SystemC , ex:SystemD ;
+    iso7498:hasTargetSystem ex:SystemA , ex:SystemB , ex:SystemC , ex:SystemD ;
+    iso7498:hasDirection inst:TwoWayAlternate ;
+    iso7498:usesLayer inst:ApplicationLayer ;
+    iso7498:usesTechnology inst:Profibus ;
+    iso7498:hasQualityOfService ex:QoS_Segment ;
+    iso7498:transmits ex:SegmentPDU .
+
+#################################################################
+#    Quality of service
+#
+#    A cycle time expressed as transit delay, and the priority the standard
+#    mentions in 5.10, which a segment with several participants has to settle.
+#################################################################
+
+ex:QoS_Segment
+    a iso7498:QualityOfService ;
+    rdfs:label "Quality of service of the bus segment"@en ;
+    iso7498:hasValue ex:QoSV_CycleTime , ex:QoSV_Priority .
+
+ex:QoSV_CycleTime
+    a iso7498:QoSValue ;
+    rdfs:label "transit delay 1 ms"@en ;
+    iso7498:forParameter inst:TransitDelay ;
+    iso7498:quantity "1"^^xsd:decimal ;
+    iso7498:unit "ms" .
+
+ex:QoSV_Priority
+    a iso7498:QoSValue ;
+    rdfs:label "priority 1"@en ;
+    iso7498:forParameter inst:Priority ;
+    iso7498:quantity "1"^^xsd:decimal ;
+    iso7498:unit "1" .
+
+#################################################################
+#    Data unit carried
+#################################################################
+
+ex:SegmentPDU
+    a iso7498:ProtocolDataUnit ;
+    rdfs:label "Segment PDU"@en ;
+    rdfs:comment "The protocol data unit exchanged on the segment."@en ;
+    iso7498:atLayer inst:ApplicationLayer .

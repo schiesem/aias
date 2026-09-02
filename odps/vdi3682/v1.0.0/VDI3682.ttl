@@ -1,0 +1,286 @@
+@prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <https://schema.org/> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias/odp/vdi3682>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/odp/vdi3682/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    dcterms:title "VDI 3682 Ontology Design Pattern"@en ;
+    dcterms:abstract """An ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 part 1. A process is described as a network: process operators transform the state of products, energies and information, flows connect the operators, technical resources are assigned to the operators that carry them out, and a system border bounds what is described. Every definition carries the German wording of the standard alongside its English translation. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."""@en ;
+    dcterms:created "2024-09-01"^^xsd:date ;
+    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:creator "Marvin Schieseck" ;
+    dcterms:creator "Philip Topalis" ;
+    dcterms:creator "Lasse Reinpold" ;
+    dcterms:creator "Felix Gehlhoff" ;
+    dcterms:creator "Alexander Fay" ;
+    dcterms:publisher "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
+    dcterms:rights """This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"""@en ;
+    foaf:fundedBy <https://dtecbw.de/> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:bibliographicCitation """M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"""@en ;
+    bibo:doi "10.1109/ETFA61755.2024.10710890" ;
+    dcterms:source <https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung> ;
+    dcterms:subject "Formalised Process Description"@en ;
+    dcterms:subject "VDI 3682"@en ;
+    dcterms:subject "Ontology Design Pattern"@en ;
+    dcterms:subject "Technical Process"@en ;
+    dcterms:subject "Process Description"@en ;
+    schema:codeRepository <https://github.com/schiesem/aias> ;
+    dcterms:hasVersion <https://w3id.org/aias/odp/vdi3682> ;
+    bibo:status "Draft"@en ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/vdi3682#" ;
+    vann:preferredNamespacePrefix "vdi3682" ;
+    rdfs:comment """Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.
+
+Twelve classes and seven relations. Every definition carries the German wording of the standard alongside its English translation, since the standard is issued bilingually.
+
+Scope: Part 1 in full, and from Part 2 the state as a class of the information model. The attribute structure of Part 2 Section 4.4 is not covered."""@en .
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:abstract a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+foaf:fundedBy a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+bibo:doi a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+dcterms:subject a owl:AnnotationProperty .
+schema:codeRepository a owl:AnnotationProperty .
+dcterms:hasVersion a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+
+#################################################################
+#    The process and what it is made of
+#################################################################
+
+vdi3682:Process
+    a owl:Class ;
+    rdfs:label "Process"@en ;
+    rdfs:label "Prozess"@de ;
+    rdfs:comment "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."@en ;
+    rdfs:comment "Netz zur Beschreibung technischer Prozesse, dessen Knoten die Zustände von Produkten und dessen gerichtete Kanten die Umwandlungsschritte durch Prozessoperatoren darstellen."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1, page 8."@en .
+
+vdi3682:ProcessOperator
+    a owl:Class ;
+    rdfs:label "Process Operator"@en ;
+    rdfs:label "Prozessoperator"@de ;
+    rdfs:comment "An operation transforming the input state of products, energies or information into an output state."@en ;
+    rdfs:comment "Vorgang, durch den der Eingangszustand von Produkten, Energien oder Informationen in einen Ausgangszustand umgewandelt wird."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1, pages 8 and 9."@en .
+
+vdi3682:SystemBorder
+    a owl:Class ;
+    rdfs:label "System Border"@en ;
+    rdfs:label "Systemgrenze"@de ;
+    rdfs:comment "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."@en ;
+    rdfs:comment "Grenze, die den Betrachtungshorizont eines Prozesses festlegt. Unter bestimmten Bedingungen kann sie auch als Bilanzgrenze für ein- und ausgehende Produkte und Energien aufgefasst werden."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1. The standard calls this the Systemgrenze, which is a system limit rather than a border. The class name follows the English wording of the standard's own translation."@en .
+
+#################################################################
+#    States: products, energies, information
+#################################################################
+
+vdi3682:State
+    a owl:Class ;
+    rdfs:label "State"@en ;
+    rdfs:label "Zustand"@de ;
+    rdfs:comment "The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it."@en ;
+    rdfs:comment "Zustand eines Produkts, einer Energie oder einer Information an einer bestimmten Stelle eines Prozesses, entweder vor einer Umwandlung oder danach."@de ;
+    skos:note "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1 avoids the term in the graphical notation, where the three kinds appear directly."@en .
+
+vdi3682:Product
+    a owl:Class ;
+    rdfs:label "Product"@en ;
+    rdfs:label "Produkt"@de ;
+    rdfs:comment "Things of the real world that are transformed within a technical process."@en ;
+    rdfs:comment "Dinge der realen Welt, die im Rahmen eines technischen Prozesses umgewandelt werden."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1, page 8. A product is not a kind of state: it has one, which hasState records. The thing and the condition it is in are kept apart, so the same sheet of metal before and after a stamping is one product in two states."@en .
+
+vdi3682:Energy
+    a owl:Class ;
+    rdfs:label "Energy"@en ;
+    rdfs:label "Energie"@de ;
+    rdfs:comment "Energy required or released by a process operator, for example electrical energy or heat."@en ;
+    rdfs:comment "Energie, die von einem Prozessoperator benötigt oder freigesetzt wird, beispielsweise elektrische Energie oder Wärme."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1."@en .
+
+vdi3682:Information
+    a owl:Class ;
+    rdfs:label "Information"@en ;
+    rdfs:label "Information"@de ;
+    rdfs:comment "Information required by a process operator to carry out its transformation, or information created by it."@en ;
+    rdfs:comment "Information, die ein Prozessoperator zur Durchführung seiner Umwandlung benötigt oder die durch ihn entsteht."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1."@en .
+
+#################################################################
+#    Flows
+#################################################################
+
+vdi3682:Flow
+    a owl:Class ;
+    rdfs:label "Flow"@en ;
+    rdfs:label "Fluss"@de ;
+    rdfs:comment "A directed connection of products between process operators."@en ;
+    rdfs:comment "Gerichtete Verbindung von Produkten zwischen Prozessoperatoren."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.1, page 8. Figure 3 lists the flow among the eight symbols of the graphical notation, where it is an edge rather than an object. Reifying it as a class is a design decision of this pattern."@en .
+
+vdi3682:ParallelFlow
+    a owl:Class ;
+    rdfs:label "Parallel Flow"@en ;
+    rdfs:label "Parallelfluss"@de ;
+    rdfs:comment "A flow that is part of a partially shared flow denoting process steps running concurrently."@en ;
+    rdfs:comment "Fluss, der Teil eines teilweise gemeinsamen Flusses ist und nebenläufig ablaufende Prozessschritte bezeichnet."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.2.1 models parallel process runs as a partially shared flow and requires no additional graphical elements for them. The class is a design decision of this pattern."@en ;
+    rdfs:subClassOf vdi3682:Flow .
+
+vdi3682:AlternativeFlow
+    a owl:Class ;
+    rdfs:label "Alternative Flow"@en ;
+    rdfs:label "Alternativfluss"@de ;
+    rdfs:comment "A flow that is part of a separate flow denoting mutually exclusive process paths."@en ;
+    rdfs:comment "Fluss, der Teil eines getrennten Flusses ist und sich gegenseitig ausschließende Prozesswege bezeichnet."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. The class is a design decision of this pattern."@en ;
+    rdfs:subClassOf vdi3682:Flow .
+
+#################################################################
+#    Technical resources and their assignment
+#################################################################
+
+vdi3682:TechnicalResource
+    a owl:Class ;
+    rdfs:label "Technical Resource"@en ;
+    rdfs:label "Technische Ressource"@de ;
+    rdfs:comment "Physical components of which automated plants are built and which realise the transformations carried out by process operators."@en ;
+    rdfs:comment "Physische Komponenten, aus denen automatisierte Anlagen aufgebaut sind und die die Umwandlungen der Produkte durch Prozessoperatoren realisieren."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.2."@en .
+
+vdi3682:Assignment
+    a owl:Class ;
+    rdfs:label "Assignment"@en ;
+    rdfs:label "Zuordnung"@de ;
+    rdfs:comment "The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource."@en ;
+    rdfs:comment "Strukturelle Verbindung zwischen Prozessoperator und technischer Ressource, über die einer Ressource die Ausführung eines Prozessoperators zugewiesen wird."@de ;
+    skos:note "VDI 3682 Part 1, Section 4.2. Figure 3 carries this relation as the usage symbol, an edge of the graphical notation. Reifying it as a class is a design decision of this pattern."@en .
+
+#################################################################
+#    Disjointness
+#
+#    The seven root classes are pairwise disjoint.
+#
+#    Product, energy and information are deliberately not in the set. They are
+#    not kinds of state but things that have one, and nothing in the standard
+#    forbids a thing from being a product and an information at once: a test
+#    certificate travelling with a part is both.
+#
+#    ParallelFlow and AlternativeFlow are subclasses of Flow and stay out for
+#    the same reason: a flow may be part of a parallel run and of an
+#    alternative one at different points of a process.
+#################################################################
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( vdi3682:Process vdi3682:ProcessOperator vdi3682:State
+                 vdi3682:Flow vdi3682:TechnicalResource vdi3682:Assignment
+                 vdi3682:SystemBorder ) .
+
+#################################################################
+#    Object properties
+#
+#    A process consists
+#    of the elements describing it, a process operator has flows as its input
+#    and output, a flow carries a state, and the assignment ties an operator
+#    to the resource performing it.
+#################################################################
+
+vdi3682:consistsOf
+    a owl:ObjectProperty ;
+    rdfs:label "consists of"@en ;
+    rdfs:label "besteht aus"@de ;
+    rdfs:comment "Relates a process to the elements describing it."@en ;
+    rdfs:comment "Verbindet einen Prozess mit den Elementen, die ihn beschreiben."@de ;
+    skos:note "The range takes in the process itself, which is how decomposition is recorded here: a process consists of further processes."@en ;
+    rdfs:domain vdi3682:Process ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( vdi3682:Process vdi3682:ProcessOperator
+                                             vdi3682:State vdi3682:SystemBorder ) ] .
+
+vdi3682:hasInput
+    a owl:ObjectProperty ;
+    rdfs:label "has input"@en ;
+    rdfs:label "hat Eingang"@de ;
+    rdfs:comment "Relates a process operator to a flow entering it."@en ;
+    rdfs:comment "Verbindet einen Prozessoperator mit einem in ihn eingehenden Fluss."@de ;
+    skos:note "The flow is the input, not the state. The state is reached from the flow through hasState, one step further along."@en ;
+    owl:inverseOf vdi3682:isInput ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:Flow .
+
+vdi3682:hasOutput
+    a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    rdfs:label "hat Ausgang"@de ;
+    rdfs:comment "Relates a process operator to a flow leaving it."@en ;
+    rdfs:comment "Verbindet einen Prozessoperator mit einem aus ihm ausgehenden Fluss."@de ;
+    owl:inverseOf vdi3682:isOutput ;
+    rdfs:domain vdi3682:ProcessOperator ;
+    rdfs:range vdi3682:Flow .
+
+vdi3682:isInput
+    a owl:ObjectProperty ;
+    rdfs:label "is input of"@en ;
+    rdfs:label "ist Eingang von"@de ;
+    rdfs:comment "Relates a flow to the process operator it enters."@en ;
+    rdfs:comment "Verbindet einen Fluss mit dem Prozessoperator, in den er eingeht."@de ;
+    skos:note "The inverse of hasInput. Both directions are stated because a model may describe a process from either end."@en ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range vdi3682:ProcessOperator .
+
+vdi3682:isOutput
+    a owl:ObjectProperty ;
+    rdfs:label "is output of"@en ;
+    rdfs:label "ist Ausgang von"@de ;
+    rdfs:comment "Relates a flow to the process operator it leaves."@en ;
+    rdfs:comment "Verbindet einen Fluss mit dem Prozessoperator, aus dem er ausgeht."@de ;
+    rdfs:domain vdi3682:Flow ;
+    rdfs:range vdi3682:ProcessOperator .
+
+vdi3682:hasState
+    a owl:ObjectProperty ;
+    rdfs:label "has state"@en ;
+    rdfs:label "hat Zustand"@de ;
+    rdfs:comment "Relates a flow to the state it carries."@en ;
+    rdfs:comment "Verbindet einen Fluss mit dem Zustand, den er trägt."@de ;
+    skos:note "Used in two places. A flow carries a state, and a product, an energy or an information has one. The thing is therefore separate from the condition it is in, which is what lets one product appear in a process before and after a transformation."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:Flow vdi3682:Product
+                                              vdi3682:Energy vdi3682:Information ) ] ;
+    rdfs:range vdi3682:State .
+
+vdi3682:isAssignedTo
+    a owl:ObjectProperty ;
+    rdfs:label "is assigned to"@en ;
+    rdfs:label "ist zugeordnet"@de ;
+    rdfs:comment "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."@en ;
+    rdfs:comment "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource."@de ;
+    skos:note "One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( vdi3682:ProcessOperator vdi3682:Assignment ) ] ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( vdi3682:Assignment vdi3682:TechnicalResource ) ] .

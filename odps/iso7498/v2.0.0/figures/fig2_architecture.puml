@@ -1,0 +1,84 @@
+@startuml fig2_architecture
+' Diagram 2 of the ISO/IEC 7498-1 pattern: the architecture inside an open
+' system.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: how an open system is built out of subsystems, one per layer,
+' what sits inside a subsystem, and the two relations that make a stack a stack
+' rather than seven unrelated things.
+'
+' Two relations run in different directions on purpose. providesService goes
+' up, from an entity to the layer above it, and employsProtocol goes sideways,
+' between the entities of one layer in different systems. That is the whole
+' architecture of clause 5.2 in two edges.
+'
+' peerEntity is drawn as a self-edge, since a peer is an entity like any other.
+' The standard has peers sit at the same layer, 5.2.1.3, and the pattern states
+' no axiom for it: nothing here stops a model from relating two across layers.
+'
+' The layer catalogue is supplied separately in ISO7498-instances.ttl. A model
+' taking only the pattern gets the class without the seven layers.
+'
+' Left out on purpose:
+'  - the communication itself and what it promises: diagram 1
+'  - the data units passing through: diagram 3
+'  - isSublayerOf, which divides a layer into sublayers, 5.3.1.1. It is in the
+'    pattern and no test case uses it, and drawn here its edge crosses the
+'    entity box for a relation the diagram is not about.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+class OpenSystem
+class Subsystem
+class Entity
+class ServiceAccessPoint
+class Service
+class Protocol
+
+class Layer {
+  dataProp: layerNumber
+  «enum»
+  ApplicationLayer
+  PresentationLayer
+  SessionLayer
+  TransportLayer
+  NetworkLayer
+  DataLinkLayer
+  PhysicalLayer
+}
+
+OpenSystem --> "*" Subsystem : hasSubsystem
+Subsystem  --> "*" Entity    : hasEntity
+Subsystem  --> "1" Layer     : atLayer
+
+Entity --> "*" Service  : providesService
+Entity --> "*" Protocol : employsProtocol
+
+' Routed left: the self-edge is drawn on the right by default, which is where
+' the layer catalogue stands, and its label landed on that box.
+Entity -left-> "*" Entity : peerEntity
+
+ServiceAccessPoint --> "*" Entity : attachedTo
+
+@enduml

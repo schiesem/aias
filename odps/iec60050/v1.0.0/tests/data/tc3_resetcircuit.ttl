@@ -1,0 +1,181 @@
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/tc3#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 3: a closed action path carrying an open action.
+#
+# After IEC 60050-351, 351-47-06 and 351-47-62. A reset circuit is a switching
+# system with a closed action path containing at least one binary storage
+# element, and the note to 351-47-06 states that it has an open action despite
+# that structure.
+#
+# The chain, with the reset line N4 running back:
+#
+#   c -> [ControllingElement] -m-> [StorageElement] -y-> [Valve]
+#                 ^                                         | x
+#                 |_______ reset, N4 ______                 v
+#                                                  [ControlledSystem] -> q
+#
+# The chain is a cycle exactly as in test case 2, and the path is therefore
+# closed. What differs is the action: the reset acts only under a condition
+# that does not act permanently, so the action is open and the control is
+# open-loop control.
+#
+# This is the case the pattern exists for. Compare test case 2, where the same
+# structural cycle carries a closed action and the control is a closed-loop
+# control. Structure alone does not decide the kind of control.
+
+<https://w3id.org/aias/example/iec60050/tc3>
+    a owl:Ontology ;
+    rdfs:label "IEC 60050 test case 3: closed path, open action"@en ;
+    rdfs:comment "Open-loop control despite a closed action path, after IEC 60050-351, 351-47-06 and 351-47-62."@en ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+
+#################################################################
+#    The control: open-loop control, although the path is closed
+#################################################################
+
+ex:ControlC
+    a iec60050:OpenLoopControl ;
+    rdfs:label "Control C"@en ;
+    rdfs:comment "A reset circuit. The structure has a closed action path, but the output variable influences the input variable only under a condition that does not act permanently, so the action is open and the control is open-loop control."@en ;
+    iec60050:runsOverActionPath ex:PathC ;
+    iec60050:hasAction ex:ActionC ;
+    iec60050:realisedBy ex:ChainC ;
+    iec60050:actsOn ex:ControlledSystemC ;
+    iec60050:hasManipulatedVariable ex:y ;
+    iec60050:performsFunction iec60050:Monitor ;
+    iec60050:hasCharacteristicValue ex:CV_DeadBand .
+
+#################################################################
+#    The distinguishing assertion: closed path, open action
+#################################################################
+
+ex:PathC
+    a iec60050:ClosedActionPath ;
+    rdfs:label "Action path C"@en ;
+    rdfs:comment "Structurally an additional action path goes back from the output variable to the input variable, 351-47-03, since the reset returns to the controlling element through the storage element."@en ;
+    iec60050:hasActionLine ex:N1 , ex:N2 , ex:N3 , ex:N4 , ex:N5 , ex:N6 .
+
+ex:ActionC
+    a iec60050:OpenAction ;
+    rdfs:label "Action C"@en ;
+    rdfs:comment "The output variable influences the input variable only under certain non-permanently acting conditions, 351-47-06, so the action is open although the path is closed."@en ;
+    iec60050:actionOverPath ex:PathC .
+
+ex:ChainC
+    a iec60050:ControlChain ;
+    rdfs:label "Control chain C"@en ;
+    rdfs:comment "A chain rather than a loop, since no closed action is present, 351-47-12 against 351-47-11. Test case 2 has a loop over the same structural cycle."@en .
+
+#################################################################
+#    The action lines
+#
+#    N4 ends at the controlling element, which N2 starts from, so the chain
+#    forms a cycle exactly as in test case 2. Only the action differs.
+#################################################################
+
+ex:N1 a iec60050:ActionLine ; rdfs:label "c into the controlling element"@en ;
+    iec60050:fromUnit ex:CommandSourceC ; iec60050:toUnit ex:ControllingElementC ;
+    iec60050:carriesVariable ex:c .
+
+ex:N2 a iec60050:ActionLine ; rdfs:label "m to the storage element"@en ;
+    iec60050:fromUnit ex:ControllingElementC ; iec60050:toUnit ex:StorageElementC ;
+    iec60050:carriesVariable ex:m .
+
+ex:N3 a iec60050:ActionLine ; rdfs:label "y to the final controlling element"@en ;
+    iec60050:fromUnit ex:StorageElementC ; iec60050:toUnit ex:ValveC ;
+    iec60050:carriesVariable ex:y .
+
+ex:N5 a iec60050:ActionLine ; rdfs:label "x into the controlled system"@en ;
+    iec60050:fromUnit ex:ValveC ; iec60050:toUnit ex:ControlledSystemC ;
+    iec60050:carriesVariable ex:x .
+
+ex:N6 a iec60050:ActionLine ; rdfs:label "q leaves the control system"@en ;
+    iec60050:fromUnit ex:ControlledSystemC ; iec60050:toUnit ex:FinalVariableGenerationC ;
+    iec60050:carriesVariable ex:q .
+
+ex:N4 a iec60050:ActionLine ; rdfs:label "reset back to the controlling element"@en ;
+    rdfs:comment "The line that closes the action path, 351-47-62. It runs from the binary storage element back to the controlling element, so the chain is a cycle. The signal it carries acts only under a condition that does not act permanently, which is why the action over this path is open and not closed."@en ;
+    iec60050:fromUnit ex:StorageElementC ; iec60050:toUnit ex:ControllingElementC ;
+    iec60050:carriesVariable ex:reset .
+
+#################################################################
+#    Functional units
+#################################################################
+
+ex:ControlSystemC
+    a iec60050:ControlSystem ;
+    rdfs:label "Control system C"@en ;
+    iec60050:consistsOfUnit ex:ControllingSystemC , ex:ControlledSystemC , ex:FinalVariableGenerationC .
+
+ex:ControllingSystemC
+    a iec60050:ControllingSystem ;
+    rdfs:label "Controlling system C"@en ;
+    iec60050:consistsOfUnit ex:ControllingElementC , ex:StorageElementC ;
+    iec60050:realisedByPhysicalUnit ex:DeviceG ;
+    iec60050:actsOn ex:ControlledSystemC .
+
+ex:CommandSourceC
+    a iec60050:FunctionalUnit ;
+    rdfs:label "Command source C"@en .
+
+ex:ControllingElementC
+    a iec60050:ControllingElement ;
+    rdfs:label "Controlling element C"@en ;
+    rdfs:comment "Steuerglied, 351-49-04, and the unit the reset line returns to."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceG .
+
+ex:StorageElementC
+    a iec60050:FunctionalUnit ;
+    rdfs:label "Storage element C"@en ;
+    rdfs:comment "The binary storage element that 351-47-62 requires of a reset circuit. The standard names no class for it in clause 351-49, so the model records a plain functional unit rather than inventing a term."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceG .
+
+ex:ValveC
+    a iec60050:FinalControllingElement ;
+    rdfs:label "Final controlling element C"@en ;
+    iec60050:partOfControlledSystem ex:ControlledSystemC ;
+    iec60050:realisedByPhysicalUnit ex:DeviceH .
+
+ex:FinalVariableGenerationC
+    a iec60050:FinalControlledVariableGeneration ;
+    rdfs:label "Generation of the final controlled variable C"@en .
+
+ex:ControlledSystemC
+    a iec60050:ControlledSystem ;
+    rdfs:label "Controlled system C"@en .
+
+#################################################################
+#    Physical units
+#################################################################
+
+ex:DeviceG a iec60050:PhysicalUnit ; rdfs:label "Device G"@en ;
+    rdfs:comment "Holds the controlling element and the binary storage element of the reset circuit, 351-47-62."@en .
+ex:DeviceH a iec60050:PhysicalUnit ; rdfs:label "Device H"@en .
+
+#################################################################
+#    Variables
+#################################################################
+
+ex:c     a iec60050:CommandVariable          ; rdfs:label "c, command variable"@en .
+ex:m     a iec60050:ControllerOutputVariable ; rdfs:label "m, output variable of the controlling element"@en .
+ex:y     a iec60050:ManipulatedVariable      ; rdfs:label "y, manipulated variable"@en .
+ex:x     a iec60050:ControlledVariable       ; rdfs:label "x, controlled variable"@en .
+ex:q     a iec60050:FinalControlledVariable  ; rdfs:label "q, final controlled variable"@en .
+ex:reset a iec60050:FeedbackVariable         ; rdfs:label "reset signal"@en ;
+    rdfs:comment "Carried by the returning line. Typed as a feedback variable because it runs back along the path, though it does not act permanently and therefore does not close the action."@en .
+
+#################################################################
+#    A characteristic
+#################################################################
+
+ex:CV_DeadBand
+    a iec60050:CharacteristicValue ;
+    rdfs:label "dead band 0.5 K"@en ;
+    iec60050:forCharacteristic inst:DeadBand ;
+    iec60050:quantity "0.5"^^xsd:decimal ;
+    iec60050:unit "K" .

@@ -1,0 +1,29 @@
+# A-box check: catalogue as yardstick. The qualities of clause 3.5 are supplied
+# as named individuals and the answer reports, per quality, whether the case
+# states a value for it. Without a case every one reads as not stated, which is
+# what the question asks rather than an answer from the pattern.
+#
+# CQ 26: Which qualities of the catalogue does a case state a value for, and
+# which does it leave open?
+#
+# Clause 3.5 defines the qualities of a trustworthy AI system, robustness,
+# reliability, transparency and the rest, and they are supplied as named
+# individuals. A model states a value for as many as it can support.
+#
+# Listing them would report the same nine whatever case is loaded. Holding them
+# against the case reports what this system actually claims about itself, and
+# the unstated half is the half a review asks about: a system with no stated
+# robustness has not said how it behaves outside its training distribution.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+SELECT ?quality ?standing ?holder ?quantity ?unit
+WHERE {
+  ?q a iso:VariableCharacteristic .
+  OPTIONAL {
+    ?value iso:forCharacteristic ?q .
+    OPTIONAL { ?holder iso:hasCharacteristicValue ?value }
+    OPTIONAL { ?value iso:quantity ?quantity }
+    OPTIONAL { ?value iso:unit     ?unit }
+  }
+  BIND(IF(BOUND(?value), "stated", "not stated") AS ?standing)
+  BIND(REPLACE(STR(?q), ".*#", "") AS ?quality)
+} ORDER BY ?standing ?quality

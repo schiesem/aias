@@ -1,0 +1,17 @@
+# CQ 23: Which characteristic values are stated, with which unit?
+#
+# The characteristic value is reified so that a value can be referred to and
+# annotated, in the same arrangement as the quality of service value of the
+# ISO 7498 pattern. forCharacteristic is functional: one value quantifies
+# exactly one characteristic, which negative model 05 tests.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?item ?characteristic ?quantity ?unit
+WHERE {
+  ?item iec60050:hasCharacteristicValue ?value .
+  ?value iec60050:forCharacteristic ?characteristic .
+  OPTIONAL { ?value iec60050:quantity ?quantity }
+  OPTIONAL { ?value iec60050:unit     ?unit     }
+} ORDER BY ?item ?characteristic

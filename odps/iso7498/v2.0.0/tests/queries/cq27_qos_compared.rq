@@ -1,0 +1,22 @@
+# CQ 27: How do the qualities of service of a case differ from each other?
+#
+# Where a case carries more than one communication, the question is what each
+# promises against the others. A model of a plant reaches this question as soon
+# as one path is time critical and another is not.
+#
+# Reported per parameter rather than per communication, so the comparison reads
+# down a column: one row per parameter, with the communications stating it and
+# the values they state.
+#
+# The single communication cases answer with one entry per parameter, which is
+# the degenerate case of the same question and still worth returning: it says
+# what the one communication promises.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?parameter
+       (COUNT(DISTINCT ?communication) AS ?statedBy)
+       (GROUP_CONCAT(DISTINCT CONCAT(STR(?quantity), " ", STR(?unit)); separator=" | ") AS ?values)
+WHERE {
+  ?communication iso7498:hasQualityOfService/iso7498:hasValue ?v .
+  ?v iso7498:forParameter ?p ; iso7498:quantity ?quantity ; iso7498:unit ?unit .
+  BIND(REPLACE(STR(?p), ".*#", "") AS ?parameter)
+} GROUP BY ?parameter ORDER BY ?parameter

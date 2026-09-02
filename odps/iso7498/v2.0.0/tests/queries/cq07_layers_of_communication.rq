@@ -1,0 +1,11 @@
+# CQ 07: Which layers does a communication run over?
+#
+# Addition of this pattern: the standard leaves the level of description to the
+# specific service definitions.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?communication ?layer ?layerNumber WHERE {
+  ?communication iso7498:usesLayer ?l .
+  ?l iso7498:layerNumber ?layerNumber .
+  BIND(REPLACE(STR(?l), ".*#", "") AS ?layer)
+} ORDER BY ?communication

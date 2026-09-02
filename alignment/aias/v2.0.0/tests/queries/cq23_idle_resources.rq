@@ -1,0 +1,22 @@
+# CQ 23: Which resources carry no function at all?
+#
+# Not necessarily an error. A cabinet or a power supply carries nothing and is
+# still part of the plant. The question reports rather than judges.
+#
+# On both test cases the answer names the resources that exist for a structural
+# reason: an edge device that only bridges to a cloud, and the products, which
+# are components rather than resources and therefore do not appear at all.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?resource ?kind
+WHERE {
+  ?resource a ?kind . ?kind rdfs:subClassOf* aias:Resource .
+  FILTER NOT EXISTS { ?resource a ?n . ?n rdfs:subClassOf+ ?kind .
+                      ?n rdfs:subClassOf* aias:Resource }
+  FILTER NOT EXISTS { ?any vdi3682:assignedResource ?resource }
+} ORDER BY ?resource

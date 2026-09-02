@@ -1,0 +1,19 @@
+# CQ 24: Which data processes act on a given dataset, and in which order?
+#
+# 3.2.1, 3.2.3, 3.2.4 and 3.2.8 define annotation, augmentation, sampling and
+# imputation. Filtering, normalisation and labelling are named in clause 5.10
+# among the preparation steps without entries of their own.
+#
+# The pattern records which steps a processing function consists of, so that a
+# model can state a preparation rather than one opaque activity.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?data ?step ?stepKind
+WHERE {
+  { ?data iso:isProcessedBy ?step }
+  UNION
+  { ?function a iso:DataProcessing ; iso:consistsOfStep ?step ; iso:usesData ?data }
+  ?step a ?stepKind . ?stepKind rdfs:subClassOf iso:DataProcess .
+} ORDER BY ?data ?step

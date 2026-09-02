@@ -1,0 +1,22 @@
+# CQ 20: Where does the data an AI function uses come from?
+#
+# Acquisition reaches outside the AI system, and what it reaches is a resource
+# of the plant. The chain from the data source to the function is what a
+# provenance question walks.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?data ?acquisition ?source ?resource
+WHERE {
+  ?function iso22989:usesData ?data .
+  OPTIONAL {
+    ?data iso22989:isAcquiredBy ?acquisition .
+    OPTIONAL { ?acquisition iso22989:hasDataSource ?source }
+    OPTIONAL { ?assignment aias:assignedFunction ?acquisition ;
+                           vdi3682:assignedResource ?resource }
+  }
+} ORDER BY ?function ?data

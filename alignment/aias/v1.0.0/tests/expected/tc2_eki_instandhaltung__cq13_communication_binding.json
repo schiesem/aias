@@ -1,0 +1,16 @@
+[
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|both directions|https://w3id.org/aias/example/eki1#Feldbus",
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|receives|https://w3id.org/aias/example/eki1#MotorZuMaschine",
+  "https://w3id.org/aias/example/eki1#Maschinensteuerung|https://w3id.org/aias#Controller|sends|https://w3id.org/aias/example/eki1#SteuerungZuEdge",
+  "https://w3id.org/aias/example/eki1#Motorsteuerung|https://w3id.org/aias#Controller|both directions|https://w3id.org/aias/example/eki1#Feldbus",
+  "https://w3id.org/aias/example/eki1#Motorsteuerung|https://w3id.org/aias#Controller|receives|https://w3id.org/aias/example/eki1#SensorLinksZuMotor",
+  "https://w3id.org/aias/example/eki1#Motorsteuerung|https://w3id.org/aias#Controller|receives|https://w3id.org/aias/example/eki1#SensorRechtsZuMotor",
+  "https://w3id.org/aias/example/eki1#Motorsteuerung|https://w3id.org/aias#Controller|sends|https://w3id.org/aias/example/eki1#MotorZuMaschine",
+  "https://w3id.org/aias/example/eki1#PositionssensorLinks|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/eki1#Feldbus",
+  "https://w3id.org/aias/example/eki1#PositionssensorLinks|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/eki1#SensorLinksZuMotor",
+  "https://w3id.org/aias/example/eki1#PositionssensorRechts|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/eki1#Feldbus",
+  "https://w3id.org/aias/example/eki1#PositionssensorRechts|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/eki1#SensorRechtsZuMotor",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias#ExternalCloud|both directions|https://w3id.org/aias/example/eki1#EdgeZuCloud",
+  "https://w3id.org/aias/example/eki1#RaspberryPI|https://w3id.org/aias#EdgeDevice|both directions|https://w3id.org/aias/example/eki1#EdgeZuCloud",
+  "https://w3id.org/aias/example/eki1#RaspberryPI|https://w3id.org/aias#EdgeDevice|receives|https://w3id.org/aias/example/eki1#SteuerungZuEdge"
+]

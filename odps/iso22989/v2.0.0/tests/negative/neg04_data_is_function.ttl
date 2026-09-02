@@ -1,0 +1,10 @@
+# MUST BE INCONSISTENT: Data and AIFunction are disjoint. Data is what a
+# function works on, not the activity itself. Without the axiom a model could
+# record a training that is its own training data.
+@prefix iso:  <https://w3id.org/aias/odp/iso22989#> .
+@prefix inst: <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix ex:   <https://w3id.org/aias/example/iso22989/neg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iso22989/neg04> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+ex:Thing2 a iso:Data , iso:AIFunction .

@@ -1,0 +1,27 @@
+# CQ 01: Which controls exist, and of which kind is each?
+#
+# 351-43-22 defines automating as implementing self-acting functions. The kind
+# of control is the manner in which a control runs, which is why the
+# control types are subclasses of control rather than a separate attribute.
+#
+# The most specific asserted type is reported, not every inferred superclass.
+# Reporting the whole chain up to Control would only repeat what the class
+# hierarchy already states.
+#
+# The pattern class is reached over the subclass hierarchy rather than by
+# asking for it as a type. The reasoner materialises the direct type of an
+# individual, so a query anchored on the general class alone returns nothing.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?kind
+WHERE {
+  ?control a ?kind .
+  ?kind rdfs:subClassOf* iec60050:Control .
+  FILTER NOT EXISTS {
+    ?control a ?narrower .
+    ?narrower rdfs:subClassOf+ ?kind .
+    ?narrower rdfs:subClassOf* iec60050:Control .
+  }
+} ORDER BY ?control ?kind

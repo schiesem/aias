@@ -1,0 +1,15 @@
+# MUST BE INCONSISTENT: Function and Component are disjoint.
+#
+# A function is a transformation, a component is a physical thing. Without
+# the axiom a model could record a sensor that is its own acquisition, and
+# the question which resource performs which function would answer with the
+# function itself.
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+@prefix ex:       <https://w3id.org/aias/example/neg#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/neg01> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/2.0.0> .
+ex:Thing1 a aias:Function , aias:Component .

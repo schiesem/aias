@@ -1,0 +1,19 @@
+# CQ 02: What does an inference take in, and what does it produce?
+#
+# Entry 3.1.17 defines the inference as reasoning that derives results from
+# given data. Both halves are recorded: usesData names what goes in, creates
+# names the prediction that comes out.
+#
+# The task the prediction addresses is reported as well, so the answer runs
+# from the data a model was given to the question it was asked.
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?inference ?input ?inputKind ?output ?task
+WHERE {
+  ?inference a iso22989:Inference .
+  OPTIONAL { ?inference iso22989:usesData ?input .
+             ?input a ?inputKind . ?inputKind rdfs:subClassOf* iso22989:Data .
+             FILTER NOT EXISTS { ?input a ?n . ?n rdfs:subClassOf+ ?inputKind } }
+  OPTIONAL { ?inference iso22989:creates ?output .
+             OPTIONAL { ?output iso22989:fulfillsTask ?task } }
+} ORDER BY ?inference ?input

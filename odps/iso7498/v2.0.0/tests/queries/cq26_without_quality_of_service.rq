@@ -1,0 +1,15 @@
+# CQ 26: Which communications state no quality of service?
+#
+# A model may leave it open, so a result here is not a defect. Test case 2
+# leaves it out deliberately, since it refines the architecture rather than
+# what the communication delivers.
+#
+# The subClassOf* step is required for the reason given at question 05: the
+# reasoner materialises the direct class only, so anchoring on Association
+# without it would miss every communication.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?communication WHERE {
+  ?communication a/rdfs:subClassOf* iso7498:Association .
+  FILTER NOT EXISTS { ?communication iso7498:hasQualityOfService ?q }
+} ORDER BY ?communication

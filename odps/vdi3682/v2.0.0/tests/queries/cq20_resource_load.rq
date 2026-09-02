@@ -1,0 +1,17 @@
+# CQ 20: How many operators is each resource assigned to?
+#
+# The load per resource, counted over the assignments of question 18. A
+# resource carrying more than one operator is shared, which matters twice: the
+# two steps cannot run at the same time on it, and a fault in it stops both.
+#
+# The count is reported rather than filtered, so a resource used once appears
+# with a one. Filtering to the shared ones would answer nothing on a model that
+# has none, and the three test cases assign each resource exactly once, which
+# is itself worth being able to read off.
+#
+# Sorted by descending count, so a shared resource comes first where one exists.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?resource (COUNT(DISTINCT ?operator) AS ?operatorCount)
+WHERE {
+  ?operator vdi3682:isAssignedTo ?resource .
+} GROUP BY ?resource ORDER BY DESC(?operatorCount) ?resource

@@ -1,0 +1,351 @@
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
+@prefix inst:    <https://w3id.org/aias/odp/iso7498/instances#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#################################################################
+#    Ontology
+#################################################################
+
+<https://w3id.org/aias/odp/iso7498/instances>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/aias/odp/iso7498/instances/2.0.0> ;
+    owl:versionInfo "2.0.0" ;
+    owl:imports <https://w3id.org/aias/odp/iso7498/2.0.0> ;
+    dcterms:title "ISO/IEC 7498-1 Pattern: Named Individuals"@en ;
+    dcterms:description """Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.
+
+They are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself."""@en ;
+    dcterms:created "2026-08-17"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "TODO: author name, ORCID" ;
+    dcterms:publisher "TODO: institution" ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/iso7498/instances#" ;
+    vann:preferredNamespacePrefix "iso7498-inst" ;
+    bibo:status "Draft"@en ;
+    rdfs:comment """Three groups of individual, with different standing.
+
+The seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.
+
+The protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.
+
+The quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."""@en .
+
+dcterms:created a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+
+#################################################################
+#    The seven layers, ISO/IEC 7498-1, 6.1.2
+#################################################################
+
+inst:PhysicalLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Physical Layer"@en ;
+    rdfs:comment "Provides the mechanical, electrical, functional and procedural means to activate, maintain and de-activate physical connections for bit transmission between data link entities."@en ;
+    skos:note "ISO/IEC 7498-1, 7.7.2."@en ;
+    iso7498:layerNumber 1 .
+
+inst:DataLinkLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Data Link Layer"@en ;
+    rdfs:comment "Provides the functional and procedural means for the transfer of data between network entities and detects and possibly corrects errors occurring in the physical layer."@en ;
+    skos:note "ISO/IEC 7498-1, 7.6.2."@en ;
+    iso7498:layerNumber 2 .
+
+inst:NetworkLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Network Layer"@en ;
+    rdfs:comment "Provides the means to establish, maintain and terminate network connections between open systems and the means to exchange data units over them, independently of routing and relay considerations."@en ;
+    skos:note "ISO/IEC 7498-1, 7.5.2."@en ;
+    iso7498:layerNumber 3 .
+
+inst:TransportLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Transport Layer"@en ;
+    rdfs:comment "Provides transparent transfer of data between session entities, relieving them of any concern with how reliable and cost effective transfer is achieved."@en ;
+    skos:note "ISO/IEC 7498-1, 7.4.2. Clause 7.4.4 names the quality of service parameters of this layer."@en ;
+    iso7498:layerNumber 4 .
+
+inst:SessionLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Session Layer"@en ;
+    rdfs:comment "Provides the means for cooperating presentation entities to organise and synchronise their dialogue and to manage their data exchange."@en ;
+    skos:note "ISO/IEC 7498-1, 7.3.2."@en ;
+    iso7498:layerNumber 5 .
+
+inst:PresentationLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Presentation Layer"@en ;
+    rdfs:comment "Provides for the representation of information that application entities either communicate or refer to in their communication, so that the syntax used is preserved in meaning."@en ;
+    skos:note "ISO/IEC 7498-1, 7.2.2."@en ;
+    iso7498:layerNumber 6 .
+
+inst:ApplicationLayer a owl:NamedIndividual, iso7498:Layer ;
+    rdfs:label "Application Layer"@en ;
+    rdfs:comment "The highest layer, providing the sole means for an application process to access the OSI environment. It has no boundary with a higher layer."@en ;
+    skos:note "ISO/IEC 7498-1, 7.1.2. Consists of the application entities that cooperate in the OSI environment, 6.1.4."@en ;
+    iso7498:layerNumber 7 .
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( inst:PhysicalLayer inst:DataLinkLayer inst:NetworkLayer
+                         inst:TransportLayer inst:SessionLayer
+                         inst:PresentationLayer inst:ApplicationLayer ) .
+
+#################################################################
+#    Directions of data communication, ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16
+#################################################################
+
+inst:TwoWaySimultaneous a owl:NamedIndividual, iso7498:CommunicationDirection ;
+    rdfs:label "Two-way Simultaneous"@en ;
+    rdfs:comment "Data communication in both directions at the same time."@en ;
+    skos:note "ISO/IEC 7498-1, 5.3.1.14. The transmission underlying it is duplex, 5.3.1.10. A full duplex Ethernet link is of this kind."@en .
+
+inst:TwoWayAlternate a owl:NamedIndividual, iso7498:CommunicationDirection ;
+    rdfs:label "Two-way Alternate"@en ;
+    rdfs:comment "Data communication in both directions, one direction at a time."@en ;
+    skos:note "ISO/IEC 7498-1, 5.3.1.15. The transmission underlying it is half duplex, 5.3.1.11, where an entity of the layer above chooses the direction. A master and slave bus segment is of this kind: both sides send, but never at once."@en .
+
+inst:OneWay a owl:NamedIndividual, iso7498:CommunicationDirection ;
+    rdfs:label "One-way"@en ;
+    rdfs:comment "Data communication in one pre-assigned direction."@en ;
+    skos:note "ISO/IEC 7498-1, 5.3.1.16. The transmission underlying it is simplex, 5.3.1.12. A sensor reporting to a collector without receiving anything back is of this kind."@en .
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( inst:TwoWaySimultaneous inst:TwoWayAlternate inst:OneWay ) .
+
+#################################################################
+#    Protocol data units as practice names them
+#
+#    None of these terms occurs in ISO/IEC 7498-1. Each is the protocol data
+#    unit of a particular layer, named by the protocol standards of that layer
+#    rather than by the reference model. Bit is the exception: the standard
+#    calls it the service data unit of the physical layer.
+#################################################################
+
+inst:Bit a owl:NamedIndividual, iso7498:ServiceDataUnit ;
+    rdfs:label "Bit"@en ;
+    rdfs:comment "The service data unit of the physical layer."@en ;
+    skos:note "The one practice term ISO/IEC 7498-1 names: 7.6.4.5 refers to physical service data units, that is bits, and 7.7.3.3.1 to the transparent transmission of bit streams."@en ;
+    iso7498:atLayer inst:PhysicalLayer .
+
+inst:Frame a owl:NamedIndividual, iso7498:ProtocolDataUnit ;
+    rdfs:label "Frame"@en ;
+    rdfs:comment "The protocol data unit of the data link layer."@en ;
+    skos:note "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting and synchronisation functions of the data link layer are sometimes referred to as framing, but the standard defines no such data unit."@en ;
+    iso7498:atLayer inst:DataLinkLayer .
+
+inst:Packet a owl:NamedIndividual, iso7498:ProtocolDataUnit ;
+    rdfs:label "Packet"@en ;
+    rdfs:comment "The protocol data unit of the network layer."@en ;
+    skos:note "Not a term of ISO/IEC 7498-1. Named by the network layer protocol standards."@en ;
+    iso7498:atLayer inst:NetworkLayer .
+
+inst:Segment a owl:NamedIndividual, iso7498:ProtocolDataUnit ;
+    rdfs:label "Segment"@en ;
+    rdfs:comment "The protocol data unit of the transport layer."@en ;
+    skos:note "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto multiple protocol data units."@en ;
+    iso7498:atLayer inst:TransportLayer .
+
+inst:Datagram a owl:NamedIndividual, iso7498:ProtocolDataUnit ;
+    rdfs:label "Datagram"@en ;
+    rdfs:comment "The protocol data unit of a connectionless-mode transport or network service."@en ;
+    skos:note "Not a term of ISO/IEC 7498-1. Named by the protocol standards of connectionless-mode services."@en ;
+    iso7498:atLayer inst:TransportLayer .
+
+#################################################################
+#    Technologies of industrial communication
+#
+#    ISO/IEC 7498-1, 1.3 states the reference model implies no particular
+#    technology. These individuals are supplied because an engineering model
+#    needs them and because naming them once keeps models comparable. The list
+#    is open: a model may add its own.
+#################################################################
+
+# Physical layer
+
+inst:Ethernet100BASE-TX a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "100BASE-TX"@en ;
+    rdfs:comment "Fast Ethernet over twisted pair, 100 Mbit/s."@en ;
+    iso7498:realisesLayer inst:PhysicalLayer .
+
+inst:Ethernet1000BASE-T a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "1000BASE-T"@en ;
+    rdfs:comment "Gigabit Ethernet over twisted pair, 1000 Mbit/s."@en ;
+    iso7498:realisesLayer inst:PhysicalLayer .
+
+inst:WLAN a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "WLAN"@en ;
+    rdfs:comment "Wireless local area network after IEEE 802.11."@en ;
+    iso7498:realisesLayer inst:PhysicalLayer .
+
+# Data link layer
+
+inst:Ethernet a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "Ethernet"@en ;
+    rdfs:comment "Frame based data link technology after IEEE 802.3."@en ;
+    iso7498:realisesLayer inst:DataLinkLayer .
+
+inst:EtherCAT a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "EtherCAT"@en ;
+    rdfs:comment "Real-time capable fieldbus technology on Ethernet, after IEC 61158."@en ;
+    iso7498:realisesLayer inst:DataLinkLayer .
+
+inst:Profinet a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "PROFINET"@en ;
+    rdfs:comment "Industrial Ethernet standard for automation, after IEC 61158 and IEC 61784."@en ;
+    iso7498:realisesLayer inst:DataLinkLayer .
+
+inst:Profibus a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "PROFIBUS"@en ;
+    rdfs:comment "Fieldbus for automation with master and slave access, after IEC 61158 and IEC 61784."@en ;
+    skos:note "Its master and slave access makes a segment two-way alternate in the sense of 5.3.1.15: both sides send, but never at the same time."@en ;
+    iso7498:realisesLayer inst:DataLinkLayer .
+
+inst:CANopen a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "CANopen"@en ;
+    rdfs:comment "Communication protocol for embedded automation on CAN, after EN 50325-4."@en ;
+    iso7498:realisesLayer inst:DataLinkLayer .
+
+inst:IOLink a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "IO-Link"@en ;
+    rdfs:comment "Point to point communication with sensors and actuators, after IEC 61131-9."@en ;
+    iso7498:realisesLayer inst:DataLinkLayer .
+
+# Network layer
+
+inst:IPv4 a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "IPv4"@en ;
+    rdfs:comment "Internet protocol version 4."@en ;
+    iso7498:realisesLayer inst:NetworkLayer .
+
+inst:IPv6 a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "IPv6"@en ;
+    rdfs:comment "Internet protocol version 6."@en ;
+    iso7498:realisesLayer inst:NetworkLayer .
+
+# Transport layer
+
+inst:TCP a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "TCP"@en ;
+    rdfs:comment "Transmission control protocol, connection oriented."@en ;
+    iso7498:realisesLayer inst:TransportLayer .
+
+inst:UDP a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "UDP"@en ;
+    rdfs:comment "User datagram protocol, connectionless."@en ;
+    iso7498:realisesLayer inst:TransportLayer .
+
+# Application layer
+
+inst:HTTP a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "HTTP"@en ;
+    rdfs:comment "Hypertext transfer protocol."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:HTTPS a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "HTTPS"@en ;
+    rdfs:comment "Hypertext transfer protocol over a transport layer security connection."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:MQTT a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "MQTT"@en ;
+    rdfs:comment "Publish and subscribe messaging protocol for constrained devices, after ISO/IEC 20922."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:OPCUA a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "OPC UA"@en ;
+    rdfs:comment "Platform independent service oriented architecture for industrial interoperability, after IEC 62541."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:Modbus a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "Modbus"@en ;
+    rdfs:comment "Request and response protocol widely used in industrial equipment."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:FTP a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "FTP"@en ;
+    rdfs:comment "File transfer protocol."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:DHCP a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "DHCP"@en ;
+    rdfs:comment "Dynamic host configuration protocol."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+inst:AMQP a owl:NamedIndividual, iso7498:Technology ;
+    rdfs:label "AMQP"@en ;
+    rdfs:comment "Advanced message queuing protocol, after ISO/IEC 19464."@en ;
+    iso7498:realisesLayer inst:ApplicationLayer .
+
+#################################################################
+#    Quality of service parameters
+#
+#    ISO/IEC 7498-1, 7.4.4 names the first four for the transport service. The
+#    remainder are added because engineering models need them, which is marked
+#    at each.
+#################################################################
+
+inst:Throughput a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Throughput"@en ;
+    rdfs:comment "The rate at which data is transferred over a communication."@en ;
+    skos:note "ISO/IEC 7498-1, 7.4.4."@en .
+
+inst:TransitDelay a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Transit Delay"@en ;
+    rdfs:comment "The elapsed time between the request to transfer data and its delivery."@en ;
+    skos:note "ISO/IEC 7498-1, 7.4.4. This is the parameter an engineering model uses to record latency."@en .
+
+inst:ResidualErrorRate a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Residual Error Rate"@en ;
+    rdfs:comment "The ratio of data lost, duplicated, or delivered incorrectly to data transferred in total."@en ;
+    skos:note "ISO/IEC 7498-1, 7.4.4."@en .
+
+inst:EstablishmentDelay a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Establishment Delay"@en ;
+    rdfs:comment "The elapsed time between the request to establish a connection and its confirmation."@en ;
+    skos:note "ISO/IEC 7498-1, 7.4.4. Applies to connection-mode communication only."@en .
+
+inst:Availability a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Availability"@en ;
+    rdfs:comment "The share of time a communication is usable."@en ;
+    skos:note "Not named in ISO/IEC 7498-1, 7.4.4. Added because engineering models record it."@en .
+
+inst:Jitter a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Jitter"@en ;
+    rdfs:comment "The variation of transit delay between successive transfers."@en ;
+    skos:note "Not named in ISO/IEC 7498-1, 7.4.4. Added because it is what makes a communication suitable or unsuitable for a control task."@en .
+
+inst:Priority a owl:NamedIndividual, iso7498:QoSParameter ;
+    rdfs:label "Priority"@en ;
+    rdfs:comment "The precedence a communication takes over others competing for the same resources."@en ;
+    skos:note "ISO/IEC 7498-1, 5.10 mentions priority among the characteristics selectable through quality of service."@en .
+
+# Two different names do not denote two different things in OWL unless said so.
+# Without this, a value claiming two parameters would be read as one parameter
+# under two names, and the functional property forParameter would not bite.
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( inst:Throughput inst:TransitDelay inst:ResidualErrorRate
+                         inst:EstablishmentDelay inst:Availability inst:Jitter
+                         inst:Priority ) .
+
+# The same holds for the technologies and the data units.
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( inst:Ethernet100BASE-TX inst:Ethernet1000BASE-T inst:WLAN
+                         inst:Ethernet inst:EtherCAT inst:Profinet
+                         inst:Profibus inst:CANopen inst:IOLink
+                         inst:IPv4 inst:IPv6 inst:TCP inst:UDP
+                         inst:HTTP inst:HTTPS inst:MQTT inst:OPCUA
+                         inst:Modbus inst:FTP inst:DHCP inst:AMQP ) .
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( inst:Bit inst:Frame inst:Packet inst:Segment
+                         inst:Datagram ) .

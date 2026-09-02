@@ -1,0 +1,27 @@
+# CQ 26: Which resources and operators are named but described no further?
+#
+# Part 1, 4.4 gives an element two ways to say more about itself: the
+# identification names it, the characteristic states a property of it. An
+# element carrying an identification and nothing else has a name and no
+# content.
+#
+# Narrower than question 24 on purpose, and asking something else. That
+# question finds what was never named. This one finds what was named and then
+# left at that, which is the state a description reaches halfway through and
+# should not stay in.
+#
+# Restricted to operators and resources, the two kinds a reader asks about: an
+# operator states what happens and a resource states what does it, and neither
+# is answerable from a label alone. A state is often fully described by its
+# kind and its name, so including it would report ordinary modelling as a gap.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?element ?elementKind ?shortName
+WHERE {
+  VALUES ?root { vdi3682:ProcessOperator vdi3682:TechnicalResource }
+  ?element a ?elementKind . ?elementKind rdfs:subClassOf* ?root .
+  ?element vdi3682:isIdentifiedBy ?id .
+  OPTIONAL { ?id vdi3682:shortName ?shortName }
+  FILTER NOT EXISTS { ?element vdi3682:isCharacterizedBy ?anyCh }
+  FILTER NOT EXISTS { ?element a ?narrower . ?narrower rdfs:subClassOf+ ?elementKind }
+} ORDER BY ?elementKind ?element

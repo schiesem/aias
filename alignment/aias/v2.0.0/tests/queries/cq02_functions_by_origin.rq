@@ -1,0 +1,32 @@
+# CQ 02: Which functions come from which subdomain?
+#
+# A process operator, an inference and a control all answer, which is what the
+# common function level is for. Without it nothing could be said about all
+# three at once.
+#
+# The origin is read from the namespace of the asserted class, since that is
+# what says which standard a function comes from.
+#
+# The class is reached over the subclass hierarchy rather than by asking for it
+# as a type. The reasoner materialises the direct type of an individual, so a
+# query anchored on a general class alone returns nothing.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?kind ?origin
+WHERE {
+  ?function a ?kind .
+  ?kind rdfs:subClassOf* aias:Function .
+  FILTER NOT EXISTS {
+    ?function a ?narrower .
+    ?narrower rdfs:subClassOf+ ?kind .
+    ?narrower rdfs:subClassOf* aias:Function .
+  }
+  BIND(IF(STRSTARTS(STR(?kind), STR(vdi3682:)),  "VDI 3682",
+       IF(STRSTARTS(STR(?kind), STR(iso22989:)), "ISO 22989",
+       IF(STRSTARTS(STR(?kind), STR(iec60050:)), "IEC 60050", "AIAS"))) AS ?origin)
+} ORDER BY ?origin ?function

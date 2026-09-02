@@ -1,0 +1,20 @@
+# CQ 08: Which data does a function use, and of which kind?
+#
+# Which kind belongs to which function follows from the entries: 3.3.16 for
+# training, 3.2.15 for validation, 3.2.14 for evaluation and 3.2.12 for
+# inference in operation.
+#
+# Reading the answer down the rows gives the order of the life cycle, which is
+# what makes the sequence checkable rather than a matter of naming.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?function ?functionKind ?data ?dataKind
+WHERE {
+  ?function iso:usesData ?data .
+  ?function a ?functionKind . ?functionKind rdfs:subClassOf* iso:AIFunction .
+  FILTER NOT EXISTS { ?function a ?fn . ?fn rdfs:subClassOf+ ?functionKind .
+                      ?fn rdfs:subClassOf* iso:AIFunction }
+  ?data a ?dataKind . ?dataKind rdfs:subClassOf iso:Data .
+} ORDER BY ?function ?data

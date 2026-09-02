@@ -1,0 +1,9 @@
+[
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Datennachverarbeitung||",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Datenvorverarbeitung||",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Modellevaluation|https://w3id.org/aias/example/eki1#Evaluationsdaten|https://w3id.org/aias/odp/iso22989#EvaluationData",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Modellevaluation|https://w3id.org/aias/example/eki1#Evaluationsdaten|https://w3id.org/aias/odp/iso22989#TestData",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Modellinferenz|https://w3id.org/aias/example/eki1#Inferenzdaten|https://w3id.org/aias/odp/iso22989#ProductionData",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Modelltraining|https://w3id.org/aias/example/eki1#Trainingsdaten|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/eki1#ProCube|https://w3id.org/aias/example/eki1#Speicherung||"
+]

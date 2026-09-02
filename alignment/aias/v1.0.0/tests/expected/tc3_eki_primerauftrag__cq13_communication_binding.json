@@ -1,0 +1,15 @@
+[
+  "https://w3id.org/aias/example/eki2#Auftragseinheit|https://w3id.org/aias#Actuator|receives|https://w3id.org/aias/example/eki2#RoboterZuAuftragseinheit",
+  "https://w3id.org/aias/example/eki2#Kamera|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/eki2#KameraZuEdge",
+  "https://w3id.org/aias/example/eki2#ProCube|https://w3id.org/aias#ExternalCloud|both directions|https://w3id.org/aias/example/eki2#EdgeZuCloud",
+  "https://w3id.org/aias/example/eki2#RFIDReader|https://w3id.org/aias#Sensor|receives|https://w3id.org/aias/example/eki2#ScheibeZuRFIDReader",
+  "https://w3id.org/aias/example/eki2#RFIDReader|https://w3id.org/aias#Sensor|sends|https://w3id.org/aias/example/eki2#RFIDZuEdge",
+  "https://w3id.org/aias/example/eki2#RaspberryPI5|https://w3id.org/aias#EdgeDevice|both directions|https://w3id.org/aias/example/eki2#EdgeZuCloud",
+  "https://w3id.org/aias/example/eki2#RaspberryPI5|https://w3id.org/aias#EdgeDevice|both directions|https://w3id.org/aias/example/eki2#RoboterZuEdge",
+  "https://w3id.org/aias/example/eki2#RaspberryPI5|https://w3id.org/aias#EdgeDevice|receives|https://w3id.org/aias/example/eki2#KameraZuEdge",
+  "https://w3id.org/aias/example/eki2#RaspberryPI5|https://w3id.org/aias#EdgeDevice|receives|https://w3id.org/aias/example/eki2#RFIDZuEdge",
+  "https://w3id.org/aias/example/eki2#Robotersteuerung|https://w3id.org/aias#Controller|both directions|https://w3id.org/aias/example/eki2#RoboterZuEdge",
+  "https://w3id.org/aias/example/eki2#Robotersteuerung|https://w3id.org/aias#Controller|sends|https://w3id.org/aias/example/eki2#RoboterZuAuftragseinheit",
+  "https://w3id.org/aias/example/eki2#ScheibeMitRFID|https://w3id.org/aias#Product|sends|https://w3id.org/aias/example/eki2#ScheibeZuRFIDReader",
+  "https://w3id.org/aias/example/eki2#ScheibeMitRFID|https://w3id.org/aias/odp/vdi3682#Product|sends|https://w3id.org/aias/example/eki2#ScheibeZuRFIDReader"
+]

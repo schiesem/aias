@@ -1,0 +1,19 @@
+# CQ 14: Which service does an entity provide, and at which layer?
+#
+# Clause 5.2.2 has an entity of one layer provide a service to the layer above.
+# That is the vertical relation of the architecture, and it is what makes a
+# stack a stack rather than seven unrelated things.
+#
+# The layer is reported alongside, since a service means something only in
+# relation to where it sits: the same name at layer 3 and at layer 7 describes
+# different work.
+#
+# Only test case 2 answers. The others describe a communication without opening
+# up its architecture, which the standard permits and question 08 reports.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+SELECT ?entity ?service ?layerNumber ?subsystem
+WHERE {
+  ?entity iso7498:providesService ?service .
+  OPTIONAL { ?subsystem iso7498:hasEntity ?entity ;
+                        iso7498:atLayer/iso7498:layerNumber ?layerNumber }
+} ORDER BY DESC(?layerNumber) ?entity

@@ -1,0 +1,71 @@
+@startuml fig3_data_units
+' Diagram 3 of the ISO/IEC 7498-1 pattern: the data units, and how a layer
+' hands one to the next.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: what a communication transmits, what a protocol data unit is
+' made of, and the step that carries a payload from one layer to the layer
+' below it.
+'
+' The composition of 5.6.1 and the mapping of 5.6.2 are the whole of
+' encapsulation. A unit is split into what the layer added and what it was
+' given, and what one layer hands down becomes the payload of the next. Each
+' layer adds its own control information and treats what it received as user
+' data, and the two relations below are what makes that checkable in a model
+' rather than described in prose.
+'
+' Every unit sits at the layer that formed it, which is why the same payload
+' appears once per layer it passes through.
+'
+' Left out on purpose:
+'  - the communication itself and what it promises: diagram 1
+'  - the architecture the units pass through: diagram 2
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+class Association
+class DataUnit
+class ProtocolDataUnit
+class ServiceDataUnit
+class UserData
+class ProtocolControlInformation
+class Layer
+
+DataUnit <|-- ProtocolDataUnit
+DataUnit <|-- ServiceDataUnit
+DataUnit <|-- UserData
+DataUnit <|-- ProtocolControlInformation
+
+Association --> "*" DataUnit : transmits
+DataUnit    --> "1" Layer    : atLayer
+
+' What a unit is made of, 5.6.1, and what it becomes one layer down, 5.6.2.
+ProtocolDataUnit --> "*" UserData                   : hasUserData
+ProtocolDataUnit --> "*" ProtocolControlInformation : hasControlInformation
+ProtocolDataUnit --> "*" ServiceDataUnit            : mapsToServiceDataUnit
+
+' Layout only.
+UserData -[hidden]right- ProtocolControlInformation
+
+@enduml

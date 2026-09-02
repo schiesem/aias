@@ -1,0 +1,11 @@
+# MUST BE INCONSISTENT: OpenAction and ClosedAction are disjoint. 351-47-04
+# requires the output variable to influence itself continuously, 351-47-06
+# only under conditions that do not act permanently. An action is one or the
+# other, which is what test case 3 turns on.
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/neg#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iec60050/neg03> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+ex:Action1 a iec60050:OpenAction , iec60050:ClosedAction .

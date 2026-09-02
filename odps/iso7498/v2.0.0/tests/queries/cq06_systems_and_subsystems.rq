@@ -1,0 +1,13 @@
+# CQ 06: Which open systems take part, and through which subsystems?
+#
+# ISO/IEC 7498-1, 5.2.2.1: there is one and only one subsystem in an open system
+# for a given layer.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?system ?layerNumber ?subsystem WHERE {
+  ?s2 iso7498:hasSubsystem ?s .
+  ?s iso7498:atLayer ?l .
+  ?l iso7498:layerNumber ?layerNumber .
+  BIND(REPLACE(STR(?s2), ".*#", "") AS ?system)
+  BIND(REPLACE(STR(?s), ".*#", "") AS ?subsystem)
+} ORDER BY ?system DESC(?layerNumber)

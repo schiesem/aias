@@ -1,0 +1,11 @@
+# CQ 15: Which alternatives lead to the same product?
+#
+# Part 1, Figure 8 right: a product reached by alternative flows from more than
+# one operator. Reported as one row per producer, so the alternatives are
+# visible individually.
+PREFIX vdi3682: <https://w3id.org/aias/odp/vdi3682#>
+SELECT ?product ?operator WHERE {
+  ?flow a vdi3682:AlternativeFlow ;
+        vdi3682:hasOperatorSource ?operator ;
+        vdi3682:hasStateTarget ?product .
+} ORDER BY ?product ?operator

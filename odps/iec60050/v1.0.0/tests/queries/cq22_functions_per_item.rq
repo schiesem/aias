@@ -1,0 +1,16 @@
+# CQ 22: Which functions does an item under consideration perform?
+#
+# 351-43 is a normative taxonomy of tasks. A model that maps its use cases onto
+# it stays connected to existing plant documentation instead of inventing
+# categories of its own.
+#
+# The functions are named individuals rather than classes, since a task carries
+# no content beyond its identity. That keeps a model stating a function inside
+# OWL 2 DL.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?item (GROUP_CONCAT(DISTINCT ?function; separator=", ") AS ?functions)
+WHERE { ?item iec60050:performsFunction ?function }
+GROUP BY ?item ORDER BY ?item

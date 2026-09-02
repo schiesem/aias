@@ -1,0 +1,19 @@
+# CQ 16: Over which technology and which layers does a given communication run?
+#
+# The OSI structure of the communication pattern, reached from a pair of
+# resources rather than from the association. Empty columns mean a model
+# records that two devices communicate without saying how, which is a
+# legitimate state early in a design.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso7498:  <https://w3id.org/aias/odp/iso7498#>
+PREFIX iec60050: <https://w3id.org/aias/odp/iec60050#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+SELECT ?communication ?technology ?layer
+WHERE {
+  ?communication a ?ck . ?ck rdfs:subClassOf* iso7498:Association .
+  OPTIONAL { ?communication iso7498:usesTechnology ?technology }
+  OPTIONAL { ?communication iso7498:usesLayer      ?layer }
+} ORDER BY ?communication

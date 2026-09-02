@@ -1,0 +1,75 @@
+@startuml fig2_states
+' Diagram 2 of the VDI 3682 pattern: the states a process moves.
+'
+' Conventions: shared/FIGURES.md. Flat boxes, no namespace prefixes, no clause
+' numbers, orthogonal edges, nothing explanatory inside the drawing.
+'
+' What it shows: the three kinds of state a process moves, and how an operator
+' takes them in and puts them out.
+'
+' The dependency is drawn alongside the two. It ties one state to another
+' without anything passing between them, as a piece of information is bound to
+' the product it describes, and it is what holds the branches of a parallel run
+' together.
+'
+' Left out on purpose:
+'  - process structure and decomposition: diagram 1
+'  - the flow carrying a state between two elements: diagram 3, which needs the
+'    room because four source and target relations run between the same classes
+'  - resources and their assignment: diagram 4
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 25
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 13
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 14
+  BorderThickness 1
+}
+
+' ===================================================================
+'  The three kinds of state
+' ===================================================================
+
+class State
+class Product
+class Energy
+class Information
+
+State <|-- Product
+State <|-- Energy
+State <|-- Information
+
+' ===================================================================
+'  What an operator consumes and produces
+' ===================================================================
+
+class ProcessOperator
+
+' Two parallel edges between the same classes. Given the same direction their
+' labels stack, so they are routed to opposite sides of the operator. The
+' pattern declares no inverse for either, so both keep the name a model states.
+ProcessOperator --> "*" State : hasInput
+ProcessOperator --> "*" State : hasOutput
+
+State --> "*" State : dependency
+
+' Layout only: the operator above the state, the three kinds below it, so the
+' three generalisations stay separate lines rather than merging into one.
+ProcessOperator -[hidden]down- State
+Product -[hidden]right- Energy
+Energy  -[hidden]right- Information
+
+@enduml

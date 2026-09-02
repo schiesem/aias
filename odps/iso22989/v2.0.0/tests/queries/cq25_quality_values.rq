@@ -1,0 +1,20 @@
+# CQ 27: Which qualities does a model state for an AI system, with which value?
+#
+# The qualities of clause 3.5, plus performance from 3.1.25, carried as named
+# individuals in the same arrangement as the characteristics of the
+# IEC 60050-351 pattern.
+#
+# The value is reified so a model can annotate where it came from, and
+# forCharacteristic is functional: one value quantifies one quality, which
+# negative model 05 tests.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?subject ?quality ?quantity ?unit
+WHERE {
+  ?subject iso:hasCharacteristicValue ?value .
+  ?value iso:forCharacteristic ?quality .
+  OPTIONAL { ?value iso:quantity ?quantity }
+  OPTIONAL { ?value iso:unit     ?unit }
+} ORDER BY ?subject ?quality

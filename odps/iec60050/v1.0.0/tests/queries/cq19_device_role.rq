@@ -1,0 +1,37 @@
+# CQ 19: Which role does a device play in the chain, and where does it sit?
+#
+# The question asked from the other end. Questions 12 to 14 start from the
+# function and reach the device. This one starts from the device.
+#
+# The path runs through the inverse relations: a physical unit realises a
+# functional unit, 351-56-03 against 351-56-02, that unit is the source or the
+# target of an action line, 351-44-04, and the line is part of an action path,
+# 351-44-03, over which a control runs.
+#
+# **A device may have more than one role**, and the answer says so rather than
+# picking one. The standard keeps the functional and the physical view apart on
+# purpose, and one device may realise a comparing element and a controlling
+# element at once. Asking a device for its single role would presuppose a
+# cardinality the standard does not state.
+#
+# A unit without a line answers with empty columns. The controller of test case
+# 2 is such a case: it is realised by a device and consists of two elements, but
+# no line runs to the controller itself, only to the elements inside it.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?device ?unit ?line ?variable ?pathKind
+WHERE {
+  ?device a ?dt . ?dt rdfs:subClassOf* iec60050:PhysicalUnit .
+  ?device iec60050:realisesFunctionalUnit ?unit .
+  OPTIONAL {
+    { ?unit iec60050:isSourceOfActionLine ?line } UNION { ?unit iec60050:isTargetOfActionLine ?line }
+    OPTIONAL { ?line iec60050:carriesVariable ?variable }
+    OPTIONAL {
+      ?line iec60050:partOfActionPath ?path .
+      ?path a ?pathKind .
+      FILTER(?pathKind IN (iec60050:OpenActionPath, iec60050:ClosedActionPath))
+    }
+  }
+} ORDER BY ?device ?unit ?line

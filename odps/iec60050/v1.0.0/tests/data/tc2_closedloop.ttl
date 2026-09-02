@@ -1,0 +1,279 @@
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/tc2#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# Test case 2: closed-loop control, after Figure 2 of IEC 60050-351.
+#
+# The chain of Figure 2. Line M8 ends at the comparing element, which M3 starts
+# from, so the chain closes into a cycle:
+#
+#   c -> [ReferenceGenerator] -w-> [ComparingElement] -e-> [ControllingElement]
+#                                        ^                        | m
+#                                        | r                      v
+#                              [MeasuringElement]            [Actuator]
+#                                        ^                        | y
+#                                        | x                      v
+#                              [ControlledSystem] <-------------[Valve]
+#                                        | q
+#                                        v
+#
+# Both conditions hold and are asserted separately: the path is closed, since
+# an action line runs back, 351-47-03, and the action is closed, since the
+# controlled variable influences itself continuously, 351-47-04. That is what
+# 351-47-01 requires for a closed-loop control, and case 3 shows that the path
+# alone would not be enough.
+
+<https://w3id.org/aias/example/iec60050/tc2>
+    a owl:Ontology ;
+    rdfs:label "IEC 60050 test case 2: closed-loop control"@en ;
+    rdfs:comment "Closed-loop control over a closed action, after IEC 60050-351, 351-47-01 and Figure 2."@en ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+
+#################################################################
+#    The control
+#################################################################
+
+ex:ControlB
+    a iec60050:ClosedLoopControl , iec60050:SamplingControl ;
+    rdfs:label "Control B"@en ;
+    rdfs:comment "A closed-loop control: the controlled variable is measured continuously, compared with the reference variable and influenced so as to adjust to it, 351-47-01. Typed as a sampling control as well, 351-47-15, which is what makes a sampling period meaningful."@en ;
+    iec60050:runsOverActionPath ex:PathB ;
+    iec60050:hasAction ex:ActionB ;
+    iec60050:realisedBy ex:LoopB ;
+    iec60050:actsOn ex:ControlledSystemB ;
+    iec60050:hasControlledVariable ex:x ;
+    iec60050:hasReferenceVariable ex:w ;
+    iec60050:hasManipulatedVariable ex:y ;
+    iec60050:performsFunction iec60050:Measure , iec60050:Manipulate , iec60050:Monitor ;
+    iec60050:hasCharacteristicValue ex:CV_SettlingTime , ex:CV_Overshoot , ex:CV_SamplingPeriod .
+
+#################################################################
+#    Path and action: both closed
+#################################################################
+
+ex:PathB
+    a iec60050:ClosedActionPath ;
+    rdfs:label "Action path B"@en ;
+    rdfs:comment "An additional action path goes back from the output variable to the input variable, 351-47-03. In the chain below, line M8 ends at the unit line M3 starts from."@en ;
+    iec60050:hasActionLine ex:M1 , ex:M2 , ex:M3 , ex:M4 , ex:M5 , ex:M6 , ex:M7 , ex:M8 , ex:M9 .
+
+ex:ActionB
+    a iec60050:ClosedAction ;
+    rdfs:label "Action B"@en ;
+    rdfs:comment "The controlled variable continuously influences the input variable and thus itself, 351-47-04."@en ;
+    iec60050:actionOverPath ex:PathB .
+
+ex:LoopB
+    a iec60050:ControlLoop ;
+    rdfs:label "Control loop B"@en ;
+    rdfs:comment "The elements incorporated in the closed action, 351-47-11."@en ;
+    iec60050:hasForwardPath ex:ForwardB ;
+    iec60050:hasFeedbackPath ex:FeedbackB .
+
+ex:ForwardB a iec60050:ForwardPath ; rdfs:label "Forward path B"@en ;
+    rdfs:comment "From the output of the comparing element to the output of the controlled system, 351-47-07."@en .
+ex:FeedbackB a iec60050:FeedbackPath ; rdfs:label "Feedback path B"@en ;
+    rdfs:comment "From an output of the controlled system back to the comparing element, 351-47-08."@en .
+
+#################################################################
+#    The action lines, after Figure 2
+#
+#    M8 ends at the comparing element, which M3 starts from. That is the cycle
+#    which makes the path closed, and it is what test case 1 does not have.
+#################################################################
+
+ex:M1 a iec60050:ActionLine ; rdfs:label "c into the reference-variable generating element"@en ;
+    iec60050:fromUnit ex:CommandSourceB ; iec60050:toUnit ex:ReferenceGeneratorB ;
+    iec60050:carriesVariable ex:c .
+
+ex:M2 a iec60050:ActionLine ; rdfs:label "w to the comparing element"@en ;
+    iec60050:fromUnit ex:ReferenceGeneratorB ; iec60050:toUnit ex:ComparingElementB ;
+    iec60050:carriesVariable ex:w .
+
+ex:M3 a iec60050:ActionLine ; rdfs:label "e to the controlling element"@en ;
+    iec60050:fromUnit ex:ComparingElementB ; iec60050:toUnit ex:ControllingElementB ;
+    iec60050:carriesVariable ex:e .
+
+ex:M4 a iec60050:ActionLine ; rdfs:label "m to the actuator"@en ;
+    iec60050:fromUnit ex:ControllingElementB ; iec60050:toUnit ex:ActuatorB ;
+    iec60050:carriesVariable ex:m .
+
+ex:M5 a iec60050:ActionLine ; rdfs:label "y to the final controlling element"@en ;
+    iec60050:fromUnit ex:ActuatorB ; iec60050:toUnit ex:ValveB ;
+    iec60050:carriesVariable ex:y .
+
+ex:M6 a iec60050:ActionLine ; rdfs:label "the final controlling element acts on the controlled system"@en ;
+    rdfs:comment "The manipulated variable enters the controlled system, which is where Figure 2 places the final controlling element inside the system it acts on, 351-49-08."@en ;
+    iec60050:fromUnit ex:ValveB ; iec60050:toUnit ex:ControlledSystemB ;
+    iec60050:carriesVariable ex:y .
+
+ex:M7 a iec60050:ActionLine ; rdfs:label "x from the controlled system to the measuring element"@en ;
+    rdfs:comment "The branching point of Figure 2, 351-44-07: the controlled variable both leaves the control system as q and is taken off towards the measuring element."@en ;
+    iec60050:fromUnit ex:ControlledSystemB ; iec60050:toUnit ex:MeasuringElementB ;
+    iec60050:carriesVariable ex:x .
+
+ex:M9 a iec60050:ActionLine ; rdfs:label "q leaves the control system"@en ;
+    rdfs:comment "The right-hand edge of Figure 2: the controlled variable also enters the unit that forms the final controlled variable. This is the other branch of the branching point, the one that does not return."@en ;
+    iec60050:fromUnit ex:ControlledSystemB ; iec60050:toUnit ex:FinalVariableGenerationB ;
+    iec60050:carriesVariable ex:q .
+
+ex:M8 a iec60050:ActionLine ; rdfs:label "r back to the comparing element"@en ;
+    rdfs:comment "The line that closes the action path. It ends at the comparing element, which line M3 starts from, so the chain forms a cycle."@en ;
+    iec60050:fromUnit ex:MeasuringElementB ; iec60050:toUnit ex:ComparingElementB ;
+    iec60050:carriesVariable ex:r .
+
+#################################################################
+#    Functional units, after Figure 2
+#################################################################
+
+ex:ControlSystemB
+    a iec60050:ControlSystem ;
+    rdfs:label "Control system B"@en ;
+    rdfs:comment "The outermost frame of Figure 2, 351-49-06."@en ;
+    iec60050:consistsOfUnit ex:ControllingSystemB , ex:ControlledSystemB , ex:FinalVariableGenerationB .
+
+ex:ControllingSystemB
+    a iec60050:ControllingSystem ;
+    rdfs:label "Controlling system B"@en ;
+    rdfs:comment "Regeleinrichtung, 351-49-02."@en ;
+    iec60050:consistsOfUnit ex:ControllerB , ex:FinalControllingEquipmentB ;
+    iec60050:actsOn ex:ControlledSystemB .
+
+ex:CommandSourceB
+    a iec60050:FunctionalUnit ;
+    rdfs:label "Command source B"@en ;
+    rdfs:comment "Where the command variable enters the control system, as in test case 1."@en .
+
+ex:ReferenceGeneratorB
+    a iec60050:ReferenceVariableGeneratingElement ;
+    rdfs:label "Reference-variable generating element B"@en ;
+    rdfs:comment "Fuehrungsgroessenbildner, 351-49-10, forming w from c."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceC .
+
+ex:ControllerB
+    a iec60050:ProgrammableController ;
+    rdfs:label "Controller B"@en ;
+    rdfs:comment "Comparing element and controlling element together, 351-49-11, whose control programme can be altered, 351-56-25."@en ;
+    iec60050:consistsOfUnit ex:ComparingElementB , ex:ControllingElementB ;
+    iec60050:realisedByPhysicalUnit ex:DeviceC ;
+    iec60050:hasProperty ex:RealTimeB .
+
+ex:ComparingElementB
+    a iec60050:ComparingElement ;
+    rdfs:label "Comparing element B"@en ;
+    rdfs:comment "Vergleichsglied, 351-49-03, forming the control difference from w and r. The summing point of Figure 2, and the unit at which the closed action path returns."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceC .
+
+ex:ControllingElementB
+    a iec60050:ControllingElement ;
+    rdfs:label "Controlling element B"@en ;
+    rdfs:comment "Regelglied, 351-49-04. In closed-loop control it forms its output variable from the control difference."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceC .
+
+ex:RealTimeB
+    a iec60050:RealTimeCapability ;
+    rdfs:label "Real-time capability B"@en ;
+    rdfs:comment "The capability to keep tasks runnable so that they react within a pre-determined time interval, 351-54-06. The interval itself is stated separately as a characteristic value, since the standard defines the capability and the duration apart from one another."@en .
+
+ex:FinalControllingEquipmentB
+    a iec60050:FinalControllingEquipment ;
+    rdfs:label "Final controlling equipment B"@en ;
+    rdfs:comment "Stelleinrichtung, 351-49-09, the dashed grouping of Figure 2."@en ;
+    iec60050:consistsOfUnit ex:ActuatorB , ex:ValveB .
+
+ex:ActuatorB
+    a iec60050:Actuator ;
+    rdfs:label "Actuator B"@en ;
+    rdfs:comment "Steller, 351-49-07."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceE .
+
+ex:ValveB
+    a iec60050:FinalControllingElement ;
+    rdfs:label "Final controlling element B"@en ;
+    rdfs:comment "Stellglied, 351-49-08, part of the controlled system by definition."@en ;
+    iec60050:partOfControlledSystem ex:ControlledSystemB ;
+    iec60050:realisedByPhysicalUnit ex:DeviceF .
+
+ex:MeasuringElementB
+    a iec60050:MeasuringElement ;
+    rdfs:label "Measuring element B"@en ;
+    rdfs:comment "Messglied, 351-49-05, forming the feedback variable r from the controlled variable x."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceD1 , ex:DeviceD2 .
+
+ex:SensingElementB
+    a iec60050:SensingElement ;
+    rdfs:label "Sensing element B"@en ;
+    rdfs:comment "Aufnehmer, 351-56-26, responding to the measurand. A separate entry from the measuring element, and here realised by the same first device."@en ;
+    iec60050:realisedByPhysicalUnit ex:DeviceD1 .
+
+ex:FinalVariableGenerationB
+    a iec60050:FinalControlledVariableGeneration ;
+    rdfs:label "Generation of the final controlled variable B"@en ;
+    rdfs:comment "The unit at the right-hand edge of Figure 2, forming q from x."@en .
+
+ex:ControlledSystemB
+    a iec60050:ControlledSystem ;
+    rdfs:label "Controlled system B"@en ;
+    rdfs:comment "Regelstrecke, 351-49-01."@en ;
+    iec60050:hasDisturbanceVariable ex:z .
+
+#################################################################
+#    Physical units, 351-56-03
+#
+#    Both directions of the realisation relation appear here. One device, C,
+#    realises four functional units, and one functional unit, the measuring
+#    element, is spread over two devices. The standard asserts no cardinality
+#    either way, 351-56-02 and 351-56-03.
+#################################################################
+
+ex:DeviceC a iec60050:PhysicalUnit ; rdfs:label "Device C"@en ;
+    rdfs:comment "Realises the reference generator, the controller and its two elements."@en .
+ex:DeviceD1 a iec60050:PhysicalUnit ; rdfs:label "Device D1"@en ;
+    rdfs:comment "The first of two devices realising the measuring element, and the sensing element as well."@en .
+ex:DeviceD2 a iec60050:PhysicalUnit ; rdfs:label "Device D2"@en ;
+    rdfs:comment "The second device realising the measuring element."@en .
+ex:DeviceE a iec60050:PhysicalUnit ; rdfs:label "Device E"@en .
+ex:DeviceF a iec60050:PhysicalUnit ; rdfs:label "Device F"@en .
+
+#################################################################
+#    Variables, with the letters of the legend of Figure 2
+#################################################################
+
+ex:c a iec60050:CommandVariable            ; rdfs:label "c, command variable"@en .
+ex:w a iec60050:ReferenceVariable          ; rdfs:label "w, reference variable"@en .
+ex:e a iec60050:ControlDifferenceVariable  ; rdfs:label "e, control difference variable"@en .
+ex:m a iec60050:ControllerOutputVariable   ; rdfs:label "m, controller output variable"@en .
+ex:y a iec60050:ManipulatedVariable        ; rdfs:label "y, manipulated variable"@en .
+ex:z a iec60050:DisturbanceVariable        ; rdfs:label "z, disturbance variable"@en .
+ex:x a iec60050:ControlledVariable         ; rdfs:label "x, controlled variable"@en .
+ex:q a iec60050:FinalControlledVariable    ; rdfs:label "q, final controlled variable"@en .
+ex:r a iec60050:FeedbackVariable           ; rdfs:label "r, feedback variable"@en .
+
+#################################################################
+#    Characteristics
+#################################################################
+
+ex:CV_SettlingTime
+    a iec60050:CharacteristicValue ;
+    rdfs:label "control settling time 2.5 s"@en ;
+    iec60050:forCharacteristic inst:ControlSettlingTime ;
+    iec60050:quantity "2.5"^^xsd:decimal ;
+    iec60050:unit "s" .
+
+ex:CV_Overshoot
+    a iec60050:CharacteristicValue ;
+    rdfs:label "overshoot 8 percent"@en ;
+    iec60050:forCharacteristic inst:Overshoot ;
+    iec60050:quantity "8"^^xsd:decimal ;
+    iec60050:unit "%" .
+
+ex:CV_SamplingPeriod
+    a iec60050:CharacteristicValue ;
+    rdfs:label "sampling period 100 ms"@en ;
+    rdfs:comment "The interval between two consecutive observations, 351-47-16, which the control has because it is a sampling control, 351-47-15."@en ;
+    iec60050:forCharacteristic inst:SamplingPeriod ;
+    iec60050:quantity "100"^^xsd:decimal ;
+    iec60050:unit "ms" .

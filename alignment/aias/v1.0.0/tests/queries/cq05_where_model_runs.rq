@@ -1,0 +1,22 @@
+# CQ 05: Where does a model run?
+#
+# A model executes an inference, and the inference is assigned to a resource.
+# The model itself is never assigned to anything: it is an artefact, not a
+# function, and what runs is the inference it carries out.
+#
+# That indirection is the answer to the question. Asking where a model runs
+# means asking where its inference runs.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?model ?inference ?resource ?resourceKind
+WHERE {
+  ?model a ?mk . ?mk rdfs:subClassOf* iso22989:Model .
+  ?model iso22989:executes ?inference .
+  OPTIONAL {
+    ?inference aias:isAssignedTo/vdi3682:isAssignedTo ?resource .
+    ?resource a ?resourceKind . ?resourceKind rdfs:subClassOf* aias:Resource .
+    FILTER NOT EXISTS { ?resource a ?n . ?n rdfs:subClassOf+ ?resourceKind }
+  }
+} ORDER BY ?model

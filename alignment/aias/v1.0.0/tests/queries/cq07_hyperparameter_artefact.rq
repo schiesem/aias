@@ -1,0 +1,19 @@
+# CQ 07: Which hyperparameters does an algorithm carry, and in which artefact?
+#
+# As with the model, the label of a hyperparameter instance is the relative
+# path of the file holding it, config/MLflowHyperParameter1.json in the worked
+# example.
+#
+# The hyperparameter hangs on the algorithm rather than on the training, which
+# lets a training algorithm, a model algorithm and an evaluation algorithm each
+# carry one: a learning rate, the number of layers, the threshold of a metric.
+PREFIX iso22989: <https://w3id.org/aias/odp/iso22989#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?algorithm ?algorithmKind ?hyperparameter ?artefact
+WHERE {
+  ?algorithm iso22989:hasParameter ?hyperparameter .
+  ?hyperparameter a iso22989:Hyperparameter .
+  ?algorithm a ?algorithmKind . ?algorithmKind rdfs:subClassOf* iso22989:Algorithm .
+  FILTER NOT EXISTS { ?algorithm a ?n . ?n rdfs:subClassOf+ ?algorithmKind }
+  OPTIONAL { ?hyperparameter rdfs:label ?artefact . FILTER(lang(?artefact) = "en") }
+} ORDER BY ?algorithm

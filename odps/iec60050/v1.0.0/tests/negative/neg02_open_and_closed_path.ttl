@@ -1,0 +1,10 @@
+# MUST BE INCONSISTENT: OpenActionPath and ClosedActionPath are disjoint.
+# 351-47-03 and 351-47-05 are complementary: either an action path goes back
+# from the output variable to the input variable or it does not.
+@prefix iec60050: <https://w3id.org/aias/odp/iec60050#> .
+@prefix inst:     <https://w3id.org/aias/odp/iec60050/instances#> .
+@prefix ex:       <https://w3id.org/aias/example/iec60050/neg#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+<https://w3id.org/aias/example/iec60050/neg02> a owl:Ontology ;
+    owl:imports <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+ex:Path1 a iec60050:OpenActionPath , iec60050:ClosedActionPath .

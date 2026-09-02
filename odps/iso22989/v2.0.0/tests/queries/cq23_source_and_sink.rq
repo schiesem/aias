@@ -1,0 +1,16 @@
+# CQ 25: Where does the data of a model come from, and where is it stored?
+#
+# Acquisition and storing are the two functions reaching outside the AI system,
+# which makes them the handover point to whatever supplies or receives the
+# data. Clause 8.6.1 discusses data sources without defining them.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?data ?source ?sink
+WHERE {
+  ?data a ?k . ?k rdfs:subClassOf iso:Data .
+  OPTIONAL { ?data iso:isAcquiredBy ?acq . ?acq iso:hasDataSource ?source }
+  OPTIONAL { ?data iso:isStoredBy   ?st  . ?st  iso:hasDataSink   ?sink }
+  FILTER(BOUND(?source) || BOUND(?sink))
+} ORDER BY ?data

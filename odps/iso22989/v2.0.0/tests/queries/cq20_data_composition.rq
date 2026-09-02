@@ -1,0 +1,17 @@
+# CQ 21: Which data does a model contain, and how is it grouped?
+#
+# 3.2.5 defines the dataset as a collection of data with a shared format,
+# 3.2.13 the sample as an atomic data element processed in quantities.
+#
+# The pattern uses one relation for both levels, since the standard describes a
+# grouping in each case: a dataset groups data, and data groups samples.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?data ?dataKind (GROUP_CONCAT(DISTINCT ?p; separator=", ") AS ?parts)
+WHERE {
+  ?data a ?dataKind . ?dataKind rdfs:subClassOf iso:Data .
+  OPTIONAL { ?data iso:isComposedOf ?part }
+  BIND(COALESCE(STR(?part), "") AS ?p)
+} GROUP BY ?data ?dataKind ORDER BY ?data

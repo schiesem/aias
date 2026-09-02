@@ -1,0 +1,30 @@
+# CQ 07: Which functions does an AI system perform?
+#
+# The activities of the life cycle. Note that clause 8.3 of the standard uses
+# the term AI function more narrowly, for computing a prediction alone, whereas
+# this pattern uses it as a collecting class for the whole life cycle.
+#
+# The function may hang off the system or off a component, so the query follows
+# both.
+#
+# The pattern class is reached over the subclass hierarchy rather than by
+# asking for it as a type. The reasoner materialises the direct type of an
+# individual, so a query anchored on the general class alone returns nothing.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?system ?function ?kind
+WHERE {
+  ?system a iso:AISystem .
+  { ?system iso:hasFunction ?function }
+  UNION
+  { ?system iso:consistsOf ?c . ?c iso:hasFunction ?function }
+  ?function a ?kind .
+  ?kind rdfs:subClassOf* iso:AIFunction .
+  FILTER NOT EXISTS {
+    ?function a ?narrower .
+    ?narrower rdfs:subClassOf+ ?kind .
+    ?narrower rdfs:subClassOf* iso:AIFunction .
+  }
+} ORDER BY ?system ?function

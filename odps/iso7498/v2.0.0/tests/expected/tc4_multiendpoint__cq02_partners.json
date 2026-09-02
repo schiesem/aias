@@ -1,0 +1,14 @@
+[
+  "https://w3id.org/aias/example/iso7498/tc4#SystemA|https://w3id.org/aias/example/iso7498/tc4#SystemB",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemA|https://w3id.org/aias/example/iso7498/tc4#SystemC",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemA|https://w3id.org/aias/example/iso7498/tc4#SystemD",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemB|https://w3id.org/aias/example/iso7498/tc4#SystemA",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemB|https://w3id.org/aias/example/iso7498/tc4#SystemC",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemB|https://w3id.org/aias/example/iso7498/tc4#SystemD",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemC|https://w3id.org/aias/example/iso7498/tc4#SystemA",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemC|https://w3id.org/aias/example/iso7498/tc4#SystemB",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemC|https://w3id.org/aias/example/iso7498/tc4#SystemD",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemD|https://w3id.org/aias/example/iso7498/tc4#SystemA",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemD|https://w3id.org/aias/example/iso7498/tc4#SystemB",
+  "https://w3id.org/aias/example/iso7498/tc4#SystemD|https://w3id.org/aias/example/iso7498/tc4#SystemC"
+]

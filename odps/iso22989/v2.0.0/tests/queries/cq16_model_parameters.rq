@@ -1,0 +1,16 @@
+# CQ 18: Which model parameters does a model have?
+#
+# 3.3.8 defines the model parameter as an internal variable of a model that
+# affects how it computes its outputs. Note 1 names the weights in a neural
+# network as an example.
+#
+# Empty on test case 2, where the model carries hyperparameters instead. Read
+# against question 12 the two show the difference: a model parameter is
+# determined by training, a hyperparameter is chosen before it.
+PREFIX iso:  <https://w3id.org/aias/odp/iso22989#>
+PREFIX inst: <https://w3id.org/aias/odp/iso22989/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?model ?parameter
+WHERE { ?model iso:hasParameter ?parameter }
+ORDER BY ?model ?parameter

@@ -1,0 +1,23 @@
+# CQ 09: Which action lines make up a path, and which variable does each carry?
+#
+# 351-44-03 defines the action path as a directed path connecting two variable
+# quantities, and 351-44-04 the action line as a part of it between two
+# functional units. Together they resolve a path into the chain of Figures 1
+# and 2 of the standard.
+#
+# Without the chain a path can only be asserted to be open or closed. With it
+# the assertion becomes checkable against the units and variables a model
+# actually records, which is what question 10 does.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?control ?pathKind ?from ?variable ?to
+WHERE {
+  ?control iec60050:runsOverActionPath ?path .
+  ?path a ?pathKind .
+  FILTER(?pathKind IN (iec60050:OpenActionPath, iec60050:ClosedActionPath))
+  ?path iec60050:hasActionLine ?line .
+  ?line iec60050:fromUnit ?from ; iec60050:toUnit ?to .
+  OPTIONAL { ?line iec60050:carriesVariable ?variable }
+} ORDER BY ?control ?from ?to

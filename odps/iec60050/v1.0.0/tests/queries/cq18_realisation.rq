@@ -1,0 +1,13 @@
+# CQ 18: Which device realises which functional unit?
+#
+# The axis VDI 3682 lacks, where a technical resource is atomic. 351-56-02 and
+# 351-56-03 hold function and construction apart, so one physical unit may
+# realise several functional units and one functional unit may be spread over
+# several physical units. The pattern asserts no cardinality either way.
+PREFIX iec60050:  <https://w3id.org/aias/odp/iec60050#>
+PREFIX inst: <https://w3id.org/aias/odp/iec60050/instances#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+SELECT ?functionalUnit ?physicalUnit
+WHERE { ?functionalUnit iec60050:realisedByPhysicalUnit ?physicalUnit }
+ORDER BY ?functionalUnit ?physicalUnit

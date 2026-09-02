@@ -1,0 +1,100 @@
+@startuml fig1_main_classes
+' Diagram 1 of the AIAS alignment: the three main classes and what hangs below
+' them.
+'
+' Conventions: shared/FIGURES.md, with one deliberate departure. Every class
+' carries its namespace prefix, because in this ontology the namespace is the
+' statement: what makes the alignment an alignment is that classes of different
+' standards meet under one superclass. The pattern diagrams leave prefixes out
+' for the opposite reason, since each of them shows one namespace only.
+'
+' What it shows: the system elements after Haberfellner, and which class of
+' which subdomain hangs below each of them.
+'
+' Left out on purpose:
+'  - the devices below aias:Resource: diagram 2
+'  - the relations tying the levels together: diagram 3
+'  - everything the four patterns carry internally, which their own diagrams
+'    show
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam linetype ortho
+skinparam nodesep 24
+skinparam ranksep 45
+skinparam padding 3
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 12
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 13
+  BorderThickness 1
+}
+
+class "iso22989:AISystem" as AISystem
+
+class "aias:Function"  as Function
+class "aias:Component" as Component
+class "aias:Relation"  as Relation
+
+AISystem -down-> "*" Function  : aias:hasFunction
+AISystem -down-> "*" Component : aias:hasComponent
+AISystem -down-> "*" Relation  : aias:hasRelation
+
+' ===================================================================
+'  What transforms
+' ===================================================================
+
+class "vdi3682:ProcessOperator" as ProcessOperator
+class "iso22989:AIFunction"     as AIFunction
+class "iec60050:Control"        as IecControl
+
+Function <|-- ProcessOperator
+Function <|-- AIFunction
+Function <|-- IecControl
+
+' ===================================================================
+'  What is physical
+' ===================================================================
+
+class "aias:Resource" as Resource
+class "aias:Product"  as Product
+class "vdi3682:TechnicalResource" as TechnicalResource
+class "vdi3682:Product"           as VdiProduct
+
+Component <|-- Resource
+Component <|-- Product
+Product   <|-- VdiProduct
+
+Resource -up- TechnicalResource : owl:equivalentClass
+
+' ===================================================================
+'  What ties them
+' ===================================================================
+
+class "vdi3682:Assignment"  as Assignment
+class "iso7498:Association" as Association
+class "vdi3682:Flow"        as Flow
+
+Relation <|-- Assignment
+Relation <|-- Association
+Relation <|-- Flow
+
+' Layout only: the three main classes stack, each above its own children.
+ProcessOperator -[hidden]right- AIFunction
+AIFunction      -[hidden]right- IecControl
+Resource        -[hidden]right- Product
+Assignment      -[hidden]right- Association
+Association     -[hidden]right- Flow
+
+Function  -[hidden]down- Component
+Component -[hidden]down- Relation
+
+@enduml

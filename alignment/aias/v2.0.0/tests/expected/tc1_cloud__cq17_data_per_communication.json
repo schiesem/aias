@@ -1,0 +1,6 @@
+[
+  "https://w3id.org/aias/example/tc1#CommControlToEdge|https://w3id.org/aias/example/tc1#TrainData|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/tc1#CommEdgeToCloud|https://w3id.org/aias/example/tc1#TrainData|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/tc1#CommSensorLeft|https://w3id.org/aias/example/tc1#PositionData|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/tc1#CommSensorRight|https://w3id.org/aias/example/tc1#PositionData|https://w3id.org/aias/odp/iso22989#TrainingData"
+]

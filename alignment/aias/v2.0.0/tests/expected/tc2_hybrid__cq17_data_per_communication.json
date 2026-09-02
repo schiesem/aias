@@ -1,0 +1,5 @@
+[
+  "https://w3id.org/aias/example/tc2#CommCameraToEdge|https://w3id.org/aias/example/tc2#ImageData|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/tc2#CommEdgeToCloud|https://w3id.org/aias/example/tc2#TrainData|https://w3id.org/aias/odp/iso22989#TrainingData",
+  "https://w3id.org/aias/example/tc2#CommEdgeToControl|https://w3id.org/aias/example/tc2#PredictionData|https://w3id.org/aias/odp/iso22989#InputData"
+]

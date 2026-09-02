@@ -1,0 +1,11 @@
+# CQ 16: Through which service access points are entities reachable?
+#
+# ISO/IEC 7498-1, 5.5.5 and 5.5.2: an access point attaches to one entity of its
+# layer and one of the layer above, both in the same system.
+PREFIX iso7498: <https://w3id.org/aias/odp/iso7498#>
+PREFIX inst: <https://w3id.org/aias/odp/iso7498/instances#>
+SELECT ?sap (GROUP_CONCAT(DISTINCT ?entityName; separator=", ") AS ?entities) WHERE {
+  ?s a iso7498:ServiceAccessPoint ; iso7498:attachedTo ?e .
+  BIND(REPLACE(STR(?s), ".*#", "") AS ?sap)
+  BIND(REPLACE(STR(?e), ".*#", "") AS ?entityName)
+} GROUP BY ?sap ORDER BY ?sap

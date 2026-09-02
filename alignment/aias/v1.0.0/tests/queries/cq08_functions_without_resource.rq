@@ -1,0 +1,20 @@
+# CQ 08: Which functions are assigned to no resource?
+#
+# A function that nothing carries out is either an unfinished description or a
+# function of the process rather than of the AI. The kind is reported so the
+# two can be told apart.
+#
+# OWL cannot require the assignment under the open world assumption: a function
+# without one is unstated rather than unassigned. The answer therefore reports
+# where a model has stayed silent, and SHACL is where it would become a rule.
+PREFIX aias:     <https://w3id.org/aias#>
+PREFIX vdi3682:  <https://w3id.org/aias/odp/vdi3682#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?function ?functionKind
+WHERE {
+  ?function a ?functionKind . ?functionKind rdfs:subClassOf* aias:Function .
+  FILTER NOT EXISTS { ?function a ?n . ?n rdfs:subClassOf+ ?functionKind ;
+                                          rdfs:subClassOf* aias:Function }
+  FILTER NOT EXISTS { ?function aias:isAssignedTo ?any }
+  FILTER NOT EXISTS { ?function vdi3682:isAssignedTo ?any2 }
+} ORDER BY ?functionKind ?function

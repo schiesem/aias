@@ -1,0 +1,105 @@
+@startuml fig4_overview
+' Diagram 4 of the ISO/IEC 7498-1 pattern: the whole of it.
+'
+' Conventions: shared/FIGURES.md, section 8. This diagram is for the
+' documentation rather than for a paper, and it therefore shows every class of
+' the pattern. Diagrams 1 to 3 are the readable cuts through it.
+'
+' What it shows: all twenty classes and the relations between them, grouped by
+' the three questions the pattern answers: what a communication is, how a
+' system is built, and what passes between them.
+'
+' Left out on purpose: the data properties and the named individuals, which the
+' three diagrams above carry where they matter. Listing seven layers and seven
+' quality parameters here would double the height for a vocabulary the other
+' drawings already show.
+
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam linetype ortho
+skinparam nodesep 20
+skinparam ranksep 42
+skinparam padding 2
+skinparam ArrowColor #1A2733
+skinparam ArrowFontSize 11
+skinparam ArrowFontColor #1A2733
+hide empty members
+hide circle
+skinparam class {
+  BackgroundColor #FCEFC7
+  BorderColor #C9A227
+  FontColor #1A2733
+  FontSize 12
+  BorderThickness 1
+}
+skinparam package {
+  BorderColor #8A98A8
+  BackgroundColor #FCFDFE
+  FontColor #33475B
+  FontSize 12
+  FontStyle italic
+}
+
+package "What a communication is" {
+  class Association
+  class ConnectionModeAssociation
+  class ConnectionlessModeAssociation
+  class CommunicationDirection
+  class Technology
+  class QualityOfService
+  class QoSValue
+  class QoSParameter
+}
+
+package "How a system is built" {
+  class OpenSystem
+  class Subsystem
+  class Entity
+  class Layer
+  class Service
+  class Protocol
+  class ServiceAccessPoint
+}
+
+package "What passes between them" {
+  class DataUnit
+  class ProtocolDataUnit
+  class ServiceDataUnit
+  class UserData
+  class ProtocolControlInformation
+}
+
+Association <|-- ConnectionModeAssociation
+Association <|-- ConnectionlessModeAssociation
+DataUnit <|-- ProtocolDataUnit
+DataUnit <|-- ServiceDataUnit
+DataUnit <|-- UserData
+DataUnit <|-- ProtocolControlInformation
+
+Association --> OpenSystem             : connects
+Association --> Technology             : usesTechnology
+Association --> CommunicationDirection : hasDirection
+Association --> QualityOfService       : hasQualityOfService
+Association --> DataUnit               : transmits
+Association --> Layer                  : usesLayer
+
+QualityOfService --> QoSValue     : hasValue
+QoSValue         --> QoSParameter : forParameter
+
+OpenSystem --> Subsystem : hasSubsystem
+Subsystem  --> Entity    : hasEntity
+Subsystem  --> Layer     : atLayer
+Entity     --> Service   : providesService
+Entity     --> Protocol  : employsProtocol
+Entity     --> Entity    : peerEntity
+ServiceAccessPoint --> Entity : attachedTo
+Technology --> Layer     : realisesLayer
+
+ProtocolDataUnit --> UserData                   : hasUserData
+ProtocolDataUnit --> ProtocolControlInformation : hasControlInformation
+ProtocolDataUnit --> ServiceDataUnit            : mapsToServiceDataUnit
+DataUnit         --> Layer                      : atLayer
+
+@enduml
