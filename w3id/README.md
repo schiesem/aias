@@ -45,9 +45,12 @@ Every target must exist before the pull request is opened: a redirect to a
 page that is not there will not be merged.
 
 ```
-curl -sI -H "Accept: text/html"  https://w3id.org/aias/odp/vdi3682
-curl -sI -H "Accept: text/turtle" https://w3id.org/aias/odp/vdi3682
+bash w3id/check.sh
 ```
 
-Both should answer `303` with a `Location` header pointing at
-`schiesem.github.io/aias/…`.
+It asks every IRI twice, once as a browser would and once as a reasoner
+would, and follows each redirect to see whether the page is really there. A
+303 to a 404 helps nobody, so both are checked.
+
+Until the pull request is merged, w3id answers 404 for everything and the
+script says so.
