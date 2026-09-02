@@ -20,11 +20,24 @@ Both under the same IRI, through an HTTP 303 redirect.
 | `w3id.org/aias/odp/vdi3682` | the pattern's documentation | the pattern |
 | `w3id.org/aias/odp/vdi3682/2.0.0` | that version's documentation | that version |
 
-An IRI without a version resolves to 1.0.0, the published one. The default
-moves to 2.0.0 once that is released, which is one line per block in the file.
-
 Anything the rules do not match goes to the repository rather than to an
 error page.
+
+## Moving the default to a later version
+
+An IRI without a version resolves to 1.0.0. Moving that to 2.0.0 is an edit
+to this file and nothing else: there is no registration to update, since w3id
+holds no record beyond the file itself.
+
+Replace `v1.0.0` with `v2.0.0` in the ten lines of the two blocks headed
+*without a version*, then open a pull request against `perma-id/w3id.org`
+with the changed file. The blocks that carry an explicit version are left
+alone.
+
+That is the point of a versioned IRI: `/odp/vdi3682/1.0.0` keeps resolving to
+1.0.0 for good, so a model that imported it a decade ago still gets the
+ontology it was written against. Only the bare IRI follows the current
+version.
 
 ## Checking it
 
