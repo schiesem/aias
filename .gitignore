@@ -7,13 +7,14 @@ ROADMAP.md
 *.jar
 __pycache__/
 
-# Widoco output: regenerate with shared/make_docs.py.
-# Publishing to GitHub Pages happens from a branch of its own, so the
-# generated files are kept out of the source history.
-odps/*/v*/docs/
-odps/*/v*/docs-*/
-alignment/*/v*/docs/
-alignment/*/v*/docs-*/
+# The generated documentation IS versioned: GitHub Pages serves it straight
+# from main, so a page that is not committed is a page that does not resolve.
+# Regenerate it with shared/make_docs.py rather than editing it.
+#
+# This includes the WebVOWL library Widoco copies into every documentation
+# directory. Keeping it once and pointing the pages at that copy would be
+# cheaper, but WebVOWL resolves its data file relative to its own location,
+# so a shared copy would not find the data of each package.
 
 # Widoco unpacks its LODE templates into a directory named after a timestamp
 # and leaves it behind when a run is interrupted.

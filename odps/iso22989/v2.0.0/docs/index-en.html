@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>ISO/IEC 22989 Ontology Design Pattern</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aias/odp/iso22989#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aias/odp/iso22989#","name":"ISO/IEC 22989 Ontology Design Pattern", "headline":"Document describing the ontology https://w3id.org/aias/odp/iso22989#", "dateReleased":"2026-08-19", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"TODO: author name, ORCID"}], "contributor":[{"@type":"Person","name":"TODO: co-authors"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>ISO/IEC 22989 Ontology Design Pattern</h1>
+<h2>Release: 2026-08-19</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/aias/odp/iso22989/1.0.0">https://w3id.org/aias/odp/iso22989/1.0.0</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
+<dt>Authors:</dt>
+<dd>TODO: author name, ORCID</dd>
+
+<dt>Contributors:</dt>
+<dd>TODO: co-authors</dd>
+
+<dt>Publisher:</dt>
+<dd>TODO: institution</dd>
+<dt>Source:</dt>
+<dd><a href="https://www.iso.org/standard/74296.html">https://www.iso.org/standard/74296.html</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>TODO: citation of the accompanying publication</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">ISO/IEC 22989 Ontology Design Pattern: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Acquisition" title="https://w3id.org/aias/odp/iso22989#Acquisition">Acquisition</a>
+   </li>
+   <li>
+      <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a>
+   </li>
+   <li>
+      <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a>
+   </li>
+   <li>
+      <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a>
+   </li>
+   <li>
+      <a href="#AIType" title="https://w3id.org/aias/odp/iso22989#AIType">AI Type</a>
+   </li>
+   <li>
+      <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a>
+   </li>
+   <li>
+      <a href="#Annotation" title="https://w3id.org/aias/odp/iso22989#Annotation">Annotation</a>
+   </li>
+   <li>
+      <a href="#Augmentation" title="https://w3id.org/aias/odp/iso22989#Augmentation">Augmentation</a>
+   </li>
+   <li>
+      <a href="#VariableCharacteristic"
+         title="https://w3id.org/aias/odp/iso22989#VariableCharacteristic">Characteristic</a>
+   </li>
+   <li>
+      <a href="#CharacteristicValue"
+         title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a>
+   </li>
+   <li>
+      <a href="#Classification"
+         title="https://w3id.org/aias/odp/iso22989#Classification">Classification</a>
+   </li>
+   <li>
+      <a href="#Clustering" title="https://w3id.org/aias/odp/iso22989#Clustering">Clustering</a>
+   </li>
+   <li>
+      <a href="#Control" title="https://w3id.org/aias/odp/iso22989#Control">Control</a>
+   </li>
+   <li>
+      <a href="#Controllability"
+         title="https://w3id.org/aias/odp/iso22989#Controllability">Controllability</a>
+   </li>
+   <li>
+      <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a>
+   </li>
+   <li>
+      <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a>
+   </li>
+   <li>
+      <a href="#DataProcessing"
+         title="https://w3id.org/aias/odp/iso22989#DataProcessing">Data Processing</a>
+   </li>
+   <li>
+      <a href="#DataSet" title="https://w3id.org/aias/odp/iso22989#DataSet">Data Set</a>
+   </li>
+   <li>
+      <a href="#DataSink" title="https://w3id.org/aias/odp/iso22989#DataSink">Data Sink</a>
+   </li>
+   <li>
+      <a href="#DataSource" title="https://w3id.org/aias/odp/iso22989#DataSource">Data Source</a>
+   </li>
+   <li>
+      <a href="#Evaluation" title="https://w3id.org/aias/odp/iso22989#Evaluation">Evaluation</a>
+   </li>
+   <li>
+      <a href="#EvaluationAlgorithm"
+         title="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm">Evaluation Algorithm</a>
+   </li>
+   <li>
+      <a href="#EvaluationData"
+         title="https://w3id.org/aias/odp/iso22989#EvaluationData">Evaluation Data</a>
+   </li>
+   <li>
+      <a href="#EvaluationMetric"
+         title="https://w3id.org/aias/odp/iso22989#EvaluationMetric">Evaluation Metric</a>
+   </li>
+   <li>
+      <a href="#Filtering" title="https://w3id.org/aias/odp/iso22989#Filtering">Filtering</a>
+   </li>
+   <li>
+      <a href="#Generation" title="https://w3id.org/aias/odp/iso22989#Generation">Generation</a>
+   </li>
+   <li>
+      <a href="#Hyperparameter"
+         title="https://w3id.org/aias/odp/iso22989#Hyperparameter">Hyperparameter</a>
+   </li>
+   <li>
+      <a href="#Imputation" title="https://w3id.org/aias/odp/iso22989#Imputation">Imputation</a>
+   </li>
+   <li>
+      <a href="#Inference" title="https://w3id.org/aias/odp/iso22989#Inference">Inference</a>
+   </li>
+   <li>
+      <a href="#InputData" title="https://w3id.org/aias/odp/iso22989#InputData">Input Data</a>
+   </li>
+   <li>
+      <a href="#Label" title="https://w3id.org/aias/odp/iso22989#Label">Label</a>
+   </li>
+   <li>
+      <a href="#Labelling" title="https://w3id.org/aias/odp/iso22989#Labelling">Labelling</a>
+   </li>
+   <li>
+      <a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a>
+   </li>
+   <li>
+      <a href="#MachineLearning"
+         title="https://w3id.org/aias/odp/iso22989#MachineLearning">Machine Learning</a>
+   </li>
+   <li>
+      <a href="#MLAlgorithm" title="https://w3id.org/aias/odp/iso22989#MLAlgorithm">Machine Learning Algorithm</a>
+   </li>
+   <li>
+      <a href="#MLModel" title="https://w3id.org/aias/odp/iso22989#MLModel">Machine Learning Model</a>
+   </li>
+   <li>
+      <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a>
+   </li>
+   <li>
+      <a href="#ModelAlgorithm"
+         title="https://w3id.org/aias/odp/iso22989#ModelAlgorithm">Model Algorithm</a>
+   </li>
+   <li>
+      <a href="#ModelParameter"
+         title="https://w3id.org/aias/odp/iso22989#ModelParameter">Model Parameter</a>
+   </li>
+   <li>
+      <a href="#Normalization"
+         title="https://w3id.org/aias/odp/iso22989#Normalization">Normalization</a>
+   </li>
+   <li>
+      <a href="#Prediction" title="https://w3id.org/aias/odp/iso22989#Prediction">Prediction</a>
+   </li>
+   <li>
+      <a href="#ProductionData"
+         title="https://w3id.org/aias/odp/iso22989#ProductionData">Production Data</a>
+   </li>
+   <li>
+      <a href="#Regression" title="https://w3id.org/aias/odp/iso22989#Regression">Regression</a>
+   </li>
+   <li>
+      <a href="#ReinforcementLearning"
+         title="https://w3id.org/aias/odp/iso22989#ReinforcementLearning">Reinforcement Learning</a>
+   </li>
+   <li>
+      <a href="#Retraining" title="https://w3id.org/aias/odp/iso22989#Retraining">Retraining</a>
+   </li>
+   <li>
+      <a href="#Risk" title="https://w3id.org/aias/odp/iso22989#Risk">Risk</a>
+   </li>
+   <li>
+      <a href="#Sample" title="https://w3id.org/aias/odp/iso22989#Sample">Sample</a>
+   </li>
+   <li>
+      <a href="#Sampling" title="https://w3id.org/aias/odp/iso22989#Sampling">Sampling</a>
+   </li>
+   <li>
+      <a href="#SemiSupervisedLearning"
+         title="https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning">Semi-supervised Machine Learning</a>
+   </li>
+   <li>
+      <a href="#Storing" title="https://w3id.org/aias/odp/iso22989#Storing">Storing</a>
+   </li>
+   <li>
+      <a href="#SubsymbolicAI"
+         title="https://w3id.org/aias/odp/iso22989#SubsymbolicAI">Subsymbolic AI</a>
+   </li>
+   <li>
+      <a href="#SupervisedLearning"
+         title="https://w3id.org/aias/odp/iso22989#SupervisedLearning">Supervised Machine Learning</a>
+   </li>
+   <li>
+      <a href="#SymbolicAI" title="https://w3id.org/aias/odp/iso22989#SymbolicAI">Symbolic AI</a>
+   </li>
+   <li>
+      <a href="#SystemDesign" title="https://w3id.org/aias/odp/iso22989#SystemDesign">System Design</a>
+   </li>
+   <li>
+      <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a>
+   </li>
+   <li>
+      <a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a>
+   </li>
+   <li>
+      <a href="#TrainingAlgorithm"
+         title="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm">Training Algorithm</a>
+   </li>
+   <li>
+      <a href="#TrainingData" title="https://w3id.org/aias/odp/iso22989#TrainingData">Training Data</a>
+   </li>
+   <li>
+      <a href="#UnsupervisedLearning"
+         title="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning">Unsupervised Machine Learning</a>
+   </li>
+   <li>
+      <a href="#Validation" title="https://w3id.org/aias/odp/iso22989#Validation">Validation</a>
+   </li>
+   <li>
+      <a href="#ValidationData"
+         title="https://w3id.org/aias/odp/iso22989#ValidationData">Validation Data</a>
+   </li>
+   <li>
+      <a href="#Verification" title="https://w3id.org/aias/odp/iso22989#Verification">Verification</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#basedOnAlgorithm"
+         title="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">based on algorithm</a>
+   </li>
+   <li>
+      <a href="#basedOnLearning"
+         title="https://w3id.org/aias/odp/iso22989#basedOnLearning">based on learning</a>
+   </li>
+   <li>
+      <a href="#consistsOf" title="https://w3id.org/aias/odp/iso22989#consistsOf">consists of</a>
+   </li>
+   <li>
+      <a href="#consistsOfStep"
+         title="https://w3id.org/aias/odp/iso22989#consistsOfStep">consists of step</a>
+   </li>
+   <li>
+      <a href="#creates" title="https://w3id.org/aias/odp/iso22989#creates">creates</a>
+   </li>
+   <li>
+      <a href="#determines" title="https://w3id.org/aias/odp/iso22989#determines">determines</a>
+   </li>
+   <li>
+      <a href="#forCharacteristic"
+         title="https://w3id.org/aias/odp/iso22989#forCharacteristic">for characteristic</a>
+   </li>
+   <li>
+      <a href="#fulfilsTask" title="https://w3id.org/aias/odp/iso22989#fulfilsTask">fulfils task</a>
+   </li>
+   <li>
+      <a href="#hasCharacteristicValue"
+         title="https://w3id.org/aias/odp/iso22989#hasCharacteristicValue">has characteristic value</a>
+   </li>
+   <li>
+      <a href="#hasControllability"
+         title="https://w3id.org/aias/odp/iso22989#hasControllability">has controllability</a>
+   </li>
+   <li>
+      <a href="#hasDataSink" title="https://w3id.org/aias/odp/iso22989#hasDataSink">has data sink</a>
+   </li>
+   <li>
+      <a href="#hasDataSource" title="https://w3id.org/aias/odp/iso22989#hasDataSource">has data source</a>
+   </li>
+   <li>
+      <a href="#hasDesign" title="https://w3id.org/aias/odp/iso22989#hasDesign">has design</a>
+   </li>
+   <li>
+      <a href="#hasFunction" title="https://w3id.org/aias/odp/iso22989#hasFunction">has function</a>
+   </li>
+   <li>
+      <a href="#hasHyperparameter"
+         title="https://w3id.org/aias/odp/iso22989#hasHyperparameter">has hyperparameter</a>
+   </li>
+   <li>
+      <a href="#hasLabel" title="https://w3id.org/aias/odp/iso22989#hasLabel">has label</a>
+   </li>
+   <li>
+      <a href="#hasParameter" title="https://w3id.org/aias/odp/iso22989#hasParameter">has parameter</a>
+   </li>
+   <li>
+      <a href="#hasRisk" title="https://w3id.org/aias/odp/iso22989#hasRisk">has risk</a>
+   </li>
+   <li>
+      <a href="#hasTask" title="https://w3id.org/aias/odp/iso22989#hasTask">has task</a>
+   </li>
+   <li>
+      <a href="#hasType" title="https://w3id.org/aias/odp/iso22989#hasType">has type</a>
+   </li>
+   <li>
+      <a href="#isAcquiredBy" title="https://w3id.org/aias/odp/iso22989#isAcquiredBy">is acquired by</a>
+   </li>
+   <li>
+      <a href="#isComposedOf" title="https://w3id.org/aias/odp/iso22989#isComposedOf">is composed of</a>
+   </li>
+   <li>
+      <a href="#isCreatedBy" title="https://w3id.org/aias/odp/iso22989#isCreatedBy">is created by</a>
+   </li>
+   <li>
+      <a href="#isEvaluatedBy" title="https://w3id.org/aias/odp/iso22989#isEvaluatedBy">is evaluated by</a>
+   </li>
+   <li>
+      <a href="#isExecutedBy" title="https://w3id.org/aias/odp/iso22989#isExecutedBy">is executed by</a>
+   </li>
+   <li>
+      <a href="#isProcessedBy" title="https://w3id.org/aias/odp/iso22989#isProcessedBy">is processed by</a>
+   </li>
+   <li>
+      <a href="#isStoredBy" title="https://w3id.org/aias/odp/iso22989#isStoredBy">is stored by</a>
+   </li>
+   <li>
+      <a href="#isValidatedBy" title="https://w3id.org/aias/odp/iso22989#isValidatedBy">is validated by</a>
+   </li>
+   <li>
+      <a href="#performedBy" title="https://w3id.org/aias/odp/iso22989#performedBy">performed by</a>
+   </li>
+   <li>
+      <a href="#performsControl"
+         title="https://w3id.org/aias/odp/iso22989#performsControl">performs control</a>
+   </li>
+   <li>
+      <a href="#realisedByModel"
+         title="https://w3id.org/aias/odp/iso22989#realisedByModel">realised by model</a>
+   </li>
+   <li>
+      <a href="#usesData" title="https://w3id.org/aias/odp/iso22989#usesData">uses data</a>
+   </li>
+   <li>
+      <a href="#usesMetric" title="https://w3id.org/aias/odp/iso22989#usesMetric">uses metric</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#isLabelled" title="https://w3id.org/aias/odp/iso22989#isLabelled">is labelled</a>
+   </li>
+   <li>
+      <a href="#quantity" title="https://w3id.org/aias/odp/iso22989#quantity">quantity</a>
+   </li>
+   <li>
+      <a href="#unit" title="https://w3id.org/aias/odp/iso22989#unit">unit</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">
+         <span>alt Label</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation">
+         <span>bibliographic Citation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">
+         <span>note</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred Namespace Uri</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+         <span>publisher</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights">
+         <span>rights</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source">
+         <span>source</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+         <span>status</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Cloud" title="https://w3id.org/aias/odp/iso22989#Cloud">Cloud</a>
+   </li>
+   <li>
+      <a href="#Edge" title="https://w3id.org/aias/odp/iso22989#Edge">Edge</a>
+   </li>
+   <li>
+      <a href="#Hybrid" title="https://w3id.org/aias/odp/iso22989#Hybrid">Hybrid</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">ISO/IEC 22989 Ontology Design Pattern: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Normative basis: ISO/IEC 22989:2022.
+
+Clause 3 of the standard holds 115 entries and this pattern takes up 47 of them. REFERENCE.md lists every entry with the reason it is taken or left out, so the selection is checkable rather than asserted. Three whole clauses stay out: neural networks, natural language processing and computer vision name techniques and application fields, both open sets. A model using a convolutional network records it as a named individual of the model algorithm class instead.
+
+Some classes here have no entry in clause 3. Five of them are collecting classes the standard needs but does not name, such as the common superclass of the four kinds of learning. The rest are constructs of this work, carried over from the information model it rebuilds. Every one of them says so on its own skos:note, and REFERENCE.md lists them apart from the entries.
+
+No class of another namespace appears in this pattern. Where a term matches a term of another standard, as control, 3.5.5, matches IEC 60050-351, 351-42-19, word for word, the two are related in the alignment ontology rather than here. A pattern that referenced another would drag it along wherever it is used.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for ISO/IEC 22989 Ontology Design Pattern classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by ISO/IEC 22989 Ontology Design Pattern.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Acquisition" title="https://w3id.org/aias/odp/iso22989#Acquisition">Acquisition</a></li>
+  <li><a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a></li>
+  <li><a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a></li>
+  <li><a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a></li>
+  <li><a href="#AIType" title="https://w3id.org/aias/odp/iso22989#AIType">AI Type</a></li>
+  <li><a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a></li>
+  <li><a href="#Annotation" title="https://w3id.org/aias/odp/iso22989#Annotation">Annotation</a></li>
+  <li><a href="#Augmentation" title="https://w3id.org/aias/odp/iso22989#Augmentation">Augmentation</a></li>
+  <li><a href="#VariableCharacteristic" title="https://w3id.org/aias/odp/iso22989#VariableCharacteristic">Characteristic</a></li>
+  <li><a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a></li>
+  <li><a href="#Classification" title="https://w3id.org/aias/odp/iso22989#Classification">Classification</a></li>
+  <li><a href="#Clustering" title="https://w3id.org/aias/odp/iso22989#Clustering">Clustering</a></li>
+  <li><a href="#Control" title="https://w3id.org/aias/odp/iso22989#Control">Control</a></li>
+  <li><a href="#Controllability" title="https://w3id.org/aias/odp/iso22989#Controllability">Controllability</a></li>
+  <li><a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a></li>
+  <li><a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a></li>
+  <li><a href="#DataProcessing" title="https://w3id.org/aias/odp/iso22989#DataProcessing">Data Processing</a></li>
+  <li><a href="#DataSet" title="https://w3id.org/aias/odp/iso22989#DataSet">Data Set</a></li>
+  <li><a href="#DataSink" title="https://w3id.org/aias/odp/iso22989#DataSink">Data Sink</a></li>
+  <li><a href="#DataSource" title="https://w3id.org/aias/odp/iso22989#DataSource">Data Source</a></li>
+  <li><a href="#Evaluation" title="https://w3id.org/aias/odp/iso22989#Evaluation">Evaluation</a></li>
+  <li><a href="#EvaluationAlgorithm" title="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm">Evaluation Algorithm</a></li>
+  <li><a href="#EvaluationData" title="https://w3id.org/aias/odp/iso22989#EvaluationData">Evaluation Data</a></li>
+  <li><a href="#EvaluationMetric" title="https://w3id.org/aias/odp/iso22989#EvaluationMetric">Evaluation Metric</a></li>
+  <li><a href="#Filtering" title="https://w3id.org/aias/odp/iso22989#Filtering">Filtering</a></li>
+  <li><a href="#Generation" title="https://w3id.org/aias/odp/iso22989#Generation">Generation</a></li>
+  <li><a href="#Hyperparameter" title="https://w3id.org/aias/odp/iso22989#Hyperparameter">Hyperparameter</a></li>
+  <li><a href="#Imputation" title="https://w3id.org/aias/odp/iso22989#Imputation">Imputation</a></li>
+  <li><a href="#Inference" title="https://w3id.org/aias/odp/iso22989#Inference">Inference</a></li>
+  <li><a href="#InputData" title="https://w3id.org/aias/odp/iso22989#InputData">Input Data</a></li>
+  <li><a href="#Label" title="https://w3id.org/aias/odp/iso22989#Label">Label</a></li>
+  <li><a href="#Labelling" title="https://w3id.org/aias/odp/iso22989#Labelling">Labelling</a></li>
+  <li><a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a></li>
+  <li><a href="#MachineLearning" title="https://w3id.org/aias/odp/iso22989#MachineLearning">Machine Learning</a></li>
+  <li><a href="#MLAlgorithm" title="https://w3id.org/aias/odp/iso22989#MLAlgorithm">Machine Learning Algorithm</a></li>
+  <li><a href="#MLModel" title="https://w3id.org/aias/odp/iso22989#MLModel">Machine Learning Model</a></li>
+  <li><a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a></li>
+  <li><a href="#ModelAlgorithm" title="https://w3id.org/aias/odp/iso22989#ModelAlgorithm">Model Algorithm</a></li>
+  <li><a href="#ModelParameter" title="https://w3id.org/aias/odp/iso22989#ModelParameter">Model Parameter</a></li>
+  <li><a href="#Normalization" title="https://w3id.org/aias/odp/iso22989#Normalization">Normalization</a></li>
+  <li><a href="#Prediction" title="https://w3id.org/aias/odp/iso22989#Prediction">Prediction</a></li>
+  <li><a href="#ProductionData" title="https://w3id.org/aias/odp/iso22989#ProductionData">Production Data</a></li>
+  <li><a href="#Regression" title="https://w3id.org/aias/odp/iso22989#Regression">Regression</a></li>
+  <li><a href="#ReinforcementLearning" title="https://w3id.org/aias/odp/iso22989#ReinforcementLearning">Reinforcement Learning</a></li>
+  <li><a href="#Retraining" title="https://w3id.org/aias/odp/iso22989#Retraining">Retraining</a></li>
+  <li><a href="#Risk" title="https://w3id.org/aias/odp/iso22989#Risk">Risk</a></li>
+  <li><a href="#Sample" title="https://w3id.org/aias/odp/iso22989#Sample">Sample</a></li>
+  <li><a href="#Sampling" title="https://w3id.org/aias/odp/iso22989#Sampling">Sampling</a></li>
+  <li><a href="#SemiSupervisedLearning" title="https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning">Semi-supervised Machine Learning</a></li>
+  <li><a href="#Storing" title="https://w3id.org/aias/odp/iso22989#Storing">Storing</a></li>
+  <li><a href="#SubsymbolicAI" title="https://w3id.org/aias/odp/iso22989#SubsymbolicAI">Subsymbolic AI</a></li>
+  <li><a href="#SupervisedLearning" title="https://w3id.org/aias/odp/iso22989#SupervisedLearning">Supervised Machine Learning</a></li>
+  <li><a href="#SymbolicAI" title="https://w3id.org/aias/odp/iso22989#SymbolicAI">Symbolic AI</a></li>
+  <li><a href="#SystemDesign" title="https://w3id.org/aias/odp/iso22989#SystemDesign">System Design</a></li>
+  <li><a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a></li>
+  <li><a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a></li>
+  <li><a href="#TrainingAlgorithm" title="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm">Training Algorithm</a></li>
+  <li><a href="#TrainingData" title="https://w3id.org/aias/odp/iso22989#TrainingData">Training Data</a></li>
+  <li><a href="#UnsupervisedLearning" title="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning">Unsupervised Machine Learning</a></li>
+  <li><a href="#Validation" title="https://w3id.org/aias/odp/iso22989#Validation">Validation</a></li>
+  <li><a href="#ValidationData" title="https://w3id.org/aias/odp/iso22989#ValidationData">Validation Data</a></li>
+  <li><a href="#Verification" title="https://w3id.org/aias/odp/iso22989#Verification">Verification</a></li>
+ </ul>
+ <div class="entity" id="Acquisition">
+  <h3>Acquisition<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Acquisition</p>
+  <div class="comment">
+   <span class="markdown">The function obtaining data from a data source.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasDataSource" title="https://w3id.org/aias/odp/iso22989#hasDataSource">has data source</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isAcquiredBy" title="https://w3id.org/aias/odp/iso22989#isAcquiredBy">is acquired by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AIComponent">
+  <h3>AI Component<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#AIComponent</p>
+  <div class="comment">
+   <span class="markdown">A functional element that constructs an AI system.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasCharacteristicValue" title="https://w3id.org/aias/odp/iso22989#hasCharacteristicValue">has characteristic value</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFunction" title="https://w3id.org/aias/odp/iso22989#hasFunction">has function</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasType" title="https://w3id.org/aias/odp/iso22989#hasType">has type</a> <sup class="type-op" title="object property">op</sup>, <a href="#realisedByModel" title="https://w3id.org/aias/odp/iso22989#realisedByModel">realised by model</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/iso22989#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://w3id.org/aias/odp/iso22989#performedBy">performed by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AIFunction">
+  <h3>AI Function<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#AIFunction</p>
+  <div class="comment">
+   <span class="markdown">An activity in the life cycle of an AI system, transforming inputs into outputs.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Acquisition" title="https://w3id.org/aias/odp/iso22989#Acquisition">Acquisition</a> <sup class="type-c" title="class">c</sup>, <a href="#DataProcessing" title="https://w3id.org/aias/odp/iso22989#DataProcessing">Data Processing</a> <sup class="type-c" title="class">c</sup>, <a href="#Evaluation" title="https://w3id.org/aias/odp/iso22989#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#Inference" title="https://w3id.org/aias/odp/iso22989#Inference">Inference</a> <sup class="type-c" title="class">c</sup>, <a href="#Storing" title="https://w3id.org/aias/odp/iso22989#Storing">Storing</a> <sup class="type-c" title="class">c</sup>, <a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a> <sup class="type-c" title="class">c</sup>, <a href="#Validation" title="https://w3id.org/aias/odp/iso22989#Validation">Validation</a> <sup class="type-c" title="class">c</sup>, <a href="#Verification" title="https://w3id.org/aias/odp/iso22989#Verification">Verification</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#basedOnAlgorithm" title="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">based on algorithm</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://w3id.org/aias/odp/iso22989#performedBy">performed by</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesData" title="https://w3id.org/aias/odp/iso22989#usesData">uses data</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasFunction" title="https://w3id.org/aias/odp/iso22989#hasFunction">has function</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>, <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>, <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AISystem">
+  <h3>AI System<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#AISystem</p>
+  <div class="comment">
+   <span class="markdown">An engineered system that generates outputs such as content, forecasts, recommendations or decisions for a given set of human-defined objectives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/iso22989#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCharacteristicValue" title="https://w3id.org/aias/odp/iso22989#hasCharacteristicValue">has characteristic value</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasControllability" title="https://w3id.org/aias/odp/iso22989#hasControllability">has controllability</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDesign" title="https://w3id.org/aias/odp/iso22989#hasDesign">has design</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFunction" title="https://w3id.org/aias/odp/iso22989#hasFunction">has function</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasRisk" title="https://w3id.org/aias/odp/iso22989#hasRisk">has risk</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTask" title="https://w3id.org/aias/odp/iso22989#hasTask">has task</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasType" title="https://w3id.org/aias/odp/iso22989#hasType">has type</a> <sup class="type-op" title="object property">op</sup>, <a href="#performsControl" title="https://w3id.org/aias/odp/iso22989#performsControl">performs control</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>, <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a> <sup class="type-c" title="class">c</sup>, <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>, <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>, <a href="#VariableCharacteristic" title="https://w3id.org/aias/odp/iso22989#VariableCharacteristic">Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AIType">
+  <h3>AI Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#AIType</p>
+  <div class="comment">
+   <span class="markdown">The kind of technique an AI system is based on, that is symbolic or subsymbolic.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#SubsymbolicAI" title="https://w3id.org/aias/odp/iso22989#SubsymbolicAI">Subsymbolic AI</a> <sup class="type-c" title="class">c</sup>, <a href="#SymbolicAI" title="https://w3id.org/aias/odp/iso22989#SymbolicAI">Symbolic AI</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasType" title="https://w3id.org/aias/odp/iso22989#hasType">has type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Algorithm">
+  <h3>Algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Algorithm</p>
+  <div class="comment">
+   <span class="markdown">A parameterisable mathematical procedure, described apart from any execution of it.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#EvaluationAlgorithm" title="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm">Evaluation Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#ModelAlgorithm" title="https://w3id.org/aias/odp/iso22989#ModelAlgorithm">Model Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#TrainingAlgorithm" title="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm">Training Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasHyperparameter" title="https://w3id.org/aias/odp/iso22989#hasHyperparameter">has hyperparameter</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#basedOnAlgorithm" title="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">based on algorithm</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>, <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>, <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>, <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Annotation">
+  <h3>Annotation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Annotation</p>
+  <div class="comment">
+   <span class="markdown">The process of attaching a set of descriptive information to data without any change to that data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Augmentation">
+  <h3>Augmentation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Augmentation</p>
+  <div class="comment">
+   <span class="markdown">The process of creating synthetic samples by modifying or utilizing the existing data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="VariableCharacteristic">
+  <h3>Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#VariableCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">A named property of an AI system to which a model assigns a value, such as robustness or reliability.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#forCharacteristic" title="https://w3id.org/aias/odp/iso22989#forCharacteristic">for characteristic</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CharacteristicValue">
+  <h3>Characteristic Value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#CharacteristicValue</p>
+  <div class="comment">
+   <span class="markdown">The value a model assigns to one characteristic, together with its unit.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#forCharacteristic" title="https://w3id.org/aias/odp/iso22989#forCharacteristic">for characteristic</a> <sup class="type-op" title="object property">op</sup>, <a href="#quantity" title="https://w3id.org/aias/odp/iso22989#quantity">quantity</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#unit" title="https://w3id.org/aias/odp/iso22989#unit">unit</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasCharacteristicValue" title="https://w3id.org/aias/odp/iso22989#hasCharacteristicValue">has characteristic value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>, <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Classification">
+  <h3>Classification<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Classification</p>
+  <div class="comment">
+   <span class="markdown">A task assigning inputs to discrete classes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Clustering">
+  <h3>Clustering<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Clustering</p>
+  <div class="comment">
+   <span class="markdown">A task identifying groups of similar samples.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Control">
+  <h3>Control<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Control</p>
+  <div class="comment">
+   <span class="markdown">Purposeful action on or in a process to meet specified objectives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#performsControl" title="https://w3id.org/aias/odp/iso22989#performsControl">performs control</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Controllability">
+  <h3>Controllability<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Controllability</p>
+  <div class="comment">
+   <span class="markdown">The property of an AI system that allows a human or another external agent to intervene in the system's functioning.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasControllability" title="https://w3id.org/aias/odp/iso22989#hasControllability">has controllability</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Data">
+  <h3>Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Data</p>
+  <div class="comment">
+   <span class="markdown">A collection of samples an AI system acquires, processes or computes outputs for.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#EvaluationData" title="https://w3id.org/aias/odp/iso22989#EvaluationData">Evaluation Data</a> <sup class="type-c" title="class">c</sup>, <a href="#InputData" title="https://w3id.org/aias/odp/iso22989#InputData">Input Data</a> <sup class="type-c" title="class">c</sup>, <a href="#ProductionData" title="https://w3id.org/aias/odp/iso22989#ProductionData">Production Data</a> <sup class="type-c" title="class">c</sup>, <a href="#TrainingData" title="https://w3id.org/aias/odp/iso22989#TrainingData">Training Data</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationData" title="https://w3id.org/aias/odp/iso22989#ValidationData">Validation Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasLabel" title="https://w3id.org/aias/odp/iso22989#hasLabel">has label</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAcquiredBy" title="https://w3id.org/aias/odp/iso22989#isAcquiredBy">is acquired by</a> <sup class="type-op" title="object property">op</sup>, <a href="#isComposedOf" title="https://w3id.org/aias/odp/iso22989#isComposedOf">is composed of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isLabelled" title="https://w3id.org/aias/odp/iso22989#isLabelled">is labelled</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isProcessedBy" title="https://w3id.org/aias/odp/iso22989#isProcessedBy">is processed by</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStoredBy" title="https://w3id.org/aias/odp/iso22989#isStoredBy">is stored by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isComposedOf" title="https://w3id.org/aias/odp/iso22989#isComposedOf">is composed of</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesData" title="https://w3id.org/aias/odp/iso22989#usesData">uses data</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>, <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>, <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a> <sup class="type-c" title="class">c</sup>, <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataProcess">
+  <h3>Data Process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#DataProcess</p>
+  <div class="comment">
+   <span class="markdown">A step preparing data, transforming input data into output data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Annotation" title="https://w3id.org/aias/odp/iso22989#Annotation">Annotation</a> <sup class="type-c" title="class">c</sup>, <a href="#Augmentation" title="https://w3id.org/aias/odp/iso22989#Augmentation">Augmentation</a> <sup class="type-c" title="class">c</sup>, <a href="#Filtering" title="https://w3id.org/aias/odp/iso22989#Filtering">Filtering</a> <sup class="type-c" title="class">c</sup>, <a href="#Imputation" title="https://w3id.org/aias/odp/iso22989#Imputation">Imputation</a> <sup class="type-c" title="class">c</sup>, <a href="#Labelling" title="https://w3id.org/aias/odp/iso22989#Labelling">Labelling</a> <sup class="type-c" title="class">c</sup>, <a href="#Normalization" title="https://w3id.org/aias/odp/iso22989#Normalization">Normalization</a> <sup class="type-c" title="class">c</sup>, <a href="#Sampling" title="https://w3id.org/aias/odp/iso22989#Sampling">Sampling</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#consistsOfStep" title="https://w3id.org/aias/odp/iso22989#consistsOfStep">consists of step</a> <sup class="type-op" title="object property">op</sup>, <a href="#isProcessedBy" title="https://w3id.org/aias/odp/iso22989#isProcessedBy">is processed by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataProcessing">
+  <h3>Data Processing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#DataProcessing</p>
+  <div class="comment">
+   <span class="markdown">The function transforming input data into output data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#consistsOfStep" title="https://w3id.org/aias/odp/iso22989#consistsOfStep">consists of step</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataSet">
+  <h3>Data Set<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#DataSet</p>
+  <div class="comment">
+   <span class="markdown">A collection of data with a shared format.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isComposedOf" title="https://w3id.org/aias/odp/iso22989#isComposedOf">is composed of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataSink">
+  <h3>Data Sink<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#DataSink</p>
+  <div class="comment">
+   <span class="markdown">Where data is stored, for example a database or a cloud service.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDataSink" title="https://w3id.org/aias/odp/iso22989#hasDataSink">has data sink</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataSource">
+  <h3>Data Source<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#DataSource</p>
+  <div class="comment">
+   <span class="markdown">Where data is acquired from, for example a sensor or a database.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDataSource" title="https://w3id.org/aias/odp/iso22989#hasDataSource">has data source</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Evaluation">
+  <h3>Evaluation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Evaluation</p>
+  <div class="comment">
+   <span class="markdown">The function assessing the performance of a final model before it is deployed.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#usesMetric" title="https://w3id.org/aias/odp/iso22989#usesMetric">uses metric</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isEvaluatedBy" title="https://w3id.org/aias/odp/iso22989#isEvaluatedBy">is evaluated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EvaluationAlgorithm">
+  <h3>Evaluation Algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">The procedure assessing a model against an evaluation metric.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#usesMetric" title="https://w3id.org/aias/odp/iso22989#usesMetric">uses metric</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EvaluationData">
+  <h3>Evaluation Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#EvaluationData</p>
+  <div class="comment">
+   <span class="markdown">Data used to assess the performance of a final model.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#TrainingData" title="https://w3id.org/aias/odp/iso22989#TrainingData">Training Data</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationData" title="https://w3id.org/aias/odp/iso22989#ValidationData">Validation Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EvaluationMetric">
+  <h3>Evaluation Metric<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#EvaluationMetric</p>
+  <div class="comment">
+   <span class="markdown">What an evaluation measures a model against, for example an F1 score or an error rate.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#usesMetric" title="https://w3id.org/aias/odp/iso22989#usesMetric">uses metric</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Filtering">
+  <h3>Filtering<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Filtering</p>
+  <div class="comment">
+   <span class="markdown">A step removing data that is not to be used further.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Generation">
+  <h3>Generation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Generation</p>
+  <div class="comment">
+   <span class="markdown">A task producing new outputs, such as text, images or audio, from learned representations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hyperparameter">
+  <h3>Hyperparameter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Hyperparameter</p>
+  <div class="comment">
+   <span class="markdown">A characteristic of an algorithm that affects its behaviour, chosen in advance rather than determined by training.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasHyperparameter" title="https://w3id.org/aias/odp/iso22989#hasHyperparameter">has hyperparameter</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Imputation">
+  <h3>Imputation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Imputation</p>
+  <div class="comment">
+   <span class="markdown">A procedure where missing data are replaced by estimated or modelled data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Inference">
+  <h3>Inference<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Inference</p>
+  <div class="comment">
+   <span class="markdown">Reasoning by which conclusions are derived from known premises.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#creates" title="https://w3id.org/aias/odp/iso22989#creates">creates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isExecutedBy" title="https://w3id.org/aias/odp/iso22989#isExecutedBy">is executed by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InputData">
+  <h3>Input Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#InputData</p>
+  <div class="comment">
+   <span class="markdown">Data for which an AI system calculates a predicted output or inference.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Label">
+  <h3>Label<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Label</p>
+  <div class="comment">
+   <span class="markdown">A target variable assigned to a sample.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasLabel" title="https://w3id.org/aias/odp/iso22989#hasLabel">has label</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Labelling">
+  <h3>Labelling<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Labelling</p>
+  <div class="comment">
+   <span class="markdown">A step assigning labels to samples.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LearningType">
+  <h3>Learning Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#LearningType</p>
+  <div class="comment">
+   <span class="markdown">The kind of machine learning an algorithm performs.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ReinforcementLearning" title="https://w3id.org/aias/odp/iso22989#ReinforcementLearning">Reinforcement Learning</a> <sup class="type-c" title="class">c</sup>, <a href="#SemiSupervisedLearning" title="https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning">Semi-supervised Machine Learning</a> <sup class="type-c" title="class">c</sup>, <a href="#SupervisedLearning" title="https://w3id.org/aias/odp/iso22989#SupervisedLearning">Supervised Machine Learning</a> <sup class="type-c" title="class">c</sup>, <a href="#UnsupervisedLearning" title="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning">Unsupervised Machine Learning</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#basedOnLearning" title="https://w3id.org/aias/odp/iso22989#basedOnLearning">based on learning</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MachineLearning">
+  <h3>Machine Learning<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#MachineLearning</p>
+  <div class="comment">
+   <span class="markdown">The process of optimizing model parameters through computational techniques, such that the model's behaviour reflects the data or experience.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MLAlgorithm">
+  <h3>Machine Learning Algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#MLAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">An algorithm to determine parameters of a machine learning model from data according to given criteria.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TrainingAlgorithm" title="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm">Training Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#basedOnLearning" title="https://w3id.org/aias/odp/iso22989#basedOnLearning">based on learning</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MLModel">
+  <h3>Machine Learning Model<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#MLModel</p>
+  <div class="comment">
+   <span class="markdown">A mathematical construct that generates an inference or prediction based on input data or information.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isCreatedBy" title="https://w3id.org/aias/odp/iso22989#isCreatedBy">is created by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Model">
+  <h3>Model<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Model</p>
+  <div class="comment">
+   <span class="markdown">A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#MLModel" title="https://w3id.org/aias/odp/iso22989#MLModel">Machine Learning Model</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#basedOnAlgorithm" title="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">based on algorithm</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCharacteristicValue" title="https://w3id.org/aias/odp/iso22989#hasCharacteristicValue">has characteristic value</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParameter" title="https://w3id.org/aias/odp/iso22989#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#isEvaluatedBy" title="https://w3id.org/aias/odp/iso22989#isEvaluatedBy">is evaluated by</a> <sup class="type-op" title="object property">op</sup>, <a href="#isValidatedBy" title="https://w3id.org/aias/odp/iso22989#isValidatedBy">is validated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isExecutedBy" title="https://w3id.org/aias/odp/iso22989#isExecutedBy">is executed by</a> <sup class="type-op" title="object property">op</sup>, <a href="#realisedByModel" title="https://w3id.org/aias/odp/iso22989#realisedByModel">realised by model</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>, <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>, <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ModelAlgorithm">
+  <h3>Model Algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#ModelAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">The procedure describing the structure of a model, such as the architecture of a neural network or a set of rules.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ModelParameter">
+  <h3>Model Parameter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#ModelParameter</p>
+  <div class="comment">
+   <span class="markdown">An internal variable of a model that affects how it computes its outputs.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#determines" title="https://w3id.org/aias/odp/iso22989#determines">determines</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParameter" title="https://w3id.org/aias/odp/iso22989#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Normalization">
+  <h3>Normalization<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Normalization</p>
+  <div class="comment">
+   <span class="markdown">A step bringing data onto a common scale.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Prediction">
+  <h3>Prediction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Prediction</p>
+  <div class="comment">
+   <span class="markdown">The primary output of an AI system when provided with input data or information.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#fulfilsTask" title="https://w3id.org/aias/odp/iso22989#fulfilsTask">fulfils task</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#creates" title="https://w3id.org/aias/odp/iso22989#creates">creates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProductionData">
+  <h3>Production Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#ProductionData</p>
+  <div class="comment">
+   <span class="markdown">Data acquired during the operation phase of an AI system, for which a deployed system calculates a predicted output or inference.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Regression">
+  <h3>Regression<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Regression</p>
+  <div class="comment">
+   <span class="markdown">A task predicting continuous quantities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ReinforcementLearning">
+  <h3>Reinforcement Learning<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#ReinforcementLearning</p>
+  <div class="comment">
+   <span class="markdown">Learning of an optimal sequence of actions to maximize a reward through interaction with an environment.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Retraining">
+  <h3>Retraining<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Retraining</p>
+  <div class="comment">
+   <span class="markdown">Updating a trained model by training with different training data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Risk">
+  <h3>Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Risk</p>
+  <div class="comment">
+   <span class="markdown">The effect of uncertainty on objectives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasRisk" title="https://w3id.org/aias/odp/iso22989#hasRisk">has risk</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Sample">
+  <h3>Sample<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Sample</p>
+  <div class="comment">
+   <span class="markdown">An atomic data element processed in quantities by a machine learning algorithm or an AI system.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasLabel" title="https://w3id.org/aias/odp/iso22989#hasLabel">has label</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isComposedOf" title="https://w3id.org/aias/odp/iso22989#isComposedOf">is composed of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Sampling">
+  <h3>Sampling<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Sampling</p>
+  <div class="comment">
+   <span class="markdown">The process to select a subset of data samples intended to present patterns and trends similar to that of the larger dataset.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SemiSupervisedLearning">
+  <h3>Semi-supervised Machine Learning<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning</p>
+  <div class="comment">
+   <span class="markdown">Machine learning that makes use of both labelled and unlabelled data during training.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Storing">
+  <h3>Storing<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Storing</p>
+  <div class="comment">
+   <span class="markdown">The function persisting data to a data sink, so that it stays available.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasDataSink" title="https://w3id.org/aias/odp/iso22989#hasDataSink">has data sink</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isStoredBy" title="https://w3id.org/aias/odp/iso22989#isStoredBy">is stored by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SubsymbolicAI">
+  <h3>Subsymbolic AI<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#SubsymbolicAI</p>
+  <div class="comment">
+   <span class="markdown">AI based on techniques and models that use an implicit encoding of information, that can be derived from experience or raw data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIType" title="https://w3id.org/aias/odp/iso22989#AIType">AI Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SupervisedLearning">
+  <h3>Supervised Machine Learning<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#SupervisedLearning</p>
+  <div class="comment">
+   <span class="markdown">Machine learning that makes only use of labelled data during training.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SymbolicAI">
+  <h3>Symbolic AI<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#SymbolicAI</p>
+  <div class="comment">
+   <span class="markdown">AI based on techniques and models that manipulate symbols and structures according to explicitly defined rules to obtain inferences.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIType" title="https://w3id.org/aias/odp/iso22989#AIType">AI Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SystemDesign">
+  <h3>System Design<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#SystemDesign</p>
+  <div class="comment">
+   <span class="markdown">Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDesign" title="https://w3id.org/aias/odp/iso22989#hasDesign">has design</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Cloud" title="https://w3id.org/aias/odp/iso22989#Cloud">Cloud</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Edge" title="https://w3id.org/aias/odp/iso22989#Edge">Edge</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hybrid" title="https://w3id.org/aias/odp/iso22989#Hybrid">Hybrid</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Task">
+  <h3>Task<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Task</p>
+  <div class="comment">
+   <span class="markdown">An action required to achieve a specific goal.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Classification" title="https://w3id.org/aias/odp/iso22989#Classification">Classification</a> <sup class="type-c" title="class">c</sup>, <a href="#Clustering" title="https://w3id.org/aias/odp/iso22989#Clustering">Clustering</a> <sup class="type-c" title="class">c</sup>, <a href="#Generation" title="https://w3id.org/aias/odp/iso22989#Generation">Generation</a> <sup class="type-c" title="class">c</sup>, <a href="#Regression" title="https://w3id.org/aias/odp/iso22989#Regression">Regression</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#fulfilsTask" title="https://w3id.org/aias/odp/iso22989#fulfilsTask">fulfils task</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTask" title="https://w3id.org/aias/odp/iso22989#hasTask">has task</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Training">
+  <h3>Training<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Training</p>
+  <div class="comment">
+   <span class="markdown">The process to determine or to improve the parameters of a machine learning model, based on a machine learning algorithm, by using training data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#MachineLearning" title="https://w3id.org/aias/odp/iso22989#MachineLearning">Machine Learning</a> <sup class="type-c" title="class">c</sup>, <a href="#Retraining" title="https://w3id.org/aias/odp/iso22989#Retraining">Retraining</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#determines" title="https://w3id.org/aias/odp/iso22989#determines">determines</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isCreatedBy" title="https://w3id.org/aias/odp/iso22989#isCreatedBy">is created by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TrainingAlgorithm">
+  <h3>Training Algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#TrainingAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">The procedure determining the parameters of a model from data according to given criteria.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#MLAlgorithm" title="https://w3id.org/aias/odp/iso22989#MLAlgorithm">Machine Learning Algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TrainingData">
+  <h3>Training Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#TrainingData</p>
+  <div class="comment">
+   <span class="markdown">Data used to train a machine learning model.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#EvaluationData" title="https://w3id.org/aias/odp/iso22989#EvaluationData">Evaluation Data</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationData" title="https://w3id.org/aias/odp/iso22989#ValidationData">Validation Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UnsupervisedLearning">
+  <h3>Unsupervised Machine Learning<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#UnsupervisedLearning</p>
+  <div class="comment">
+   <span class="markdown">Machine learning that makes only use of unlabelled data during training.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Validation">
+  <h3>Validation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Validation</p>
+  <div class="comment">
+   <span class="markdown">Confirmation, through the provision of objective evidence, that the requirements for a specific intended use or application have been fulfilled.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isValidatedBy" title="https://w3id.org/aias/odp/iso22989#isValidatedBy">is validated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ValidationData">
+  <h3>Validation Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#ValidationData</p>
+  <div class="comment">
+   <span class="markdown">Data used to compare the performance of different candidate models.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#EvaluationData" title="https://w3id.org/aias/odp/iso22989#EvaluationData">Evaluation Data</a> <sup class="type-c" title="class">c</sup>, <a href="#TrainingData" title="https://w3id.org/aias/odp/iso22989#TrainingData">Training Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Verification">
+  <h3>Verification<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Verification</p>
+  <div class="comment">
+   <span class="markdown">Confirmation, through the provision of objective evidence, that specified requirements have been fulfilled.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#basedOnAlgorithm" title="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">based on algorithm</a></li>
+  <li><a href="#basedOnLearning" title="https://w3id.org/aias/odp/iso22989#basedOnLearning">based on learning</a></li>
+  <li><a href="#consistsOf" title="https://w3id.org/aias/odp/iso22989#consistsOf">consists of</a></li>
+  <li><a href="#consistsOfStep" title="https://w3id.org/aias/odp/iso22989#consistsOfStep">consists of step</a></li>
+  <li><a href="#creates" title="https://w3id.org/aias/odp/iso22989#creates">creates</a></li>
+  <li><a href="#determines" title="https://w3id.org/aias/odp/iso22989#determines">determines</a></li>
+  <li><a href="#forCharacteristic" title="https://w3id.org/aias/odp/iso22989#forCharacteristic">for characteristic</a></li>
+  <li><a href="#fulfilsTask" title="https://w3id.org/aias/odp/iso22989#fulfilsTask">fulfils task</a></li>
+  <li><a href="#hasCharacteristicValue" title="https://w3id.org/aias/odp/iso22989#hasCharacteristicValue">has characteristic value</a></li>
+  <li><a href="#hasControllability" title="https://w3id.org/aias/odp/iso22989#hasControllability">has controllability</a></li>
+  <li><a href="#hasDataSink" title="https://w3id.org/aias/odp/iso22989#hasDataSink">has data sink</a></li>
+  <li><a href="#hasDataSource" title="https://w3id.org/aias/odp/iso22989#hasDataSource">has data source</a></li>
+  <li><a href="#hasDesign" title="https://w3id.org/aias/odp/iso22989#hasDesign">has design</a></li>
+  <li><a href="#hasFunction" title="https://w3id.org/aias/odp/iso22989#hasFunction">has function</a></li>
+  <li><a href="#hasHyperparameter" title="https://w3id.org/aias/odp/iso22989#hasHyperparameter">has hyperparameter</a></li>
+  <li><a href="#hasLabel" title="https://w3id.org/aias/odp/iso22989#hasLabel">has label</a></li>
+  <li><a href="#hasParameter" title="https://w3id.org/aias/odp/iso22989#hasParameter">has parameter</a></li>
+  <li><a href="#hasRisk" title="https://w3id.org/aias/odp/iso22989#hasRisk">has risk</a></li>
+  <li><a href="#hasTask" title="https://w3id.org/aias/odp/iso22989#hasTask">has task</a></li>
+  <li><a href="#hasType" title="https://w3id.org/aias/odp/iso22989#hasType">has type</a></li>
+  <li><a href="#isAcquiredBy" title="https://w3id.org/aias/odp/iso22989#isAcquiredBy">is acquired by</a></li>
+  <li><a href="#isComposedOf" title="https://w3id.org/aias/odp/iso22989#isComposedOf">is composed of</a></li>
+  <li><a href="#isCreatedBy" title="https://w3id.org/aias/odp/iso22989#isCreatedBy">is created by</a></li>
+  <li><a href="#isEvaluatedBy" title="https://w3id.org/aias/odp/iso22989#isEvaluatedBy">is evaluated by</a></li>
+  <li><a href="#isExecutedBy" title="https://w3id.org/aias/odp/iso22989#isExecutedBy">is executed by</a></li>
+  <li><a href="#isProcessedBy" title="https://w3id.org/aias/odp/iso22989#isProcessedBy">is processed by</a></li>
+  <li><a href="#isStoredBy" title="https://w3id.org/aias/odp/iso22989#isStoredBy">is stored by</a></li>
+  <li><a href="#isValidatedBy" title="https://w3id.org/aias/odp/iso22989#isValidatedBy">is validated by</a></li>
+  <li><a href="#performedBy" title="https://w3id.org/aias/odp/iso22989#performedBy">performed by</a></li>
+  <li><a href="#performsControl" title="https://w3id.org/aias/odp/iso22989#performsControl">performs control</a></li>
+  <li><a href="#realisedByModel" title="https://w3id.org/aias/odp/iso22989#realisedByModel">realised by model</a></li>
+  <li><a href="#usesData" title="https://w3id.org/aias/odp/iso22989#usesData">uses data</a></li>
+  <li><a href="#usesMetric" title="https://w3id.org/aias/odp/iso22989#usesMetric">uses metric</a></li>
+ </ul>
+ <div class="entity" id="basedOnAlgorithm">
+  <h3>based on algorithm<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#basedOnAlgorithm</p>
+  <div class="comment">
+   <span class="markdown">Relates a model to the algorithm describing its structure, or a function to the algorithm it executes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="basedOnLearning">
+  <h3>based on learning<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#basedOnLearning</p>
+  <div class="comment">
+   <span class="markdown">Relates a machine learning algorithm to the kind of learning it performs.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MLAlgorithm" title="https://w3id.org/aias/odp/iso22989#MLAlgorithm">Machine Learning Algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#LearningType" title="https://w3id.org/aias/odp/iso22989#LearningType">Learning Type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="consistsOf">
+  <h3>consists of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#consistsOf</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system to a component constructing it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="consistsOfStep">
+  <h3>consists of step<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#consistsOfStep</p>
+  <div class="comment">
+   <span class="markdown">Relates a data processing function to the steps it is made of.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DataProcessing" title="https://w3id.org/aias/odp/iso22989#DataProcessing">Data Processing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="creates">
+  <h3>creates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#creates</p>
+  <div class="comment">
+   <span class="markdown">Relates an inference to the prediction it produces.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Inference" title="https://w3id.org/aias/odp/iso22989#Inference">Inference</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Prediction" title="https://w3id.org/aias/odp/iso22989#Prediction">Prediction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="determines">
+  <h3>determines<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#determines</p>
+  <div class="comment">
+   <span class="markdown">Relates a training to the model parameters it determines.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ModelParameter" title="https://w3id.org/aias/odp/iso22989#ModelParameter">Model Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="forCharacteristic">
+  <h3>for characteristic<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#forCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Relates a characteristic value to the characteristic it quantifies.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#VariableCharacteristic" title="https://w3id.org/aias/odp/iso22989#VariableCharacteristic">Characteristic</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="fulfilsTask">
+  <h3>fulfils task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#fulfilsTask</p>
+  <div class="comment">
+   <span class="markdown">Relates a prediction to the task it addresses.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Prediction" title="https://w3id.org/aias/odp/iso22989#Prediction">Prediction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasCharacteristicValue">
+  <h3>has characteristic value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasCharacteristicValue</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system, a component or a model to a value it states for one of its characteristics.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasControllability">
+  <h3>has controllability<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasControllability</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system to a recorded way for an external agent to intervene in its functioning.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Controllability" title="https://w3id.org/aias/odp/iso22989#Controllability">Controllability</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDataSink">
+  <h3>has data sink<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasDataSink</p>
+  <div class="comment">
+   <span class="markdown">Relates a storing to where the data goes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Storing" title="https://w3id.org/aias/odp/iso22989#Storing">Storing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataSink" title="https://w3id.org/aias/odp/iso22989#DataSink">Data Sink</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDataSource">
+  <h3>has data source<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasDataSource</p>
+  <div class="comment">
+   <span class="markdown">Relates an acquisition to where the data comes from.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Acquisition" title="https://w3id.org/aias/odp/iso22989#Acquisition">Acquisition</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataSource" title="https://w3id.org/aias/odp/iso22989#DataSource">Data Source</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDesign">
+  <h3>has design<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasDesign</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system to where it runs.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#SystemDesign" title="https://w3id.org/aias/odp/iso22989#SystemDesign">System Design</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFunction">
+  <h3>has function<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasFunction</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system or a component to a function it performs.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasHyperparameter">
+  <h3>has hyperparameter<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasHyperparameter</p>
+  <div class="comment">
+   <span class="markdown">Relates an algorithm to a characteristic chosen in advance that affects its behaviour.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Algorithm" title="https://w3id.org/aias/odp/iso22989#Algorithm">Algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Hyperparameter" title="https://w3id.org/aias/odp/iso22989#Hyperparameter">Hyperparameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasLabel">
+  <h3>has label<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasLabel</p>
+  <div class="comment">
+   <span class="markdown">Relates a sample or a dataset to the label assigned to it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Sample" title="https://w3id.org/aias/odp/iso22989#Sample">Sample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Label" title="https://w3id.org/aias/odp/iso22989#Label">Label</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasParameter">
+  <h3>has parameter<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasParameter</p>
+  <div class="comment">
+   <span class="markdown">Relates a model to an internal variable affecting how it computes its outputs.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ModelParameter" title="https://w3id.org/aias/odp/iso22989#ModelParameter">Model Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRisk">
+  <h3>has risk<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasRisk</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system to a risk recorded for it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Risk" title="https://w3id.org/aias/odp/iso22989#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTask">
+  <h3>has task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasTask</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system to a task it addresses.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Task" title="https://w3id.org/aias/odp/iso22989#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasType">
+  <h3>has type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#hasType</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system or a component to the kind of technique it is based on.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#AIType" title="https://w3id.org/aias/odp/iso22989#AIType">AI Type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAcquiredBy">
+  <h3>is acquired by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isAcquiredBy</p>
+  <div class="comment">
+   <span class="markdown">Relates data to the acquisition that obtained it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Acquisition" title="https://w3id.org/aias/odp/iso22989#Acquisition">Acquisition</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isComposedOf">
+  <h3>is composed of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isComposedOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset to the data it groups, or data to the samples it consists of.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#DataSet" title="https://w3id.org/aias/odp/iso22989#DataSet">Data Set</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Sample" title="https://w3id.org/aias/odp/iso22989#Sample">Sample</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isCreatedBy">
+  <h3>is created by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isCreatedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a machine learning model to the training that produced it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MLModel" title="https://w3id.org/aias/odp/iso22989#MLModel">Machine Learning Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Training" title="https://w3id.org/aias/odp/iso22989#Training">Training</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isEvaluatedBy">
+  <h3>is evaluated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isEvaluatedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a model to an evaluation performed on it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Evaluation" title="https://w3id.org/aias/odp/iso22989#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isExecutedBy">
+  <h3>is executed by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isExecutedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates an inference to the model performing it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Inference" title="https://w3id.org/aias/odp/iso22989#Inference">Inference</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isProcessedBy">
+  <h3>is processed by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isProcessedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates data to a data process step applied to it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataProcess" title="https://w3id.org/aias/odp/iso22989#DataProcess">Data Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isStoredBy">
+  <h3>is stored by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isStoredBy</p>
+  <div class="comment">
+   <span class="markdown">Relates data to the storing that persisted it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Storing" title="https://w3id.org/aias/odp/iso22989#Storing">Storing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isValidatedBy">
+  <h3>is validated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isValidatedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a model to a validation performed on it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Validation" title="https://w3id.org/aias/odp/iso22989#Validation">Validation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="performedBy">
+  <h3>performed by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#performedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a function to the component performing it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="performsControl">
+  <h3>performs control<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#performsControl</p>
+  <div class="comment">
+   <span class="markdown">Relates an AI system to a control it carries out.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AISystem" title="https://w3id.org/aias/odp/iso22989#AISystem">AI System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Control" title="https://w3id.org/aias/odp/iso22989#Control">Control</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="realisedByModel">
+  <h3>realised by model<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#realisedByModel</p>
+  <div class="comment">
+   <span class="markdown">Relates a component to the model carrying its behaviour.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIComponent" title="https://w3id.org/aias/odp/iso22989#AIComponent">AI Component</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Model" title="https://w3id.org/aias/odp/iso22989#Model">Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="usesData">
+  <h3>uses data<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#usesData</p>
+  <div class="comment">
+   <span class="markdown">Relates a function to the data it works on.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">AI Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="usesMetric">
+  <h3>uses metric<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#usesMetric</p>
+  <div class="comment">
+   <span class="markdown">Relates an evaluation or an evaluation algorithm to the metric it measures against.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Evaluation" title="https://w3id.org/aias/odp/iso22989#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#EvaluationAlgorithm" title="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm">Evaluation Algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#EvaluationMetric" title="https://w3id.org/aias/odp/iso22989#EvaluationMetric">Evaluation Metric</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#isLabelled" title="https://w3id.org/aias/odp/iso22989#isLabelled">is labelled</a></li>
+  <li><a href="#quantity" title="https://w3id.org/aias/odp/iso22989#quantity">quantity</a></li>
+  <li><a href="#unit" title="https://w3id.org/aias/odp/iso22989#unit">unit</a></li>
+ </ul>
+ <div class="entity" id="isLabelled">
+  <h3>is labelled<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#isLabelled</p>
+  <div class="comment">
+   <span class="markdown">Whether the samples of a dataset carry labels.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="quantity">
+  <h3>quantity<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#quantity</p>
+  <div class="comment">
+   <span class="markdown">The numeric quantity of a characteristic value.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="unit">
+  <h3>unit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#unit</p>
+  <div class="comment">
+   <span class="markdown">The unit of a characteristic value, where the characteristic has one.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#CharacteristicValue" title="https://w3id.org/aias/odp/iso22989#CharacteristicValue">Characteristic Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel"> <span>alt Label</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation"> <span>bibliographic Citation</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor"> <span>contributor</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note"> <span>note</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher"> <span>publisher</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights"> <span>rights</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source"> <span>source</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status"> <span>status</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#altLabel">
+  <h3>alt Label<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/bibliographicCitation">
+  <h3>bibliographic Citation<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/bibliographicCitation</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/contributor">
+  <h3>contributor<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#note">
+  <h3>note<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#note</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <h3>preferred Namespace Uri<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/publisher">
+  <h3>publisher<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/rights">
+  <h3>rights<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/source">
+  <h3>source<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/source</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/status">
+  <h3>status<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/status</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#Cloud" title="https://w3id.org/aias/odp/iso22989#Cloud">Cloud</a></li>
+  <li><a href="#Edge" title="https://w3id.org/aias/odp/iso22989#Edge">Edge</a></li>
+  <li><a href="#Hybrid" title="https://w3id.org/aias/odp/iso22989#Hybrid">Hybrid</a></li>
+ </ul>
+ <div class="entity" id="Cloud">
+  <h3>Cloud<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Cloud</p>
+  <div class="comment">
+   <span class="markdown">An AI system running on remote infrastructure, away from the process it serves.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SystemDesign" title="https://w3id.org/aias/odp/iso22989#SystemDesign">System Design</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#note" target="_blank" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Discussed in ISO/IEC 22989, clause 8.6.2, without an entry."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Edge">
+  <h3>Edge<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Edge</p>
+  <div class="comment">
+   <span class="markdown">An AI system running near the process it serves, on local devices.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SystemDesign" title="https://w3id.org/aias/odp/iso22989#SystemDesign">System Design</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#note" target="_blank" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Discussed in ISO/IEC 22989, clause 8.6.2, without an entry."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hybrid">
+  <h3>Hybrid<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Hybrid</p>
+  <div class="comment">
+   <span class="markdown">An AI system split between local devices and remote infrastructure.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SystemDesign" title="https://w3id.org/aias/odp/iso22989#SystemDesign">System Design</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#note" target="_blank" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The combination of the two above. A system whose components run in different places is recorded this way."@en</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<https://w3id.org/aias/odp/iec60050/instances> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/aias/odp/iec60050/instances> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iec60050/instances/1.0.0> .
+<https://w3id.org/aias/odp/iec60050/instances> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/aias/odp/iec60050/1.0.0> .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/dc/terms/created> "2026-08-18"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/dc/terms/description> "Named individuals for the IEC 60050-351 ontology design pattern: the time and quality characteristics a model states about the behaviour of a control.\n\nThey are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well."@en .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/dc/terms/publisher> "TODO: institution" .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/dc/terms/title> "IEC 60050-351 Pattern: Named Individuals"@en .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/ontology/bibo/status> "Draft"@en .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/vocab/vann/preferredNamespacePrefix> "iec60050-inst" .
+<https://w3id.org/aias/odp/iec60050/instances> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iec60050/instances#" .
+<https://w3id.org/aias/odp/iec60050/instances> <http://www.w3.org/2000/01/rdf-schema#comment> "Every individual here carries the clause of DIN IEC 60050-351:2014 that defines it, and where the standard gives a formula symbol that symbol is recorded as well, so a model stays checkable against the figures of the standard.\n\nSeven of the definitions are reconstructed from the German text. Their English wording is interrupted by formula figures in the printed standard, which the extraction could not resolve, and the note on each affected individual says so."@en .
+<https://w3id.org/aias/odp/iec60050/instances> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/aias/odp/iec60050#symbol
+<https://w3id.org/aias/odp/iec60050#symbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iec60050#QualityCharacteristic
+<https://w3id.org/aias/odp/iec60050#QualityCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/aias/odp/iec60050#TimeCharacteristic
+<https://w3id.org/aias/odp/iec60050#TimeCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime
+<https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it first returns into that band."@en .
+<https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> <http://www.w3.org/2000/01/rdf-schema#label> "Control Rise Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-46-01. English wording reconstructed from the German entry. It ends at the first return, whereas the control settling time requires the controlled variable to stay inside."@en .
+<https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> <https://w3id.org/aias/odp/iec60050#symbol> "T_cr" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime
+<https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it returns into that band and remains within it."@en .
+<https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> <http://www.w3.org/2000/01/rdf-schema#label> "Control Settling Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-46-02. English wording reconstructed from the German entry. The sharper of the two criteria, since it requires the controlled variable to stay inside the band."@en .
+<https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> <https://w3id.org/aias/odp/iec60050#symbol> "T_cs" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#DeadBand
+<https://w3id.org/aias/odp/iec60050/instances#DeadBand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#DeadBand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#QualityCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#DeadBand> <http://www.w3.org/2000/01/rdf-schema#comment> "A finite range of values of the input variable within which a variation of the input variable does not produce any measurable change in the output variable."@en .
+<https://w3id.org/aias/odp/iec60050/instances#DeadBand> <http://www.w3.org/2000/01/rdf-schema#label> "Dead Band"@en .
+<https://w3id.org/aias/odp/iec60050/instances#DeadBand> <http://www.w3.org/2004/02/skos/core#altLabel> "dead zone"@en .
+<https://w3id.org/aias/odp/iec60050/instances#DeadBand> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-45-15. The range in which an output has no effect, which matters when a control writes a value too small to act."@en .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#DeadTime
+<https://w3id.org/aias/odp/iec60050/instances#DeadTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#DeadTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#DeadTime> <http://www.w3.org/2000/01/rdf-schema#comment> "In a dead-time element, the duration of the time interval by which the output variable is shifted relative to the input variable."@en .
+<https://w3id.org/aias/odp/iec60050/instances#DeadTime> <http://www.w3.org/2000/01/rdf-schema#label> "Dead Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#DeadTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-50-30. The interval by which a processing step delays what passes through it."@en .
+<https://w3id.org/aias/odp/iec60050/instances#DeadTime> <https://w3id.org/aias/odp/iec60050#symbol> "T_t" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime
+<https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> <http://www.w3.org/2000/01/rdf-schema#comment> "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."@en .
+<https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> <http://www.w3.org/2000/01/rdf-schema#label> "Equivalent Dead Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot."@en .
+<https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> <https://w3id.org/aias/odp/iec60050#symbol> "T_u" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#GainMargin
+<https://w3id.org/aias/odp/iec60050/instances#GainMargin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#GainMargin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#QualityCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#GainMargin> <http://www.w3.org/2000/01/rdf-schema#comment> "The reciprocal of the gain response of the open control loop at the phase crossover angular frequency."@en .
+<https://w3id.org/aias/odp/iec60050/instances#GainMargin> <http://www.w3.org/2000/01/rdf-schema#label> "Gain Margin"@en .
+<https://w3id.org/aias/odp/iec60050/instances#GainMargin> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-46-07. English wording reconstructed from the German entry. The second stability reserve, alongside the phase margin."@en .
+<https://w3id.org/aias/odp/iec60050/instances#GainMargin> <https://w3id.org/aias/odp/iec60050#symbol> "G_m" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime
+<https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The duration of the time interval that elapses between the arrival of an interrupt signal at the interrupt input unit and the instant of decision whether the interrupt is handled or not."@en .
+<https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime> <http://www.w3.org/2000/01/rdf-schema#label> "Interrupt Reaction Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-54-18. The only latency measure the standard defines."@en .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime
+<https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The duration of the time interval in which the manipulated variable runs with the highest speed through its whole range."@en .
+<https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime> <http://www.w3.org/2000/01/rdf-schema#label> "Manipulating Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-48-17. The time measure closest to a device, since it belongs to the manipulating equipment."@en .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#Overshoot
+<https://w3id.org/aias/odp/iec60050/instances#Overshoot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#Overshoot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#QualityCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#Overshoot> <http://www.w3.org/2000/01/rdf-schema#comment> "In a step response, the largest transient deviation of the output variable from its final steady-state value, usually expressed as a percentage of the difference between its final and its initial steady-state value."@en .
+<https://w3id.org/aias/odp/iec60050/instances#Overshoot> <http://www.w3.org/2000/01/rdf-schema#label> "Overshoot"@en .
+<https://w3id.org/aias/odp/iec60050/instances#Overshoot> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-45-38. English wording reconstructed from the German entry."@en .
+<https://w3id.org/aias/odp/iec60050/instances#Overshoot> <https://w3id.org/aias/odp/iec60050#symbol> "X_m" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#PhaseMargin
+<https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#QualityCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> <http://www.w3.org/2000/01/rdf-schema#comment> "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."@en .
+<https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> <http://www.w3.org/2000/01/rdf-schema#label> "Phase Margin"@en .
+<https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable."@en .
+<https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> <https://w3id.org/aias/odp/iec60050#symbol> "phi_m" .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod
+<https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "The duration of the time interval between two consecutive observations in a periodic sampling control system."@en .
+<https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "Sampling Period"@en .
+<https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-47-16. The normative equivalent of what practice calls cycle time, a term the standard does not define."@en .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#SettlingTime
+<https://w3id.org/aias/odp/iec60050/instances#SettlingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#SettlingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#SettlingTime> <http://www.w3.org/2000/01/rdf-schema#comment> "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."@en .
+<https://w3id.org/aias/odp/iec60050/instances#SettlingTime> <http://www.w3.org/2000/01/rdf-schema#label> "Settling Time"@en .
+<https://w3id.org/aias/odp/iec60050/instances#SettlingTime> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-45-37. English wording reconstructed from the German entry."@en .
+# 
+# https://w3id.org/aias/odp/iec60050/instances#TimeConstant
+<https://w3id.org/aias/odp/iec60050/instances#TimeConstant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iec60050/instances#TimeConstant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iec60050#TimeCharacteristic> .
+<https://w3id.org/aias/odp/iec60050/instances#TimeConstant> <http://www.w3.org/2000/01/rdf-schema#comment> "For a quantity growing or decaying exponentially towards a constant value, the duration of a time interval at the end of which the absolute difference to that value has decreased to 1/e of its initial amount."@en .
+<https://w3id.org/aias/odp/iec60050/instances#TimeConstant> <http://www.w3.org/2000/01/rdf-schema#label> "Time Constant"@en .
+<https://w3id.org/aias/odp/iec60050/instances#TimeConstant> <http://www.w3.org/2004/02/skos/core#note> "IEC 60050-351, 351-45-32."@en .
+<https://w3id.org/aias/odp/iec60050/instances#TimeConstant> <https://w3id.org/aias/odp/iec60050#symbol> "T" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid1 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#TimeConstant> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#SettlingTime> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#PhaseMargin> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#Overshoot> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#GainMargin> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#DeadTime> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#DeadBand> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

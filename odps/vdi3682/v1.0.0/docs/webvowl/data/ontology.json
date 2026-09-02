@@ -1,0 +1,1180 @@
+{
+  "_comment": "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header": {
+    "languages": [
+      "de",
+      "en",
+      "undefined"
+    ],
+    "baseIris": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+      "http://www.w3.org/2000/01/rdf-schema",
+      "http://www.w3.org/2001/XMLSchema",
+      "https://w3id.org/aias/odp/vdi3682"
+    ],
+    "title": {
+      "en": "VDI 3682 Ontology Design Pattern"
+    },
+    "iri": "https://w3id.org/aias/odp/vdi3682",
+    "version": "1.0.0",
+    "author": [
+      "Marvin Schieseck",
+      "Philip Topalis",
+      "Alexander Fay",
+      "Felix Gehlhoff",
+      "Lasse Reinpold"
+    ],
+    "comments": {
+      "en": "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\r\n\r\nTwelve classes and seven relations. Every definition carries the German wording of the standard alongside its English translation, since the standard is issued bilingually.\r\n\r\nScope: Part 1 in full, and from Part 2 the state as a class of the information model. The attribute structure of Part 2 Section 4.4 is not covered."
+    },
+    "other": {
+      "creator": [
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "Marvin Schieseck",
+          "type": "label"
+        },
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "Philip Topalis",
+          "type": "label"
+        },
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "Lasse Reinpold",
+          "type": "label"
+        },
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "Felix Gehlhoff",
+          "type": "label"
+        },
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "Alexander Fay",
+          "type": "label"
+        }
+      ],
+      "subject": [
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Process Description",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Ontology Design Pattern",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "VDI 3682",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Technical Process",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Formalised Process Description",
+          "type": "label"
+        }
+      ],
+      "hasVersion": [
+        {
+          "identifier": "hasVersion",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/vdi3682",
+          "type": "iri"
+        }
+      ],
+      "created": [
+        {
+          "identifier": "created",
+          "language": "undefined",
+          "value": "2024-09-01",
+          "type": "label"
+        }
+      ],
+      "source": [
+        {
+          "identifier": "source",
+          "language": "undefined",
+          "value": "https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung",
+          "type": "iri"
+        }
+      ],
+      "versionInfo": [
+        {
+          "identifier": "versionInfo",
+          "language": "undefined",
+          "value": "1.0.0",
+          "type": "label"
+        }
+      ],
+      "abstract": [
+        {
+          "identifier": "abstract",
+          "language": "en",
+          "value": "An ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 part 1. A process is described as a network: process operators transform the state of products, energies and information, flows connect the operators, technical resources are assigned to the operators that carry them out, and a system border bounds what is described. Every definition carries the German wording of the standard alongside its English translation. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own.",
+          "type": "label"
+        }
+      ],
+      "title": [
+        {
+          "identifier": "title",
+          "language": "en",
+          "value": "VDI 3682 Ontology Design Pattern",
+          "type": "label"
+        }
+      ],
+      "fundedBy": [
+        {
+          "identifier": "fundedBy",
+          "language": "undefined",
+          "value": "https://dtecbw.de/",
+          "type": "iri"
+        }
+      ],
+      "license": [
+        {
+          "identifier": "license",
+          "language": "undefined",
+          "value": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "iri"
+        }
+      ],
+      "preferredNamespacePrefix": [
+        {
+          "identifier": "preferredNamespacePrefix",
+          "language": "undefined",
+          "value": "vdi3682",
+          "type": "label"
+        }
+      ],
+      "rights": [
+        {
+          "identifier": "rights",
+          "language": "en",
+          "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
+          "type": "label"
+        }
+      ],
+      "modified": [
+        {
+          "identifier": "modified",
+          "language": "undefined",
+          "value": "2026-09-02",
+          "type": "label"
+        }
+      ],
+      "publisher": [
+        {
+          "identifier": "publisher",
+          "language": "undefined",
+          "value": "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg",
+          "type": "label"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "en",
+          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
+          "type": "label"
+        }
+      ],
+      "codeRepository": [
+        {
+          "identifier": "codeRepository",
+          "language": "undefined",
+          "value": "https://github.com/schiesem/aias",
+          "type": "iri"
+        }
+      ],
+      "preferredNamespaceUri": [
+        {
+          "identifier": "preferredNamespaceUri",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/vdi3682#",
+          "type": "label"
+        }
+      ],
+      "status": [
+        {
+          "identifier": "status",
+          "language": "en",
+          "value": "Draft",
+          "type": "label"
+        }
+      ],
+      "doi": [
+        {
+          "identifier": "doi",
+          "language": "undefined",
+          "value": "10.1109/ETFA61755.2024.10710890",
+          "type": "label"
+        }
+      ]
+    }
+  },
+  "namespace": [],
+  "class": [
+    {
+      "id": "5",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "10",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "7",
+      "type": "owl:Class"
+    },
+    {
+      "id": "15",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "16",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "6",
+      "type": "owl:Class"
+    },
+    {
+      "id": "12",
+      "type": "owl:Class"
+    },
+    {
+      "id": "19",
+      "type": "owl:Class"
+    },
+    {
+      "id": "13",
+      "type": "owl:Class"
+    },
+    {
+      "id": "4",
+      "type": "owl:Class"
+    },
+    {
+      "id": "1",
+      "type": "owl:Class"
+    },
+    {
+      "id": "17",
+      "type": "owl:Class"
+    },
+    {
+      "id": "2",
+      "type": "owl:Class"
+    },
+    {
+      "id": "9",
+      "type": "owl:Class"
+    },
+    {
+      "id": "11",
+      "type": "owl:Class"
+    },
+    {
+      "id": "18",
+      "type": "owl:Class"
+    }
+  ],
+  "classAttribute": [
+    {
+      "instances": 0,
+      "union": [
+        "6",
+        "7"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "5"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "11",
+        "12",
+        "2",
+        "13"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "10"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Assignment",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2. Figure 3 carries this relation as the usage symbol, an edge of the graphical notation. Reifying it as a class is a design decision of this pattern.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Zuordnung",
+        "IRI-based": "Assignment",
+        "en": "Assignment"
+      },
+      "comment": {
+        "de": "Strukturelle Verbindung zwischen Prozessoperator und technischer Ressource, über die einer Ressource die Ausführung eines Prozessoperators zugewiesen wird.",
+        "en": "The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource."
+      },
+      "id": "7"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "2",
+        "7"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "15"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "17",
+        "1",
+        "18",
+        "19"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "16"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Technische Ressource",
+        "IRI-based": "TechnicalResource",
+        "en": "Technical Resource"
+      },
+      "comment": {
+        "de": "Physische Komponenten, aus denen automatisierte Anlagen aufgebaut sind und die die Umwandlungen der Produkte durch Prozessoperatoren realisieren.",
+        "en": "Physical components of which automated plants are built and which realise the transformations carried out by process operators."
+      },
+      "id": "6"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Process",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1, page 8.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Prozess",
+        "IRI-based": "Process",
+        "en": "Process"
+      },
+      "comment": {
+        "de": "Netz zur Beschreibung technischer Prozesse, dessen Knoten die Zustände von Produkten und dessen gerichtete Kanten die Umwandlungsschritte durch Prozessoperatoren darstellen.",
+        "en": "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."
+      },
+      "id": "12"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Product",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1, page 8. A product is not a kind of state: it has one, which hasState records. The thing and the condition it is in are kept apart, so the same sheet of metal before and after a stamping is one product in two states.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Produkt",
+        "IRI-based": "Product",
+        "en": "Product"
+      },
+      "comment": {
+        "de": "Dinge der realen Welt, die im Rahmen eines technischen Prozesses umgewandelt werden.",
+        "en": "Things of the real world that are transformed within a technical process."
+      },
+      "id": "19"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#State",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1 avoids the term in the graphical notation, where the three kinds appear directly.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Zustand",
+        "IRI-based": "State",
+        "en": "State"
+      },
+      "comment": {
+        "de": "Zustand eines Produkts, einer Energie oder einer Information an einer bestimmten Stelle eines Prozesses, entweder vor einer Umwandlung oder danach.",
+        "en": "The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it."
+      },
+      "id": "13"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. The class is a design decision of this pattern.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Alternativfluss",
+        "IRI-based": "AlternativeFlow",
+        "en": "Alternative Flow"
+      },
+      "comment": {
+        "de": "Fluss, der Teil eines getrennten Flusses ist und sich gegenseitig ausschließende Prozesswege bezeichnet.",
+        "en": "A flow that is part of a separate flow denoting mutually exclusive process paths."
+      },
+      "id": "4",
+      "superClasses": [
+        "1"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Flow",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1, page 8. Figure 3 lists the flow among the eight symbols of the graphical notation, where it is an edge rather than an object. Reifying it as a class is a design decision of this pattern.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Fluss",
+        "IRI-based": "Flow",
+        "en": "Flow"
+      },
+      "subClasses": [
+        "4",
+        "9"
+      ],
+      "comment": {
+        "de": "Gerichtete Verbindung von Produkten zwischen Prozessoperatoren.",
+        "en": "A directed connection of products between process operators."
+      },
+      "id": "1"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Energy",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Energie",
+        "IRI-based": "Energy",
+        "en": "Energy"
+      },
+      "comment": {
+        "de": "Energie, die von einem Prozessoperator benötigt oder freigesetzt wird, beispielsweise elektrische Energie oder Wärme.",
+        "en": "Energy required or released by a process operator, for example electrical energy or heat."
+      },
+      "id": "17"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1, pages 8 and 9.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Prozessoperator",
+        "IRI-based": "ProcessOperator",
+        "en": "Process Operator"
+      },
+      "comment": {
+        "de": "Vorgang, durch den der Eingangszustand von Produkten, Energien oder Informationen in einen Ausgangszustand umgewandelt wird.",
+        "en": "An operation transforming the input state of products, energies or information into an output state."
+      },
+      "id": "2"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2.1 models parallel process runs as a partially shared flow and requires no additional graphical elements for them. The class is a design decision of this pattern.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Parallelfluss",
+        "IRI-based": "ParallelFlow",
+        "en": "Parallel Flow"
+      },
+      "comment": {
+        "de": "Fluss, der Teil eines teilweise gemeinsamen Flusses ist und nebenläufig ablaufende Prozessschritte bezeichnet.",
+        "en": "A flow that is part of a partially shared flow denoting process steps running concurrently."
+      },
+      "id": "9",
+      "superClasses": [
+        "1"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#SystemBorder",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1. The standard calls this the Systemgrenze, which is a system limit rather than a border. The class name follows the English wording of the standard's own translation.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Systemgrenze",
+        "IRI-based": "SystemBorder",
+        "en": "System Border"
+      },
+      "comment": {
+        "de": "Grenze, die den Betrachtungshorizont eines Prozesses festlegt. Unter bestimmten Bedingungen kann sie auch als Bilanzgrenze für ein- und ausgehende Produkte und Energien aufgefasst werden.",
+        "en": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
+      },
+      "id": "11"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Information",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Information",
+        "IRI-based": "Information",
+        "en": "Information"
+      },
+      "comment": {
+        "de": "Information, die ein Prozessoperator zur Durchführung seiner Umwandlung benötigt oder die durch ihn entsteht.",
+        "en": "Information required by a process operator to carry out its transformation, or information created by it."
+      },
+      "id": "18"
+    }
+  ],
+  "property": [
+    {
+      "id": "0",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "3",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "8",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "14",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "20",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "21",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "22",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "23",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "24",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "25",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "26",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "27",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "28",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "29",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "30",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "31",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "32",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "33",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "34",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "35",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "36",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "37",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "38",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "39",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "40",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "41",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "42",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "43",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "44",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "45",
+      "type": "owl:objectProperty"
+    }
+  ],
+  "propertyAttribute": [
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isInput",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "2",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The inverse of hasInput. Both directions are stated because a model may describe a process from either end.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "ist Eingang von",
+        "IRI-based": "isInput",
+        "en": "is input of"
+      },
+      "domain": "1",
+      "comment": {
+        "de": "Verbindet einen Fluss mit dem Prozessoperator, in den er eingeht.",
+        "en": "Relates a flow to the process operator it enters."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "0"
+    },
+    {
+      "range": "1",
+      "domain": "4",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "3"
+    },
+    {
+      "range": "1",
+      "domain": "9",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "8"
+    },
+    {
+      "range": "6",
+      "domain": "11",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "14"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasInput",
+      "inverse": "0",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The flow is the input, not the state. The state is reached from the flow through hasState, one step further along.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "hat Eingang",
+        "IRI-based": "hasInput",
+        "en": "has input"
+      },
+      "domain": "2",
+      "comment": {
+        "de": "Verbindet einen Prozessoperator mit einem in ihn eingehenden Fluss.",
+        "en": "Relates a process operator to a flow entering it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "20"
+    },
+    {
+      "range": "11",
+      "domain": "13",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "21"
+    },
+    {
+      "range": "6",
+      "domain": "2",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "22"
+    },
+    {
+      "range": "6",
+      "domain": "13",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "23"
+    },
+    {
+      "range": "6",
+      "domain": "12",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "24"
+    },
+    {
+      "range": "11",
+      "domain": "12",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "25"
+    },
+    {
+      "range": "11",
+      "domain": "2",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "26"
+    },
+    {
+      "range": "13",
+      "domain": "2",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "27"
+    },
+    {
+      "range": "6",
+      "domain": "1",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "28"
+    },
+    {
+      "range": "13",
+      "domain": "12",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "29"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isOutput",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "2",
+      "label": {
+        "de": "ist Ausgang von",
+        "IRI-based": "isOutput",
+        "en": "is output of"
+      },
+      "domain": "1",
+      "comment": {
+        "de": "Verbindet einen Fluss mit dem Prozessoperator, aus dem er ausgeht.",
+        "en": "Relates a flow to the process operator it leaves."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "30"
+    },
+    {
+      "range": "2",
+      "domain": "12",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "31"
+    },
+    {
+      "range": "2",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "32"
+    },
+    {
+      "range": "13",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "33"
+    },
+    {
+      "range": "11",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "34"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasOutput",
+      "inverse": "30",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "label": {
+        "de": "hat Ausgang",
+        "IRI-based": "hasOutput",
+        "en": "has output"
+      },
+      "domain": "2",
+      "comment": {
+        "de": "Verbindet einen Prozessoperator mit einem aus ihm ausgehenden Fluss.",
+        "en": "Relates a process operator to a flow leaving it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "35"
+    },
+    {
+      "range": "6",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "36"
+    },
+    {
+      "range": "12",
+      "domain": "1",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "37"
+    },
+    {
+      "range": "2",
+      "domain": "1",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "38"
+    },
+    {
+      "range": "13",
+      "domain": "1",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "39"
+    },
+    {
+      "range": "11",
+      "domain": "1",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "40"
+    },
+    {
+      "range": "1",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "41"
+    },
+    {
+      "range": "12",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "42"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasState",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "13",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Used in two places. A flow carries a state, and a product, an energy or an information has one. The thing is therefore separate from the condition it is in, which is what lets one product appear in a process before and after a transformation.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "hat Zustand",
+        "IRI-based": "hasState",
+        "en": "has state"
+      },
+      "domain": "16",
+      "comment": {
+        "de": "Verbindet einen Fluss mit dem Zustand, den er trägt.",
+        "en": "Relates a flow to the state it carries."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "43"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#consistsOf",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "10",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The range takes in the process itself, which is how decomposition is recorded here: a process consists of further processes.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "besteht aus",
+        "IRI-based": "consistsOf",
+        "en": "consists of"
+      },
+      "domain": "12",
+      "comment": {
+        "de": "Verbindet einen Prozess mit den Elementen, die ihn beschreiben.",
+        "en": "Relates a process to the elements describing it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "44"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "5",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "ist zugeordnet",
+        "IRI-based": "isAssignedTo",
+        "en": "is assigned to"
+      },
+      "domain": "15",
+      "comment": {
+        "de": "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource.",
+        "en": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "45"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/aias/odp/iso22989" ],
+    "title" : {
+      "en" : "ISO/IEC 22989 Pattern: Named Individuals"
+    },
+    "iri" : "https://w3id.org/aias/odp/iso22989/instances",
+    "version" : "1.0.0",
+    "author" : [ "TODO: author name, ORCID" ],
+    "description" : {
+      "en" : "Named individuals for the ISO/IEC 22989 ontology design pattern: the qualities a model states about an AI system.\n\nThey are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the characteristics of the IEC 60050-351 pattern and the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes, one importing this file gets the vocabulary as well."
+    },
+    "comments" : {
+      "en" : "Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.\n\nThe pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "TODO: author name, ORCID",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-08-19",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "iso22989-inst",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "TODO: institution",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/aias/odp/iso22989/instances#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "ISO/IEC 22989 Pattern: Named Individuals",
+        "type" : "label"
+      } ],
+      "status" : [ {
+        "identifier" : "status",
+        "language" : "en",
+        "value" : "Draft",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic",
+    "baseIri" : "https://w3id.org/aias/odp/iso22989",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "VariableCharacteristic"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Trustworthiness",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.16. The entry that clause 5.15 treats as the sum of the qualities above rather than as one alongside them.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The ability to meet stakeholder expectations in a verifiable way."
+      },
+      "labels" : {
+        "IRI-based" : "Trustworthiness",
+        "en" : "Trustworthiness"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Bias",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.4. A quality a model states a measured value for, so that the value can be compared across versions of a system.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "A systematic difference in treatment of certain objects, people or groups in comparison to others."
+      },
+      "labels" : {
+        "IRI-based" : "Bias",
+        "en" : "Bias"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Robustness",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.12. The quality an AI system in an automated plant is usually held to, since the circumstances there are not the ones it was trained under.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The ability of a system to maintain its level of performance under any circumstances."
+      },
+      "labels" : {
+        "IRI-based" : "Robustness",
+        "en" : "Robustness"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Performance",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.1.25. Note 1 to the entry states that performance can relate to quantitative or qualitative findings, which is why the pattern prescribes no scale for it.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "A measurable result."
+      },
+      "labels" : {
+        "IRI-based" : "Performance",
+        "en" : "Performance"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Reliability",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.9, taken from ISO/IEC 27000:2018.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The property of consistent intended behaviour and results."
+      },
+      "labels" : {
+        "IRI-based" : "Reliability",
+        "en" : "Reliability"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Availability",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.3, taken from ISO/IEC 27000:2018. The IEC 60050-351 pattern deliberately leaves availability out, since that standard defines no such entry, so a model needing it in a control context takes it from here.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The property of being accessible and usable on demand by an authorized entity."
+      },
+      "labels" : {
+        "IRI-based" : "Availability",
+        "en" : "Availability"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Resilience",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.10. Recovery after a fault, as against robustness, which is holding up during one.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The ability of a system to recover operational condition quickly following an incident."
+      },
+      "labels" : {
+        "IRI-based" : "Resilience",
+        "en" : "Resilience"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Predictability",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.8. Not the same as prediction, 3.1.27: this is about what stakeholders can assume of the system, not about what the system computes.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The property of an AI system that enables reliable assumptions by stakeholders about its outputs."
+      },
+      "labels" : {
+        "IRI-based" : "Predictability",
+        "en" : "Predictability"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso22989/instances#Explainability",
+      "baseIri" : "https://w3id.org/aias/odp/iso22989/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 22989, 3.5.7. Note 1 to the entry states that it is about the reasons for a result rather than about the internals of the system.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The property of an AI system to express important factors influencing its results in a way that humans can understand."
+      },
+      "labels" : {
+        "IRI-based" : "Explainability",
+        "en" : "Explainability"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "0"
+  } ]
+}

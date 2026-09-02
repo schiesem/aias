@@ -1,0 +1,17 @@
+<p>Twelve classes and seven relations. Every class carries the German wording of the standard alongside an English translation. The <code>skos:note</code> of each element names the section of the standard it rests on, and says so explicitly where the pattern departs from it.</p>
+<h3>The process and what bounds it</h3>
+<p>A <code>Process</code> is a network. Its nodes are the states of products, energies and information, and its directed edges are the transformation steps. It reaches its elements through <code>consistsOf</code>, whose range takes in the process itself: that is how this version records decomposition, a process consisting of further processes.</p>
+<p>A <code>ProcessOperator</code> is a single transformation step. It turns the input state of products, energies or information into an output state, and it is the class around which everything else is arranged.</p>
+<p>A <code>SystemBorder</code> bounds the observation horizon. It answers the question of what is described and what is left outside, and under certain conditions it also serves as a balance limit for incoming and outgoing products and energies.</p>
+<h3>States, and the things that have them</h3>
+<p>A <code>State</code> is the condition of something at a given point of a process, either before a transformation or after it. <code>Product</code>, <code>Energy</code> and <code>Information</code> are the three kinds of things that have a state.</p>
+<p>They are <strong>not</strong> subclasses of <code>State</code>. A product is not a condition, it has one, which <code>hasState</code> records. Keeping the thing apart from its condition is what lets the same product appear in two states.</p>
+<h3>Flows</h3>
+<p>A <code>Flow</code> is a directed connection between process operators. In the graphical notation of Part 1 it is an edge; here it is a class, so that the connection itself can carry something. What it carries is a state, through <code>hasState</code>.</p>
+<p><code>ParallelFlow</code> and <code>AlternativeFlow</code> are subclasses. The standard models concurrent runs as a partially shared flow and mutually exclusive paths as separate flows, and needs no extra symbols for either. Naming the two cases is a decision of this pattern.</p>
+<p>A process operator reaches its flows through <code>hasInput</code> and <code>hasOutput</code>, and the flow reaches back through <code>isInput</code> and <code>isOutput</code>. Both directions are stated, because a model may describe a process from either end.</p>
+<h3>Resources and their assignment</h3>
+<p>A <code>TechnicalResource</code> is a physical component of the plant: a motor, a sensor, a controller, a computer. Resources realise the transformations that process operators describe.</p>
+<p>An <code>Assignment</code> states that a particular resource carries out a particular operator. Like the flow, it is an edge of the graphical notation, the usage symbol, reified here as a class.</p>
+<p><code>isAssignedTo</code> runs along a chain of two steps, from the operator to the assignment and from the assignment to the resource. One relation, used twice, whose domain and range are therefore unions covering both ends of the chain.</p>
+<p>This is the point at which the pattern earns its place in the AIAS model. The same assignment that ties a stamping step to a motor ties an inference to a cloud, and that is what makes it possible to ask which resource carries which function without caring whether the function is a process step or a piece of AI.</p>

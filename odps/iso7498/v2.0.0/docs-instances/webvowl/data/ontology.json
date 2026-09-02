@@ -1,0 +1,1008 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/aias/odp/iso7498", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en" : "ISO/IEC 7498-1 Pattern: Named Individuals"
+    },
+    "iri" : "https://w3id.org/aias/odp/iso7498/instances",
+    "version" : "1.0.0",
+    "author" : [ "TODO: author name, ORCID" ],
+    "description" : {
+      "en" : "Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.\r\n\r\nThey are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself."
+    },
+    "comments" : {
+      "en" : "Three groups of individual, with different standing.\r\n\r\nThe seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.\r\n\r\nThe protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.\r\n\r\nThe quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "TODO: author name, ORCID",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-08-17",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "iso7498-inst",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "TODO: institution",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/aias/odp/iso7498/instances#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "ISO/IEC 7498-1 Pattern: Named Individuals",
+        "type" : "label"
+      } ],
+      "status" : [ {
+        "identifier" : "status",
+        "language" : "en",
+        "value" : "Draft",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/aias/odp/iso7498#ServiceDataUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceDataUnit"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Bit",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "The one practice term ISO/IEC 7498-1 names: 7.6.4.5 refers to physical service data units, that is bits, and 7.7.3.3.1 to the transparent transmission of bit streams.",
+          "type" : "label"
+        } ],
+        "atLayer" : [ {
+          "identifier" : "atLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The service data unit of the physical layer."
+      },
+      "labels" : {
+        "IRI-based" : "Bit",
+        "en" : "Bit"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#CommunicationDirection",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CommunicationDirection"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 5.3.1.15. The transmission underlying it is half duplex, 5.3.1.11, where an entity of the layer above chooses the direction. A master and slave bus segment is of this kind: both sides send, but never at once.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Data communication in both directions, one direction at a time."
+      },
+      "labels" : {
+        "IRI-based" : "TwoWayAlternate",
+        "en" : "Two-way Alternate"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TwoWaySimultaneous",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 5.3.1.14. The transmission underlying it is duplex, 5.3.1.10. A full duplex Ethernet link is of this kind.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Data communication in both directions at the same time."
+      },
+      "labels" : {
+        "IRI-based" : "TwoWaySimultaneous",
+        "en" : "Two-way Simultaneous"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#OneWay",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 5.3.1.16. The transmission underlying it is simplex, 5.3.1.12. A sensor reporting to a collector without receiving anything back is of this kind.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Data communication in one pre-assigned direction."
+      },
+      "labels" : {
+        "IRI-based" : "OneWay",
+        "en" : "One-way"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#Technology",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Technology"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#IPv4",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#NetworkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Internet protocol version 4."
+      },
+      "labels" : {
+        "IRI-based" : "IPv4",
+        "en" : "IPv4"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Gigabit Ethernet over twisted pair, 1000 Mbit/s."
+      },
+      "labels" : {
+        "IRI-based" : "Ethernet1000BASE-T",
+        "en" : "1000BASE-T"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#UDP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#TransportLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "User datagram protocol, connectionless."
+      },
+      "labels" : {
+        "IRI-based" : "UDP",
+        "en" : "UDP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TCP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#TransportLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Transmission control protocol, connection oriented."
+      },
+      "labels" : {
+        "IRI-based" : "TCP",
+        "en" : "TCP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#FTP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "File transfer protocol."
+      },
+      "labels" : {
+        "IRI-based" : "FTP",
+        "en" : "FTP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Fast Ethernet over twisted pair, 100 Mbit/s."
+      },
+      "labels" : {
+        "IRI-based" : "Ethernet100BASE-TX",
+        "en" : "100BASE-TX"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Ethernet",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Frame based data link technology after IEEE 802.3."
+      },
+      "labels" : {
+        "IRI-based" : "Ethernet",
+        "en" : "Ethernet"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Profibus",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ],
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Its master and slave access makes a segment two-way alternate in the sense of 5.3.1.15: both sides send, but never at the same time.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Fieldbus for automation with master and slave access, after IEC 61158 and IEC 61784."
+      },
+      "labels" : {
+        "IRI-based" : "Profibus",
+        "en" : "PROFIBUS"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#EtherCAT",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Real-time capable fieldbus technology on Ethernet, after IEC 61158."
+      },
+      "labels" : {
+        "IRI-based" : "EtherCAT",
+        "en" : "EtherCAT"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#IOLink",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Point to point communication with sensors and actuators, after IEC 61131-9."
+      },
+      "labels" : {
+        "IRI-based" : "IOLink",
+        "en" : "IO-Link"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#DHCP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Dynamic host configuration protocol."
+      },
+      "labels" : {
+        "IRI-based" : "DHCP",
+        "en" : "DHCP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Modbus",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Request and response protocol widely used in industrial equipment."
+      },
+      "labels" : {
+        "IRI-based" : "Modbus",
+        "en" : "Modbus"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#CANopen",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Communication protocol for embedded automation on CAN, after EN 50325-4."
+      },
+      "labels" : {
+        "IRI-based" : "CANopen",
+        "en" : "CANopen"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#OPCUA",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Platform independent service oriented architecture for industrial interoperability, after IEC 62541."
+      },
+      "labels" : {
+        "IRI-based" : "OPCUA",
+        "en" : "OPC UA"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Profinet",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Industrial Ethernet standard for automation, after IEC 61158 and IEC 61784."
+      },
+      "labels" : {
+        "IRI-based" : "Profinet",
+        "en" : "PROFINET"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#MQTT",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Publish and subscribe messaging protocol for constrained devices, after ISO/IEC 20922."
+      },
+      "labels" : {
+        "IRI-based" : "MQTT",
+        "en" : "MQTT"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#HTTP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Hypertext transfer protocol."
+      },
+      "labels" : {
+        "IRI-based" : "HTTP",
+        "en" : "HTTP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#WLAN",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Wireless local area network after IEEE 802.11."
+      },
+      "labels" : {
+        "IRI-based" : "WLAN",
+        "en" : "WLAN"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#HTTPS",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Hypertext transfer protocol over a transport layer security connection."
+      },
+      "labels" : {
+        "IRI-based" : "HTTPS",
+        "en" : "HTTPS"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#AMQP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Advanced message queuing protocol, after ISO/IEC 19464."
+      },
+      "labels" : {
+        "IRI-based" : "AMQP",
+        "en" : "AMQP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#IPv6",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "realisesLayer" : [ {
+          "identifier" : "realisesLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#NetworkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "Internet protocol version 6."
+      },
+      "labels" : {
+        "IRI-based" : "IPv6",
+        "en" : "IPv6"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProtocolDataUnit"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Segment",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto multiple protocol data units.",
+          "type" : "label"
+        } ],
+        "atLayer" : [ {
+          "identifier" : "atLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#TransportLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The protocol data unit of the transport layer."
+      },
+      "labels" : {
+        "IRI-based" : "Segment",
+        "en" : "Segment"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Packet",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Not a term of ISO/IEC 7498-1. Named by the network layer protocol standards.",
+          "type" : "label"
+        } ],
+        "atLayer" : [ {
+          "identifier" : "atLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#NetworkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The protocol data unit of the network layer."
+      },
+      "labels" : {
+        "IRI-based" : "Packet",
+        "en" : "Packet"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Datagram",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Not a term of ISO/IEC 7498-1. Named by the protocol standards of connectionless-mode services.",
+          "type" : "label"
+        } ],
+        "atLayer" : [ {
+          "identifier" : "atLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#TransportLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The protocol data unit of a connectionless-mode transport or network service."
+      },
+      "labels" : {
+        "IRI-based" : "Datagram",
+        "en" : "Datagram"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Frame",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting and synchronisation functions of the data link layer are sometimes referred to as framing, but the standard defines no such data unit.",
+          "type" : "label"
+        } ],
+        "atLayer" : [ {
+          "identifier" : "atLayer",
+          "language" : "undefined",
+          "value" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The protocol data unit of the data link layer."
+      },
+      "labels" : {
+        "IRI-based" : "Frame",
+        "en" : "Frame"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#QoSParameter",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QoSParameter"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Throughput",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.4.4.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The rate at which data is transferred over a communication."
+      },
+      "labels" : {
+        "IRI-based" : "Throughput",
+        "en" : "Throughput"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Jitter",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Not named in ISO/IEC 7498-1, 7.4.4. Added because it is what makes a communication suitable or unsuitable for a control task.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The variation of transit delay between successive transfers."
+      },
+      "labels" : {
+        "IRI-based" : "Jitter",
+        "en" : "Jitter"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TransitDelay",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.4.4. This is the parameter an engineering model uses to record latency.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The elapsed time between the request to transfer data and its delivery."
+      },
+      "labels" : {
+        "IRI-based" : "TransitDelay",
+        "en" : "Transit Delay"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.4.4. Applies to connection-mode communication only.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The elapsed time between the request to establish a connection and its confirmation."
+      },
+      "labels" : {
+        "IRI-based" : "EstablishmentDelay",
+        "en" : "Establishment Delay"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Availability",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Not named in ISO/IEC 7498-1, 7.4.4. Added because engineering models record it.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The share of time a communication is usable."
+      },
+      "labels" : {
+        "IRI-based" : "Availability",
+        "en" : "Availability"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Priority",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 5.10 mentions priority among the characteristics selectable through quality of service.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The precedence a communication takes over others competing for the same resources."
+      },
+      "labels" : {
+        "IRI-based" : "Priority",
+        "en" : "Priority"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.4.4.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The ratio of data lost, duplicated, or delivered incorrectly to data transferred in total."
+      },
+      "labels" : {
+        "IRI-based" : "ResidualErrorRate",
+        "en" : "Residual Error Rate"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#Layer",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Layer"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.1.2. Consists of the application entities that cooperate in the OSI environment, 6.1.4.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "7",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The highest layer, providing the sole means for an application process to access the OSI environment. It has no boundary with a higher layer."
+      },
+      "labels" : {
+        "IRI-based" : "ApplicationLayer",
+        "en" : "Application Layer"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#NetworkLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.5.2.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "3",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Provides the means to establish, maintain and terminate network connections between open systems and the means to exchange data units over them, independently of routing and relay considerations."
+      },
+      "labels" : {
+        "IRI-based" : "NetworkLayer",
+        "en" : "Network Layer"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TransportLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.4.2. Clause 7.4.4 names the quality of service parameters of this layer.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "4",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Provides transparent transfer of data between session entities, relieving them of any concern with how reliable and cost effective transfer is achieved."
+      },
+      "labels" : {
+        "IRI-based" : "TransportLayer",
+        "en" : "Transport Layer"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#PresentationLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.2.2.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "6",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Provides for the representation of information that application entities either communicate or refer to in their communication, so that the syntax used is preserved in meaning."
+      },
+      "labels" : {
+        "IRI-based" : "PresentationLayer",
+        "en" : "Presentation Layer"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.7.2.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "1",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Provides the mechanical, electrical, functional and procedural means to activate, maintain and de-activate physical connections for bit transmission between data link entities."
+      },
+      "labels" : {
+        "IRI-based" : "PhysicalLayer",
+        "en" : "Physical Layer"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#SessionLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.3.2.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "5",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Provides the means for cooperating presentation entities to organise and synchronise their dialogue and to manage their data exchange."
+      },
+      "labels" : {
+        "IRI-based" : "SessionLayer",
+        "en" : "Session Layer"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 7.6.2.",
+          "type" : "label"
+        } ],
+        "layerNumber" : [ {
+          "identifier" : "layerNumber",
+          "language" : "undefined",
+          "value" : "2",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Provides the functional and procedural means for the transfer of data between network entities and detects and possibly corrects errors occurring in the physical layer."
+      },
+      "labels" : {
+        "IRI-based" : "DataLinkLayer",
+        "en" : "Data Link Layer"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "5"
+  } ]
+}

@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/aias/odp/vdi3682#"
+     xml:base="https://w3id.org/aias/odp/vdi3682"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://w3id.org/aias/odp/vdi3682">
+        <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/vdi3682/1.0.0"/>
+        <terms:abstract xml:lang="en">An ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 part 1. A process is described as a network: process operators transform the state of products, energies and information, flows connect the operators, technical resources are assigned to the operators that carry them out, and a system border bounds what is described. Every definition carries the German wording of the standard alongside its English translation. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own.</terms:abstract>
+        <terms:bibliographicCitation xml:lang="en">M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, &quot;A Formal Model for Artificial Intelligence Applications in Automation Systems,&quot; 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890</terms:bibliographicCitation>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-01</terms:created>
+        <terms:creator>Alexander Fay</terms:creator>
+        <terms:creator>Felix Gehlhoff</terms:creator>
+        <terms:creator>Lasse Reinpold</terms:creator>
+        <terms:creator>Marvin Schieseck</terms:creator>
+        <terms:creator>Philip Topalis</terms:creator>
+        <terms:hasVersion rdf:resource="https://w3id.org/aias/odp/vdi3682"/>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-02</terms:modified>
+        <terms:publisher>Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg</terms:publisher>
+        <terms:rights xml:lang="en">This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU</terms:rights>
+        <terms:source rdf:resource="https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung"/>
+        <terms:subject xml:lang="en">Formalised Process Description</terms:subject>
+        <terms:subject xml:lang="en">Ontology Design Pattern</terms:subject>
+        <terms:subject xml:lang="en">Process Description</terms:subject>
+        <terms:subject xml:lang="en">Technical Process</terms:subject>
+        <terms:subject xml:lang="en">VDI 3682</terms:subject>
+        <terms:title xml:lang="en">VDI 3682 Ontology Design Pattern</terms:title>
+        <bibo:doi>10.1109/ETFA61755.2024.10710890</bibo:doi>
+        <bibo:status xml:lang="en">Draft</bibo:status>
+        <vann:preferredNamespacePrefix>vdi3682</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/aias/odp/vdi3682#</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.
+
+Twelve classes and seven relations. Every definition carries the German wording of the standard alongside its English translation, since the standard is issued bilingually.
+
+Scope: Part 1 in full, and from Part 2 the state as a class of the information model. The attribute structure of Part 2 Section 4.4 is not covered.</rdfs:comment>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <foaf:fundedBy rdf:resource="https://dtecbw.de/"/>
+        <schema:codeRepository rdf:resource="https://github.com/schiesem/aias"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasVersion"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/doi -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/doi"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/fundedBy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/fundedBy"/>
+    
+
+
+    <!-- https://schema.org/codeRepository -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/codeRepository"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#consistsOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#consistsOf">
+        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#Process"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#State"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#SystemBorder"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Relates a process to the elements describing it.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Prozess mit den Elementen, die ihn beschreiben.</rdfs:comment>
+        <rdfs:label xml:lang="de">besteht aus</rdfs:label>
+        <rdfs:label xml:lang="en">consists of</rdfs:label>
+        <skos:note xml:lang="en">The range takes in the process itself, which is how decomposition is recorded here: a process consists of further processes.</skos:note>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#hasInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#hasInput">
+        <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/vdi3682#isInput"/>
+        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+        <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#Flow"/>
+        <rdfs:comment xml:lang="en">Relates a process operator to a flow entering it.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Prozessoperator mit einem in ihn eingehenden Fluss.</rdfs:comment>
+        <rdfs:label xml:lang="en">has input</rdfs:label>
+        <rdfs:label xml:lang="de">hat Eingang</rdfs:label>
+        <skos:note xml:lang="en">The flow is the input, not the state. The state is reached from the flow through hasState, one step further along.</skos:note>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#hasOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#hasOutput">
+        <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/vdi3682#isOutput"/>
+        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+        <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#Flow"/>
+        <rdfs:comment xml:lang="en">Relates a process operator to a flow leaving it.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Prozessoperator mit einem aus ihm ausgehenden Fluss.</rdfs:comment>
+        <rdfs:label xml:lang="en">has output</rdfs:label>
+        <rdfs:label xml:lang="de">hat Ausgang</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#hasState -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#hasState">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Energy"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Flow"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Information"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Product"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#State"/>
+        <rdfs:comment xml:lang="en">Relates a flow to the state it carries.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Fluss mit dem Zustand, den er trägt.</rdfs:comment>
+        <rdfs:label xml:lang="en">has state</rdfs:label>
+        <rdfs:label xml:lang="de">hat Zustand</rdfs:label>
+        <skos:note xml:lang="en">Used in two places. A flow carries a state, and a product, an energy or an information has one. The thing is therefore separate from the condition it is in, which is what lets one product appear in a process before and after a transformation.</skos:note>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#isAssignedTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#isAssignedTo">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Assignment"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Assignment"/>
+                    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#TechnicalResource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource.</rdfs:comment>
+        <rdfs:label xml:lang="en">is assigned to</rdfs:label>
+        <rdfs:label xml:lang="de">ist zugeordnet</rdfs:label>
+        <skos:note xml:lang="en">One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain.</skos:note>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#isInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#isInput">
+        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#Flow"/>
+        <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+        <rdfs:comment xml:lang="en">Relates a flow to the process operator it enters.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Fluss mit dem Prozessoperator, in den er eingeht.</rdfs:comment>
+        <rdfs:label xml:lang="en">is input of</rdfs:label>
+        <rdfs:label xml:lang="de">ist Eingang von</rdfs:label>
+        <skos:note xml:lang="en">The inverse of hasInput. Both directions are stated because a model may describe a process from either end.</skos:note>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#isOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/vdi3682#isOutput">
+        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#Flow"/>
+        <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+        <rdfs:comment xml:lang="en">Relates a flow to the process operator it leaves.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet einen Fluss mit dem Prozessoperator, aus dem er ausgeht.</rdfs:comment>
+        <rdfs:label xml:lang="en">is output of</rdfs:label>
+        <rdfs:label xml:lang="de">ist Ausgang von</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#AlternativeFlow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#AlternativeFlow">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/vdi3682#Flow"/>
+        <rdfs:comment xml:lang="en">A flow that is part of a separate flow denoting mutually exclusive process paths.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Fluss, der Teil eines getrennten Flusses ist und sich gegenseitig ausschließende Prozesswege bezeichnet.</rdfs:comment>
+        <rdfs:label xml:lang="en">Alternative Flow</rdfs:label>
+        <rdfs:label xml:lang="de">Alternativfluss</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. The class is a design decision of this pattern.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#Assignment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#Assignment">
+        <rdfs:comment xml:lang="de">Strukturelle Verbindung zwischen Prozessoperator und technischer Ressource, über die einer Ressource die Ausführung eines Prozessoperators zugewiesen wird.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assignment</rdfs:label>
+        <rdfs:label xml:lang="de">Zuordnung</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.2. Figure 3 carries this relation as the usage symbol, an edge of the graphical notation. Reifying it as a class is a design decision of this pattern.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#Energy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#Energy">
+        <rdfs:comment xml:lang="de">Energie, die von einem Prozessoperator benötigt oder freigesetzt wird, beispielsweise elektrische Energie oder Wärme.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Energy required or released by a process operator, for example electrical energy or heat.</rdfs:comment>
+        <rdfs:label xml:lang="de">Energie</rdfs:label>
+        <rdfs:label xml:lang="en">Energy</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#Flow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#Flow">
+        <rdfs:comment xml:lang="en">A directed connection of products between process operators.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Gerichtete Verbindung von Produkten zwischen Prozessoperatoren.</rdfs:comment>
+        <rdfs:label xml:lang="en">Flow</rdfs:label>
+        <rdfs:label xml:lang="de">Fluss</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1, page 8. Figure 3 lists the flow among the eight symbols of the graphical notation, where it is an edge rather than an object. Reifying it as a class is a design decision of this pattern.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#Information -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#Information">
+        <rdfs:comment xml:lang="en">Information required by a process operator to carry out its transformation, or information created by it.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Information, die ein Prozessoperator zur Durchführung seiner Umwandlung benötigt oder die durch ihn entsteht.</rdfs:comment>
+        <rdfs:label xml:lang="de">Information</rdfs:label>
+        <rdfs:label xml:lang="en">Information</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#ParallelFlow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#ParallelFlow">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/vdi3682#Flow"/>
+        <rdfs:comment xml:lang="en">A flow that is part of a partially shared flow denoting process steps running concurrently.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Fluss, der Teil eines teilweise gemeinsamen Flusses ist und nebenläufig ablaufende Prozessschritte bezeichnet.</rdfs:comment>
+        <rdfs:label xml:lang="en">Parallel Flow</rdfs:label>
+        <rdfs:label xml:lang="de">Parallelfluss</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.2.1 models parallel process runs as a partially shared flow and requires no additional graphical elements for them. The class is a design decision of this pattern.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#Process -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#Process">
+        <rdfs:comment xml:lang="en">A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Netz zur Beschreibung technischer Prozesse, dessen Knoten die Zustände von Produkten und dessen gerichtete Kanten die Umwandlungsschritte durch Prozessoperatoren darstellen.</rdfs:comment>
+        <rdfs:label xml:lang="en">Process</rdfs:label>
+        <rdfs:label xml:lang="de">Prozess</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1, page 8.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#ProcessOperator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#ProcessOperator">
+        <rdfs:comment xml:lang="en">An operation transforming the input state of products, energies or information into an output state.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Vorgang, durch den der Eingangszustand von Produkten, Energien oder Informationen in einen Ausgangszustand umgewandelt wird.</rdfs:comment>
+        <rdfs:label xml:lang="en">Process Operator</rdfs:label>
+        <rdfs:label xml:lang="de">Prozessoperator</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1, pages 8 and 9.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#Product -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#Product">
+        <rdfs:comment xml:lang="de">Dinge der realen Welt, die im Rahmen eines technischen Prozesses umgewandelt werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Things of the real world that are transformed within a technical process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product</rdfs:label>
+        <rdfs:label xml:lang="de">Produkt</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1, page 8. A product is not a kind of state: it has one, which hasState records. The thing and the condition it is in are kept apart, so the same sheet of metal before and after a stamping is one product in two states.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#State -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#State">
+        <rdfs:comment xml:lang="en">The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Zustand eines Produkts, einer Energie oder einer Information an einer bestimmten Stelle eines Prozesses, entweder vor einer Umwandlung oder danach.</rdfs:comment>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+        <rdfs:label xml:lang="de">Zustand</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1 avoids the term in the graphical notation, where the three kinds appear directly.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#SystemBorder -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#SystemBorder">
+        <rdfs:comment xml:lang="de">Grenze, die den Betrachtungshorizont eines Prozesses festlegt. Unter bestimmten Bedingungen kann sie auch als Bilanzgrenze für ein- und ausgehende Produkte und Energien aufgefasst werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies.</rdfs:comment>
+        <rdfs:label xml:lang="en">System Border</rdfs:label>
+        <rdfs:label xml:lang="de">Systemgrenze</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.1. The standard calls this the Systemgrenze, which is a system limit rather than a border. The class name follows the English wording of the standard&apos;s own translation.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aias/odp/vdi3682#TechnicalResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/vdi3682#TechnicalResource">
+        <rdfs:comment xml:lang="en">Physical components of which automated plants are built and which realise the transformations carried out by process operators.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Physische Komponenten, aus denen automatisierte Anlagen aufgebaut sind und die die Umwandlungen der Produkte durch Prozessoperatoren realisieren.</rdfs:comment>
+        <rdfs:label xml:lang="en">Technical Resource</rdfs:label>
+        <rdfs:label xml:lang="de">Technische Ressource</rdfs:label>
+        <skos:note xml:lang="en">VDI 3682 Part 1, Section 4.2.</skos:note>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Assignment"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Flow"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Process"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#State"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#SystemBorder"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#TechnicalResource"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

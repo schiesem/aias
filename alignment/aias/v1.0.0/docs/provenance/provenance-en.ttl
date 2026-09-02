@@ -1,0 +1,19 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<..\index-en.html> a prov:Entity;
+	 dc:title "AIAS Alignment Ontology";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo :agent4;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "2024-09-01";
+.
+:agent0 a prov:Agent; foaf:name "Alexander Fay".
+:agent1 a prov:Agent; foaf:name "Felix Gehlhoff".
+:agent2 a prov:Agent; foaf:name "Lasse Reinpold".
+:agent3 a prov:Agent; foaf:name "Marvin Schieseck".
+:agent4 a prov:Agent; foaf:name "Philip Topalis".

@@ -1,0 +1,192 @@
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso22989/instances/1.0.0> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/aias/odp/iso22989> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/created> "2026-08-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/description> "Named individuals for the ISO/IEC 22989 ontology design pattern: the qualities a model states about an AI system.\n\nThey are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the characteristics of the IEC 60050-351 pattern and the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes, one importing this file gets the vocabulary as well."@en .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/publisher> "TODO: institution" .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/title> "ISO/IEC 22989 Pattern: Named Individuals"@en .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/ontology/bibo/status> "Draft"@en .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso22989-inst" .
+<https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso22989/instances#" .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2000/01/rdf-schema#comment> "Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.\n\nThe pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it."@en .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iso22989#VariableCharacteristic
+<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Availability
+<https://w3id.org/aias/odp/iso22989/instances#Availability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Availability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Availability> <http://www.w3.org/2000/01/rdf-schema#comment> "The property of being accessible and usable on demand by an authorized entity."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Availability> <http://www.w3.org/2000/01/rdf-schema#label> "Availability"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Availability> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.3, taken from ISO/IEC 27000:2018. The IEC 60050-351 pattern deliberately leaves availability out, since that standard defines no such entry, so a model needing it in a control context takes it from here."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Bias
+<https://w3id.org/aias/odp/iso22989/instances#Bias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Bias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Bias> <http://www.w3.org/2000/01/rdf-schema#comment> "A systematic difference in treatment of certain objects, people or groups in comparison to others."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Bias> <http://www.w3.org/2000/01/rdf-schema#label> "Bias"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Bias> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.4. A quality a model states a measured value for, so that the value can be compared across versions of a system."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Explainability
+<https://w3id.org/aias/odp/iso22989/instances#Explainability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Explainability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Explainability> <http://www.w3.org/2000/01/rdf-schema#comment> "The property of an AI system to express important factors influencing its results in a way that humans can understand."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Explainability> <http://www.w3.org/2000/01/rdf-schema#label> "Explainability"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Explainability> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.7. Note 1 to the entry states that it is about the reasons for a result rather than about the internals of the system."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Performance
+<https://w3id.org/aias/odp/iso22989/instances#Performance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Performance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Performance> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurable result."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Performance> <http://www.w3.org/2000/01/rdf-schema#label> "Performance"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Performance> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.25. Note 1 to the entry states that performance can relate to quantitative or qualitative findings, which is why the pattern prescribes no scale for it."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Predictability
+<https://w3id.org/aias/odp/iso22989/instances#Predictability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Predictability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Predictability> <http://www.w3.org/2000/01/rdf-schema#comment> "The property of an AI system that enables reliable assumptions by stakeholders about its outputs."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Predictability> <http://www.w3.org/2000/01/rdf-schema#label> "Predictability"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Predictability> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.8. Not the same as prediction, 3.1.27: this is about what stakeholders can assume of the system, not about what the system computes."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Reliability
+<https://w3id.org/aias/odp/iso22989/instances#Reliability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Reliability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Reliability> <http://www.w3.org/2000/01/rdf-schema#comment> "The property of consistent intended behaviour and results."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Reliability> <http://www.w3.org/2000/01/rdf-schema#label> "Reliability"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Reliability> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.9, taken from ISO/IEC 27000:2018."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Resilience
+<https://w3id.org/aias/odp/iso22989/instances#Resilience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Resilience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Resilience> <http://www.w3.org/2000/01/rdf-schema#comment> "The ability of a system to recover operational condition quickly following an incident."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Resilience> <http://www.w3.org/2000/01/rdf-schema#label> "Resilience"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Resilience> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.10. Recovery after a fault, as against robustness, which is holding up during one."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Robustness
+<https://w3id.org/aias/odp/iso22989/instances#Robustness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Robustness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Robustness> <http://www.w3.org/2000/01/rdf-schema#comment> "The ability of a system to maintain its level of performance under any circumstances."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Robustness> <http://www.w3.org/2000/01/rdf-schema#label> "Robustness"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Robustness> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.12. The quality an AI system in an automated plant is usually held to, since the circumstances there are not the ones it was trained under."@en .
+# 
+# https://w3id.org/aias/odp/iso22989/instances#Trustworthiness
+<https://w3id.org/aias/odp/iso22989/instances#Trustworthiness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989/instances#Trustworthiness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989/instances#Trustworthiness> <http://www.w3.org/2000/01/rdf-schema#comment> "The ability to meet stakeholder expectations in a verifiable way."@en .
+<https://w3id.org/aias/odp/iso22989/instances#Trustworthiness> <http://www.w3.org/2000/01/rdf-schema#label> "Trustworthiness"@en .
+<https://w3id.org/aias/odp/iso22989/instances#Trustworthiness> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.16. The entry that clause 5.15 treats as the sum of the qualities above rather than as one alongside them."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid1 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Trustworthiness> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Robustness> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Resilience> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Reliability> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Predictability> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Performance> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Explainability> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Bias> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989/instances#Availability> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

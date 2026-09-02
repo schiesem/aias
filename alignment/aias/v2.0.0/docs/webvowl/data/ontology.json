@@ -1,0 +1,882 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/aias/odp/iso7498", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/aias/odp/iec60050", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/aias/odp/vdi3682", "https://w3id.org/aias/odp/iso22989", "https://w3id.org/aias" ],
+    "title" : {
+      "en" : "AIAS Alignment Ontology"
+    },
+    "iri" : "https://w3id.org/aias",
+    "version" : "1.0.0",
+    "author" : [ "TODO: author name, ORCID" ],
+    "description" : {
+      "en" : "The alignment ontology of the AIAS information model. It joins the four subdomain patterns into one model of an AI application in an automated plant.\n\nThe four patterns stand on their own and import nothing from one another. Each rests on a standard, and each is usable without the others. This ontology is the only place where classes of different namespaces are related, which keeps a pattern free of everything it does not need.\n\nIt is built around the system elements of Haberfellner: a function transforms, a component is transformed or performs a transformation, and a relation ties the two together. What each subdomain contributes hangs below one of those three, so that a process step of VDI 3682 and an inference of ISO/IEC 22989 become comparable without either standard having to know about the other.\n\nALIGNMENT.md records every bridge this ontology builds, the reason for it and the strength it is stated at."
+    },
+    "comments" : {
+      "en" : "Nothing here is normative. The patterns rest on standards, this ontology rests on design decisions of this work, and every class and relation says which of the two it is.\n\nTwo classes are related with owl:equivalentClass, and only where the definitions are word for word the same. Control is one of them: ISO/IEC 22989, 3.5.5 and IEC 60050-351, 351-42-19 carry the identical wording and trace back to the same source, which makes the two the same concept rather than similar ones. Everything else is a subclass relation or a relation of its own, because an equivalence claims more than an overlap supports.\n\nTwo traps are recorded rather than resolved. Controllability appears in two patterns with the same spelling and different meanings, one a property of a dynamic system and one a property of an AI system, and they are deliberately not related. The actuator of IEC 60050-351 is the signal side driving a valve, not the valve, so the device class of this ontology matches the final controlling element instead. ALIGNMENT.md gives both in full."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "TODO: author name, ORCID",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "TODO: co-authors",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-08-24",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "aias",
+        "type" : "label"
+      } ],
+      "rights" : [ {
+        "identifier" : "rights",
+        "language" : "undefined",
+        "value" : "TODO: funding statement, projects EKI and OptiFlex, dtec.bw",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "TODO: institution",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/aias#",
+        "type" : "label"
+      } ],
+      "bibliographicCitation" : [ {
+        "identifier" : "bibliographicCitation",
+        "language" : "undefined",
+        "value" : "TODO: citation of the accompanying publication",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "AIAS Alignment Ontology",
+        "type" : "label"
+      } ],
+      "status" : [ {
+        "identifier" : "status",
+        "language" : "en",
+        "value" : "Draft",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/aias#Function",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work**, after the system elements of Haberfellner.\n\nThe class is what makes the alignment work. A process operator of VDI 3682 transforms products, an inference of ISO/IEC 22989 derives a conclusion, and a control of IEC 60050-351 acts on a process. In their own standards the three have nothing in common. Below this class they are assigned to a resource through one mechanism, and a question asking what a device does answers with all of them.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Function",
+      "en" : "Function"
+    },
+    "subClasses" : [ "4", "5", "6" ],
+    "comment" : {
+      "en" : "A purposeful transformation, turning inputs into outputs to meet an objective of the system."
+    },
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/aias#Actuator",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work**, and a name that has to be read with care.\n\nIEC 60050-351 uses actuator, 351-49-07, for the **signal side**: the unit generating the manipulated variable that drives the element acting on the flow. The element acting on the flow is the final controlling element, 351-49-08, and that is what this class means.\n\nRelating this class to iec60050:Actuator would therefore state the opposite of what is intended. The nearest match is the final controlling element, and even that is a functional unit rather than a device.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Actuator",
+      "en" : "Actuator"
+    },
+    "comment" : {
+      "en" : "A resource that acts on a mass flow, an energy flow or a movement."
+    },
+    "id" : "7",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias#EdgeDevice",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work.** Clause 8.6.2 of ISO/IEC 22989 discusses edge computing without defining a device for it. What makes a device an edge device here is where it sits, not what it is built from.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EdgeDevice",
+      "en" : "Edge Device"
+    },
+    "comment" : {
+      "en" : "A resource with computing capacity placed near the process it serves."
+    },
+    "id" : "8",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso22989#Data",
+    "baseIri" : "https://w3id.org/aias/odp/iso22989",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Data"
+    },
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/aias#Component",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work**, after Haberfellner.\n\nPhysical on purpose. A model, a dataset or an AI component is not a component here, since none of them is a thing one can point at in a plant. Their place in the whole is recorded through the functions they carry and the assignment of those functions to a resource.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Component",
+      "en" : "Component"
+    },
+    "subClasses" : [ "1", "11" ],
+    "comment" : {
+      "en" : "A physical element of a system, either performing functions or being transformed by them."
+    },
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/aias#ExternalCloud",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work.** A function running here leaves the organisation, which is what question 10 of the catalogue asks for.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ExternalCloud",
+      "en" : "External Cloud"
+    },
+    "comment" : {
+      "en" : "Computing infrastructure operated by a third party."
+    },
+    "id" : "12",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso22989#Control",
+    "equivalent" : [ "4" ],
+    "baseIri" : "https://w3id.org/aias/odp/iso22989",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Control"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/aias#Relation",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work**, after Haberfellner.\n\nRelations are classes rather than object properties, so that a tie can carry properties of its own. An assignment is a thing a model annotates with a reason or a date, not an arrow between two boxes.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Relation",
+      "en" : "Relation"
+    },
+    "subClasses" : [ "15", "16", "17" ],
+    "comment" : {
+      "en" : "A recorded tie between functions and components, or between components."
+    },
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/vdi3682#Assignment",
+    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Assignment"
+    },
+    "attributes" : [ "external" ],
+    "id" : "17",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso22989#AIFunction",
+    "baseIri" : "https://w3id.org/aias/odp/iso22989",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AIFunction"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "https://w3id.org/aias#Controller",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work.** IEC 60050-351 defines a controller, 351-49-11, as a functional unit consisting of a comparing and a controlling element. A device may realise such a unit, which is what realisedByPhysicalUnit records in that pattern, but the two are not the same thing.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Controller",
+      "en" : "Controller"
+    },
+    "comment" : {
+      "en" : "A resource running control programs, such as a programmable logic controller."
+    },
+    "id" : "20",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso22989#AISystem",
+    "baseIri" : "https://w3id.org/aias/odp/iso22989",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AISystem"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#OpenSystem",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OpenSystem"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
+    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TechnicalResource"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/vdi3682#Product",
+    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Product"
+    },
+    "attributes" : [ "external" ],
+    "id" : "24",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#Association",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Association"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Control",
+    "equivalent" : [ "13" ],
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Control"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "4",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "https://w3id.org/aias#Product",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work**, matching the product of VDI 3682. Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Product",
+      "en" : "Product"
+    },
+    "subClasses" : [ "24" ],
+    "comment" : {
+      "en" : "A physical component that a function transforms, produces or consumes."
+    },
+    "id" : "11",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iso7498#UserData",
+    "baseIri" : "https://w3id.org/aias/odp/iso7498",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UserData"
+    },
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/aias#Computer",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work.**",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Computer",
+      "en" : "Computer"
+    },
+    "comment" : {
+      "en" : "A general purpose computing resource within the plant."
+    },
+    "id" : "32",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/vdi3682#Flow",
+    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Flow"
+    },
+    "attributes" : [ "external" ],
+    "id" : "16",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProcessOperator"
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "https://w3id.org/aias#Resource",
+    "equivalent" : [ "23" ],
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work**, equivalent to the technical resource of VDI 3682.\n\nA resource is what a function is assigned to. Where its communication is described it also appears as an open system in the sense of ISO/IEC 7498-1, 4.1.3, which that pattern states on its own class.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Resource",
+      "en" : "Resource"
+    },
+    "subClasses" : [ "32", "20", "35", "12", "7", "8", "19" ],
+    "comment" : {
+      "en" : "A physical component of a plant that performs functions."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "1",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/aias#Sensor",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work.** IEC 60050-351 defines a sensing element, 351-56-26, but as a functional unit rather than as a device, so the two are not related here.\n\nA model relating this class to a catalogue of equipment would give it the basis it currently lacks.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Sensor",
+      "en" : "Sensor"
+    },
+    "comment" : {
+      "en" : "A resource that senses a physical quantity and makes it available as data."
+    },
+    "id" : "35",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias#InternalCloud",
+    "baseIri" : "https://w3id.org/aias",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Construct of this work.** The distinction from the external cloud is who operates it, which is what a data protection review turns on rather than any technical property.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InternalCloud",
+      "en" : "Internal Cloud"
+    },
+    "comment" : {
+      "en" : "Computing infrastructure operated by the plant operator, away from the process but inside the organisation."
+    },
+    "id" : "19",
+    "superClasses" : [ "1" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "41",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "42",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "49",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/aias#appearsAsOpenSystem",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "2",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "ISO/IEC 7498-1, 4.1.3 defines the open system as the representation of those aspects of a real system that are pertinent to open systems interconnection. A device is not an open system in itself, it is one under that view, which is why this is a relation rather than a subclass axiom.\n\nThe ISO 7498 pattern already states the intent on its own class. This relation is what a model uses to record it.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "appearsAsOpenSystem",
+      "en" : "appears as open system"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a resource to the open system it appears as when its communication is described."
+    },
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "range" : "1",
+    "domain" : "19",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/aias#hasRelation",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasRelation",
+      "en" : "has relation"
+    },
+    "domain" : "22",
+    "comment" : {
+      "en" : "Relates a modelled system to a recorded tie between its parts."
+    },
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/aias#assignedFunction",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "3",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "VDI 3682 states the assignment from the process operator: hasAssignment runs from the process operator to the assignment, and assignedResource from there to the resource. Both follow the guideline, and neither reaches a function that is not a process operator.\n\nThis relation closes that gap. It says which function an assignment carries, whatever subdomain the function comes from, and it is what makes the common function level usable rather than merely stated. Without it a model could group a process operator and an inference under one superclass and still have no way to assign the second to a device.\n\nDeliberately not a superproperty of hasAssignment. The two run in opposite directions, from the function and from the assignment, and relating them would require an inverse the pattern does not state.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "assignedFunction",
+      "en" : "assigned function"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Relates an assignment to the function it assigns to a resource."
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "range" : "1",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
+  }, {
+    "range" : "1",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "range" : "1",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/aias#carriesData",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "9",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The bridge between the communication subdomain and the AI subdomain, and a relation rather than an equivalence on purpose.\n\nThe information model this work rebuilds set the data of the two subdomains equal. That does not hold. ISO/IEC 7498-1, 5.6.1.2 defines user data as the payload of one transmission, ISO/IEC 22989 defines data as a collection of samples, and the two differ in what determines them and in how many of them there are. A ping carries payload with no dataset involved, and a training dataset exists whether or not it is ever transmitted.\n\nKeeping them apart is what makes a question answerable: which communications carry a given dataset, on which layer and with which quality of service. Under an equivalence the dataset would be the payload of one transmission, and the question would be meaningless.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "carriesData",
+      "en" : "carries data"
+    },
+    "domain" : "30",
+    "comment" : {
+      "en" : "Relates the payload of a transmission to the dataset it carries."
+    },
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "range" : "1",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "31"
+  }, {
+    "range" : "14",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
+  }, {
+    "range" : "1",
+    "domain" : "35",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  }, {
+    "range" : "1",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "range" : "10",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "range" : "14",
+    "domain" : "16",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "range" : "14",
+    "domain" : "15",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
+  }, {
+    "range" : "14",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "40"
+  }, {
+    "range" : "1",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "41"
+  }, {
+    "range" : "30",
+    "domain" : "9",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "42"
+  }, {
+    "range" : "11",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "43"
+  }, {
+    "range" : "3",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "44"
+  }, {
+    "range" : "3",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "3",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "range" : "10",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "range" : "14",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "48"
+  }, {
+    "range" : "3",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://w3id.org/aias#actsOnProcessOperator",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "5",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351 has a control act on a controlled system, 351-49-01, which is a functional unit rather than a process step. VDI 3682 describes what happens in that system as a process operator.\n\nThe relation joins the two, so that a model can answer which step of the technical process a control influences. Neither standard states it, since neither knows the other.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "actsOnProcessOperator",
+      "en" : "acts on process operator"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Relates a control to the process step it acts on."
+    },
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://w3id.org/aias#hasComponent",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasComponent",
+      "en" : "has component"
+    },
+    "domain" : "22",
+    "comment" : {
+      "en" : "Relates a modelled system to a component it is built from."
+    },
+    "attributes" : [ "object" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://w3id.org/aias#hasFunction",
+    "baseIri" : "https://w3id.org/aias",
+    "range" : "3",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The entry point into the function view. An AI system relates to its functions through this rather than through the relation of any one pattern, so that functions of every subdomain answer alike.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasFunction",
+      "en" : "has function"
+    },
+    "domain" : "22",
+    "comment" : {
+      "en" : "Relates a modelled system to a function it performs."
+    },
+    "attributes" : [ "object" ],
+    "id" : "52"
+  } ]
+}

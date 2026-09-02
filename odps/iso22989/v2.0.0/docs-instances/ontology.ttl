@@ -1,0 +1,186 @@
+@prefix : <https://w3id.org/aias/odp/iso22989/instances#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/aias/odp/iso22989/instances#> .
+
+<https://w3id.org/aias/odp/iso22989/instances> rdf:type owl:Ontology ;
+                                                owl:versionIRI <https://w3id.org/aias/odp/iso22989/instances/1.0.0> ;
+                                                owl:imports <https://w3id.org/aias/odp/iso22989> ;
+                                                <http://purl.org/dc/terms/created> "2026-08-19"^^xsd:date ;
+                                                <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" ;
+                                                <http://purl.org/dc/terms/description> """Named individuals for the ISO/IEC 22989 ontology design pattern: the qualities a model states about an AI system.
+
+They are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the characteristics of the IEC 60050-351 pattern and the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes, one importing this file gets the vocabulary as well."""@en ;
+                                                <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                                <http://purl.org/dc/terms/publisher> "TODO: institution" ;
+                                                <http://purl.org/dc/terms/title> "ISO/IEC 22989 Pattern: Named Individuals"@en ;
+                                                <http://purl.org/ontology/bibo/status> "Draft"@en ;
+                                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso22989-inst" ;
+                                                <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso22989/instances#" ;
+                                                rdfs:comment """Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.
+
+The pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it."""@en ;
+                                                owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/aias/odp/iso22989#VariableCharacteristic
+<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/aias/odp/iso22989/instances#Availability
+:Availability rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+              rdfs:comment "The property of being accessible and usable on demand by an authorized entity."@en ;
+              rdfs:label "Availability"@en ;
+              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.3, taken from ISO/IEC 27000:2018. The IEC 60050-351 pattern deliberately leaves availability out, since that standard defines no such entry, so a model needing it in a control context takes it from here."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Bias
+:Bias rdf:type owl:NamedIndividual ,
+               <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+      rdfs:comment "A systematic difference in treatment of certain objects, people or groups in comparison to others."@en ;
+      rdfs:label "Bias"@en ;
+      <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.4. A quality a model states a measured value for, so that the value can be compared across versions of a system."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Explainability
+:Explainability rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+                rdfs:comment "The property of an AI system to express important factors influencing its results in a way that humans can understand."@en ;
+                rdfs:label "Explainability"@en ;
+                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.7. Note 1 to the entry states that it is about the reasons for a result rather than about the internals of the system."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Performance
+:Performance rdf:type owl:NamedIndividual ,
+                      <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+             rdfs:comment "A measurable result."@en ;
+             rdfs:label "Performance"@en ;
+             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.25. Note 1 to the entry states that performance can relate to quantitative or qualitative findings, which is why the pattern prescribes no scale for it."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Predictability
+:Predictability rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+                rdfs:comment "The property of an AI system that enables reliable assumptions by stakeholders about its outputs."@en ;
+                rdfs:label "Predictability"@en ;
+                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.8. Not the same as prediction, 3.1.27: this is about what stakeholders can assume of the system, not about what the system computes."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Reliability
+:Reliability rdf:type owl:NamedIndividual ,
+                      <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+             rdfs:comment "The property of consistent intended behaviour and results."@en ;
+             rdfs:label "Reliability"@en ;
+             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.9, taken from ISO/IEC 27000:2018."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Resilience
+:Resilience rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+            rdfs:comment "The ability of a system to recover operational condition quickly following an incident."@en ;
+            rdfs:label "Resilience"@en ;
+            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.10. Recovery after a fault, as against robustness, which is holding up during one."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Robustness
+:Robustness rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+            rdfs:comment "The ability of a system to maintain its level of performance under any circumstances."@en ;
+            rdfs:label "Robustness"@en ;
+            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.12. The quality an AI system in an automated plant is usually held to, since the circumstances there are not the ones it was trained under."@en .
+
+
+###  https://w3id.org/aias/odp/iso22989/instances#Trustworthiness
+:Trustworthiness rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> ;
+                 rdfs:comment "The ability to meet stakeholder expectations in a verifiable way."@en ;
+                 rdfs:label "Trustworthiness"@en ;
+                 <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.16. The entry that clause 5.15 treats as the sum of the qualities above rather than as one alongside them."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Availability
+                        :Bias
+                        :Explainability
+                        :Performance
+                        :Predictability
+                        :Reliability
+                        :Resilience
+                        :Robustness
+                        :Trustworthiness
+                      )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

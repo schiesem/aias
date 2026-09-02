@@ -1,0 +1,387 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#DeadBand"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#DeadTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#GainMargin"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#Overshoot"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#SettlingTime"
+    }, {
+      "@id" : "https://w3id.org/aias/odp/iec60050/instances#TimeConstant"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#note",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050#symbol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-08-18"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "TODO: author name, ORCID"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Named individuals for the IEC 60050-351 ontology design pattern: the time and quality characteristics a model states about the behaviour of a control.\n\nThey are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@value" : "TODO: institution"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351 Pattern: Named Individuals"
+  } ],
+  "http://purl.org/ontology/bibo/status" : [ {
+    "@language" : "en",
+    "@value" : "Draft"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "iec60050-inst"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "https://w3id.org/aias/odp/iec60050/instances#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Every individual here carries the clause of DIN IEC 60050-351:2014 that defines it, and where the standard gives a formula symbol that symbol is recorded as well, so a model stays checkable against the figures of the standard.\n\nSeven of the definitions are reconstructed from the German text. Their English wording is interrupted by formula figures in the printed standard, which the extraction could not resolve, and the note on each affected individual says so."
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050/1.0.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050/instances/1.0.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0.0"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it first returns into that band."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Control Rise Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-46-01. English wording reconstructed from the German entry. It ends at the first return, whereas the control settling time requires the controlled variable to stay inside."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "T_cr"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it returns into that band and remains within it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Control Settling Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-46-02. English wording reconstructed from the German entry. The sharper of the two criteria, since it requires the controlled variable to stay inside the band."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "T_cs"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#DeadBand",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A finite range of values of the input variable within which a variation of the input variable does not produce any measurable change in the output variable."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dead Band"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+    "@language" : "en",
+    "@value" : "dead zone"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-45-15. The range in which an output has no effect, which matters when a control writes a value too small to act."
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#DeadTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "In a dead-time element, the duration of the time interval by which the output variable is shifted relative to the input variable."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dead Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-50-30. The interval by which a processing step delays what passes through it."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "T_t"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Equivalent Dead Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "T_u"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#GainMargin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The reciprocal of the gain response of the open control loop at the phase crossover angular frequency."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gain Margin"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-46-07. English wording reconstructed from the German entry. The second stability reserve, alongside the phase margin."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "G_m"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The duration of the time interval that elapses between the arrival of an interrupt signal at the interrupt input unit and the instant of decision whether the interrupt is handled or not."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Interrupt Reaction Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-54-18. The only latency measure the standard defines."
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The duration of the time interval in which the manipulated variable runs with the highest speed through its whole range."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Manipulating Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-48-17. The time measure closest to a device, since it belongs to the manipulating equipment."
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#Overshoot",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "In a step response, the largest transient deviation of the output variable from its final steady-state value, usually expressed as a percentage of the difference between its final and its initial steady-state value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Overshoot"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-45-38. English wording reconstructed from the German entry."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "X_m"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Phase Margin"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "phi_m"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The duration of the time interval between two consecutive observations in a periodic sampling control system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sampling Period"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-47-16. The normative equivalent of what practice calls cycle time, a term the standard does not define."
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#SettlingTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Settling Time"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-45-37. English wording reconstructed from the German entry."
+  } ]
+}, {
+  "@id" : "https://w3id.org/aias/odp/iec60050/instances#TimeConstant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "For a quantity growing or decaying exponentially towards a constant value, the duration of a time interval at the end of which the absolute difference to that value has decreased to 1/e of its initial amount."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Time Constant"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@language" : "en",
+    "@value" : "IEC 60050-351, 351-45-32."
+  } ],
+  "https://w3id.org/aias/odp/iec60050#symbol" : [ {
+    "@value" : "T"
+  } ]
+} ]

@@ -1,0 +1,960 @@
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso22989/1.0.0> .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/bibliographicCitation> "TODO: citation of the accompanying publication" .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/contributor> "TODO: co-authors" .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/created> "2026-08-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/description> "Ontology design pattern for the terminology of artificial intelligence according to ISO/IEC 22989:2022, Information technology, Artificial intelligence, Artificial intelligence concepts and terminology.\n\nThe pattern describes an AI system in three views: what it is made of and what it does, which algorithms and models carry it, and which data it runs on. The three are the views the accompanying work derives for the AI subdomain, and the standard supplies an internationally agreed vocabulary for all of them.\n\nOne distinction runs through the whole pattern. Symbolic AI, 3.1.33, and subsymbolic AI, 3.1.34, both rest on models, but only the second learns them. The pattern therefore keeps the general model, 3.1.23, above the machine learning model, 3.3.7, so that a rule-based system can be recorded without pretending it was trained.\n\nThe pattern is one of four subdomain patterns of the AIAS information model. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology. Named individuals for the qualities are supplied separately in ISO22989-instances.ttl."@en .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/publisher> "TODO: institution" .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/rights> "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/source> <https://www.iso.org/standard/74296.html> .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/title> "ISO/IEC 22989 Ontology Design Pattern"@en .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/ontology/bibo/status> "Draft"@en .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso22989" .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso22989#" .
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2000/01/rdf-schema#comment> "Normative basis: ISO/IEC 22989:2022.\n\nClause 3 of the standard holds 115 entries and this pattern takes up 47 of them. REFERENCE.md lists every entry with the reason it is taken or left out, so the selection is checkable rather than asserted. Three whole clauses stay out: neural networks, natural language processing and computer vision name techniques and application fields, both open sets. A model using a convolutional network records it as a named individual of the model algorithm class instead.\n\nSome classes here have no entry in clause 3. Five of them are collecting classes the standard needs but does not name, such as the common superclass of the four kinds of learning. The rest are constructs of this work, carried over from the information model it rebuilds. Every one of them says so on its own skos:note, and REFERENCE.md lists them apart from the entries.\n\nNo class of another namespace appears in this pattern. Where a term matches a term of another standard, as control, 3.5.5, matches IEC 60050-351, 351-42-19, word for word, the two are related in the alignment ontology rather than here. A pattern that referenced another would drag it along wherever it is used."@en .
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iso22989#basedOnAlgorithm
+<https://w3id.org/aias/odp/iso22989#basedOnAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#basedOnAlgorithm> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Model> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#basedOnAlgorithm> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#basedOnAlgorithm> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a model to the algorithm describing its structure, or a function to the algorithm it executes."@en .
+<https://w3id.org/aias/odp/iso22989#basedOnAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "based on algorithm"@en .
+<https://w3id.org/aias/odp/iso22989#basedOnAlgorithm> <http://www.w3.org/2004/02/skos/core#note> "The relation separating the procedure from its execution. A training is based on a training algorithm, a model on a model algorithm, and an evaluation on an evaluation algorithm."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#basedOnLearning
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#MLAlgorithm> .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#LearningType> .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a machine learning algorithm to the kind of learning it performs."@en .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#label> "based on learning"@en .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.9 to 3.3.17. Functional: an algorithm performs one kind of learning, which negative model 03 tests."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#consistsOf
+<https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#AIComponent> .
+<https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a component constructing it."@en .
+<https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/2000/01/rdf-schema#label> "consists of"@en .
+<https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.2 defines the component as a functional element constructing an AI system."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#consistsOfStep
+<https://w3id.org/aias/odp/iso22989#consistsOfStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#consistsOfStep> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#DataProcessing> .
+<https://w3id.org/aias/odp/iso22989#consistsOfStep> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#consistsOfStep> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a data processing function to the steps it is made of."@en .
+<https://w3id.org/aias/odp/iso22989#consistsOfStep> <http://www.w3.org/2000/01/rdf-schema#label> "consists of step"@en .
+<https://w3id.org/aias/odp/iso22989#consistsOfStep> <http://www.w3.org/2004/02/skos/core#note> "The step from the function to what it actually does, so that a model can record an order of preparation rather than one opaque activity."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#creates
+<https://w3id.org/aias/odp/iso22989#creates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#creates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Inference> .
+<https://w3id.org/aias/odp/iso22989#creates> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Prediction> .
+<https://w3id.org/aias/odp/iso22989#creates> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an inference to the prediction it produces."@en .
+<https://w3id.org/aias/odp/iso22989#creates> <http://www.w3.org/2000/01/rdf-schema#label> "creates"@en .
+<https://w3id.org/aias/odp/iso22989#creates> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.27 defines the prediction as the primary output of an AI system when provided with input data."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#determines
+<https://w3id.org/aias/odp/iso22989#determines> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#determines> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Training> .
+<https://w3id.org/aias/odp/iso22989#determines> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#ModelParameter> .
+<https://w3id.org/aias/odp/iso22989#determines> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a training to the model parameters it determines."@en .
+<https://w3id.org/aias/odp/iso22989#determines> <http://www.w3.org/2000/01/rdf-schema#label> "determines"@en .
+<https://w3id.org/aias/odp/iso22989#determines> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.15 defines training as the process determining or improving the parameters. This relation is that determining, and it is what turns an algorithm into a model."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#forCharacteristic
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#CharacteristicValue> .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a characteristic value to the characteristic it quantifies."@en .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "for characteristic"@en .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2004/02/skos/core#note> "Functional: one value quantifies exactly one characteristic, which negative model 05 tests."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#fulfilsTask
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Prediction> .
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Task> .
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a prediction to the task it addresses."@en .
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/2000/01/rdf-schema#label> "fulfils task"@en .
+<https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/2004/02/skos/core#note> "What closes the circle from the output back to the objective the system was built for, 3.1.4.\n\nFunctional: one prediction addresses one task. A prediction serving two purposes is two predictions."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasCharacteristicValue
+<https://w3id.org/aias/odp/iso22989#hasCharacteristicValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasCharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Model> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AISystem> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AIComponent> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#hasCharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#CharacteristicValue> .
+<https://w3id.org/aias/odp/iso22989#hasCharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system, a component or a model to a value it states for one of its characteristics."@en .
+<https://w3id.org/aias/odp/iso22989#hasCharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#label> "has characteristic value"@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasControllability
+<https://w3id.org/aias/odp/iso22989#hasControllability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasControllability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#hasControllability> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Controllability> .
+<https://w3id.org/aias/odp/iso22989#hasControllability> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a recorded way for an external agent to intervene in its functioning."@en .
+<https://w3id.org/aias/odp/iso22989#hasControllability> <http://www.w3.org/2000/01/rdf-schema#label> "has controllability"@en .
+<https://w3id.org/aias/odp/iso22989#hasControllability> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.6. Recorded as a relation to a thing rather than as a value, since what matters is what the intervention consists of."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasDataSink
+<https://w3id.org/aias/odp/iso22989#hasDataSink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasDataSink> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Storing> .
+<https://w3id.org/aias/odp/iso22989#hasDataSink> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#DataSink> .
+<https://w3id.org/aias/odp/iso22989#hasDataSink> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a storing to where the data goes."@en .
+<https://w3id.org/aias/odp/iso22989#hasDataSink> <http://www.w3.org/2000/01/rdf-schema#label> "has data sink"@en .
+<https://w3id.org/aias/odp/iso22989#hasDataSink> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work**, after ISO/IEC 22989, clause 8.6.1."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasDataSource
+<https://w3id.org/aias/odp/iso22989#hasDataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasDataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Acquisition> .
+<https://w3id.org/aias/odp/iso22989#hasDataSource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#DataSource> .
+<https://w3id.org/aias/odp/iso22989#hasDataSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an acquisition to where the data comes from."@en .
+<https://w3id.org/aias/odp/iso22989#hasDataSource> <http://www.w3.org/2000/01/rdf-schema#label> "has data source"@en .
+<https://w3id.org/aias/odp/iso22989#hasDataSource> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work**, after ISO/IEC 22989, clause 8.6.1. One of the two relations reaching outside the AI system."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasDesign
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#SystemDesign> .
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to where it runs."@en .
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/2000/01/rdf-schema#label> "has design"@en .
+<https://w3id.org/aias/odp/iso22989#hasDesign> <http://www.w3.org/2004/02/skos/core#note> "Functional: a system has one design, and a system split between two places is recorded as hybrid rather than as both."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasFunction
+<https://w3id.org/aias/odp/iso22989#hasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasFunction> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AISystem> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AIComponent> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#hasFunction> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#hasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system or a component to a function it performs."@en .
+<https://w3id.org/aias/odp/iso22989#hasFunction> <http://www.w3.org/2000/01/rdf-schema#label> "has function"@en .
+<https://w3id.org/aias/odp/iso22989#hasFunction> <http://www.w3.org/2004/02/skos/core#note> "The step from what a system is to what it does. Where a system has components, the functions are related to those rather than to the system, so that two components performing the same kind of function stay apart."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasHyperparameter
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Hyperparameter> .
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an algorithm to a characteristic chosen in advance that affects its behaviour."@en .
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#label> "has hyperparameter"@en .
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4. Placed on the algorithm superclass, so a model algorithm and an evaluation algorithm may carry one as well."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasLabel
+<https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Sample> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Data> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Label> .
+<https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a sample or a dataset to the label assigned to it."@en .
+<https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/2000/01/rdf-schema#label> "has label"@en .
+<https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.10. Whether data carries labels is what separates supervised learning, 3.3.12, from unsupervised learning, 3.3.17."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasParameter
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#ModelParameter> .
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a model to an internal variable affecting how it computes its outputs."@en .
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#label> "has parameter"@en .
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.8. Only a learned model has these, which is why a symbolic model carries hyperparameters instead."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasRisk
+<https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Risk> .
+<https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a risk recorded for it."@en .
+<https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2000/01/rdf-schema#label> "has risk"@en .
+<https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.11, and clause 6.2.2, which asks stakeholders to assess risks across the whole life cycle."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasTask
+<https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Task> .
+<https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a task it addresses."@en .
+<https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/2000/01/rdf-schema#label> "has task"@en .
+<https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.35. A system may address more than one task, which is why this is not functional."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasType
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AISystem> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#AIComponent> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#AIType> .
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system or a component to the kind of technique it is based on."@en .
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#label> "has type"@en .
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.33 and 3.1.34.\n\nDeliberately not functional. Clause 5.9 discusses combining the two approaches, so a system may carry both, which test case 3 asserts."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isAcquiredBy
+<https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Acquisition> .
+<https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates data to the acquisition that obtained it."@en .
+<https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/2000/01/rdf-schema#label> "is acquired by"@en .
+<https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/2004/02/skos/core#note> "What makes the origin of data traceable. Data without one is data a model cannot account for."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isComposedOf
+<https://w3id.org/aias/odp/iso22989#isComposedOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#DataSet> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Data> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#unionOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Sample> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Data> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a dataset to the data it groups, or data to the samples it consists of."@en .
+<https://w3id.org/aias/odp/iso22989#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#label> "is composed of"@en .
+<https://w3id.org/aias/odp/iso22989#isComposedOf> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.5 and 3.2.13. One relation for both levels, since the standard describes a grouping in each case."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isCreatedBy
+<https://w3id.org/aias/odp/iso22989#isCreatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isCreatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#MLModel> .
+<https://w3id.org/aias/odp/iso22989#isCreatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Training> .
+<https://w3id.org/aias/odp/iso22989#isCreatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a machine learning model to the training that produced it."@en .
+<https://w3id.org/aias/odp/iso22989#isCreatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is created by"@en .
+<https://w3id.org/aias/odp/iso22989#isCreatedBy> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.14 calls the result of training a trained model. An empty answer for a model means it was not learned."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isEvaluatedBy
+<https://w3id.org/aias/odp/iso22989#isEvaluatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Evaluation> .
+<https://w3id.org/aias/odp/iso22989#isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a model to an evaluation performed on it."@en .
+<https://w3id.org/aias/odp/iso22989#isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is evaluated by"@en .
+<https://w3id.org/aias/odp/iso22989#isEvaluatedBy> <http://www.w3.org/2004/02/skos/core#note> "The counterpart of isValidatedBy, for the assessment of a final model before deployment."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isExecutedBy
+<https://w3id.org/aias/odp/iso22989#isExecutedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isExecutedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Inference> .
+<https://w3id.org/aias/odp/iso22989#isExecutedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#isExecutedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an inference to the model performing it."@en .
+<https://w3id.org/aias/odp/iso22989#isExecutedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is executed by"@en .
+<https://w3id.org/aias/odp/iso22989#isExecutedBy> <http://www.w3.org/2004/02/skos/core#note> "Both kinds of model execute inferences: 3.1.17 states that a premise is either a fact, a rule, a model, a feature or raw data."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isProcessedBy
+<https://w3id.org/aias/odp/iso22989#isProcessedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isProcessedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#isProcessedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#isProcessedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates data to a data process step applied to it."@en .
+<https://w3id.org/aias/odp/iso22989#isProcessedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is processed by"@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isStoredBy
+<https://w3id.org/aias/odp/iso22989#isStoredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isStoredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#isStoredBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Storing> .
+<https://w3id.org/aias/odp/iso22989#isStoredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates data to the storing that persisted it."@en .
+<https://w3id.org/aias/odp/iso22989#isStoredBy> <http://www.w3.org/2000/01/rdf-schema#label> "is stored by"@en .
+# 
+# https://w3id.org/aias/odp/iso22989#isValidatedBy
+<https://w3id.org/aias/odp/iso22989#isValidatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Validation> .
+<https://w3id.org/aias/odp/iso22989#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a model to a validation performed on it."@en .
+<https://w3id.org/aias/odp/iso22989#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is validated by"@en .
+<https://w3id.org/aias/odp/iso22989#isValidatedBy> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.18."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#performedBy
+<https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#AIComponent> .
+<https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a function to the component performing it."@en .
+<https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2000/01/rdf-schema#label> "performed by"@en .
+<https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2004/02/skos/core#note> "The inverse reading of hasFunction, stated separately so a model may record either direction."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#performsControl
+<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Control> .
+<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a control it carries out."@en .
+<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#label> "performs control"@en .
+<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.5.\n\nThe relation exists so that a model can state that an AI system acts on a process rather than only computing outputs. Since the control class is defined identically in IEC 60050-351, this is the point at which the alignment joins the AI subdomain to the control one."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#realisedByModel
+<https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AIComponent> .
+<https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a component to the model carrying its behaviour."@en .
+<https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/2000/01/rdf-schema#label> "realised by model"@en .
+<https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/2004/02/skos/core#note> "The step from the structural element to what makes it work. A component without a model performs functions but decides nothing."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#usesData
+<https://w3id.org/aias/odp/iso22989#usesData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#usesData> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#usesData> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#usesData> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a function to the data it works on."@en .
+<https://w3id.org/aias/odp/iso22989#usesData> <http://www.w3.org/2000/01/rdf-schema#label> "uses data"@en .
+<https://w3id.org/aias/odp/iso22989#usesData> <http://www.w3.org/2004/02/skos/core#note> "Which kind of data belongs to which function follows from the entries: 3.3.16 for training, 3.2.15 for validation, 3.2.14 for evaluation and 3.2.12 for inference in operation."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#usesMetric
+<https://w3id.org/aias/odp/iso22989#usesMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#usesMetric> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#unionOf> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Evaluation> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#usesMetric> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#EvaluationMetric> .
+<https://w3id.org/aias/odp/iso22989#usesMetric> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an evaluation or an evaluation algorithm to the metric it measures against."@en .
+<https://w3id.org/aias/odp/iso22989#usesMetric> <http://www.w3.org/2000/01/rdf-schema#label> "uses metric"@en .
+<https://w3id.org/aias/odp/iso22989#usesMetric> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** The standard describes evaluation without naming the measure it uses."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iso22989#isLabelled
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/2000/01/rdf-schema#comment> "Whether the samples of a dataset carry labels."@en .
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/2000/01/rdf-schema#label> "is labelled"@en .
+<https://w3id.org/aias/odp/iso22989#isLabelled> <http://www.w3.org/2004/02/skos/core#note> "The property 3.3.12 and 3.3.17 turn on. Stated on the data rather than derived from the presence of labels, so that a model can record the intent before the labels exist."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#quantity
+<https://w3id.org/aias/odp/iso22989#quantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/iso22989#quantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#quantity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#CharacteristicValue> .
+<https://w3id.org/aias/odp/iso22989#quantity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/aias/odp/iso22989#quantity> <http://www.w3.org/2000/01/rdf-schema#comment> "The numeric quantity of a characteristic value."@en .
+<https://w3id.org/aias/odp/iso22989#quantity> <http://www.w3.org/2000/01/rdf-schema#label> "quantity"@en .
+# 
+# https://w3id.org/aias/odp/iso22989#unit
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#CharacteristicValue> .
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of a characteristic value, where the characteristic has one."@en .
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit"@en .
+<https://w3id.org/aias/odp/iso22989#unit> <http://www.w3.org/2004/02/skos/core#note> "A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports. Several qualities are dimensionless, in which case a model leaves this out."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iso22989#AIComponent
+<https://w3id.org/aias/odp/iso22989#AIComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#AIComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "A functional element that constructs an AI system."@en .
+<https://w3id.org/aias/odp/iso22989#AIComponent> <http://www.w3.org/2000/01/rdf-schema#label> "AI Component"@en .
+<https://w3id.org/aias/odp/iso22989#AIComponent> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.2.\n\nThe class is what a model needs as soon as one system carries more than one approach. A system combining a learned classifier with a rule-based decision has two components, each performing its own functions, and without them the two would be indistinguishable."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#AIFunction
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#AISystem> .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity in the life cycle of an AI system, transforming inputs into outputs."@en .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2000/01/rdf-schema#label> "AI Function"@en .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this work.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.\n\nNote that clause 8.3 of the standard uses the term AI function in a narrower sense, for computing a prediction alone. This class is broader on purpose, since a model has to record the whole life cycle rather than the operating step only."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#AISystem
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#CharacteristicValue> .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineered system that generates outputs such as content, forecasts, recommendations or decisions for a given set of human-defined objectives."@en .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2000/01/rdf-schema#label> "AI System"@en .
+<https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.4. The entry adds that the system can use various techniques and approaches to develop a model representing data, knowledge or processes."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#AIType
+<https://w3id.org/aias/odp/iso22989#AIType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#AIType> <http://www.w3.org/2000/01/rdf-schema#comment> "The kind of technique an AI system is based on, that is symbolic or subsymbolic."@en .
+<https://w3id.org/aias/odp/iso22989#AIType> <http://www.w3.org/2000/01/rdf-schema#label> "AI Type"@en .
+<https://w3id.org/aias/odp/iso22989#AIType> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this pattern.** The standard defines symbolic AI, 3.1.33, and subsymbolic AI, 3.1.34, and compares them in clause 5.9, but names no common superclass for the two.\n\nThe two kinds are deliberately **not** disjoint. Neither entry excludes the other, and clause 5.9 discusses combining them, so a system may be typed as both."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Acquisition
+<https://w3id.org/aias/odp/iso22989#Acquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Acquisition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Acquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "The function obtaining data from a data source."@en .
+<https://w3id.org/aias/odp/iso22989#Acquisition> <http://www.w3.org/2000/01/rdf-schema#label> "Acquisition"@en .
+<https://w3id.org/aias/odp/iso22989#Acquisition> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** Discussed in ISO/IEC 22989, clause 8.6.1, without an entry. One of the two functions reaching outside the AI system, which makes it a handover point to whatever supplies the data."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Algorithm
+<https://w3id.org/aias/odp/iso22989#Algorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Algorithm> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#Algorithm> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#Algorithm> <http://www.w3.org/2000/01/rdf-schema#comment> "A parameterisable mathematical procedure, described apart from any execution of it."@en .
+<https://w3id.org/aias/odp/iso22989#Algorithm> <http://www.w3.org/2000/01/rdf-schema#label> "Algorithm"@en .
+<https://w3id.org/aias/odp/iso22989#Algorithm> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** ISO/IEC 22989 defines the machine learning algorithm, 3.3.6, but no general algorithm and no superclass for the kinds below.\n\nThe class exists so that the hyperparameter, 3.3.4, has one place to attach to. The standard defines the hyperparameter for the machine learning algorithm, whereas a model algorithm and an evaluation algorithm carry one as well, for example the number of layers of a network or the threshold of a metric."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Annotation
+<https://w3id.org/aias/odp/iso22989#Annotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Annotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Annotation> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of attaching a set of descriptive information to data without any change to that data."@en .
+<https://w3id.org/aias/odp/iso22989#Annotation> <http://www.w3.org/2000/01/rdf-schema#label> "Annotation"@en .
+<https://w3id.org/aias/odp/iso22989#Annotation> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.1."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Augmentation
+<https://w3id.org/aias/odp/iso22989#Augmentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Augmentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Augmentation> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of creating synthetic samples by modifying or utilizing the existing data."@en .
+<https://w3id.org/aias/odp/iso22989#Augmentation> <http://www.w3.org/2000/01/rdf-schema#label> "Augmentation"@en .
+<https://w3id.org/aias/odp/iso22989#Augmentation> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.3."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#CharacteristicValue
+<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The value a model assigns to one characteristic, together with its unit."@en .
+<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#label> "Characteristic Value"@en .
+<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2004/02/skos/core#note> "Reified so that a value can be referred to and annotated with its source or the conditions it holds under, in the same arrangement and for the same reason as the characteristic value of the IEC 60050-351 pattern."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Classification
+<https://w3id.org/aias/odp/iso22989#Classification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Classification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Task> .
+<https://w3id.org/aias/odp/iso22989#Classification> <http://www.w3.org/2000/01/rdf-schema#comment> "A task assigning inputs to discrete classes."@en .
+<https://w3id.org/aias/odp/iso22989#Classification> <http://www.w3.org/2000/01/rdf-schema#label> "Classification"@en .
+<https://w3id.org/aias/odp/iso22989#Classification> <http://www.w3.org/2004/02/skos/core#note> "Named in note 2 to ISO/IEC 22989, 3.1.35, and discussed in clause 9, without an entry of its own."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Clustering
+<https://w3id.org/aias/odp/iso22989#Clustering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Clustering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Task> .
+<https://w3id.org/aias/odp/iso22989#Clustering> <http://www.w3.org/2000/01/rdf-schema#comment> "A task identifying groups of similar samples."@en .
+<https://w3id.org/aias/odp/iso22989#Clustering> <http://www.w3.org/2000/01/rdf-schema#label> "Clustering"@en .
+<https://w3id.org/aias/odp/iso22989#Clustering> <http://www.w3.org/2004/02/skos/core#note> "Named in note 2 to ISO/IEC 22989, 3.1.35, and discussed in clause 5.11.2, without an entry of its own."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Control
+<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2000/01/rdf-schema#comment> "Purposeful action on or in a process to meet specified objectives."@en .
+<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2000/01/rdf-schema#label> "Control"@en .
+<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.5, which takes the definition from IEC 61800-7-1:2015, 3.2.6.\n\n**The wording is identical to IEC 60050-351, 351-42-19**, and both trace back to the same source. The two are therefore the same concept rather than merely similar ones, and the alignment relates them with owl:equivalentClass. This pattern states nothing about the other, since referencing another namespace would drag it along wherever this pattern is used."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Controllability
+<https://w3id.org/aias/odp/iso22989#Controllability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Controllability> <http://www.w3.org/2000/01/rdf-schema#comment> "The property of an AI system that allows a human or another external agent to intervene in the system's functioning."@en .
+<https://w3id.org/aias/odp/iso22989#Controllability> <http://www.w3.org/2000/01/rdf-schema#label> "Controllability"@en .
+<https://w3id.org/aias/odp/iso22989#Controllability> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.6.\n\nModelled as a class rather than as a named quality because a model states what the intervention consists of, not a number. It is the entry that matters most for an AI system inside an automated plant."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Data
+<https://w3id.org/aias/odp/iso22989#Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Data> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#Data> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of samples an AI system acquires, processes or computes outputs for."@en .
+<https://w3id.org/aias/odp/iso22989#Data> <http://www.w3.org/2000/01/rdf-schema#label> "Data"@en .
+<https://w3id.org/aias/odp/iso22989#Data> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this pattern.** The standard defines the dataset, 3.2.5, and the sample, 3.2.13, and grades data by its use, but names no class between the atom and the collection."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#DataProcess
+<https://w3id.org/aias/odp/iso22989#DataProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#DataProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A step preparing data, transforming input data into output data."@en .
+<https://w3id.org/aias/odp/iso22989#DataProcess> <http://www.w3.org/2000/01/rdf-schema#label> "Data Process"@en .
+<https://w3id.org/aias/odp/iso22989#DataProcess> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this pattern.** The standard defines the steps below, 3.2.1 to 3.2.8, and names further ones in clause 5.10, but no common superclass."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#DataProcessing
+<https://w3id.org/aias/odp/iso22989#DataProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#DataProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#DataProcessing> <http://www.w3.org/2000/01/rdf-schema#comment> "The function transforming input data into output data."@en .
+<https://w3id.org/aias/odp/iso22989#DataProcessing> <http://www.w3.org/2000/01/rdf-schema#label> "Data Processing"@en .
+<https://w3id.org/aias/odp/iso22989#DataProcessing> <http://www.w3.org/2004/02/skos/core#note> "Described in ISO/IEC 22989, clause 5.10, without an entry of its own. What it consists of is recorded through the data process steps."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#DataSet
+<https://w3id.org/aias/odp/iso22989#DataSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#DataSet> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of data with a shared format."@en .
+<https://w3id.org/aias/odp/iso22989#DataSet> <http://www.w3.org/2000/01/rdf-schema#label> "Data Set"@en .
+<https://w3id.org/aias/odp/iso22989#DataSet> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.5."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#DataSink
+<https://w3id.org/aias/odp/iso22989#DataSink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#DataSink> <http://www.w3.org/2000/01/rdf-schema#comment> "Where data is stored, for example a database or a cloud service."@en .
+<https://w3id.org/aias/odp/iso22989#DataSink> <http://www.w3.org/2000/01/rdf-schema#label> "Data Sink"@en .
+<https://w3id.org/aias/odp/iso22989#DataSink> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** The counterpart of the data source."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#DataSource
+<https://w3id.org/aias/odp/iso22989#DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#DataSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Where data is acquired from, for example a sensor or a database."@en .
+<https://w3id.org/aias/odp/iso22989#DataSource> <http://www.w3.org/2000/01/rdf-schema#label> "Data Source"@en .
+<https://w3id.org/aias/odp/iso22989#DataSource> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** Discussed in ISO/IEC 22989, clause 8.6.1, without an entry. One of the two points at which an AI system meets what surrounds it."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Evaluation
+<https://w3id.org/aias/odp/iso22989#Evaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Evaluation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Evaluation> <http://www.w3.org/2000/01/rdf-schema#comment> "The function assessing the performance of a final model before it is deployed."@en .
+<https://w3id.org/aias/odp/iso22989#Evaluation> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation"@en .
+<https://w3id.org/aias/odp/iso22989#Evaluation> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** Described in ISO/IEC 22989, clause 5.10 and clause 6.2.8, without an entry. It is what evaluation data, 3.2.14, exists for."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm
+<https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#comment> "The procedure assessing a model against an evaluation metric."@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation Algorithm"@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** ISO/IEC 22989 describes evaluation in clause 5.10 without naming a procedure for it."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#EvaluationData
+<https://w3id.org/aias/odp/iso22989#EvaluationData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#EvaluationData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#EvaluationData> <http://www.w3.org/2000/01/rdf-schema#comment> "Data used to assess the performance of a final model."@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationData> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation Data"@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationData> <http://www.w3.org/2004/02/skos/core#altLabel> "test data"@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationData> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.14, where the entry carries both names, test data and evaluation data.\n\nNote 1 states that it is disjoint from training data and validation data. The pattern asserts that disjointness, since evaluating a model on data it was trained on says nothing about its performance."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#EvaluationMetric
+<https://w3id.org/aias/odp/iso22989#EvaluationMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#EvaluationMetric> <http://www.w3.org/2000/01/rdf-schema#comment> "What an evaluation measures a model against, for example an F1 score or an error rate."@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationMetric> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation Metric"@en .
+<https://w3id.org/aias/odp/iso22989#EvaluationMetric> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** The standard discusses evaluation without defining the measure it uses. A concrete metric is recorded as a named individual of this class."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Filtering
+<https://w3id.org/aias/odp/iso22989#Filtering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Filtering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Filtering> <http://www.w3.org/2000/01/rdf-schema#comment> "A step removing data that is not to be used further."@en .
+<https://w3id.org/aias/odp/iso22989#Filtering> <http://www.w3.org/2000/01/rdf-schema#label> "Filtering"@en .
+<https://w3id.org/aias/odp/iso22989#Filtering> <http://www.w3.org/2004/02/skos/core#note> "Named in ISO/IEC 22989, clause 5.10, among the preparation steps, without an entry of its own."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Generation
+<https://w3id.org/aias/odp/iso22989#Generation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Generation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Task> .
+<https://w3id.org/aias/odp/iso22989#Generation> <http://www.w3.org/2000/01/rdf-schema#comment> "A task producing new outputs, such as text, images or audio, from learned representations."@en .
+<https://w3id.org/aias/odp/iso22989#Generation> <http://www.w3.org/2000/01/rdf-schema#label> "Generation"@en .
+<https://w3id.org/aias/odp/iso22989#Generation> <http://www.w3.org/2004/02/skos/core#note> "Discussed in ISO/IEC 22989, clause 9.2, without an entry of its own."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Hyperparameter
+<https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A characteristic of an algorithm that affects its behaviour, chosen in advance rather than determined by training."@en .
+<https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2000/01/rdf-schema#label> "Hyperparameter"@en .
+<https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4, which defines it as a characteristic of a machine learning algorithm affecting its learning process, selected prior to training.\n\nThis pattern places it on the algorithm superclass, so that a model algorithm and an evaluation algorithm may carry one as well: the number of layers of a network, or the threshold of a rule. Applying the entry beyond machine learning is a reading of it rather than the entry itself, and a rule threshold recorded here is such a case."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Imputation
+<https://w3id.org/aias/odp/iso22989#Imputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Imputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Imputation> <http://www.w3.org/2000/01/rdf-schema#comment> "A procedure where missing data are replaced by estimated or modelled data."@en .
+<https://w3id.org/aias/odp/iso22989#Imputation> <http://www.w3.org/2000/01/rdf-schema#label> "Imputation"@en .
+<https://w3id.org/aias/odp/iso22989#Imputation> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.8."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Inference
+<https://w3id.org/aias/odp/iso22989#Inference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Inference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Inference> <http://www.w3.org/2000/01/rdf-schema#comment> "Reasoning by which conclusions are derived from known premises."@en .
+<https://w3id.org/aias/odp/iso22989#Inference> <http://www.w3.org/2000/01/rdf-schema#label> "Inference"@en .
+<https://w3id.org/aias/odp/iso22989#Inference> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.17. Note 1 to the entry states that in AI a premise is either a fact, a rule, a model, a feature or raw data, which is why both a symbolic and a subsymbolic system perform inference.\n\nNote 2 adds that the term refers both to the process and its result. This pattern uses it for the process and records the result as a prediction, 3.1.27."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#InputData
+<https://w3id.org/aias/odp/iso22989#InputData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#InputData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#InputData> <http://www.w3.org/2000/01/rdf-schema#comment> "Data for which an AI system calculates a predicted output or inference."@en .
+<https://w3id.org/aias/odp/iso22989#InputData> <http://www.w3.org/2000/01/rdf-schema#label> "Input Data"@en .
+<https://w3id.org/aias/odp/iso22989#InputData> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.9. What an inference runs on, whatever its use elsewhere in the life cycle."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Label
+<https://w3id.org/aias/odp/iso22989#Label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Label> <http://www.w3.org/2000/01/rdf-schema#comment> "A target variable assigned to a sample."@en .
+<https://w3id.org/aias/odp/iso22989#Label> <http://www.w3.org/2000/01/rdf-schema#label> "Label"@en .
+<https://w3id.org/aias/odp/iso22989#Label> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.10. Whether data carries labels is what 3.3.12 and 3.3.17 turn on."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Labelling
+<https://w3id.org/aias/odp/iso22989#Labelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Labelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Labelling> <http://www.w3.org/2000/01/rdf-schema#comment> "A step assigning labels to samples."@en .
+<https://w3id.org/aias/odp/iso22989#Labelling> <http://www.w3.org/2000/01/rdf-schema#label> "Labelling"@en .
+<https://w3id.org/aias/odp/iso22989#Labelling> <http://www.w3.org/2004/02/skos/core#note> "Named in ISO/IEC 22989, clause 5.10, without an entry of its own. The step that produces what 3.2.10 defines and what supervised learning, 3.3.12, requires."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#LearningType
+<https://w3id.org/aias/odp/iso22989#LearningType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#LearningType> <http://www.w3.org/2000/01/rdf-schema#comment> "The kind of machine learning an algorithm performs."@en .
+<https://w3id.org/aias/odp/iso22989#LearningType> <http://www.w3.org/2000/01/rdf-schema#label> "Learning Type"@en .
+<https://w3id.org/aias/odp/iso22989#LearningType> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this pattern.** The standard defines the four kinds below, 3.3.9, 3.3.11, 3.3.12 and 3.3.17, and discusses them in clause 5.11, but names no common superclass."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#MLAlgorithm
+<https://w3id.org/aias/odp/iso22989#MLAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#MLAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#TrainingAlgorithm> .
+<https://w3id.org/aias/odp/iso22989#MLAlgorithm> <http://www.w3.org/2000/01/rdf-schema#comment> "An algorithm to determine parameters of a machine learning model from data according to given criteria."@en .
+<https://w3id.org/aias/odp/iso22989#MLAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "Machine Learning Algorithm"@en .
+<https://w3id.org/aias/odp/iso22989#MLAlgorithm> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.6. The only algorithm the standard defines. What kind of learning it performs is recorded through basedOnLearning."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#MLModel
+<https://w3id.org/aias/odp/iso22989#MLModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#MLModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Model> .
+<https://w3id.org/aias/odp/iso22989#MLModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A mathematical construct that generates an inference or prediction based on input data or information."@en .
+<https://w3id.org/aias/odp/iso22989#MLModel> <http://www.w3.org/2000/01/rdf-schema#label> "Machine Learning Model"@en .
+<https://w3id.org/aias/odp/iso22989#MLModel> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.7. 3.3.14 calls the result of training a trained model.\n\nKept below the general model on purpose. Every machine learning model is a model, but a model is not necessarily learned, and a pattern that knew only this class could not record a symbolic system at all."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#MachineLearning
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Training> .
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of optimizing model parameters through computational techniques, such that the model's behaviour reflects the data or experience."@en .
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2000/01/rdf-schema#label> "Machine Learning"@en .
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2004/02/skos/core#altLabel> "ML"@en .
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.5.\n\nModelled as a subclass of training rather than as a separate class: it is the case of training in which the parameters are optimised computationally. A symbolic system has a model without any training at all, which is what test case 2 records."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Model
+<https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data."@en .
+<https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2000/01/rdf-schema#label> "Model"@en .
+<https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it, which is what test case 2 records."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#ModelAlgorithm
+<https://w3id.org/aias/odp/iso22989#ModelAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#ModelAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#ModelAlgorithm> <http://www.w3.org/2000/01/rdf-schema#comment> "The procedure describing the structure of a model, such as the architecture of a neural network or a set of rules."@en .
+<https://w3id.org/aias/odp/iso22989#ModelAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "Model Algorithm"@en .
+<https://w3id.org/aias/odp/iso22989#ModelAlgorithm> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work**, derived from ISO/IEC 22989, 3.1.23 and 3.3.7.\n\nIt is what a model is before its parameters are known. The distinction matters because the same architecture trained on different data yields different models, and a model records which of the two it is talking about.\n\nA concrete architecture is recorded as a named individual of this class rather than as a subclass, which keeps the pattern independent of libraries and methods."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#ModelParameter
+<https://w3id.org/aias/odp/iso22989#ModelParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#ModelParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An internal variable of a model that affects how it computes its outputs."@en .
+<https://w3id.org/aias/odp/iso22989#ModelParameter> <http://www.w3.org/2000/01/rdf-schema#label> "Model Parameter"@en .
+<https://w3id.org/aias/odp/iso22989#ModelParameter> <http://www.w3.org/2004/02/skos/core#altLabel> "parameter"@en .
+<https://w3id.org/aias/odp/iso22989#ModelParameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.8. Note 1 to the entry names the weights in a neural network as an example.\n\nDetermined by training, which is what separates it from the hyperparameter below."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Normalization
+<https://w3id.org/aias/odp/iso22989#Normalization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Normalization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Normalization> <http://www.w3.org/2000/01/rdf-schema#comment> "A step bringing data onto a common scale."@en .
+<https://w3id.org/aias/odp/iso22989#Normalization> <http://www.w3.org/2000/01/rdf-schema#label> "Normalization"@en .
+<https://w3id.org/aias/odp/iso22989#Normalization> <http://www.w3.org/2004/02/skos/core#note> "Named in ISO/IEC 22989, clause 5.10, without an entry of its own."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Prediction
+<https://w3id.org/aias/odp/iso22989#Prediction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Prediction> <http://www.w3.org/2000/01/rdf-schema#comment> "The primary output of an AI system when provided with input data or information."@en .
+<https://w3id.org/aias/odp/iso22989#Prediction> <http://www.w3.org/2000/01/rdf-schema#label> "Prediction"@en .
+<https://w3id.org/aias/odp/iso22989#Prediction> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.27.\n\nNote 2 to the entry states that prediction does not necessarily refer to predicting something in the future, and note 1 that predictions can be followed by further outputs such as recommendations, decisions and actions."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#ProductionData
+<https://w3id.org/aias/odp/iso22989#ProductionData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#ProductionData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#ProductionData> <http://www.w3.org/2000/01/rdf-schema#comment> "Data acquired during the operation phase of an AI system, for which a deployed system calculates a predicted output or inference."@en .
+<https://w3id.org/aias/odp/iso22989#ProductionData> <http://www.w3.org/2000/01/rdf-schema#label> "Production Data"@en .
+<https://w3id.org/aias/odp/iso22989#ProductionData> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.12.\n\nNot part of the disjointness above. It arises during operation, so it cannot overlap with data that existed before deployment."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Regression
+<https://w3id.org/aias/odp/iso22989#Regression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Regression> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Task> .
+<https://w3id.org/aias/odp/iso22989#Regression> <http://www.w3.org/2000/01/rdf-schema#comment> "A task predicting continuous quantities."@en .
+<https://w3id.org/aias/odp/iso22989#Regression> <http://www.w3.org/2000/01/rdf-schema#label> "Regression"@en .
+<https://w3id.org/aias/odp/iso22989#Regression> <http://www.w3.org/2004/02/skos/core#note> "Named in note 2 to ISO/IEC 22989, 3.1.35, without an entry of its own."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#ReinforcementLearning
+<https://w3id.org/aias/odp/iso22989#ReinforcementLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#ReinforcementLearning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#LearningType> .
+<https://w3id.org/aias/odp/iso22989#ReinforcementLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "Learning of an optimal sequence of actions to maximize a reward through interaction with an environment."@en .
+<https://w3id.org/aias/odp/iso22989#ReinforcementLearning> <http://www.w3.org/2000/01/rdf-schema#label> "Reinforcement Learning"@en .
+<https://w3id.org/aias/odp/iso22989#ReinforcementLearning> <http://www.w3.org/2004/02/skos/core#altLabel> "RL"@en .
+<https://w3id.org/aias/odp/iso22989#ReinforcementLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.9. The only one of the four that does not turn on whether the data is labelled, since it learns from interaction rather than from a dataset."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Retraining
+<https://w3id.org/aias/odp/iso22989#Retraining> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Retraining> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Training> .
+<https://w3id.org/aias/odp/iso22989#Retraining> <http://www.w3.org/2000/01/rdf-schema#comment> "Updating a trained model by training with different training data."@en .
+<https://w3id.org/aias/odp/iso22989#Retraining> <http://www.w3.org/2000/01/rdf-schema#label> "Retraining"@en .
+<https://w3id.org/aias/odp/iso22989#Retraining> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.10. A model that records it can tell a deployed model from the one it replaced, which is what clause 6.2.7 and 6.2.8 ask for."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Risk
+<https://w3id.org/aias/odp/iso22989#Risk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Risk> <http://www.w3.org/2000/01/rdf-schema#comment> "The effect of uncertainty on objectives."@en .
+<https://w3id.org/aias/odp/iso22989#Risk> <http://www.w3.org/2000/01/rdf-schema#label> "Risk"@en .
+<https://w3id.org/aias/odp/iso22989#Risk> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.11. Clause 6.2.2 asks stakeholders to assess risks across the whole life cycle, and this class is where a model records the result."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Sample
+<https://w3id.org/aias/odp/iso22989#Sample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Sample> <http://www.w3.org/2000/01/rdf-schema#comment> "An atomic data element processed in quantities by a machine learning algorithm or an AI system."@en .
+<https://w3id.org/aias/odp/iso22989#Sample> <http://www.w3.org/2000/01/rdf-schema#label> "Sample"@en .
+<https://w3id.org/aias/odp/iso22989#Sample> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.13."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Sampling
+<https://w3id.org/aias/odp/iso22989#Sampling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Sampling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#DataProcess> .
+<https://w3id.org/aias/odp/iso22989#Sampling> <http://www.w3.org/2000/01/rdf-schema#comment> "The process to select a subset of data samples intended to present patterns and trends similar to that of the larger dataset."@en .
+<https://w3id.org/aias/odp/iso22989#Sampling> <http://www.w3.org/2000/01/rdf-schema#label> "Sampling"@en .
+<https://w3id.org/aias/odp/iso22989#Sampling> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.4."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning
+<https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#LearningType> .
+<https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "Machine learning that makes use of both labelled and unlabelled data during training."@en .
+<https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#label> "Semi-supervised Machine Learning"@en .
+<https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.11."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Storing
+<https://w3id.org/aias/odp/iso22989#Storing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Storing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Storing> <http://www.w3.org/2000/01/rdf-schema#comment> "The function persisting data to a data sink, so that it stays available."@en .
+<https://w3id.org/aias/odp/iso22989#Storing> <http://www.w3.org/2000/01/rdf-schema#label> "Storing"@en .
+<https://w3id.org/aias/odp/iso22989#Storing> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** Discussed in ISO/IEC 22989, clause 8.6.1, without an entry. The counterpart of acquisition, and the second function reaching outside the system."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#SubsymbolicAI
+<https://w3id.org/aias/odp/iso22989#SubsymbolicAI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#SubsymbolicAI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIType> .
+<https://w3id.org/aias/odp/iso22989#SubsymbolicAI> <http://www.w3.org/2000/01/rdf-schema#comment> "AI based on techniques and models that use an implicit encoding of information, that can be derived from experience or raw data."@en .
+<https://w3id.org/aias/odp/iso22989#SubsymbolicAI> <http://www.w3.org/2000/01/rdf-schema#label> "Subsymbolic AI"@en .
+<https://w3id.org/aias/odp/iso22989#SubsymbolicAI> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.34."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#SupervisedLearning
+<https://w3id.org/aias/odp/iso22989#SupervisedLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#SupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#LearningType> .
+<https://w3id.org/aias/odp/iso22989#SupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "Machine learning that makes only use of labelled data during training."@en .
+<https://w3id.org/aias/odp/iso22989#SupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#label> "Supervised Machine Learning"@en .
+<https://w3id.org/aias/odp/iso22989#SupervisedLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.12. Whether the data carries a label, 3.2.10, is what separates this from unsupervised learning."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#SymbolicAI
+<https://w3id.org/aias/odp/iso22989#SymbolicAI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#SymbolicAI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIType> .
+<https://w3id.org/aias/odp/iso22989#SymbolicAI> <http://www.w3.org/2000/01/rdf-schema#comment> "AI based on techniques and models that manipulate symbols and structures according to explicitly defined rules to obtain inferences."@en .
+<https://w3id.org/aias/odp/iso22989#SymbolicAI> <http://www.w3.org/2000/01/rdf-schema#label> "Symbolic AI"@en .
+<https://w3id.org/aias/odp/iso22989#SymbolicAI> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.33. Note 1 to the entry adds that symbolic AI produces declarative outputs, whereas subsymbolic AI rests on statistical approaches and produces outputs with a given probability of error."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#SystemDesign
+<https://w3id.org/aias/odp/iso22989#SystemDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#SystemDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two."@en .
+<https://w3id.org/aias/odp/iso22989#SystemDesign> <http://www.w3.org/2000/01/rdf-schema#label> "System Design"@en .
+<https://w3id.org/aias/odp/iso22989#SystemDesign> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** Clause 8.6.2 of the standard discusses cloud and edge computing without defining the choice between them as a term.\n\nThe class is kept because it is what connects an AI system to the plant it runs in: the design says which device carries which part of the system, which is the handover the alignment needs."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Task
+<https://w3id.org/aias/odp/iso22989#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Task> <http://www.w3.org/2000/01/rdf-schema#comment> "An action required to achieve a specific goal."@en .
+<https://w3id.org/aias/odp/iso22989#Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task"@en .
+<https://w3id.org/aias/odp/iso22989#Task> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.35. Note 1 to the entry adds that actions can be physical or cognitive, note 2 lists classification, regression, ranking, clustering and dimensionality reduction as examples."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Training
+<https://w3id.org/aias/odp/iso22989#Training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Training> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Training> <http://www.w3.org/2000/01/rdf-schema#comment> "The process to determine or to improve the parameters of a machine learning model, based on a machine learning algorithm, by using training data."@en .
+<https://w3id.org/aias/odp/iso22989#Training> <http://www.w3.org/2000/01/rdf-schema#label> "Training"@en .
+<https://w3id.org/aias/odp/iso22989#Training> <http://www.w3.org/2004/02/skos/core#altLabel> "model training"@en .
+<https://w3id.org/aias/odp/iso22989#Training> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.15.\n\nThe entry names all three ingredients: an algorithm, training data and the parameters that come out. A training missing any of them is not one, which is what makes this function the place where the difference between an algorithm and a model arises."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#TrainingAlgorithm
+<https://w3id.org/aias/odp/iso22989#TrainingAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#TrainingAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Algorithm> .
+<https://w3id.org/aias/odp/iso22989#TrainingAlgorithm> <http://www.w3.org/2000/01/rdf-schema#comment> "The procedure determining the parameters of a model from data according to given criteria."@en .
+<https://w3id.org/aias/odp/iso22989#TrainingAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "Training Algorithm"@en .
+<https://w3id.org/aias/odp/iso22989#TrainingAlgorithm> <http://www.w3.org/2004/02/skos/core#note> "**Construct of this work.** ISO/IEC 22989, 3.3.6 defines the machine learning case of it, which this pattern carries as the subclass below."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#TrainingData
+<https://w3id.org/aias/odp/iso22989#TrainingData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#TrainingData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#TrainingData> <http://www.w3.org/2000/01/rdf-schema#comment> "Data used to train a machine learning model."@en .
+<https://w3id.org/aias/odp/iso22989#TrainingData> <http://www.w3.org/2000/01/rdf-schema#label> "Training Data"@en .
+<https://w3id.org/aias/odp/iso22989#TrainingData> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.16."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#UnsupervisedLearning
+<https://w3id.org/aias/odp/iso22989#UnsupervisedLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#UnsupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#LearningType> .
+<https://w3id.org/aias/odp/iso22989#UnsupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "Machine learning that makes only use of unlabelled data during training."@en .
+<https://w3id.org/aias/odp/iso22989#UnsupervisedLearning> <http://www.w3.org/2000/01/rdf-schema#label> "Unsupervised Machine Learning"@en .
+<https://w3id.org/aias/odp/iso22989#UnsupervisedLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.17."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Validation
+<https://w3id.org/aias/odp/iso22989#Validation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Validation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Validation> <http://www.w3.org/2000/01/rdf-schema#comment> "Confirmation, through the provision of objective evidence, that the requirements for a specific intended use or application have been fulfilled."@en .
+<https://w3id.org/aias/odp/iso22989#Validation> <http://www.w3.org/2000/01/rdf-schema#label> "Validation"@en .
+<https://w3id.org/aias/odp/iso22989#Validation> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.18. Clause 6.2.4 treats validation together with verification as one stage of the life cycle. Validation asks whether the right system was built, verification whether the system was built right."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#ValidationData
+<https://w3id.org/aias/odp/iso22989#ValidationData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#ValidationData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#Data> .
+<https://w3id.org/aias/odp/iso22989#ValidationData> <http://www.w3.org/2000/01/rdf-schema#comment> "Data used to compare the performance of different candidate models."@en .
+<https://w3id.org/aias/odp/iso22989#ValidationData> <http://www.w3.org/2000/01/rdf-schema#label> "Validation Data"@en .
+<https://w3id.org/aias/odp/iso22989#ValidationData> <http://www.w3.org/2004/02/skos/core#altLabel> "development data"@en .
+<https://w3id.org/aias/odp/iso22989#ValidationData> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.2.15. Note 1 to the entry states that validation data is disjoint from test data and generally also from training data."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#VariableCharacteristic
+<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "A named property of an AI system to which a model assigns a value, such as robustness or reliability."@en .
+<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Characteristic"@en .
+<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this pattern.** The standard defines the qualities of clause 3.5 without naming what they have in common. Named individuals are supplied in ISO22989-instances.ttl."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Verification
+<https://w3id.org/aias/odp/iso22989#Verification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Verification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
+<https://w3id.org/aias/odp/iso22989#Verification> <http://www.w3.org/2000/01/rdf-schema#comment> "Confirmation, through the provision of objective evidence, that specified requirements have been fulfilled."@en .
+<https://w3id.org/aias/odp/iso22989#Verification> <http://www.w3.org/2000/01/rdf-schema#label> "Verification"@en .
+<https://w3id.org/aias/odp/iso22989#Verification> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.17. See the note on validation for the difference between the two."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/iso22989#Cloud
+<https://w3id.org/aias/odp/iso22989#Cloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989#Cloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#SystemDesign> .
+<https://w3id.org/aias/odp/iso22989#Cloud> <http://www.w3.org/2000/01/rdf-schema#comment> "An AI system running on remote infrastructure, away from the process it serves."@en .
+<https://w3id.org/aias/odp/iso22989#Cloud> <http://www.w3.org/2000/01/rdf-schema#label> "Cloud"@en .
+<https://w3id.org/aias/odp/iso22989#Cloud> <http://www.w3.org/2004/02/skos/core#note> "Discussed in ISO/IEC 22989, clause 8.6.2, without an entry."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Edge
+<https://w3id.org/aias/odp/iso22989#Edge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989#Edge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#SystemDesign> .
+<https://w3id.org/aias/odp/iso22989#Edge> <http://www.w3.org/2000/01/rdf-schema#comment> "An AI system running near the process it serves, on local devices."@en .
+<https://w3id.org/aias/odp/iso22989#Edge> <http://www.w3.org/2000/01/rdf-schema#label> "Edge"@en .
+<https://w3id.org/aias/odp/iso22989#Edge> <http://www.w3.org/2004/02/skos/core#note> "Discussed in ISO/IEC 22989, clause 8.6.2, without an entry."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#Hybrid
+<https://w3id.org/aias/odp/iso22989#Hybrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aias/odp/iso22989#Hybrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso22989#SystemDesign> .
+<https://w3id.org/aias/odp/iso22989#Hybrid> <http://www.w3.org/2000/01/rdf-schema#comment> "An AI system split between local devices and remote infrastructure."@en .
+<https://w3id.org/aias/odp/iso22989#Hybrid> <http://www.w3.org/2000/01/rdf-schema#label> "Hybrid"@en .
+<https://w3id.org/aias/odp/iso22989#Hybrid> <http://www.w3.org/2004/02/skos/core#note> "The combination of the two above. A system whose components run in different places is recorded this way."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid26 <http://www.w3.org/2002/07/owl#members> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#ValidationData> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#TrainingData> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#EvaluationData> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid30 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Hybrid> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Edge> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/iso22989#Cloud> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

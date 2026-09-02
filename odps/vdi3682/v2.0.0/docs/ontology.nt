@@ -1,0 +1,671 @@
+<https://w3id.org/aias/odp/vdi3682> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/aias/odp/vdi3682> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/vdi3682/1.0.0> .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/bibliographicCitation> "TODO: citation of the accompanying publication" .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/contributor> "TODO: co-authors" .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/created> "2026-08-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/description> "Ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 Part 1 (concept and graphic representation) and Part 2 (information model), issue May 2015.\n\nThe pattern covers the process network of states and process operators, the technical resources realising the operators, the system limit bounding the observation horizon, and the attribute structure of identification and characteristics.\n\nThe pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology."@en .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/publisher> "TODO: institution" .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/rights> "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/source> <https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung> .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/dc/terms/title> "VDI 3682 Ontology Design Pattern"@en .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/ontology/bibo/status> "Draft"@en .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/vocab/vann/preferredNamespacePrefix> "vdi3682" .
+<https://w3id.org/aias/odp/vdi3682> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/vdi3682#" .
+<https://w3id.org/aias/odp/vdi3682> <http://www.w3.org/2000/01/rdf-schema#comment> "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\n\nRelation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.\n\nStructural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."@en .
+<https://w3id.org/aias/odp/vdi3682> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/vdi3682#assignedResource
+<https://w3id.org/aias/odp/vdi3682#assignedResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#assignedResource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Assignment> .
+<https://w3id.org/aias/odp/vdi3682#assignedResource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#assignedResource> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an assignment to the technical resource realising the assigned process operator."@en .
+<https://w3id.org/aias/odp/vdi3682#assignedResource> <http://www.w3.org/2000/01/rdf-schema#label> "assigned resource"@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#consistsOf
+<https://w3id.org/aias/odp/vdi3682#consistsOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#consistsOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Process> .
+<https://w3id.org/aias/odp/vdi3682#consistsOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#State> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#Flow> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#consistsOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process to the elements it contains, namely its states, process operators and its system limit."@en .
+<https://w3id.org/aias/odp/vdi3682#consistsOf> <http://www.w3.org/2000/01/rdf-schema#label> "consists of"@en .
+<https://w3id.org/aias/odp/vdi3682#consistsOf> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 2, aggregation."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#dependency
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/2000/01/rdf-schema#comment> "Expresses that two states are required together rather than as alternatives to one another."@en .
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/2000/01/rdf-schema#label> "dependency"@en .
+<https://w3id.org/aias/odp/vdi3682#dependency> <http://www.w3.org/2004/02/skos/core#note> "Adopted from the VDI 3682 ODP of Helmut Schmidt University and not contained in the standard itself.\n\nUnder the open world assumption several inputs of one process operator always denote alternatives. Where inputs are required jointly, this has to be stated explicitly. The property acts as a conjunction between states, so that an expression such as \"A and B, or C and D\" becomes representable: dependency is asserted between A and B and between C and D.\n\nThe property complements ParallelFlow. A parallel flow qualifies a single connection, whereas dependency groups several connections into one conjunction."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasAssignment
+<https://w3id.org/aias/odp/vdi3682#hasAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#Assignment> .
+<https://w3id.org/aias/odp/vdi3682#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to an assignment describing which technical resource realises it."@en .
+<https://w3id.org/aias/odp/vdi3682#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "has assignment"@en .
+<https://w3id.org/aias/odp/vdi3682#hasAssignment> <http://www.w3.org/2004/02/skos/core#note> "Directed counterpart of the usage symbol of VDI 3682 Part 1, Figure 3."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasInput
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#Process> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#hasStateSource> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to a state entering it. Inferred from the reified flows, not modelled directly."@en .
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/2000/01/rdf-schema#label> "has input"@en .
+<https://w3id.org/aias/odp/vdi3682#hasInput> <http://www.w3.org/2004/02/skos/core#note> "The chain reads: a flow leading to this operator originates from that state. Typed sub properties keep the inference from firing between two states or two operators."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasOperatorSource
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/aias/odp/vdi3682#hasSource> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a flow to the process operator it originates from."@en .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/2000/01/rdf-schema#label> "has operator source"@en .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorSource> <http://www.w3.org/2004/02/skos/core#note> "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasOperatorTarget
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/aias/odp/vdi3682#hasTarget> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a flow to the process operator it leads to."@en .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/2000/01/rdf-schema#label> "has operator target"@en .
+<https://w3id.org/aias/odp/vdi3682#hasOperatorTarget> <http://www.w3.org/2004/02/skos/core#note> "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasOutput
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#unionOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#Process> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#hasStateTarget> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#hasOperatorSource> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to a state leaving it. Inferred from the reified flows, not modelled directly."@en .
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/2000/01/rdf-schema#label> "has output"@en .
+<https://w3id.org/aias/odp/vdi3682#hasOutput> <http://www.w3.org/2004/02/skos/core#note> "The chain reads: a flow originating from this operator leads to that state."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasPredecessor
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#hasSuccessor> .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#hasOutput> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#hasInput> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to a process operator preceding it. Inferred, not modelled."@en .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2000/01/rdf-schema#label> "has predecessor"@en .
+<https://w3id.org/aias/odp/vdi3682#hasPredecessor> <http://www.w3.org/2004/02/skos/core#note> "Adopted from the VDI 3682 ODP of Helmut Schmidt University. Two operators are never adjacent directly; the chain passes through the shared state."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasSource
+<https://w3id.org/aias/odp/vdi3682#hasSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasSource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#hasSource> <http://www.w3.org/2000/01/rdf-schema#range> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#State> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#hasSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a flow to the element it originates from."@en .
+<https://w3id.org/aias/odp/vdi3682#hasSource> <http://www.w3.org/2000/01/rdf-schema#label> "has source"@en .
+<https://w3id.org/aias/odp/vdi3682#hasSource> <http://www.w3.org/2004/02/skos/core#note> "Super property of the two typed source properties. Chains are defined on the typed sub properties only, so that inference cannot fire between two elements of the same kind."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasStateSource
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/aias/odp/vdi3682#hasSource> .
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a flow to the state it originates from."@en .
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/2000/01/rdf-schema#label> "has state source"@en .
+<https://w3id.org/aias/odp/vdi3682#hasStateSource> <http://www.w3.org/2004/02/skos/core#note> "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasStateTarget
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/aias/odp/vdi3682#hasTarget> .
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a flow to the state it leads to."@en .
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/2000/01/rdf-schema#label> "has state target"@en .
+<https://w3id.org/aias/odp/vdi3682#hasStateTarget> <http://www.w3.org/2004/02/skos/core#note> "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasSubProcess
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#Process> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#Process> .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid28 .
+_:genid28 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#consistsOf> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#isComposedOf> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to the process describing its decomposition. Inferred, not modelled."@en .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/2000/01/rdf-schema#label> "has sub process"@en .
+<https://w3id.org/aias/odp/vdi3682#hasSubProcess> <http://www.w3.org/2004/02/skos/core#note> "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows isComposedOf and the inverse of consistsOf."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasSuccessor
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#hasInput> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#hasOutput> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to a process operator following it. Inferred, not modelled."@en .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/2000/01/rdf-schema#label> "has successor"@en .
+<https://w3id.org/aias/odp/vdi3682#hasSuccessor> <http://www.w3.org/2004/02/skos/core#note> "Adopted from the VDI 3682 ODP of Helmut Schmidt University."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasTarget
+<https://w3id.org/aias/odp/vdi3682#hasTarget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasTarget> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#hasTarget> <http://www.w3.org/2000/01/rdf-schema#range> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#unionOf> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#State> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#hasTarget> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a flow to the element it leads to."@en .
+<https://w3id.org/aias/odp/vdi3682#hasTarget> <http://www.w3.org/2000/01/rdf-schema#label> "has target"@en .
+<https://w3id.org/aias/odp/vdi3682#hasTarget> <http://www.w3.org/2004/02/skos/core#note> "Super property of the two typed target properties."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#hasUpperProcess
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#unionOf> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#Process> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#Process> .
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#consistsOf> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid42 .
+_:genid42 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#isComposedOf> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to its parent process. Inferred, not modelled."@en .
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/2000/01/rdf-schema#label> "has upper process"@en .
+<https://w3id.org/aias/odp/vdi3682#hasUpperProcess> <http://www.w3.org/2004/02/skos/core#note> "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows the inverse of isComposedOf and the inverse of consistsOf."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#isAssignedTo
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#assignedResource> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#hasAssignment> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator directly to the technical resource realising it. Inferred from the reified assignment, not modelled directly."@en .
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#label> "is assigned to"@en .
+<https://w3id.org/aias/odp/vdi3682#isAssignedTo> <http://www.w3.org/2004/02/skos/core#note> "Shortcut across the reified assignment, provided so that queries need not traverse the reification. The VDI 3682 ODP of Helmut Schmidt University carries this property as the primary modelling construct."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#isCharacterizedBy
+<https://w3id.org/aias/odp/vdi3682#isCharacterizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#isCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#Characteristic> .
+<https://w3id.org/aias/odp/vdi3682#isCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an object of the formalised process description to one of its characteristics."@en .
+<https://w3id.org/aias/odp/vdi3682#isCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is characterized by"@en .
+<https://w3id.org/aias/odp/vdi3682#isCharacterizedBy> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 3."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#isComposedOf
+<https://w3id.org/aias/odp/vdi3682#isComposedOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a process operator to the more detailed process operators it decomposes into."@en .
+<https://w3id.org/aias/odp/vdi3682#isComposedOf> <http://www.w3.org/2000/01/rdf-schema#label> "is composed of"@en .
+<https://w3id.org/aias/odp/vdi3682#isComposedOf> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#isIdentifiedBy
+<https://w3id.org/aias/odp/vdi3682#isIdentifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#isIdentifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#isIdentifiedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#isIdentifiedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an object of the formalised process description to its identification."@en .
+<https://w3id.org/aias/odp/vdi3682#isIdentifiedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is identified by"@en .
+<https://w3id.org/aias/odp/vdi3682#isIdentifiedBy> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 3, cardinality one."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#isWithin
+<https://w3id.org/aias/odp/vdi3682#isWithin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/vdi3682#isWithin> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid45 .
+_:genid45 <http://www.w3.org/2002/07/owl#unionOf> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#State> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/aias/odp/vdi3682#Flow> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#isWithin> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#isWithin> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a state, a process operator or a flow to the system limit enclosing it."@en .
+<https://w3id.org/aias/odp/vdi3682#isWithin> <http://www.w3.org/2000/01/rdf-schema#label> "is within"@en .
+<https://w3id.org/aias/odp/vdi3682#isWithin> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/vdi3682#category
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Characteristic> .
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of a characteristic."@en .
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/2000/01/rdf-schema#label> "category"@en .
+<https://w3id.org/aias/odp/vdi3682#category> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 5."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#descriptiveElement
+<https://w3id.org/aias/odp/vdi3682#descriptiveElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#descriptiveElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Characteristic> .
+<https://w3id.org/aias/odp/vdi3682#descriptiveElement> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#descriptiveElement> <http://www.w3.org/2000/01/rdf-schema#comment> "The describing part of a characteristic."@en .
+<https://w3id.org/aias/odp/vdi3682#descriptiveElement> <http://www.w3.org/2000/01/rdf-schema#label> "descriptive element"@en .
+<https://w3id.org/aias/odp/vdi3682#descriptiveElement> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 5 and Figure 6. The standard fixes the part but leaves its content open."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#externalReference
+<https://w3id.org/aias/odp/vdi3682#externalReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#externalReference> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#externalReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#externalReference> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference from an object to an external identification system such as AKZ, KKS or NE 100."@en .
+<https://w3id.org/aias/odp/vdi3682#externalReference> <http://www.w3.org/2000/01/rdf-schema#label> "external reference"@en .
+<https://w3id.org/aias/odp/vdi3682#externalReference> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1 and Part 2, Section 5.1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#longName
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/2000/01/rdf-schema#comment> "The preferred name of an object."@en .
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/2000/01/rdf-schema#label> "long name"@en .
+<https://w3id.org/aias/odp/vdi3682#longName> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#relationalElement
+<https://w3id.org/aias/odp/vdi3682#relationalElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#relationalElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Characteristic> .
+<https://w3id.org/aias/odp/vdi3682#relationalElement> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#relationalElement> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation establishing part of a characteristic."@en .
+<https://w3id.org/aias/odp/vdi3682#relationalElement> <http://www.w3.org/2000/01/rdf-schema#label> "relational element"@en .
+<https://w3id.org/aias/odp/vdi3682#relationalElement> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 5 and Figure 7."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#revisionNumber
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "The revision of an object, describing its accredited version."@en .
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/2000/01/rdf-schema#label> "revision number"@en .
+<https://w3id.org/aias/odp/vdi3682#revisionNumber> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#shortName
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/2000/01/rdf-schema#comment> "The coded name of an object."@en .
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/2000/01/rdf-schema#label> "short name"@en .
+<https://w3id.org/aias/odp/vdi3682#shortName> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#uniqueIdent
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/2000/01/rdf-schema#comment> "The unique code identifying an object."@en .
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/2000/01/rdf-schema#label> "unique ident"@en .
+<https://w3id.org/aias/odp/vdi3682#uniqueIdent> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.1, after IEC 61360-1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#versionNumber
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "The version of an object. A new version arises when the values of its attributes change."@en .
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/2000/01/rdf-schema#label> "version number"@en .
+<https://w3id.org/aias/odp/vdi3682#versionNumber> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.1. This property is a standard backed anchor for tracking the model states of an AI application across the engineering method."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aias/odp/vdi3682#AlternativeFlow
+<https://w3id.org/aias/odp/vdi3682#AlternativeFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#AlternativeFlow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#AlternativeFlow> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#ParallelFlow> .
+<https://w3id.org/aias/odp/vdi3682#AlternativeFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "A flow that is part of a separate flow denoting mutually exclusive process paths."@en .
+<https://w3id.org/aias/odp/vdi3682#AlternativeFlow> <http://www.w3.org/2000/01/rdf-schema#label> "Alternative Flow"@en .
+<https://w3id.org/aias/odp/vdi3682#AlternativeFlow> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. Introducing a class for the alternative flow is a design decision of this pattern. Where alternative flows are present, the system limit must not be used as a balance limit."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Assignment
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Attribute> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Process> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2000/01/rdf-schema#comment> "The structural connection through which the execution of a process operator is assigned to a technical resource."@en .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2000/01/rdf-schema#label> "Assignment"@en .
+<https://w3id.org/aias/odp/vdi3682#Assignment> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Figure 3 carries this relation as the usage symbol, an edge of the graphical notation.\n\nReifying the assignment as a class is a design decision of this pattern, taken for the same reasons as the reification of the flow. The VDI 3682 ODP of Helmut Schmidt University models it as the object property isAssignedTo."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Attribute
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Process> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2000/01/rdf-schema#comment> "A property of an object of the formalised process description. Two kinds of attribute exist, the identification and the characteristics."@en .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2000/01/rdf-schema#label> "Attribute"@en .
+<https://w3id.org/aias/odp/vdi3682#Attribute> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5 and Figure 3."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Characteristic
+<https://w3id.org/aias/odp/vdi3682#Characteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Characteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#Attribute> .
+<https://w3id.org/aias/odp/vdi3682#Characteristic> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Identification> .
+<https://w3id.org/aias/odp/vdi3682#Characteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "An attribute describing a process specific property of an object. It consists of a category, a descriptive element and a relational element."@en .
+<https://w3id.org/aias/odp/vdi3682#Characteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Characteristic"@en .
+<https://w3id.org/aias/odp/vdi3682#Characteristic> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.2 and Figures 5 to 7.\n\nThe standard fixes this three-part structure but does not prescribe a vocabulary of properties. The entries shown in its figures, such as setpoint value or validity limits, are examples closed by an open placeholder. Non-functional properties of resources therefore have to draw their vocabulary from a further standard."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Energy
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Information> .
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Product> .
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/2000/01/rdf-schema#comment> "Energy required or released by a process operator, for example electrical energy or heat. Energy occurs as input and as output of a process."@en .
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/2000/01/rdf-schema#label> "Energy"@en .
+<https://w3id.org/aias/odp/vdi3682#Energy> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Flow
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Process> .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2000/01/rdf-schema#comment> "A directed connection transporting a product, an energy or an information between a state and a process operator."@en .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2000/01/rdf-schema#label> "Flow"@en .
+<https://w3id.org/aias/odp/vdi3682#Flow> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. The reification is required because the AIAS alignment ontology treats flows as instances of Relation so that the modelling assistance can annotate them, and because the graphical notation of this work carries a class field and a naming field inside every symbol, which an edge cannot hold.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Identification
+<https://w3id.org/aias/odp/vdi3682#Identification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Identification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#Attribute> .
+<https://w3id.org/aias/odp/vdi3682#Identification> <http://www.w3.org/2000/01/rdf-schema#comment> "The attribute uniquely identifying an object and its characteristics over the life cycle of a process description."@en .
+<https://w3id.org/aias/odp/vdi3682#Identification> <http://www.w3.org/2000/01/rdf-schema#label> "Identification"@en .
+<https://w3id.org/aias/odp/vdi3682#Identification> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Section 5.1, after IEC 61360-1. It carries a unique ident, a long name, a short name, references to external identification systems, a version number and a revision number."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Information
+<https://w3id.org/aias/odp/vdi3682#Information> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Information> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Information> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#Product> .
+<https://w3id.org/aias/odp/vdi3682#Information> <http://www.w3.org/2000/01/rdf-schema#comment> "Information required by a process operator to carry out its transformation, or information created by it."@en .
+<https://w3id.org/aias/odp/vdi3682#Information> <http://www.w3.org/2000/01/rdf-schema#label> "Information"@en .
+<https://w3id.org/aias/odp/vdi3682#Information> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1. Information leaving a process is the point of contact with the communication pattern of the AIAS information model."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#ParallelFlow
+<https://w3id.org/aias/odp/vdi3682#ParallelFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#ParallelFlow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#Flow> .
+<https://w3id.org/aias/odp/vdi3682#ParallelFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "A flow that is part of a partially shared flow denoting process steps running concurrently."@en .
+<https://w3id.org/aias/odp/vdi3682#ParallelFlow> <http://www.w3.org/2000/01/rdf-schema#label> "Parallel Flow"@en .
+<https://w3id.org/aias/odp/vdi3682#ParallelFlow> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.2.1 recommends modelling parallel process runs as a partially shared flow and explicitly requires no additional graphical elements for them. Introducing a class for the parallel flow is therefore a design decision of this pattern rather than an adoption from the standard.\n\nA parallel flow states that a single connection belongs to a concurrent run. Grouping several connections into one conjunction is expressed through the dependency property between the states involved."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Process
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/aias/odp/vdi3682#ProcessOperator> .
+_:genid49 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#consistsOf> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid50 .
+_:genid50 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/aias/odp/vdi3682#State> .
+_:genid50 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#consistsOf> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+_:genid51 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#consistsOf> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."@en .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process"@en .
+<https://w3id.org/aias/odp/vdi3682#Process> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1. Part 2, Figure 2 constrains a process to exactly one system limit, at least one process operator and at least two states."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#ProcessOperator
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid52 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aias/odp/vdi3682#Process> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/aias/odp/vdi3682#consistsOf> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#hasOutput> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid59 .
+_:genid59 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#hasInput> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid60 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid63 .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid62 .
+_:genid62 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid62 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#hasOutput> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aias/odp/vdi3682#hasInput> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2000/01/rdf-schema#comment> "An operation transforming the input state of products, energies or information into an output state. The process operator realises this transformation by means of technical resources."@en .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2000/01/rdf-schema#label> "Process Operator"@en .
+<https://w3id.org/aias/odp/vdi3682#ProcessOperator> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed; states are not decomposed (Part 1, Section 2).\n\nThe defined class axiom follows the VDI 3682 ODP of Helmut Schmidt University: anything with an input and an output that is contained in a process is a process operator. Anything with an input and an output alone may also be a process."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#Product
+<https://w3id.org/aias/odp/vdi3682#Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/vdi3682#State> .
+<https://w3id.org/aias/odp/vdi3682#Product> <http://www.w3.org/2000/01/rdf-schema#comment> "Things of the real world that are transformed within a technical process. The generic term also covers flows of materials and substances."@en .
+<https://w3id.org/aias/odp/vdi3682#Product> <http://www.w3.org/2000/01/rdf-schema#label> "Product"@en .
+<https://w3id.org/aias/odp/vdi3682#Product> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#State
+<https://w3id.org/aias/odp/vdi3682#State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#State> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#SystemLimit> .
+<https://w3id.org/aias/odp/vdi3682#State> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#State> <http://www.w3.org/2000/01/rdf-schema#comment> "The condition of a product, an energy or an information at a given point of a process, either as the status ante operationem before a transformation or as the status post operationem after it."@en .
+<https://w3id.org/aias/odp/vdi3682#State> <http://www.w3.org/2000/01/rdf-schema#label> "State"@en .
+<https://w3id.org/aias/odp/vdi3682#State> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1, Section 4.1 deliberately avoids the term in the graphical notation because it is considered ambiguous there, and works with product, energy and information directly. This pattern follows Part 2."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#SystemLimit
+<https://w3id.org/aias/odp/vdi3682#SystemLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#SystemLimit> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/vdi3682#TechnicalResource> .
+<https://w3id.org/aias/odp/vdi3682#SystemLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."@en .
+<https://w3id.org/aias/odp/vdi3682#SystemLimit> <http://www.w3.org/2000/01/rdf-schema#label> "System Limit"@en .
+<https://w3id.org/aias/odp/vdi3682#SystemLimit> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.1. The system limit must not be used as a balance limit when alternative process runs are described."@en .
+# 
+# https://w3id.org/aias/odp/vdi3682#TechnicalResource
+<https://w3id.org/aias/odp/vdi3682#TechnicalResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/vdi3682#TechnicalResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical component of an automated plant that realises the transformation carried out by a process operator."@en .
+<https://w3id.org/aias/odp/vdi3682#TechnicalResource> <http://www.w3.org/2000/01/rdf-schema#label> "Technical Resource"@en .
+<https://w3id.org/aias/odp/vdi3682#TechnicalResource> <http://www.w3.org/2004/02/skos/core#note> "VDI 3682 Part 1, Section 4.2. In the AIAS information model this class is the anchor for the elements of the automated plant, such as sensors, actuators, controllers and computing resources."@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

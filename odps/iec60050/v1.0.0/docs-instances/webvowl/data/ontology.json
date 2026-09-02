@@ -1,0 +1,392 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/aias/odp/iec60050", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en" : "IEC 60050-351 Pattern: Named Individuals"
+    },
+    "iri" : "https://w3id.org/aias/odp/iec60050/instances",
+    "version" : "1.0.0",
+    "author" : [ "TODO: author name, ORCID" ],
+    "description" : {
+      "en" : "Named individuals for the IEC 60050-351 ontology design pattern: the time and quality characteristics a model states about the behaviour of a control.\n\nThey are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well."
+    },
+    "comments" : {
+      "en" : "Every individual here carries the clause of DIN IEC 60050-351:2014 that defines it, and where the standard gives a formula symbol that symbol is recorded as well, so a model stays checkable against the figures of the standard.\n\nSeven of the definitions are reconstructed from the German text. Their English wording is interrupted by formula figures in the printed standard, which the extraction could not resolve, and the note on each affected individual says so."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "TODO: author name, ORCID",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-08-18",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "iec60050-inst",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "TODO: institution",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/aias/odp/iec60050/instances#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "IEC 60050-351 Pattern: Named Individuals",
+        "type" : "label"
+      } ],
+      "status" : [ {
+        "identifier" : "status",
+        "language" : "en",
+        "value" : "Draft",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TimeCharacteristic"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "T_cs",
+          "type" : "label"
+        } ],
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-46-02. English wording reconstructed from the German entry. The sharper of the two criteria, since it requires the controlled variable to stay inside the band.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it returns into that band and remains within it."
+      },
+      "labels" : {
+        "IRI-based" : "ControlSettlingTime",
+        "en" : "Control Settling Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "T_cr",
+          "type" : "label"
+        } ],
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-46-01. English wording reconstructed from the German entry. It ends at the first return, whereas the control settling time requires the controlled variable to stay inside.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it first returns into that band."
+      },
+      "labels" : {
+        "IRI-based" : "ControlRiseTime",
+        "en" : "Control Rise Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#DeadTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-50-30. The interval by which a processing step delays what passes through it.",
+          "type" : "label"
+        } ],
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "T_t",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "In a dead-time element, the duration of the time interval by which the output variable is shifted relative to the input variable."
+      },
+      "labels" : {
+        "IRI-based" : "DeadTime",
+        "en" : "Dead Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#SettlingTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-37. English wording reconstructed from the German entry.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."
+      },
+      "labels" : {
+        "IRI-based" : "SettlingTime",
+        "en" : "Settling Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "T_u",
+          "type" : "label"
+        } ],
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."
+      },
+      "labels" : {
+        "IRI-based" : "EquivalentDeadTime",
+        "en" : "Equivalent Dead Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-54-18. The only latency measure the standard defines.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The duration of the time interval that elapses between the arrival of an interrupt signal at the interrupt input unit and the instant of decision whether the interrupt is handled or not."
+      },
+      "labels" : {
+        "IRI-based" : "InterruptReactionTime",
+        "en" : "Interrupt Reaction Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-48-17. The time measure closest to a device, since it belongs to the manipulating equipment.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The duration of the time interval in which the manipulated variable runs with the highest speed through its whole range."
+      },
+      "labels" : {
+        "IRI-based" : "ManipulatingTime",
+        "en" : "Manipulating Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-47-16. The normative equivalent of what practice calls cycle time, a term the standard does not define.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The duration of the time interval between two consecutive observations in a periodic sampling control system."
+      },
+      "labels" : {
+        "IRI-based" : "SamplingPeriod",
+        "en" : "Sampling Period"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#TimeConstant",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-32.",
+          "type" : "label"
+        } ],
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "T",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "For a quantity growing or decaying exponentially towards a constant value, the duration of a time interval at the end of which the absolute difference to that value has decreased to 1/e of its initial amount."
+      },
+      "labels" : {
+        "IRI-based" : "TimeConstant",
+        "en" : "Time Constant"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QualityCharacteristic"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable.",
+          "type" : "label"
+        } ],
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "phi_m",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."
+      },
+      "labels" : {
+        "IRI-based" : "PhaseMargin",
+        "en" : "Phase Margin"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#Overshoot",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "X_m",
+          "type" : "label"
+        } ],
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-38. English wording reconstructed from the German entry.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "In a step response, the largest transient deviation of the output variable from its final steady-state value, usually expressed as a percentage of the difference between its final and its initial steady-state value."
+      },
+      "labels" : {
+        "IRI-based" : "Overshoot",
+        "en" : "Overshoot"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#DeadBand",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-15. The range in which an output has no effect, which matters when a control writes a value too small to act.",
+          "type" : "label"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "en",
+          "value" : "dead zone",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "A finite range of values of the input variable within which a variation of the input variable does not produce any measurable change in the output variable."
+      },
+      "labels" : {
+        "IRI-based" : "DeadBand",
+        "en" : "Dead Band"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#GainMargin",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "symbol" : [ {
+          "identifier" : "symbol",
+          "language" : "undefined",
+          "value" : "G_m",
+          "type" : "label"
+        } ],
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-46-07. English wording reconstructed from the German entry. The second stability reserve, alongside the phase margin.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The reciprocal of the gain response of the open control loop at the phase crossover angular frequency."
+      },
+      "labels" : {
+        "IRI-based" : "GainMargin",
+        "en" : "Gain Margin"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "1"
+  } ]
+}

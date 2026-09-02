@@ -1,0 +1,549 @@
+<h2 id="overv" class="list">IEC 60050-351 Ontology Design Pattern: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Action" title="https://w3id.org/aias/odp/iec60050#Action">Action</a>
+   </li>
+   <li>
+      <a href="#ActionLine" title="https://w3id.org/aias/odp/iec60050#ActionLine">Action Line</a>
+   </li>
+   <li>
+      <a href="#ActionPath" title="https://w3id.org/aias/odp/iec60050#ActionPath">Action Path</a>
+   </li>
+   <li>
+      <a href="#ActiveFault" title="https://w3id.org/aias/odp/iec60050#ActiveFault">Active Fault</a>
+   </li>
+   <li>
+      <a href="#Actuator" title="https://w3id.org/aias/odp/iec60050#Actuator">Actuator</a>
+   </li>
+   <li>
+      <a href="#AdaptiveControl"
+         title="https://w3id.org/aias/odp/iec60050#AdaptiveControl">Adaptive Control</a>
+   </li>
+   <li>
+      <a href="#CascadeControl"
+         title="https://w3id.org/aias/odp/iec60050#CascadeControl">Cascade Control</a>
+   </li>
+   <li>
+      <a href="#Characteristic"
+         title="https://w3id.org/aias/odp/iec60050#Characteristic">Characteristic</a>
+   </li>
+   <li>
+      <a href="#CharacteristicValue"
+         title="https://w3id.org/aias/odp/iec60050#CharacteristicValue">Characteristic Value</a>
+   </li>
+   <li>
+      <a href="#ClosedAction" title="https://w3id.org/aias/odp/iec60050#ClosedAction">Closed Action</a>
+   </li>
+   <li>
+      <a href="#ClosedActionPath"
+         title="https://w3id.org/aias/odp/iec60050#ClosedActionPath">Closed Action Path</a>
+   </li>
+   <li>
+      <a href="#ClosedLoopControl"
+         title="https://w3id.org/aias/odp/iec60050#ClosedLoopControl">Closed-loop Control</a>
+   </li>
+   <li>
+      <a href="#CommandVariable"
+         title="https://w3id.org/aias/odp/iec60050#CommandVariable">Command Variable</a>
+   </li>
+   <li>
+      <a href="#ComparingElement"
+         title="https://w3id.org/aias/odp/iec60050#ComparingElement">Comparing Element</a>
+   </li>
+   <li>
+      <a href="#ComputerControl"
+         title="https://w3id.org/aias/odp/iec60050#ComputerControl">Computer Control</a>
+   </li>
+   <li>
+      <a href="#Control" title="https://w3id.org/aias/odp/iec60050#Control">Control</a>
+   </li>
+   <li>
+      <a href="#ControlChain" title="https://w3id.org/aias/odp/iec60050#ControlChain">Control Chain</a>
+   </li>
+   <li>
+      <a href="#ControlDifferenceVariable"
+         title="https://w3id.org/aias/odp/iec60050#ControlDifferenceVariable">Control Difference Variable</a>
+   </li>
+   <li>
+      <a href="#ControlEquipment"
+         title="https://w3id.org/aias/odp/iec60050#ControlEquipment">Control Equipment</a>
+   </li>
+   <li>
+      <a href="#ControlFunction"
+         title="https://w3id.org/aias/odp/iec60050#ControlFunction">Control Function</a>
+   </li>
+   <li>
+      <a href="#ControlLoop" title="https://w3id.org/aias/odp/iec60050#ControlLoop">Control Loop</a>
+   </li>
+   <li>
+      <a href="#ControlSystem"
+         title="https://w3id.org/aias/odp/iec60050#ControlSystem">Control System</a>
+   </li>
+   <li>
+      <a href="#Controllability"
+         title="https://w3id.org/aias/odp/iec60050#Controllability">Controllability</a>
+   </li>
+   <li>
+      <a href="#ControlledSystem"
+         title="https://w3id.org/aias/odp/iec60050#ControlledSystem">Controlled System</a>
+   </li>
+   <li>
+      <a href="#ControlledVariable"
+         title="https://w3id.org/aias/odp/iec60050#ControlledVariable">Controlled Variable</a>
+   </li>
+   <li>
+      <a href="#Controller" title="https://w3id.org/aias/odp/iec60050#Controller">Controller</a>
+   </li>
+   <li>
+      <a href="#ControllerOutputVariable"
+         title="https://w3id.org/aias/odp/iec60050#ControllerOutputVariable">Controller Output Variable</a>
+   </li>
+   <li>
+      <a href="#ControllingElement"
+         title="https://w3id.org/aias/odp/iec60050#ControllingElement">Controlling Element</a>
+   </li>
+   <li>
+      <a href="#ControllingSystem"
+         title="https://w3id.org/aias/odp/iec60050#ControllingSystem">Controlling System</a>
+   </li>
+   <li>
+      <a href="#DegreeOfAutomation"
+         title="https://w3id.org/aias/odp/iec60050#DegreeOfAutomation">Degree of Automation</a>
+   </li>
+   <li>
+      <a href="#DisturbanceVariable"
+         title="https://w3id.org/aias/odp/iec60050#DisturbanceVariable">Disturbance Variable</a>
+   </li>
+   <li>
+      <a href="#Fault" title="https://w3id.org/aias/odp/iec60050#Fault">Fault</a>
+   </li>
+   <li>
+      <a href="#FeedbackPath" title="https://w3id.org/aias/odp/iec60050#FeedbackPath">Feedback Path</a>
+   </li>
+   <li>
+      <a href="#FeedbackVariable"
+         title="https://w3id.org/aias/odp/iec60050#FeedbackVariable">Feedback Variable</a>
+   </li>
+   <li>
+      <a href="#FinalControlledVariable"
+         title="https://w3id.org/aias/odp/iec60050#FinalControlledVariable">Final Controlled Variable</a>
+   </li>
+   <li>
+      <a href="#FinalControllingElement"
+         title="https://w3id.org/aias/odp/iec60050#FinalControllingElement">Final Controlling Element</a>
+   </li>
+   <li>
+      <a href="#FinalControllingEquipment"
+         title="https://w3id.org/aias/odp/iec60050#FinalControllingEquipment">Final Controlling Equipment</a>
+   </li>
+   <li>
+      <a href="#ForwardPath" title="https://w3id.org/aias/odp/iec60050#ForwardPath">Forward Path</a>
+   </li>
+   <li>
+      <a href="#FunctionalSafety"
+         title="https://w3id.org/aias/odp/iec60050#FunctionalSafety">Functional Safety</a>
+   </li>
+   <li>
+      <a href="#FunctionalUnit"
+         title="https://w3id.org/aias/odp/iec60050#FunctionalUnit">Functional Unit</a>
+   </li>
+   <li>
+      <a href="#FuzzyControl" title="https://w3id.org/aias/odp/iec60050#FuzzyControl">Fuzzy Control</a>
+   </li>
+   <li>
+      <a href="#FinalControlledVariableGeneration"
+         title="https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration">Generation of the Final Controlled Variable</a>
+   </li>
+   <li>
+      <a href="#InformationParameter"
+         title="https://w3id.org/aias/odp/iec60050#InformationParameter">Information Parameter</a>
+   </li>
+   <li>
+      <a href="#InputVariable"
+         title="https://w3id.org/aias/odp/iec60050#InputVariable">Input Variable</a>
+   </li>
+   <li>
+      <a href="#ItemUnderConsideration"
+         title="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration">Item under Consideration</a>
+   </li>
+   <li>
+      <a href="#ManipulatedVariable"
+         title="https://w3id.org/aias/odp/iec60050#ManipulatedVariable">Manipulated Variable</a>
+   </li>
+   <li>
+      <a href="#MeasuringElement"
+         title="https://w3id.org/aias/odp/iec60050#MeasuringElement">Measuring Element</a>
+   </li>
+   <li>
+      <a href="#MeasuringTransmitter"
+         title="https://w3id.org/aias/odp/iec60050#MeasuringTransmitter">Measuring Transmitter</a>
+   </li>
+   <li>
+      <a href="#Model" title="https://w3id.org/aias/odp/iec60050#Model">Model</a>
+   </li>
+   <li>
+      <a href="#ModelBasedControl"
+         title="https://w3id.org/aias/odp/iec60050#ModelBasedControl">Model-based Control</a>
+   </li>
+   <li>
+      <a href="#MultivariableControl"
+         title="https://w3id.org/aias/odp/iec60050#MultivariableControl">Multivariable Control</a>
+   </li>
+   <li>
+      <a href="#Observability"
+         title="https://w3id.org/aias/odp/iec60050#Observability">Observability</a>
+   </li>
+   <li>
+      <a href="#Observer" title="https://w3id.org/aias/odp/iec60050#Observer">Observer</a>
+   </li>
+   <li>
+      <a href="#OpenAction" title="https://w3id.org/aias/odp/iec60050#OpenAction">Open Action</a>
+   </li>
+   <li>
+      <a href="#OpenActionPath"
+         title="https://w3id.org/aias/odp/iec60050#OpenActionPath">Open Action Path</a>
+   </li>
+   <li>
+      <a href="#OpenLoopControl"
+         title="https://w3id.org/aias/odp/iec60050#OpenLoopControl">Open-loop Control</a>
+   </li>
+   <li>
+      <a href="#OptimalControl"
+         title="https://w3id.org/aias/odp/iec60050#OptimalControl">Optimal Control</a>
+   </li>
+   <li>
+      <a href="#OutputVariable"
+         title="https://w3id.org/aias/odp/iec60050#OutputVariable">Output Variable</a>
+   </li>
+   <li>
+      <a href="#PassiveFault" title="https://w3id.org/aias/odp/iec60050#PassiveFault">Passive Fault</a>
+   </li>
+   <li>
+      <a href="#PhysicalUnit" title="https://w3id.org/aias/odp/iec60050#PhysicalUnit">Physical Unit</a>
+   </li>
+   <li>
+      <a href="#Plant" title="https://w3id.org/aias/odp/iec60050#Plant">Plant</a>
+   </li>
+   <li>
+      <a href="#ProgrammableController"
+         title="https://w3id.org/aias/odp/iec60050#ProgrammableController">Programmable Controller</a>
+   </li>
+   <li>
+      <a href="#ProgrammedControl"
+         title="https://w3id.org/aias/odp/iec60050#ProgrammedControl">Programmed Control</a>
+   </li>
+   <li>
+      <a href="#QualityCharacteristic"
+         title="https://w3id.org/aias/odp/iec60050#QualityCharacteristic">Quality Characteristic</a>
+   </li>
+   <li>
+      <a href="#RealTimeCapability"
+         title="https://w3id.org/aias/odp/iec60050#RealTimeCapability">Real-time Capability</a>
+   </li>
+   <li>
+      <a href="#Redundancy" title="https://w3id.org/aias/odp/iec60050#Redundancy">Redundancy</a>
+   </li>
+   <li>
+      <a href="#ReferenceVariable"
+         title="https://w3id.org/aias/odp/iec60050#ReferenceVariable">Reference Variable</a>
+   </li>
+   <li>
+      <a href="#ReferenceVariableGeneratingElement"
+         title="https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement">Reference-variable Generating Element</a>
+   </li>
+   <li>
+      <a href="#RobustControl"
+         title="https://w3id.org/aias/odp/iec60050#RobustControl">Robust Control</a>
+   </li>
+   <li>
+      <a href="#RuleBasedControl"
+         title="https://w3id.org/aias/odp/iec60050#RuleBasedControl">Rule-based Control</a>
+   </li>
+   <li>
+      <a href="#SamplingControl"
+         title="https://w3id.org/aias/odp/iec60050#SamplingControl">Sampling Control</a>
+   </li>
+   <li>
+      <a href="#SensingElement"
+         title="https://w3id.org/aias/odp/iec60050#SensingElement">Sensing Element</a>
+   </li>
+   <li>
+      <a href="#SequentialControl"
+         title="https://w3id.org/aias/odp/iec60050#SequentialControl">Sequential Control</a>
+   </li>
+   <li>
+      <a href="#Signal" title="https://w3id.org/aias/odp/iec60050#Signal">Signal</a>
+   </li>
+   <li>
+      <a href="#Stability" title="https://w3id.org/aias/odp/iec60050#Stability">Stability</a>
+   </li>
+   <li>
+      <a href="#StateVariable"
+         title="https://w3id.org/aias/odp/iec60050#StateVariable">State Variable</a>
+   </li>
+   <li>
+      <a href="#System" title="https://w3id.org/aias/odp/iec60050#System">System</a>
+   </li>
+   <li>
+      <a href="#TimeCharacteristic"
+         title="https://w3id.org/aias/odp/iec60050#TimeCharacteristic">Time Characteristic</a>
+   </li>
+   <li>
+      <a href="#VariableQuantity"
+         title="https://w3id.org/aias/odp/iec60050#VariableQuantity">Variable Quantity</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#actionOverPath"
+         title="https://w3id.org/aias/odp/iec60050#actionOverPath">action over path</a>
+   </li>
+   <li>
+      <a href="#actsOn" title="https://w3id.org/aias/odp/iec60050#actsOn">acts on</a>
+   </li>
+   <li>
+      <a href="#carriesInformationParameter"
+         title="https://w3id.org/aias/odp/iec60050#carriesInformationParameter">carries information parameter</a>
+   </li>
+   <li>
+      <a href="#carriesVariable"
+         title="https://w3id.org/aias/odp/iec60050#carriesVariable">carries variable</a>
+   </li>
+   <li>
+      <a href="#consistsOfUnit"
+         title="https://w3id.org/aias/odp/iec60050#consistsOfUnit">consists of unit</a>
+   </li>
+   <li>
+      <a href="#forCharacteristic"
+         title="https://w3id.org/aias/odp/iec60050#forCharacteristic">for characteristic</a>
+   </li>
+   <li>
+      <a href="#fromUnit" title="https://w3id.org/aias/odp/iec60050#fromUnit">from unit</a>
+   </li>
+   <li>
+      <a href="#hasAction" title="https://w3id.org/aias/odp/iec60050#hasAction">has action</a>
+   </li>
+   <li>
+      <a href="#hasActionLine" title="https://w3id.org/aias/odp/iec60050#hasActionLine">has action line</a>
+   </li>
+   <li>
+      <a href="#hasCharacteristicValue"
+         title="https://w3id.org/aias/odp/iec60050#hasCharacteristicValue">has characteristic value</a>
+   </li>
+   <li>
+      <a href="#hasControlledVariable"
+         title="https://w3id.org/aias/odp/iec60050#hasControlledVariable">has controlled variable</a>
+   </li>
+   <li>
+      <a href="#hasDisturbanceVariable"
+         title="https://w3id.org/aias/odp/iec60050#hasDisturbanceVariable">has disturbance variable</a>
+   </li>
+   <li>
+      <a href="#hasFeedbackPath"
+         title="https://w3id.org/aias/odp/iec60050#hasFeedbackPath">has feedback path</a>
+   </li>
+   <li>
+      <a href="#hasForwardPath"
+         title="https://w3id.org/aias/odp/iec60050#hasForwardPath">has forward path</a>
+   </li>
+   <li>
+      <a href="#hasManipulatedVariable"
+         title="https://w3id.org/aias/odp/iec60050#hasManipulatedVariable">has manipulated variable</a>
+   </li>
+   <li>
+      <a href="#hasProperty" title="https://w3id.org/aias/odp/iec60050#hasProperty">has property</a>
+   </li>
+   <li>
+      <a href="#hasReferenceVariable"
+         title="https://w3id.org/aias/odp/iec60050#hasReferenceVariable">has reference variable</a>
+   </li>
+   <li>
+      <a href="#hasVariable" title="https://w3id.org/aias/odp/iec60050#hasVariable">has variable</a>
+   </li>
+   <li>
+      <a href="#isSourceOfActionLine"
+         title="https://w3id.org/aias/odp/iec60050#isSourceOfActionLine">is source of action line</a>
+   </li>
+   <li>
+      <a href="#isTargetOfActionLine"
+         title="https://w3id.org/aias/odp/iec60050#isTargetOfActionLine">is target of action line</a>
+   </li>
+   <li>
+      <a href="#partOfActionPath"
+         title="https://w3id.org/aias/odp/iec60050#partOfActionPath">part of action path</a>
+   </li>
+   <li>
+      <a href="#partOfControlledSystem"
+         title="https://w3id.org/aias/odp/iec60050#partOfControlledSystem">part of controlled system</a>
+   </li>
+   <li>
+      <a href="#performsFunction"
+         title="https://w3id.org/aias/odp/iec60050#performsFunction">performs function</a>
+   </li>
+   <li>
+      <a href="#realisedBy" title="https://w3id.org/aias/odp/iec60050#realisedBy">realised by</a>
+   </li>
+   <li>
+      <a href="#realisedByPhysicalUnit"
+         title="https://w3id.org/aias/odp/iec60050#realisedByPhysicalUnit">realised by physical unit</a>
+   </li>
+   <li>
+      <a href="#realisesFunctionalUnit"
+         title="https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit">realises functional unit</a>
+   </li>
+   <li>
+      <a href="#runsOverActionPath"
+         title="https://w3id.org/aias/odp/iec60050#runsOverActionPath">runs over action path</a>
+   </li>
+   <li>
+      <a href="#toUnit" title="https://w3id.org/aias/odp/iec60050#toUnit">to unit</a>
+   </li>
+   <li>
+      <a href="#usesModel" title="https://w3id.org/aias/odp/iec60050#usesModel">uses model</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#quantity" title="https://w3id.org/aias/odp/iec60050#quantity">quantity</a>
+   </li>
+   <li>
+      <a href="#symbol" title="https://w3id.org/aias/odp/iec60050#symbol">symbol</a>
+   </li>
+   <li>
+      <a href="#unit" title="https://w3id.org/aias/odp/iec60050#unit">unit</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract">
+         <span>abstract</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">
+         <span>alt Label</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://schema.org/codeRepository" title="https://schema.org/codeRepository">
+         <span>code Repository</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/fundedBy" title="http://xmlns.com/foaf/0.1/fundedBy">
+         <span>funded By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/hasVersion" title="http://purl.org/dc/terms/hasVersion">
+         <span>has Version</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified">
+         <span>modified</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">
+         <span>note</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred Namespace Uri</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+         <span>publisher</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights">
+         <span>rights</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source">
+         <span>source</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+         <span>status</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/subject" title="http://purl.org/dc/terms/subject">
+         <span>subject</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Alarm" title="https://w3id.org/aias/odp/iec60050#Alarm">Alarm</a>
+   </li>
+   <li>
+      <a href="#Evaluate" title="https://w3id.org/aias/odp/iec60050#Evaluate">Evaluate</a>
+   </li>
+   <li>
+      <a href="#Intervene" title="https://w3id.org/aias/odp/iec60050#Intervene">Intervene</a>
+   </li>
+   <li>
+      <a href="#Manipulate" title="https://w3id.org/aias/odp/iec60050#Manipulate">Manipulate</a>
+   </li>
+   <li>
+      <a href="#Measure" title="https://w3id.org/aias/odp/iec60050#Measure">Measure</a>
+   </li>
+   <li>
+      <a href="#Monitor" title="https://w3id.org/aias/odp/iec60050#Monitor">Monitor</a>
+   </li>
+   <li>
+      <a href="#Notify" title="https://w3id.org/aias/odp/iec60050#Notify">Notify</a>
+   </li>
+   <li>
+      <a href="#Operate" title="https://w3id.org/aias/odp/iec60050#Operate">Operate</a>
+   </li>
+   <li>
+      <a href="#Optimize" title="https://w3id.org/aias/odp/iec60050#Optimize">Optimize</a>
+   </li>
+   <li>
+      <a href="#Warn" title="https://w3id.org/aias/odp/iec60050#Warn">Warn</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>AIAS Alignment Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aias#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aias#","name":"AIAS Alignment Ontology", "headline":"Document describing the ontology https://w3id.org/aias#", "dateReleased":"2026-08-24", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"TODO: author name, ORCID"}], "contributor":[{"@type":"Person","name":"TODO: co-authors"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>AIAS Alignment Ontology</h1>
+<h2>Release: 2026-08-24</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/aias/1.0.0">https://w3id.org/aias/1.0.0</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
+<dt>Authors:</dt>
+<dd>TODO: author name, ORCID</dd>
+
+<dt>Contributors:</dt>
+<dd>TODO: co-authors</dd>
+
+<dt>Publisher:</dt>
+<dd>TODO: institution</dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>TODO: citation of the accompanying publication</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">AIAS Alignment Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#https://w3id.org/aias/odp/iso22989#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">
+         <span>A I Function</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Actuator" title="https://w3id.org/aias#Actuator">Actuator</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/vdi3682#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">
+         <span>Assignment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/iso7498#Association" title="https://w3id.org/aias/odp/iso7498#Association">
+         <span>Association</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Component" title="https://w3id.org/aias#Component">Component</a>
+   </li>
+   <li>
+      <a href="#Computer" title="https://w3id.org/aias#Computer">Computer</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/iec60050#Control" title="https://w3id.org/aias/odp/iec60050#Control">
+         <span>Control</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Controller" title="https://w3id.org/aias#Controller">Controller</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/iso22989#Data" title="https://w3id.org/aias/odp/iso22989#Data">
+         <span>Data</span>
+      </a>
+   </li>
+   <li>
+      <a href="#EdgeDevice" title="https://w3id.org/aias#EdgeDevice">Edge Device</a>
+   </li>
+   <li>
+      <a href="#ExternalCloud" title="https://w3id.org/aias#ExternalCloud">External Cloud</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/vdi3682#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">
+         <span>Flow</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Function" title="https://w3id.org/aias#Function">Function</a>
+   </li>
+   <li>
+      <a href="#InternalCloud" title="https://w3id.org/aias#InternalCloud">Internal Cloud</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+         title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">
+         <span>Process Operator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Product" title="https://w3id.org/aias#Product">Product</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aias/odp/vdi3682#Product" title="https://w3id.org/aias/odp/vdi3682#Product">
+         <span>Product</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a>
+   </li>
+   <li>
+      <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a>
+   </li>
+   <li>
+      <a href="#Sensor" title="https://w3id.org/aias#Sensor">Sensor</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#actsOnProcessOperator" title="https://w3id.org/aias#actsOnProcessOperator">acts on process operator</a>
+   </li>
+   <li>
+      <a href="#appearsAsOpenSystem" title="https://w3id.org/aias#appearsAsOpenSystem">appears as open system</a>
+   </li>
+   <li>
+      <a href="#assignedFunction" title="https://w3id.org/aias#assignedFunction">assigned function</a>
+   </li>
+   <li>
+      <a href="#carriesData" title="https://w3id.org/aias#carriesData">carries data</a>
+   </li>
+   <li>
+      <a href="#hasComponent" title="https://w3id.org/aias#hasComponent">has component</a>
+   </li>
+   <li>
+      <a href="#hasFunction" title="https://w3id.org/aias#hasFunction">has function</a>
+   </li>
+   <li>
+      <a href="#hasRelation" title="https://w3id.org/aias#hasRelation">has relation</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">
+         <span>alt Label</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation">
+         <span>bibliographic Citation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">
+         <span>note</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred Namespace Uri</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+         <span>publisher</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights">
+         <span>rights</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+         <span>status</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">AIAS Alignment Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Nothing here is normative. The patterns rest on standards, this ontology rests on design decisions of this work, and every class and relation says which of the two it is.
+
+Two classes are related with owl:equivalentClass, and only where the definitions are word for word the same. Control is one of them: ISO/IEC 22989, 3.5.5 and IEC 60050-351, 351-42-19 carry the identical wording and trace back to the same source, which makes the two the same concept rather than similar ones. Everything else is a subclass relation or a relation of its own, because an equivalence claims more than an overlap supports.
+
+Two traps are recorded rather than resolved. Controllability appears in two patterns with the same spelling and different meanings, one a property of a dynamic system and one a property of an AI system, and they are deliberately not related. The actuator of IEC 60050-351 is the signal side driving a valve, not the valve, so the device class of this ontology matches the final controlling element instead. ALIGNMENT.md gives both in full.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for AIAS Alignment Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by AIAS Alignment Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#https://w3id.org/aias/odp/iso22989#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction"> <span>A I Function</span> </a></li>
+  <li><a href="#Actuator" title="https://w3id.org/aias#Actuator">Actuator</a></li>
+  <li><a href="#https://w3id.org/aias/odp/vdi3682#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment"> <span>Assignment</span> </a></li>
+  <li><a href="#https://w3id.org/aias/odp/iso7498#Association" title="https://w3id.org/aias/odp/iso7498#Association"> <span>Association</span> </a></li>
+  <li><a href="#Component" title="https://w3id.org/aias#Component">Component</a></li>
+  <li><a href="#Computer" title="https://w3id.org/aias#Computer">Computer</a></li>
+  <li><a href="#https://w3id.org/aias/odp/iec60050#Control" title="https://w3id.org/aias/odp/iec60050#Control"> <span>Control</span> </a></li>
+  <li><a href="#Controller" title="https://w3id.org/aias#Controller">Controller</a></li>
+  <li><a href="#https://w3id.org/aias/odp/iso22989#Data" title="https://w3id.org/aias/odp/iso22989#Data"> <span>Data</span> </a></li>
+  <li><a href="#EdgeDevice" title="https://w3id.org/aias#EdgeDevice">Edge Device</a></li>
+  <li><a href="#ExternalCloud" title="https://w3id.org/aias#ExternalCloud">External Cloud</a></li>
+  <li><a href="#https://w3id.org/aias/odp/vdi3682#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow"> <span>Flow</span> </a></li>
+  <li><a href="#Function" title="https://w3id.org/aias#Function">Function</a></li>
+  <li><a href="#InternalCloud" title="https://w3id.org/aias#InternalCloud">Internal Cloud</a></li>
+  <li><a href="#https://w3id.org/aias/odp/vdi3682#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator"> <span>Process Operator</span> </a></li>
+  <li><a href="#Product" title="https://w3id.org/aias#Product">Product</a></li>
+  <li><a href="#https://w3id.org/aias/odp/vdi3682#Product" title="https://w3id.org/aias/odp/vdi3682#Product"> <span>Product</span> </a></li>
+  <li><a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a></li>
+  <li><a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a></li>
+  <li><a href="#Sensor" title="https://w3id.org/aias#Sensor">Sensor</a></li>
+ </ul>
+ <div class="entity" id="https://w3id.org/aias/odp/iso22989#AIFunction">
+  <h3>A I Function<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#AIFunction</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Actuator">
+  <h3>Actuator<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Actuator</p>
+  <div class="comment">
+   <span class="markdown">A resource that acts on a mass flow, an energy flow or a movement.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/vdi3682#Assignment">
+  <h3>Assignment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Assignment</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#assignedFunction" title="https://w3id.org/aias#assignedFunction">assigned function</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/iso7498#Association">
+  <h3>Association<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Association</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Component">
+  <h3>Component<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Component</p>
+  <div class="comment">
+   <span class="markdown">A physical element of a system, either performing functions or being transformed by them.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Product" title="https://w3id.org/aias#Product">Product</a> <sup class="type-c" title="class">c</sup>, <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasComponent" title="https://w3id.org/aias#hasComponent">has component</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>, <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Computer">
+  <h3>Computer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Computer</p>
+  <div class="comment">
+   <span class="markdown">A general purpose computing resource within the plant.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/iec60050#Control">
+  <h3>Control<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iec60050#Control</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="https://w3id.org/aias/odp/iso22989#Control" target="_blank" title="https://w3id.org/aias/odp/iso22989#Control">Control</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#actsOnProcessOperator" title="https://w3id.org/aias#actsOnProcessOperator">acts on process operator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Controller">
+  <h3>Controller<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Controller</p>
+  <div class="comment">
+   <span class="markdown">A resource running control programs, such as a programmable logic controller.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/iso22989#Data">
+  <h3>Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso22989#Data</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#carriesData" title="https://w3id.org/aias#carriesData">carries data</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="https://w3id.org/aias/odp/iso7498#UserData" target="_blank" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EdgeDevice">
+  <h3>Edge Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#EdgeDevice</p>
+  <div class="comment">
+   <span class="markdown">A resource with computing capacity placed near the process it serves.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ExternalCloud">
+  <h3>External Cloud<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#ExternalCloud</p>
+  <div class="comment">
+   <span class="markdown">Computing infrastructure operated by a third party.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/vdi3682#Flow">
+  <h3>Flow<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Flow</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Function">
+  <h3>Function<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Function</p>
+  <div class="comment">
+   <span class="markdown">A purposeful transformation, turning inputs into outputs to meet an objective of the system.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/aias/odp/iso22989#AIFunction" title="https://w3id.org/aias/odp/iso22989#AIFunction">A I Function</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/aias/odp/iec60050#Control" title="https://w3id.org/aias/odp/iec60050#Control">Control</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/aias/odp/vdi3682#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#assignedFunction" title="https://w3id.org/aias#assignedFunction">assigned function</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFunction" title="https://w3id.org/aias#hasFunction">has function</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Component" title="https://w3id.org/aias#Component">Component</a> <sup class="type-c" title="class">c</sup>, <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InternalCloud">
+  <h3>Internal Cloud<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#InternalCloud</p>
+  <div class="comment">
+   <span class="markdown">Computing infrastructure operated by the plant operator, away from the process but inside the organisation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/vdi3682#ProcessOperator">
+  <h3>Process Operator<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#ProcessOperator</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#actsOnProcessOperator" title="https://w3id.org/aias#actsOnProcessOperator">acts on process operator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Product">
+  <h3>Product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Product</p>
+  <div class="comment">
+   <span class="markdown">A physical component that a function transforms, produces or consumes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Component" title="https://w3id.org/aias#Component">Component</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/aias/odp/vdi3682#Product" title="https://w3id.org/aias/odp/vdi3682#Product">Product</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://w3id.org/aias/odp/vdi3682#Product">
+  <h3>Product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Product</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Product" title="https://w3id.org/aias#Product">Product</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Relation">
+  <h3>Relation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Relation</p>
+  <div class="comment">
+   <span class="markdown">A recorded tie between functions and components, or between components.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#https://w3id.org/aias/odp/vdi3682#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/aias/odp/iso7498#Association" title="https://w3id.org/aias/odp/iso7498#Association">Association</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/aias/odp/vdi3682#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasRelation" title="https://w3id.org/aias#hasRelation">has relation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Component" title="https://w3id.org/aias#Component">Component</a> <sup class="type-c" title="class">c</sup>, <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Resource">
+  <h3>Resource<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Resource</p>
+  <div class="comment">
+   <span class="markdown">A physical component of a plant that performs functions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="https://w3id.org/aias/odp/vdi3682#TechnicalResource" target="_blank" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Component" title="https://w3id.org/aias#Component">Component</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Actuator" title="https://w3id.org/aias#Actuator">Actuator</a> <sup class="type-c" title="class">c</sup>, <a href="#Computer" title="https://w3id.org/aias#Computer">Computer</a> <sup class="type-c" title="class">c</sup>, <a href="#Controller" title="https://w3id.org/aias#Controller">Controller</a> <sup class="type-c" title="class">c</sup>, <a href="#EdgeDevice" title="https://w3id.org/aias#EdgeDevice">Edge Device</a> <sup class="type-c" title="class">c</sup>, <a href="#ExternalCloud" title="https://w3id.org/aias#ExternalCloud">External Cloud</a> <sup class="type-c" title="class">c</sup>, <a href="#InternalCloud" title="https://w3id.org/aias#InternalCloud">Internal Cloud</a> <sup class="type-c" title="class">c</sup>, <a href="#Sensor" title="https://w3id.org/aias#Sensor">Sensor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#appearsAsOpenSystem" title="https://w3id.org/aias#appearsAsOpenSystem">appears as open system</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Product" title="https://w3id.org/aias#Product">Product</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Sensor">
+  <h3>Sensor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#Sensor</p>
+  <div class="comment">
+   <span class="markdown">A resource that senses a physical quantity and makes it available as data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#actsOnProcessOperator" title="https://w3id.org/aias#actsOnProcessOperator">acts on process operator</a></li>
+  <li><a href="#appearsAsOpenSystem" title="https://w3id.org/aias#appearsAsOpenSystem">appears as open system</a></li>
+  <li><a href="#assignedFunction" title="https://w3id.org/aias#assignedFunction">assigned function</a></li>
+  <li><a href="#carriesData" title="https://w3id.org/aias#carriesData">carries data</a></li>
+  <li><a href="#hasComponent" title="https://w3id.org/aias#hasComponent">has component</a></li>
+  <li><a href="#hasFunction" title="https://w3id.org/aias#hasFunction">has function</a></li>
+  <li><a href="#hasRelation" title="https://w3id.org/aias#hasRelation">has relation</a></li>
+ </ul>
+ <div class="entity" id="actsOnProcessOperator">
+  <h3>acts on process operator<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#actsOnProcessOperator</p>
+  <div class="comment">
+   <span class="markdown">Relates a control to the process step it acts on.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://w3id.org/aias/odp/iec60050#Control" title="https://w3id.org/aias/odp/iec60050#Control">Control</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://w3id.org/aias/odp/vdi3682#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="appearsAsOpenSystem">
+  <h3>appears as open system<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#appearsAsOpenSystem</p>
+  <div class="comment">
+   <span class="markdown">Relates a resource to the open system it appears as when its communication is described.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Resource" title="https://w3id.org/aias#Resource">Resource</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/aias/odp/iso7498#OpenSystem" target="_blank" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="assignedFunction">
+  <h3>assigned function<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#assignedFunction</p>
+  <div class="comment">
+   <span class="markdown">Relates an assignment to the function it assigns to a resource.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#https://w3id.org/aias/odp/vdi3682#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="carriesData">
+  <h3>carries data<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#carriesData</p>
+  <div class="comment">
+   <span class="markdown">Relates the payload of a transmission to the dataset it carries.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/aias/odp/iso7498#UserData" target="_blank" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#https://w3id.org/aias/odp/iso22989#Data" title="https://w3id.org/aias/odp/iso22989#Data">Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasComponent">
+  <h3>has component<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#hasComponent</p>
+  <div class="comment">
+   <span class="markdown">Relates a modelled system to a component it is built from.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/aias/odp/iso22989#AISystem" target="_blank" title="https://w3id.org/aias/odp/iso22989#AISystem">A I System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Component" title="https://w3id.org/aias#Component">Component</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFunction">
+  <h3>has function<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#hasFunction</p>
+  <div class="comment">
+   <span class="markdown">Relates a modelled system to a function it performs.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/aias/odp/iso22989#AISystem" target="_blank" title="https://w3id.org/aias/odp/iso22989#AISystem">A I System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Function" title="https://w3id.org/aias#Function">Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRelation">
+  <h3>has relation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias#hasRelation</p>
+  <div class="comment">
+   <span class="markdown">Relates a modelled system to a recorded tie between its parts.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/aias/odp/iso22989#AISystem" target="_blank" title="https://w3id.org/aias/odp/iso22989#AISystem">A I System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Relation" title="https://w3id.org/aias#Relation">Relation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel"> <span>alt Label</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation"> <span>bibliographic Citation</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor"> <span>contributor</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note"> <span>note</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher"> <span>publisher</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights"> <span>rights</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status"> <span>status</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#altLabel">
+  <h3>alt Label<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/bibliographicCitation">
+  <h3>bibliographic Citation<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/bibliographicCitation</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/contributor">
+  <h3>contributor<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#note">
+  <h3>note<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#note</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <h3>preferred Namespace Uri<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/publisher">
+  <h3>publisher<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/rights">
+  <h3>rights<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/status">
+  <h3>status<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/status</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

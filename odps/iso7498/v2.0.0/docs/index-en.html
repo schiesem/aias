@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>ISO/IEC 7498-1 Ontology Design Pattern</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aias/odp/iso7498#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aias/odp/iso7498#","name":"ISO/IEC 7498-1 Ontology Design Pattern", "headline":"Document describing the ontology https://w3id.org/aias/odp/iso7498#", "dateReleased":"2026-08-17", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"TODO: author name, ORCID"}], "contributor":[{"@type":"Person","name":"TODO: co-authors"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>ISO/IEC 7498-1 Ontology Design Pattern</h1>
+<h2>Release: 2026-08-17</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/aias/odp/iso7498/1.0.0">https://w3id.org/aias/odp/iso7498/1.0.0</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
+<dt>Authors:</dt>
+<dd>TODO: author name, ORCID</dd>
+
+<dt>Contributors:</dt>
+<dd>TODO: co-authors</dd>
+
+<dt>Publisher:</dt>
+<dd>TODO: institution</dd>
+<dt>Source:</dt>
+<dd><a href="https://www.iso.org/standard/20269.html">https://www.iso.org/standard/20269.html</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>TODO: citation of the accompanying publication</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">ISO/IEC 7498-1 Ontology Design Pattern: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a>
+   </li>
+   <li>
+      <a href="#CommunicationDirection"
+         title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a>
+   </li>
+   <li>
+      <a href="#ConnectionModeAssociation"
+         title="https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation">Connection-mode Communication</a>
+   </li>
+   <li>
+      <a href="#ConnectionlessModeAssociation"
+         title="https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation">Connectionless-mode Communication</a>
+   </li>
+   <li>
+      <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a>
+   </li>
+   <li>
+      <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a>
+   </li>
+   <li>
+      <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a>
+   </li>
+   <li>
+      <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a>
+   </li>
+   <li>
+      <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a>
+   </li>
+   <li>
+      <a href="#ProtocolControlInformation"
+         title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a>
+   </li>
+   <li>
+      <a href="#ProtocolDataUnit"
+         title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a>
+   </li>
+   <li>
+      <a href="#QualityOfService"
+         title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a>
+   </li>
+   <li>
+      <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a>
+   </li>
+   <li>
+      <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a>
+   </li>
+   <li>
+      <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a>
+   </li>
+   <li>
+      <a href="#ServiceAccessPoint"
+         title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a>
+   </li>
+   <li>
+      <a href="#ServiceDataUnit"
+         title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a>
+   </li>
+   <li>
+      <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a>
+   </li>
+   <li>
+      <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a>
+   </li>
+   <li>
+      <a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a>
+   </li>
+   <li>
+      <a href="#attachedTo" title="https://w3id.org/aias/odp/iso7498#attachedTo">attached to</a>
+   </li>
+   <li>
+      <a href="#connects" title="https://w3id.org/aias/odp/iso7498#connects">connects</a>
+   </li>
+   <li>
+      <a href="#employsProtocol"
+         title="https://w3id.org/aias/odp/iso7498#employsProtocol">employs protocol</a>
+   </li>
+   <li>
+      <a href="#forParameter" title="https://w3id.org/aias/odp/iso7498#forParameter">for parameter</a>
+   </li>
+   <li>
+      <a href="#hasControlInformation"
+         title="https://w3id.org/aias/odp/iso7498#hasControlInformation">has control information</a>
+   </li>
+   <li>
+      <a href="#hasDirection" title="https://w3id.org/aias/odp/iso7498#hasDirection">has direction</a>
+   </li>
+   <li>
+      <a href="#hasEntity" title="https://w3id.org/aias/odp/iso7498#hasEntity">has entity</a>
+   </li>
+   <li>
+      <a href="#hasQualityOfService"
+         title="https://w3id.org/aias/odp/iso7498#hasQualityOfService">has quality of service</a>
+   </li>
+   <li>
+      <a href="#hasSourceSystem"
+         title="https://w3id.org/aias/odp/iso7498#hasSourceSystem">has source system</a>
+   </li>
+   <li>
+      <a href="#hasSubsystem" title="https://w3id.org/aias/odp/iso7498#hasSubsystem">has subsystem</a>
+   </li>
+   <li>
+      <a href="#hasTargetSystem"
+         title="https://w3id.org/aias/odp/iso7498#hasTargetSystem">has target system</a>
+   </li>
+   <li>
+      <a href="#hasUserData" title="https://w3id.org/aias/odp/iso7498#hasUserData">has user data</a>
+   </li>
+   <li>
+      <a href="#hasValue" title="https://w3id.org/aias/odp/iso7498#hasValue">has value</a>
+   </li>
+   <li>
+      <a href="#isSublayerOf" title="https://w3id.org/aias/odp/iso7498#isSublayerOf">is sublayer of</a>
+   </li>
+   <li>
+      <a href="#mapsToServiceDataUnit"
+         title="https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit">maps to service data unit</a>
+   </li>
+   <li>
+      <a href="#peerEntity" title="https://w3id.org/aias/odp/iso7498#peerEntity">peer entity</a>
+   </li>
+   <li>
+      <a href="#providesService"
+         title="https://w3id.org/aias/odp/iso7498#providesService">provides service</a>
+   </li>
+   <li>
+      <a href="#realisesLayer" title="https://w3id.org/aias/odp/iso7498#realisesLayer">realises layer</a>
+   </li>
+   <li>
+      <a href="#transmits" title="https://w3id.org/aias/odp/iso7498#transmits">transmits</a>
+   </li>
+   <li>
+      <a href="#usesLayer" title="https://w3id.org/aias/odp/iso7498#usesLayer">uses layer</a>
+   </li>
+   <li>
+      <a href="#usesTechnology" title="https://w3id.org/aias/odp/iso7498#usesTechnology">uses technology</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#layerNumber" title="https://w3id.org/aias/odp/iso7498#layerNumber">layer number</a>
+   </li>
+   <li>
+      <a href="#quantity" title="https://w3id.org/aias/odp/iso7498#quantity">quantity</a>
+   </li>
+   <li>
+      <a href="#unit" title="https://w3id.org/aias/odp/iso7498#unit">unit</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">
+         <span>alt Label</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation">
+         <span>bibliographic Citation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">
+         <span>note</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred Namespace Uri</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+         <span>publisher</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights">
+         <span>rights</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source">
+         <span>source</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+         <span>status</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">ISO/IEC 7498-1 Ontology Design Pattern: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Normative basis: ISO/IEC 7498-1:1994, identical to ITU-T Recommendation X.200.
+
+Two deviations from the standard are deliberate and documented at the affected elements. Technology is an addition, since the standard states in 1.3 that it implies no particular implementation or technology, yet an engineering model has to record which protocol is used. The seven layers are named individuals rather than classes, since the standard enumerates exactly seven of them in 6.1.2 and gives each a number.
+
+Terms the standard defines but this pattern omits: routing across relay systems (5.9), the management aspects of clause 8, and the detailed connection endpoint machinery of 5.3. They describe the operation of a running communication rather than the structure an engineering model records.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for ISO/IEC 7498-1 Ontology Design Pattern classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by ISO/IEC 7498-1 Ontology Design Pattern.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a></li>
+  <li><a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a></li>
+  <li><a href="#ConnectionModeAssociation" title="https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation">Connection-mode Communication</a></li>
+  <li><a href="#ConnectionlessModeAssociation" title="https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation">Connectionless-mode Communication</a></li>
+  <li><a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a></li>
+  <li><a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a></li>
+  <li><a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a></li>
+  <li><a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a></li>
+  <li><a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a></li>
+  <li><a href="#ProtocolControlInformation" title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a></li>
+  <li><a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a></li>
+  <li><a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a></li>
+  <li><a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a></li>
+  <li><a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a></li>
+  <li><a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a></li>
+  <li><a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a></li>
+  <li><a href="#ServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a></li>
+  <li><a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a></li>
+  <li><a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a></li>
+  <li><a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a></li>
+ </ul>
+ <div class="entity" id="Association">
+  <h3>Communication<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Association</p>
+  <div class="comment">
+   <span class="markdown">A relation joining open systems that permits them to exchange information.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ConnectionModeAssociation" title="https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation">Connection-mode Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#ConnectionlessModeAssociation" title="https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation">Connectionless-mode Communication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#connects" title="https://w3id.org/aias/odp/iso7498#connects">connects</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDirection" title="https://w3id.org/aias/odp/iso7498#hasDirection">has direction</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasQualityOfService" title="https://w3id.org/aias/odp/iso7498#hasQualityOfService">has quality of service</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceSystem" title="https://w3id.org/aias/odp/iso7498#hasSourceSystem">has source system</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTargetSystem" title="https://w3id.org/aias/odp/iso7498#hasTargetSystem">has target system</a> <sup class="type-op" title="object property">op</sup>, <a href="#transmits" title="https://w3id.org/aias/odp/iso7498#transmits">transmits</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesLayer" title="https://w3id.org/aias/odp/iso7498#usesLayer">uses layer</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesTechnology" title="https://w3id.org/aias/odp/iso7498#usesTechnology">uses technology</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CommunicationDirection">
+  <h3>Communication Direction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#CommunicationDirection</p>
+  <div class="comment">
+   <span class="markdown">The direction in which data communication takes place over a communication.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDirection" title="https://w3id.org/aias/odp/iso7498#hasDirection">has direction</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConnectionModeAssociation">
+  <h3>Connection-mode Communication<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation</p>
+  <div class="comment">
+   <span class="markdown">A communication established, held, and released as a connection between the participating entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ConnectionlessModeAssociation" title="https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation">Connectionless-mode Communication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConnectionlessModeAssociation">
+  <h3>Connectionless-mode Communication<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation</p>
+  <div class="comment">
+   <span class="markdown">A communication in which each transmission is independent of every other and carries all the information needed to deliver it.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ConnectionModeAssociation" title="https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation">Connection-mode Communication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataUnit">
+  <h3>Data Unit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#DataUnit</p>
+  <div class="comment">
+   <span class="markdown">A unit of information transferred between entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ProtocolControlInformation" title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a> <sup class="type-c" title="class">c</sup>, <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#transmits" title="https://w3id.org/aias/odp/iso7498#transmits">transmits</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Entity">
+  <h3>Entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Entity</p>
+  <div class="comment">
+   <span class="markdown">An active element within a subsystem embodying a set of capabilities defined for the layer.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a> <sup class="type-op" title="object property">op</sup>, <a href="#employsProtocol" title="https://w3id.org/aias/odp/iso7498#employsProtocol">employs protocol</a> <sup class="type-op" title="object property">op</sup>, <a href="#peerEntity" title="https://w3id.org/aias/odp/iso7498#peerEntity">peer entity</a> <sup class="type-op" title="object property">op</sup>, <a href="#providesService" title="https://w3id.org/aias/odp/iso7498#providesService">provides service</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#attachedTo" title="https://w3id.org/aias/odp/iso7498#attachedTo">attached to</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEntity" title="https://w3id.org/aias/odp/iso7498#hasEntity">has entity</a> <sup class="type-op" title="object property">op</sup>, <a href="#peerEntity" title="https://w3id.org/aias/odp/iso7498#peerEntity">peer entity</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Layer">
+  <h3>Layer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Layer</p>
+  <div class="comment">
+   <span class="markdown">A subdivision of the OSI architecture, constituted by subsystems of the same rank.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isSublayerOf" title="https://w3id.org/aias/odp/iso7498#isSublayerOf">is sublayer of</a> <sup class="type-op" title="object property">op</sup>, <a href="#layerNumber" title="https://w3id.org/aias/odp/iso7498#layerNumber">layer number</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a> <sup class="type-op" title="object property">op</sup>, <a href="#isSublayerOf" title="https://w3id.org/aias/odp/iso7498#isSublayerOf">is sublayer of</a> <sup class="type-op" title="object property">op</sup>, <a href="#realisesLayer" title="https://w3id.org/aias/odp/iso7498#realisesLayer">realises layer</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesLayer" title="https://w3id.org/aias/odp/iso7498#usesLayer">uses layer</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OpenSystem">
+  <h3>Open System<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#OpenSystem</p>
+  <div class="comment">
+   <span class="markdown">The representation of those aspects of a real system that are pertinent to open systems interconnection.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSubsystem" title="https://w3id.org/aias/odp/iso7498#hasSubsystem">has subsystem</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#connects" title="https://w3id.org/aias/odp/iso7498#connects">connects</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceSystem" title="https://w3id.org/aias/odp/iso7498#hasSourceSystem">has source system</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTargetSystem" title="https://w3id.org/aias/odp/iso7498#hasTargetSystem">has target system</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Protocol">
+  <h3>Protocol<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Protocol</p>
+  <div class="comment">
+   <span class="markdown">A set of rules and formats, semantic and syntactic, determining the communication behaviour of entities in the performance of their functions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#employsProtocol" title="https://w3id.org/aias/odp/iso7498#employsProtocol">employs protocol</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProtocolControlInformation">
+  <h3>Protocol Control Information<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#ProtocolControlInformation</p>
+  <div class="comment">
+   <span class="markdown">Information exchanged between entities to co-ordinate their joint operation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasControlInformation" title="https://w3id.org/aias/odp/iso7498#hasControlInformation">has control information</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProtocolDataUnit">
+  <h3>Protocol Data Unit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#ProtocolDataUnit</p>
+  <div class="comment">
+   <span class="markdown">A unit of data specified in a protocol, consisting of protocol control information and possibly user data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasControlInformation" title="https://w3id.org/aias/odp/iso7498#hasControlInformation">has control information</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasUserData" title="https://w3id.org/aias/odp/iso7498#hasUserData">has user data</a> <sup class="type-op" title="object property">op</sup>, <a href="#mapsToServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit">maps to service data unit</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ProtocolControlInformation" title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QualityOfService">
+  <h3>Quality of Service<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#QualityOfService</p>
+  <div class="comment">
+   <span class="markdown">The characteristics of a communication, expressed through a set of parameters, that the participating entities can select and observe.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasValue" title="https://w3id.org/aias/odp/iso7498#hasValue">has value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasQualityOfService" title="https://w3id.org/aias/odp/iso7498#hasQualityOfService">has quality of service</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QoSParameter">
+  <h3>Quality of Service Parameter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#QoSParameter</p>
+  <div class="comment">
+   <span class="markdown">A named characteristic of a communication, such as throughput or transit delay, that a quality of service statement assigns a value to.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#forParameter" title="https://w3id.org/aias/odp/iso7498#forParameter">for parameter</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QoSValue">
+  <h3>Quality of Service Value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#QoSValue</p>
+  <div class="comment">
+   <span class="markdown">The value a quality of service statement assigns to one parameter, together with its unit.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#forParameter" title="https://w3id.org/aias/odp/iso7498#forParameter">for parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#quantity" title="https://w3id.org/aias/odp/iso7498#quantity">quantity</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#unit" title="https://w3id.org/aias/odp/iso7498#unit">unit</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasValue" title="https://w3id.org/aias/odp/iso7498#hasValue">has value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Service">
+  <h3>Service<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Service</p>
+  <div class="comment">
+   <span class="markdown">A capability of a layer and the layers beneath it, provided to the entities of the next higher layer at the boundary between the two layers.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#providesService" title="https://w3id.org/aias/odp/iso7498#providesService">provides service</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ServiceAccessPoint">
+  <h3>Service Access Point<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#ServiceAccessPoint</p>
+  <div class="comment">
+   <span class="markdown">The point at which the services of a layer are provided by an entity of that layer to an entity of the next higher layer.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#attachedTo" title="https://w3id.org/aias/odp/iso7498#attachedTo">attached to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ServiceDataUnit">
+  <h3>Service Data Unit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#ServiceDataUnit</p>
+  <div class="comment">
+   <span class="markdown">An amount of information whose identity is preserved when transferred between peer entities and which is not interpreted by the supporting entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#mapsToServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit">maps to service data unit</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ProtocolControlInformation" title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a> <sup class="type-c" title="class">c</sup>, <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Subsystem">
+  <h3>Subsystem<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Subsystem</p>
+  <div class="comment">
+   <span class="markdown">An element in the hierarchical division of an open system which interacts directly only with elements in the next higher division or the next lower division of that open system.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEntity" title="https://w3id.org/aias/odp/iso7498#hasEntity">has entity</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSubsystem" title="https://w3id.org/aias/odp/iso7498#hasSubsystem">has subsystem</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Technology">
+  <h3>Technology<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#Technology</p>
+  <div class="comment">
+   <span class="markdown">A concrete protocol or transmission technique realising the services of a layer.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#realisesLayer" title="https://w3id.org/aias/odp/iso7498#realisesLayer">realises layer</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#usesTechnology" title="https://w3id.org/aias/odp/iso7498#usesTechnology">uses technology</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>, <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>, <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>, <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>, <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>, <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>, <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>, <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UserData">
+  <h3>User Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#UserData</p>
+  <div class="comment">
+   <span class="markdown">The data transferred between entities on behalf of the entities of the next higher layer for whom they are providing services.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasUserData" title="https://w3id.org/aias/odp/iso7498#hasUserData">has user data</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ProtocolControlInformation" title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a> <sup class="type-c" title="class">c</sup>, <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>, <a href="#ServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#atLayer" title="https://w3id.org/aias/odp/iso7498#atLayer">at layer</a></li>
+  <li><a href="#attachedTo" title="https://w3id.org/aias/odp/iso7498#attachedTo">attached to</a></li>
+  <li><a href="#connects" title="https://w3id.org/aias/odp/iso7498#connects">connects</a></li>
+  <li><a href="#employsProtocol" title="https://w3id.org/aias/odp/iso7498#employsProtocol">employs protocol</a></li>
+  <li><a href="#forParameter" title="https://w3id.org/aias/odp/iso7498#forParameter">for parameter</a></li>
+  <li><a href="#hasControlInformation" title="https://w3id.org/aias/odp/iso7498#hasControlInformation">has control information</a></li>
+  <li><a href="#hasDirection" title="https://w3id.org/aias/odp/iso7498#hasDirection">has direction</a></li>
+  <li><a href="#hasEntity" title="https://w3id.org/aias/odp/iso7498#hasEntity">has entity</a></li>
+  <li><a href="#hasQualityOfService" title="https://w3id.org/aias/odp/iso7498#hasQualityOfService">has quality of service</a></li>
+  <li><a href="#hasSourceSystem" title="https://w3id.org/aias/odp/iso7498#hasSourceSystem">has source system</a></li>
+  <li><a href="#hasSubsystem" title="https://w3id.org/aias/odp/iso7498#hasSubsystem">has subsystem</a></li>
+  <li><a href="#hasTargetSystem" title="https://w3id.org/aias/odp/iso7498#hasTargetSystem">has target system</a></li>
+  <li><a href="#hasUserData" title="https://w3id.org/aias/odp/iso7498#hasUserData">has user data</a></li>
+  <li><a href="#hasValue" title="https://w3id.org/aias/odp/iso7498#hasValue">has value</a></li>
+  <li><a href="#isSublayerOf" title="https://w3id.org/aias/odp/iso7498#isSublayerOf">is sublayer of</a></li>
+  <li><a href="#mapsToServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit">maps to service data unit</a></li>
+  <li><a href="#peerEntity" title="https://w3id.org/aias/odp/iso7498#peerEntity">peer entity</a></li>
+  <li><a href="#providesService" title="https://w3id.org/aias/odp/iso7498#providesService">provides service</a></li>
+  <li><a href="#realisesLayer" title="https://w3id.org/aias/odp/iso7498#realisesLayer">realises layer</a></li>
+  <li><a href="#transmits" title="https://w3id.org/aias/odp/iso7498#transmits">transmits</a></li>
+  <li><a href="#usesLayer" title="https://w3id.org/aias/odp/iso7498#usesLayer">uses layer</a></li>
+  <li><a href="#usesTechnology" title="https://w3id.org/aias/odp/iso7498#usesTechnology">uses technology</a></li>
+ </ul>
+ <div class="entity" id="atLayer">
+  <h3>at layer<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#atLayer</p>
+  <div class="comment">
+   <span class="markdown">Relates a subsystem, an entity, or a data unit to the layer it belongs to.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="attachedTo">
+  <h3>attached to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#attachedTo</p>
+  <div class="comment">
+   <span class="markdown">Relates a service access point to an entity attached to it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ServiceAccessPoint" title="https://w3id.org/aias/odp/iso7498#ServiceAccessPoint">Service Access Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="connects">
+  <h3>connects<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#connects</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to an open system taking part in it, without stating the direction of the data flow.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasSourceSystem" title="https://w3id.org/aias/odp/iso7498#hasSourceSystem">has source system</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTargetSystem" title="https://w3id.org/aias/odp/iso7498#hasTargetSystem">has target system</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="employsProtocol">
+  <h3>employs protocol<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#employsProtocol</p>
+  <div class="comment">
+   <span class="markdown">Relates an entity to a protocol it employs.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Protocol" title="https://w3id.org/aias/odp/iso7498#Protocol">Protocol</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="forParameter">
+  <h3>for parameter<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#forParameter</p>
+  <div class="comment">
+   <span class="markdown">Relates a quality of service value to the parameter it quantifies.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#QoSParameter" title="https://w3id.org/aias/odp/iso7498#QoSParameter">Quality of Service Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasControlInformation">
+  <h3>has control information<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasControlInformation</p>
+  <div class="comment">
+   <span class="markdown">Relates a protocol data unit to the protocol control information it carries.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ProtocolControlInformation" title="https://w3id.org/aias/odp/iso7498#ProtocolControlInformation">Protocol Control Information</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDirection">
+  <h3>has direction<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasDirection</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to the direction in which data communication takes place over it.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#CommunicationDirection" title="https://w3id.org/aias/odp/iso7498#CommunicationDirection">Communication Direction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEntity">
+  <h3>has entity<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasEntity</p>
+  <div class="comment">
+   <span class="markdown">Relates a subsystem to an entity within it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasQualityOfService">
+  <h3>has quality of service<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasQualityOfService</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to the quality of service observed on it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSourceSystem">
+  <h3>has source system<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasSourceSystem</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to an open system data flows from.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#connects" title="https://w3id.org/aias/odp/iso7498#connects">connects</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSubsystem">
+  <h3>has subsystem<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasSubsystem</p>
+  <div class="comment">
+   <span class="markdown">Relates an open system to one of its subsystems.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Subsystem" title="https://w3id.org/aias/odp/iso7498#Subsystem">Subsystem</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTargetSystem">
+  <h3>has target system<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasTargetSystem</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to an open system data flows to.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#connects" title="https://w3id.org/aias/odp/iso7498#connects">connects</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#OpenSystem" title="https://w3id.org/aias/odp/iso7498#OpenSystem">Open System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasUserData">
+  <h3>has user data<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasUserData</p>
+  <div class="comment">
+   <span class="markdown">Relates a protocol data unit to the user data it carries.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#UserData" title="https://w3id.org/aias/odp/iso7498#UserData">User Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasValue">
+  <h3>has value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#hasValue</p>
+  <div class="comment">
+   <span class="markdown">Relates a quality of service statement to one of its parameter values.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#QualityOfService" title="https://w3id.org/aias/odp/iso7498#QualityOfService">Quality of Service</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isSublayerOf">
+  <h3>is sublayer of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#isSublayerOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a layer to the layer it subdivides.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="mapsToServiceDataUnit">
+  <h3>maps to service data unit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit</p>
+  <div class="comment">
+   <span class="markdown">Relates a protocol data unit of one layer to the service data unit of the layer below that carries it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ProtocolDataUnit" title="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit">Protocol Data Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ServiceDataUnit" title="https://w3id.org/aias/odp/iso7498#ServiceDataUnit">Service Data Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="peerEntity">
+  <h3>peer entity<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#peerEntity</p>
+  <div class="comment">
+   <span class="markdown">Relates an entity to an entity of the same layer with which it communicates.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> symmetric</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="providesService">
+  <h3>provides service<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#providesService</p>
+  <div class="comment">
+   <span class="markdown">Relates an entity to a service it provides to the layer above.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Entity" title="https://w3id.org/aias/odp/iso7498#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Service" title="https://w3id.org/aias/odp/iso7498#Service">Service</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="realisesLayer">
+  <h3>realises layer<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#realisesLayer</p>
+  <div class="comment">
+   <span class="markdown">Relates a technology to the layer whose services it realises.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="transmits">
+  <h3>transmits<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#transmits</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to a data unit conveyed over it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataUnit" title="https://w3id.org/aias/odp/iso7498#DataUnit">Data Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="usesLayer">
+  <h3>uses layer<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#usesLayer</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to the layer whose services it uses.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="usesTechnology">
+  <h3>uses technology<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#usesTechnology</p>
+  <div class="comment">
+   <span class="markdown">Relates a communication to a technology realising it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Association" title="https://w3id.org/aias/odp/iso7498#Association">Communication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Technology" title="https://w3id.org/aias/odp/iso7498#Technology">Technology</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#layerNumber" title="https://w3id.org/aias/odp/iso7498#layerNumber">layer number</a></li>
+  <li><a href="#quantity" title="https://w3id.org/aias/odp/iso7498#quantity">quantity</a></li>
+  <li><a href="#unit" title="https://w3id.org/aias/odp/iso7498#unit">unit</a></li>
+ </ul>
+ <div class="entity" id="layerNumber">
+  <h3>layer number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#layerNumber</p>
+  <div class="comment">
+   <span class="markdown">The number of a layer in the reference model, from one for the physical layer to seven for the application layer.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Layer" title="https://w3id.org/aias/odp/iso7498#Layer">Layer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="quantity">
+  <h3>quantity<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#quantity</p>
+  <div class="comment">
+   <span class="markdown">The numeric quantity of a quality of service value.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="unit">
+  <h3>unit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/iso7498#unit</p>
+  <div class="comment">
+   <span class="markdown">The unit of a quality of service value, for example ms or Mbit/s.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#QoSValue" title="https://w3id.org/aias/odp/iso7498#QoSValue">Quality of Service Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel"> <span>alt Label</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation"> <span>bibliographic Citation</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor"> <span>contributor</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note"> <span>note</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher"> <span>publisher</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights"> <span>rights</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source"> <span>source</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status"> <span>status</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#altLabel">
+  <h3>alt Label<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/bibliographicCitation">
+  <h3>bibliographic Citation<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/bibliographicCitation</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/contributor">
+  <h3>contributor<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#note">
+  <h3>note<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#note</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <h3>preferred Namespace Uri<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/publisher">
+  <h3>publisher<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/rights">
+  <h3>rights<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/source">
+  <h3>source<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/source</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/status">
+  <h3>status<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/status</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

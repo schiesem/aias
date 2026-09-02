@@ -1,0 +1,572 @@
+<h2 id="crossreference" class="list">Cross-reference for VDI 3682 Ontology Design Pattern classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by VDI 3682 Ontology Design Pattern.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#AlternativeFlow" title="https://w3id.org/aias/odp/vdi3682#AlternativeFlow">Alternative Flow</a></li>
+  <li><a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a></li>
+  <li><a href="#Energy" title="https://w3id.org/aias/odp/vdi3682#Energy">Energy</a></li>
+  <li><a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a></li>
+  <li><a href="#Information" title="https://w3id.org/aias/odp/vdi3682#Information">Information</a></li>
+  <li><a href="#ParallelFlow" title="https://w3id.org/aias/odp/vdi3682#ParallelFlow">Parallel Flow</a></li>
+  <li><a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a></li>
+  <li><a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a></li>
+  <li><a href="#Product" title="https://w3id.org/aias/odp/vdi3682#Product">Product</a></li>
+  <li><a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a></li>
+  <li><a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a></li>
+  <li><a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a></li>
+ </ul>
+ <div class="entity" id="AlternativeFlow">
+  <h3>Alternative Flow<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#AlternativeFlow</p>
+  <div class="comment">
+   <span class="markdown">A flow that is part of a separate flow denoting mutually exclusive process paths.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Assignment">
+  <h3>Assignment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Assignment</p>
+  <div class="comment">
+   <span class="markdown">The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isAssignedTo" title="https://w3id.org/aias/odp/vdi3682#isAssignedTo">is assigned to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isAssignedTo" title="https://w3id.org/aias/odp/vdi3682#isAssignedTo">is assigned to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>, <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Energy">
+  <h3>Energy<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Energy</p>
+  <div class="comment">
+   <span class="markdown">Energy required or released by a process operator, for example electrical energy or heat.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasState" title="https://w3id.org/aias/odp/vdi3682#hasState">has state</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Flow">
+  <h3>Flow<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Flow</p>
+  <div class="comment">
+   <span class="markdown">A directed connection of products between process operators.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AlternativeFlow" title="https://w3id.org/aias/odp/vdi3682#AlternativeFlow">Alternative Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#ParallelFlow" title="https://w3id.org/aias/odp/vdi3682#ParallelFlow">Parallel Flow</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasState" title="https://w3id.org/aias/odp/vdi3682#hasState">has state</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInput" title="https://w3id.org/aias/odp/vdi3682#isInput">is input of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isOutput" title="https://w3id.org/aias/odp/vdi3682#isOutput">is output of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasInput" title="https://w3id.org/aias/odp/vdi3682#hasInput">has input</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasOutput" title="https://w3id.org/aias/odp/vdi3682#hasOutput">has output</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>, <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Information">
+  <h3>Information<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Information</p>
+  <div class="comment">
+   <span class="markdown">Information required by a process operator to carry out its transformation, or information created by it.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasState" title="https://w3id.org/aias/odp/vdi3682#hasState">has state</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ParallelFlow">
+  <h3>Parallel Flow<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#ParallelFlow</p>
+  <div class="comment">
+   <span class="markdown">A flow that is part of a partially shared flow denoting process steps running concurrently.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Process">
+  <h3>Process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Process</p>
+  <div class="comment">
+   <span class="markdown">A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/vdi3682#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/vdi3682#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>, <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ProcessOperator">
+  <h3>Process Operator<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#ProcessOperator</p>
+  <div class="comment">
+   <span class="markdown">An operation transforming the input state of products, energies or information into an output state.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasInput" title="https://w3id.org/aias/odp/vdi3682#hasInput">has input</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasOutput" title="https://w3id.org/aias/odp/vdi3682#hasOutput">has output</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAssignedTo" title="https://w3id.org/aias/odp/vdi3682#isAssignedTo">is assigned to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/vdi3682#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInput" title="https://w3id.org/aias/odp/vdi3682#isInput">is input of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isOutput" title="https://w3id.org/aias/odp/vdi3682#isOutput">is output of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>, <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Product">
+  <h3>Product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#Product</p>
+  <div class="comment">
+   <span class="markdown">Things of the real world that are transformed within a technical process.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasState" title="https://w3id.org/aias/odp/vdi3682#hasState">has state</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="State">
+  <h3>State<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#State</p>
+  <div class="comment">
+   <span class="markdown">The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/vdi3682#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasState" title="https://w3id.org/aias/odp/vdi3682#hasState">has state</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SystemBorder">
+  <h3>System Border<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#SystemBorder</p>
+  <div class="comment">
+   <span class="markdown">The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#consistsOf" title="https://w3id.org/aias/odp/vdi3682#consistsOf">consists of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TechnicalResource">
+  <h3>Technical Resource<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#TechnicalResource</p>
+  <div class="comment">
+   <span class="markdown">Physical components of which automated plants are built and which realise the transformations carried out by process operators.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isAssignedTo" title="https://w3id.org/aias/odp/vdi3682#isAssignedTo">is assigned to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>, <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>, <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>, <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#consistsOf" title="https://w3id.org/aias/odp/vdi3682#consistsOf">consists of</a></li>
+  <li><a href="#hasInput" title="https://w3id.org/aias/odp/vdi3682#hasInput">has input</a></li>
+  <li><a href="#hasOutput" title="https://w3id.org/aias/odp/vdi3682#hasOutput">has output</a></li>
+  <li><a href="#hasState" title="https://w3id.org/aias/odp/vdi3682#hasState">has state</a></li>
+  <li><a href="#isAssignedTo" title="https://w3id.org/aias/odp/vdi3682#isAssignedTo">is assigned to</a></li>
+  <li><a href="#isInput" title="https://w3id.org/aias/odp/vdi3682#isInput">is input of</a></li>
+  <li><a href="#isOutput" title="https://w3id.org/aias/odp/vdi3682#isOutput">is output of</a></li>
+ </ul>
+ <div class="entity" id="consistsOf">
+  <h3>consists of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#consistsOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a process to the elements describing it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Process" title="https://w3id.org/aias/odp/vdi3682#Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#SystemBorder" title="https://w3id.org/aias/odp/vdi3682#SystemBorder">System Border</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInput">
+  <h3>has input<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#hasInput</p>
+  <div class="comment">
+   <span class="markdown">Relates a process operator to a flow entering it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isInput" title="https://w3id.org/aias/odp/vdi3682#isInput">is input of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasOutput">
+  <h3>has output<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#hasOutput</p>
+  <div class="comment">
+   <span class="markdown">Relates a process operator to a flow leaving it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isOutput" title="https://w3id.org/aias/odp/vdi3682#isOutput">is output of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasState">
+  <h3>has state<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#hasState</p>
+  <div class="comment">
+   <span class="markdown">Relates a flow to the state it carries.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Energy" title="https://w3id.org/aias/odp/vdi3682#Energy">Energy</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Information" title="https://w3id.org/aias/odp/vdi3682#Information">Information</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Product" title="https://w3id.org/aias/odp/vdi3682#Product">Product</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#State" title="https://w3id.org/aias/odp/vdi3682#State">State</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAssignedTo">
+  <h3>is assigned to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#isAssignedTo</p>
+  <div class="comment">
+   <span class="markdown">Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Assignment" title="https://w3id.org/aias/odp/vdi3682#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#TechnicalResource" title="https://w3id.org/aias/odp/vdi3682#TechnicalResource">Technical Resource</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isInput">
+  <h3>is input of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#isInput</p>
+  <div class="comment">
+   <span class="markdown">Relates a flow to the process operator it enters.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasInput" title="https://w3id.org/aias/odp/vdi3682#hasInput">has input</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isOutput">
+  <h3>is output of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/aias/odp/vdi3682#isOutput</p>
+  <div class="comment">
+   <span class="markdown">Relates a flow to the process operator it leaves.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Flow" title="https://w3id.org/aias/odp/vdi3682#Flow">Flow</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ProcessOperator" title="https://w3id.org/aias/odp/vdi3682#ProcessOperator">Process Operator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasOutput" title="https://w3id.org/aias/odp/vdi3682#hasOutput">has output</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract"> <span>abstract</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation"> <span>bibliographic Citation</span> </a></li>
+  <li><a href="#https://schema.org/codeRepository" title="https://schema.org/codeRepository"> <span>code Repository</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi"> <span>doi</span> </a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/fundedBy" title="http://xmlns.com/foaf/0.1/fundedBy"> <span>funded By</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/hasVersion" title="http://purl.org/dc/terms/hasVersion"> <span>has Version</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified"> <span>modified</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note"> <span>note</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher"> <span>publisher</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/rights" title="http://purl.org/dc/terms/rights"> <span>rights</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source"> <span>source</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status"> <span>status</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/subject" title="http://purl.org/dc/terms/subject"> <span>subject</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/abstract">
+  <h3>abstract<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/abstract</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/bibliographicCitation">
+  <h3>bibliographic Citation<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/bibliographicCitation</p>
+ </div>
+ <div class="entity" id="https://schema.org/codeRepository">
+  <h3>code Repository<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.org/codeRepository</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/doi">
+  <h3>doi<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/doi</p>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/fundedBy">
+  <h3>funded By<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/fundedBy</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/hasVersion">
+  <h3>has Version<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/hasVersion</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/modified">
+  <h3>modified<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/modified</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#note">
+  <h3>note<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#note</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <h3>preferred Namespace Uri<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/publisher">
+  <h3>publisher<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/rights">
+  <h3>rights<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/source">
+  <h3>source<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/source</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/status">
+  <h3>status<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/status</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/subject">
+  <h3>subject<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/subject</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>

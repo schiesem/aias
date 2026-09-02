@@ -1,0 +1,847 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/aias/odp/iso7498/instances#"
+     xml:base="https://w3id.org/aias/odp/iso7498/instances"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:iso7498="https://w3id.org/aias/odp/iso7498#">
+    <owl:Ontology rdf:about="https://w3id.org/aias/odp/iso7498/instances">
+        <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/iso7498/instances/1.0.0"/>
+        <owl:imports rdf:resource="https://w3id.org/aias/odp/iso7498"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-17</terms:created>
+        <terms:creator>TODO: author name, ORCID</terms:creator>
+        <terms:description xml:lang="en">Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.
+
+They are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:publisher>TODO: institution</terms:publisher>
+        <terms:title xml:lang="en">ISO/IEC 7498-1 Pattern: Named Individuals</terms:title>
+        <bibo:status xml:lang="en">Draft</bibo:status>
+        <vann:preferredNamespacePrefix>iso7498-inst</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/aias/odp/iso7498/instances#</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">Three groups of individual, with different standing.
+
+The seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.
+
+The protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.
+
+The quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals.</rdfs:comment>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#atLayer -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/aias/odp/iso7498#atLayer"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#layerNumber -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/aias/odp/iso7498#layerNumber"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#realisesLayer -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/aias/odp/iso7498#realisesLayer"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#CommunicationDirection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/iso7498#CommunicationDirection"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#Layer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/iso7498#Layer"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#ProtocolDataUnit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#QoSParameter -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#ServiceDataUnit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/iso7498#ServiceDataUnit"/>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498#Technology -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aias/odp/iso7498#Technology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#AMQP -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#AMQP">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Advanced message queuing protocol, after ISO/IEC 19464.</rdfs:comment>
+        <rdfs:label xml:lang="en">AMQP</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">The highest layer, providing the sole means for an application process to access the OSI environment. It has no boundary with a higher layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.1.2. Consists of the application entities that cooperate in the OSI environment, 6.1.4.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Availability -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Availability">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The share of time a communication is usable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Availability</rdfs:label>
+        <skos:note xml:lang="en">Not named in ISO/IEC 7498-1, 7.4.4. Added because engineering models record it.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Bit -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Bit">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#ServiceDataUnit"/>
+        <rdfs:comment xml:lang="en">The service data unit of the physical layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bit</rdfs:label>
+        <skos:note xml:lang="en">The one practice term ISO/IEC 7498-1 names: 7.6.4.5 refers to physical service data units, that is bits, and 7.7.3.3.1 to the transparent transmission of bit streams.</skos:note>
+        <iso7498:atLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#CANopen -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#CANopen">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Communication protocol for embedded automation on CAN, after EN 50325-4.</rdfs:comment>
+        <rdfs:label xml:lang="en">CANopen</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#DHCP -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#DHCP">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Dynamic host configuration protocol.</rdfs:comment>
+        <rdfs:label xml:lang="en">DHCP</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">Provides the functional and procedural means for the transfer of data between network entities and detects and possibly corrects errors occurring in the physical layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Link Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.6.2.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Datagram -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Datagram">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"/>
+        <rdfs:comment xml:lang="en">The protocol data unit of a connectionless-mode transport or network service.</rdfs:comment>
+        <rdfs:label xml:lang="en">Datagram</rdfs:label>
+        <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1. Named by the protocol standards of connectionless-mode services.</skos:note>
+        <iso7498:atLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#TransportLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The elapsed time between the request to establish a connection and its confirmation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Establishment Delay</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.4.4. Applies to connection-mode communication only.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#EtherCAT -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#EtherCAT">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Real-time capable fieldbus technology on Ethernet, after IEC 61158.</rdfs:comment>
+        <rdfs:label xml:lang="en">EtherCAT</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Ethernet -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Ethernet">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Frame based data link technology after IEEE 802.3.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ethernet</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Gigabit Ethernet over twisted pair, 1000 Mbit/s.</rdfs:comment>
+        <rdfs:label xml:lang="en">1000BASE-T</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Fast Ethernet over twisted pair, 100 Mbit/s.</rdfs:comment>
+        <rdfs:label xml:lang="en">100BASE-TX</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#FTP -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#FTP">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">File transfer protocol.</rdfs:comment>
+        <rdfs:label xml:lang="en">FTP</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Frame -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Frame">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"/>
+        <rdfs:comment xml:lang="en">The protocol data unit of the data link layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Frame</rdfs:label>
+        <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting and synchronisation functions of the data link layer are sometimes referred to as framing, but the standard defines no such data unit.</skos:note>
+        <iso7498:atLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#HTTP -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#HTTP">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Hypertext transfer protocol.</rdfs:comment>
+        <rdfs:label xml:lang="en">HTTP</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#HTTPS -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#HTTPS">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Hypertext transfer protocol over a transport layer security connection.</rdfs:comment>
+        <rdfs:label xml:lang="en">HTTPS</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#IOLink -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#IOLink">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Point to point communication with sensors and actuators, after IEC 61131-9.</rdfs:comment>
+        <rdfs:label xml:lang="en">IO-Link</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#IPv4 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#IPv4">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Internet protocol version 4.</rdfs:comment>
+        <rdfs:label xml:lang="en">IPv4</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#NetworkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#IPv6 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#IPv6">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Internet protocol version 6.</rdfs:comment>
+        <rdfs:label xml:lang="en">IPv6</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#NetworkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Jitter -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Jitter">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The variation of transit delay between successive transfers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Jitter</rdfs:label>
+        <skos:note xml:lang="en">Not named in ISO/IEC 7498-1, 7.4.4. Added because it is what makes a communication suitable or unsuitable for a control task.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#MQTT -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#MQTT">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Publish and subscribe messaging protocol for constrained devices, after ISO/IEC 20922.</rdfs:comment>
+        <rdfs:label xml:lang="en">MQTT</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Modbus -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Modbus">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Request and response protocol widely used in industrial equipment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Modbus</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#NetworkLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#NetworkLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">Provides the means to establish, maintain and terminate network connections between open systems and the means to exchange data units over them, independently of routing and relay considerations.</rdfs:comment>
+        <rdfs:label xml:lang="en">Network Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.5.2.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#OPCUA -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#OPCUA">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Platform independent service oriented architecture for industrial interoperability, after IEC 62541.</rdfs:comment>
+        <rdfs:label xml:lang="en">OPC UA</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#OneWay -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#OneWay">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#CommunicationDirection"/>
+        <rdfs:comment xml:lang="en">Data communication in one pre-assigned direction.</rdfs:comment>
+        <rdfs:label xml:lang="en">One-way</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 5.3.1.16. The transmission underlying it is simplex, 5.3.1.12. A sensor reporting to a collector without receiving anything back is of this kind.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Packet -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Packet">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"/>
+        <rdfs:comment xml:lang="en">The protocol data unit of the network layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Packet</rdfs:label>
+        <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1. Named by the network layer protocol standards.</skos:note>
+        <iso7498:atLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#NetworkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">Provides the mechanical, electrical, functional and procedural means to activate, maintain and de-activate physical connections for bit transmission between data link entities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Physical Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.7.2.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#PresentationLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#PresentationLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">Provides for the representation of information that application entities either communicate or refer to in their communication, so that the syntax used is preserved in meaning.</rdfs:comment>
+        <rdfs:label xml:lang="en">Presentation Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.2.2.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Priority -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Priority">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The precedence a communication takes over others competing for the same resources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Priority</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 5.10 mentions priority among the characteristics selectable through quality of service.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Profibus -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Profibus">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Fieldbus for automation with master and slave access, after IEC 61158 and IEC 61784.</rdfs:comment>
+        <rdfs:label xml:lang="en">PROFIBUS</rdfs:label>
+        <skos:note xml:lang="en">Its master and slave access makes a segment two-way alternate in the sense of 5.3.1.15: both sides send, but never at the same time.</skos:note>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Profinet -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Profinet">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Industrial Ethernet standard for automation, after IEC 61158 and IEC 61784.</rdfs:comment>
+        <rdfs:label xml:lang="en">PROFINET</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The ratio of data lost, duplicated, or delivered incorrectly to data transferred in total.</rdfs:comment>
+        <rdfs:label xml:lang="en">Residual Error Rate</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.4.4.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Segment -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Segment">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"/>
+        <rdfs:comment xml:lang="en">The protocol data unit of the transport layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Segment</rdfs:label>
+        <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto multiple protocol data units.</skos:note>
+        <iso7498:atLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#TransportLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#SessionLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#SessionLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">Provides the means for cooperating presentation entities to organise and synchronise their dialogue and to manage their data exchange.</rdfs:comment>
+        <rdfs:label xml:lang="en">Session Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.3.2.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#TCP -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#TCP">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Transmission control protocol, connection oriented.</rdfs:comment>
+        <rdfs:label xml:lang="en">TCP</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#TransportLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#Throughput -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#Throughput">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The rate at which data is transferred over a communication.</rdfs:comment>
+        <rdfs:label xml:lang="en">Throughput</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.4.4.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#TransitDelay -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#TransitDelay">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#QoSParameter"/>
+        <rdfs:comment xml:lang="en">The elapsed time between the request to transfer data and its delivery.</rdfs:comment>
+        <rdfs:label xml:lang="en">Transit Delay</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.4.4. This is the parameter an engineering model uses to record latency.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#TransportLayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#TransportLayer">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+        <rdfs:comment xml:lang="en">Provides transparent transfer of data between session entities, relieving them of any concern with how reliable and cost effective transfer is achieved.</rdfs:comment>
+        <rdfs:label xml:lang="en">Transport Layer</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 7.4.2. Clause 7.4.4 names the quality of service parameters of this layer.</skos:note>
+        <iso7498:layerNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</iso7498:layerNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#CommunicationDirection"/>
+        <rdfs:comment xml:lang="en">Data communication in both directions, one direction at a time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Two-way Alternate</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 5.3.1.15. The transmission underlying it is half duplex, 5.3.1.11, where an entity of the layer above chooses the direction. A master and slave bus segment is of this kind: both sides send, but never at once.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#TwoWaySimultaneous -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#TwoWaySimultaneous">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#CommunicationDirection"/>
+        <rdfs:comment xml:lang="en">Data communication in both directions at the same time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Two-way Simultaneous</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 7498-1, 5.3.1.14. The transmission underlying it is duplex, 5.3.1.10. A full duplex Ethernet link is of this kind.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#UDP -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#UDP">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">User datagram protocol, connectionless.</rdfs:comment>
+        <rdfs:label xml:lang="en">UDP</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#TransportLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso7498/instances#WLAN -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iso7498/instances#WLAN">
+        <rdf:type rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+        <rdfs:comment xml:lang="en">Wireless local area network after IEEE 802.11.</rdfs:comment>
+        <rdfs:label xml:lang="en">WLAN</rdfs:label>
+        <iso7498:realisesLayer rdf:resource="https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#AMQP"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#CANopen"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#DHCP"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#EtherCAT"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Ethernet"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#FTP"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#HTTP"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#HTTPS"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#IOLink"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#IPv4"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#IPv6"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#MQTT"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Modbus"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#OPCUA"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Profibus"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Profinet"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#TCP"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#UDP"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#WLAN"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#NetworkLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#PresentationLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#SessionLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#TransportLayer"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Availability"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Jitter"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Priority"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Throughput"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#TransitDelay"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Bit"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Datagram"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Frame"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Packet"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#Segment"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#OneWay"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate"/>
+            <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498/instances#TwoWaySimultaneous"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
