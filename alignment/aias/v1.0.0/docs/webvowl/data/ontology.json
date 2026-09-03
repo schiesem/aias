@@ -6692,26 +6692,6 @@
       "id": "102"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#creates",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "10",
-      "label": {
-        "de": "erzeugt",
-        "IRI-based": "creates",
-        "en": "creates"
-      },
-      "domain": "15",
-      "comment": {
-        "de": "Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt.",
-        "en": "Relates an inference to the prediction it produces."
-      },
-      "attributes": [
-        "external",
-        "object"
-      ],
-      "id": "103"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso22989#executes",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
       "range": "15",
@@ -6724,6 +6704,26 @@
       "comment": {
         "de": "Verbindet ein Modell mit der Inferenz, die es ausführt.",
         "en": "Relates a model to the inference it carries out."
+      },
+      "attributes": [
+        "external",
+        "object"
+      ],
+      "id": "103"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#creates",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "10",
+      "label": {
+        "de": "erzeugt",
+        "IRI-based": "creates",
+        "en": "creates"
+      },
+      "domain": "15",
+      "comment": {
+        "de": "Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt.",
+        "en": "Relates an inference to the prediction it produces."
       },
       "attributes": [
         "external",

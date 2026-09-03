@@ -318,13 +318,21 @@ def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
     from rdflib import Graph, URIRef
     from rdflib.namespace import OWL, RDF
 
+    # Read as text and normalised first: under Windows the working copy
+    # has CRLF endings, and inside a multi-line literal the carriage
+    # return becomes part of the text rather than of the file format.
     src = Graph()
-    src.parse(str(ontology), format="turtle")
+    src.parse(data=ontology.read_text(encoding="utf-8").replace("\r\n", "\n"),
+              format="turtle")
     subject = next(src.subjects(RDF.type, OWL.Ontology), None)
     if subject is None:
         return []
     want = {p: set(src.objects(subject, p))
             for p in (OWL.versionIRI, OWL.imports)}
+    # rdflib binds only the prefixes it knows, so a file it writes
+    # loses the ones that make it readable: aias:, vdi3682: and the
+    # rest, with bibo: turning into ns1:.
+    prefixes = list(src.namespaces())
 
     fixed = []
     for name, fmt in (("ontology.ttl", "turtle"), ("ontology.owl", "xml"),
@@ -334,7 +342,8 @@ def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
             continue
         g = Graph()
         try:
-            g.parse(str(f), format=fmt)
+            text = f.read_text(encoding="utf-8").replace("\r\n", "\n")
+            g.parse(data=text, format=fmt)
         except Exception:
             continue
 
@@ -356,6 +365,8 @@ def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
             for obj in want[pred]:
                 g.add((subject, pred, obj))
 
+        for prefix, ns in prefixes:
+            g.bind(prefix, ns, replace=True)
         g.serialize(destination=str(f), format=fmt)
         fixed.append(name.split(".")[-1])
 

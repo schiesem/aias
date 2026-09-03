@@ -135,7 +135,7 @@
   "namespace": [],
   "class": [
     {
-      "id": "4",
+      "id": "2",
       "type": "owl:Class"
     },
     {
@@ -243,11 +243,11 @@
       "type": "owl:unionOf"
     },
     {
-      "id": "71",
+      "id": "70",
       "type": "owl:Class"
     },
     {
-      "id": "2",
+      "id": "4",
       "type": "owl:Class"
     },
     {
@@ -293,7 +293,7 @@
       "comment": {
         "en": "A physical component of an automated plant that realises the transformation carried out by a process operator."
       },
-      "id": "4"
+      "id": "2"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Process",
@@ -624,7 +624,7 @@
     {
       "instances": 0,
       "union": [
-        "2",
+        "4",
         "13",
         "6",
         "1"
@@ -680,7 +680,7 @@
       "comment": {
         "en": "The structural connection through which the execution of a process operator is assigned to a technical resource."
       },
-      "id": "71"
+      "id": "70"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#SystemLimit",
@@ -703,7 +703,7 @@
       "comment": {
         "en": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
       },
-      "id": "2"
+      "id": "4"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Product",
@@ -974,11 +974,11 @@
     },
     {
       "id": "65",
-      "type": "owl:datatypeProperty"
+      "type": "owl:objectProperty"
     },
     {
       "id": "66",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
       "id": "67",
@@ -989,7 +989,7 @@
       "type": "owl:objectProperty"
     },
     {
-      "id": "70",
+      "id": "71",
       "type": "owl:objectProperty"
     },
     {
@@ -1098,11 +1098,11 @@
     },
     {
       "id": "98",
-      "type": "owl:datatypeProperty"
+      "type": "owl:objectProperty"
     },
     {
       "id": "99",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
       "id": "100",
@@ -1137,7 +1137,7 @@
       "id": "3"
     },
     {
-      "range": "4",
+      "range": "1",
       "domain": "6",
       "attributes": [
         "anonymous",
@@ -1146,7 +1146,7 @@
       "id": "5"
     },
     {
-      "range": "4",
+      "range": "1",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -1155,7 +1155,7 @@
       "id": "7"
     },
     {
-      "range": "1",
+      "range": "4",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -1164,7 +1164,7 @@
       "id": "9"
     },
     {
-      "range": "2",
+      "range": "4",
       "domain": "6",
       "attributes": [
         "anonymous",
@@ -1173,7 +1173,7 @@
       "id": "10"
     },
     {
-      "range": "1",
+      "range": "2",
       "domain": "6",
       "attributes": [
         "anonymous",
@@ -1182,7 +1182,7 @@
       "id": "11"
     },
     {
-      "range": "8",
+      "range": "4",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1191,7 +1191,7 @@
       "id": "12"
     },
     {
-      "range": "1",
+      "range": "6",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1240,8 +1240,8 @@
         "en": "The unique code identifying an object."
       },
       "attributes": [
-        "datatype",
-        "functional"
+        "functional",
+        "datatype"
       ],
       "id": "19"
     },
@@ -1268,8 +1268,8 @@
         "en": "The version of an object. A new version arises when the values of its attributes change."
       },
       "attributes": [
-        "datatype",
-        "functional"
+        "functional",
+        "datatype"
       ],
       "id": "22"
     },
@@ -1326,13 +1326,13 @@
         "en": "The revision of an object, describing its accredited version."
       },
       "attributes": [
-        "datatype",
-        "functional"
+        "functional",
+        "datatype"
       ],
       "id": "26"
     },
     {
-      "range": "6",
+      "range": "2",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1341,7 +1341,7 @@
       "id": "28"
     },
     {
-      "range": "4",
+      "range": "8",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1350,7 +1350,7 @@
       "id": "29"
     },
     {
-      "range": "2",
+      "range": "1",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1368,7 +1368,7 @@
       "id": "31"
     },
     {
-      "range": "13",
+      "range": "2",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1377,7 +1377,7 @@
       "id": "33"
     },
     {
-      "range": "17",
+      "range": "18",
       "domain": "36",
       "attributes": [
         "anonymous",
@@ -1386,7 +1386,7 @@
       "id": "35"
     },
     {
-      "range": "18",
+      "range": "17",
       "domain": "36",
       "attributes": [
         "anonymous",
@@ -1556,8 +1556,8 @@
       "id": "55"
     },
     {
-      "range": "4",
-      "domain": "2",
+      "range": "2",
+      "domain": "4",
       "attributes": [
         "anonymous",
         "object"
@@ -1587,10 +1587,37 @@
         "en": "Relates a process operator to the process describing its decomposition. Inferred, not modelled."
       },
       "attributes": [
-        "object",
-        "transitive"
+        "transitive",
+        "object"
       ],
       "id": "64"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isWithin",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "4",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isWithin",
+        "en": "is within"
+      },
+      "domain": "56",
+      "comment": {
+        "en": "Relates a state, a process operator or a flow to the system limit enclosing it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "65"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#category",
@@ -1615,35 +1642,8 @@
         "en": "The name of a characteristic."
       },
       "attributes": [
-        "datatype",
-        "functional"
-      ],
-      "id": "65"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/vdi3682#isWithin",
-      "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "2",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "isWithin",
-        "en": "is within"
-      },
-      "domain": "56",
-      "comment": {
-        "en": "Relates a state, a process operator or a flow to the system limit enclosing it."
-      },
-      "attributes": [
-        "object"
+        "functional",
+        "datatype"
       ],
       "id": "66"
     },
@@ -1729,7 +1729,7 @@
       "attributes": [
         "object"
       ],
-      "id": "70"
+      "id": "71"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#longName",
@@ -1754,8 +1754,8 @@
         "en": "The preferred name of an object."
       },
       "attributes": [
-        "datatype",
-        "functional"
+        "functional",
+        "datatype"
       ],
       "id": "72"
     },
@@ -1889,8 +1889,8 @@
       "id": "81"
     },
     {
-      "range": "1",
-      "domain": "71",
+      "range": "8",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -1899,7 +1899,7 @@
     },
     {
       "range": "6",
-      "domain": "71",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -1907,8 +1907,8 @@
       "id": "83"
     },
     {
-      "range": "8",
-      "domain": "71",
+      "range": "4",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -1943,8 +1943,8 @@
       "id": "85"
     },
     {
-      "range": "4",
-      "domain": "71",
+      "range": "13",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -1952,8 +1952,8 @@
       "id": "86"
     },
     {
-      "range": "13",
-      "domain": "71",
+      "range": "1",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -1961,8 +1961,8 @@
       "id": "87"
     },
     {
-      "range": "2",
-      "domain": "71",
+      "range": "34",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -1970,7 +1970,7 @@
       "id": "88"
     },
     {
-      "range": "4",
+      "range": "13",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1979,7 +1979,7 @@
       "id": "89"
     },
     {
-      "range": "2",
+      "range": "4",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1997,8 +1997,8 @@
       "id": "91"
     },
     {
-      "range": "34",
-      "domain": "71",
+      "range": "2",
+      "domain": "70",
       "attributes": [
         "anonymous",
         "object"
@@ -2008,12 +2008,12 @@
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#assignedResource",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "4",
+      "range": "2",
       "label": {
         "IRI-based": "assignedResource",
         "en": "assigned resource"
       },
-      "domain": "71",
+      "domain": "70",
       "comment": {
         "en": "Relates an assignment to the technical resource realising the assigned process operator."
       },
@@ -2130,15 +2130,15 @@
         "en": "Relates a process operator to a process operator following it. Inferred, not modelled."
       },
       "attributes": [
-        "object",
-        "transitive"
+        "transitive",
+        "object"
       ],
       "id": "96"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#hasAssignment",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "71",
+      "range": "70",
       "annotations": {
         "note": [
           {
@@ -2161,34 +2161,6 @@
         "object"
       ],
       "id": "97"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/vdi3682#shortName",
-      "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "45",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "VDI 3682 Part 2, Section 5.1.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "shortName",
-        "en": "short name"
-      },
-      "domain": "20",
-      "comment": {
-        "en": "The coded name of an object."
-      },
-      "attributes": [
-        "datatype",
-        "functional"
-      ],
-      "id": "98"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
@@ -2215,6 +2187,34 @@
       "attributes": [
         "functional",
         "object"
+      ],
+      "id": "98"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#shortName",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "45",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "shortName",
+        "en": "short name"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "The coded name of an object."
+      },
+      "attributes": [
+        "functional",
+        "datatype"
       ],
       "id": "99"
     },
@@ -2248,7 +2248,7 @@
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "4",
+      "range": "2",
       "annotations": {
         "note": [
           {
@@ -2296,8 +2296,8 @@
         "en": "Relates a process operator to a process operator preceding it. Inferred, not modelled."
       },
       "attributes": [
-        "object",
-        "transitive"
+        "transitive",
+        "object"
       ],
       "id": "102"
     }

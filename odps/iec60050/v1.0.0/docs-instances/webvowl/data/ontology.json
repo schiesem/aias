@@ -122,7 +122,7 @@
     "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "39",
+    "id" : "37",
     "type" : "owl:Class"
   }, {
     "id" : "40",
@@ -203,10 +203,10 @@
     "id" : "90",
     "type" : "owl:unionOf"
   }, {
-    "id" : "17",
+    "id" : "31",
     "type" : "owl:Class"
   }, {
-    "id" : "31",
+    "id" : "17",
     "type" : "owl:Class"
   }, {
     "id" : "94",
@@ -242,7 +242,7 @@
     "id" : "134",
     "type" : "owl:Class"
   }, {
-    "id" : "88",
+    "id" : "87",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "114",
@@ -305,7 +305,7 @@
     "id" : "83",
     "type" : "owl:Class"
   }, {
-    "id" : "38",
+    "id" : "39",
     "type" : "owl:Class"
   }, {
     "id" : "143",
@@ -717,24 +717,6 @@
         "en" : "Notify"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iec60050#Intervene",
-      "baseIri" : "https://w3id.org/aias/odp/iec60050",
-      "annotations" : {
-        "note" : [ {
-          "identifier" : "note",
-          "language" : "en",
-          "value" : "IEC 60050-351, 351-43-15. The entry gives a normative form of what practice calls keeping a human in the loop, including the priority between units.",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "To modify an automatic procedure by an input of the operator or a prioritized technical unit at an unscheduled instant."
-      },
-      "labels" : {
-        "IRI-based" : "Intervene",
-        "en" : "Intervene"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iec60050#Manipulate",
       "baseIri" : "https://w3id.org/aias/odp/iec60050",
       "annotations" : {
@@ -751,6 +733,24 @@
       "labels" : {
         "IRI-based" : "Manipulate",
         "en" : "Manipulate"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Intervene",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-15. The entry gives a normative form of what practice calls keeping a human in the loop, including the priority between units.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To modify an automatic procedure by an input of the operator or a prioritized technical unit at an unscheduled instant."
+      },
+      "labels" : {
+        "IRI-based" : "Intervene",
+        "en" : "Intervene"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iec60050#Operate",
@@ -771,24 +771,6 @@
         "en" : "Operate"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iec60050#Monitor",
-      "baseIri" : "https://w3id.org/aias/odp/iec60050",
-      "annotations" : {
-        "note" : [ {
-          "identifier" : "note",
-          "language" : "en",
-          "value" : "IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries."
-      },
-      "labels" : {
-        "IRI-based" : "Monitor",
-        "en" : "Monitor"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iec60050#Optimize",
       "baseIri" : "https://w3id.org/aias/odp/iec60050",
       "annotations" : {
@@ -805,6 +787,24 @@
       "labels" : {
         "IRI-based" : "Optimize",
         "en" : "Optimize"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Monitor",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries."
+      },
+      "labels" : {
+        "IRI-based" : "Monitor",
+        "en" : "Monitor"
       }
     } ],
     "comment" : {
@@ -900,7 +900,7 @@
       "en" : "A functional unit consisting of the controlling system and the controlled system."
     },
     "attributes" : [ "external" ],
-    "id" : "39",
+    "id" : "37",
     "superClasses" : [ "5" ]
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#Signal",
@@ -1071,7 +1071,7 @@
       "IRI-based" : "FunctionalUnit",
       "en" : "Functional Unit"
     },
-    "subClasses" : [ "55", "36", "18", "20", "9", "4", "39", "45", "12", "57", "58", "59", "60", "61" ],
+    "subClasses" : [ "55", "36", "18", "20", "9", "4", "37", "45", "12", "57", "58", "59", "60", "61" ],
     "comment" : {
       "en" : "An item under consideration defined according to function or effect."
     },
@@ -1165,7 +1165,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "68",
-    "superClasses" : [ "38" ]
+    "superClasses" : [ "39" ]
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#FuzzyControl",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -1450,34 +1450,12 @@
     },
     "attributes" : [ "external" ],
     "id" : "89",
-    "superClasses" : [ "38" ]
+    "superClasses" : [ "39" ]
   }, {
     "instances" : 0,
-    "union" : [ "49", "38", "56" ],
+    "union" : [ "49", "39", "56" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "90"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/iec60050#Action",
-    "baseIri" : "https://w3id.org/aias/odp/iec60050",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "IEC 60050-351, 351-42-24. Behaviour, not structure.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Action",
-      "en" : "Action"
-    },
-    "subClasses" : [ "74", "93" ],
-    "comment" : {
-      "en" : "The influence of one variable quantity on another variable quantity."
-    },
-    "attributes" : [ "external" ],
-    "id" : "17"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#FinalControlledVariable",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -1500,6 +1478,28 @@
     "attributes" : [ "external" ],
     "id" : "31",
     "superClasses" : [ "22" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Action",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-24. Behaviour, not structure.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Action",
+      "en" : "Action"
+    },
+    "subClasses" : [ "74", "93" ],
+    "comment" : {
+      "en" : "The influence of one variable quantity on another variable quantity."
+    },
+    "attributes" : [ "external" ],
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#RuleBasedControl",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -1524,12 +1524,12 @@
     "superClasses" : [ "29" ]
   }, {
     "instances" : 0,
-    "union" : [ "49", "38", "56" ],
+    "union" : [ "49", "39", "56" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "33"
   }, {
     "instances" : 0,
-    "union" : [ "49", "38", "56" ],
+    "union" : [ "49", "39", "56" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "71"
   }, {
@@ -1556,7 +1556,7 @@
     "id" : "49"
   }, {
     "instances" : 0,
-    "union" : [ "59", "38" ],
+    "union" : [ "59", "39" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "11"
   }, {
@@ -1674,24 +1674,6 @@
         "en" : "Dead Time"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iec60050/instances#SettlingTime",
-      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
-      "annotations" : {
-        "note" : [ {
-          "identifier" : "note",
-          "language" : "en",
-          "value" : "IEC 60050-351, 351-45-37. English wording reconstructed from the German entry.",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."
-      },
-      "labels" : {
-        "IRI-based" : "SettlingTime",
-        "en" : "Settling Time"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime",
       "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
       "annotations" : {
@@ -1726,6 +1708,24 @@
       "labels" : {
         "IRI-based" : "EquivalentDeadTime",
         "en" : "Equivalent Dead Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#SettlingTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-37. English wording reconstructed from the German entry.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."
+      },
+      "labels" : {
+        "IRI-based" : "SettlingTime",
+        "en" : "Settling Time"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime",
@@ -1855,13 +1855,13 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "88",
+    "id" : "87",
     "label" : {
       "IRI-based" : "decimal"
     }
   }, {
     "instances" : 0,
-    "union" : [ "48", "38" ],
+    "union" : [ "48", "39" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "114"
   }, {
@@ -1902,7 +1902,7 @@
     "superClasses" : [ "29" ]
   }, {
     "instances" : 0,
-    "union" : [ "49", "38", "56" ],
+    "union" : [ "49", "39", "56" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "51"
   }, {
@@ -1938,7 +1938,7 @@
     "id" : "92"
   }, {
     "instances" : 0,
-    "union" : [ "38", "56" ],
+    "union" : [ "39", "56" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "14"
   }, {
@@ -2150,7 +2150,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "162",
-    "superClasses" : [ "38" ]
+    "superClasses" : [ "39" ]
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#ActionPath",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -2223,7 +2223,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "29",
-    "superClasses" : [ "38" ]
+    "superClasses" : [ "39" ]
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#MultivariableControl",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -2288,7 +2288,7 @@
       "en" : "Purposeful action on or in a process to meet specified objectives."
     },
     "attributes" : [ "external" ],
-    "id" : "38"
+    "id" : "39"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#RealTimeCapability",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -2571,7 +2571,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "3",
-    "superClasses" : [ "38" ]
+    "superClasses" : [ "39" ]
   } ],
   "property" : [ {
     "id" : "10",
@@ -2589,7 +2589,7 @@
     "id" : "32",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "37",
+    "id" : "38",
     "type" : "owl:objectProperty"
   }, {
     "id" : "43",
@@ -2613,10 +2613,10 @@
     "id" : "70",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "52",
+    "id" : "72",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "72",
+    "id" : "52",
     "type" : "owl:objectProperty"
   }, {
     "id" : "82",
@@ -2626,10 +2626,10 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "86",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "87",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "91",
     "type" : "owl:objectProperty"
@@ -2942,7 +2942,7 @@
     "comment" : {
       "en" : "Relates a controlling system or an automation to the controlled system it influences."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "10"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#performsFunction",
@@ -2964,7 +2964,7 @@
     "comment" : {
       "en" : "Relates an item under consideration to a function of control technology it performs."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "13"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#actionOverPath",
@@ -2986,7 +2986,7 @@
     "comment" : {
       "en" : "Relates an action to the action path it takes place over."
     },
-    "attributes" : [ "functional", "object", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "16"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#forCharacteristic",
@@ -3008,7 +3008,7 @@
     "comment" : {
       "en" : "Relates a characteristic value to the characteristic it quantifies."
     },
-    "attributes" : [ "functional", "object", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "23"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#hasDisturbanceVariable",
@@ -3031,7 +3031,7 @@
     "comment" : {
       "en" : "Relates a system to a disturbance variable acting on it from the outside."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "32"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#hasControlledVariable",
@@ -3050,12 +3050,12 @@
       "en" : "has controlled variable"
     },
     "superproperty" : [ "35" ],
-    "domain" : "38",
+    "domain" : "39",
     "comment" : {
       "en" : "Relates a closed-loop control to the controlled variable it acts upon."
     },
-    "attributes" : [ "object", "external" ],
-    "id" : "37"
+    "attributes" : [ "external", "object" ],
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#unit",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -3095,11 +3095,11 @@
       "en" : "has reference variable"
     },
     "superproperty" : [ "35" ],
-    "domain" : "38",
+    "domain" : "39",
     "comment" : {
       "en" : "Relates a closed-loop control to the reference variable the controlled variable is adjusted to."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "46"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#hasAction",
@@ -3117,11 +3117,11 @@
       "IRI-based" : "hasAction",
       "en" : "has action"
     },
-    "domain" : "38",
+    "domain" : "39",
     "comment" : {
       "en" : "Relates an automation to the action taking place over its action path."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "50"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#hasVariable",
@@ -3140,11 +3140,11 @@
       "en" : "has variable"
     },
     "domain" : "51",
-    "subproperty" : [ "32", "37", "52", "46" ],
+    "subproperty" : [ "32", "38", "52", "46" ],
     "comment" : {
       "en" : "Relates an automation or a system to a variable quantity involved in it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "35"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#carriesVariable",
@@ -3166,7 +3166,7 @@
     "comment" : {
       "en" : "Relates an action line to the variable quantity transmitted along it."
     },
-    "attributes" : [ "functional", "object", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "53"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#realisedByPhysicalUnit",
@@ -3188,7 +3188,7 @@
     "comment" : {
       "en" : "Relates a functional unit to a physical unit realising it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "63"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#hasCharacteristicValue",
@@ -3202,31 +3202,8 @@
     "comment" : {
       "en" : "Relates an item, a system or a control to a value it states for one of its characteristics."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "70"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/iec60050#hasManipulatedVariable",
-    "baseIri" : "https://w3id.org/aias/odp/iec60050",
-    "range" : "66",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasManipulatedVariable",
-      "en" : "has manipulated variable"
-    },
-    "superproperty" : [ "35" ],
-    "domain" : "38",
-    "comment" : {
-      "en" : "Relates a control to the manipulated variable through which it acts on the controlled system."
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "52"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#fromUnit",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -3247,8 +3224,31 @@
     "comment" : {
       "en" : "Relates an action line to the functional unit at which it starts."
     },
-    "attributes" : [ "functional", "object", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "72"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasManipulatedVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "66",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasManipulatedVariable",
+      "en" : "has manipulated variable"
+    },
+    "superproperty" : [ "35" ],
+    "domain" : "39",
+    "comment" : {
+      "en" : "Relates a control to the manipulated variable through which it acts on the controlled system."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "52"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#hasForwardPath",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -3269,7 +3269,7 @@
     "comment" : {
       "en" : "Relates a control loop to its forward path."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "82"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#consistsOfUnit",
@@ -3291,8 +3291,22 @@
     "comment" : {
       "en" : "Relates a functional unit to another functional unit it is composed of."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "84"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#quantity",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "87",
+    "label" : {
+      "IRI-based" : "quantity",
+      "en" : "quantity"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "The numeric quantity of a characteristic value."
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "86"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit",
     "inverse" : "63",
@@ -3314,22 +3328,8 @@
     "comment" : {
       "en" : "Relates a physical unit to a functional unit it realises."
     },
-    "attributes" : [ "object", "external" ],
-    "id" : "86"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/iec60050#quantity",
-    "baseIri" : "https://w3id.org/aias/odp/iec60050",
-    "range" : "88",
-    "label" : {
-      "IRI-based" : "quantity",
-      "en" : "quantity"
-    },
-    "domain" : "24",
-    "comment" : {
-      "en" : "The numeric quantity of a characteristic value."
-    },
-    "attributes" : [ "functional", "datatype", "external" ],
-    "id" : "87"
+    "attributes" : [ "external", "object" ],
+    "id" : "88"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#realisedBy",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
@@ -3346,11 +3346,11 @@
       "IRI-based" : "realisedBy",
       "en" : "realised by"
     },
-    "domain" : "38",
+    "domain" : "39",
     "comment" : {
       "en" : "Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "91"
   }, {
     "range" : "59",
@@ -3379,12 +3379,12 @@
     "id" : "102"
   }, {
     "range" : "1",
-    "domain" : "38",
+    "domain" : "39",
     "attributes" : [ "anonymous", "object" ],
     "id" : "103"
   }, {
     "range" : "56",
-    "domain" : "38",
+    "domain" : "39",
     "attributes" : [ "anonymous", "object" ],
     "id" : "104"
   }, {
@@ -3393,7 +3393,7 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "105"
   }, {
-    "range" : "38",
+    "range" : "39",
     "domain" : "24",
     "attributes" : [ "anonymous", "object" ],
     "id" : "107"
@@ -3403,22 +3403,22 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "108"
   }, {
-    "range" : "56",
+    "range" : "39",
     "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
     "id" : "109"
   }, {
-    "range" : "38",
+    "range" : "1",
     "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
     "id" : "110"
   }, {
-    "range" : "1",
+    "range" : "24",
     "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
     "id" : "111"
   }, {
-    "range" : "24",
+    "range" : "56",
     "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
     "id" : "112"
@@ -3442,10 +3442,10 @@
     "comment" : {
       "en" : "Relates a control or an observer to a model of the process it uses."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "113"
   }, {
-    "range" : "25",
+    "range" : "56",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "115"
@@ -3455,7 +3455,7 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "116"
   }, {
-    "range" : "24",
+    "range" : "1",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "117"
@@ -3495,7 +3495,7 @@
     "comment" : {
       "en" : "Relates an action line to the action path it forms part of."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "121"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#runsOverActionPath",
@@ -3513,11 +3513,11 @@
       "IRI-based" : "runsOverActionPath",
       "en" : "runs over action path"
     },
-    "domain" : "38",
+    "domain" : "39",
     "comment" : {
       "en" : "Relates an automation to the action path it runs over."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "123"
   }, {
     "range" : "56",
@@ -3594,7 +3594,7 @@
     "comment" : {
       "en" : "Relates a final controlling element to the controlled system it forms part of."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "137"
   }, {
     "range" : "29",
@@ -3641,7 +3641,7 @@
     "comment" : {
       "en" : "Relates a signal to a parameter of it that represents information."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "149"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#isSourceOfActionLine",
@@ -3664,7 +3664,7 @@
     "comment" : {
       "en" : "Relates a functional unit to an action line starting at it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "150"
   }, {
     "range" : "29",
@@ -3703,7 +3703,7 @@
     "id" : "159"
   }, {
     "range" : "5",
-    "domain" : "39",
+    "domain" : "37",
     "attributes" : [ "anonymous", "object" ],
     "id" : "160"
   }, {
@@ -3788,7 +3788,7 @@
     "comment" : {
       "en" : "Relates an item or a system to a property it has, such as stability, observability or real-time capability."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "171"
   }, {
     "range" : "5",
@@ -3840,7 +3840,7 @@
     "comment" : {
       "en" : "Relates an action path to a part of it running between two functional units."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "122"
   }, {
     "range" : "25",
@@ -3848,22 +3848,22 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "178"
   }, {
-    "range" : "25",
+    "range" : "24",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
     "id" : "179"
   }, {
-    "range" : "7",
+    "range" : "1",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
     "id" : "180"
   }, {
-    "range" : "1",
+    "range" : "25",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
     "id" : "181"
   }, {
-    "range" : "24",
+    "range" : "7",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
     "id" : "182"
@@ -3873,17 +3873,17 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "183"
   }, {
-    "range" : "1",
+    "range" : "39",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "184"
   }, {
-    "range" : "38",
+    "range" : "25",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "185"
   }, {
-    "range" : "56",
+    "range" : "24",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "186"
@@ -3908,15 +3908,15 @@
     "comment" : {
       "en" : "Relates a functional unit to an action line ending at it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "187"
   }, {
-    "range" : "56",
+    "range" : "39",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
     "id" : "189"
   }, {
-    "range" : "38",
+    "range" : "56",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
     "id" : "190"
@@ -3975,7 +3975,7 @@
     "comment" : {
       "en" : "Relates an action line to the functional unit at which it ends."
     },
-    "attributes" : [ "functional", "object", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "188"
   }, {
     "range" : "1",
@@ -3988,7 +3988,7 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "199"
   }, {
-    "range" : "38",
+    "range" : "39",
     "domain" : "89",
     "attributes" : [ "anonymous", "object" ],
     "id" : "200"
@@ -4012,15 +4012,15 @@
     "comment" : {
       "en" : "Relates a control loop to its feedback path."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "201"
   }, {
-    "range" : "38",
+    "range" : "39",
     "domain" : "3",
     "attributes" : [ "anonymous", "object" ],
     "id" : "202"
   }, {
-    "range" : "38",
+    "range" : "39",
     "domain" : "29",
     "attributes" : [ "anonymous", "object" ],
     "id" : "203"
@@ -4030,12 +4030,12 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "204"
   }, {
-    "range" : "38",
+    "range" : "39",
     "domain" : "162",
     "attributes" : [ "anonymous", "object" ],
     "id" : "205"
   }, {
-    "range" : "38",
+    "range" : "39",
     "domain" : "68",
     "attributes" : [ "anonymous", "object" ],
     "id" : "206"
