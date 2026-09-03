@@ -974,11 +974,11 @@
     },
     {
       "id": "65",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
       "id": "66",
-      "type": "owl:datatypeProperty"
+      "type": "owl:objectProperty"
     },
     {
       "id": "67",
@@ -1098,11 +1098,11 @@
     },
     {
       "id": "98",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
       "id": "99",
-      "type": "owl:datatypeProperty"
+      "type": "owl:objectProperty"
     },
     {
       "id": "100",
@@ -1137,7 +1137,7 @@
       "id": "3"
     },
     {
-      "range": "1",
+      "range": "4",
       "domain": "6",
       "attributes": [
         "anonymous",
@@ -1146,7 +1146,7 @@
       "id": "5"
     },
     {
-      "range": "1",
+      "range": "2",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -1164,7 +1164,7 @@
       "id": "9"
     },
     {
-      "range": "4",
+      "range": "2",
       "domain": "6",
       "attributes": [
         "anonymous",
@@ -1173,7 +1173,7 @@
       "id": "10"
     },
     {
-      "range": "2",
+      "range": "1",
       "domain": "6",
       "attributes": [
         "anonymous",
@@ -1200,7 +1200,7 @@
       "id": "14"
     },
     {
-      "range": "2",
+      "range": "1",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -1332,7 +1332,7 @@
       "id": "26"
     },
     {
-      "range": "2",
+      "range": "1",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1341,7 +1341,7 @@
       "id": "28"
     },
     {
-      "range": "8",
+      "range": "2",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1350,7 +1350,7 @@
       "id": "29"
     },
     {
-      "range": "1",
+      "range": "8",
       "domain": "13",
       "attributes": [
         "anonymous",
@@ -1368,7 +1368,7 @@
       "id": "31"
     },
     {
-      "range": "2",
+      "range": "8",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1377,7 +1377,7 @@
       "id": "33"
     },
     {
-      "range": "18",
+      "range": "17",
       "domain": "36",
       "attributes": [
         "anonymous",
@@ -1386,7 +1386,7 @@
       "id": "35"
     },
     {
-      "range": "17",
+      "range": "18",
       "domain": "36",
       "attributes": [
         "anonymous",
@@ -1395,7 +1395,7 @@
       "id": "37"
     },
     {
-      "range": "8",
+      "range": "4",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1413,7 +1413,7 @@
       "id": "39"
     },
     {
-      "range": "1",
+      "range": "2",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1593,33 +1593,6 @@
       "id": "64"
     },
     {
-      "iri": "https://w3id.org/aias/odp/vdi3682#isWithin",
-      "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "4",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "isWithin",
-        "en": "is within"
-      },
-      "domain": "56",
-      "comment": {
-        "en": "Relates a state, a process operator or a flow to the system limit enclosing it."
-      },
-      "attributes": [
-        "object"
-      ],
-      "id": "65"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/vdi3682#category",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
       "range": "53",
@@ -1644,6 +1617,33 @@
       "attributes": [
         "functional",
         "datatype"
+      ],
+      "id": "65"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isWithin",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "4",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isWithin",
+        "en": "is within"
+      },
+      "domain": "56",
+      "comment": {
+        "en": "Relates a state, a process operator or a flow to the system limit enclosing it."
+      },
+      "attributes": [
+        "object"
       ],
       "id": "66"
     },
@@ -1889,7 +1889,7 @@
       "id": "81"
     },
     {
-      "range": "8",
+      "range": "4",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -1898,7 +1898,7 @@
       "id": "82"
     },
     {
-      "range": "6",
+      "range": "8",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -1907,7 +1907,7 @@
       "id": "83"
     },
     {
-      "range": "4",
+      "range": "34",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -1943,7 +1943,7 @@
       "id": "85"
     },
     {
-      "range": "13",
+      "range": "2",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -1952,7 +1952,7 @@
       "id": "86"
     },
     {
-      "range": "1",
+      "range": "6",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -1961,7 +1961,7 @@
       "id": "87"
     },
     {
-      "range": "34",
+      "range": "13",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -1970,7 +1970,7 @@
       "id": "88"
     },
     {
-      "range": "13",
+      "range": "1",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1979,7 +1979,7 @@
       "id": "89"
     },
     {
-      "range": "4",
+      "range": "13",
       "domain": "34",
       "attributes": [
         "anonymous",
@@ -1997,7 +1997,7 @@
       "id": "91"
     },
     {
-      "range": "2",
+      "range": "1",
       "domain": "70",
       "attributes": [
         "anonymous",
@@ -2163,34 +2163,6 @@
       "id": "97"
     },
     {
-      "iri": "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
-      "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "20",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "VDI 3682 Part 2, Figure 3, cardinality one.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "isIdentifiedBy",
-        "en": "is identified by"
-      },
-      "domain": "41",
-      "comment": {
-        "en": "Relates an object of the formalised process description to its identification."
-      },
-      "attributes": [
-        "functional",
-        "object"
-      ],
-      "id": "98"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/vdi3682#shortName",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
       "range": "45",
@@ -2215,6 +2187,34 @@
       "attributes": [
         "functional",
         "datatype"
+      ],
+      "id": "98"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "20",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 3, cardinality one.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isIdentifiedBy",
+        "en": "is identified by"
+      },
+      "domain": "41",
+      "comment": {
+        "en": "Relates an object of the formalised process description to its identification."
+      },
+      "attributes": [
+        "functional",
+        "object"
       ],
       "id": "99"
     },

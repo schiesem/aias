@@ -1,930 +1,1477 @@
-[ {
-  "@id" : "_:genid1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Communication"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid12",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Bit"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Data"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Frame"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Packet"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Segment"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid18",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Communication"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Name"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid24",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/aias/odp/iso7498#DHCP"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Ethernet"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Ethernet1000BASET"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#FTP"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#HTTP"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#HTTPS"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#IP"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#MQTT"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#TCP"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid4",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Application"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#DataLink"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Network"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Physical"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Presentation"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Session"
-    }, {
-      "@id" : "https://w3id.org/aias/odp/iso7498#Transport"
-    } ]
-  } ]
-}, {
-  "@id" : "http://purl.org/dc/terms/abstract",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/created",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/hasVersion",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/license",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/modified",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/publisher",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/rights",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/source",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/subject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/title",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/ontology/bibo/doi",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/ontology/bibo/status",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://www.w3.org/2004/02/skos/core#note",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://xmlns.com/foaf/0.1/fundedBy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://schema.org/codeRepository",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/terms/abstract" : [ {
-    "@language" : "en",
-    "@value" : "An ontology design pattern for describing the communication between the components of an automated plant, following the layered architecture of ISO/IEC 7498-1, the Basic Reference Model of Open Systems Interconnection. A communication is structured into the seven layers of the reference model, each layer is realised by a technology such as Ethernet, IP or MQTT, and the content carried is a data unit assigned either to a layer or to the communication itself. The layers, the technologies and the kinds of data unit are modelled as subclasses. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."
-  } ],
-  "http://purl.org/dc/terms/bibliographicCitation" : [ {
-    "@language" : "en",
-    "@value" : "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"
-  } ],
-  "http://purl.org/dc/terms/created" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2024-09-01"
-  } ],
-  "http://purl.org/dc/terms/creator" : [ {
-    "@value" : "Alexander Fay"
-  }, {
-    "@value" : "Felix Gehlhoff"
-  }, {
-    "@value" : "Lasse Reinpold"
-  }, {
-    "@value" : "Marvin Schieseck"
-  }, {
-    "@value" : "Philip Topalis"
-  } ],
-  "http://purl.org/dc/terms/hasVersion" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498"
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@id" : "https://creativecommons.org/licenses/by/4.0/"
-  } ],
-  "http://purl.org/dc/terms/modified" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-09-02"
-  } ],
-  "http://purl.org/dc/terms/publisher" : [ {
-    "@value" : "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg"
-  } ],
-  "http://purl.org/dc/terms/rights" : [ {
-    "@language" : "en",
-    "@value" : "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"
-  } ],
-  "http://purl.org/dc/terms/source" : [ {
-    "@id" : "https://www.iso.org/standard/20269.html"
-  } ],
-  "http://purl.org/dc/terms/subject" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1"
-  }, {
-    "@language" : "en",
-    "@value" : "Industrial Communication"
-  }, {
-    "@language" : "en",
-    "@value" : "Network Protocol"
-  }, {
-    "@language" : "en",
-    "@value" : "OSI Reference Model"
-  }, {
-    "@language" : "en",
-    "@value" : "Ontology Design Pattern"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1 Ontology Design Pattern"
-  } ],
-  "http://purl.org/ontology/bibo/doi" : [ {
-    "@value" : "10.1109/ETFA61755.2024.10710890"
-  } ],
-  "http://purl.org/ontology/bibo/status" : [ {
-    "@language" : "en",
-    "@value" : "Draft"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
-    "@value" : "iso7498"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "https://w3id.org/aias/odp/iso7498#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Normative basis: ISO/IEC 7498-1:1994.\r\n\r\nTwenty-six classes and four relations. Every definition carries a German wording alongside its English translation.\r\n\r\nThe layers, the technologies and the kinds of data unit are modelled as subclasses.\r\n\r\nScope: the layered structure of a communication and what travels over it. The open system with its subsystems and entities, services and protocols, the transmission modes and the quality of service are not covered."
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498/1.0.0"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
-  } ],
-  "http://xmlns.com/foaf/0.1/fundedBy" : [ {
-    "@id" : "https://dtecbw.de/"
-  } ],
-  "https://schema.org/codeRepository" : [ {
-    "@id" : "https://github.com/schiesem/aias"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Application",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Provides services such as file transfer or remote access directly to the application, using the services of the layers below."
-  }, {
-    "@language" : "de",
-    "@value" : "Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Anwendungsschicht"
-  }, {
-    "@language" : "en",
-    "@value" : "Application Layer"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.1."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Bit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Dateneinheit der Bitübertragungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The data unit of the physical layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Bit"
-  }, {
-    "@language" : "en",
-    "@value" : "Bit"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "The one practice term ISO/IEC 7498-1 names: 7.7.3.3.1 refers to the transparent transmission of bit streams."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Communication",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A connection between at least two system components describing the directed exchange of data."
-  }, {
-    "@language" : "de",
-    "@value" : "Verbindung zwischen mindestens zwei Systemkomponenten, die den gerichteten Austausch von Daten beschreibt."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Communication"
-  }, {
-    "@language" : "de",
-    "@value" : "Kommunikation"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, definition 4.2.10. The standard itself calls this an association. Communication is the plainer term, and is the one used here."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#DHCP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Dynamic Host Configuration Protocol, eine Technologie der Anwendungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The Dynamic Host Configuration Protocol, a technology of the application layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "DHCP"
-  }, {
-    "@language" : "en",
-    "@value" : "DHCP"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Data",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Dateneinheit der oberen Schichten, also das, was eine Anwendung austauscht."
-  }, {
-    "@language" : "en",
-    "@value" : "The data unit of the upper layers, that is what an application exchanges."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Data"
-  }, {
-    "@language" : "de",
-    "@value" : "Daten"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Not a term of ISO/IEC 7498-1 for a data unit. It stands for what an application exchanges, without separating the payload of a single transmission from a dataset as a whole."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#DataLink",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Bildet aus Bits Datenrahmen und regelt den Zugriff auf das Übertragungsmedium."
-  }, {
-    "@language" : "en",
-    "@value" : "Forms frames out of bits and governs access to the transmission medium."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Data Link Layer"
-  }, {
-    "@language" : "de",
-    "@value" : "Sicherungsschicht"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.6."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A delimited, coherent quantity of data processed or transmitted by a layer of the OSI model as one unit."
-  }, {
-    "@language" : "de",
-    "@value" : "Abgegrenzte, zusammenhängende Datenmenge, die von einer Schicht des OSI-Modells als Einheit verarbeitet oder übertragen wird."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Data Unit"
-  }, {
-    "@language" : "de",
-    "@value" : "Dateneinheit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
-    "@language" : "en",
-    "@value" : "DU"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 5.6."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Ethernet",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A family of technologies of the data link layer."
-  }, {
-    "@language" : "de",
-    "@value" : "Technologiefamilie der Sicherungsschicht."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Ethernet"
-  }, {
-    "@language" : "en",
-    "@value" : "Ethernet"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Ethernet1000BASET",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Gigabit Ethernet over twisted pair cabling, a technology of the physical layer."
-  }, {
-    "@language" : "de",
-    "@value" : "Gigabit-Ethernet über Twisted-Pair-Verkabelung, eine Technologie der Bitübertragungsschicht."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "1000BASE-T"
-  }, {
-    "@language" : "en",
-    "@value" : "1000BASE-T"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "A class name beginning with a digit is awkward in a namespace, so the class is called Ethernet1000BASET and carries the practice name 1000BASE-T as its label."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#FTP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "File Transfer Protocol, eine Technologie der Anwendungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The File Transfer Protocol, a technology of the application layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "FTP"
-  }, {
-    "@language" : "en",
-    "@value" : "FTP"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Frame",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Dateneinheit der Sicherungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The data unit of the data link layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Datenrahmen"
-  }, {
-    "@language" : "en",
-    "@value" : "Frame"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting function of the data link layer is sometimes referred to as framing, but the standard defines no such data unit."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#HTTP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Hypertext Transfer Protocol, eine Technologie der Anwendungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The Hypertext Transfer Protocol, a technology of the application layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "HTTP"
-  }, {
-    "@language" : "en",
-    "@value" : "HTTP"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#HTTPS",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "HTTP over a secured connection, a technology of the application layer."
-  }, {
-    "@language" : "de",
-    "@value" : "HTTP über eine gesicherte Verbindung, eine Technologie der Anwendungsschicht."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "HTTPS"
-  }, {
-    "@language" : "en",
-    "@value" : "HTTPS"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#IP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Internet Protocol, eine Technologie der Vermittlungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The Internet Protocol, a technology of the network layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "IP"
-  }, {
-    "@language" : "en",
-    "@value" : "IP"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Layer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A delimited group of functions carrying out defined communication tasks at a given level of abstraction."
-  }, {
-    "@language" : "de",
-    "@value" : "Abgegrenzte Funktionsgruppe, die auf einem bestimmten Abstraktionsniveau definierte Kommunikationsaufgaben erfüllt."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Layer"
-  }, {
-    "@language" : "de",
-    "@value" : "Schicht"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#MQTT",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A publish and subscribe protocol of the application layer."
-  }, {
-    "@language" : "de",
-    "@value" : "Publish-Subscribe-Protokoll der Anwendungsschicht."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "MQTT"
-  }, {
-    "@language" : "en",
-    "@value" : "MQTT"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Bezeichnung, unter der eine Kommunikation bekannt ist."
-  }, {
-    "@language" : "en",
-    "@value" : "The designation under which a communication is known."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Name"
-  }, {
-    "@language" : "en",
-    "@value" : "Name"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Not a class of ISO/IEC 7498-1. A construct of this model, so that a communication can be referred to by a name of its own."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Network",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Organises the forwarding of data packet by packet across several networks."
-  }, {
-    "@language" : "de",
-    "@value" : "Organisiert die paketweise Weiterleitung von Daten über mehrere Netze hinweg."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Network Layer"
-  }, {
-    "@language" : "de",
-    "@value" : "Vermittlungsschicht"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.5."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Packet",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Dateneinheit der Vermittlungsschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The data unit of the network layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Packet"
-  }, {
-    "@language" : "de",
-    "@value" : "Paket"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Not a term of ISO/IEC 7498-1, but of the network layer protocol standards."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Physical",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Transmits raw bits as electrical, optical or radio signals over a physical medium."
-  }, {
-    "@language" : "de",
-    "@value" : "Überträgt rohe Bits als elektrische, optische oder Funksignale über ein physisches Medium."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Bitübertragungsschicht"
-  }, {
-    "@language" : "en",
-    "@value" : "Physical Layer"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.7."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Presentation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Converts data into a common format and carries out coding, compression and where required encryption."
-  }, {
-    "@language" : "de",
-    "@value" : "Wandelt Daten in ein gemeinsames Format und übernimmt Codierung, Kompression und gegebenenfalls Verschlüsselung."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Darstellungsschicht"
-  }, {
-    "@language" : "en",
-    "@value" : "Presentation Layer"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.2."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Segment",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "de",
-    "@value" : "Dateneinheit der Transportschicht."
-  }, {
-    "@language" : "en",
-    "@value" : "The data unit of the transport layer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Segment"
-  }, {
-    "@language" : "en",
-    "@value" : "Segment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto several protocol data units."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Session",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Manages sessions between applications, their establishment, control and synchronisation."
-  }, {
-    "@language" : "de",
-    "@value" : "Verwaltet Sitzungen zwischen Anwendungen, deren Aufbau, Steuerung und Synchronisation."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Session Layer"
-  }, {
-    "@language" : "de",
-    "@value" : "Sitzungsschicht"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.3."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#TCP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The Transmission Control Protocol, a technology of the transport layer."
-  }, {
-    "@language" : "de",
-    "@value" : "Transmission Control Protocol, eine Technologie der Transportschicht."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "TCP"
-  }, {
-    "@language" : "en",
-    "@value" : "TCP"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Technology",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A concrete protocol or transmission technique realising the tasks of a layer."
-  }, {
-    "@language" : "de",
-    "@value" : "Konkretes Protokoll oder Übertragungsverfahren, das die Aufgaben einer Schicht realisiert."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "Technologie"
-  }, {
-    "@language" : "en",
-    "@value" : "Technology"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular implementation or technology, so the standard names none."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Transport",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Provides end-to-end connections between communicating partners and segments data streams."
-  }, {
-    "@language" : "de",
-    "@value" : "Stellt Ende-zu-Ende-Verbindungen zwischen Kommunikationspartnern bereit und segmentiert Datenströme."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Transport Layer"
-  }, {
-    "@language" : "de",
-    "@value" : "Transportschicht"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "ISO/IEC 7498-1, clause 7.4."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#hasDataUnit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Relates a layer, or a communication itself, to the data unit it processes or transmits."
-  }, {
-    "@language" : "de",
-    "@value" : "Verbindet eine Schicht oder die Kommunikation selbst mit der Dateneinheit, die sie verarbeitet oder überträgt."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid1"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has data unit"
-  }, {
-    "@language" : "de",
-    "@value" : "hat Dateneinheit"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#DataUnit"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
-    "@language" : "en",
-    "@value" : "hasDU"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "One relation with two domains: the content transmitted is assigned to the respective layer, or to the communication directly.\r\n\r\nhasDU is kept as an alternative label, since that is the short form the relation is commonly written as."
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#hasLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Relates a communication to a layer it is structured into."
-  }, {
-    "@language" : "de",
-    "@value" : "Verbindet eine Kommunikation mit einer Schicht, in die sie gegliedert ist."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Communication"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has layer"
-  }, {
-    "@language" : "de",
-    "@value" : "hat Schicht"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#hasName",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Relates a communication to its designation."
-  }, {
-    "@language" : "de",
-    "@value" : "Verbindet eine Kommunikation mit ihrer Bezeichnung."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Communication"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has name"
-  }, {
-    "@language" : "de",
-    "@value" : "hat Namen"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Name"
-  } ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#usesTechnology",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Relates a layer to the technology realising it."
-  }, {
-    "@language" : "de",
-    "@value" : "Verbindet eine Schicht mit der Technologie, die sie realisiert."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "de",
-    "@value" : "nutzt Technologie"
-  }, {
-    "@language" : "en",
-    "@value" : "uses technology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@language" : "en",
-    "@value" : "Whether a given technology fits the layer it is claimed for is not checked here. Nothing stops a model from placing MQTT at the network layer."
-  } ]
-} ]
+[
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#HTTPS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "HTTP over a secured connection, a technology of the application layer."
+      },
+      {
+        "@language": "de",
+        "@value": "HTTP über eine gesicherte Verbindung, eine Technologie der Anwendungsschicht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "HTTPS"
+      },
+      {
+        "@language": "en",
+        "@value": "HTTPS"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/abstract": [
+      {
+        "@language": "en",
+        "@value": "An ontology design pattern for describing the communication between the components of an automated plant, following the layered architecture of ISO/IEC 7498-1, the Basic Reference Model of Open Systems Interconnection. A communication is structured into the seven layers of the reference model, each layer is realised by a technology such as Ethernet, IP or MQTT, and the content carried is a data unit assigned either to a layer or to the communication itself. The layers, the technologies and the kinds of data unit are modelled as subclasses. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."
+      }
+    ],
+    "http://purl.org/dc/terms/bibliographicCitation": [
+      {
+        "@language": "en",
+        "@value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-09-01"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@value": "Alexander Fay"
+      },
+      {
+        "@value": "Felix Gehlhoff"
+      },
+      {
+        "@value": "Lasse Reinpold"
+      },
+      {
+        "@value": "Marvin Schieseck"
+      },
+      {
+        "@value": "Philip Topalis"
+      }
+    ],
+    "http://purl.org/dc/terms/hasVersion": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-09-02"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@value": "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg"
+      }
+    ],
+    "http://purl.org/dc/terms/rights": [
+      {
+        "@language": "en",
+        "@value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://www.iso.org/standard/20269.html"
+      }
+    ],
+    "http://purl.org/dc/terms/subject": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1"
+      },
+      {
+        "@language": "en",
+        "@value": "Industrial Communication"
+      },
+      {
+        "@language": "en",
+        "@value": "Network Protocol"
+      },
+      {
+        "@language": "en",
+        "@value": "OSI Reference Model"
+      },
+      {
+        "@language": "en",
+        "@value": "Ontology Design Pattern"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1 Ontology Design Pattern"
+      }
+    ],
+    "http://purl.org/ontology/bibo/doi": [
+      {
+        "@value": "10.1109/ETFA61755.2024.10710890"
+      }
+    ],
+    "http://purl.org/ontology/bibo/status": [
+      {
+        "@language": "en",
+        "@value": "Draft"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "iso7498"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "https://w3id.org/aias/odp/iso7498#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Normative basis: ISO/IEC 7498-1:1994.\r\n\r\nTwenty-six classes and four relations. Every definition carries a German wording alongside its English translation.\r\n\r\nThe layers, the technologies and the kinds of data unit are modelled as subclasses.\r\n\r\nScope: the layered structure of a communication and what travels over it. The open system with its subsystems and entities, services and protocols, the transmission modes and the quality of service are not covered."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498/1.0.0"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1.0.0"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/fundedBy": [
+      {
+        "@id": "https://dtecbw.de/"
+      }
+    ],
+    "https://schema.org/codeRepository": [
+      {
+        "@id": "https://github.com/schiesem/aias"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Session",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Manages sessions between applications, their establishment, control and synchronisation."
+      },
+      {
+        "@language": "de",
+        "@value": "Verwaltet Sitzungen zwischen Anwendungen, deren Aufbau, Steuerung und Synchronisation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Session Layer"
+      },
+      {
+        "@language": "de",
+        "@value": "Sitzungsschicht"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.3."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#DataLink",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Bildet aus Bits Datenrahmen und regelt den Zugriff auf das Übertragungsmedium."
+      },
+      {
+        "@language": "en",
+        "@value": "Forms frames out of bits and governs access to the transmission medium."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Link Layer"
+      },
+      {
+        "@language": "de",
+        "@value": "Sicherungsschicht"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.6."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Communication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A connection between at least two system components describing the directed exchange of data."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindung zwischen mindestens zwei Systemkomponenten, die den gerichteten Austausch von Daten beschreibt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Communication"
+      },
+      {
+        "@language": "de",
+        "@value": "Kommunikation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, definition 4.2.10. The standard itself calls this an association. Communication is the plainer term, and is the one used here."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A delimited group of functions carrying out defined communication tasks at a given level of abstraction."
+      },
+      {
+        "@language": "de",
+        "@value": "Abgegrenzte Funktionsgruppe, die auf einem bestimmten Abstraktionsniveau definierte Kommunikationsaufgaben erfüllt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Layer"
+      },
+      {
+        "@language": "de",
+        "@value": "Schicht"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#HTTP",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Hypertext Transfer Protocol, eine Technologie der Anwendungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The Hypertext Transfer Protocol, a technology of the application layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "HTTP"
+      },
+      {
+        "@language": "en",
+        "@value": "HTTP"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasLayer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to a layer it is structured into."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Kommunikation mit einer Schicht, in die sie gegliedert ist."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has layer"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Schicht"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#MQTT",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A publish and subscribe protocol of the application layer."
+      },
+      {
+        "@language": "de",
+        "@value": "Publish-Subscribe-Protokoll der Anwendungsschicht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "MQTT"
+      },
+      {
+        "@language": "en",
+        "@value": "MQTT"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Ethernet1000BASET",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Gigabit Ethernet over twisted pair cabling, a technology of the physical layer."
+      },
+      {
+        "@language": "de",
+        "@value": "Gigabit-Ethernet über Twisted-Pair-Verkabelung, eine Technologie der Bitübertragungsschicht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "1000BASE-T"
+      },
+      {
+        "@language": "en",
+        "@value": "1000BASE-T"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A class name beginning with a digit is awkward in a namespace, so the class is called Ethernet1000BASET and carries the practice name 1000BASE-T as its label."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/subject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#FTP",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "File Transfer Protocol, eine Technologie der Anwendungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The File Transfer Protocol, a technology of the application layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "FTP"
+      },
+      {
+        "@language": "en",
+        "@value": "FTP"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#TCP",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The Transmission Control Protocol, a technology of the transport layer."
+      },
+      {
+        "@language": "de",
+        "@value": "Transmission Control Protocol, eine Technologie der Transportschicht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "TCP"
+      },
+      {
+        "@language": "en",
+        "@value": "TCP"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Packet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dateneinheit der Vermittlungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The data unit of the network layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Packet"
+      },
+      {
+        "@language": "de",
+        "@value": "Paket"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 7498-1, but of the network layer protocol standards."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#usesTechnology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a layer to the technology realising it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Schicht mit der Technologie, die sie realisiert."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "nutzt Technologie"
+      },
+      {
+        "@language": "en",
+        "@value": "uses technology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Whether a given technology fits the layer it is claimed for is not checked here. Nothing stops a model from placing MQTT at the network layer."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid24",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#DHCP"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Ethernet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Ethernet1000BASET"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#FTP"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#HTTP"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#HTTPS"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#IP"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#MQTT"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#TCP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Application",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Provides services such as file transfer or remote access directly to the application, using the services of the layers below."
+      },
+      {
+        "@language": "de",
+        "@value": "Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Anwendungsschicht"
+      },
+      {
+        "@language": "en",
+        "@value": "Application Layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to its designation."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Kommunikation mit ihrer Bezeichnung."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has name"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Namen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Name"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/fundedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/modified",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/doi",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/status",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Transport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Provides end-to-end connections between communicating partners and segments data streams."
+      },
+      {
+        "@language": "de",
+        "@value": "Stellt Ende-zu-Ende-Verbindungen zwischen Kommunikationspartnern bereit und segmentiert Datenströme."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Transport Layer"
+      },
+      {
+        "@language": "de",
+        "@value": "Transportschicht"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.4."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Application"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#DataLink"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Network"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Physical"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Presentation"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Session"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Transport"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/abstract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Presentation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Converts data into a common format and carries out coding, compression and where required encryption."
+      },
+      {
+        "@language": "de",
+        "@value": "Wandelt Daten in ein gemeinsames Format und übernimmt Codierung, Kompression und gegebenenfalls Verschlüsselung."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Darstellungsschicht"
+      },
+      {
+        "@language": "en",
+        "@value": "Presentation Layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.2."
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/codeRepository",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Bit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dateneinheit der Bitübertragungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The data unit of the physical layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Bit"
+      },
+      {
+        "@language": "en",
+        "@value": "Bit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The one practice term ISO/IEC 7498-1 names: 7.7.3.3.1 refers to the transparent transmission of bit streams."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#DHCP",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dynamic Host Configuration Protocol, eine Technologie der Anwendungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The Dynamic Host Configuration Protocol, a technology of the application layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "DHCP"
+      },
+      {
+        "@language": "en",
+        "@value": "DHCP"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Frame",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dateneinheit der Sicherungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The data unit of the data link layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Datenrahmen"
+      },
+      {
+        "@language": "en",
+        "@value": "Frame"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting function of the data link layer is sometimes referred to as framing, but the standard defines no such data unit."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/hasVersion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasDataUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a layer, or a communication itself, to the data unit it processes or transmits."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Schicht oder die Kommunikation selbst mit der Dateneinheit, die sie verarbeitet oder überträgt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has data unit"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Dateneinheit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@language": "en",
+        "@value": "hasDU"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "One relation with two domains: the content transmitted is assigned to the respective layer, or to the communication directly.\r\n\r\nhasDU is kept as an alternative label, since that is the short form the relation is commonly written as."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid18",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Name"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/bibliographicCitation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#DataUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A delimited, coherent quantity of data processed or transmitted by a layer of the OSI model as one unit."
+      },
+      {
+        "@language": "de",
+        "@value": "Abgegrenzte, zusammenhängende Datenmenge, die von einer Schicht des OSI-Modells als Einheit verarbeitet oder übertragen wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Unit"
+      },
+      {
+        "@language": "de",
+        "@value": "Dateneinheit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@language": "en",
+        "@value": "DU"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 5.6."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Physical",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Transmits raw bits as electrical, optical or radio signals over a physical medium."
+      },
+      {
+        "@language": "de",
+        "@value": "Überträgt rohe Bits als elektrische, optische oder Funksignale über ein physisches Medium."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Bitübertragungsschicht"
+      },
+      {
+        "@language": "en",
+        "@value": "Physical Layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.7."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Ethernet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A family of technologies of the data link layer."
+      },
+      {
+        "@language": "de",
+        "@value": "Technologiefamilie der Sicherungsschicht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Ethernet"
+      },
+      {
+        "@language": "en",
+        "@value": "Ethernet"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Technology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A concrete protocol or transmission technique realising the tasks of a layer."
+      },
+      {
+        "@language": "de",
+        "@value": "Konkretes Protokoll oder Übertragungsverfahren, das die Aufgaben einer Schicht realisiert."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Technologie"
+      },
+      {
+        "@language": "en",
+        "@value": "Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular implementation or technology, so the standard names none."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#note",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/source",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Name",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Bezeichnung, unter der eine Kommunikation bekannt ist."
+      },
+      {
+        "@language": "en",
+        "@value": "The designation under which a communication is known."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Name"
+      },
+      {
+        "@language": "en",
+        "@value": "Name"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a class of ISO/IEC 7498-1. A construct of this model, so that a communication can be referred to by a name of its own."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Network",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Organises the forwarding of data packet by packet across several networks."
+      },
+      {
+        "@language": "de",
+        "@value": "Organisiert die paketweise Weiterleitung von Daten über mehrere Netze hinweg."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Network Layer"
+      },
+      {
+        "@language": "de",
+        "@value": "Vermittlungsschicht"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, clause 7.5."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Segment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dateneinheit der Transportschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The data unit of the transport layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Segment"
+      },
+      {
+        "@language": "en",
+        "@value": "Segment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto several protocol data units."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dateneinheit der oberen Schichten, also das, was eine Anwendung austauscht."
+      },
+      {
+        "@language": "en",
+        "@value": "The data unit of the upper layers, that is what an application exchanges."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data"
+      },
+      {
+        "@language": "de",
+        "@value": "Daten"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 7498-1 for a data unit. It stands for what an application exchanges, without separating the payload of a single transmission from a dataset as a whole."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid12",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Bit"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Data"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Frame"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Packet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Segment"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#IP",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Internet Protocol, eine Technologie der Vermittlungsschicht."
+      },
+      {
+        "@language": "en",
+        "@value": "The Internet Protocol, a technology of the network layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "IP"
+      },
+      {
+        "@language": "en",
+        "@value": "IP"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  }
+]

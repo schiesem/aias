@@ -277,11 +277,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "50",
+      "id": "45",
       "type": "owl:Class"
     },
     {
-      "id": "45",
+      "id": "50",
       "type": "owl:Class"
     },
     {
@@ -289,11 +289,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "36",
+      "id": "37",
       "type": "owl:Class"
     },
     {
-      "id": "37",
+      "id": "36",
       "type": "owl:Class"
     },
     {
@@ -629,6 +629,24 @@
       ]
     },
     {
+      "iri": "https://w3id.org/aias/odp/iso7498#Ethernet",
+      "baseIri": "https://w3id.org/aias/odp/iso7498",
+      "instances": 0,
+      "label": {
+        "de": "Ethernet",
+        "IRI-based": "Ethernet",
+        "en": "Ethernet"
+      },
+      "comment": {
+        "de": "Technologiefamilie der Sicherungsschicht.",
+        "en": "A family of technologies of the data link layer."
+      },
+      "id": "45",
+      "superClasses": [
+        "1"
+      ]
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iso7498#Ethernet1000BASET",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
       "instances": 0,
@@ -652,24 +670,6 @@
         "en": "Gigabit Ethernet over twisted pair cabling, a technology of the physical layer."
       },
       "id": "50",
-      "superClasses": [
-        "1"
-      ]
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso7498#Ethernet",
-      "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "instances": 0,
-      "label": {
-        "de": "Ethernet",
-        "IRI-based": "Ethernet",
-        "en": "Ethernet"
-      },
-      "comment": {
-        "de": "Technologiefamilie der Sicherungsschicht.",
-        "en": "A family of technologies of the data link layer."
-      },
-      "id": "45",
       "superClasses": [
         "1"
       ]
@@ -703,34 +703,6 @@
       ]
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso7498#Application",
-      "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "ISO/IEC 7498-1, clause 7.1.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "de": "Anwendungsschicht",
-        "IRI-based": "Application",
-        "en": "Application Layer"
-      },
-      "comment": {
-        "de": "Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten.",
-        "en": "Provides services such as file transfer or remote access directly to the application, using the services of the layers below."
-      },
-      "id": "36",
-      "superClasses": [
-        "10"
-      ]
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso7498#DataLink",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
       "instances": 0,
@@ -754,6 +726,34 @@
         "en": "Forms frames out of bits and governs access to the transmission medium."
       },
       "id": "37",
+      "superClasses": [
+        "10"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso7498#Application",
+      "baseIri": "https://w3id.org/aias/odp/iso7498",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "ISO/IEC 7498-1, clause 7.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Anwendungsschicht",
+        "IRI-based": "Application",
+        "en": "Application Layer"
+      },
+      "comment": {
+        "de": "Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten.",
+        "en": "Provides services such as file transfer or remote access directly to the application, using the services of the layers below."
+      },
+      "id": "36",
       "superClasses": [
         "10"
       ]

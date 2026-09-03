@@ -1,611 +1,464 @@
-@prefix : <https://w3id.org/aias/odp/iso7498#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iso7498: <https://w3id.org/aias/odp/iso7498#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/aias/odp/iso7498#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/aias/odp/iso7498> rdf:type owl:Ontology ;
-                                     owl:versionIRI <https://w3id.org/aias/odp/iso7498/2.0.0> ;
-                                     <http://purl.org/dc/terms/bibliographicCitation> "TODO: citation of the accompanying publication" ;
-                                     <http://purl.org/dc/terms/contributor> "TODO: co-authors" ;
-                                     <http://purl.org/dc/terms/created> "2026-08-17"^^xsd:date ;
-                                     <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" ;
-                                     <http://purl.org/dc/terms/description> """Ontology design pattern for the description of communication according to ISO/IEC 7498-1, the Basic Reference Model of Open Systems Interconnection, second edition 1994.
+dcterms:bibliographicCitation a owl:AnnotationProperty .
 
-The pattern covers two levels of the standard. The first is the seven layer reference model of clause 6, which is how the standard is commonly used in practice: open systems exchanging information over a layer, using a technology. The second is the architectural apparatus of clause 5, that is subsystems, entities, service access points, services, protocols, and the data units they exchange. The second level attaches to the first, so a model may stay at the level of \"this resource communicates with that one over that layer\" and refine only where the detail is needed.
+dcterms:contributor a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty .
+
+dcterms:rights a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+bibo:status a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+xsd:date a rdfs:Datatype .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:note a owl:AnnotationProperty .
+
+<https://w3id.org/aias/odp/iso7498> a owl:Ontology ;
+    dcterms:bibliographicCitation "TODO: citation of the accompanying publication" ;
+    dcterms:contributor "TODO: co-authors" ;
+    dcterms:created "2026-08-17"^^xsd:date ;
+    dcterms:creator "TODO: author name, ORCID" ;
+    dcterms:description """Ontology design pattern for the description of communication according to ISO/IEC 7498-1, the Basic Reference Model of Open Systems Interconnection, second edition 1994.
+
+The pattern covers two levels of the standard. The first is the seven layer reference model of clause 6, which is how the standard is commonly used in practice: open systems exchanging information over a layer, using a technology. The second is the architectural apparatus of clause 5, that is subsystems, entities, service access points, services, protocols, and the data units they exchange. The second level attaches to the first, so a model may stay at the level of "this resource communicates with that one over that layer" and refine only where the detail is needed.
 
 The pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology. Named individuals for the seven layers, for common protocol data units, for technologies, and for quality of service parameters are supplied separately in ISO7498-instances.ttl."""@en ;
-                                     <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                     <http://purl.org/dc/terms/publisher> "TODO: institution" ;
-                                     <http://purl.org/dc/terms/rights> "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" ;
-                                     <http://purl.org/dc/terms/source> <https://www.iso.org/standard/20269.html> ;
-                                     <http://purl.org/dc/terms/title> "ISO/IEC 7498-1 Ontology Design Pattern"@en ;
-                                     <http://purl.org/ontology/bibo/status> "Draft"@en ;
-                                     <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso7498" ;
-                                     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso7498#" ;
-                                     rdfs:comment """Normative basis: ISO/IEC 7498-1:1994, identical to ITU-T Recommendation X.200.
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher "TODO: institution" ;
+    dcterms:rights "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" ;
+    dcterms:source <https://www.iso.org/standard/20269.html> ;
+    dcterms:title "ISO/IEC 7498-1 Ontology Design Pattern"@en ;
+    bibo:status "Draft"@en ;
+    vann:preferredNamespacePrefix "iso7498" ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/iso7498#" ;
+    rdfs:comment """Normative basis: ISO/IEC 7498-1:1994, identical to ITU-T Recommendation X.200.
 
 Two deviations from the standard are deliberate and documented at the affected elements. Technology is an addition, since the standard states in 1.3 that it implies no particular implementation or technology, yet an engineering model has to record which protocol is used. The seven layers are named individuals rather than classes, since the standard enumerates exactly seven of them in 6.1.2 and gives each a number.
 
 Terms the standard defines but this pattern omits: routing across relay systems (5.9), the management aspects of clause 8, and the detailed connection endpoint machinery of 5.3. They describe the operation of a running communication rather than the structure an engineering model records."""@en ;
-                                     owl:versionInfo "2.0.0" .
+    owl:versionIRI <https://w3id.org/aias/odp/iso7498/2.0.0> ;
+    owl:versionInfo "2.0.0" .
 
-#################################################################
-#    Annotation properties
-#################################################################
+iso7498:ConnectionModeAssociation a owl:Class ;
+    rdfs:label "Connection-mode Communication"@en ;
+    rdfs:comment "A communication established, held, and released as a connection between the participating entities."@en ;
+    rdfs:subClassOf iso7498:Association ;
+    owl:disjointWith iso7498:ConnectionlessModeAssociation ;
+    skos:note "ISO/IEC 7498-1, 5.3 and 6.4. A connection is established before data transfer and released afterwards, so the transfer can rely on state held for its duration."@en .
 
-###  http://purl.org/dc/terms/bibliographicCitation
-<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+iso7498:atLayer a owl:ObjectProperty ;
+    rdfs:label "at layer"@en ;
+    rdfs:comment "Relates a subsystem, an entity, or a data unit to the layer it belongs to."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso7498:DataUnit iso7498:Entity iso7498:Protocol iso7498:Service iso7498:Subsystem ) ] ;
+    rdfs:range iso7498:Layer ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.1 and 5.2.1.11. Subsystems of the same rank collectively form a layer, and an entity exists within a subsystem of that layer."@en .
 
+iso7498:attachedTo a owl:ObjectProperty ;
+    rdfs:label "attached to"@en ;
+    rdfs:comment "Relates a service access point to an entity attached to it."@en ;
+    rdfs:domain iso7498:ServiceAccessPoint ;
+    rdfs:range iso7498:Entity ;
+    skos:note "ISO/IEC 7498-1, 5.5.5: a service access point is attached to only one entity of its layer and to only one entity of the layer above at a time. Both are in the same system, 5.5.2."@en .
 
-###  http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+iso7498:employsProtocol a owl:ObjectProperty ;
+    rdfs:label "employs protocol"@en ;
+    rdfs:comment "Relates an entity to a protocol it employs."@en ;
+    rdfs:domain iso7498:Entity ;
+    rdfs:range iso7498:Protocol ;
+    skos:note "ISO/IEC 7498-1, 5.8.2.2: an entity may employ one or more protocols, and meaningful communication requires the agreed selection of one, 5.8.2.3."@en .
 
+iso7498:forParameter a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "for parameter"@en ;
+    rdfs:comment "Relates a quality of service value to the parameter it quantifies."@en ;
+    rdfs:domain iso7498:QoSValue ;
+    rdfs:range iso7498:QoSParameter ;
+    skos:note "Functional: one value quantifies exactly one parameter."@en .
 
-###  http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+iso7498:hasControlInformation a owl:ObjectProperty ;
+    rdfs:label "has control information"@en ;
+    rdfs:comment "Relates a protocol data unit to the protocol control information it carries."@en ;
+    rdfs:domain iso7498:ProtocolDataUnit ;
+    rdfs:range iso7498:ProtocolControlInformation ;
+    skos:note "ISO/IEC 7498-1, 5.6.1.3 and Figure 8. Figure 9 notes that no positional relationship between control information and user data within a protocol data unit is implied."@en .
 
+iso7498:hasDirection a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has direction"@en ;
+    rdfs:comment "Relates a communication to the direction in which data communication takes place over it."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:CommunicationDirection ;
+    skos:note "ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16. Functional: a communication has one direction at a time. What the direction adds over the source and target systems is whether both directions are possible at once or only in turn."@en .
 
-###  http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+iso7498:hasEntity a owl:ObjectProperty ;
+    rdfs:label "has entity"@en ;
+    rdfs:comment "Relates a subsystem to an entity within it."@en ;
+    rdfs:domain iso7498:Subsystem ;
+    rdfs:range iso7498:Entity ;
+    skos:note "ISO/IEC 7498-1, 5.2.2.1: a subsystem consists of one or several entities."@en .
 
+iso7498:hasQualityOfService a owl:ObjectProperty ;
+    rdfs:label "has quality of service"@en ;
+    rdfs:comment "Relates a communication to the quality of service observed on it."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:QualityOfService ;
+    skos:note "ISO/IEC 7498-1, 5.10."@en .
 
-###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/publisher
-<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/rights
-<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/source
-<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/ontology/bibo/status
-<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#altLabel
-<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#note
-<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://w3id.org/aias/odp/iso7498#atLayer
-:atLayer rdf:type owl:ObjectProperty ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :DataUnit
-                                     :Entity
-                                     :Protocol
-                                     :Service
-                                     :Subsystem
-                                   )
-                     ] ;
-         rdfs:range :Layer ;
-         rdfs:comment "Relates a subsystem, an entity, or a data unit to the layer it belongs to."@en ;
-         rdfs:label "at layer"@en ;
-         <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.1 and 5.2.1.11. Subsystems of the same rank collectively form a layer, and an entity exists within a subsystem of that layer."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#attachedTo
-:attachedTo rdf:type owl:ObjectProperty ;
-            rdfs:domain :ServiceAccessPoint ;
-            rdfs:range :Entity ;
-            rdfs:comment "Relates a service access point to an entity attached to it."@en ;
-            rdfs:label "attached to"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.5.5: a service access point is attached to only one entity of its layer and to only one entity of the layer above at a time. Both are in the same system, 5.5.2."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#connects
-:connects rdf:type owl:ObjectProperty ;
-          rdfs:domain :Association ;
-          rdfs:range :OpenSystem ;
-          rdfs:comment "Relates a communication to an open system taking part in it, without stating the direction of the data flow."@en ;
-          rdfs:label "connects"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 5.1.3 c). The standard places no upper bound on the number of participants: 5.3.1.4 calls a connection with more than two endpoints a multi-endpoint connection, and 5.3.1.9 defines data transmission as conveying service data units from one entity to one or more entities. No cardinality is asserted here, so one communication can carry a whole bus segment with its participants.
-
-Super property of hasSourceSystem and hasTargetSystem, so a model that knows the direction states it through those, and a model that does not may still record who takes part."""@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#employsProtocol
-:employsProtocol rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Entity ;
-                 rdfs:range :Protocol ;
-                 rdfs:comment "Relates an entity to a protocol it employs."@en ;
-                 rdfs:label "employs protocol"@en ;
-                 <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.8.2.2: an entity may employ one or more protocols, and meaningful communication requires the agreed selection of one, 5.8.2.3."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#forParameter
-:forParameter rdf:type owl:ObjectProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :QoSValue ;
-              rdfs:range :QoSParameter ;
-              rdfs:comment "Relates a quality of service value to the parameter it quantifies."@en ;
-              rdfs:label "for parameter"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "Functional: one value quantifies exactly one parameter."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#hasControlInformation
-:hasControlInformation rdf:type owl:ObjectProperty ;
-                       rdfs:domain :ProtocolDataUnit ;
-                       rdfs:range :ProtocolControlInformation ;
-                       rdfs:comment "Relates a protocol data unit to the protocol control information it carries."@en ;
-                       rdfs:label "has control information"@en ;
-                       <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.6.1.3 and Figure 8. Figure 9 notes that no positional relationship between control information and user data within a protocol data unit is implied."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#hasDirection
-:hasDirection rdf:type owl:ObjectProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :Association ;
-              rdfs:range :CommunicationDirection ;
-              rdfs:comment "Relates a communication to the direction in which data communication takes place over it."@en ;
-              rdfs:label "has direction"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16. Functional: a communication has one direction at a time. What the direction adds over the source and target systems is whether both directions are possible at once or only in turn."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#hasEntity
-:hasEntity rdf:type owl:ObjectProperty ;
-           rdfs:domain :Subsystem ;
-           rdfs:range :Entity ;
-           rdfs:comment "Relates a subsystem to an entity within it."@en ;
-           rdfs:label "has entity"@en ;
-           <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.2.1: a subsystem consists of one or several entities."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#hasQualityOfService
-:hasQualityOfService rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Association ;
-                     rdfs:range :QualityOfService ;
-                     rdfs:comment "Relates a communication to the quality of service observed on it."@en ;
-                     rdfs:label "has quality of service"@en ;
-                     <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#hasSourceSystem
-:hasSourceSystem rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :connects ;
-                 rdfs:domain :Association ;
-                 rdfs:range :OpenSystem ;
-                 rdfs:comment "Relates a communication to an open system data flows from."@en ;
-                 rdfs:label "has source system"@en ;
-                 <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 6.5.1.1 calls an open system that is the ultimate source or destination of data an end system. Source here means the origin of the data, that is the sending system, which is the reading the standard uses throughout.
+iso7498:hasSourceSystem a owl:ObjectProperty ;
+    rdfs:label "has source system"@en ;
+    rdfs:comment "Relates a communication to an open system data flows from."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:OpenSystem ;
+    rdfs:subPropertyOf iso7498:connects ;
+    skos:note """ISO/IEC 7498-1, 6.5.1.1 calls an open system that is the ultimate source or destination of data an end system. Source here means the origin of the data, that is the sending system, which is the reading the standard uses throughout.
 
 Direction follows from how the two properties are filled rather than from a separate statement. A system named as source alone sends, one named as target alone receives, and one named on both sides both sends and receives, which is what makes a communication bidirectional. A bus segment names its master as source and its slaves as targets."""@en .
 
+iso7498:hasSubsystem a owl:ObjectProperty ;
+    rdfs:label "has subsystem"@en ;
+    rdfs:comment "Relates an open system to one of its subsystems."@en ;
+    rdfs:domain iso7498:OpenSystem ;
+    rdfs:range iso7498:Subsystem ;
+    skos:note "ISO/IEC 7498-1, 5.2.2.1: an open system is logically composed of an ordered set of subsystems, one per layer."@en .
 
-###  https://w3id.org/aias/odp/iso7498#hasSubsystem
-:hasSubsystem rdf:type owl:ObjectProperty ;
-              rdfs:domain :OpenSystem ;
-              rdfs:range :Subsystem ;
-              rdfs:comment "Relates an open system to one of its subsystems."@en ;
-              rdfs:label "has subsystem"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.2.1: an open system is logically composed of an ordered set of subsystems, one per layer."@en .
+iso7498:hasTargetSystem a owl:ObjectProperty ;
+    rdfs:label "has target system"@en ;
+    rdfs:comment "Relates a communication to an open system data flows to."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:OpenSystem ;
+    rdfs:subPropertyOf iso7498:connects ;
+    skos:note "ISO/IEC 7498-1, 6.5.1.1. Target means the destination of the data, that is the receiving system. See the note on hasSourceSystem for how the two express direction."@en .
 
+iso7498:hasUserData a owl:ObjectProperty ;
+    rdfs:label "has user data"@en ;
+    rdfs:comment "Relates a protocol data unit to the user data it carries."@en ;
+    rdfs:domain iso7498:ProtocolDataUnit ;
+    rdfs:range iso7498:UserData ;
+    skos:note "ISO/IEC 7498-1, 5.6.1.3: a protocol data unit consists of control information and possibly user data, so this relation is optional."@en .
 
-###  https://w3id.org/aias/odp/iso7498#hasTargetSystem
-:hasTargetSystem rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :connects ;
-                 rdfs:domain :Association ;
-                 rdfs:range :OpenSystem ;
-                 rdfs:comment "Relates a communication to an open system data flows to."@en ;
-                 rdfs:label "has target system"@en ;
-                 <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 6.5.1.1. Target means the destination of the data, that is the receiving system. See the note on hasSourceSystem for how the two express direction."@en .
+iso7498:hasValue a owl:ObjectProperty ;
+    rdfs:label "has value"@en ;
+    rdfs:comment "Relates a quality of service statement to one of its parameter values."@en ;
+    rdfs:domain iso7498:QualityOfService ;
+    rdfs:range iso7498:QoSValue .
 
+iso7498:isSublayerOf a owl:ObjectProperty ;
+    rdfs:label "is sublayer of"@en ;
+    rdfs:comment "Relates a layer to the layer it subdivides."@en ;
+    rdfs:domain iso7498:Layer ;
+    rdfs:range iso7498:Layer ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.4 defines a sublayer as a subdivision of a layer, and 6.2.1 m) provides for creating them where distinct communication services need it."@en .
 
-###  https://w3id.org/aias/odp/iso7498#hasUserData
-:hasUserData rdf:type owl:ObjectProperty ;
-             rdfs:domain :ProtocolDataUnit ;
-             rdfs:range :UserData ;
-             rdfs:comment "Relates a protocol data unit to the user data it carries."@en ;
-             rdfs:label "has user data"@en ;
-             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.6.1.3: a protocol data unit consists of control information and possibly user data, so this relation is optional."@en .
+iso7498:layerNumber a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "layer number"@en ;
+    rdfs:comment "The number of a layer in the reference model, from one for the physical layer to seven for the application layer."@en ;
+    rdfs:domain iso7498:Layer ;
+    rdfs:range xsd:integer ;
+    skos:note "ISO/IEC 7498-1, 6.1.2. Carrying the number as a value is what lets a query order the layers and ask which lies above which, without asserting an ordering relation between all pairs."@en .
 
-
-###  https://w3id.org/aias/odp/iso7498#hasValue
-:hasValue rdf:type owl:ObjectProperty ;
-          rdfs:domain :QualityOfService ;
-          rdfs:range :QoSValue ;
-          rdfs:comment "Relates a quality of service statement to one of its parameter values."@en ;
-          rdfs:label "has value"@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#isSublayerOf
-:isSublayerOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Layer ;
-              rdfs:range :Layer ;
-              rdfs:comment "Relates a layer to the layer it subdivides."@en ;
-              rdfs:label "is sublayer of"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.4 defines a sublayer as a subdivision of a layer, and 6.2.1 m) provides for creating them where distinct communication services need it."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit
-:mapsToServiceDataUnit rdf:type owl:ObjectProperty ;
-                       rdfs:domain :ProtocolDataUnit ;
-                       rdfs:range :ServiceDataUnit ;
-                       rdfs:comment "Relates a protocol data unit of one layer to the service data unit of the layer below that carries it."@en ;
-                       rdfs:label "maps to service data unit"@en ;
-                       <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, Figure 9 and its note 3: a protocol data unit of a layer may be mapped one to one into a service data unit of the layer below, though other relationships are possible.
+iso7498:mapsToServiceDataUnit a owl:ObjectProperty ;
+    rdfs:label "maps to service data unit"@en ;
+    rdfs:comment "Relates a protocol data unit of one layer to the service data unit of the layer below that carries it."@en ;
+    rdfs:domain iso7498:ProtocolDataUnit ;
+    rdfs:range iso7498:ServiceDataUnit ;
+    skos:note """ISO/IEC 7498-1, Figure 9 and its note 3: a protocol data unit of a layer may be mapped one to one into a service data unit of the layer below, though other relationships are possible.
 
 This is the encapsulation that recurs down the layers, and it is what makes the practice terms frame, packet, and segment unnecessary as classes: each is the protocol data unit of a particular layer, and the relation states how one becomes the payload of the next."""@en .
 
+iso7498:peerEntity a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "peer entity"@en ;
+    rdfs:comment "Relates an entity to an entity of the same layer with which it communicates."@en ;
+    rdfs:domain iso7498:Entity ;
+    rdfs:range iso7498:Entity ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.3 defines peer entities as entities within the same layer. Symmetric, since the relation holds equally in both directions. Not every pair of peer entities can communicate, 5.2.2.2, so the relation records those that do."@en .
 
-###  https://w3id.org/aias/odp/iso7498#peerEntity
-:peerEntity rdf:type owl:ObjectProperty ,
-                     owl:SymmetricProperty ;
-            rdfs:domain :Entity ;
-            rdfs:range :Entity ;
-            rdfs:comment "Relates an entity to an entity of the same layer with which it communicates."@en ;
-            rdfs:label "peer entity"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.3 defines peer entities as entities within the same layer. Symmetric, since the relation holds equally in both directions. Not every pair of peer entities can communicate, 5.2.2.2, so the relation records those that do."@en .
+iso7498:providesService a owl:ObjectProperty ;
+    rdfs:label "provides service"@en ;
+    rdfs:comment "Relates an entity to a service it provides to the layer above."@en ;
+    rdfs:domain iso7498:Entity ;
+    rdfs:range iso7498:Service ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.5."@en .
 
+iso7498:quantity a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "quantity"@en ;
+    rdfs:comment "The numeric quantity of a quality of service value."@en ;
+    rdfs:domain iso7498:QoSValue ;
+    rdfs:range xsd:decimal .
 
-###  https://w3id.org/aias/odp/iso7498#providesService
-:providesService rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Entity ;
-                 rdfs:range :Service ;
-                 rdfs:comment "Relates an entity to a service it provides to the layer above."@en ;
-                 rdfs:label "provides service"@en ;
-                 <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.5."@en .
+iso7498:realisesLayer a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "realises layer"@en ;
+    rdfs:comment "Relates a technology to the layer whose services it realises."@en ;
+    rdfs:domain iso7498:Technology ;
+    rdfs:range iso7498:Layer ;
+    skos:note "Addition of this pattern. Asserted once per technology in ISO7498-instances.ttl, so that a model need only name the technology. Functional: a technology realises the services of one layer, and a protocol spanning two would be modelled as two technologies."@en .
 
+iso7498:transmits a owl:ObjectProperty ;
+    rdfs:label "transmits"@en ;
+    rdfs:comment "Relates a communication to a data unit conveyed over it."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:DataUnit ;
+    skos:note "Addition of this pattern, connecting the reference model of clause 6 to the data units of 5.6."@en .
 
-###  https://w3id.org/aias/odp/iso7498#realisesLayer
-:realisesLayer rdf:type owl:ObjectProperty ,
-                        owl:FunctionalProperty ;
-               rdfs:domain :Technology ;
-               rdfs:range :Layer ;
-               rdfs:comment "Relates a technology to the layer whose services it realises."@en ;
-               rdfs:label "realises layer"@en ;
-               <http://www.w3.org/2004/02/skos/core#note> "Addition of this pattern. Asserted once per technology in ISO7498-instances.ttl, so that a model need only name the technology. Functional: a technology realises the services of one layer, and a protocol spanning two would be modelled as two technologies."@en .
+iso7498:unit a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "unit"@en ;
+    rdfs:comment "The unit of a quality of service value, for example ms or Mbit/s."@en ;
+    rdfs:domain iso7498:QoSValue ;
+    rdfs:range xsd:string ;
+    skos:note "A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports. A model needing formal units can align this property to one."@en .
 
+iso7498:usesLayer a owl:ObjectProperty ;
+    rdfs:label "uses layer"@en ;
+    rdfs:comment "Relates a communication to the layer whose services it uses."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:Layer ;
+    skos:note "Addition of this pattern. It records at which level of the reference model a communication is described, which is the question an engineering model asks and the standard leaves to the specific service definitions."@en .
 
-###  https://w3id.org/aias/odp/iso7498#transmits
-:transmits rdf:type owl:ObjectProperty ;
-           rdfs:domain :Association ;
-           rdfs:range :DataUnit ;
-           rdfs:comment "Relates a communication to a data unit conveyed over it."@en ;
-           rdfs:label "transmits"@en ;
-           <http://www.w3.org/2004/02/skos/core#note> "Addition of this pattern, connecting the reference model of clause 6 to the data units of 5.6."@en .
+iso7498:usesTechnology a owl:ObjectProperty ;
+    rdfs:label "uses technology"@en ;
+    rdfs:comment "Relates a communication to a technology realising it."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:Technology ;
+    skos:note "Addition of this pattern, for the reason given at Technology. A communication may use several technologies, one per layer."@en .
 
+iso7498:ConnectionlessModeAssociation a owl:Class ;
+    rdfs:label "Connectionless-mode Communication"@en ;
+    rdfs:comment "A communication in which each transmission is independent of every other and carries all the information needed to deliver it."@en ;
+    rdfs:subClassOf iso7498:Association ;
+    skos:note "ISO/IEC 7498-1, 5.8.4. All the information required to deliver a service data unit, that is the destination address, the quality of service required, and any options, is presented together with the data in a single access."@en .
 
-###  https://w3id.org/aias/odp/iso7498#usesLayer
-:usesLayer rdf:type owl:ObjectProperty ;
-           rdfs:domain :Association ;
-           rdfs:range :Layer ;
-           rdfs:comment "Relates a communication to the layer whose services it uses."@en ;
-           rdfs:label "uses layer"@en ;
-           <http://www.w3.org/2004/02/skos/core#note> "Addition of this pattern. It records at which level of the reference model a communication is described, which is the question an engineering model asks and the standard leaves to the specific service definitions."@en .
+iso7498:ProtocolControlInformation a owl:Class ;
+    rdfs:label "Protocol Control Information"@en ;
+    rdfs:comment "Information exchanged between entities to co-ordinate their joint operation."@en ;
+    rdfs:subClassOf iso7498:DataUnit ;
+    owl:disjointWith iso7498:ProtocolDataUnit,
+        iso7498:ServiceDataUnit,
+        iso7498:UserData ;
+    skos:note "ISO/IEC 7498-1, 5.6.1.1."@en .
 
-
-###  https://w3id.org/aias/odp/iso7498#usesTechnology
-:usesTechnology rdf:type owl:ObjectProperty ;
-                rdfs:domain :Association ;
-                rdfs:range :Technology ;
-                rdfs:comment "Relates a communication to a technology realising it."@en ;
-                rdfs:label "uses technology"@en ;
-                <http://www.w3.org/2004/02/skos/core#note> "Addition of this pattern, for the reason given at Technology. A communication may use several technologies, one per layer."@en .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://w3id.org/aias/odp/iso7498#layerNumber
-:layerNumber rdf:type owl:DatatypeProperty ,
-                      owl:FunctionalProperty ;
-             rdfs:domain :Layer ;
-             rdfs:range xsd:integer ;
-             rdfs:comment "The number of a layer in the reference model, from one for the physical layer to seven for the application layer."@en ;
-             rdfs:label "layer number"@en ;
-             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 6.1.2. Carrying the number as a value is what lets a query order the layers and ask which lies above which, without asserting an ordering relation between all pairs."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#quantity
-:quantity rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain :QoSValue ;
-          rdfs:range xsd:decimal ;
-          rdfs:comment "The numeric quantity of a quality of service value."@en ;
-          rdfs:label "quantity"@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#unit
-:unit rdf:type owl:DatatypeProperty ,
-               owl:FunctionalProperty ;
-      rdfs:domain :QoSValue ;
-      rdfs:range xsd:string ;
-      rdfs:comment "The unit of a quality of service value, for example ms or Mbit/s."@en ;
-      rdfs:label "unit"@en ;
-      <http://www.w3.org/2004/02/skos/core#note> "A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports. A model needing formal units can align this property to one."@en .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://w3id.org/aias/odp/iso7498#Association
-:Association rdf:type owl:Class ;
-             owl:disjointWith :CommunicationDirection ,
-                              :DataUnit ,
-                              :Entity ,
-                              :Layer ,
-                              :OpenSystem ,
-                              :Protocol ,
-                              :QoSParameter ,
-                              :QualityOfService ,
-                              :Service ,
-                              :ServiceAccessPoint ,
-                              :Subsystem ,
-                              :Technology ;
-             rdfs:comment "A relation joining open systems that permits them to exchange information."@en ;
-             rdfs:label "Communication"@en ;
-             <http://www.w3.org/2004/02/skos/core#altLabel> "Association"@en ;
-             <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 5.1.3 c) names the associations as one of the four basic elements of OSI, joining the application entities and permitting them to exchange information.
-
-The class name follows the standard and the readable label is communication, which is the plainer term for the same thing. The two are one class, not two: labelling rather than a second class avoids the drift that an equivalence between a standard term and an own term would invite."""@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#CommunicationDirection
-:CommunicationDirection rdf:type owl:Class ;
-                        owl:disjointWith :DataUnit ,
-                                         :Entity ,
-                                         :Layer ,
-                                         :OpenSystem ,
-                                         :Protocol ,
-                                         :QoSParameter ,
-                                         :QualityOfService ,
-                                         :Service ,
-                                         :ServiceAccessPoint ,
-                                         :Subsystem ,
-                                         :Technology ;
-                        rdfs:comment "The direction in which data communication takes place over a communication."@en ;
-                        rdfs:label "Communication Direction"@en ;
-                        <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16 define three kinds of data communication by direction: two-way simultaneous, two-way alternate, and one-way. The three are supplied as named individuals in ISO7498-instances.ttl.
+iso7498:CommunicationDirection a owl:Class ;
+    rdfs:label "Communication Direction"@en ;
+    rdfs:comment "The direction in which data communication takes place over a communication."@en ;
+    owl:disjointWith iso7498:DataUnit,
+        iso7498:Entity,
+        iso7498:Layer,
+        iso7498:OpenSystem,
+        iso7498:Protocol,
+        iso7498:QoSParameter,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note """ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16 define three kinds of data communication by direction: two-way simultaneous, two-way alternate, and one-way. The three are supplied as named individuals in ISO7498-instances.ttl.
 
 The direction complements the source and target systems rather than repeating them. Which systems send and which receive follows from hasSourceSystem and hasTargetSystem; whether both directions are possible at once or only in turn does not, and that is what this class records. A Profibus segment carries data in both directions but one at a time, which makes it two-way alternate, while a full duplex Ethernet link is two-way simultaneous."""@en .
 
+iso7498:connects a owl:ObjectProperty ;
+    rdfs:label "connects"@en ;
+    rdfs:comment "Relates a communication to an open system taking part in it, without stating the direction of the data flow."@en ;
+    rdfs:domain iso7498:Association ;
+    rdfs:range iso7498:OpenSystem ;
+    skos:note """ISO/IEC 7498-1, 5.1.3 c). The standard places no upper bound on the number of participants: 5.3.1.4 calls a connection with more than two endpoints a multi-endpoint connection, and 5.3.1.9 defines data transmission as conveying service data units from one entity to one or more entities. No cardinality is asserted here, so one communication can carry a whole bus segment with its participants.
 
-###  https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation
-:ConnectionModeAssociation rdf:type owl:Class ;
-                           rdfs:subClassOf :Association ;
-                           owl:disjointWith :ConnectionlessModeAssociation ;
-                           rdfs:comment "A communication established, held, and released as a connection between the participating entities."@en ;
-                           rdfs:label "Connection-mode Communication"@en ;
-                           <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.3 and 6.4. A connection is established before data transfer and released afterwards, so the transfer can rely on state held for its duration."@en .
+Super property of hasSourceSystem and hasTargetSystem, so a model that knows the direction states it through those, and a model that does not may still record who takes part."""@en .
 
+iso7498:ServiceDataUnit a owl:Class ;
+    rdfs:label "Service Data Unit"@en ;
+    rdfs:comment "An amount of information whose identity is preserved when transferred between peer entities and which is not interpreted by the supporting entities."@en ;
+    rdfs:subClassOf iso7498:DataUnit ;
+    owl:disjointWith iso7498:UserData ;
+    skos:note "ISO/IEC 7498-1, 5.6.1.4. A bit is the service data unit of the physical layer, 7.6.4.5 and 7.7.3.2, which is the one practice term the standard does name."@en .
 
-###  https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation
-:ConnectionlessModeAssociation rdf:type owl:Class ;
-                               rdfs:subClassOf :Association ;
-                               rdfs:comment "A communication in which each transmission is independent of every other and carries all the information needed to deliver it."@en ;
-                               rdfs:label "Connectionless-mode Communication"@en ;
-                               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.8.4. All the information required to deliver a service data unit, that is the destination address, the quality of service required, and any options, is presented together with the data in a single access."@en .
+iso7498:ProtocolDataUnit a owl:Class ;
+    rdfs:label "Protocol Data Unit"@en ;
+    rdfs:comment "A unit of data specified in a protocol, consisting of protocol control information and possibly user data."@en ;
+    rdfs:subClassOf iso7498:DataUnit ;
+    owl:disjointWith iso7498:ServiceDataUnit,
+        iso7498:UserData ;
+    skos:note "ISO/IEC 7498-1, 5.6.1.3. Figure 9 shows that a protocol data unit of one layer becomes a service data unit of the layer below, which is the encapsulation the mapsToServiceDataUnit relation expresses."@en .
 
+iso7498:UserData a owl:Class ;
+    rdfs:label "User Data"@en ;
+    rdfs:comment "The data transferred between entities on behalf of the entities of the next higher layer for whom they are providing services."@en ;
+    rdfs:subClassOf iso7498:DataUnit ;
+    skos:note "ISO/IEC 7498-1, 5.6.1.2."@en .
 
-###  https://w3id.org/aias/odp/iso7498#DataUnit
-:DataUnit rdf:type owl:Class ;
-          owl:disjointWith :Entity ,
-                           :Layer ,
-                           :OpenSystem ,
-                           :Protocol ,
-                           :QoSParameter ,
-                           :QoSValue ,
-                           :QualityOfService ,
-                           :Service ,
-                           :ServiceAccessPoint ,
-                           :Subsystem ,
-                           :Technology ;
-          rdfs:comment "A unit of information transferred between entities."@en ;
-          rdfs:label "Data Unit"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> """**Collecting class of this pattern.** ISO/IEC 7498-1, 5.6.1 defines the three kinds below individually without naming a common superclass, and clause 5.6 groups them under the heading data-units.
+iso7498:QoSValue a owl:Class ;
+    rdfs:label "Quality of Service Value"@en ;
+    rdfs:comment "The value a quality of service statement assigns to one parameter, together with its unit."@en ;
+    owl:disjointWith iso7498:QualityOfService ;
+    skos:note "Reified so that a value can be annotated and referred to, in the same way and for the same reason as the flow of the VDI 3682 pattern. The parameter it belongs to is a named individual, the value and unit are literals of this model."@en .
+
+iso7498:DataUnit a owl:Class ;
+    rdfs:label "Data Unit"@en ;
+    rdfs:comment "A unit of information transferred between entities."@en ;
+    owl:disjointWith iso7498:Entity,
+        iso7498:Layer,
+        iso7498:OpenSystem,
+        iso7498:Protocol,
+        iso7498:QoSParameter,
+        iso7498:QoSValue,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note """**Collecting class of this pattern.** ISO/IEC 7498-1, 5.6.1 defines the three kinds below individually without naming a common superclass, and clause 5.6 groups them under the heading data-units.
 
 Terms such as frame, packet, or segment do not occur in the standard: they are the names practice gives to the protocol data unit of a particular layer. The standard mentions framing only in a note to 7.6.4.5, which observes that the delimiting functions are sometimes referred to that way. Those names are supplied as individuals in ISO7498-instances.ttl, each related to its layer."""@en .
 
+iso7498:Protocol a owl:Class ;
+    rdfs:label "Protocol"@en ;
+    rdfs:comment "A set of rules and formats, semantic and syntactic, determining the communication behaviour of entities in the performance of their functions."@en ;
+    owl:disjointWith iso7498:QoSParameter,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.9. One or more protocols may be defined for a layer, and an entity may employ one or more of them, 5.8.2.2. A protocol is the abstract set of rules; a technology is a concrete realisation named in practice."@en .
 
-###  https://w3id.org/aias/odp/iso7498#Entity
-:Entity rdf:type owl:Class ;
-        owl:disjointWith :Layer ,
-                         :OpenSystem ,
-                         :Protocol ,
-                         :QoSParameter ,
-                         :QualityOfService ,
-                         :Service ,
-                         :ServiceAccessPoint ,
-                         :Subsystem ,
-                         :Technology ;
-        rdfs:comment "An active element within a subsystem embodying a set of capabilities defined for the layer."@en ;
-        rdfs:label "Entity"@en ;
-        <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.11. Entities in the same layer are termed peer entities, 5.2.1.3, which this pattern expresses through the peerEntity relation rather than a separate class."@en .
+iso7498:QoSParameter a owl:Class ;
+    rdfs:label "Quality of Service Parameter"@en ;
+    rdfs:comment "A named characteristic of a communication, such as throughput or transit delay, that a quality of service statement assigns a value to."@en ;
+    owl:disjointWith iso7498:QoSValue,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 7.4.4 names throughput, transit delay, residual error rate, and establishment delay among the parameters of the transport service. Named individuals for these are supplied in ISO7498-instances.ttl, where the list stays open, since a model may need parameters the standard does not enumerate."@en .
 
+iso7498:OpenSystem a owl:Class ;
+    rdfs:label "Open System"@en ;
+    rdfs:comment "The representation of those aspects of a real system that are pertinent to open systems interconnection."@en ;
+    owl:disjointWith iso7498:Protocol,
+        iso7498:QoSParameter,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 4.1.3. A real system complying with the requirements of the OSI standards in its communication with other real systems is a real open system, 4.1.2. A device is not an open system in itself, it is one under the view this clause describes: those aspects of it that are pertinent to interconnection."@en .
 
-###  https://w3id.org/aias/odp/iso7498#Layer
-:Layer rdf:type owl:Class ;
-       owl:disjointWith :OpenSystem ,
-                        :Protocol ,
-                        :QoSParameter ,
-                        :QualityOfService ,
-                        :Service ,
-                        :ServiceAccessPoint ,
-                        :Subsystem ,
-                        :Technology ;
-       rdfs:comment "A subdivision of the OSI architecture, constituted by subsystems of the same rank."@en ;
-       rdfs:label "Layer"@en ;
-       <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers and numbers them from the physical layer as one to the application layer as seven.
+iso7498:Association a owl:Class ;
+    rdfs:label "Communication"@en ;
+    rdfs:comment "A relation joining open systems that permits them to exchange information."@en ;
+    owl:disjointWith iso7498:CommunicationDirection,
+        iso7498:DataUnit,
+        iso7498:Entity,
+        iso7498:Layer,
+        iso7498:OpenSystem,
+        iso7498:Protocol,
+        iso7498:QoSParameter,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:altLabel "Association"@en ;
+    skos:note """ISO/IEC 7498-1, 5.1.3 c) names the associations as one of the four basic elements of OSI, joining the application entities and permitting them to exchange information.
+
+The class name follows the standard and the readable label is communication, which is the plainer term for the same thing. The two are one class, not two: labelling rather than a second class avoids the drift that an equivalence between a standard term and an own term would invite."""@en .
+
+iso7498:Entity a owl:Class ;
+    rdfs:label "Entity"@en ;
+    rdfs:comment "An active element within a subsystem embodying a set of capabilities defined for the layer."@en ;
+    owl:disjointWith iso7498:Layer,
+        iso7498:OpenSystem,
+        iso7498:Protocol,
+        iso7498:QoSParameter,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.11. Entities in the same layer are termed peer entities, 5.2.1.3, which this pattern expresses through the peerEntity relation rather than a separate class."@en .
+
+iso7498:Layer a owl:Class ;
+    rdfs:label "Layer"@en ;
+    rdfs:comment "A subdivision of the OSI architecture, constituted by subsystems of the same rank."@en ;
+    owl:disjointWith iso7498:OpenSystem,
+        iso7498:Protocol,
+        iso7498:QoSParameter,
+        iso7498:QualityOfService,
+        iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note """ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers and numbers them from the physical layer as one to the application layer as seven.
 
 The seven layers are named individuals rather than subclasses of this class. They are a closed enumeration of particular things, not kinds of thing, and as individuals they can carry their number as a value, which makes an ordering between them expressible. They are supplied in ISO7498-instances.ttl."""@en .
 
-
-###  https://w3id.org/aias/odp/iso7498#OpenSystem
-:OpenSystem rdf:type owl:Class ;
-            owl:disjointWith :Protocol ,
-                             :QoSParameter ,
-                             :QualityOfService ,
-                             :Service ,
-                             :ServiceAccessPoint ,
-                             :Subsystem ,
-                             :Technology ;
-            rdfs:comment "The representation of those aspects of a real system that are pertinent to open systems interconnection."@en ;
-            rdfs:label "Open System"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 4.1.3. A real system complying with the requirements of the OSI standards in its communication with other real systems is a real open system, 4.1.2. A device is not an open system in itself, it is one under the view this clause describes: those aspects of it that are pertinent to interconnection."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#Protocol
-:Protocol rdf:type owl:Class ;
-          owl:disjointWith :QoSParameter ,
-                           :QualityOfService ,
-                           :Service ,
-                           :ServiceAccessPoint ,
-                           :Subsystem ,
-                           :Technology ;
-          rdfs:comment "A set of rules and formats, semantic and syntactic, determining the communication behaviour of entities in the performance of their functions."@en ;
-          rdfs:label "Protocol"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.9. One or more protocols may be defined for a layer, and an entity may employ one or more of them, 5.8.2.2. A protocol is the abstract set of rules; a technology is a concrete realisation named in practice."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#ProtocolControlInformation
-:ProtocolControlInformation rdf:type owl:Class ;
-                            rdfs:subClassOf :DataUnit ;
-                            owl:disjointWith :ProtocolDataUnit ,
-                                             :ServiceDataUnit ,
-                                             :UserData ;
-                            rdfs:comment "Information exchanged between entities to co-ordinate their joint operation."@en ;
-                            rdfs:label "Protocol Control Information"@en ;
-                            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.6.1.1."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#ProtocolDataUnit
-:ProtocolDataUnit rdf:type owl:Class ;
-                  rdfs:subClassOf :DataUnit ;
-                  owl:disjointWith :ServiceDataUnit ,
-                                   :UserData ;
-                  rdfs:comment "A unit of data specified in a protocol, consisting of protocol control information and possibly user data."@en ;
-                  rdfs:label "Protocol Data Unit"@en ;
-                  <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.6.1.3. Figure 9 shows that a protocol data unit of one layer becomes a service data unit of the layer below, which is the encapsulation the mapsToServiceDataUnit relation expresses."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#QoSParameter
-:QoSParameter rdf:type owl:Class ;
-              owl:disjointWith :QoSValue ,
-                               :QualityOfService ,
-                               :Service ,
-                               :ServiceAccessPoint ,
-                               :Subsystem ,
-                               :Technology ;
-              rdfs:comment "A named characteristic of a communication, such as throughput or transit delay, that a quality of service statement assigns a value to."@en ;
-              rdfs:label "Quality of Service Parameter"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.4.4 names throughput, transit delay, residual error rate, and establishment delay among the parameters of the transport service. Named individuals for these are supplied in ISO7498-instances.ttl, where the list stays open, since a model may need parameters the standard does not enumerate."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#QoSValue
-:QoSValue rdf:type owl:Class ;
-          owl:disjointWith :QualityOfService ;
-          rdfs:comment "The value a quality of service statement assigns to one parameter, together with its unit."@en ;
-          rdfs:label "Quality of Service Value"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "Reified so that a value can be annotated and referred to, in the same way and for the same reason as the flow of the VDI 3682 pattern. The parameter it belongs to is a named individual, the value and unit are literals of this model."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#QualityOfService
-:QualityOfService rdf:type owl:Class ;
-                  owl:disjointWith :Service ,
-                                   :ServiceAccessPoint ,
-                                   :Subsystem ,
-                                   :Technology ;
-                  rdfs:comment "The characteristics of a communication, expressed through a set of parameters, that the participating entities can select and observe."@en ;
-                  rdfs:label "Quality of Service"@en ;
-                  <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 5.10 and 7.4.4. The standard treats quality of service as a set of parameters selected by the entities and observed during the communication.
+iso7498:QualityOfService a owl:Class ;
+    rdfs:label "Quality of Service"@en ;
+    rdfs:comment "The characteristics of a communication, expressed through a set of parameters, that the participating entities can select and observe."@en ;
+    owl:disjointWith iso7498:Service,
+        iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note """ISO/IEC 7498-1, 5.10 and 7.4.4. The standard treats quality of service as a set of parameters selected by the entities and observed during the communication.
 
 This is where a model records what a communication delivers rather than how it is built, which makes the class the anchor for non-functional properties of the communication subdomain."""@en .
 
+iso7498:Service a owl:Class ;
+    rdfs:label "Service"@en ;
+    rdfs:comment "A capability of a layer and the layers beneath it, provided to the entities of the next higher layer at the boundary between the two layers."@en ;
+    owl:disjointWith iso7498:ServiceAccessPoint,
+        iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.5."@en .
 
-###  https://w3id.org/aias/odp/iso7498#Service
-:Service rdf:type owl:Class ;
-         owl:disjointWith :ServiceAccessPoint ,
-                          :Subsystem ,
-                          :Technology ;
-         rdfs:comment "A capability of a layer and the layers beneath it, provided to the entities of the next higher layer at the boundary between the two layers."@en ;
-         rdfs:label "Service"@en ;
-         <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.5."@en .
+iso7498:ServiceAccessPoint a owl:Class ;
+    rdfs:label "Service Access Point"@en ;
+    rdfs:comment "The point at which the services of a layer are provided by an entity of that layer to an entity of the next higher layer."@en ;
+    owl:disjointWith iso7498:Subsystem,
+        iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.8. A service access point is attached to only one entity of its layer and to only one entity of the layer above at a time, 5.5.5, and both are in the same system, 5.5.2."@en .
 
+iso7498:Subsystem a owl:Class ;
+    rdfs:label "Subsystem"@en ;
+    rdfs:comment "An element in the hierarchical division of an open system which interacts directly only with elements in the next higher division or the next lower division of that open system."@en ;
+    owl:disjointWith iso7498:Technology ;
+    skos:note "ISO/IEC 7498-1, 5.2.1.1. There is one and only one subsystem in an open system for a given layer, 5.2.2.1."@en .
 
-###  https://w3id.org/aias/odp/iso7498#ServiceAccessPoint
-:ServiceAccessPoint rdf:type owl:Class ;
-                    owl:disjointWith :Subsystem ,
-                                     :Technology ;
-                    rdfs:comment "The point at which the services of a layer are provided by an entity of that layer to an entity of the next higher layer."@en ;
-                    rdfs:label "Service Access Point"@en ;
-                    <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.8. A service access point is attached to only one entity of its layer and to only one entity of the layer above at a time, 5.5.5, and both are in the same system, 5.5.2."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#ServiceDataUnit
-:ServiceDataUnit rdf:type owl:Class ;
-                 rdfs:subClassOf :DataUnit ;
-                 owl:disjointWith :UserData ;
-                 rdfs:comment "An amount of information whose identity is preserved when transferred between peer entities and which is not interpreted by the supporting entities."@en ;
-                 rdfs:label "Service Data Unit"@en ;
-                 <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.6.1.4. A bit is the service data unit of the physical layer, 7.6.4.5 and 7.7.3.2, which is the one practice term the standard does name."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#Subsystem
-:Subsystem rdf:type owl:Class ;
-           owl:disjointWith :Technology ;
-           rdfs:comment "An element in the hierarchical division of an open system which interacts directly only with elements in the next higher division or the next lower division of that open system."@en ;
-           rdfs:label "Subsystem"@en ;
-           <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.2.1.1. There is one and only one subsystem in an open system for a given layer, 5.2.2.1."@en .
-
-
-###  https://w3id.org/aias/odp/iso7498#Technology
-:Technology rdf:type owl:Class ;
-            rdfs:comment "A concrete protocol or transmission technique realising the services of a layer."@en ;
-            rdfs:label "Technology"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> """Addition of this pattern, not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular systems implementation, technology or means of interconnection, so the standard names none.
+iso7498:Technology a owl:Class ;
+    rdfs:label "Technology"@en ;
+    rdfs:comment "A concrete protocol or transmission technique realising the services of a layer."@en ;
+    skos:note """Addition of this pattern, not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular systems implementation, technology or means of interconnection, so the standard names none.
 
 An engineering model has to record which protocol is used, which is why the class exists. Named individuals such as Ethernet, TCP, or MQTT are supplied in ISO7498-instances.ttl, each related to the layer it realises. Whether a given technology fits the layer a model claims for it is not checked here. Nothing stops a model from placing MQTT at the network layer, and rejecting that needs a rule base rather than an axiom, which keeps the pattern descriptive."""@en .
 
-
-###  https://w3id.org/aias/odp/iso7498#UserData
-:UserData rdf:type owl:Class ;
-          rdfs:subClassOf :DataUnit ;
-          rdfs:comment "The data transferred between entities on behalf of the entities of the next higher layer for whom they are providing services."@en ;
-          rdfs:label "User Data"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 5.6.1.2."@en .
-
-
-###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

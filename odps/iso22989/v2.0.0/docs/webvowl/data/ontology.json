@@ -42,20 +42,20 @@
           "type": "label"
         }
       ],
-      "source": [
-        {
-          "identifier": "source",
-          "language": "undefined",
-          "value": "https://www.iso.org/standard/74296.html",
-          "type": "iri"
-        }
-      ],
       "versionInfo": [
         {
           "identifier": "versionInfo",
           "language": "undefined",
           "value": "2.0.0",
           "type": "label"
+        }
+      ],
+      "source": [
+        {
+          "identifier": "source",
+          "language": "undefined",
+          "value": "https://www.iso.org/standard/74296.html",
+          "type": "iri"
         }
       ],
       "title": [
@@ -106,19 +106,19 @@
           "type": "label"
         }
       ],
-      "bibliographicCitation": [
-        {
-          "identifier": "bibliographicCitation",
-          "language": "undefined",
-          "value": "TODO: citation of the accompanying publication",
-          "type": "label"
-        }
-      ],
       "preferredNamespaceUri": [
         {
           "identifier": "preferredNamespaceUri",
           "language": "undefined",
           "value": "https://w3id.org/aias/odp/iso22989#",
+          "type": "label"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "undefined",
+          "value": "TODO: citation of the accompanying publication",
           "type": "label"
         }
       ],
@@ -363,7 +363,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "58",
+      "id": "59",
       "type": "owl:Class"
     },
     {
@@ -407,7 +407,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "60",
+      "id": "61",
       "type": "owl:Class"
     },
     {
@@ -1869,7 +1869,7 @@
       "comment": {
         "en": "What an evaluation measures a model against, for example an F1 score or an error rate."
       },
-      "id": "58"
+      "id": "59"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm",
@@ -2157,7 +2157,7 @@
       "comment": {
         "en": "The value a model assigns to one characteristic, together with its unit."
       },
-      "id": "60"
+      "id": "61"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Storing",
@@ -2308,15 +2308,15 @@
     },
     {
       "id": "57",
-      "type": "owl:objectProperty"
-    },
-    {
-      "id": "59",
-      "type": "owl:objectProperty"
-    },
-    {
-      "id": "61",
       "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "58",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "60",
+      "type": "owl:objectProperty"
     },
     {
       "id": "62",
@@ -2804,61 +2804,6 @@
       "id": "55"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#usesMetric",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "58",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "**Construct of this work.** The standard describes evaluation without naming the measure it uses.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "usesMetric",
-        "en": "uses metric"
-      },
-      "domain": "40",
-      "comment": {
-        "en": "Relates an evaluation or an evaluation algorithm to the metric it measures against."
-      },
-      "attributes": [
-        "object"
-      ],
-      "id": "57"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso22989#hasSetting",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "60",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "ISO/IEC 22989, 3.3.4 defines the hyperparameter as selected prior to training. Its value is therefore set rather than measured, and it is reached by a relation of its own rather than through forCharacteristic.\n\nBoth relations end at the same class, and the direction they run in is what keeps them apart. A characteristic value points to the quality it quantifies, and a hyperparameter points to the value it was given. A model can then be asked which of its values were stated and which were established, which is the first question an audit of a training asks.\n\nFunctional: a hyperparameter carries one value. Two runs at different learning rates are two hyperparameter individuals rather than one with two values, since the value belongs to the run and not to the name.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "hasSetting",
-        "en": "has setting"
-      },
-      "domain": "8",
-      "comment": {
-        "en": "Relates a hyperparameter to the value chosen for it."
-      },
-      "attributes": [
-        "object",
-        "functional"
-      ],
-      "id": "59"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso22989#isLabelled",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
       "range": "23",
@@ -2884,7 +2829,62 @@
         "datatype",
         "functional"
       ],
-      "id": "61"
+      "id": "57"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#usesMetric",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "59",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "**Construct of this work.** The standard describes evaluation without naming the measure it uses.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "usesMetric",
+        "en": "uses metric"
+      },
+      "domain": "40",
+      "comment": {
+        "en": "Relates an evaluation or an evaluation algorithm to the metric it measures against."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "58"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#hasSetting",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "61",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "ISO/IEC 22989, 3.3.4 defines the hyperparameter as selected prior to training. Its value is therefore set rather than measured, and it is reached by a relation of its own rather than through forCharacteristic.\n\nBoth relations end at the same class, and the direction they run in is what keeps them apart. A characteristic value points to the quality it quantifies, and a hyperparameter points to the value it was given. A model can then be asked which of its values were stated and which were established, which is the first question an audit of a training asks.\n\nFunctional: a hyperparameter carries one value. Two runs at different learning rates are two hyperparameter individuals rather than one with two values, since the value belongs to the run and not to the name.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasSetting",
+        "en": "has setting"
+      },
+      "domain": "8",
+      "comment": {
+        "en": "Relates a hyperparameter to the value chosen for it."
+      },
+      "attributes": [
+        "functional",
+        "object"
+      ],
+      "id": "60"
     },
     {
       "range": "12",
@@ -2923,7 +2923,7 @@
       "id": "63"
     },
     {
-      "range": "2",
+      "range": "45",
       "domain": "7",
       "attributes": [
         "object",
@@ -2954,8 +2954,8 @@
         "en": "Relates an AI system to where it runs."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "65"
     },
@@ -2970,7 +2970,7 @@
     },
     {
       "range": "2",
-      "domain": "60",
+      "domain": "61",
       "attributes": [
         "object",
         "anonymous"
@@ -3049,13 +3049,13 @@
         "IRI-based": "forCharacteristic",
         "en": "for characteristic"
       },
-      "domain": "60",
+      "domain": "61",
       "comment": {
         "en": "Relates a characteristic value to the characteristic it quantifies."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "78"
     },
@@ -3405,8 +3405,8 @@
         "en": "Relates a prediction to the task it addresses."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "113"
     },
@@ -3428,7 +3428,7 @@
         "IRI-based": "unit",
         "en": "unit"
       },
-      "domain": "60",
+      "domain": "61",
       "comment": {
         "en": "The unit of a characteristic value, where the characteristic has one."
       },
@@ -3446,7 +3446,7 @@
         "IRI-based": "quantity",
         "en": "quantity"
       },
-      "domain": "60",
+      "domain": "61",
       "comment": {
         "en": "The numeric quantity of a characteristic value."
       },
@@ -3551,8 +3551,8 @@
         "en": "Relates a machine learning algorithm to the kind of learning it performs."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "126"
     },
@@ -3674,7 +3674,7 @@
       "id": "139"
     },
     {
-      "range": "7",
+      "range": "4",
       "domain": "14",
       "attributes": [
         "object",
@@ -3683,7 +3683,7 @@
       "id": "140"
     },
     {
-      "range": "4",
+      "range": "7",
       "domain": "14",
       "attributes": [
         "object",
@@ -3710,7 +3710,7 @@
       "id": "143"
     },
     {
-      "range": "2",
+      "range": "7",
       "domain": "4",
       "attributes": [
         "object",
@@ -3719,7 +3719,7 @@
       "id": "144"
     },
     {
-      "range": "60",
+      "range": "2",
       "domain": "4",
       "attributes": [
         "object",
@@ -3728,7 +3728,7 @@
       "id": "145"
     },
     {
-      "range": "7",
+      "range": "61",
       "domain": "4",
       "attributes": [
         "object",
@@ -3737,7 +3737,7 @@
       "id": "146"
     },
     {
-      "range": "45",
+      "range": "2",
       "domain": "7",
       "attributes": [
         "object",
@@ -3800,7 +3800,7 @@
       "id": "149"
     },
     {
-      "range": "45",
+      "range": "2",
       "domain": "14",
       "attributes": [
         "object",
@@ -3836,7 +3836,7 @@
       "id": "151"
     },
     {
-      "range": "2",
+      "range": "45",
       "domain": "14",
       "attributes": [
         "object",
@@ -3899,33 +3899,6 @@
       "id": "155"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#realisedByModel",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "45",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "The step from the structural element to what makes it work. A component without a model performs functions but decides nothing.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "realisedByModel",
-        "en": "realised by model"
-      },
-      "domain": "25",
-      "comment": {
-        "en": "Relates a component to the model carrying its behaviour."
-      },
-      "attributes": [
-        "object"
-      ],
-      "id": "156"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso22989#hasControllability",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
       "range": "125",
@@ -3946,6 +3919,33 @@
       "domain": "4",
       "comment": {
         "en": "Relates an AI system to a recorded way for an external agent to intervene in its functioning."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "156"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#realisedByModel",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "45",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The step from the structural element to what makes it work. A component without a model performs functions but decides nothing.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "realisedByModel",
+        "en": "realised by model"
+      },
+      "domain": "25",
+      "comment": {
+        "en": "Relates a component to the model carrying its behaviour."
       },
       "attributes": [
         "object"
@@ -3982,7 +3982,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasCharacteristicValue",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "60",
+      "range": "61",
       "label": {
         "IRI-based": "hasCharacteristicValue",
         "en": "has characteristic value"

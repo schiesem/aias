@@ -1119,35 +1119,6 @@
       "id": "43"
     },
     {
-      "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
-      "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "5",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "de": "ist zugeordnet",
-        "IRI-based": "isAssignedTo",
-        "en": "is assigned to"
-      },
-      "domain": "15",
-      "comment": {
-        "de": "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource.",
-        "en": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
-      },
-      "attributes": [
-        "object"
-      ],
-      "id": "44"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/vdi3682#consistsOf",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
       "range": "10",
@@ -1170,6 +1141,35 @@
       "comment": {
         "de": "Verbindet einen Prozess mit den Elementen, die ihn beschreiben.",
         "en": "Relates a process to the elements describing it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "44"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "5",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "ist zugeordnet",
+        "IRI-based": "isAssignedTo",
+        "en": "is assigned to"
+      },
+      "domain": "15",
+      "comment": {
+        "de": "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource.",
+        "en": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
       },
       "attributes": [
         "object"

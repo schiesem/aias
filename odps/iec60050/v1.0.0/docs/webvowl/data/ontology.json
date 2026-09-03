@@ -31,25 +31,23 @@
           "type": "label"
         }
       ],
-      "hasVersion": [
-        {
-          "identifier": "hasVersion",
-          "language": "undefined",
-          "value": "https://w3id.org/aias/odp/iec60050",
-          "type": "iri"
-        }
-      ],
       "subject": [
         {
           "identifier": "subject",
           "language": "en",
-          "value": "Automation",
+          "value": "IEC 60050-351",
           "type": "label"
         },
         {
           "identifier": "subject",
           "language": "en",
           "value": "Control Technology",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Automation",
           "type": "label"
         },
         {
@@ -63,12 +61,14 @@
           "language": "en",
           "value": "Ontology Design Pattern",
           "type": "label"
-        },
+        }
+      ],
+      "hasVersion": [
         {
-          "identifier": "subject",
-          "language": "en",
-          "value": "IEC 60050-351",
-          "type": "label"
+          "identifier": "hasVersion",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/iec60050",
+          "type": "iri"
         }
       ],
       "created": [
@@ -79,20 +79,20 @@
           "type": "label"
         }
       ],
-      "source": [
-        {
-          "identifier": "source",
-          "language": "undefined",
-          "value": "https://www.dinmedia.de/de/norm/din-iec-60050-351/208013542",
-          "type": "iri"
-        }
-      ],
       "abstract": [
         {
           "identifier": "abstract",
           "language": "en",
           "value": "An ontology design pattern for the terminology of control technology, following DIN IEC 60050-351:2014, the International Electrotechnical Vocabulary. It models a control as a chain of action paths and actions, which is what allows open-loop and closed-loop control to be told apart by structure rather than by name: a closed-loop control requires a closed action, not merely a closed path. Around that it holds the variable quantities of a control loop, the items under consideration with their functional and physical units, the normative taxonomy of control functions, and the characteristics a device carries with their values and units. Seventy-nine classes drawn from 86 of the standard's 409 entries, with the selection documented entry by entry.",
           "type": "label"
+        }
+      ],
+      "source": [
+        {
+          "identifier": "source",
+          "language": "undefined",
+          "value": "https://www.dinmedia.de/de/norm/din-iec-60050-351/208013542",
+          "type": "iri"
         }
       ],
       "versionInfo": [
@@ -127,19 +127,19 @@
           "type": "iri"
         }
       ],
-      "preferredNamespacePrefix": [
-        {
-          "identifier": "preferredNamespacePrefix",
-          "language": "undefined",
-          "value": "iec60050",
-          "type": "label"
-        }
-      ],
       "rights": [
         {
           "identifier": "rights",
           "language": "en",
           "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
+          "type": "label"
+        }
+      ],
+      "preferredNamespacePrefix": [
+        {
+          "identifier": "preferredNamespacePrefix",
+          "language": "undefined",
+          "value": "iec60050",
           "type": "label"
         }
       ],
@@ -159,20 +159,20 @@
           "type": "label"
         }
       ],
-      "codeRepository": [
-        {
-          "identifier": "codeRepository",
-          "language": "undefined",
-          "value": "https://github.com/schiesem/aias",
-          "type": "iri"
-        }
-      ],
       "preferredNamespaceUri": [
         {
           "identifier": "preferredNamespaceUri",
           "language": "undefined",
           "value": "https://w3id.org/aias/odp/iec60050#",
           "type": "label"
+        }
+      ],
+      "codeRepository": [
+        {
+          "identifier": "codeRepository",
+          "language": "undefined",
+          "value": "https://github.com/schiesem/aias",
+          "type": "iri"
         }
       ],
       "status": [
@@ -236,11 +236,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "15",
+      "id": "22",
       "type": "owl:Class"
     },
     {
-      "id": "22",
+      "id": "15",
       "type": "owl:Class"
     },
     {
@@ -252,7 +252,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "39",
+      "id": "37",
       "type": "owl:Class"
     },
     {
@@ -324,11 +324,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "59",
+      "id": "77",
       "type": "owl:Class"
     },
     {
-      "id": "77",
+      "id": "59",
       "type": "owl:Class"
     },
     {
@@ -412,7 +412,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "88",
+      "id": "87",
       "type": "rdfs:Datatype"
     },
     {
@@ -496,7 +496,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "38",
+      "id": "39",
       "type": "owl:Class"
     },
     {
@@ -863,6 +863,37 @@
       ]
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#OutputVariable",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "IEC 60050-351, 351-41-07.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "OutputVariable",
+        "en": "Output Variable"
+      },
+      "subClasses": [
+        "30",
+        "31",
+        "21"
+      ],
+      "comment": {
+        "en": "A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables."
+      },
+      "id": "22",
+      "superClasses": [
+        "1"
+      ]
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iec60050#ControlFunction",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -903,27 +934,6 @@
           }
         },
         {
-          "iri": "https://w3id.org/aias/odp/iec60050#Alarm",
-          "baseIri": "https://w3id.org/aias/odp/iec60050",
-          "annotations": {
-            "note": [
-              {
-                "identifier": "note",
-                "language": "en",
-                "value": "IEC 60050-351, 351-43-08.",
-                "type": "label"
-              }
-            ]
-          },
-          "comment": {
-            "en": "To indicate that the system has switched or will immediately switch to a state which is outside the specified operating conditions."
-          },
-          "labels": {
-            "IRI-based": "Alarm",
-            "en": "Alarm"
-          }
-        },
-        {
           "iri": "https://w3id.org/aias/odp/iec60050#Evaluate",
           "baseIri": "https://w3id.org/aias/odp/iec60050",
           "annotations": {
@@ -942,6 +952,27 @@
           "labels": {
             "IRI-based": "Evaluate",
             "en": "Evaluate"
+          }
+        },
+        {
+          "iri": "https://w3id.org/aias/odp/iec60050#Alarm",
+          "baseIri": "https://w3id.org/aias/odp/iec60050",
+          "annotations": {
+            "note": [
+              {
+                "identifier": "note",
+                "language": "en",
+                "value": "IEC 60050-351, 351-43-08.",
+                "type": "label"
+              }
+            ]
+          },
+          "comment": {
+            "en": "To indicate that the system has switched or will immediately switch to a state which is outside the specified operating conditions."
+          },
+          "labels": {
+            "IRI-based": "Alarm",
+            "en": "Alarm"
           }
         },
         {
@@ -1098,37 +1129,6 @@
       "id": "15"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iec60050#OutputVariable",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "IEC 60050-351, 351-41-07.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "OutputVariable",
-        "en": "Output Variable"
-      },
-      "subClasses": [
-        "30",
-        "31",
-        "21"
-      ],
-      "comment": {
-        "en": "A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables."
-      },
-      "id": "22",
-      "superClasses": [
-        "1"
-      ]
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -1204,7 +1204,7 @@
       "comment": {
         "en": "A functional unit consisting of the controlling system and the controlled system."
       },
-      "id": "39",
+      "id": "37",
       "superClasses": [
         "5"
       ]
@@ -1413,7 +1413,7 @@
         "20",
         "9",
         "4",
-        "39",
+        "37",
         "45",
         "12",
         "57",
@@ -1537,7 +1537,7 @@
       },
       "id": "68",
       "superClasses": [
-        "38"
+        "39"
       ]
     },
     {
@@ -1665,32 +1665,6 @@
       ]
     },
     {
-      "iri": "https://w3id.org/aias/odp/iec60050#ControllingSystem",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "IEC 60050-351, 351-49-02.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "ControllingSystem",
-        "en": "Controlling System"
-      },
-      "comment": {
-        "en": "A functional unit that generates the manipulated variable at its output, from the command variable in open-loop control and from the reference variable and the feedback variable in closed-loop control."
-      },
-      "id": "59",
-      "superClasses": [
-        "5"
-      ]
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iec60050#Fault",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -1716,6 +1690,32 @@
         "en": "A fault in control equipment, classified by its effect on the output variables."
       },
       "id": "77"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iec60050#ControllingSystem",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "IEC 60050-351, 351-49-02.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "ControllingSystem",
+        "en": "Controlling System"
+      },
+      "comment": {
+        "en": "A functional unit that generates the manipulated variable at its output, from the command variable in open-loop control and from the reference variable and the feedback variable in closed-loop control."
+      },
+      "id": "59",
+      "superClasses": [
+        "5"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#Characteristic",
@@ -1876,14 +1876,14 @@
       },
       "id": "89",
       "superClasses": [
-        "38"
+        "39"
       ]
     },
     {
       "instances": 0,
       "union": [
         "49",
-        "38",
+        "39",
         "56"
       ],
       "attributes": [
@@ -1975,7 +1975,7 @@
       "instances": 0,
       "union": [
         "49",
-        "38",
+        "39",
         "56"
       ],
       "attributes": [
@@ -1988,7 +1988,7 @@
       "instances": 0,
       "union": [
         "49",
-        "38",
+        "39",
         "56"
       ],
       "attributes": [
@@ -2028,7 +2028,7 @@
       "instances": 0,
       "union": [
         "59",
-        "38"
+        "39"
       ],
       "attributes": [
         "anonymous",
@@ -2189,7 +2189,7 @@
     {
       "iri": "http://www.w3.org/2001/XMLSchema#decimal",
       "baseIri": "http://www.w3.org/2001/XMLSchema",
-      "id": "88",
+      "id": "87",
       "label": {
         "IRI-based": "decimal"
       }
@@ -2198,7 +2198,7 @@
       "instances": 0,
       "union": [
         "48",
-        "38"
+        "39"
       ],
       "attributes": [
         "anonymous",
@@ -2252,7 +2252,7 @@
       "instances": 0,
       "union": [
         "49",
-        "38",
+        "39",
         "56"
       ],
       "attributes": [
@@ -2316,7 +2316,7 @@
     {
       "instances": 0,
       "union": [
-        "38",
+        "39",
         "56"
       ],
       "attributes": [
@@ -2477,7 +2477,7 @@
       },
       "id": "162",
       "superClasses": [
-        "38"
+        "39"
       ]
     },
     {
@@ -2576,7 +2576,7 @@
       },
       "id": "29",
       "superClasses": [
-        "38"
+        "39"
       ]
     },
     {
@@ -2656,7 +2656,7 @@
       "comment": {
         "en": "Purposeful action on or in a process to meet specified objectives."
       },
-      "id": "38"
+      "id": "39"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#RealTimeCapability",
@@ -2984,7 +2984,7 @@
       },
       "id": "3",
       "superClasses": [
-        "38"
+        "39"
       ]
     }
   ],
@@ -3010,7 +3010,7 @@
       "type": "owl:objectProperty"
     },
     {
-      "id": "37",
+      "id": "38",
       "type": "owl:objectProperty"
     },
     {
@@ -3059,11 +3059,11 @@
     },
     {
       "id": "86",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
-      "id": "87",
-      "type": "owl:datatypeProperty"
+      "id": "88",
+      "type": "owl:objectProperty"
     },
     {
       "id": "91",
@@ -3616,14 +3616,14 @@
       "superproperty": [
         "35"
       ],
-      "domain": "38",
+      "domain": "39",
       "comment": {
         "en": "Relates a closed-loop control to the controlled variable it acts upon."
       },
       "attributes": [
         "object"
       ],
-      "id": "37"
+      "id": "38"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#unit",
@@ -3674,7 +3674,7 @@
       "superproperty": [
         "35"
       ],
-      "domain": "38",
+      "domain": "39",
       "comment": {
         "en": "Relates a closed-loop control to the reference variable the controlled variable is adjusted to."
       },
@@ -3701,7 +3701,7 @@
         "IRI-based": "hasAction",
         "en": "has action"
       },
-      "domain": "38",
+      "domain": "39",
       "comment": {
         "en": "Relates an automation to the action taking place over its action path."
       },
@@ -3731,7 +3731,7 @@
       "domain": "51",
       "subproperty": [
         "32",
-        "37",
+        "38",
         "52",
         "46"
       ],
@@ -3864,7 +3864,7 @@
       "superproperty": [
         "35"
       ],
-      "domain": "38",
+      "domain": "39",
       "comment": {
         "en": "Relates a control to the manipulated variable through which it acts on the controlled system."
       },
@@ -3928,6 +3928,24 @@
       "id": "84"
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#quantity",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "range": "87",
+      "label": {
+        "IRI-based": "quantity",
+        "en": "quantity"
+      },
+      "domain": "24",
+      "comment": {
+        "en": "The numeric quantity of a characteristic value."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "86"
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit",
       "inverse": "63",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
@@ -3953,25 +3971,7 @@
       "attributes": [
         "object"
       ],
-      "id": "86"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iec60050#quantity",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "88",
-      "label": {
-        "IRI-based": "quantity",
-        "en": "quantity"
-      },
-      "domain": "24",
-      "comment": {
-        "en": "The numeric quantity of a characteristic value."
-      },
-      "attributes": [
-        "datatype",
-        "functional"
-      ],
-      "id": "87"
+      "id": "88"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#realisedBy",
@@ -3991,7 +3991,7 @@
         "IRI-based": "realisedBy",
         "en": "realised by"
       },
-      "domain": "38",
+      "domain": "39",
       "comment": {
         "en": "Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain."
       },
@@ -4047,7 +4047,7 @@
     },
     {
       "range": "56",
-      "domain": "38",
+      "domain": "39",
       "attributes": [
         "object",
         "anonymous"
@@ -4056,7 +4056,7 @@
     },
     {
       "range": "1",
-      "domain": "38",
+      "domain": "39",
       "attributes": [
         "object",
         "anonymous"
@@ -4064,7 +4064,7 @@
       "id": "104"
     },
     {
-      "range": "1",
+      "range": "39",
       "domain": "24",
       "attributes": [
         "object",
@@ -4073,7 +4073,7 @@
       "id": "105"
     },
     {
-      "range": "56",
+      "range": "1",
       "domain": "24",
       "attributes": [
         "object",
@@ -4082,7 +4082,7 @@
       "id": "107"
     },
     {
-      "range": "38",
+      "range": "56",
       "domain": "24",
       "attributes": [
         "object",
@@ -4091,7 +4091,7 @@
       "id": "108"
     },
     {
-      "range": "38",
+      "range": "24",
       "domain": "25",
       "attributes": [
         "object",
@@ -4100,7 +4100,7 @@
       "id": "109"
     },
     {
-      "range": "24",
+      "range": "56",
       "domain": "25",
       "attributes": [
         "object",
@@ -4109,7 +4109,7 @@
       "id": "110"
     },
     {
-      "range": "56",
+      "range": "39",
       "domain": "25",
       "attributes": [
         "object",
@@ -4154,7 +4154,7 @@
       "id": "113"
     },
     {
-      "range": "25",
+      "range": "1",
       "domain": "7",
       "attributes": [
         "object",
@@ -4172,7 +4172,7 @@
       "id": "116"
     },
     {
-      "range": "24",
+      "range": "25",
       "domain": "7",
       "attributes": [
         "object",
@@ -4253,7 +4253,7 @@
         "IRI-based": "runsOverActionPath",
         "en": "runs over action path"
       },
-      "domain": "38",
+      "domain": "39",
       "comment": {
         "en": "Relates an automation to the action path it runs over."
       },
@@ -4553,7 +4553,7 @@
     },
     {
       "range": "5",
-      "domain": "39",
+      "domain": "37",
       "attributes": [
         "object",
         "anonymous"
@@ -4778,7 +4778,7 @@
       "id": "178"
     },
     {
-      "range": "38",
+      "range": "1",
       "domain": "17",
       "attributes": [
         "object",
@@ -4787,7 +4787,7 @@
       "id": "179"
     },
     {
-      "range": "56",
+      "range": "7",
       "domain": "17",
       "attributes": [
         "object",
@@ -4796,7 +4796,7 @@
       "id": "180"
     },
     {
-      "range": "1",
+      "range": "25",
       "domain": "17",
       "attributes": [
         "object",
@@ -4832,7 +4832,7 @@
       "id": "184"
     },
     {
-      "range": "38",
+      "range": "24",
       "domain": "7",
       "attributes": [
         "object",
@@ -4841,7 +4841,7 @@
       "id": "185"
     },
     {
-      "range": "1",
+      "range": "39",
       "domain": "7",
       "attributes": [
         "object",
@@ -4878,7 +4878,7 @@
       "id": "187"
     },
     {
-      "range": "25",
+      "range": "39",
       "domain": "17",
       "attributes": [
         "object",
@@ -4887,7 +4887,7 @@
       "id": "189"
     },
     {
-      "range": "7",
+      "range": "56",
       "domain": "17",
       "attributes": [
         "object",
@@ -5005,7 +5005,7 @@
       "id": "199"
     },
     {
-      "range": "38",
+      "range": "39",
       "domain": "89",
       "attributes": [
         "object",
@@ -5041,7 +5041,7 @@
       "id": "201"
     },
     {
-      "range": "38",
+      "range": "39",
       "domain": "3",
       "attributes": [
         "object",
@@ -5050,7 +5050,7 @@
       "id": "202"
     },
     {
-      "range": "38",
+      "range": "39",
       "domain": "29",
       "attributes": [
         "object",
@@ -5068,7 +5068,7 @@
       "id": "204"
     },
     {
-      "range": "38",
+      "range": "39",
       "domain": "162",
       "attributes": [
         "object",
@@ -5077,7 +5077,7 @@
       "id": "205"
     },
     {
-      "range": "38",
+      "range": "39",
       "domain": "68",
       "attributes": [
         "object",

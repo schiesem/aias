@@ -1,527 +1,289 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/aias#"
-     xml:base="https://w3id.org/aias"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:bibo="http://purl.org/ontology/bibo/"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:schema="https://schema.org/">
-    <owl:Ontology rdf:about="https://w3id.org/aias">
-        <owl:versionIRI rdf:resource="https://w3id.org/aias/2.0.0"/>
-        <owl:imports rdf:resource="https://w3id.org/aias/odp/iec60050/1.0.0"/>
-        <owl:imports rdf:resource="https://w3id.org/aias/odp/iso22989/2.0.0"/>
-        <owl:imports rdf:resource="https://w3id.org/aias/odp/iso7498/2.0.0"/>
-        <owl:imports rdf:resource="https://w3id.org/aias/odp/vdi3682/2.0.0"/>
-        <terms:bibliographicCitation>TODO: citation of the accompanying publication</terms:bibliographicCitation>
-        <terms:contributor>TODO: co-authors</terms:contributor>
-        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-24</terms:created>
-        <terms:creator>TODO: author name, ORCID</terms:creator>
-        <terms:description xml:lang="en">The alignment ontology of the AIAS information model. It joins the four subdomain patterns into one model of an AI application in an automated plant.
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:bibo="http://purl.org/ontology/bibo/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:aias="https://w3id.org/aias#"
+   xmlns:vdi3682="https://w3id.org/aias/odp/vdi3682#"
+   xmlns:iso7498="https://w3id.org/aias/odp/iso7498#"
+   xmlns:iec60050="https://w3id.org/aias/odp/iec60050#"
+   xmlns:iso22989="https://w3id.org/aias/odp/iso22989#">
+  <rdf:Description rdf:about="https://w3id.org/aias#Controller">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">A resource running control programs, such as a programmable logic controller.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controller</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work.** IEC 60050-351 defines a controller, 351-49-11, as a functional unit consisting of a comparing and a controlling element. A device may realise such a unit, which is what realisedByPhysicalUnit records in that pattern, but the two are not the same thing.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Function">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias#Relation"/>
+    <rdfs:comment xml:lang="en">A purposeful transformation, turning inputs into outputs to meet an objective of the system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Function</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work**, after the system elements of Haberfellner.
+
+The class is what makes the alignment work. A process operator of VDI 3682 transforms products, an inference of ISO/IEC 22989 derives a conclusion, and a control of IEC 60050-351 acts on a process. In their own standards the three have nothing in common. Below this class they are assigned to a resource through one mechanism, and a question asking what a device does answers with all of them.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Computer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">A general purpose computing resource within the plant.</rdfs:comment>
+    <rdfs:label xml:lang="en">Computer</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work.**</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/aias/2.0.0"/>
+    <owl:imports rdf:resource="https://w3id.org/aias/odp/iso22989/2.0.0"/>
+    <owl:imports rdf:resource="https://w3id.org/aias/odp/iec60050/1.0.0"/>
+    <owl:imports rdf:resource="https://w3id.org/aias/odp/iso7498/2.0.0"/>
+    <owl:imports rdf:resource="https://w3id.org/aias/odp/vdi3682/2.0.0"/>
+    <dcterms:bibliographicCitation>TODO: citation of the accompanying publication</dcterms:bibliographicCitation>
+    <dcterms:contributor>TODO: co-authors</dcterms:contributor>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-24</dcterms:created>
+    <dcterms:creator>TODO: author name, ORCID</dcterms:creator>
+    <dcterms:description xml:lang="en">The alignment ontology of the AIAS information model. It joins the four subdomain patterns into one model of an AI application in an automated plant.
 
 The four patterns stand on their own and import nothing from one another. Each rests on a standard, and each is usable without the others. This ontology is the only place where classes of different namespaces are related, which keeps a pattern free of everything it does not need.
 
 It is built around the system elements of Haberfellner: a function transforms, a component is transformed or performs a transformation, and a relation ties the two together. What each subdomain contributes hangs below one of those three, so that a process step of VDI 3682 and an inference of ISO/IEC 22989 become comparable without either standard having to know about the other.
 
-ALIGNMENT.md records every bridge this ontology builds, the reason for it and the strength it is stated at.</terms:description>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <terms:publisher>TODO: institution</terms:publisher>
-        <terms:rights>TODO: funding statement, projects EKI and OptiFlex, dtec.bw</terms:rights>
-        <terms:title xml:lang="en">AIAS Alignment Ontology</terms:title>
-        <bibo:status xml:lang="en">Draft</bibo:status>
-        <vann:preferredNamespacePrefix>aias</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/aias#</vann:preferredNamespaceUri>
-        <rdfs:comment xml:lang="en">Nothing here is normative. The patterns rest on standards, this ontology rests on design decisions of this work, and every class and relation says which of the two it is.
+ALIGNMENT.md records every bridge this ontology builds, the reason for it and the strength it is stated at.</dcterms:description>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:publisher>TODO: institution</dcterms:publisher>
+    <dcterms:rights>TODO: funding statement, projects EKI and OptiFlex, dtec.bw</dcterms:rights>
+    <dcterms:title xml:lang="en">AIAS Alignment Ontology</dcterms:title>
+    <bibo:status xml:lang="en">Draft</bibo:status>
+    <vann:preferredNamespacePrefix>aias</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/aias#</vann:preferredNamespaceUri>
+    <rdfs:comment xml:lang="en">Nothing here is normative. The patterns rest on standards, this ontology rests on design decisions of this work, and every class and relation says which of the two it is.
 
 Two classes are related with owl:equivalentClass, and only where the definitions are word for word the same. Control is one of them: ISO/IEC 22989, 3.5.5 and IEC 60050-351, 351-42-19 carry the identical wording and trace back to the same source, which makes the two the same concept rather than similar ones. Everything else is a subclass relation or a relation of its own, because an equivalence claims more than an overlap supports.
 
 Two traps are recorded rather than resolved. Controllability appears in two patterns with the same spelling and different meanings, one a property of a dynamic system and one a property of an AI system, and they are deliberately not related. The actuator of IEC 60050-351 is the signal side driving a valve, not the valve, so the device class of this ontology matches the final controlling element instead. ALIGNMENT.md gives both in full.</rdfs:comment>
-        <owl:versionInfo>2.0.0</owl:versionInfo>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://purl.org/dc/terms/bibliographicCitation -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/contributor -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/created -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/publisher -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/rights -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
-    <!-- http://purl.org/ontology/bibo/status -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#note -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/aias#actsOnProcessOperator -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#actsOnProcessOperator">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
-        <rdfs:comment xml:lang="en">Relates a control to the process step it acts on.</rdfs:comment>
-        <rdfs:label xml:lang="en">acts on process operator</rdfs:label>
-        <skos:note xml:lang="en">IEC 60050-351 has a control act on a controlled system, 351-49-01, which is a functional unit rather than a process step. VDI 3682 describes what happens in that system as a process operator.
+    <owl:versionInfo>2.0.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#actsOnProcessOperator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/vdi3682#ProcessOperator"/>
+    <rdfs:comment xml:lang="en">Relates a control to the process step it acts on.</rdfs:comment>
+    <rdfs:label xml:lang="en">acts on process operator</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351 has a control act on a controlled system, 351-49-01, which is a functional unit rather than a process step. VDI 3682 describes what happens in that system as a process operator.
 
 The relation joins the two, so that a model can answer which step of the technical process a control influences. Neither standard states it, since neither knows the other.</skos:note>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias#appearsAsOpenSystem -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#appearsAsOpenSystem">
-        <rdfs:domain rdf:resource="https://w3id.org/aias#Component"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#OpenSystem"/>
-        <rdfs:comment xml:lang="en">Relates a component to the open system it appears as when its communication is described.</rdfs:comment>
-        <rdfs:label xml:lang="en">appears as open system</rdfs:label>
-        <skos:note xml:lang="en">ISO/IEC 7498-1, 4.1.3 defines the open system as the representation of those aspects of a real system that are pertinent to open systems interconnection. A thing is not an open system in itself, it is one under that view, which is why this is a relation rather than a subclass axiom.
-
-The domain is the component rather than the resource. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and narrowing this to resources would rule that out.
-
-The ISO 7498 pattern already states the intent on its own class. This relation is what a model uses to record it.</skos:note>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias#assignedFunction -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#assignedFunction">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#Assignment"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias#Function"/>
-        <rdfs:comment xml:lang="en">Relates an assignment to the function it assigns to a resource.</rdfs:comment>
-        <rdfs:label xml:lang="en">assigned function</rdfs:label>
-        <skos:note xml:lang="en">VDI 3682 states the assignment from the process operator: hasAssignment runs from the process operator to the assignment, and assignedResource from there to the resource. Both follow the guideline, and neither reaches a function that is not a process operator.
-
-This relation closes that gap. It says which function an assignment carries, whatever subdomain the function comes from, and it is what makes the common function level usable rather than merely stated. Without it a model could group a process operator and an inference under one superclass and still have no way to assign the second to a device.
-
-Deliberately not a superproperty of hasAssignment. The two run in opposite directions, from the function and from the assignment, and relating them would require an inverse the pattern does not state.</skos:note>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias#carriesData -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#carriesData">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#UserData"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-        <rdfs:comment xml:lang="en">Relates the payload of a transmission to the dataset it carries.</rdfs:comment>
-        <rdfs:label xml:lang="en">carries data</rdfs:label>
-        <skos:note xml:lang="en">The bridge between the communication subdomain and the AI subdomain, and a relation rather than an equivalence on purpose.
-
-Setting the data of the two subdomains equal does not hold. ISO/IEC 7498-1, 5.6.1.2 defines user data as the payload of one transmission, ISO/IEC 22989 defines data as a collection of samples, and the two differ in what determines them and in how many of them there are. A ping carries payload with no dataset involved, and a training dataset exists whether or not it is ever transmitted.
-
-Keeping them apart is what makes a question answerable: which communications carry a given dataset, on which layer and with which quality of service. Under an equivalence the dataset would be the payload of one transmission, and the question would be meaningless.</skos:note>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias#hasComponent -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#hasComponent">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias#Component"/>
-        <rdfs:comment xml:lang="en">Relates a modelled system to a component it is built from.</rdfs:comment>
-        <rdfs:label xml:lang="en">has component</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias#hasFunction -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#hasFunction">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias#Function"/>
-        <rdfs:comment xml:lang="en">Relates a modelled system to a function it performs.</rdfs:comment>
-        <rdfs:label xml:lang="en">has function</rdfs:label>
-        <skos:note xml:lang="en">The entry point into the function view. An AI system relates to its functions through this rather than through the relation of any one pattern, so that functions of every subdomain answer alike.</skos:note>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias#hasRelation -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias#hasRelation">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias#Relation"/>
-        <rdfs:comment xml:lang="en">Relates a modelled system to a recorded tie between its parts.</rdfs:comment>
-        <rdfs:label xml:lang="en">has relation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/aias#Actuator -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Actuator">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">A resource that acts on a mass flow, an energy flow or a movement.</rdfs:comment>
-        <rdfs:label xml:lang="en">Actuator</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work**, and a name that has to be read with care.
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Product">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Product"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Product">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Component"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">A physical component that a function transforms, produces or consumes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Product</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work**, matching the product of VDI 3682. Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Actuator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">A resource that acts on a mass flow, an energy flow or a movement.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actuator</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work**, and a name that has to be read with care.
 
 IEC 60050-351 uses actuator, 351-49-07, for the **signal side**: the unit generating the manipulated variable that drives the element acting on the flow. The element acting on the flow is the final controlling element, 351-49-08, and that is what this class means.
 
 Relating this class to iec60050:Actuator would therefore state the opposite of what is intended. The nearest match is the final controlling element, and even that is a functional unit rather than a device.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Component -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Component">
-        <owl:disjointWith rdf:resource="https://w3id.org/aias#Function"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/aias#Relation"/>
-        <rdfs:comment xml:lang="en">A physical element of a system, either performing functions or being transformed by them.</rdfs:comment>
-        <rdfs:label xml:lang="en">Component</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work**, after Haberfellner.
-
-Physical on purpose. A model, a dataset or an AI component is not a component here, since none of them is a thing one can point at in a plant. Their place in the whole is recorded through the functions they carry and the assignment of those functions to a resource.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Computer -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Computer">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">A general purpose computing resource within the plant.</rdfs:comment>
-        <rdfs:label xml:lang="en">Computer</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work.**</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Controller -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Controller">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">A resource running control programs, such as a programmable logic controller.</rdfs:comment>
-        <rdfs:label xml:lang="en">Controller</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work.** IEC 60050-351 defines a controller, 351-49-11, as a functional unit consisting of a comparing and a controlling element. A device may realise such a unit, which is what realisedByPhysicalUnit records in that pattern, but the two are not the same thing.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#EdgeDevice -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#EdgeDevice">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">A resource with computing capacity placed near the process it serves.</rdfs:comment>
-        <rdfs:label xml:lang="en">Edge Device</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work.** Clause 8.6.2 of ISO/IEC 22989 discusses edge computing without defining a device for it. What makes a device an edge device here is where it sits, not what it is built from.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#ExternalCloud -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#ExternalCloud">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">Computing infrastructure operated by a third party.</rdfs:comment>
-        <rdfs:label xml:lang="en">External Cloud</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work.** A function running here leaves the organisation, which is what separates it from the internal cloud.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Function -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Function">
-        <owl:disjointWith rdf:resource="https://w3id.org/aias#Relation"/>
-        <rdfs:comment xml:lang="en">A purposeful transformation, turning inputs into outputs to meet an objective of the system.</rdfs:comment>
-        <rdfs:label xml:lang="en">Function</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work**, after the system elements of Haberfellner.
-
-The class is what makes the alignment work. A process operator of VDI 3682 transforms products, an inference of ISO/IEC 22989 derives a conclusion, and a control of IEC 60050-351 acts on a process. In their own standards the three have nothing in common. Below this class they are assigned to a resource through one mechanism, and a question asking what a device does answers with all of them.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#InternalCloud -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#InternalCloud">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">Computing infrastructure operated by the plant operator, away from the process but inside the organisation.</rdfs:comment>
-        <rdfs:label xml:lang="en">Internal Cloud</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work.** The distinction from the external cloud is who operates it, which is what a data protection review turns on rather than any technical property.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Product -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Product">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Component"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">A physical component that a function transforms, produces or consumes.</rdfs:comment>
-        <rdfs:label xml:lang="en">Product</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work**, matching the product of VDI 3682. Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Relation -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Relation">
-        <rdfs:comment xml:lang="en">A recorded tie between functions and components, or between components.</rdfs:comment>
-        <rdfs:label xml:lang="en">Relation</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work**, after Haberfellner.
-
-Relations are classes rather than object properties, so that a tie can carry properties of its own. An assignment is a thing a model annotates with a reason or a date, not an arrow between two boxes.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias#Resource -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias#Resource">
-        <owl:equivalentClass rdf:resource="https://w3id.org/aias/odp/vdi3682#TechnicalResource"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Component"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#PhysicalUnit"/>
-        <rdfs:comment xml:lang="en">A physical component of a plant that performs functions.</rdfs:comment>
-        <rdfs:label xml:lang="en">Resource</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work**, equivalent to the technical resource of VDI 3682.
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#hasFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias#Function"/>
+    <rdfs:comment xml:lang="en">Relates a modelled system to a function it performs.</rdfs:comment>
+    <rdfs:label xml:lang="en">has function</rdfs:label>
+    <skos:note xml:lang="en">The entry point into the function view. An AI system relates to its functions through this rather than through the relation of any one pattern, so that functions of every subdomain answer alike.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#EdgeDevice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">A resource with computing capacity placed near the process it serves.</rdfs:comment>
+    <rdfs:label xml:lang="en">Edge Device</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work.** Clause 8.6.2 of ISO/IEC 22989 discusses edge computing without defining a device for it. What makes a device an edge device here is where it sits, not what it is built from.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Association">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Relation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:resource="https://w3id.org/aias/odp/vdi3682#TechnicalResource"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Component"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#PhysicalUnit"/>
+    <rdfs:comment xml:lang="en">A physical component of a plant that performs functions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Resource</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work**, equivalent to the technical resource of VDI 3682.
 
 A resource is what a function is assigned to. Where its communication is described it also appears as an open system in the sense of ISO/IEC 7498-1, 4.1.3, which that pattern states on its own class.
 
 **A subclass of the physical unit, not equivalent to it.** IEC 60050-351, 351-56-03 defines the physical unit as an item under consideration seen by construction, and every resource is one: VDI 3682 calls the technical resource a physical component of an automated plant. The reverse does not hold. A terminal block or a power supply is a physical unit and realises no transformation, so it is no technical resource, and an equivalence would be wrong in that direction.
 
 The subclass axiom is what makes the chain from a device to its role in a control walkable. A model states a resource, the reasoner infers a physical unit, and the inverse relations of the IEC 60050-351 pattern lead from there through the functional units it realises to the action lines and the kind of path.</skos:note>
-    </owl:Class>
-    
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#appearsAsOpenSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias#Component"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#OpenSystem"/>
+    <rdfs:comment xml:lang="en">Relates a component to the open system it appears as when its communication is described.</rdfs:comment>
+    <rdfs:label xml:lang="en">appears as open system</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, 4.1.3 defines the open system as the representation of those aspects of a real system that are pertinent to open systems interconnection. A thing is not an open system in itself, it is one under that view, which is why this is a relation rather than a subclass axiom.
 
+The domain is the component rather than the resource. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and narrowing this to resources would rule that out.
 
-    <!-- https://w3id.org/aias#Sensor -->
+The ISO 7498 pattern already states the intent on its own class. This relation is what a model uses to record it.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#hasComponent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias#Component"/>
+    <rdfs:comment xml:lang="en">Relates a modelled system to a component it is built from.</rdfs:comment>
+    <rdfs:label xml:lang="en">has component</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Relation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A recorded tie between functions and components, or between components.</rdfs:comment>
+    <rdfs:label xml:lang="en">Relation</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work**, after Haberfellner.
 
+Relations are classes rather than object properties, so that a tie can carry properties of its own. An assignment is a thing a model annotates with a reason or a date, not an arrow between two boxes.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Assignment">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Relation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#assignedFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/vdi3682#Assignment"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias#Function"/>
+    <rdfs:comment xml:lang="en">Relates an assignment to the function it assigns to a resource.</rdfs:comment>
+    <rdfs:label xml:lang="en">assigned function</rdfs:label>
+    <skos:note xml:lang="en">VDI 3682 states the assignment from the process operator: hasAssignment runs from the process operator to the assignment, and assignedResource from there to the resource. Both follow the guideline, and neither reaches a function that is not a process operator.
 
-    <owl:Class rdf:about="https://w3id.org/aias#Sensor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
-        <rdfs:comment xml:lang="en">A resource that senses a physical quantity and makes it available as data.</rdfs:comment>
-        <rdfs:label xml:lang="en">Sensor</rdfs:label>
-        <skos:note xml:lang="en">**Construct of this work.** IEC 60050-351 defines a sensing element, 351-56-26, but as a functional unit rather than as a device, so the two are not related here.
+This relation closes that gap. It says which function an assignment carries, whatever subdomain the function comes from, and it is what makes the common function level usable rather than merely stated. Without it a model could group a process operator and an inference under one superclass and still have no way to assign the second to a device.
+
+Deliberately not a superproperty of hasAssignment. The two run in opposite directions, from the function and from the assignment, and relating them would require an inverse the pattern does not state.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#ExternalCloud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">Computing infrastructure operated by a third party.</rdfs:comment>
+    <rdfs:label xml:lang="en">External Cloud</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work.** A function running here leaves the organisation, which is what separates it from the internal cloud.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Component">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias#Function"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias#Relation"/>
+    <rdfs:comment xml:lang="en">A physical element of a system, either performing functions or being transformed by them.</rdfs:comment>
+    <rdfs:label xml:lang="en">Component</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work**, after Haberfellner.
+
+Physical on purpose. A model, a dataset or an AI component is not a component here, since none of them is a thing one can point at in a plant. Their place in the whole is recorded through the functions they carry and the assignment of those functions to a resource.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#carriesData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#UserData"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdfs:comment xml:lang="en">Relates the payload of a transmission to the dataset it carries.</rdfs:comment>
+    <rdfs:label xml:lang="en">carries data</rdfs:label>
+    <skos:note xml:lang="en">The bridge between the communication subdomain and the AI subdomain, and a relation rather than an equivalence on purpose.
+
+Setting the data of the two subdomains equal does not hold. ISO/IEC 7498-1, 5.6.1.2 defines user data as the payload of one transmission, ISO/IEC 22989 defines data as a collection of samples, and the two differ in what determines them and in how many of them there are. A ping carries payload with no dataset involved, and a training dataset exists whether or not it is ever transmitted.
+
+Keeping them apart is what makes a question answerable: which communications carry a given dataset, on which layer and with which quality of service. Under an equivalence the dataset would be the payload of one transmission, and the question would be meaningless.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Control">
+    <owl:equivalentClass rdf:resource="https://w3id.org/aias/odp/iso22989#Control"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Function"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#hasRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias#Relation"/>
+    <rdfs:comment xml:lang="en">Relates a modelled system to a recorded tie between its parts.</rdfs:comment>
+    <rdfs:label xml:lang="en">has relation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/bibliographicCitation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#Sensor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">A resource that senses a physical quantity and makes it available as data.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sensor</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work.** IEC 60050-351 defines a sensing element, 351-56-26, but as a functional unit rather than as a device, so the two are not related here.
 
 A model relating this class to a catalogue of equipment would give it the basis it currently lacks.</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/aias/odp/iec60050#Control -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Control">
-        <owl:equivalentClass rdf:resource="https://w3id.org/aias/odp/iso22989#Control"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Function"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/iso22989#AIFunction -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIFunction">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Function"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/iso22989#Data -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Data">
-        <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iso7498#UserData"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/iso7498#Association -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Association">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Relation"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/vdi3682#Assignment -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Assignment">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Relation"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/vdi3682#Flow -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Flow">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Relation"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/vdi3682#ProcessOperator -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#ProcessOperator">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Function"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/aias/odp/vdi3682#Product -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Product">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Product"/>
-    </rdf:Description>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Data">
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iso7498#UserData"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias#InternalCloud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Resource"/>
+    <rdfs:comment xml:lang="en">Computing infrastructure operated by the plant operator, away from the process but inside the organisation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Internal Cloud</rdfs:label>
+    <skos:note xml:lang="en">**Construct of this work.** The distinction from the external cloud is who operates it, which is what a data protection review turns on rather than any technical property.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#ProcessOperator">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Function"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/vdi3682#Flow">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Relation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIFunction">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias#Function"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
-
-

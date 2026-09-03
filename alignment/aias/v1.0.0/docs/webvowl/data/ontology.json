@@ -22,8 +22,8 @@
     "version": "1.0.0",
     "author": [
       "Marvin Schieseck",
-      "Philip Topalis",
       "Alexander Fay",
+      "Philip Topalis",
       "Felix Gehlhoff",
       "Lasse Reinpold"
     ],
@@ -71,25 +71,11 @@
           "type": "label"
         }
       ],
-      "hasVersion": [
-        {
-          "identifier": "hasVersion",
-          "language": "undefined",
-          "value": "https://w3id.org/aias",
-          "type": "iri"
-        }
-      ],
       "subject": [
         {
           "identifier": "subject",
           "language": "en",
           "value": "Industrial Automation",
-          "type": "label"
-        },
-        {
-          "identifier": "subject",
-          "language": "en",
-          "value": "System Architecture",
           "type": "label"
         },
         {
@@ -109,6 +95,12 @@
           "language": "en",
           "value": "Artificial Intelligence",
           "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "System Architecture",
+          "type": "label"
         }
       ],
       "created": [
@@ -119,12 +111,12 @@
           "type": "label"
         }
       ],
-      "abstract": [
+      "hasVersion": [
         {
-          "identifier": "abstract",
-          "language": "en",
-          "value": "An alignment ontology describing artificial intelligence applications in automated plants together with the plant and the technical process it runs. It imports three subdomain patterns, for the technical process after VDI/VDE 3682, for communication after ISO/IEC 7498-1 and for artificial intelligence after ISO/IEC 22989, and ties them together through three collecting classes: a function, a component and a relation. Placing a process operator and an inference under one function class is what makes them comparable, so that the same assignment states which resource carries out which function, whichever subdomain that function comes from. Twelve own classes and eight own relations. Nothing here is normative: the patterns rest on standards, the alignment rests on design decisions.",
-          "type": "label"
+          "identifier": "hasVersion",
+          "language": "undefined",
+          "value": "https://w3id.org/aias",
+          "type": "iri"
         }
       ],
       "versionInfo": [
@@ -132,6 +124,14 @@
           "identifier": "versionInfo",
           "language": "undefined",
           "value": "1.0.0",
+          "type": "label"
+        }
+      ],
+      "abstract": [
+        {
+          "identifier": "abstract",
+          "language": "en",
+          "value": "An alignment ontology describing artificial intelligence applications in automated plants together with the plant and the technical process it runs. It imports three subdomain patterns, for the technical process after VDI/VDE 3682, for communication after ISO/IEC 7498-1 and for artificial intelligence after ISO/IEC 22989, and ties them together through three collecting classes: a function, a component and a relation. Placing a process operator and an inference under one function class is what makes them comparable, so that the same assignment states which resource carries out which function, whichever subdomain that function comes from. Twelve own classes and eight own relations. Nothing here is normative: the patterns rest on standards, the alignment rests on design decisions.",
           "type": "label"
         }
       ],
@@ -175,14 +175,6 @@
           "type": "label"
         }
       ],
-      "publisher": [
-        {
-          "identifier": "publisher",
-          "language": "undefined",
-          "value": "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg",
-          "type": "label"
-        }
-      ],
       "modified": [
         {
           "identifier": "modified",
@@ -191,11 +183,11 @@
           "type": "label"
         }
       ],
-      "bibliographicCitation": [
+      "publisher": [
         {
-          "identifier": "bibliographicCitation",
-          "language": "en",
-          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
+          "identifier": "publisher",
+          "language": "undefined",
+          "value": "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg",
           "type": "label"
         }
       ],
@@ -213,6 +205,14 @@
           "language": "undefined",
           "value": "https://github.com/schiesem/aias",
           "type": "iri"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "en",
+          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
+          "type": "label"
         }
       ],
       "doi": [
@@ -764,8 +764,8 @@
         "8"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "6"
     },
@@ -778,8 +778,8 @@
         "17"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "13"
     },
@@ -791,8 +791,8 @@
         "19"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "22"
     },
@@ -803,8 +803,8 @@
         "14"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "27"
     },
@@ -815,8 +815,8 @@
         "2"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "33"
     },
@@ -828,8 +828,8 @@
         "19"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "38"
     },
@@ -954,8 +954,8 @@
         "8"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "53"
     },
@@ -1318,8 +1318,8 @@
         "en": "Data used to assess the performance of a final model, disjoint from training and validation data."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "188",
       "superClasses": [
@@ -1596,8 +1596,8 @@
         "122"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "293"
     },
@@ -1680,8 +1680,8 @@
         "16"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "315"
     },
@@ -1692,8 +1692,8 @@
         "49"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "320"
     },
@@ -1706,8 +1706,8 @@
         "58"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "324"
     },
@@ -1720,8 +1720,8 @@
         "328"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "191"
     },
@@ -1732,8 +1732,8 @@
         "122"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "331"
     },
@@ -1837,8 +1837,8 @@
         "23"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "335"
     },
@@ -1849,8 +1849,8 @@
         "19"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "338"
     },
@@ -1862,8 +1862,8 @@
         "19"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "341"
     },
@@ -1875,8 +1875,8 @@
         "19"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "344"
     },
@@ -1888,8 +1888,8 @@
         "19"
       ],
       "attributes": [
-        "union",
-        "anonymous"
+        "anonymous",
+        "union"
       ],
       "id": "146"
     },
@@ -2077,8 +2077,8 @@
         "en": "Physical components of which automated plants are built and which realise the transformations carried out by process operators."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "64"
     },
@@ -2269,8 +2269,8 @@
         "en": "A physical component performing a function."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "202",
       "superClasses": [
@@ -2661,8 +2661,8 @@
         "en": "Data used to assess the performance of a final model."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "189",
       "superClasses": [
@@ -2894,8 +2894,8 @@
         "en": "A reinterpretable representation of information in a formalised manner suitable for communication, interpretation or processing."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "23"
     },
@@ -3511,8 +3511,8 @@
         "en": "The data unit of the upper layers, that is what an application exchanges."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "215",
       "superClasses": [
@@ -3806,8 +3806,8 @@
         "en": "Physical objects created, changed or consumed in the course of a technical process."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "213",
       "superClasses": [
@@ -4070,8 +4070,8 @@
         "en": "Things of the real world that are transformed within a technical process."
       },
       "attributes": [
-        "external",
-        "equivalent"
+        "equivalent",
+        "external"
       ],
       "id": "328"
     },
@@ -6378,8 +6378,8 @@
         "en": "Relates an AI system to a task it fulfils."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "45"
     },
@@ -6398,8 +6398,8 @@
         "en": "Relates a function, a component or a product to a flow it takes part in."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "52"
     },
@@ -6706,8 +6706,8 @@
         "en": "Relates a model to the inference it carries out."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "103"
     },
@@ -6726,8 +6726,8 @@
         "en": "Relates an inference to the prediction it produces."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "104"
     },
@@ -6773,8 +6773,8 @@
         "en": "Relates a flow to the process operator it leaves."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "115"
     },
@@ -6973,8 +6973,8 @@
         "en": "Relates a function to the data it works on."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "144"
     },
@@ -7273,8 +7273,8 @@
         "en": "Relates a flow to the state it carries."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "190"
     },
@@ -7302,8 +7302,8 @@
         "en": "Relates an acquisition to the source it obtains data from."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "193"
     },
@@ -7403,8 +7403,8 @@
         "en": "Relates a training to the model parameters it determines."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "208"
     },
@@ -7747,8 +7747,8 @@
         "en": "Relates a machine learning algorithm to the kind of learning it performs."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "251"
     },
@@ -7778,8 +7778,8 @@
         "en": "Relates a process operator to a flow entering it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "253"
     },
@@ -8105,8 +8105,8 @@
         "en": "Relates a layer to the technology realising it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "290"
     },
@@ -8125,8 +8125,8 @@
         "en": "Relates a data process to the data it produces."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "291"
     },
@@ -8155,8 +8155,8 @@
         "en": "Relates an algorithm to a hyperparameter governing it, and a model to a parameter determined for it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "292"
     },
@@ -8428,8 +8428,8 @@
         "en": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "336"
     },
@@ -8520,8 +8520,8 @@
         "en": "Describes a unidirectional use as a receiver."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "348"
     },
@@ -8630,8 +8630,8 @@
         "en": "Relates an AI system to a tie between its functions and its components."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "360"
     },
@@ -8650,8 +8650,8 @@
         "en": "Relates a model to the evaluation assessing it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "361"
     },
@@ -8733,8 +8733,8 @@
         "en": "Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "370"
     },
@@ -9194,8 +9194,8 @@
         "en": "Relates a prediction to the task it addresses."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "425"
     },
@@ -9224,8 +9224,8 @@
         "en": "Relates a flow to the process operator it enters."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "254"
     },
@@ -9442,8 +9442,8 @@
         "en": "Describes a unidirectional use as a sender."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "449"
     },
@@ -9759,8 +9759,8 @@
         "en": "Relates a model to the validation confirming it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "486"
     },
@@ -9978,8 +9978,8 @@
         "en": "Relates a function or a component to the assignment stating which resource carries out which function."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "508"
     },
@@ -10052,8 +10052,8 @@
         "en": "Relates a layer, or a communication itself, to the data unit it processes or transmits."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "514"
     },
@@ -10072,8 +10072,8 @@
         "en": "Relates an evaluation, or the algorithm it runs, to the metric it measures against."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "515"
     },
@@ -10101,8 +10101,8 @@
         "en": "Relates an AI system to where it runs."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "517"
     },
@@ -10149,8 +10149,8 @@
         "en": "Relates an AI system to the kind of AI it employs, that is symbolic, subsymbolic or a combination of the two."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "520"
     },
@@ -10169,8 +10169,8 @@
         "en": "Relates data to the storing that persisted it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "521"
     },
@@ -10189,8 +10189,8 @@
         "en": "Relates a communication to a layer it is structured into."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "522"
     },
@@ -10219,8 +10219,8 @@
         "en": "Relates a dataset to the data it collects, and data to the samples it consists of."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "523"
     },
@@ -10239,8 +10239,8 @@
         "en": "Relates an AI component to a function it performs."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "524"
     },
@@ -10269,8 +10269,8 @@
         "en": "Relates a component to a communication it takes part in. States a bidirectional use."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "525"
     },
@@ -10289,8 +10289,8 @@
         "en": "Relates a storing to the sink it persists data to."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "526"
     },
@@ -10309,8 +10309,8 @@
         "en": "Relates an AI system to a physical component it is built from."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "527"
     },
@@ -10329,8 +10329,8 @@
         "en": "Relates a communication to its designation."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "528"
     },
@@ -10448,8 +10448,8 @@
         "en": "Relates data to the data process acting on it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "540"
     },
@@ -10586,8 +10586,8 @@
         "en": "Relates a training to the machine learning carrying it out."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "553"
     },
@@ -10939,8 +10939,8 @@
         "en": "Relates an AI system to a component it is built from."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "591"
     },
@@ -10987,8 +10987,8 @@
         "en": "Relates a process operator to a flow leaving it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "595"
     },
@@ -11061,8 +11061,8 @@
         "en": "Relates a model to the training that produced it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "602"
     },
@@ -11090,8 +11090,8 @@
         "en": "Relates an AI system to a function it carries out, whichever subdomain the function comes from."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "604"
     },
@@ -11110,8 +11110,8 @@
         "en": "Relates data to the acquisition that obtained it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "605"
     },
@@ -11140,8 +11140,8 @@
         "en": "Relates a process to the elements describing it."
       },
       "attributes": [
-        "external",
-        "object"
+        "object",
+        "external"
       ],
       "id": "606"
     }

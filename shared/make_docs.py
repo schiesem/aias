@@ -332,7 +332,13 @@ def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
     # rdflib binds only the prefixes it knows, so a file it writes
     # loses the ones that make it readable: aias:, vdi3682: and the
     # rest, with bibo: turning into ns1:.
-    prefixes = list(src.namespaces())
+    # Only what the source declares: rdflib carries dozens of bindings of
+    # its own, brick and csvw among them, which have nothing to do with this
+    # ontology and would clutter every file written through it.
+    declared = {line.split()[1].rstrip(":")
+                for line in ontology.read_text(encoding="utf-8").splitlines()
+                if line.startswith("@prefix")}
+    prefixes = [(p, ns) for p, ns in src.namespaces() if p in declared]
 
     fixed = []
     for name, fmt in (("ontology.ttl", "turtle"), ("ontology.owl", "xml"),
@@ -348,10 +354,11 @@ def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
             continue
 
         wrong = [s for s in g.subjects(RDF.type, OWL.Ontology) if s != subject]
-        if not wrong and want[OWL.versionIRI] <= set(g.objects(subject, OWL.versionIRI)):
-            continue
-
-        # Move every statement of the misnamed ontology onto the right subject,
+        # Every file is rewritten, not only a misnamed one: the prefixes have
+        # to be set even where the header is already right, and rewriting a
+        # graph through rdflib loses nothing.
+        #
+        # Move every statement of a misnamed ontology onto the right subject,
         # then restore the header from the source.
         for s in wrong:
             for pred, obj in list(g.predicate_objects(s)):
@@ -368,6 +375,23 @@ def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
         for prefix, ns in prefixes:
             g.bind(prefix, ns, replace=True)
         g.serialize(destination=str(f), format=fmt)
+
+        # RDF/XML keeps only the namespaces rdflib needs to abbreviate an
+        # element name, and every class here is written out in full, so the
+        # bindings above are dropped again. Protege reads this serialization,
+        # so they are written into the rdf:RDF header by hand.
+        if fmt == "xml":
+            head = f.read_text(encoding="utf-8")
+            end = head.find(">", head.find("<rdf:RDF"))
+            if end != -1:
+                opening = head[:end]
+                missing = "".join(
+                    f'\n   xmlns:{prefix}="{ns}"'
+                    for prefix, ns in prefixes
+                    if prefix and f'xmlns:{prefix}=' not in opening)
+                if missing:
+                    f.write_text(opening + missing + head[end:],
+                                 encoding="utf-8")
         fixed.append(name.split(".")[-1])
 
     return ["header: " + ", ".join(fixed)] if fixed else []

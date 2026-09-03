@@ -1,1152 +1,805 @@
-@prefix : <https://w3id.org/aias/odp/iso22989#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/aias/odp/iso22989#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/aias/odp/iso22989> rdf:type owl:Ontology ;
-                                      owl:versionIRI <https://w3id.org/aias/odp/iso22989/1.0.0> ;
-                                      <http://purl.org/dc/terms/abstract> "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-two classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."@en ;
-                                      <http://purl.org/dc/terms/bibliographicCitation> "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"@en ;
-                                      <http://purl.org/dc/terms/created> "2024-09-01"^^xsd:date ;
-                                      <http://purl.org/dc/terms/creator> "Alexander Fay" ,
-                                                                         "Felix Gehlhoff" ,
-                                                                         "Lasse Reinpold" ,
-                                                                         "Marvin Schieseck" ,
-                                                                         "Philip Topalis" ;
-                                      <http://purl.org/dc/terms/hasVersion> <https://w3id.org/aias/odp/iso22989> ;
-                                      <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                      <http://purl.org/dc/terms/modified> "2026-09-02"^^xsd:date ;
-                                      <http://purl.org/dc/terms/publisher> "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
-                                      <http://purl.org/dc/terms/rights> "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"@en ;
-                                      <http://purl.org/dc/terms/source> <https://www.iso.org/standard/74296.html> ;
-                                      <http://purl.org/dc/terms/subject> "AI Life Cycle"@en ,
-                                                                         "Artificial Intelligence"@en ,
-                                                                         "ISO/IEC 22989"@en ,
-                                                                         "Machine Learning"@en ,
-                                                                         "Ontology Design Pattern"@en ;
-                                      <http://purl.org/dc/terms/title> "ISO/IEC 22989 Ontology Design Pattern"@en ;
-                                      <http://purl.org/ontology/bibo/doi> "10.1109/ETFA61755.2024.10710890" ;
-                                      <http://purl.org/ontology/bibo/status> "Draft"@en ;
-                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso22989" ;
-                                      <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso22989#" ;
-                                      rdfs:comment """Normative basis: ISO/IEC 22989:2022.
+dcterms:abstract a owl:AnnotationProperty .
+
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:hasVersion a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:modified a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty .
+
+dcterms:rights a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+dcterms:subject a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+bibo:doi a owl:AnnotationProperty .
+
+bibo:status a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+xsd:date a rdfs:Datatype .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:note a owl:AnnotationProperty .
+
+foaf:fundedBy a owl:AnnotationProperty .
+
+schema:codeRepository a owl:AnnotationProperty .
+
+iso22989:DataProcessing a owl:Class ;
+    rdfs:label "Datenverarbeitung"@de,
+        "Data Processing"@en ;
+    rdfs:comment "Umwandlung von Eingangsdaten in Ausgangsdaten."@de,
+        "Transformation of input data into output data."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:EvaluationData a owl:Class ;
+    rdfs:label "Evaluationsdaten"@de,
+        "Evaluation Data"@en ;
+    rdfs:comment "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind."@de,
+        "Data used to assess the performance of a final model, disjoint from training and validation data."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    owl:equivalentClass iso22989:TestData ;
+    skos:note "ISO/IEC 22989, definition 3.2.14."@en .
+
+iso22989:SubSymbolicAI a owl:Class ;
+    rdfs:label "Subsymbolische KI"@de,
+        "Subsymbolic AI"@en ;
+    rdfs:comment "Techniken, deren Repräsentationen implizit aus Daten oder Erfahrung abgeleitet werden."@de,
+        "Techniques whose representations are derived implicitly from data or experience."@en ;
+    rdfs:subClassOf iso22989:AIType ;
+    owl:disjointWith iso22989:SymbolicAI ;
+    skos:note "ISO/IEC 22989, definition 3.1.34."@en .
+
+iso22989:basedOnAlgorithm a owl:ObjectProperty ;
+    rdfs:label "basiert auf Algorithmus"@de,
+        "based on algorithm"@en ;
+    rdfs:comment "Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt."@de,
+        "Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Evaluation iso22989:Inference iso22989:Model iso22989:Training ) ] ;
+    rdfs:range iso22989:Algorithm .
+
+iso22989:basedOnLearning a owl:ObjectProperty ;
+    rdfs:label "basiert auf Lernart"@de,
+        "based on learning"@en ;
+    rdfs:comment "Verbindet einen ML-Algorithmus mit der Lernart, die er ausführt."@de,
+        "Relates a machine learning algorithm to the kind of learning it performs."@en ;
+    rdfs:domain iso22989:MLAlgorithm ;
+    rdfs:range iso22989:LearningType .
+
+iso22989:consistsOf a owl:ObjectProperty ;
+    rdfs:label "besteht aus"@de,
+        "consists of"@en ;
+    rdfs:comment "Verbindet ein KI-System mit einer Komponente, aus der es aufgebaut ist."@de,
+        "Relates an AI system to a component it is built from."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range iso22989:AIComponent .
+
+iso22989:creates a owl:ObjectProperty ;
+    rdfs:label "erzeugt"@de,
+        "creates"@en ;
+    rdfs:comment "Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt."@de,
+        "Relates an inference to the prediction it produces."@en ;
+    rdfs:domain iso22989:Inference ;
+    rdfs:range iso22989:Prediction .
+
+iso22989:createsProcessedData a owl:ObjectProperty ;
+    rdfs:label "erzeugt verarbeitete Daten"@de,
+        "creates processed data"@en ;
+    rdfs:comment "Verbindet einen Datenprozess mit den Daten, die er erzeugt."@de,
+        "Relates a data process to the data it produces."@en ;
+    rdfs:domain iso22989:DataProcess ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] .
+
+iso22989:determines a owl:ObjectProperty ;
+    rdfs:label "bestimmt"@de,
+        "determines"@en ;
+    rdfs:comment "Verbindet ein Training mit den Modellparametern, die es bestimmt."@de,
+        "Relates a training to the model parameters it determines."@en ;
+    rdfs:domain iso22989:Training ;
+    rdfs:range iso22989:ModelParameter .
+
+iso22989:executes a owl:ObjectProperty ;
+    rdfs:label "führt aus"@de,
+        "executes"@en ;
+    rdfs:comment "Verbindet ein Modell mit der Inferenz, die es ausführt."@de,
+        "Relates a model to the inference it carries out."@en ;
+    rdfs:domain iso22989:Model ;
+    rdfs:range iso22989:Inference .
+
+iso22989:fulfillsTask a owl:ObjectProperty ;
+    rdfs:label "erfüllt Aufgabe"@de,
+        "fulfills task"@en ;
+    rdfs:comment "Verbindet eine Vorhersage mit der Aufgabe, die sie adressiert."@de,
+        "Relates a prediction to the task it addresses."@en ;
+    rdfs:domain iso22989:Prediction ;
+    rdfs:range iso22989:AITask .
+
+iso22989:hasDataSink a owl:ObjectProperty ;
+    rdfs:label "hat Datensenke"@de,
+        "has data sink"@en ;
+    rdfs:comment "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt."@de,
+        "Relates a storing to the sink it persists data to."@en ;
+    rdfs:domain iso22989:Storing ;
+    rdfs:range iso22989:DataSink .
+
+iso22989:hasDataSource a owl:ObjectProperty ;
+    rdfs:label "hat Datenquelle"@de,
+        "has data source"@en ;
+    rdfs:comment "Verbindet eine Erfassung mit der Quelle, aus der sie Daten gewinnt."@de,
+        "Relates an acquisition to the source it obtains data from."@en ;
+    rdfs:domain iso22989:Acquisition ;
+    rdfs:range iso22989:DataSource .
+
+iso22989:hasDesign a owl:ObjectProperty ;
+    rdfs:label "hat Auslegung"@de,
+        "has design"@en ;
+    rdfs:comment "Verbindet ein KI-System mit dem Ort seiner Ausführung."@de,
+        "Relates an AI system to where it runs."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range iso22989:SystemDesign .
+
+iso22989:hasFunction a owl:ObjectProperty ;
+    rdfs:label "hat Funktion"@de,
+        "has function"@en ;
+    rdfs:comment "Verbindet eine KI-Komponente mit einer Funktion, die sie ausführt."@de,
+        "Relates an AI component to a function it performs."@en ;
+    rdfs:domain iso22989:AIComponent ;
+    rdfs:range iso22989:AIFunction .
+
+iso22989:hasParameter a owl:ObjectProperty ;
+    rdfs:label "hat Parameter"@de,
+        "has parameter"@en ;
+    rdfs:comment "Verbindet einen Algorithmus mit einem ihn steuernden Hyperparameter sowie ein Modell mit einem für es bestimmten Parameter."@de,
+        "Relates an algorithm to a hyperparameter governing it, and a model to a parameter determined for it."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Algorithm iso22989:Model ) ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( iso22989:Hyperparameter iso22989:ModelParameter ) ] ;
+    skos:note "One relation with two domains. The hyperparameter is defined on the algorithm superclass, so a training algorithm, a model algorithm and an evaluation algorithm may each carry one."@en .
+
+iso22989:hasTask a owl:ObjectProperty ;
+    rdfs:label "hat Aufgabe"@de,
+        "has task"@en ;
+    rdfs:comment "Verbindet ein KI-System mit einer Aufgabe, die es erfüllt."@de,
+        "Relates an AI system to a task it fulfils."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range iso22989:AITask .
+
+iso22989:hasType a owl:ObjectProperty ;
+    rdfs:label "hat Art"@de,
+        "has type"@en ;
+    rdfs:comment "Verbindet ein KI-System mit der Art der eingesetzten KI, also symbolisch, subsymbolisch oder kombiniert."@de,
+        "Relates an AI system to the kind of AI it employs, that is symbolic, subsymbolic or a combination of the two."@en ;
+    rdfs:domain iso22989:AISystem ;
+    rdfs:range iso22989:AIType ;
+    skos:note "Relates a system to the kind of AI it is built on, symbolic or subsymbolic."@en .
+
+iso22989:isAcquiredBy a owl:ObjectProperty ;
+    rdfs:label "wird erfasst durch"@de,
+        "is acquired by"@en ;
+    rdfs:comment "Verbindet Daten mit der Erfassung, die sie gewonnen hat."@de,
+        "Relates data to the acquisition that obtained it."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] ;
+    rdfs:range iso22989:Acquisition .
+
+iso22989:isComposedOf a owl:ObjectProperty ;
+    rdfs:label "besteht aus"@de,
+        "is composed of"@en ;
+    rdfs:comment "Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen."@de,
+        "Relates a dataset to the data it collects, and data to the samples it consists of."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:DataSet ) ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:Sample ) ] ;
+    skos:note "One relation used at two levels: a dataset is composed of data, and data of samples. Its domain and range are therefore unions, since each covers both levels."@en .
+
+iso22989:isCreatedBy a owl:ObjectProperty ;
+    rdfs:label "wird erzeugt durch"@de,
+        "is created by"@en ;
+    rdfs:comment "Verbindet ein Modell mit dem Training, das es erzeugt hat."@de,
+        "Relates a model to the training that produced it."@en ;
+    rdfs:domain iso22989:Model ;
+    rdfs:range iso22989:Training .
+
+iso22989:isEvaluatedBy a owl:ObjectProperty ;
+    rdfs:label "wird evaluiert durch"@de,
+        "is evaluated by"@en ;
+    rdfs:comment "Verbindet ein Modell mit der Evaluation, die es bewertet."@de,
+        "Relates a model to the evaluation assessing it."@en ;
+    rdfs:domain iso22989:Model ;
+    rdfs:range iso22989:Evaluation .
+
+iso22989:isPerformedBy a owl:ObjectProperty ;
+    rdfs:label "wird durchgeführt durch"@de,
+        "is performed by"@en ;
+    rdfs:comment "Verbindet ein Training mit dem maschinellen Lernen, das es durchführt."@de,
+        "Relates a training to the machine learning carrying it out."@en ;
+    rdfs:domain iso22989:Training ;
+    rdfs:range iso22989:MachineLearning ;
+    skos:note "A training is performed by a machine learning, not the other way round, so the relation is directed rather than symmetric."@en .
+
+iso22989:isProcessedBy a owl:ObjectProperty ;
+    rdfs:label "wird verarbeitet durch"@de,
+        "is processed by"@en ;
+    rdfs:comment "Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet."@de,
+        "Relates data to the data process acting on it."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] ;
+    rdfs:range iso22989:DataProcess .
+
+iso22989:isStoredBy a owl:ObjectProperty ;
+    rdfs:label "wird gespeichert durch"@de,
+        "is stored by"@en ;
+    rdfs:comment "Verbindet Daten mit der Speicherung, die sie abgelegt hat."@de,
+        "Relates data to the storing that persisted it."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] ;
+    rdfs:range iso22989:Storing .
+
+iso22989:isValidatedBy a owl:ObjectProperty ;
+    rdfs:label "wird validiert durch"@de,
+        "is validated by"@en ;
+    rdfs:comment "Verbindet ein Modell mit der Validierung, die es bestätigt."@de,
+        "Relates a model to the validation confirming it."@en ;
+    rdfs:domain iso22989:Model ;
+    rdfs:range iso22989:Validation .
+
+iso22989:usesData a owl:ObjectProperty ;
+    rdfs:label "nutzt Daten"@de,
+        "uses data"@en ;
+    rdfs:comment "Verbindet eine Funktion mit den Daten, auf denen sie arbeitet."@de,
+        "Relates a function to the data it works on."@en ;
+    rdfs:domain iso22989:AIFunction ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] .
+
+iso22989:usesMetric a owl:ObjectProperty ;
+    rdfs:label "nutzt Metrik"@de,
+        "uses metric"@en ;
+    rdfs:comment "Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird."@de,
+        "Relates an evaluation, or the algorithm it runs, to the metric it measures against."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( iso22989:Evaluation iso22989:EvaluationAlgorithm ) ] ;
+    rdfs:range iso22989:EvaluationMetric .
+
+<https://w3id.org/aias/odp/iso22989> a owl:Ontology ;
+    dcterms:abstract "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-two classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."@en ;
+    dcterms:bibliographicCitation "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"@en ;
+    dcterms:created "2024-09-01"^^xsd:date ;
+    dcterms:creator "Alexander Fay",
+        "Felix Gehlhoff",
+        "Lasse Reinpold",
+        "Marvin Schieseck",
+        "Philip Topalis" ;
+    dcterms:hasVersion <https://w3id.org/aias/odp/iso22989> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:publisher "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
+    dcterms:rights "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"@en ;
+    dcterms:source <https://www.iso.org/standard/74296.html> ;
+    dcterms:subject "AI Life Cycle"@en,
+        "Artificial Intelligence"@en,
+        "ISO/IEC 22989"@en,
+        "Machine Learning"@en,
+        "Ontology Design Pattern"@en ;
+    dcterms:title "ISO/IEC 22989 Ontology Design Pattern"@en ;
+    bibo:doi "10.1109/ETFA61755.2024.10710890" ;
+    bibo:status "Draft"@en ;
+    vann:preferredNamespacePrefix "iso22989" ;
+    vann:preferredNamespaceUri "https://w3id.org/aias/odp/iso22989#" ;
+    rdfs:comment """Normative basis: ISO/IEC 22989:2022.
 
 Three views: the system with its components, functions and tasks, the algorithms, models and parameters, and the data with the processes acting on them.
 
 Every definition carries a German wording alongside its English translation.
 
 Scope: the AI system with its life cycle, the machine learning model with its data, and the tasks a model addresses. The qualities of clause 3.5 with their values, controllability and risk are not covered."""@en ;
-                                      owl:versionInfo "1.0.0" ;
-                                      <http://xmlns.com/foaf/0.1/fundedBy> <https://dtecbw.de/> ;
-                                      <https://schema.org/codeRepository> <https://github.com/schiesem/aias> .
+    owl:versionIRI <https://w3id.org/aias/odp/iso22989/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    foaf:fundedBy <https://dtecbw.de/> ;
+    schema:codeRepository <https://github.com/schiesem/aias> .
+
+iso22989:Accuracy a owl:Class ;
+    rdfs:label "Genauigkeit"@de,
+        "Accuracy"@en ;
+    rdfs:comment "Anteil der korrekten Ergebnisse an allen Ergebnissen."@de,
+        "The proportion of correct results among all results."@en ;
+    rdfs:subClassOf iso22989:EvaluationMetric .
+
+iso22989:Annotation a owl:Class ;
+    rdfs:label "Annotation"@de,
+        "Annotation"@en ;
+    rdfs:comment "Ergänzung signifikanter Informationen als Metadaten, etwa Labels oder Herkunftsinformationen."@de,
+        "Addition of significant information as metadata, for example labels or provenance."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:Augmentation a owl:Class ;
+    rdfs:label "Augmentierung"@de,
+        "Augmentation"@en ;
+    rdfs:comment "Erzeugung zusätzlicher Daten durch Transformation vorhandener Daten, um einen Datensatz zu erweitern."@de,
+        "Creation of additional data by transforming existing data in order to enlarge a dataset."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:Automate a owl:Class ;
+    rdfs:label "Automatisieren"@de,
+        "Automate"@en ;
+    rdfs:comment "Ausführung eines Vorgangs ohne menschliches Eingreifen."@de,
+        "Carrying out a procedure without human intervention."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "Not a term of ISO/IEC 22989. Definition 3.1.7 defines automatic as an adjective, not as a thing a model instantiates. The class is kept for the function it names in a plant."@en .
+
+iso22989:Classification a owl:Class ;
+    rdfs:label "Klassifikation"@de,
+        "Classification"@en ;
+    rdfs:comment "Zuordnung von Eingaben zu diskreten Klassen."@de,
+        "Assignment of inputs to discrete classes."@en ;
+    rdfs:subClassOf iso22989:AITask ;
+    skos:note "ISO/IEC 22989, clause 9."@en .
+
+iso22989:Cloud a owl:Class ;
+    rdfs:label "Cloud"@de,
+        "Cloud"@en ;
+    rdfs:comment "Ein KI-System, das auf Cloud-Infrastruktur ausgeführt wird."@de,
+        "An AI system running on cloud infrastructure."@en ;
+    rdfs:subClassOf iso22989:SystemDesign .
+
+iso22989:Clustering a owl:Class ;
+    rdfs:label "Clustering"@de,
+        "Clustering"@en ;
+    rdfs:comment "Identifikation von Gruppen ähnlicher Beispiele."@de,
+        "Identification of groups of similar examples."@en ;
+    rdfs:subClassOf iso22989:AITask ;
+    skos:note "ISO/IEC 22989, clause 5.11.2."@en .
+
+iso22989:Edge a owl:Class ;
+    rdfs:label "Edge"@de,
+        "Edge"@en ;
+    rdfs:comment "Ein KI-System, das prozessnah ausgeführt wird."@de,
+        "An AI system running close to the process it serves."@en ;
+    rdfs:subClassOf iso22989:SystemDesign .
+
+iso22989:F1Score a owl:Class ;
+    rdfs:label "F1-Maß"@de,
+        "F1 Score"@en ;
+    rdfs:comment "Harmonisches Mittel aus Präzision und Trefferquote."@de,
+        "The harmonic mean of precision and recall."@en ;
+    rdfs:subClassOf iso22989:EvaluationMetric .
+
+iso22989:Filtering a owl:Class ;
+    rdfs:label "Filterung"@de,
+        "Filtering"@en ;
+    rdfs:comment "Entfernung unerwünschter Daten."@de,
+        "Removal of unwanted data."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:Generation a owl:Class ;
+    rdfs:label "Generierung"@de,
+        "Generation"@en ;
+    rdfs:comment "Erzeugung neuer Ausgaben, etwa Texte, Bilder oder Audio, auf Basis gelernter Repräsentationen."@de,
+        "Creation of new outputs such as text, images or audio from learned representations."@en ;
+    rdfs:subClassOf iso22989:AITask ;
+    skos:note "ISO/IEC 22989, clause 9.2."@en .
+
+iso22989:Hybrid a owl:Class ;
+    rdfs:label "Hybrid"@de,
+        "Hybrid"@en ;
+    rdfs:comment "Ein KI-System, das auf Cloud und Edge verteilt ausgeführt wird."@de,
+        "An AI system split between cloud infrastructure and the edge."@en ;
+    rdfs:subClassOf iso22989:SystemDesign .
+
+iso22989:Imputation a owl:Class ;
+    rdfs:label "Imputation"@de,
+        "Imputation"@en ;
+    rdfs:comment "Ersetzung fehlender Daten durch geschätzte oder modellierte Werte."@de,
+        "Replacement of missing data by estimated or modelled values."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, definition 3.2.8."@en .
+
+iso22989:Labeling a owl:Class ;
+    rdfs:label "Kennzeichnung"@de,
+        "Labeling"@en ;
+    rdfs:comment "Zuordnung eines Labels zu einem Datenelement."@de,
+        "Assignment of a label to a data element."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, clause 5.10, where labelling is discussed as part of the annotation rather than defined as a process of its own."@en .
+
+iso22989:MLAlgorithm a owl:Class ;
+    rdfs:label "ML-Algorithmus"@de,
+        "Machine Learning Algorithm"@en ;
+    rdfs:comment "Spezialisierung des Trainingsalgorithmus für das maschinelle Lernen, dem eine Lernart zugeordnet ist."@de,
+        "A specialisation of the training algorithm for machine learning, to which a kind of learning is assigned."@en ;
+    rdfs:subClassOf iso22989:TrainingAlgorithm ;
+    skos:note "ISO/IEC 22989, definition 3.3.6."@en .
+
+iso22989:Merging a owl:Class ;
+    rdfs:label "Zusammenführung"@de,
+        "Merging"@en ;
+    rdfs:comment "Zusammenführung mehrerer Datenquellen zu einer."@de,
+        "Combination of several data sources into one."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one."@en .
+
+iso22989:ModelAlgorithm a owl:Class ;
+    rdfs:label "Modellalgorithmus"@de,
+        "Model Algorithm"@en ;
+    rdfs:comment "Verfahren zur Beschreibung der Struktur eines Modells, etwa die Architektur eines neuronalen Netzes."@de,
+        "A procedure describing the structure of a model, for example the architecture of a neural network."@en ;
+    rdfs:subClassOf iso22989:Algorithm ;
+    skos:note "Derived from ISO/IEC 22989, definition 3.3.7."@en .
+
+iso22989:Normalization a owl:Class ;
+    rdfs:label "Normalisierung"@de,
+        "Normalization"@en ;
+    rdfs:comment "Anpassung von Datenwerten auf eine gemeinsame Skala, um sie mathematisch vergleichbar zu machen."@de,
+        "Adjustment of data values to a common scale so that they become mathematically comparable."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:Precision a owl:Class ;
+    rdfs:label "Präzision"@de,
+        "Precision"@en ;
+    rdfs:comment "Anteil der korrekten Ergebnisse an den als positiv gemeldeten."@de,
+        "The proportion of correct results among those reported positive."@en ;
+    rdfs:subClassOf iso22989:EvaluationMetric .
+
+iso22989:ProductionData a owl:Class ;
+    rdfs:label "Betriebsdaten"@de,
+        "Production Data"@en ;
+    rdfs:comment "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet."@de,
+        "Data arising during the operation of a deployed AI system, for which the system computes inferences."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "ISO/IEC 22989, definition 3.2.12."@en .
+
+iso22989:Recall a owl:Class ;
+    rdfs:label "Trefferquote"@de,
+        "Recall"@en ;
+    rdfs:comment "Anteil der gefundenen an allen positiven Fällen."@de,
+        "The proportion of positive cases that were found."@en ;
+    rdfs:subClassOf iso22989:EvaluationMetric .
+
+iso22989:Regression a owl:Class ;
+    rdfs:label "Regression"@de,
+        "Regression"@en ;
+    rdfs:comment "Vorhersage kontinuierlicher Größen."@de,
+        "Prediction of continuous quantities."@en ;
+    rdfs:subClassOf iso22989:AITask ;
+    skos:note "ISO/IEC 22989, clause 9."@en .
+
+iso22989:ReinforcementLearning a owl:Class ;
+    rdfs:label "Bestärkendes Lernen"@de,
+        "Reinforcement Learning"@en ;
+    rdfs:comment "Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen."@de,
+        "Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward."@en ;
+    rdfs:subClassOf iso22989:LearningType ;
+    skos:note "ISO/IEC 22989, definition 3.3.9."@en .
+
+iso22989:Sampling a owl:Class ;
+    rdfs:label "Stichprobenziehung"@de,
+        "Sampling"@en ;
+    rdfs:comment "Auswahl einer repräsentativen Teilmenge der Daten."@de,
+        "Selection of a representative subset of the data."@en ;
+    rdfs:subClassOf iso22989:DataProcess ;
+    skos:note "ISO/IEC 22989, definition 3.2.4."@en .
+
+iso22989:SemiSupervisedLearning a owl:Class ;
+    rdfs:label "Teilüberwachtes Lernen"@de,
+        "Semi-supervised Learning"@en ;
+    rdfs:comment "Maschinelles Lernen, das während des Trainings sowohl gekennzeichnete als auch nicht gekennzeichnete Daten nutzt."@de,
+        "Machine learning using both labelled and unlabelled data during training."@en ;
+    rdfs:subClassOf iso22989:LearningType ;
+    skos:note "ISO/IEC 22989, definition 3.3.11."@en .
+
+iso22989:SupervisedLearning a owl:Class ;
+    rdfs:label "Überwachtes Lernen"@de,
+        "Supervised Learning"@en ;
+    rdfs:comment "Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet."@de,
+        "Machine learning using labelled data only during training."@en ;
+    rdfs:subClassOf iso22989:LearningType ;
+    skos:note "ISO/IEC 22989, definition 3.3.12."@en .
+
+iso22989:SymbolicAI a owl:Class ;
+    rdfs:label "Symbolische KI"@de,
+        "Symbolic AI"@en ;
+    rdfs:comment "Techniken, die mit expliziten Symbolen und Regeln arbeiten, um Schlussfolgerungen zu ziehen."@de,
+        "Techniques working with explicit symbols and rules in order to draw inferences."@en ;
+    rdfs:subClassOf iso22989:AIType ;
+    skos:note "ISO/IEC 22989, definition 3.1.33."@en .
+
+iso22989:TestData a owl:Class ;
+    rdfs:label "Testdaten"@de,
+        "Test Data"@en ;
+    rdfs:comment "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden."@de,
+        "Data used to assess the performance of a final model."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice."@en .
+
+iso22989:TrainingData a owl:Class ;
+    rdfs:label "Trainingsdaten"@de,
+        "Training Data"@en ;
+    rdfs:comment "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden."@de,
+        "Data used to determine the parameters of a model during training."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "ISO/IEC 22989, definition 3.3.16."@en .
+
+iso22989:UnsupervisedLearning a owl:Class ;
+    rdfs:label "Unüberwachtes Lernen"@de,
+        "Unsupervised Learning"@en ;
+    rdfs:comment "Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet."@de,
+        "Machine learning using unlabelled data only during training."@en ;
+    rdfs:subClassOf iso22989:LearningType ;
+    skos:note "ISO/IEC 22989, definition 3.3.17."@en .
+
+iso22989:ValidationData a owl:Class ;
+    rdfs:label "Validierungsdaten"@de,
+        "Validation Data"@en ;
+    rdfs:comment "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen."@de,
+        "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "ISO/IEC 22989, definition 3.2.15."@en .
+
+iso22989:DataSink a owl:Class ;
+    rdfs:label "Datensenke"@de,
+        "Data Sink"@en ;
+    rdfs:comment "Ort, an dem Daten abgelegt werden."@de,
+        "Where data is persisted to."@en ;
+    skos:note "Not a term of ISO/IEC 22989. A construct of this model, needed by the storing."@en .
+
+iso22989:DataSource a owl:Class ;
+    rdfs:label "Datenquelle"@de,
+        "Data Source"@en ;
+    rdfs:comment "Ort, aus dem Daten gewonnen werden."@de,
+        "Where data is obtained from."@en ;
+    skos:note "Not a term of ISO/IEC 22989. A construct of this model, needed by the acquisition."@en .
+
+iso22989:EvaluationAlgorithm a owl:Class ;
+    rdfs:label "Evaluationsalgorithmus"@de,
+        "Evaluation Algorithm"@en ;
+    rdfs:comment "Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik."@de,
+        "A procedure assessing a model against an evaluation metric."@en ;
+    rdfs:subClassOf iso22989:Algorithm ;
+    skos:note "Not a term of ISO/IEC 22989. A construct of this model."@en .
+
+iso22989:Hyperparameter a owl:Class ;
+    rdfs:label "Hyperparameter"@de,
+        "Hyperparameter"@en ;
+    rdfs:comment "Eigenschaft eines Algorithmus, die dessen Verhalten steuert."@de,
+        "A property of an algorithm governing its behaviour."@en ;
+    skos:note "ISO/IEC 22989, definition 3.3.4. Placed on the algorithm superclass, so that a training algorithm, a model algorithm and an evaluation algorithm may each carry one: a learning rate, the number of layers of a network, the threshold of a metric."@en .
+
+iso22989:MachineLearning a owl:Class ;
+    rdfs:label "Maschinelles Lernen"@de,
+        "Machine Learning"@en ;
+    rdfs:comment "Prozess zur Optimierung von Modellparametern durch rechnergestützte Verfahren, sodass das Verhalten des Modells die zugrunde liegenden Daten oder Erfahrungen widerspiegelt."@de,
+        "A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience."@en ;
+    skos:note "ISO/IEC 22989, definition 3.3.5."@en .
+
+iso22989:TrainingAlgorithm a owl:Class ;
+    rdfs:label "Trainingsalgorithmus"@de,
+        "Training Algorithm"@en ;
+    rdfs:comment "Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien."@de,
+        "A procedure determining the parameters of a model from data according to given criteria."@en ;
+    rdfs:subClassOf iso22989:Algorithm ;
+    skos:note "Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own."@en .
+
+iso22989:Validation a owl:Class ;
+    rdfs:label "Validierung"@de,
+        "Validation"@en ;
+    rdfs:comment "Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind."@de,
+        "Confirmation that the requirements for an intended use are met."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, definition 3.5.18."@en .
+
+iso22989:AIComponent a owl:Class ;
+    rdfs:label "KI-Komponente"@de,
+        "AI Component"@en ;
+    rdfs:comment "Ein funktionales Element, das zusammen mit weiteren Komponenten ein KI-System bildet."@de,
+        "A functional element that together with further components constitutes an AI system."@en ;
+    skos:note "ISO/IEC 22989, definition 3.1.2."@en .
+
+iso22989:Acquisition a owl:Class ;
+    rdfs:label "Datenerfassung"@de,
+        "Acquisition"@en ;
+    rdfs:comment "Gewinnung von Daten aus Datenquellen."@de,
+        "Obtaining data from data sources."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:ModelParameter a owl:Class ;
+    rdfs:label "Modellparameter"@de,
+        "Model Parameter"@en ;
+    rdfs:comment "Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden."@de,
+        "An internal variable of a model affecting how its outputs are computed."@en ;
+    skos:note "ISO/IEC 22989, definition 3.3.8."@en .
+
+iso22989:Prediction a owl:Class ;
+    rdfs:label "Vorhersage"@de,
+        "Prediction"@en ;
+    rdfs:comment "Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden."@de,
+        "The primary output of an AI system when input data is processed."@en ;
+    skos:note "ISO/IEC 22989, definition 3.1.27."@en .
+
+iso22989:Storing a owl:Class ;
+    rdfs:label "Speicherung"@de,
+        "Storing"@en ;
+    rdfs:comment "Ablage von Daten in einer Datensenke."@de,
+        "Persisting data to a data sink."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:AIType a owl:Class ;
+    rdfs:label "KI-Art"@de,
+        "AI Type"@en ;
+    rdfs:comment "Charakterisiert die Art der eingesetzten KI."@de,
+        "Characterises the kind of AI employed."@en ;
+    skos:note "Not a term of ISO/IEC 22989. A collecting class of this model for the two kinds the standard defines separately."@en .
+
+iso22989:Evaluation a owl:Class ;
+    rdfs:label "Evaluation"@de,
+        "Evaluation"@en ;
+    rdfs:comment "Bewertung der Leistung des KI-Systems vor dem Einsatz."@de,
+        "Assessment of the performance of an AI system before it is deployed."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, clause 5.10."@en .
+
+iso22989:Inference a owl:Class ;
+    rdfs:label "Inferenz"@de,
+        "Inference"@en ;
+    rdfs:comment "Schlussfolgern, bei dem aus gegebenen Prämissen beziehungsweise Daten Ergebnisse abgeleitet werden."@de,
+        "Reasoning by which results are derived from given premises or data."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, definition 3.1.17."@en .
+
+iso22989:AISystem a owl:Class ;
+    rdfs:label "KI-System"@de,
+        "AI System"@en ;
+    rdfs:comment "Ein konstruiertes System, das auf Basis von Daten Ausgaben wie Vorhersagen, Empfehlungen oder Entscheidungen erzeugt, um menschlich definierte Ziele zu unterstützen."@de,
+        "An engineered system that generates outputs such as predictions, recommendations or decisions from data in order to support human-defined objectives."@en ;
+    skos:note "ISO/IEC 22989, definition 3.1.4."@en .
+
+iso22989:SystemDesign a owl:Class ;
+    rdfs:label "Systemauslegung"@de,
+        "System Design"@en ;
+    rdfs:comment "Wo ein KI-System ausgeführt wird, also auf Cloud-Infrastruktur, prozessnah am Edge oder auf beide verteilt."@de,
+        "Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two."@en ;
+    skos:note "Not a term of ISO/IEC 22989. Clause 8.6.2 discusses cloud and edge computing without defining the choice between them."@en .
+
+iso22989:Training a owl:Class ;
+    rdfs:label "Training"@de,
+        "Training"@en ;
+    rdfs:comment "Bestimmung oder Verbesserung der Parameter eines Modells anhand von Trainingsdaten."@de,
+        "Determining or improving the parameters of a model from training data."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "ISO/IEC 22989, definition 3.3.15."@en .
+
+iso22989:Algorithm a owl:Class ;
+    rdfs:label "Algorithmus"@de,
+        "Algorithm"@en ;
+    rdfs:comment "Oberklasse für parametrisierbare mathematische Verfahren."@de,
+        "Superclass of parameterisable mathematical procedures."@en ;
+    skos:note "Not a term of ISO/IEC 22989, which defines the machine learning algorithm alone, 3.3.6. The superclass and two of the three specialisations are constructs of this model."@en .
+
+iso22989:EvaluationMetric a owl:Class ;
+    rdfs:label "Evaluationsmetrik"@de,
+        "Evaluation Metric"@en ;
+    rdfs:comment "Maß, anhand dessen die Leistung eines Modells bewertet wird."@de,
+        "A measure against which the performance of a model is assessed."@en ;
+    skos:note "Not a term of ISO/IEC 22989. A construct of this model."@en .
+
+iso22989:LearningType a owl:Class ;
+    rdfs:label "Lernart"@de,
+        "Learning Type"@en ;
+    rdfs:comment "Art des maschinellen Lernens."@de,
+        "The kind of machine learning employed."@en ;
+    skos:note "Not a term of ISO/IEC 22989. A collecting class of this model for the four kinds the standard defines separately."@en .
+
+iso22989:AITask a owl:Class ;
+    rdfs:label "KI-Aufgabe"@de,
+        "AI Task"@en ;
+    rdfs:comment "Eine durch die KI auszuführende Aufgabe zur Erreichung eines bestimmten Ziels."@de,
+        "A task to be carried out by the AI in order to reach a given objective."@en ;
+    skos:note "ISO/IEC 22989, definition 3.1.35."@en .
+
+iso22989:DataSet a owl:Class ;
+    rdfs:label "Datensatz"@de,
+        "Data Set"@en ;
+    rdfs:comment "Sammlung von Daten mit gemeinsamem Format."@de,
+        "A collection of data with a shared format."@en ;
+    skos:note "ISO/IEC 22989, definition 3.2.5."@en .
+
+iso22989:Model a owl:Class ;
+    rdfs:label "Modell"@de,
+        "Model"@en ;
+    rdfs:comment "Mathematische Konstruktion, die auf Basis von Eingangsdaten Inferenz oder Vorhersagen erzeugt."@de,
+        "A mathematical construction generating inference or predictions from input data."@en ;
+    skos:note "ISO/IEC 22989, definition 3.3.7. A model is a parameterised instance of an algorithm: the model algorithm describes the procedure without learned parameters, the model carries them."@en .
+
+iso22989:Sample a owl:Class ;
+    rdfs:label "Datenelement"@de,
+        "Sample"@en ;
+    rdfs:comment "Atomares Datenelement, das von einem ML-Algorithmus oder KI-System in großer Zahl verarbeitet wird."@de,
+        "An atomic data element processed in large numbers by an ML algorithm or an AI system."@en ;
+    skos:note "ISO/IEC 22989, definition 3.2.13."@en .
+
+iso22989:DataProcess a owl:Class ;
+    rdfs:label "Datenprozess"@de,
+        "Data Process"@en ;
+    rdfs:comment "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt."@de,
+        "A step transforming input data into output data."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:note "Not a term of ISO/IEC 22989. A collecting class of this model for the steps of clause 5.10."@en .
+
+iso22989:AIFunction a owl:Class ;
+    rdfs:label "KI-Funktion"@de,
+        "AI Function"@en ;
+    rdfs:comment "Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet."@de,
+        "A function transforming inputs into outputs and thereby representing one step of the AI life cycle."@en ;
+    skos:note "Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below."@en .
+
+iso22989:Data a owl:Class ;
+    rdfs:label "Daten"@de,
+        "Data"@en ;
+    rdfs:comment "Reinterpretierbare Darstellung von Information in formalisierter Weise, geeignet zur Kommunikation, Interpretation oder Verarbeitung."@de,
+        "A reinterpretable representation of information in a formalised manner suitable for communication, interpretation or processing."@en ;
+    skos:note "ISO/IEC 22989, definition 3.2.3."@en .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:ReinforcementLearning iso22989:SemiSupervisedLearning iso22989:SupervisedLearning iso22989:UnsupervisedLearning ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:AIComponent iso22989:AIFunction iso22989:AISystem iso22989:AITask iso22989:AIType iso22989:Algorithm iso22989:Data iso22989:DataSet iso22989:DataSink iso22989:DataSource iso22989:EvaluationMetric iso22989:Hyperparameter iso22989:LearningType iso22989:MachineLearning iso22989:Model iso22989:ModelParameter iso22989:Prediction iso22989:Sample iso22989:SystemDesign ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:Accuracy iso22989:F1Score iso22989:Precision iso22989:Recall ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:Acquisition iso22989:Automate iso22989:DataProcess iso22989:Evaluation iso22989:Inference iso22989:Storing iso22989:Training iso22989:Validation ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:Annotation iso22989:Augmentation iso22989:Filtering iso22989:Imputation iso22989:Labeling iso22989:Merging iso22989:Normalization iso22989:Sampling ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:Classification iso22989:Clustering iso22989:Generation iso22989:Regression ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:Cloud iso22989:Edge iso22989:Hybrid ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:EvaluationAlgorithm iso22989:ModelAlgorithm iso22989:TrainingAlgorithm ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:ProductionData iso22989:TrainingData iso22989:ValidationData ) .
 
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/abstract
-<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/bibliographicCitation
-<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/hasVersion
-<http://purl.org/dc/terms/hasVersion> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/modified
-<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/publisher
-<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/rights
-<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/source
-<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/subject
-<http://purl.org/dc/terms/subject> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/ontology/bibo/doi
-<http://purl.org/ontology/bibo/doi> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/ontology/bibo/status
-<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#altLabel
-<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#note
-<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
-
-
-###  http://xmlns.com/foaf/0.1/fundedBy
-<http://xmlns.com/foaf/0.1/fundedBy> rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/codeRepository
-<https://schema.org/codeRepository> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://w3id.org/aias/odp/iso22989#basedOnAlgorithm
-:basedOnAlgorithm rdf:type owl:ObjectProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( :Evaluation
-                                              :Inference
-                                              :Model
-                                              :Training
-                                            )
-                              ] ;
-                  rdfs:range :Algorithm ;
-                  rdfs:comment "Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs."@en ,
-                               "Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt."@de ;
-                  rdfs:label "based on algorithm"@en ,
-                             "basiert auf Algorithmus"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#basedOnLearning
-:basedOnLearning rdf:type owl:ObjectProperty ;
-                 rdfs:domain :MLAlgorithm ;
-                 rdfs:range :LearningType ;
-                 rdfs:comment "Relates a machine learning algorithm to the kind of learning it performs."@en ,
-                              "Verbindet einen ML-Algorithmus mit der Lernart, die er ausführt."@de ;
-                 rdfs:label "based on learning"@en ,
-                            "basiert auf Lernart"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#consistsOf
-:consistsOf rdf:type owl:ObjectProperty ;
-            rdfs:domain :AISystem ;
-            rdfs:range :AIComponent ;
-            rdfs:comment "Relates an AI system to a component it is built from."@en ,
-                         "Verbindet ein KI-System mit einer Komponente, aus der es aufgebaut ist."@de ;
-            rdfs:label "besteht aus"@de ,
-                       "consists of"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#creates
-:creates rdf:type owl:ObjectProperty ;
-         rdfs:domain :Inference ;
-         rdfs:range :Prediction ;
-         rdfs:comment "Relates an inference to the prediction it produces."@en ,
-                      "Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt."@de ;
-         rdfs:label "creates"@en ,
-                    "erzeugt"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#createsProcessedData
-:createsProcessedData rdf:type owl:ObjectProperty ;
-                      rdfs:domain :DataProcess ;
-                      rdfs:range [ rdf:type owl:Class ;
-                                   owl:unionOf ( :Data
-                                                 :DataSet
-                                                 :Sample
-                                               )
-                                 ] ;
-                      rdfs:comment "Relates a data process to the data it produces."@en ,
-                                   "Verbindet einen Datenprozess mit den Daten, die er erzeugt."@de ;
-                      rdfs:label "creates processed data"@en ,
-                                 "erzeugt verarbeitete Daten"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#determines
-:determines rdf:type owl:ObjectProperty ;
-            rdfs:domain :Training ;
-            rdfs:range :ModelParameter ;
-            rdfs:comment "Relates a training to the model parameters it determines."@en ,
-                         "Verbindet ein Training mit den Modellparametern, die es bestimmt."@de ;
-            rdfs:label "bestimmt"@de ,
-                       "determines"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#executes
-:executes rdf:type owl:ObjectProperty ;
-          rdfs:domain :Model ;
-          rdfs:range :Inference ;
-          rdfs:comment "Relates a model to the inference it carries out."@en ,
-                       "Verbindet ein Modell mit der Inferenz, die es ausführt."@de ;
-          rdfs:label "executes"@en ,
-                     "führt aus"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#fulfillsTask
-:fulfillsTask rdf:type owl:ObjectProperty ;
-              rdfs:domain :Prediction ;
-              rdfs:range :AITask ;
-              rdfs:comment "Relates a prediction to the task it addresses."@en ,
-                           "Verbindet eine Vorhersage mit der Aufgabe, die sie adressiert."@de ;
-              rdfs:label "erfüllt Aufgabe"@de ,
-                         "fulfills task"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasDataSink
-:hasDataSink rdf:type owl:ObjectProperty ;
-             rdfs:domain :Storing ;
-             rdfs:range :DataSink ;
-             rdfs:comment "Relates a storing to the sink it persists data to."@en ,
-                          "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt."@de ;
-             rdfs:label "has data sink"@en ,
-                        "hat Datensenke"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasDataSource
-:hasDataSource rdf:type owl:ObjectProperty ;
-               rdfs:domain :Acquisition ;
-               rdfs:range :DataSource ;
-               rdfs:comment "Relates an acquisition to the source it obtains data from."@en ,
-                            "Verbindet eine Erfassung mit der Quelle, aus der sie Daten gewinnt."@de ;
-               rdfs:label "has data source"@en ,
-                          "hat Datenquelle"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasDesign
-:hasDesign rdf:type owl:ObjectProperty ;
-           rdfs:domain :AISystem ;
-           rdfs:range :SystemDesign ;
-           rdfs:comment "Relates an AI system to where it runs."@en ,
-                        "Verbindet ein KI-System mit dem Ort seiner Ausführung."@de ;
-           rdfs:label "has design"@en ,
-                      "hat Auslegung"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasFunction
-:hasFunction rdf:type owl:ObjectProperty ;
-             rdfs:domain :AIComponent ;
-             rdfs:range :AIFunction ;
-             rdfs:comment "Relates an AI component to a function it performs."@en ,
-                          "Verbindet eine KI-Komponente mit einer Funktion, die sie ausführt."@de ;
-             rdfs:label "has function"@en ,
-                        "hat Funktion"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasParameter
-:hasParameter rdf:type owl:ObjectProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Algorithm
-                                          :Model
-                                        )
-                          ] ;
-              rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( :Hyperparameter
-                                         :ModelParameter
-                                       )
-                         ] ;
-              rdfs:comment "Relates an algorithm to a hyperparameter governing it, and a model to a parameter determined for it."@en ,
-                           "Verbindet einen Algorithmus mit einem ihn steuernden Hyperparameter sowie ein Modell mit einem für es bestimmten Parameter."@de ;
-              rdfs:label "has parameter"@en ,
-                         "hat Parameter"@de ;
-              <http://www.w3.org/2004/02/skos/core#note> "One relation with two domains. The hyperparameter is defined on the algorithm superclass, so a training algorithm, a model algorithm and an evaluation algorithm may each carry one."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasTask
-:hasTask rdf:type owl:ObjectProperty ;
-         rdfs:domain :AISystem ;
-         rdfs:range :AITask ;
-         rdfs:comment "Relates an AI system to a task it fulfils."@en ,
-                      "Verbindet ein KI-System mit einer Aufgabe, die es erfüllt."@de ;
-         rdfs:label "has task"@en ,
-                    "hat Aufgabe"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#hasType
-:hasType rdf:type owl:ObjectProperty ;
-         rdfs:domain :AISystem ;
-         rdfs:range :AIType ;
-         rdfs:comment "Relates an AI system to the kind of AI it employs, that is symbolic, subsymbolic or a combination of the two."@en ,
-                      "Verbindet ein KI-System mit der Art der eingesetzten KI, also symbolisch, subsymbolisch oder kombiniert."@de ;
-         rdfs:label "has type"@en ,
-                    "hat Art"@de ;
-         <http://www.w3.org/2004/02/skos/core#note> "Relates a system to the kind of AI it is built on, symbolic or subsymbolic."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#isAcquiredBy
-:isAcquiredBy rdf:type owl:ObjectProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Data
-                                          :DataSet
-                                          :Sample
-                                        )
-                          ] ;
-              rdfs:range :Acquisition ;
-              rdfs:comment "Relates data to the acquisition that obtained it."@en ,
-                           "Verbindet Daten mit der Erfassung, die sie gewonnen hat."@de ;
-              rdfs:label "is acquired by"@en ,
-                         "wird erfasst durch"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#isComposedOf
-:isComposedOf rdf:type owl:ObjectProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Data
-                                          :DataSet
-                                        )
-                          ] ;
-              rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( :Data
-                                         :Sample
-                                       )
-                         ] ;
-              rdfs:comment "Relates a dataset to the data it collects, and data to the samples it consists of."@en ,
-                           "Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen."@de ;
-              rdfs:label "besteht aus"@de ,
-                         "is composed of"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "One relation used at two levels: a dataset is composed of data, and data of samples. Its domain and range are therefore unions, since each covers both levels."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#isCreatedBy
-:isCreatedBy rdf:type owl:ObjectProperty ;
-             rdfs:domain :Model ;
-             rdfs:range :Training ;
-             rdfs:comment "Relates a model to the training that produced it."@en ,
-                          "Verbindet ein Modell mit dem Training, das es erzeugt hat."@de ;
-             rdfs:label "is created by"@en ,
-                        "wird erzeugt durch"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#isEvaluatedBy
-:isEvaluatedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain :Model ;
-               rdfs:range :Evaluation ;
-               rdfs:comment "Relates a model to the evaluation assessing it."@en ,
-                            "Verbindet ein Modell mit der Evaluation, die es bewertet."@de ;
-               rdfs:label "is evaluated by"@en ,
-                          "wird evaluiert durch"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#isPerformedBy
-:isPerformedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain :Training ;
-               rdfs:range :MachineLearning ;
-               rdfs:comment "Relates a training to the machine learning carrying it out."@en ,
-                            "Verbindet ein Training mit dem maschinellen Lernen, das es durchführt."@de ;
-               rdfs:label "is performed by"@en ,
-                          "wird durchgeführt durch"@de ;
-               <http://www.w3.org/2004/02/skos/core#note> "A training is performed by a machine learning, not the other way round, so the relation is directed rather than symmetric."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#isProcessedBy
-:isProcessedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( :Data
-                                           :DataSet
-                                           :Sample
-                                         )
-                           ] ;
-               rdfs:range :DataProcess ;
-               rdfs:comment "Relates data to the data process acting on it."@en ,
-                            "Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet."@de ;
-               rdfs:label "is processed by"@en ,
-                          "wird verarbeitet durch"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#isStoredBy
-:isStoredBy rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Data
-                                        :DataSet
-                                        :Sample
-                                      )
-                        ] ;
-            rdfs:range :Storing ;
-            rdfs:comment "Relates data to the storing that persisted it."@en ,
-                         "Verbindet Daten mit der Speicherung, die sie abgelegt hat."@de ;
-            rdfs:label "is stored by"@en ,
-                       "wird gespeichert durch"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#isValidatedBy
-:isValidatedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain :Model ;
-               rdfs:range :Validation ;
-               rdfs:comment "Relates a model to the validation confirming it."@en ,
-                            "Verbindet ein Modell mit der Validierung, die es bestätigt."@de ;
-               rdfs:label "is validated by"@en ,
-                          "wird validiert durch"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#usesData
-:usesData rdf:type owl:ObjectProperty ;
-          rdfs:domain :AIFunction ;
-          rdfs:range [ rdf:type owl:Class ;
-                       owl:unionOf ( :Data
-                                     :DataSet
-                                     :Sample
-                                   )
-                     ] ;
-          rdfs:comment "Relates a function to the data it works on."@en ,
-                       "Verbindet eine Funktion mit den Daten, auf denen sie arbeitet."@de ;
-          rdfs:label "nutzt Daten"@de ,
-                     "uses data"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#usesMetric
-:usesMetric rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Evaluation
-                                        :EvaluationAlgorithm
-                                      )
-                        ] ;
-            rdfs:range :EvaluationMetric ;
-            rdfs:comment "Relates an evaluation, or the algorithm it runs, to the metric it measures against."@en ,
-                         "Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird."@de ;
-            rdfs:label "nutzt Metrik"@de ,
-                       "uses metric"@en .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://w3id.org/aias/odp/iso22989#AIComponent
-:AIComponent rdf:type owl:Class ;
-             rdfs:comment "A functional element that together with further components constitutes an AI system."@en ,
-                          "Ein funktionales Element, das zusammen mit weiteren Komponenten ein KI-System bildet."@de ;
-             rdfs:label "AI Component"@en ,
-                        "KI-Komponente"@de ;
-             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.2."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#AIFunction
-:AIFunction rdf:type owl:Class ;
-            rdfs:comment "A function transforming inputs into outputs and thereby representing one step of the AI life cycle."@en ,
-                         "Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet."@de ;
-            rdfs:label "AI Function"@en ,
-                       "KI-Funktion"@de ;
-            <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#AISystem
-:AISystem rdf:type owl:Class ;
-          rdfs:comment "An engineered system that generates outputs such as predictions, recommendations or decisions from data in order to support human-defined objectives."@en ,
-                       "Ein konstruiertes System, das auf Basis von Daten Ausgaben wie Vorhersagen, Empfehlungen oder Entscheidungen erzeugt, um menschlich definierte Ziele zu unterstützen."@de ;
-          rdfs:label "AI System"@en ,
-                     "KI-System"@de ;
-          <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.4."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#AITask
-:AITask rdf:type owl:Class ;
-        rdfs:comment "A task to be carried out by the AI in order to reach a given objective."@en ,
-                     "Eine durch die KI auszuführende Aufgabe zur Erreichung eines bestimmten Ziels."@de ;
-        rdfs:label "AI Task"@en ,
-                   "KI-Aufgabe"@de ;
-        <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.35."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#AIType
-:AIType rdf:type owl:Class ;
-        rdfs:comment "Characterises the kind of AI employed."@en ,
-                     "Charakterisiert die Art der eingesetzten KI."@de ;
-        rdfs:label "AI Type"@en ,
-                   "KI-Art"@de ;
-        <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A collecting class of this model for the two kinds the standard defines separately."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Accuracy
-:Accuracy rdf:type owl:Class ;
-          rdfs:subClassOf :EvaluationMetric ;
-          rdfs:comment "Anteil der korrekten Ergebnisse an allen Ergebnissen."@de ,
-                       "The proportion of correct results among all results."@en ;
-          rdfs:label "Accuracy"@en ,
-                     "Genauigkeit"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#Acquisition
-:Acquisition rdf:type owl:Class ;
-             rdfs:subClassOf :AIFunction ;
-             rdfs:comment "Gewinnung von Daten aus Datenquellen."@de ,
-                          "Obtaining data from data sources."@en ;
-             rdfs:label "Acquisition"@en ,
-                        "Datenerfassung"@de ;
-             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Algorithm
-:Algorithm rdf:type owl:Class ;
-           rdfs:comment "Oberklasse für parametrisierbare mathematische Verfahren."@de ,
-                        "Superclass of parameterisable mathematical procedures."@en ;
-           rdfs:label "Algorithm"@en ,
-                      "Algorithmus"@de ;
-           <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989, which defines the machine learning algorithm alone, 3.3.6. The superclass and two of the three specialisations are constructs of this model."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Annotation
-:Annotation rdf:type owl:Class ;
-            rdfs:subClassOf :DataProcess ;
-            rdfs:comment "Addition of significant information as metadata, for example labels or provenance."@en ,
-                         "Ergänzung signifikanter Informationen als Metadaten, etwa Labels oder Herkunftsinformationen."@de ;
-            rdfs:label "Annotation"@de ,
-                       "Annotation"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Augmentation
-:Augmentation rdf:type owl:Class ;
-              rdfs:subClassOf :DataProcess ;
-              rdfs:comment "Creation of additional data by transforming existing data in order to enlarge a dataset."@en ,
-                           "Erzeugung zusätzlicher Daten durch Transformation vorhandener Daten, um einen Datensatz zu erweitern."@de ;
-              rdfs:label "Augmentation"@en ,
-                         "Augmentierung"@de ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Automate
-:Automate rdf:type owl:Class ;
-          rdfs:subClassOf :AIFunction ;
-          rdfs:comment "Ausführung eines Vorgangs ohne menschliches Eingreifen."@de ,
-                       "Carrying out a procedure without human intervention."@en ;
-          rdfs:label "Automate"@en ,
-                     "Automatisieren"@de ;
-          <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. Definition 3.1.7 defines automatic as an adjective, not as a thing a model instantiates. The class is kept for the function it names in a plant."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Classification
-:Classification rdf:type owl:Class ;
-                rdfs:subClassOf :AITask ;
-                rdfs:comment "Assignment of inputs to discrete classes."@en ,
-                             "Zuordnung von Eingaben zu diskreten Klassen."@de ;
-                rdfs:label "Classification"@en ,
-                           "Klassifikation"@de ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 9."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Cloud
-:Cloud rdf:type owl:Class ;
-       rdfs:subClassOf :SystemDesign ;
-       rdfs:comment "An AI system running on cloud infrastructure."@en ,
-                    "Ein KI-System, das auf Cloud-Infrastruktur ausgeführt wird."@de ;
-       rdfs:label "Cloud"@de ,
-                  "Cloud"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Clustering
-:Clustering rdf:type owl:Class ;
-            rdfs:subClassOf :AITask ;
-            rdfs:comment "Identification of groups of similar examples."@en ,
-                         "Identifikation von Gruppen ähnlicher Beispiele."@de ;
-            rdfs:label "Clustering"@de ,
-                       "Clustering"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.11.2."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Data
-:Data rdf:type owl:Class ;
-      rdfs:comment "A reinterpretable representation of information in a formalised manner suitable for communication, interpretation or processing."@en ,
-                   "Reinterpretierbare Darstellung von Information in formalisierter Weise, geeignet zur Kommunikation, Interpretation oder Verarbeitung."@de ;
-      rdfs:label "Data"@en ,
-                 "Daten"@de ;
-      <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.3."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#DataProcess
-:DataProcess rdf:type owl:Class ;
-             rdfs:subClassOf :AIFunction ;
-             rdfs:comment "A step transforming input data into output data."@en ,
-                          "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt."@de ;
-             rdfs:label "Data Process"@en ,
-                        "Datenprozess"@de ;
-             <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A collecting class of this model for the steps of clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#DataProcessing
-:DataProcessing rdf:type owl:Class ;
-                rdfs:subClassOf :AIFunction ;
-                rdfs:comment "Transformation of input data into output data."@en ,
-                             "Umwandlung von Eingangsdaten in Ausgangsdaten."@de ;
-                rdfs:label "Data Processing"@en ,
-                           "Datenverarbeitung"@de ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#DataSet
-:DataSet rdf:type owl:Class ;
-         rdfs:comment "A collection of data with a shared format."@en ,
-                      "Sammlung von Daten mit gemeinsamem Format."@de ;
-         rdfs:label "Data Set"@en ,
-                    "Datensatz"@de ;
-         <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.5."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#DataSink
-:DataSink rdf:type owl:Class ;
-          rdfs:comment "Ort, an dem Daten abgelegt werden."@de ,
-                       "Where data is persisted to."@en ;
-          rdfs:label "Data Sink"@en ,
-                     "Datensenke"@de ;
-          <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A construct of this model, needed by the storing."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#DataSource
-:DataSource rdf:type owl:Class ;
-            rdfs:comment "Ort, aus dem Daten gewonnen werden."@de ,
-                         "Where data is obtained from."@en ;
-            rdfs:label "Data Source"@en ,
-                       "Datenquelle"@de ;
-            <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A construct of this model, needed by the acquisition."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Edge
-:Edge rdf:type owl:Class ;
-      rdfs:subClassOf :SystemDesign ;
-      rdfs:comment "An AI system running close to the process it serves."@en ,
-                   "Ein KI-System, das prozessnah ausgeführt wird."@de ;
-      rdfs:label "Edge"@de ,
-                 "Edge"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Evaluation
-:Evaluation rdf:type owl:Class ;
-            rdfs:subClassOf :AIFunction ;
-            rdfs:comment "Assessment of the performance of an AI system before it is deployed."@en ,
-                         "Bewertung der Leistung des KI-Systems vor dem Einsatz."@de ;
-            rdfs:label "Evaluation"@de ,
-                       "Evaluation"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm
-:EvaluationAlgorithm rdf:type owl:Class ;
-                     rdfs:subClassOf :Algorithm ;
-                     rdfs:comment "A procedure assessing a model against an evaluation metric."@en ,
-                                  "Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik."@de ;
-                     rdfs:label "Evaluation Algorithm"@en ,
-                                "Evaluationsalgorithmus"@de ;
-                     <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A construct of this model."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#EvaluationData
-:EvaluationData rdf:type owl:Class ;
-                owl:equivalentClass :TestData ;
-                rdfs:subClassOf :Data ;
-                rdfs:comment "Data used to assess the performance of a final model, disjoint from training and validation data."@en ,
-                             "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind."@de ;
-                rdfs:label "Evaluation Data"@en ,
-                           "Evaluationsdaten"@de ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.14."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#EvaluationMetric
-:EvaluationMetric rdf:type owl:Class ;
-                  rdfs:comment "A measure against which the performance of a model is assessed."@en ,
-                               "Maß, anhand dessen die Leistung eines Modells bewertet wird."@de ;
-                  rdfs:label "Evaluation Metric"@en ,
-                             "Evaluationsmetrik"@de ;
-                  <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A construct of this model."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#F1Score
-:F1Score rdf:type owl:Class ;
-         rdfs:subClassOf :EvaluationMetric ;
-         rdfs:comment "Harmonisches Mittel aus Präzision und Trefferquote."@de ,
-                      "The harmonic mean of precision and recall."@en ;
-         rdfs:label "F1 Score"@en ,
-                    "F1-Maß"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#Filtering
-:Filtering rdf:type owl:Class ;
-           rdfs:subClassOf :DataProcess ;
-           rdfs:comment "Entfernung unerwünschter Daten."@de ,
-                        "Removal of unwanted data."@en ;
-           rdfs:label "Filtering"@en ,
-                      "Filterung"@de ;
-           <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Generation
-:Generation rdf:type owl:Class ;
-            rdfs:subClassOf :AITask ;
-            rdfs:comment "Creation of new outputs such as text, images or audio from learned representations."@en ,
-                         "Erzeugung neuer Ausgaben, etwa Texte, Bilder oder Audio, auf Basis gelernter Repräsentationen."@de ;
-            rdfs:label "Generation"@en ,
-                       "Generierung"@de ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 9.2."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Hybrid
-:Hybrid rdf:type owl:Class ;
-        rdfs:subClassOf :SystemDesign ;
-        rdfs:comment "An AI system split between cloud infrastructure and the edge."@en ,
-                     "Ein KI-System, das auf Cloud und Edge verteilt ausgeführt wird."@de ;
-        rdfs:label "Hybrid"@de ,
-                   "Hybrid"@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Hyperparameter
-:Hyperparameter rdf:type owl:Class ;
-                rdfs:comment "A property of an algorithm governing its behaviour."@en ,
-                             "Eigenschaft eines Algorithmus, die dessen Verhalten steuert."@de ;
-                rdfs:label "Hyperparameter"@de ,
-                           "Hyperparameter"@en ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.4. Placed on the algorithm superclass, so that a training algorithm, a model algorithm and an evaluation algorithm may each carry one: a learning rate, the number of layers of a network, the threshold of a metric."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Imputation
-:Imputation rdf:type owl:Class ;
-            rdfs:subClassOf :DataProcess ;
-            rdfs:comment "Ersetzung fehlender Daten durch geschätzte oder modellierte Werte."@de ,
-                         "Replacement of missing data by estimated or modelled values."@en ;
-            rdfs:label "Imputation"@de ,
-                       "Imputation"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.8."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Inference
-:Inference rdf:type owl:Class ;
-           rdfs:subClassOf :AIFunction ;
-           rdfs:comment "Reasoning by which results are derived from given premises or data."@en ,
-                        "Schlussfolgern, bei dem aus gegebenen Prämissen beziehungsweise Daten Ergebnisse abgeleitet werden."@de ;
-           rdfs:label "Inference"@en ,
-                      "Inferenz"@de ;
-           <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.17."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Labeling
-:Labeling rdf:type owl:Class ;
-          rdfs:subClassOf :DataProcess ;
-          rdfs:comment "Assignment of a label to a data element."@en ,
-                       "Zuordnung eines Labels zu einem Datenelement."@de ;
-          rdfs:label "Kennzeichnung"@de ,
-                     "Labeling"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10, where labelling is discussed as part of the annotation rather than defined as a process of its own."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#LearningType
-:LearningType rdf:type owl:Class ;
-              rdfs:comment "Art des maschinellen Lernens."@de ,
-                           "The kind of machine learning employed."@en ;
-              rdfs:label "Learning Type"@en ,
-                         "Lernart"@de ;
-              <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A collecting class of this model for the four kinds the standard defines separately."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#MLAlgorithm
-:MLAlgorithm rdf:type owl:Class ;
-             rdfs:subClassOf :TrainingAlgorithm ;
-             rdfs:comment "A specialisation of the training algorithm for machine learning, to which a kind of learning is assigned."@en ,
-                          "Spezialisierung des Trainingsalgorithmus für das maschinelle Lernen, dem eine Lernart zugeordnet ist."@de ;
-             rdfs:label "ML-Algorithmus"@de ,
-                        "Machine Learning Algorithm"@en ;
-             <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.6."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#MachineLearning
-:MachineLearning rdf:type owl:Class ;
-                 rdfs:comment "A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience."@en ,
-                              "Prozess zur Optimierung von Modellparametern durch rechnergestützte Verfahren, sodass das Verhalten des Modells die zugrunde liegenden Daten oder Erfahrungen widerspiegelt."@de ;
-                 rdfs:label "Machine Learning"@en ,
-                            "Maschinelles Lernen"@de ;
-                 <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.5."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Merging
-:Merging rdf:type owl:Class ;
-         rdfs:subClassOf :DataProcess ;
-         rdfs:comment "Combination of several data sources into one."@en ,
-                      "Zusammenführung mehrerer Datenquellen zu einer."@de ;
-         rdfs:label "Merging"@en ,
-                    "Zusammenführung"@de ;
-         <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Model
-:Model rdf:type owl:Class ;
-       rdfs:comment "A mathematical construction generating inference or predictions from input data."@en ,
-                    "Mathematische Konstruktion, die auf Basis von Eingangsdaten Inferenz oder Vorhersagen erzeugt."@de ;
-       rdfs:label "Model"@en ,
-                  "Modell"@de ;
-       <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.7. A model is a parameterised instance of an algorithm: the model algorithm describes the procedure without learned parameters, the model carries them."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#ModelAlgorithm
-:ModelAlgorithm rdf:type owl:Class ;
-                rdfs:subClassOf :Algorithm ;
-                rdfs:comment "A procedure describing the structure of a model, for example the architecture of a neural network."@en ,
-                             "Verfahren zur Beschreibung der Struktur eines Modells, etwa die Architektur eines neuronalen Netzes."@de ;
-                rdfs:label "Model Algorithm"@en ,
-                           "Modellalgorithmus"@de ;
-                <http://www.w3.org/2004/02/skos/core#note> "Derived from ISO/IEC 22989, definition 3.3.7."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#ModelParameter
-:ModelParameter rdf:type owl:Class ;
-                rdfs:comment "An internal variable of a model affecting how its outputs are computed."@en ,
-                             "Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden."@de ;
-                rdfs:label "Model Parameter"@en ,
-                           "Modellparameter"@de ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.8."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Normalization
-:Normalization rdf:type owl:Class ;
-               rdfs:subClassOf :DataProcess ;
-               rdfs:comment "Adjustment of data values to a common scale so that they become mathematically comparable."@en ,
-                            "Anpassung von Datenwerten auf eine gemeinsame Skala, um sie mathematisch vergleichbar zu machen."@de ;
-               rdfs:label "Normalisierung"@de ,
-                          "Normalization"@en ;
-               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Precision
-:Precision rdf:type owl:Class ;
-           rdfs:subClassOf :EvaluationMetric ;
-           rdfs:comment "Anteil der korrekten Ergebnisse an den als positiv gemeldeten."@de ,
-                        "The proportion of correct results among those reported positive."@en ;
-           rdfs:label "Precision"@en ,
-                      "Präzision"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#Prediction
-:Prediction rdf:type owl:Class ;
-            rdfs:comment "Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden."@de ,
-                         "The primary output of an AI system when input data is processed."@en ;
-            rdfs:label "Prediction"@en ,
-                       "Vorhersage"@de ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.27."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#ProductionData
-:ProductionData rdf:type owl:Class ;
-                rdfs:subClassOf :Data ;
-                rdfs:comment "Data arising during the operation of a deployed AI system, for which the system computes inferences."@en ,
-                             "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet."@de ;
-                rdfs:label "Betriebsdaten"@de ,
-                           "Production Data"@en ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.12."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Recall
-:Recall rdf:type owl:Class ;
-        rdfs:subClassOf :EvaluationMetric ;
-        rdfs:comment "Anteil der gefundenen an allen positiven Fällen."@de ,
-                     "The proportion of positive cases that were found."@en ;
-        rdfs:label "Recall"@en ,
-                   "Trefferquote"@de .
-
-
-###  https://w3id.org/aias/odp/iso22989#Regression
-:Regression rdf:type owl:Class ;
-            rdfs:subClassOf :AITask ;
-            rdfs:comment "Prediction of continuous quantities."@en ,
-                         "Vorhersage kontinuierlicher Größen."@de ;
-            rdfs:label "Regression"@de ,
-                       "Regression"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 9."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#ReinforcementLearning
-:ReinforcementLearning rdf:type owl:Class ;
-                       rdfs:subClassOf :LearningType ;
-                       rdfs:comment "Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward."@en ,
-                                    "Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen."@de ;
-                       rdfs:label "Bestärkendes Lernen"@de ,
-                                  "Reinforcement Learning"@en ;
-                       <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.9."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Sample
-:Sample rdf:type owl:Class ;
-        rdfs:comment "An atomic data element processed in large numbers by an ML algorithm or an AI system."@en ,
-                     "Atomares Datenelement, das von einem ML-Algorithmus oder KI-System in großer Zahl verarbeitet wird."@de ;
-        rdfs:label "Datenelement"@de ,
-                   "Sample"@en ;
-        <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.13."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Sampling
-:Sampling rdf:type owl:Class ;
-          rdfs:subClassOf :DataProcess ;
-          rdfs:comment "Auswahl einer repräsentativen Teilmenge der Daten."@de ,
-                       "Selection of a representative subset of the data."@en ;
-          rdfs:label "Sampling"@en ,
-                     "Stichprobenziehung"@de ;
-          <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.4."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning
-:SemiSupervisedLearning rdf:type owl:Class ;
-                        rdfs:subClassOf :LearningType ;
-                        rdfs:comment "Machine learning using both labelled and unlabelled data during training."@en ,
-                                     "Maschinelles Lernen, das während des Trainings sowohl gekennzeichnete als auch nicht gekennzeichnete Daten nutzt."@de ;
-                        rdfs:label "Semi-supervised Learning"@en ,
-                                   "Teilüberwachtes Lernen"@de ;
-                        <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.11."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Storing
-:Storing rdf:type owl:Class ;
-         rdfs:subClassOf :AIFunction ;
-         rdfs:comment "Ablage von Daten in einer Datensenke."@de ,
-                      "Persisting data to a data sink."@en ;
-         rdfs:label "Speicherung"@de ,
-                    "Storing"@en ;
-         <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, clause 5.10."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#SubSymbolicAI
-:SubSymbolicAI rdf:type owl:Class ;
-               rdfs:subClassOf :AIType ;
-               owl:disjointWith :SymbolicAI ;
-               rdfs:comment "Techniken, deren Repräsentationen implizit aus Daten oder Erfahrung abgeleitet werden."@de ,
-                            "Techniques whose representations are derived implicitly from data or experience."@en ;
-               rdfs:label "Subsymbolic AI"@en ,
-                          "Subsymbolische KI"@de ;
-               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.34."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#SupervisedLearning
-:SupervisedLearning rdf:type owl:Class ;
-                    rdfs:subClassOf :LearningType ;
-                    rdfs:comment "Machine learning using labelled data only during training."@en ,
-                                 "Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet."@de ;
-                    rdfs:label "Supervised Learning"@en ,
-                               "Überwachtes Lernen"@de ;
-                    <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.12."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#SymbolicAI
-:SymbolicAI rdf:type owl:Class ;
-            rdfs:subClassOf :AIType ;
-            rdfs:comment "Techniken, die mit expliziten Symbolen und Regeln arbeiten, um Schlussfolgerungen zu ziehen."@de ,
-                         "Techniques working with explicit symbols and rules in order to draw inferences."@en ;
-            rdfs:label "Symbolic AI"@en ,
-                       "Symbolische KI"@de ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.1.33."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#SystemDesign
-:SystemDesign rdf:type owl:Class ;
-              rdfs:comment "Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two."@en ,
-                           "Wo ein KI-System ausgeführt wird, also auf Cloud-Infrastruktur, prozessnah am Edge oder auf beide verteilt."@de ;
-              rdfs:label "System Design"@en ,
-                         "Systemauslegung"@de ;
-              <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 22989. Clause 8.6.2 discusses cloud and edge computing without defining the choice between them."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#TestData
-:TestData rdf:type owl:Class ;
-          rdfs:subClassOf :Data ;
-          rdfs:comment "Data used to assess the performance of a final model."@en ,
-                       "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden."@de ;
-          rdfs:label "Test Data"@en ,
-                     "Testdaten"@de ;
-          <http://www.w3.org/2004/02/skos/core#note> "Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Training
-:Training rdf:type owl:Class ;
-          rdfs:subClassOf :AIFunction ;
-          rdfs:comment "Bestimmung oder Verbesserung der Parameter eines Modells anhand von Trainingsdaten."@de ,
-                       "Determining or improving the parameters of a model from training data."@en ;
-          rdfs:label "Training"@de ,
-                     "Training"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.15."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#TrainingAlgorithm
-:TrainingAlgorithm rdf:type owl:Class ;
-                   rdfs:subClassOf :Algorithm ;
-                   rdfs:comment "A procedure determining the parameters of a model from data according to given criteria."@en ,
-                                "Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien."@de ;
-                   rdfs:label "Training Algorithm"@en ,
-                              "Trainingsalgorithmus"@de ;
-                   <http://www.w3.org/2004/02/skos/core#note> "Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#TrainingData
-:TrainingData rdf:type owl:Class ;
-              rdfs:subClassOf :Data ;
-              rdfs:comment "Data used to determine the parameters of a model during training."@en ,
-                           "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden."@de ;
-              rdfs:label "Training Data"@en ,
-                         "Trainingsdaten"@de ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.16."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#UnsupervisedLearning
-:UnsupervisedLearning rdf:type owl:Class ;
-                      rdfs:subClassOf :LearningType ;
-                      rdfs:comment "Machine learning using unlabelled data only during training."@en ,
-                                   "Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet."@de ;
-                      rdfs:label "Unsupervised Learning"@en ,
-                                 "Unüberwachtes Lernen"@de ;
-                      <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.3.17."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#Validation
-:Validation rdf:type owl:Class ;
-            rdfs:subClassOf :AIFunction ;
-            rdfs:comment "Confirmation that the requirements for an intended use are met."@en ,
-                         "Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind."@de ;
-            rdfs:label "Validation"@en ,
-                       "Validierung"@de ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.5.18."@en .
-
-
-###  https://w3id.org/aias/odp/iso22989#ValidationData
-:ValidationData rdf:type owl:Class ;
-                rdfs:subClassOf :Data ;
-                rdfs:comment "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."@en ,
-                             "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen."@de ;
-                rdfs:label "Validation Data"@en ,
-                           "Validierungsdaten"@de ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, definition 3.2.15."@en .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AIComponent
-                :AIFunction
-                :AISystem
-                :AITask
-                :AIType
-                :Algorithm
-                :Data
-                :DataSet
-                :DataSink
-                :DataSource
-                :EvaluationMetric
-                :Hyperparameter
-                :LearningType
-                :MachineLearning
-                :Model
-                :ModelParameter
-                :Prediction
-                :Sample
-                :SystemDesign
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Accuracy
-                :F1Score
-                :Precision
-                :Recall
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Acquisition
-                :Automate
-                :DataProcess
-                :Evaluation
-                :Inference
-                :Storing
-                :Training
-                :Validation
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Annotation
-                :Augmentation
-                :Filtering
-                :Imputation
-                :Labeling
-                :Merging
-                :Normalization
-                :Sampling
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Classification
-                :Clustering
-                :Generation
-                :Regression
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Cloud
-                :Edge
-                :Hybrid
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :EvaluationAlgorithm
-                :ModelAlgorithm
-                :TrainingAlgorithm
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ProductionData
-                :TrainingData
-                :ValidationData
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ReinforcementLearning
-                :SemiSupervisedLearning
-                :SupervisedLearning
-                :UnsupervisedLearning
-              )
-] .
-
-
-###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
