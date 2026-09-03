@@ -9,10 +9,12 @@
   Turn that off under Preferences, New ontologies, Folder repository.
 -->
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri name="https://w3id.org/aias/odp/vdi3682/1.0.0"
-         uri="../../../odps/vdi3682/v1.0.0/VDI3682.ttl"/>
-    <uri name="https://w3id.org/aias/odp/iso7498/1.0.0"
-         uri="../../../odps/iso7498/v1.0.0/ISO7498.ttl"/>
-    <uri name="https://w3id.org/aias/odp/iso22989/1.0.0"
-         uri="../../../odps/iso22989/v1.0.0/ISO22989.ttl"/>
+    <uri name="https://w3id.org/aias/odp/vdi3682/2.0.0"
+         uri="../../../odps/vdi3682/v2.0.0/VDI3682.ttl"/>
+    <uri name="https://w3id.org/aias/odp/iso7498/2.0.0"
+         uri="../../../odps/iso7498/v2.0.0/ISO7498.ttl"/>
+    <uri name="https://w3id.org/aias/odp/iso22989/2.0.0"
+         uri="../../../odps/iso22989/v2.0.0/ISO22989.ttl"/>
+    <uri name="https://w3id.org/aias/odp/iec60050/1.0.0"
+         uri="../../../odps/iec60050/v1.0.0/IEC60050.ttl"/>
 </catalog>
