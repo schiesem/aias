@@ -7,8 +7,8 @@
 @base <https://w3id.org/aias/odp/iso7498/instances#> .
 
 <https://w3id.org/aias/odp/iso7498/instances> rdf:type owl:Ontology ;
-                                               owl:versionIRI <https://w3id.org/aias/odp/iso7498/instances/1.0.0> ;
-                                               owl:imports <https://w3id.org/aias/odp/iso7498> ;
+                                               owl:versionIRI <https://w3id.org/aias/odp/iso7498/instances/2.0.0> ;
+                                               owl:imports <https://w3id.org/aias/odp/iso7498/2.0.0> ;
                                                <http://purl.org/dc/terms/created> "2026-08-17"^^xsd:date ;
                                                <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" ;
                                                <http://purl.org/dc/terms/description> """Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.
@@ -27,7 +27,7 @@ The seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives 
 The protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.
 
 The quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."""@en ;
-                                               owl:versionInfo "1.0.0" .
+                                               owl:versionInfo "2.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -77,54 +77,6 @@ The quality of service parameters follow 7.4.4 for the four the standard names, 
 <http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/aias/odp/iso7498#atLayer
-<https://w3id.org/aias/odp/iso7498#atLayer> rdf:type owl:AnnotationProperty .
-
-
-###  https://w3id.org/aias/odp/iso7498#layerNumber
-<https://w3id.org/aias/odp/iso7498#layerNumber> rdf:type owl:AnnotationProperty .
-
-
-###  https://w3id.org/aias/odp/iso7498#realisesLayer
-<https://w3id.org/aias/odp/iso7498#realisesLayer> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://w3id.org/aias/odp/iso7498#CommunicationDirection
-<https://w3id.org/aias/odp/iso7498#CommunicationDirection> rdf:type owl:Class .
-
-
-###  https://w3id.org/aias/odp/iso7498#Layer
-<https://w3id.org/aias/odp/iso7498#Layer> rdf:type owl:Class .
-
-
-###  https://w3id.org/aias/odp/iso7498#ProtocolDataUnit
-<https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> rdf:type owl:Class .
-
-
-###  https://w3id.org/aias/odp/iso7498#QoSParameter
-<https://w3id.org/aias/odp/iso7498#QoSParameter> rdf:type owl:Class .
-
-
-###  https://w3id.org/aias/odp/iso7498#ServiceDataUnit
-<https://w3id.org/aias/odp/iso7498#ServiceDataUnit> rdf:type owl:Class .
-
-
-###  https://w3id.org/aias/odp/iso7498#Technology
-<https://w3id.org/aias/odp/iso7498#Technology> rdf:type owl:Class .
-
-
 #################################################################
 #    Individuals
 #################################################################
@@ -132,18 +84,18 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#AMQP
 :AMQP rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
       rdfs:comment "Advanced message queuing protocol, after ISO/IEC 19464."@en ;
-      rdfs:label "AMQP"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+      rdfs:label "AMQP"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer
 :ApplicationLayer rdf:type owl:NamedIndividual ,
                            <https://w3id.org/aias/odp/iso7498#Layer> ;
+                  <https://w3id.org/aias/odp/iso7498#layerNumber> 7 ;
                   rdfs:comment "The highest layer, providing the sole means for an application process to access the OSI environment. It has no boundary with a higher layer."@en ;
                   rdfs:label "Application Layer"@en ;
-                  <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.1.2. Consists of the application entities that cooperate in the OSI environment, 6.1.4."@en ;
-                  <https://w3id.org/aias/odp/iso7498#layerNumber> 7 .
+                  <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.1.2. Consists of the application entities that cooperate in the OSI environment, 6.1.4."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Availability
@@ -157,44 +109,44 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#Bit
 :Bit rdf:type owl:NamedIndividual ,
               <https://w3id.org/aias/odp/iso7498#ServiceDataUnit> ;
+     <https://w3id.org/aias/odp/iso7498#atLayer> :PhysicalLayer ;
      rdfs:comment "The service data unit of the physical layer."@en ;
      rdfs:label "Bit"@en ;
-     <http://www.w3.org/2004/02/skos/core#note> "The one practice term ISO/IEC 7498-1 names: 7.6.4.5 refers to physical service data units, that is bits, and 7.7.3.3.1 to the transparent transmission of bit streams."@en ;
-     <https://w3id.org/aias/odp/iso7498#atLayer> :PhysicalLayer .
+     <http://www.w3.org/2004/02/skos/core#note> "The one practice term ISO/IEC 7498-1 names: 7.6.4.5 refers to physical service data units, that is bits, and 7.7.3.3.1 to the transparent transmission of bit streams."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#CANopen
 :CANopen rdf:type owl:NamedIndividual ,
                   <https://w3id.org/aias/odp/iso7498#Technology> ;
+         <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer ;
          rdfs:comment "Communication protocol for embedded automation on CAN, after EN 50325-4."@en ;
-         rdfs:label "CANopen"@en ;
-         <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer .
+         rdfs:label "CANopen"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#DHCP
 :DHCP rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
       rdfs:comment "Dynamic host configuration protocol."@en ;
-      rdfs:label "DHCP"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+      rdfs:label "DHCP"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer
 :DataLinkLayer rdf:type owl:NamedIndividual ,
                         <https://w3id.org/aias/odp/iso7498#Layer> ;
+               <https://w3id.org/aias/odp/iso7498#layerNumber> 2 ;
                rdfs:comment "Provides the functional and procedural means for the transfer of data between network entities and detects and possibly corrects errors occurring in the physical layer."@en ;
                rdfs:label "Data Link Layer"@en ;
-               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.6.2."@en ;
-               <https://w3id.org/aias/odp/iso7498#layerNumber> 2 .
+               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.6.2."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Datagram
 :Datagram rdf:type owl:NamedIndividual ,
                    <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> ;
+          <https://w3id.org/aias/odp/iso7498#atLayer> :TransportLayer ;
           rdfs:comment "The protocol data unit of a connectionless-mode transport or network service."@en ;
           rdfs:label "Datagram"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. Named by the protocol standards of connectionless-mode services."@en ;
-          <https://w3id.org/aias/odp/iso7498#atLayer> :TransportLayer .
+          <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. Named by the protocol standards of connectionless-mode services."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay
@@ -208,90 +160,90 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#EtherCAT
 :EtherCAT rdf:type owl:NamedIndividual ,
                    <https://w3id.org/aias/odp/iso7498#Technology> ;
+          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer ;
           rdfs:comment "Real-time capable fieldbus technology on Ethernet, after IEC 61158."@en ;
-          rdfs:label "EtherCAT"@en ;
-          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer .
+          rdfs:label "EtherCAT"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Ethernet
 :Ethernet rdf:type owl:NamedIndividual ,
                    <https://w3id.org/aias/odp/iso7498#Technology> ;
+          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer ;
           rdfs:comment "Frame based data link technology after IEEE 802.3."@en ;
-          rdfs:label "Ethernet"@en ;
-          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer .
+          rdfs:label "Ethernet"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T
 :Ethernet1000BASE-T rdf:type owl:NamedIndividual ,
                              <https://w3id.org/aias/odp/iso7498#Technology> ;
+                    <https://w3id.org/aias/odp/iso7498#realisesLayer> :PhysicalLayer ;
                     rdfs:comment "Gigabit Ethernet over twisted pair, 1000 Mbit/s."@en ;
-                    rdfs:label "1000BASE-T"@en ;
-                    <https://w3id.org/aias/odp/iso7498#realisesLayer> :PhysicalLayer .
+                    rdfs:label "1000BASE-T"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX
 :Ethernet100BASE-TX rdf:type owl:NamedIndividual ,
                              <https://w3id.org/aias/odp/iso7498#Technology> ;
+                    <https://w3id.org/aias/odp/iso7498#realisesLayer> :PhysicalLayer ;
                     rdfs:comment "Fast Ethernet over twisted pair, 100 Mbit/s."@en ;
-                    rdfs:label "100BASE-TX"@en ;
-                    <https://w3id.org/aias/odp/iso7498#realisesLayer> :PhysicalLayer .
+                    rdfs:label "100BASE-TX"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#FTP
 :FTP rdf:type owl:NamedIndividual ,
               <https://w3id.org/aias/odp/iso7498#Technology> ;
+     <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
      rdfs:comment "File transfer protocol."@en ;
-     rdfs:label "FTP"@en ;
-     <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+     rdfs:label "FTP"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Frame
 :Frame rdf:type owl:NamedIndividual ,
                 <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> ;
+       <https://w3id.org/aias/odp/iso7498#atLayer> :DataLinkLayer ;
        rdfs:comment "The protocol data unit of the data link layer."@en ;
        rdfs:label "Frame"@en ;
-       <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting and synchronisation functions of the data link layer are sometimes referred to as framing, but the standard defines no such data unit."@en ;
-       <https://w3id.org/aias/odp/iso7498#atLayer> :DataLinkLayer .
+       <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting and synchronisation functions of the data link layer are sometimes referred to as framing, but the standard defines no such data unit."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#HTTP
 :HTTP rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
       rdfs:comment "Hypertext transfer protocol."@en ;
-      rdfs:label "HTTP"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+      rdfs:label "HTTP"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#HTTPS
 :HTTPS rdf:type owl:NamedIndividual ,
                 <https://w3id.org/aias/odp/iso7498#Technology> ;
+       <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
        rdfs:comment "Hypertext transfer protocol over a transport layer security connection."@en ;
-       rdfs:label "HTTPS"@en ;
-       <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+       rdfs:label "HTTPS"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#IOLink
 :IOLink rdf:type owl:NamedIndividual ,
                  <https://w3id.org/aias/odp/iso7498#Technology> ;
+        <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer ;
         rdfs:comment "Point to point communication with sensors and actuators, after IEC 61131-9."@en ;
-        rdfs:label "IO-Link"@en ;
-        <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer .
+        rdfs:label "IO-Link"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#IPv4
 :IPv4 rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :NetworkLayer ;
       rdfs:comment "Internet protocol version 4."@en ;
-      rdfs:label "IPv4"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :NetworkLayer .
+      rdfs:label "IPv4"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#IPv6
 :IPv6 rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :NetworkLayer ;
       rdfs:comment "Internet protocol version 6."@en ;
-      rdfs:label "IPv6"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :NetworkLayer .
+      rdfs:label "IPv6"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Jitter
@@ -305,34 +257,34 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#MQTT
 :MQTT rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
       rdfs:comment "Publish and subscribe messaging protocol for constrained devices, after ISO/IEC 20922."@en ;
-      rdfs:label "MQTT"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+      rdfs:label "MQTT"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Modbus
 :Modbus rdf:type owl:NamedIndividual ,
                  <https://w3id.org/aias/odp/iso7498#Technology> ;
+        <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
         rdfs:comment "Request and response protocol widely used in industrial equipment."@en ;
-        rdfs:label "Modbus"@en ;
-        <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+        rdfs:label "Modbus"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#NetworkLayer
 :NetworkLayer rdf:type owl:NamedIndividual ,
                        <https://w3id.org/aias/odp/iso7498#Layer> ;
+              <https://w3id.org/aias/odp/iso7498#layerNumber> 3 ;
               rdfs:comment "Provides the means to establish, maintain and terminate network connections between open systems and the means to exchange data units over them, independently of routing and relay considerations."@en ;
               rdfs:label "Network Layer"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.5.2."@en ;
-              <https://w3id.org/aias/odp/iso7498#layerNumber> 3 .
+              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.5.2."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#OPCUA
 :OPCUA rdf:type owl:NamedIndividual ,
                 <https://w3id.org/aias/odp/iso7498#Technology> ;
+       <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer ;
        rdfs:comment "Platform independent service oriented architecture for industrial interoperability, after IEC 62541."@en ;
-       rdfs:label "OPC UA"@en ;
-       <https://w3id.org/aias/odp/iso7498#realisesLayer> :ApplicationLayer .
+       rdfs:label "OPC UA"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#OneWay
@@ -346,28 +298,28 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#Packet
 :Packet rdf:type owl:NamedIndividual ,
                  <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> ;
+        <https://w3id.org/aias/odp/iso7498#atLayer> :NetworkLayer ;
         rdfs:comment "The protocol data unit of the network layer."@en ;
         rdfs:label "Packet"@en ;
-        <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. Named by the network layer protocol standards."@en ;
-        <https://w3id.org/aias/odp/iso7498#atLayer> :NetworkLayer .
+        <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. Named by the network layer protocol standards."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer
 :PhysicalLayer rdf:type owl:NamedIndividual ,
                         <https://w3id.org/aias/odp/iso7498#Layer> ;
+               <https://w3id.org/aias/odp/iso7498#layerNumber> 1 ;
                rdfs:comment "Provides the mechanical, electrical, functional and procedural means to activate, maintain and de-activate physical connections for bit transmission between data link entities."@en ;
                rdfs:label "Physical Layer"@en ;
-               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.7.2."@en ;
-               <https://w3id.org/aias/odp/iso7498#layerNumber> 1 .
+               <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.7.2."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#PresentationLayer
 :PresentationLayer rdf:type owl:NamedIndividual ,
                             <https://w3id.org/aias/odp/iso7498#Layer> ;
+                   <https://w3id.org/aias/odp/iso7498#layerNumber> 6 ;
                    rdfs:comment "Provides for the representation of information that application entities either communicate or refer to in their communication, so that the syntax used is preserved in meaning."@en ;
                    rdfs:label "Presentation Layer"@en ;
-                   <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.2.2."@en ;
-                   <https://w3id.org/aias/odp/iso7498#layerNumber> 6 .
+                   <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.2.2."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Priority
@@ -381,18 +333,18 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#Profibus
 :Profibus rdf:type owl:NamedIndividual ,
                    <https://w3id.org/aias/odp/iso7498#Technology> ;
+          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer ;
           rdfs:comment "Fieldbus for automation with master and slave access, after IEC 61158 and IEC 61784."@en ;
           rdfs:label "PROFIBUS"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> "Its master and slave access makes a segment two-way alternate in the sense of 5.3.1.15: both sides send, but never at the same time."@en ;
-          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer .
+          <http://www.w3.org/2004/02/skos/core#note> "Its master and slave access makes a segment two-way alternate in the sense of 5.3.1.15: both sides send, but never at the same time."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Profinet
 :Profinet rdf:type owl:NamedIndividual ,
                    <https://w3id.org/aias/odp/iso7498#Technology> ;
+          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer ;
           rdfs:comment "Industrial Ethernet standard for automation, after IEC 61158 and IEC 61784."@en ;
-          rdfs:label "PROFINET"@en ;
-          <https://w3id.org/aias/odp/iso7498#realisesLayer> :DataLinkLayer .
+          rdfs:label "PROFINET"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate
@@ -406,27 +358,27 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#Segment
 :Segment rdf:type owl:NamedIndividual ,
                   <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> ;
+         <https://w3id.org/aias/odp/iso7498#atLayer> :TransportLayer ;
          rdfs:comment "The protocol data unit of the transport layer."@en ;
          rdfs:label "Segment"@en ;
-         <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto multiple protocol data units."@en ;
-         <https://w3id.org/aias/odp/iso7498#atLayer> :TransportLayer .
+         <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto multiple protocol data units."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#SessionLayer
 :SessionLayer rdf:type owl:NamedIndividual ,
                        <https://w3id.org/aias/odp/iso7498#Layer> ;
+              <https://w3id.org/aias/odp/iso7498#layerNumber> 5 ;
               rdfs:comment "Provides the means for cooperating presentation entities to organise and synchronise their dialogue and to manage their data exchange."@en ;
               rdfs:label "Session Layer"@en ;
-              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.3.2."@en ;
-              <https://w3id.org/aias/odp/iso7498#layerNumber> 5 .
+              <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.3.2."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#TCP
 :TCP rdf:type owl:NamedIndividual ,
               <https://w3id.org/aias/odp/iso7498#Technology> ;
+     <https://w3id.org/aias/odp/iso7498#realisesLayer> :TransportLayer ;
      rdfs:comment "Transmission control protocol, connection oriented."@en ;
-     rdfs:label "TCP"@en ;
-     <https://w3id.org/aias/odp/iso7498#realisesLayer> :TransportLayer .
+     rdfs:label "TCP"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#Throughput
@@ -448,10 +400,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#TransportLayer
 :TransportLayer rdf:type owl:NamedIndividual ,
                          <https://w3id.org/aias/odp/iso7498#Layer> ;
+                <https://w3id.org/aias/odp/iso7498#layerNumber> 4 ;
                 rdfs:comment "Provides transparent transfer of data between session entities, relieving them of any concern with how reliable and cost effective transfer is achieved."@en ;
                 rdfs:label "Transport Layer"@en ;
-                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.4.2. Clause 7.4.4 names the quality of service parameters of this layer."@en ;
-                <https://w3id.org/aias/odp/iso7498#layerNumber> 4 .
+                <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.4.2. Clause 7.4.4 names the quality of service parameters of this layer."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate
@@ -473,17 +425,17 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/aias/odp/iso7498/instances#UDP
 :UDP rdf:type owl:NamedIndividual ,
               <https://w3id.org/aias/odp/iso7498#Technology> ;
+     <https://w3id.org/aias/odp/iso7498#realisesLayer> :TransportLayer ;
      rdfs:comment "User datagram protocol, connectionless."@en ;
-     rdfs:label "UDP"@en ;
-     <https://w3id.org/aias/odp/iso7498#realisesLayer> :TransportLayer .
+     rdfs:label "UDP"@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498/instances#WLAN
 :WLAN rdf:type owl:NamedIndividual ,
                <https://w3id.org/aias/odp/iso7498#Technology> ;
+      <https://w3id.org/aias/odp/iso7498#realisesLayer> :PhysicalLayer ;
       rdfs:comment "Wireless local area network after IEEE 802.11."@en ;
-      rdfs:label "WLAN"@en ;
-      <https://w3id.org/aias/odp/iso7498#realisesLayer> :PhysicalLayer .
+      rdfs:label "WLAN"@en .
 
 
 #################################################################

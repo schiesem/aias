@@ -6,10 +6,12 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
      xmlns:iec60050="https://w3id.org/aias/odp/iec60050#">
     <owl:Ontology rdf:about="https://w3id.org/aias/odp/iec60050/instances">
         <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/iec60050/instances/1.0.0"/>
@@ -122,58 +124,6 @@ Seven of the definitions are reconstructed from the German text. Their English w
     
 
 
-    <!-- https://w3id.org/aias/odp/iec60050#symbol -->
-
-
-    <owl:AnnotationProperty rdf:about="https://w3id.org/aias/odp/iec60050#symbol"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/aias/odp/iec60050#QualityCharacteristic -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias/odp/iec60050#QualityCharacteristic"/>
-    
-
-
-    <!-- https://w3id.org/aias/odp/iec60050#TimeCharacteristic -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias/odp/iec60050#TimeCharacteristic"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -191,10 +141,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#TimeCharacteristic"/>
+        <iec60050:symbol>T_cr</iec60050:symbol>
         <rdfs:comment xml:lang="en">The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it first returns into that band.</rdfs:comment>
         <rdfs:label xml:lang="en">Control Rise Time</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-46-01. English wording reconstructed from the German entry. It ends at the first return, whereas the control settling time requires the controlled variable to stay inside.</skos:note>
-        <iec60050:symbol>T_cr</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -204,10 +154,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#TimeCharacteristic"/>
+        <iec60050:symbol>T_cs</iec60050:symbol>
         <rdfs:comment xml:lang="en">The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it returns into that band and remains within it.</rdfs:comment>
         <rdfs:label xml:lang="en">Control Settling Time</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-46-02. English wording reconstructed from the German entry. The sharper of the two criteria, since it requires the controlled variable to stay inside the band.</skos:note>
-        <iec60050:symbol>T_cs</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -230,10 +180,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#DeadTime">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#TimeCharacteristic"/>
+        <iec60050:symbol>T_t</iec60050:symbol>
         <rdfs:comment xml:lang="en">In a dead-time element, the duration of the time interval by which the output variable is shifted relative to the input variable.</rdfs:comment>
         <rdfs:label xml:lang="en">Dead Time</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-50-30. The interval by which a processing step delays what passes through it.</skos:note>
-        <iec60050:symbol>T_t</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -243,10 +193,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#TimeCharacteristic"/>
+        <iec60050:symbol>T_u</iec60050:symbol>
         <rdfs:comment xml:lang="en">In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value.</rdfs:comment>
         <rdfs:label xml:lang="en">Equivalent Dead Time</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot.</skos:note>
-        <iec60050:symbol>T_u</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -256,10 +206,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#GainMargin">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#QualityCharacteristic"/>
+        <iec60050:symbol>G_m</iec60050:symbol>
         <rdfs:comment xml:lang="en">The reciprocal of the gain response of the open control loop at the phase crossover angular frequency.</rdfs:comment>
         <rdfs:label xml:lang="en">Gain Margin</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-46-07. English wording reconstructed from the German entry. The second stability reserve, alongside the phase margin.</skos:note>
-        <iec60050:symbol>G_m</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -293,10 +243,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#Overshoot">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#QualityCharacteristic"/>
+        <iec60050:symbol>X_m</iec60050:symbol>
         <rdfs:comment xml:lang="en">In a step response, the largest transient deviation of the output variable from its final steady-state value, usually expressed as a percentage of the difference between its final and its initial steady-state value.</rdfs:comment>
         <rdfs:label xml:lang="en">Overshoot</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-45-38. English wording reconstructed from the German entry.</skos:note>
-        <iec60050:symbol>X_m</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -306,10 +256,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#PhaseMargin">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#QualityCharacteristic"/>
+        <iec60050:symbol>phi_m</iec60050:symbol>
         <rdfs:comment xml:lang="en">The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians.</rdfs:comment>
         <rdfs:label xml:lang="en">Phase Margin</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable.</skos:note>
-        <iec60050:symbol>phi_m</iec60050:symbol>
     </owl:NamedIndividual>
     
 
@@ -343,10 +293,10 @@ Seven of the definitions are reconstructed from the German text. Their English w
 
     <owl:NamedIndividual rdf:about="https://w3id.org/aias/odp/iec60050/instances#TimeConstant">
         <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#TimeCharacteristic"/>
+        <iec60050:symbol>T</iec60050:symbol>
         <rdfs:comment xml:lang="en">For a quantity growing or decaying exponentially towards a constant value, the duration of a time interval at the end of which the absolute difference to that value has decreased to 1/e of its initial amount.</rdfs:comment>
         <rdfs:label xml:lang="en">Time Constant</rdfs:label>
         <skos:note xml:lang="en">IEC 60050-351, 351-45-32.</skos:note>
-        <iec60050:symbol>T</iec60050:symbol>
     </owl:NamedIndividual>
     
 

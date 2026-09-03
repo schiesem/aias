@@ -11,14 +11,14 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/aias/odp/iso22989">
-        <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/iso22989/1.0.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/iso22989/2.0.0"/>
         <terms:bibliographicCitation>TODO: citation of the accompanying publication</terms:bibliographicCitation>
         <terms:contributor>TODO: co-authors</terms:contributor>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-19</terms:created>
         <terms:creator>TODO: author name, ORCID</terms:creator>
         <terms:description xml:lang="en">Ontology design pattern for the terminology of artificial intelligence according to ISO/IEC 22989:2022, Information technology, Artificial intelligence, Artificial intelligence concepts and terminology.
 
-The pattern describes an AI system in three views: what it is made of and what it does, which algorithms and models carry it, and which data it runs on. The three are the views the accompanying work derives for the AI subdomain, and the standard supplies an internationally agreed vocabulary for all of them.
+The pattern describes an AI system in three views: what it is made of and what it does, which algorithms and models carry it, and which data it runs on. The standard supplies an internationally agreed vocabulary for all three.
 
 One distinction runs through the whole pattern. Symbolic AI, 3.1.33, and subsymbolic AI, 3.1.34, both rest on models, but only the second learns them. The pattern therefore keeps the general model, 3.1.23, above the machine learning model, 3.3.7, so that a rule-based system can be recorded without pretending it was trained.
 
@@ -35,10 +35,10 @@ The pattern is one of four subdomain patterns of the AIAS information model. It 
 
 Clause 3 of the standard holds 115 entries and this pattern takes up 47 of them. REFERENCE.md lists every entry with the reason it is taken or left out, so the selection is checkable rather than asserted. Three whole clauses stay out: neural networks, natural language processing and computer vision name techniques and application fields, both open sets. A model using a convolutional network records it as a named individual of the model algorithm class instead.
 
-Some classes here have no entry in clause 3. Five of them are collecting classes the standard needs but does not name, such as the common superclass of the four kinds of learning. The rest are constructs of this work, carried over from the information model it rebuilds. Every one of them says so on its own skos:note, and REFERENCE.md lists them apart from the entries.
+Some classes here have no entry in clause 3. Five of them are collecting classes the standard needs but does not name, such as the common superclass of the four kinds of learning. The rest are constructs of this work. Every one of them says so on its own skos:note, and REFERENCE.md lists them apart from the entries.
 
 No class of another namespace appears in this pattern. Where a term matches a term of another standard, as control, 3.5.5, matches IEC 60050-351, 351-42-19, word for word, the two are related in the alignment ontology rather than here. A pattern that referenced another would drag it along wherever it is used.</rdfs:comment>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>2.0.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -220,7 +220,7 @@ No class of another namespace appears in this pattern. Where a term matches a te
         <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
         <rdfs:comment xml:lang="en">Relates a machine learning algorithm to the kind of learning it performs.</rdfs:comment>
         <rdfs:label xml:lang="en">based on learning</rdfs:label>
-        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.9 to 3.3.17. Functional: an algorithm performs one kind of learning, which negative model 03 tests.</skos:note>
+        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.9 to 3.3.17. Functional: an algorithm performs one kind of learning.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -286,7 +286,7 @@ No class of another namespace appears in this pattern. Where a term matches a te
         <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#VariableCharacteristic"/>
         <rdfs:comment xml:lang="en">Relates a characteristic value to the characteristic it quantifies.</rdfs:comment>
         <rdfs:label xml:lang="en">for characteristic</rdfs:label>
-        <skos:note xml:lang="en">Functional: one value quantifies exactly one characteristic, which negative model 05 tests.</skos:note>
+        <skos:note xml:lang="en">Functional: one value quantifies exactly one characteristic.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -408,7 +408,9 @@ Functional: one prediction addresses one task. A prediction serving two purposes
         <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Hyperparameter"/>
         <rdfs:comment xml:lang="en">Relates an algorithm to a characteristic chosen in advance that affects its behaviour.</rdfs:comment>
         <rdfs:label xml:lang="en">has hyperparameter</rdfs:label>
-        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.4. Placed on the algorithm superclass, so a model algorithm and an evaluation algorithm may carry one as well.</skos:note>
+        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.4. Placed on the algorithm superclass, so a model algorithm and an evaluation algorithm may carry one as well.
+
+Not functional. An algorithm carries as many hyperparameters as it was set up with, and the value of each is reached from the hyperparameter by hasSetting.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -441,7 +443,9 @@ Functional: one prediction addresses one task. A prediction serving two purposes
         <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
         <rdfs:comment xml:lang="en">Relates a model to an internal variable affecting how it computes its outputs.</rdfs:comment>
         <rdfs:label xml:lang="en">has parameter</rdfs:label>
-        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.8. Only a learned model has these, which is why a symbolic model carries hyperparameters instead.</skos:note>
+        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.8. Only a learned model has these, which is why a symbolic model carries hyperparameters instead.
+
+The name leads to the model parameter, 3.3.8, and not to the hyperparameter, 3.3.4. The two entries are close enough in wording that the distinction is worth stating: this one is determined by a training, the other is chosen before it.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -455,6 +459,24 @@ Functional: one prediction addresses one task. A prediction serving two purposes
         <rdfs:comment xml:lang="en">Relates an AI system to a risk recorded for it.</rdfs:comment>
         <rdfs:label xml:lang="en">has risk</rdfs:label>
         <skos:note xml:lang="en">ISO/IEC 22989, 3.5.11, and clause 6.2.2, which asks stakeholders to assess risks across the whole life cycle.</skos:note>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aias/odp/iso22989#hasSetting -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/iso22989#hasSetting">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Hyperparameter"/>
+        <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#CharacteristicValue"/>
+        <rdfs:comment xml:lang="en">Relates a hyperparameter to the value chosen for it.</rdfs:comment>
+        <rdfs:label xml:lang="en">has setting</rdfs:label>
+        <skos:note xml:lang="en">ISO/IEC 22989, 3.3.4 defines the hyperparameter as selected prior to training. Its value is therefore set rather than measured, and it is reached by a relation of its own rather than through forCharacteristic.
+
+Both relations end at the same class, and the direction they run in is what keeps them apart. A characteristic value points to the quality it quantifies, and a hyperparameter points to the value it was given. A model can then be asked which of its values were stated and which were established, which is the first question an audit of a training asks.
+
+Functional: a hyperparameter carries one value. Two runs at different learning rates are two hyperparameter individuals rather than one with two values, since the value belongs to the run and not to the name.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -489,7 +511,7 @@ Functional: one prediction addresses one task. A prediction serving two purposes
         <rdfs:label xml:lang="en">has type</rdfs:label>
         <skos:note xml:lang="en">ISO/IEC 22989, 3.1.33 and 3.1.34.
 
-Deliberately not functional. Clause 5.9 discusses combining the two approaches, so a system may carry both, which test case 3 asserts.</skos:note>
+Deliberately not functional. Clause 5.9 discusses combining the two approaches, so a system may carry both.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -619,21 +641,6 @@ Deliberately not functional. Clause 5.9 discusses combining the two approaches, 
         <rdfs:comment xml:lang="en">Relates a function to the component performing it.</rdfs:comment>
         <rdfs:label xml:lang="en">performed by</rdfs:label>
         <skos:note xml:lang="en">The inverse reading of hasFunction, stated separately so a model may record either direction.</skos:note>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/aias/odp/iso22989#performsControl -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/aias/odp/iso22989#performsControl">
-        <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-        <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Control"/>
-        <rdfs:comment xml:lang="en">Relates an AI system to a control it carries out.</rdfs:comment>
-        <rdfs:label xml:lang="en">performs control</rdfs:label>
-        <skos:note xml:lang="en">ISO/IEC 22989, 3.5.5.
-
-The relation exists so that a model can state that an AI system acts on a process rather than only computing outputs. Since the control class is defined identically in IEC 60050-351, this is the point at which the alignment joins the AI subdomain to the control one.</skos:note>
     </owl:ObjectProperty>
     
 
@@ -772,7 +779,7 @@ The class is what a model needs as soon as one system carries more than one appr
         <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
         <rdfs:comment xml:lang="en">An activity in the life cycle of an AI system, transforming inputs into outputs.</rdfs:comment>
         <rdfs:label xml:lang="en">AI Function</rdfs:label>
-        <skos:note xml:lang="en">**Collecting class of this work.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.
+        <skos:note xml:lang="en">**Collecting class of this pattern.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.
 
 Note that clause 8.3 of the standard uses the term AI function in a narrower sense, for computing a prediction alone. This class is broader on purpose, since a model has to record the whole life cycle rather than the operating step only.</skos:note>
     </owl:Class>
@@ -866,7 +873,9 @@ The class exists so that the hyperparameter, 3.3.4, has one place to attach to. 
         <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
         <rdfs:comment xml:lang="en">The value a model assigns to one characteristic, together with its unit.</rdfs:comment>
         <rdfs:label xml:lang="en">Characteristic Value</rdfs:label>
-        <skos:note xml:lang="en">Reified so that a value can be referred to and annotated with its source or the conditions it holds under, in the same arrangement and for the same reason as the characteristic value of the IEC 60050-351 pattern.</skos:note>
+        <skos:note xml:lang="en">Reified so that a value can be referred to and annotated with its source or the conditions it holds under, in the same arrangement and for the same reason as the characteristic value of the IEC 60050-351 pattern.
+
+Two relations end here and they run in opposite directions. A value points to the quality it quantifies through forCharacteristic, and a hyperparameter points to the value it was given through hasSetting. What separates them is where the value comes from: the first is established, the second is chosen.</skos:note>
     </owl:Class>
     
 
@@ -899,11 +908,14 @@ The class exists so that the hyperparameter, 3.3.4, has one place to attach to. 
 
 
     <owl:Class rdf:about="https://w3id.org/aias/odp/iso22989#Control">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
         <rdfs:comment xml:lang="en">Purposeful action on or in a process to meet specified objectives.</rdfs:comment>
         <rdfs:label xml:lang="en">Control</rdfs:label>
         <skos:note xml:lang="en">ISO/IEC 22989, 3.5.5, which takes the definition from IEC 61800-7-1:2015, 3.2.6.
 
-**The wording is identical to IEC 60050-351, 351-42-19**, and both trace back to the same source. The two are therefore the same concept rather than merely similar ones, and the alignment relates them with owl:equivalentClass. This pattern states nothing about the other, since referencing another namespace would drag it along wherever this pattern is used.</skos:note>
+Modelled as a function alongside training, inference and the rest. The entry sits in clause 3.5 among the terms related to trustworthiness, but that is a grouping by subject rather than a statement about the kind of term: the definition says action, which is what the other functions are as well. A system therefore relates to it through hasFunction like any other activity.
+
+**The wording is identical to IEC 60050-351, 351-42-19**, and both trace back to the same source. The two are the same concept rather than merely similar ones, and the alignment relates them with owl:equivalentClass. This pattern states nothing about the other, since referencing another namespace would drag it along wherever this pattern is used.</skos:note>
     </owl:Class>
     
 
@@ -1071,7 +1083,9 @@ Note 1 states that it is disjoint from training data and validation data. The pa
         <rdfs:label xml:lang="en">Hyperparameter</rdfs:label>
         <skos:note xml:lang="en">ISO/IEC 22989, 3.3.4, which defines it as a characteristic of a machine learning algorithm affecting its learning process, selected prior to training.
 
-This pattern places it on the algorithm superclass, so that a model algorithm and an evaluation algorithm may carry one as well: the number of layers of a network, or the threshold of a rule. Applying the entry beyond machine learning is a reading of it rather than the entry itself, and a rule threshold recorded here is such a case.</skos:note>
+This pattern places it on the algorithm superclass, so that a model algorithm and an evaluation algorithm may carry one as well: the number of layers of a network, or the threshold of a rule. Applying the entry beyond machine learning is a reading of it rather than the entry itself, and a rule threshold recorded here is such a case.
+
+The value chosen for it is reached by hasSetting, not by forCharacteristic. A hyperparameter is set before a training and a quality of clause 3.5 is established by one, and the two relations keep that difference readable.</skos:note>
     </owl:Class>
     
 
@@ -1184,7 +1198,7 @@ Kept below the general model on purpose. Every machine learning model is a model
         <skos:altLabel xml:lang="en">ML</skos:altLabel>
         <skos:note xml:lang="en">ISO/IEC 22989, 3.3.5.
 
-Modelled as a subclass of training rather than as a separate class: it is the case of training in which the parameters are optimised computationally. A symbolic system has a model without any training at all, which is what test case 2 records.</skos:note>
+Modelled as a subclass of training rather than as a separate class: it is the case of training in which the parameters are optimised computationally. A symbolic system has a model without any training at all.</skos:note>
     </owl:Class>
     
 
@@ -1197,7 +1211,7 @@ Modelled as a subclass of training rather than as a separate class: it is the ca
         <rdfs:label xml:lang="en">Model</rdfs:label>
         <skos:note xml:lang="en">ISO/IEC 22989, 3.1.23.
 
-Both kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it, which is what test case 2 records.</skos:note>
+Both kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it.</skos:note>
     </owl:Class>
     
 

@@ -50,17 +50,11 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#note",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
@@ -100,20 +94,17 @@
     "@value" : "Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.\n\nThe pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it."
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989"
+    "@id" : "https://w3id.org/aias/odp/iso22989/2.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989/instances/1.0.0"
+    "@id" : "https://w3id.org/aias/odp/iso22989/instances/2.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
+    "@value" : "2.0.0"
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Availability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The property of being accessible and usable on demand by an authorized entity."
@@ -128,10 +119,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Bias",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A systematic difference in treatment of certain objects, people or groups in comparison to others."
@@ -146,10 +134,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Explainability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The property of an AI system to express important factors influencing its results in a way that humans can understand."
@@ -164,10 +149,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Performance",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A measurable result."
@@ -182,10 +164,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Predictability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The property of an AI system that enables reliable assumptions by stakeholders about its outputs."
@@ -200,10 +179,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Reliability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The property of consistent intended behaviour and results."
@@ -218,10 +194,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Resilience",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The ability of a system to recover operational condition quickly following an incident."
@@ -236,10 +209,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Robustness",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The ability of a system to maintain its level of performance under any circumstances."
@@ -254,10 +224,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso22989/instances#Trustworthiness",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso22989#VariableCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso22989#VariableCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The ability to meet stakeholder expectations in a verifiable way."

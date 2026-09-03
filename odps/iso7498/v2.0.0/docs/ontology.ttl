@@ -7,7 +7,7 @@
 @base <https://w3id.org/aias/odp/iso7498#> .
 
 <https://w3id.org/aias/odp/iso7498> rdf:type owl:Ontology ;
-                                     owl:versionIRI <https://w3id.org/aias/odp/iso7498/1.0.0> ;
+                                     owl:versionIRI <https://w3id.org/aias/odp/iso7498/2.0.0> ;
                                      <http://purl.org/dc/terms/bibliographicCitation> "TODO: citation of the accompanying publication" ;
                                      <http://purl.org/dc/terms/contributor> "TODO: co-authors" ;
                                      <http://purl.org/dc/terms/created> "2026-08-17"^^xsd:date ;
@@ -30,7 +30,7 @@ The pattern is one of four subdomain patterns of the AIAS information model, whi
 Two deviations from the standard are deliberate and documented at the affected elements. Technology is an addition, since the standard states in 1.3 that it implies no particular implementation or technology, yet an engineering model has to record which protocol is used. The seven layers are named individuals rather than classes, since the standard enumerates exactly seven of them in 6.1.2 and gives each a number.
 
 Terms the standard defines but this pattern omits: routing across relay systems (5.9), the management aspects of clause 8, and the detailed connection endpoint machinery of 5.3. They describe the operation of a running communication rather than the structure an engineering model records."""@en ;
-                                     owl:versionInfo "1.0.0" .
+                                     owl:versionInfo "2.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -380,7 +380,7 @@ This is the encapsulation that recurs down the layers, and it is what makes the 
              <http://www.w3.org/2004/02/skos/core#altLabel> "Association"@en ;
              <http://www.w3.org/2004/02/skos/core#note> """ISO/IEC 7498-1, 5.1.3 c) names the associations as one of the four basic elements of OSI, joining the application entities and permitting them to exchange information.
 
-The class name follows the standard, while the readable label is communication, which is the term used in the accompanying publication and in the modelling tool. The two are one class, not two: labelling rather than a second class avoids the drift that an equivalence between a standard term and an own term would invite."""@en .
+The class name follows the standard and the readable label is communication, which is the plainer term for the same thing. The two are one class, not two: labelling rather than a second class avoids the drift that an equivalence between a standard term and an own term would invite."""@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498#CommunicationDirection
@@ -435,7 +435,7 @@ The direction complements the source and target systems rather than repeating th
                            :Technology ;
           rdfs:comment "A unit of information transferred between entities."@en ;
           rdfs:label "Data Unit"@en ;
-          <http://www.w3.org/2004/02/skos/core#note> """Collecting class of this pattern. ISO/IEC 7498-1, 5.6.1 defines the three kinds below individually without naming a common superclass, and clause 5.6 groups them under the heading data-units.
+          <http://www.w3.org/2004/02/skos/core#note> """**Collecting class of this pattern.** ISO/IEC 7498-1, 5.6.1 defines the three kinds below individually without naming a common superclass, and clause 5.6 groups them under the heading data-units.
 
 Terms such as frame, packet, or segment do not occur in the standard: they are the names practice gives to the protocol data unit of a particular layer. The standard mentions framing only in a note to 7.6.4.5, which observes that the delimiting functions are sometimes referred to that way. Those names are supplied as individuals in ISO7498-instances.ttl, each related to its layer."""@en .
 
@@ -484,7 +484,7 @@ The seven layers are named individuals rather than subclasses of this class. The
                              :Technology ;
             rdfs:comment "The representation of those aspects of a real system that are pertinent to open systems interconnection."@en ;
             rdfs:label "Open System"@en ;
-            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 4.1.3. A real system complying with the requirements of the OSI standards in its communication with other real systems is a real open system, 4.1.2. In the AIAS information model a technical resource of the plant appears as an open system when its communication is described."@en .
+            <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 4.1.3. A real system complying with the requirements of the OSI standards in its communication with other real systems is a real open system, 4.1.2. A device is not an open system in itself, it is one under the view this clause describes: those aspects of it that are pertinent to interconnection."@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498#Protocol
@@ -597,7 +597,7 @@ This is where a model records what a communication delivers rather than how it i
             rdfs:label "Technology"@en ;
             <http://www.w3.org/2004/02/skos/core#note> """Addition of this pattern, not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular systems implementation, technology or means of interconnection, so the standard names none.
 
-An engineering model has to record which protocol is used, which is why the class exists. Named individuals such as Ethernet, TCP, or MQTT are supplied in ISO7498-instances.ttl, each related to the layer it realises. Whether a given technology fits the layer a model claims for it is a question for the rule base of the modelling assistance, not an axiom of this pattern."""@en .
+An engineering model has to record which protocol is used, which is why the class exists. Named individuals such as Ethernet, TCP, or MQTT are supplied in ISO7498-instances.ttl, each related to the layer it realises. Whether a given technology fits the layer a model claims for it is not checked here. Nothing stops a model from placing MQTT at the network layer, and rejecting that needs a rule base rather than an axiom, which keeps the pattern descriptive."""@en .
 
 
 ###  https://w3id.org/aias/odp/iso7498#UserData

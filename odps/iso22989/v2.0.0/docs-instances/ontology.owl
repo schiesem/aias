@@ -11,8 +11,8 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/aias/odp/iso22989/instances">
-        <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/iso22989/instances/1.0.0"/>
-        <owl:imports rdf:resource="https://w3id.org/aias/odp/iso22989"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/aias/odp/iso22989/instances/2.0.0"/>
+        <owl:imports rdf:resource="https://w3id.org/aias/odp/iso22989/2.0.0"/>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-19</terms:created>
         <terms:creator>TODO: author name, ORCID</terms:creator>
         <terms:description xml:lang="en">Named individuals for the ISO/IEC 22989 ontology design pattern: the qualities a model states about an AI system.
@@ -27,7 +27,7 @@ They are kept apart from the pattern so that terminology and vocabulary can be m
         <rdfs:comment xml:lang="en">Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.
 
 The pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it.</rdfs:comment>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>2.0.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -118,44 +118,6 @@ The pattern records that a value belongs to a quality, not how the quality is me
 
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/aias/odp/iso22989#VariableCharacteristic -->
-
-
-    <owl:Class rdf:about="https://w3id.org/aias/odp/iso22989#VariableCharacteristic"/>
     
 
 

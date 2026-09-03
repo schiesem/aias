@@ -1,10 +1,10 @@
 <https://w3id.org/aias/odp/iso22989> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso22989/1.0.0> .
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso22989/2.0.0> .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/bibliographicCitation> "TODO: citation of the accompanying publication" .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/contributor> "TODO: co-authors" .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/created> "2026-08-19"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
-<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/description> "Ontology design pattern for the terminology of artificial intelligence according to ISO/IEC 22989:2022, Information technology, Artificial intelligence, Artificial intelligence concepts and terminology.\n\nThe pattern describes an AI system in three views: what it is made of and what it does, which algorithms and models carry it, and which data it runs on. The three are the views the accompanying work derives for the AI subdomain, and the standard supplies an internationally agreed vocabulary for all of them.\n\nOne distinction runs through the whole pattern. Symbolic AI, 3.1.33, and subsymbolic AI, 3.1.34, both rest on models, but only the second learns them. The pattern therefore keeps the general model, 3.1.23, above the machine learning model, 3.3.7, so that a rule-based system can be recorded without pretending it was trained.\n\nThe pattern is one of four subdomain patterns of the AIAS information model. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology. Named individuals for the qualities are supplied separately in ISO22989-instances.ttl."@en .
+<https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/description> "Ontology design pattern for the terminology of artificial intelligence according to ISO/IEC 22989:2022, Information technology, Artificial intelligence, Artificial intelligence concepts and terminology.\n\nThe pattern describes an AI system in three views: what it is made of and what it does, which algorithms and models carry it, and which data it runs on. The standard supplies an internationally agreed vocabulary for all three.\n\nOne distinction runs through the whole pattern. Symbolic AI, 3.1.33, and subsymbolic AI, 3.1.34, both rest on models, but only the second learns them. The pattern therefore keeps the general model, 3.1.23, above the machine learning model, 3.3.7, so that a rule-based system can be recorded without pretending it was trained.\n\nThe pattern is one of four subdomain patterns of the AIAS information model. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology. Named individuals for the qualities are supplied separately in ISO22989-instances.ttl."@en .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/publisher> "TODO: institution" .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/dc/terms/rights> "TODO: funding statement, projects EKI and OptiFlex, dtec.bw" .
@@ -13,8 +13,8 @@
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/ontology/bibo/status> "Draft"@en .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso22989" .
 <https://w3id.org/aias/odp/iso22989> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso22989#" .
-<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2000/01/rdf-schema#comment> "Normative basis: ISO/IEC 22989:2022.\n\nClause 3 of the standard holds 115 entries and this pattern takes up 47 of them. REFERENCE.md lists every entry with the reason it is taken or left out, so the selection is checkable rather than asserted. Three whole clauses stay out: neural networks, natural language processing and computer vision name techniques and application fields, both open sets. A model using a convolutional network records it as a named individual of the model algorithm class instead.\n\nSome classes here have no entry in clause 3. Five of them are collecting classes the standard needs but does not name, such as the common superclass of the four kinds of learning. The rest are constructs of this work, carried over from the information model it rebuilds. Every one of them says so on its own skos:note, and REFERENCE.md lists them apart from the entries.\n\nNo class of another namespace appears in this pattern. Where a term matches a term of another standard, as control, 3.5.5, matches IEC 60050-351, 351-42-19, word for word, the two are related in the alignment ontology rather than here. A pattern that referenced another would drag it along wherever it is used."@en .
-<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2000/01/rdf-schema#comment> "Normative basis: ISO/IEC 22989:2022.\n\nClause 3 of the standard holds 115 entries and this pattern takes up 47 of them. REFERENCE.md lists every entry with the reason it is taken or left out, so the selection is checkable rather than asserted. Three whole clauses stay out: neural networks, natural language processing and computer vision name techniques and application fields, both open sets. A model using a convolutional network records it as a named individual of the model algorithm class instead.\n\nSome classes here have no entry in clause 3. Five of them are collecting classes the standard needs but does not name, such as the common superclass of the four kinds of learning. The rest are constructs of this work. Every one of them says so on its own skos:note, and REFERENCE.md lists them apart from the entries.\n\nNo class of another namespace appears in this pattern. Where a term matches a term of another standard, as control, 3.5.5, matches IEC 60050-351, 351-42-19, word for word, the two are related in the alignment ontology rather than here. A pattern that referenced another would drag it along wherever it is used."@en .
+<https://w3id.org/aias/odp/iso22989> <http://www.w3.org/2002/07/owl#versionInfo> "2.0.0" .
 # 
 # 
 # #################################################################
@@ -113,7 +113,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#LearningType> .
 <https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a machine learning algorithm to the kind of learning it performs."@en .
 <https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2000/01/rdf-schema#label> "based on learning"@en .
-<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.9 to 3.3.17. Functional: an algorithm performs one kind of learning, which negative model 03 tests."@en .
+<https://w3id.org/aias/odp/iso22989#basedOnLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.9 to 3.3.17. Functional: an algorithm performs one kind of learning."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#consistsOf
 <https://w3id.org/aias/odp/iso22989#consistsOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -154,7 +154,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#VariableCharacteristic> .
 <https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a characteristic value to the characteristic it quantifies."@en .
 <https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "for characteristic"@en .
-<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2004/02/skos/core#note> "Functional: one value quantifies exactly one characteristic, which negative model 05 tests."@en .
+<https://w3id.org/aias/odp/iso22989#forCharacteristic> <http://www.w3.org/2004/02/skos/core#note> "Functional: one value quantifies exactly one characteristic."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#fulfilsTask
 <https://w3id.org/aias/odp/iso22989#fulfilsTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -238,7 +238,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Hyperparameter> .
 <https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an algorithm to a characteristic chosen in advance that affects its behaviour."@en .
 <https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2000/01/rdf-schema#label> "has hyperparameter"@en .
-<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4. Placed on the algorithm superclass, so a model algorithm and an evaluation algorithm may carry one as well."@en .
+<https://w3id.org/aias/odp/iso22989#hasHyperparameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4. Placed on the algorithm superclass, so a model algorithm and an evaluation algorithm may carry one as well.\n\nNot functional. An algorithm carries as many hyperparameters as it was set up with, and the value of each is reached from the hyperparameter by hasSetting."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#hasLabel
 <https://w3id.org/aias/odp/iso22989#hasLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -262,7 +262,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#ModelParameter> .
 <https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a model to an internal variable affecting how it computes its outputs."@en .
 <https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2000/01/rdf-schema#label> "has parameter"@en .
-<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.8. Only a learned model has these, which is why a symbolic model carries hyperparameters instead."@en .
+<https://w3id.org/aias/odp/iso22989#hasParameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.8. Only a learned model has these, which is why a symbolic model carries hyperparameters instead.\n\nThe name leads to the model parameter, 3.3.8, and not to the hyperparameter, 3.3.4. The two entries are close enough in wording that the distinction is worth stating: this one is determined by a training, the other is chosen before it."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#hasRisk
 <https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -271,6 +271,15 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a risk recorded for it."@en .
 <https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2000/01/rdf-schema#label> "has risk"@en .
 <https://w3id.org/aias/odp/iso22989#hasRisk> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.11, and clause 6.2.2, which asks stakeholders to assess risks across the whole life cycle."@en .
+# 
+# https://w3id.org/aias/odp/iso22989#hasSetting
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#Hyperparameter> .
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#CharacteristicValue> .
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a hyperparameter to the value chosen for it."@en .
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/2000/01/rdf-schema#label> "has setting"@en .
+<https://w3id.org/aias/odp/iso22989#hasSetting> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4 defines the hyperparameter as selected prior to training. Its value is therefore set rather than measured, and it is reached by a relation of its own rather than through forCharacteristic.\n\nBoth relations end at the same class, and the direction they run in is what keeps them apart. A characteristic value points to the quality it quantifies, and a hyperparameter points to the value it was given. A model can then be asked which of its values were stated and which were established, which is the first question an audit of a training asks.\n\nFunctional: a hyperparameter carries one value. Two runs at different learning rates are two hyperparameter individuals rather than one with two values, since the value belongs to the run and not to the name."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#hasTask
 <https://w3id.org/aias/odp/iso22989#hasTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -294,7 +303,7 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#AIType> .
 <https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system or a component to the kind of technique it is based on."@en .
 <https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2000/01/rdf-schema#label> "has type"@en .
-<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.33 and 3.1.34.\n\nDeliberately not functional. Clause 5.9 discusses combining the two approaches, so a system may carry both, which test case 3 asserts."@en .
+<https://w3id.org/aias/odp/iso22989#hasType> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.33 and 3.1.34.\n\nDeliberately not functional. Clause 5.9 discusses combining the two approaches, so a system may carry both."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#isAcquiredBy
 <https://w3id.org/aias/odp/iso22989#isAcquiredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -381,14 +390,6 @@ _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a function to the component performing it."@en .
 <https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2000/01/rdf-schema#label> "performed by"@en .
 <https://w3id.org/aias/odp/iso22989#performedBy> <http://www.w3.org/2004/02/skos/core#note> "The inverse reading of hasFunction, stated separately so a model may record either direction."@en .
-# 
-# https://w3id.org/aias/odp/iso22989#performsControl
-<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aias/odp/iso22989#AISystem> .
-<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aias/odp/iso22989#Control> .
-<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an AI system to a control it carries out."@en .
-<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2000/01/rdf-schema#label> "performs control"@en .
-<https://w3id.org/aias/odp/iso22989#performsControl> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.5.\n\nThe relation exists so that a model can state that an AI system acts on a process rather than only computing outputs. Since the control class is defined identically in IEC 60050-351, this is the point at which the alignment joins the AI subdomain to the control one."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#realisedByModel
 <https://w3id.org/aias/odp/iso22989#realisedByModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -480,7 +481,7 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Model> .
 <https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity in the life cycle of an AI system, transforming inputs into outputs."@en .
 <https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2000/01/rdf-schema#label> "AI Function"@en .
-<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this work.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.\n\nNote that clause 8.3 of the standard uses the term AI function in a narrower sense, for computing a prediction alone. This class is broader on purpose, since a model has to record the whole life cycle rather than the operating step only."@en .
+<https://w3id.org/aias/odp/iso22989#AIFunction> <http://www.w3.org/2004/02/skos/core#note> "**Collecting class of this pattern.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.\n\nNote that clause 8.3 of the standard uses the term AI function in a narrower sense, for computing a prediction alone. This class is broader on purpose, since a model has to record the whole life cycle rather than the operating step only."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#AISystem
 <https://w3id.org/aias/odp/iso22989#AISystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -533,7 +534,7 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/aias/odp/iso22989#Data> .
 <https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The value a model assigns to one characteristic, together with its unit."@en .
 <https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2000/01/rdf-schema#label> "Characteristic Value"@en .
-<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2004/02/skos/core#note> "Reified so that a value can be referred to and annotated with its source or the conditions it holds under, in the same arrangement and for the same reason as the characteristic value of the IEC 60050-351 pattern."@en .
+<https://w3id.org/aias/odp/iso22989#CharacteristicValue> <http://www.w3.org/2004/02/skos/core#note> "Reified so that a value can be referred to and annotated with its source or the conditions it holds under, in the same arrangement and for the same reason as the characteristic value of the IEC 60050-351 pattern.\n\nTwo relations end here and they run in opposite directions. A value points to the quality it quantifies through forCharacteristic, and a hyperparameter points to the value it was given through hasSetting. What separates them is where the value comes from: the first is established, the second is chosen."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#Classification
 <https://w3id.org/aias/odp/iso22989#Classification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -551,9 +552,10 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/aias/odp/iso22989#Control
 <https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aias/odp/iso22989#AIFunction> .
 <https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2000/01/rdf-schema#comment> "Purposeful action on or in a process to meet specified objectives."@en .
 <https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2000/01/rdf-schema#label> "Control"@en .
-<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.5, which takes the definition from IEC 61800-7-1:2015, 3.2.6.\n\n**The wording is identical to IEC 60050-351, 351-42-19**, and both trace back to the same source. The two are therefore the same concept rather than merely similar ones, and the alignment relates them with owl:equivalentClass. This pattern states nothing about the other, since referencing another namespace would drag it along wherever this pattern is used."@en .
+<https://w3id.org/aias/odp/iso22989#Control> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.5.5, which takes the definition from IEC 61800-7-1:2015, 3.2.6.\n\nModelled as a function alongside training, inference and the rest. The entry sits in clause 3.5 among the terms related to trustworthiness, but that is a grouping by subject rather than a statement about the kind of term: the definition says action, which is what the other functions are as well. A system therefore relates to it through hasFunction like any other activity.\n\n**The wording is identical to IEC 60050-351, 351-42-19**, and both trace back to the same source. The two are the same concept rather than merely similar ones, and the alignment relates them with owl:equivalentClass. This pattern states nothing about the other, since referencing another namespace would drag it along wherever this pattern is used."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#Controllability
 <https://w3id.org/aias/odp/iso22989#Controllability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -645,7 +647,7 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A characteristic of an algorithm that affects its behaviour, chosen in advance rather than determined by training."@en .
 <https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2000/01/rdf-schema#label> "Hyperparameter"@en .
-<https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4, which defines it as a characteristic of a machine learning algorithm affecting its learning process, selected prior to training.\n\nThis pattern places it on the algorithm superclass, so that a model algorithm and an evaluation algorithm may carry one as well: the number of layers of a network, or the threshold of a rule. Applying the entry beyond machine learning is a reading of it rather than the entry itself, and a rule threshold recorded here is such a case."@en .
+<https://w3id.org/aias/odp/iso22989#Hyperparameter> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.4, which defines it as a characteristic of a machine learning algorithm affecting its learning process, selected prior to training.\n\nThis pattern places it on the algorithm superclass, so that a model algorithm and an evaluation algorithm may carry one as well: the number of layers of a network, or the threshold of a rule. Applying the entry beyond machine learning is a reading of it rather than the entry itself, and a rule threshold recorded here is such a case.\n\nThe value chosen for it is reached by hasSetting, not by forCharacteristic. A hyperparameter is set before a training and a quality of clause 3.5 is established by one, and the two relations keep that difference readable."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#Imputation
 <https://w3id.org/aias/odp/iso22989#Imputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -707,13 +709,13 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of optimizing model parameters through computational techniques, such that the model's behaviour reflects the data or experience."@en .
 <https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2000/01/rdf-schema#label> "Machine Learning"@en .
 <https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2004/02/skos/core#altLabel> "ML"@en .
-<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.5.\n\nModelled as a subclass of training rather than as a separate class: it is the case of training in which the parameters are optimised computationally. A symbolic system has a model without any training at all, which is what test case 2 records."@en .
+<https://w3id.org/aias/odp/iso22989#MachineLearning> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.3.5.\n\nModelled as a subclass of training rather than as a separate class: it is the case of training in which the parameters are optimised computationally. A symbolic system has a model without any training at all."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#Model
 <https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data."@en .
 <https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2000/01/rdf-schema#label> "Model"@en .
-<https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it, which is what test case 2 records."@en .
+<https://w3id.org/aias/odp/iso22989#Model> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it."@en .
 # 
 # https://w3id.org/aias/odp/iso22989#ModelAlgorithm
 <https://w3id.org/aias/odp/iso22989#ModelAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

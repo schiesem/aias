@@ -31,23 +31,25 @@
           "type": "label"
         }
       ],
+      "hasVersion": [
+        {
+          "identifier": "hasVersion",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/iec60050",
+          "type": "iri"
+        }
+      ],
       "subject": [
         {
           "identifier": "subject",
           "language": "en",
-          "value": "IEC 60050-351",
+          "value": "Automation",
           "type": "label"
         },
         {
           "identifier": "subject",
           "language": "en",
           "value": "Control Technology",
-          "type": "label"
-        },
-        {
-          "identifier": "subject",
-          "language": "en",
-          "value": "Automation",
           "type": "label"
         },
         {
@@ -61,14 +63,12 @@
           "language": "en",
           "value": "Ontology Design Pattern",
           "type": "label"
-        }
-      ],
-      "hasVersion": [
+        },
         {
-          "identifier": "hasVersion",
-          "language": "undefined",
-          "value": "https://w3id.org/aias/odp/iec60050",
-          "type": "iri"
+          "identifier": "subject",
+          "language": "en",
+          "value": "IEC 60050-351",
+          "type": "label"
         }
       ],
       "created": [
@@ -79,20 +79,20 @@
           "type": "label"
         }
       ],
-      "abstract": [
-        {
-          "identifier": "abstract",
-          "language": "en",
-          "value": "An ontology design pattern for the terminology of control technology, following DIN IEC 60050-351:2014, the International Electrotechnical Vocabulary. It models a control as a chain of action paths and actions, which is what allows open-loop and closed-loop control to be told apart by structure rather than by name: a closed-loop control requires a closed action, not merely a closed path. Around that it holds the variable quantities of a control loop, the items under consideration with their functional and physical units, the normative taxonomy of control functions, and the characteristics a device carries with their values and units. Seventy-nine classes drawn from 86 of the standard's 409 entries, with the selection documented entry by entry.",
-          "type": "label"
-        }
-      ],
       "source": [
         {
           "identifier": "source",
           "language": "undefined",
           "value": "https://www.dinmedia.de/de/norm/din-iec-60050-351/208013542",
           "type": "iri"
+        }
+      ],
+      "abstract": [
+        {
+          "identifier": "abstract",
+          "language": "en",
+          "value": "An ontology design pattern for the terminology of control technology, following DIN IEC 60050-351:2014, the International Electrotechnical Vocabulary. It models a control as a chain of action paths and actions, which is what allows open-loop and closed-loop control to be told apart by structure rather than by name: a closed-loop control requires a closed action, not merely a closed path. Around that it holds the variable quantities of a control loop, the items under consideration with their functional and physical units, the normative taxonomy of control functions, and the characteristics a device carries with their values and units. Seventy-nine classes drawn from 86 of the standard's 409 entries, with the selection documented entry by entry.",
+          "type": "label"
         }
       ],
       "versionInfo": [
@@ -127,19 +127,19 @@
           "type": "iri"
         }
       ],
-      "rights": [
-        {
-          "identifier": "rights",
-          "language": "en",
-          "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
-          "type": "label"
-        }
-      ],
       "preferredNamespacePrefix": [
         {
           "identifier": "preferredNamespacePrefix",
           "language": "undefined",
           "value": "iec60050",
+          "type": "label"
+        }
+      ],
+      "rights": [
+        {
+          "identifier": "rights",
+          "language": "en",
+          "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
           "type": "label"
         }
       ],
@@ -159,20 +159,20 @@
           "type": "label"
         }
       ],
-      "preferredNamespaceUri": [
-        {
-          "identifier": "preferredNamespaceUri",
-          "language": "undefined",
-          "value": "https://w3id.org/aias/odp/iec60050#",
-          "type": "label"
-        }
-      ],
       "codeRepository": [
         {
           "identifier": "codeRepository",
           "language": "undefined",
           "value": "https://github.com/schiesem/aias",
           "type": "iri"
+        }
+      ],
+      "preferredNamespaceUri": [
+        {
+          "identifier": "preferredNamespaceUri",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/iec60050#",
+          "type": "label"
         }
       ],
       "status": [
@@ -236,11 +236,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "22",
+      "id": "15",
       "type": "owl:Class"
     },
     {
-      "id": "15",
+      "id": "22",
       "type": "owl:Class"
     },
     {
@@ -252,7 +252,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "37",
+      "id": "39",
       "type": "owl:Class"
     },
     {
@@ -412,7 +412,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "88",
+      "id": "87",
       "type": "rdfs:Datatype"
     },
     {
@@ -496,7 +496,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "39",
+      "id": "38",
       "type": "owl:Class"
     },
     {
@@ -524,11 +524,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "152",
+      "id": "24",
       "type": "owl:Class"
     },
     {
-      "id": "24",
+      "id": "152",
       "type": "owl:Class"
     },
     {
@@ -863,37 +863,6 @@
       ]
     },
     {
-      "iri": "https://w3id.org/aias/odp/iec60050#OutputVariable",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "IEC 60050-351, 351-41-07.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "OutputVariable",
-        "en": "Output Variable"
-      },
-      "subClasses": [
-        "30",
-        "31",
-        "21"
-      ],
-      "comment": {
-        "en": "A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables."
-      },
-      "id": "22",
-      "superClasses": [
-        "1"
-      ]
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iec60050#ControlFunction",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -1081,27 +1050,6 @@
           }
         },
         {
-          "iri": "https://w3id.org/aias/odp/iec60050#Monitor",
-          "baseIri": "https://w3id.org/aias/odp/iec60050",
-          "annotations": {
-            "note": [
-              {
-                "identifier": "note",
-                "language": "en",
-                "value": "IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.",
-                "type": "label"
-              }
-            ]
-          },
-          "comment": {
-            "en": "To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries."
-          },
-          "labels": {
-            "IRI-based": "Monitor",
-            "en": "Monitor"
-          }
-        },
-        {
           "iri": "https://w3id.org/aias/odp/iec60050#Optimize",
           "baseIri": "https://w3id.org/aias/odp/iec60050",
           "annotations": {
@@ -1121,12 +1069,64 @@
             "IRI-based": "Optimize",
             "en": "Optimize"
           }
+        },
+        {
+          "iri": "https://w3id.org/aias/odp/iec60050#Monitor",
+          "baseIri": "https://w3id.org/aias/odp/iec60050",
+          "annotations": {
+            "note": [
+              {
+                "identifier": "note",
+                "language": "en",
+                "value": "IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.",
+                "type": "label"
+              }
+            ]
+          },
+          "comment": {
+            "en": "To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries."
+          },
+          "labels": {
+            "IRI-based": "Monitor",
+            "en": "Monitor"
+          }
         }
       ],
       "comment": {
         "en": "A task of control technology performed on or in a process."
       },
       "id": "15"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iec60050#OutputVariable",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "IEC 60050-351, 351-41-07.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "OutputVariable",
+        "en": "Output Variable"
+      },
+      "subClasses": [
+        "30",
+        "31",
+        "21"
+      ],
+      "comment": {
+        "en": "A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables."
+      },
+      "id": "22",
+      "superClasses": [
+        "1"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement",
@@ -1204,7 +1204,7 @@
       "comment": {
         "en": "A functional unit consisting of the controlling system and the controlled system."
       },
-      "id": "37",
+      "id": "39",
       "superClasses": [
         "5"
       ]
@@ -1413,7 +1413,7 @@
         "20",
         "9",
         "4",
-        "37",
+        "39",
         "45",
         "12",
         "57",
@@ -1537,7 +1537,7 @@
       },
       "id": "68",
       "superClasses": [
-        "39"
+        "38"
       ]
     },
     {
@@ -1876,14 +1876,14 @@
       },
       "id": "89",
       "superClasses": [
-        "39"
+        "38"
       ]
     },
     {
       "instances": 0,
       "union": [
         "49",
-        "39",
+        "38",
         "56"
       ],
       "attributes": [
@@ -1975,7 +1975,7 @@
       "instances": 0,
       "union": [
         "49",
-        "39",
+        "38",
         "56"
       ],
       "attributes": [
@@ -1988,7 +1988,7 @@
       "instances": 0,
       "union": [
         "49",
-        "39",
+        "38",
         "56"
       ],
       "attributes": [
@@ -2028,7 +2028,7 @@
       "instances": 0,
       "union": [
         "59",
-        "39"
+        "38"
       ],
       "attributes": [
         "anonymous",
@@ -2189,7 +2189,7 @@
     {
       "iri": "http://www.w3.org/2001/XMLSchema#decimal",
       "baseIri": "http://www.w3.org/2001/XMLSchema",
-      "id": "88",
+      "id": "87",
       "label": {
         "IRI-based": "decimal"
       }
@@ -2198,7 +2198,7 @@
       "instances": 0,
       "union": [
         "48",
-        "39"
+        "38"
       ],
       "attributes": [
         "anonymous",
@@ -2252,7 +2252,7 @@
       "instances": 0,
       "union": [
         "49",
-        "39",
+        "38",
         "56"
       ],
       "attributes": [
@@ -2316,7 +2316,7 @@
     {
       "instances": 0,
       "union": [
-        "39",
+        "38",
         "56"
       ],
       "attributes": [
@@ -2477,7 +2477,7 @@
       },
       "id": "162",
       "superClasses": [
-        "39"
+        "38"
       ]
     },
     {
@@ -2576,7 +2576,7 @@
       },
       "id": "29",
       "superClasses": [
-        "39"
+        "38"
       ]
     },
     {
@@ -2656,7 +2656,7 @@
       "comment": {
         "en": "Purposeful action on or in a process to meet specified objectives."
       },
-      "id": "39"
+      "id": "38"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#RealTimeCapability",
@@ -2809,6 +2809,29 @@
       ]
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#CharacteristicValue",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Reified so that a value can be referred to and annotated, in the same arrangement and for the same reason as the quality of service value of the ISO 7498 pattern.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "CharacteristicValue",
+        "en": "Characteristic Value"
+      },
+      "comment": {
+        "en": "The value a model assigns to one characteristic, together with its unit."
+      },
+      "id": "24"
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iec60050#ModelBasedControl",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -2833,29 +2856,6 @@
       "superClasses": [
         "29"
       ]
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iec60050#CharacteristicValue",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "Reified so that a value can be referred to and annotated, in the same arrangement and for the same reason as the quality of service value of the ISO 7498 pattern.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "CharacteristicValue",
-        "en": "Characteristic Value"
-      },
-      "comment": {
-        "en": "The value a model assigns to one characteristic, together with its unit."
-      },
-      "id": "24"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#Plant",
@@ -2984,7 +2984,7 @@
       },
       "id": "3",
       "superClasses": [
-        "39"
+        "38"
       ]
     }
   ],
@@ -3010,7 +3010,7 @@
       "type": "owl:objectProperty"
     },
     {
-      "id": "38",
+      "id": "37",
       "type": "owl:objectProperty"
     },
     {
@@ -3042,11 +3042,11 @@
       "type": "owl:objectProperty"
     },
     {
-      "id": "72",
+      "id": "52",
       "type": "owl:objectProperty"
     },
     {
-      "id": "52",
+      "id": "72",
       "type": "owl:objectProperty"
     },
     {
@@ -3059,11 +3059,11 @@
     },
     {
       "id": "86",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
-      "id": "87",
-      "type": "owl:datatypeProperty"
+      "id": "88",
+      "type": "owl:objectProperty"
     },
     {
       "id": "91",
@@ -3303,11 +3303,11 @@
     },
     {
       "id": "170",
-      "type": "owl:objectProperty"
+      "type": "owl:datatypeProperty"
     },
     {
       "id": "171",
-      "type": "owl:datatypeProperty"
+      "type": "owl:objectProperty"
     },
     {
       "id": "172",
@@ -3532,8 +3532,8 @@
         "en": "Relates an action to the action path it takes place over."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "16"
     },
@@ -3560,8 +3560,8 @@
         "en": "Relates a characteristic value to the characteristic it quantifies."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "23"
     },
@@ -3616,14 +3616,14 @@
       "superproperty": [
         "35"
       ],
-      "domain": "39",
+      "domain": "38",
       "comment": {
         "en": "Relates a closed-loop control to the controlled variable it acts upon."
       },
       "attributes": [
         "object"
       ],
-      "id": "38"
+      "id": "37"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#unit",
@@ -3648,8 +3648,8 @@
         "en": "The unit of a characteristic value, for example ms or percent."
       },
       "attributes": [
-        "functional",
-        "datatype"
+        "datatype",
+        "functional"
       ],
       "id": "43"
     },
@@ -3674,7 +3674,7 @@
       "superproperty": [
         "35"
       ],
-      "domain": "39",
+      "domain": "38",
       "comment": {
         "en": "Relates a closed-loop control to the reference variable the controlled variable is adjusted to."
       },
@@ -3701,7 +3701,7 @@
         "IRI-based": "hasAction",
         "en": "has action"
       },
-      "domain": "39",
+      "domain": "38",
       "comment": {
         "en": "Relates an automation to the action taking place over its action path."
       },
@@ -3731,7 +3731,7 @@
       "domain": "51",
       "subproperty": [
         "32",
-        "38",
+        "37",
         "52",
         "46"
       ],
@@ -3766,8 +3766,8 @@
         "en": "Relates an action line to the variable quantity transmitted along it."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "53"
     },
@@ -3816,6 +3816,36 @@
       "id": "70"
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#hasManipulatedVariable",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "range": "66",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasManipulatedVariable",
+        "en": "has manipulated variable"
+      },
+      "superproperty": [
+        "35"
+      ],
+      "domain": "38",
+      "comment": {
+        "en": "Relates a control to the manipulated variable through which it acts on the controlled system."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "52"
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iec60050#fromUnit",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "range": "5",
@@ -3838,40 +3868,10 @@
         "en": "Relates an action line to the functional unit at which it starts."
       },
       "attributes": [
-        "object",
-        "functional"
-      ],
-      "id": "72"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iec60050#hasManipulatedVariable",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "66",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "hasManipulatedVariable",
-        "en": "has manipulated variable"
-      },
-      "superproperty": [
-        "35"
-      ],
-      "domain": "39",
-      "comment": {
-        "en": "Relates a control to the manipulated variable through which it acts on the controlled system."
-      },
-      "attributes": [
+        "functional",
         "object"
       ],
-      "id": "52"
+      "id": "72"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#hasForwardPath",
@@ -3928,6 +3928,24 @@
       "id": "84"
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#quantity",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "range": "87",
+      "label": {
+        "IRI-based": "quantity",
+        "en": "quantity"
+      },
+      "domain": "24",
+      "comment": {
+        "en": "The numeric quantity of a characteristic value."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "86"
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit",
       "inverse": "63",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
@@ -3953,25 +3971,7 @@
       "attributes": [
         "object"
       ],
-      "id": "86"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iec60050#quantity",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "88",
-      "label": {
-        "IRI-based": "quantity",
-        "en": "quantity"
-      },
-      "domain": "24",
-      "comment": {
-        "en": "The numeric quantity of a characteristic value."
-      },
-      "attributes": [
-        "functional",
-        "datatype"
-      ],
-      "id": "87"
+      "id": "88"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#realisedBy",
@@ -3991,7 +3991,7 @@
         "IRI-based": "realisedBy",
         "en": "realised by"
       },
-      "domain": "39",
+      "domain": "38",
       "comment": {
         "en": "Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain."
       },
@@ -4004,8 +4004,8 @@
       "range": "59",
       "domain": "12",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "95"
     },
@@ -4013,8 +4013,8 @@
       "range": "83",
       "domain": "98",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "97"
     },
@@ -4022,8 +4022,8 @@
       "range": "1",
       "domain": "56",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "99"
     },
@@ -4031,8 +4031,8 @@
       "range": "101",
       "domain": "6",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "100"
     },
@@ -4040,89 +4040,89 @@
       "range": "93",
       "domain": "74",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "102"
     },
     {
-      "range": "56",
-      "domain": "39",
+      "range": "1",
+      "domain": "38",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "103"
     },
     {
-      "range": "1",
-      "domain": "39",
+      "range": "56",
+      "domain": "38",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "104"
     },
     {
-      "range": "39",
+      "range": "38",
       "domain": "24",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "105"
     },
     {
-      "range": "1",
+      "range": "56",
       "domain": "24",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "107"
     },
     {
-      "range": "56",
+      "range": "1",
       "domain": "24",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "108"
-    },
-    {
-      "range": "56",
-      "domain": "25",
-      "attributes": [
-        "object",
-        "anonymous"
-      ],
-      "id": "109"
     },
     {
       "range": "1",
       "domain": "25",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
-      "id": "110"
-    },
-    {
-      "range": "39",
-      "domain": "25",
-      "attributes": [
-        "object",
-        "anonymous"
-      ],
-      "id": "111"
+      "id": "109"
     },
     {
       "range": "24",
       "domain": "25",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
+      ],
+      "id": "110"
+    },
+    {
+      "range": "56",
+      "domain": "25",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "111"
+    },
+    {
+      "range": "38",
+      "domain": "25",
+      "attributes": [
+        "anonymous",
+        "object"
       ],
       "id": "112"
     },
@@ -4154,11 +4154,11 @@
       "id": "113"
     },
     {
-      "range": "56",
+      "range": "1",
       "domain": "7",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "115"
     },
@@ -4166,17 +4166,17 @@
       "range": "78",
       "domain": "79",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "116"
     },
     {
-      "range": "39",
+      "range": "56",
       "domain": "7",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "117"
     },
@@ -4184,8 +4184,8 @@
       "range": "7",
       "domain": "26",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "118"
     },
@@ -4193,8 +4193,8 @@
       "range": "7",
       "domain": "6",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "119"
     },
@@ -4202,8 +4202,8 @@
       "range": "7",
       "domain": "101",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "120"
     },
@@ -4253,7 +4253,7 @@
         "IRI-based": "runsOverActionPath",
         "en": "runs over action path"
       },
-      "domain": "39",
+      "domain": "38",
       "comment": {
         "en": "Relates an automation to the action path it runs over."
       },
@@ -4266,8 +4266,8 @@
       "range": "56",
       "domain": "64",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "124"
     },
@@ -4275,8 +4275,8 @@
       "range": "9",
       "domain": "8",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "125"
     },
@@ -4284,8 +4284,8 @@
       "range": "56",
       "domain": "5",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "126"
     },
@@ -4293,8 +4293,8 @@
       "range": "56",
       "domain": "106",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "127"
     },
@@ -4302,8 +4302,8 @@
       "range": "22",
       "domain": "30",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "128"
     },
@@ -4311,8 +4311,8 @@
       "range": "49",
       "domain": "96",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "129"
     },
@@ -4320,8 +4320,8 @@
       "range": "22",
       "domain": "21",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "130"
     },
@@ -4329,8 +4329,8 @@
       "range": "22",
       "domain": "31",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "131"
     },
@@ -4338,8 +4338,8 @@
       "range": "49",
       "domain": "48",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "133"
     },
@@ -4347,8 +4347,8 @@
       "range": "17",
       "domain": "93",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "135"
     },
@@ -4356,8 +4356,8 @@
       "range": "17",
       "domain": "74",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "136"
     },
@@ -4392,8 +4392,8 @@
       "range": "29",
       "domain": "65",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "144"
     },
@@ -4401,8 +4401,8 @@
       "range": "29",
       "domain": "69",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "145"
     },
@@ -4410,8 +4410,8 @@
       "range": "29",
       "domain": "94",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "146"
     },
@@ -4419,8 +4419,8 @@
       "range": "29",
       "domain": "139",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "147"
     },
@@ -4428,8 +4428,8 @@
       "range": "29",
       "domain": "76",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "148"
     },
@@ -4492,8 +4492,8 @@
       "range": "29",
       "domain": "152",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "151"
     },
@@ -4501,8 +4501,8 @@
       "range": "29",
       "domain": "154",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "153"
     },
@@ -4510,8 +4510,8 @@
       "range": "5",
       "domain": "59",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "155"
     },
@@ -4519,8 +4519,8 @@
       "range": "5",
       "domain": "58",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "156"
     },
@@ -4528,8 +4528,8 @@
       "range": "5",
       "domain": "61",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "157"
     },
@@ -4537,8 +4537,8 @@
       "range": "5",
       "domain": "60",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "158"
     },
@@ -4546,17 +4546,17 @@
       "range": "5",
       "domain": "45",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "159"
     },
     {
       "range": "5",
-      "domain": "37",
+      "domain": "39",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "160"
     },
@@ -4564,8 +4564,8 @@
       "range": "5",
       "domain": "57",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "161"
     },
@@ -4573,8 +4573,8 @@
       "range": "5",
       "domain": "12",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "163"
     },
@@ -4582,8 +4582,8 @@
       "range": "5",
       "domain": "9",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "164"
     },
@@ -4591,8 +4591,8 @@
       "range": "5",
       "domain": "20",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "165"
     },
@@ -4600,8 +4600,8 @@
       "range": "5",
       "domain": "4",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "166"
     },
@@ -4609,8 +4609,8 @@
       "range": "5",
       "domain": "55",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "167"
     },
@@ -4618,8 +4618,8 @@
       "range": "7",
       "domain": "27",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "168"
     },
@@ -4627,10 +4627,38 @@
       "range": "5",
       "domain": "18",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "169"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iec60050#symbol",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "range": "138",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "IEC 60050-351 states a formula symbol for most characteristics of 351-45 and 351-46, which makes a model checkable against the figures of the standard.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "symbol",
+        "en": "symbol"
+      },
+      "domain": "25",
+      "comment": {
+        "en": "The formula symbol the standard gives for a characteristic, for example T_cs for the control settling time."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "170"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#hasProperty",
@@ -4657,42 +4685,14 @@
       "attributes": [
         "object"
       ],
-      "id": "170"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iec60050#symbol",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "138",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "IEC 60050-351 states a formula symbol for most characteristics of 351-45 and 351-46, which makes a model checkable against the figures of the standard.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "symbol",
-        "en": "symbol"
-      },
-      "domain": "25",
-      "comment": {
-        "en": "The formula symbol the standard gives for a characteristic, for example T_cs for the control settling time."
-      },
-      "attributes": [
-        "functional",
-        "datatype"
-      ],
       "id": "171"
     },
     {
       "range": "5",
       "domain": "36",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "172"
     },
@@ -4700,8 +4700,8 @@
       "range": "62",
       "domain": "47",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "173"
     },
@@ -4709,8 +4709,8 @@
       "range": "62",
       "domain": "34",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "174"
     },
@@ -4718,8 +4718,8 @@
       "range": "3",
       "domain": "2",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "175"
     },
@@ -4727,8 +4727,8 @@
       "range": "25",
       "domain": "80",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "176"
     },
@@ -4736,8 +4736,8 @@
       "range": "62",
       "domain": "85",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "177"
     },
@@ -4772,44 +4772,44 @@
       "range": "25",
       "domain": "81",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "178"
-    },
-    {
-      "range": "56",
-      "domain": "17",
-      "attributes": [
-        "object",
-        "anonymous"
-      ],
-      "id": "179"
-    },
-    {
-      "range": "24",
-      "domain": "17",
-      "attributes": [
-        "object",
-        "anonymous"
-      ],
-      "id": "180"
-    },
-    {
-      "range": "39",
-      "domain": "17",
-      "attributes": [
-        "object",
-        "anonymous"
-      ],
-      "id": "181"
     },
     {
       "range": "1",
       "domain": "17",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
+      ],
+      "id": "179"
+    },
+    {
+      "range": "38",
+      "domain": "17",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "180"
+    },
+    {
+      "range": "7",
+      "domain": "17",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "181"
+    },
+    {
+      "range": "56",
+      "domain": "17",
+      "attributes": [
+        "anonymous",
+        "object"
       ],
       "id": "182"
     },
@@ -4817,35 +4817,35 @@
       "range": "7",
       "domain": "54",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "183"
-    },
-    {
-      "range": "24",
-      "domain": "7",
-      "attributes": [
-        "object",
-        "anonymous"
-      ],
-      "id": "184"
     },
     {
       "range": "25",
       "domain": "7",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
+      ],
+      "id": "184"
+    },
+    {
+      "range": "24",
+      "domain": "7",
+      "attributes": [
+        "anonymous",
+        "object"
       ],
       "id": "185"
     },
     {
-      "range": "1",
+      "range": "38",
       "domain": "7",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "186"
     },
@@ -4878,11 +4878,11 @@
       "id": "187"
     },
     {
-      "range": "7",
+      "range": "24",
       "domain": "17",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "189"
     },
@@ -4890,8 +4890,8 @@
       "range": "25",
       "domain": "17",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "190"
     },
@@ -4899,8 +4899,8 @@
       "range": "1",
       "domain": "40",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "191"
     },
@@ -4908,8 +4908,8 @@
       "range": "1",
       "domain": "22",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "192"
     },
@@ -4917,8 +4917,8 @@
       "range": "77",
       "domain": "79",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "193"
     },
@@ -4926,8 +4926,8 @@
       "range": "77",
       "domain": "78",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "194"
     },
@@ -4935,8 +4935,8 @@
       "range": "1",
       "domain": "0",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "195"
     },
@@ -4944,8 +4944,8 @@
       "range": "1",
       "domain": "41",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "196"
     },
@@ -4953,8 +4953,8 @@
       "range": "1",
       "domain": "67",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "197"
     },
@@ -4981,8 +4981,8 @@
         "en": "Relates an action line to the functional unit at which it ends."
       },
       "attributes": [
-        "object",
-        "functional"
+        "functional",
+        "object"
       ],
       "id": "188"
     },
@@ -4990,8 +4990,8 @@
       "range": "1",
       "domain": "62",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "198"
     },
@@ -4999,17 +4999,17 @@
       "range": "1",
       "domain": "66",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "199"
     },
     {
-      "range": "39",
+      "range": "38",
       "domain": "89",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "200"
     },
@@ -5041,20 +5041,20 @@
       "id": "201"
     },
     {
-      "range": "39",
+      "range": "38",
       "domain": "3",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "202"
     },
     {
-      "range": "39",
+      "range": "38",
       "domain": "29",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "203"
     },
@@ -5062,26 +5062,26 @@
       "range": "29",
       "domain": "28",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "204"
     },
     {
-      "range": "39",
+      "range": "38",
       "domain": "162",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "205"
     },
     {
-      "range": "39",
+      "range": "38",
       "domain": "68",
       "attributes": [
-        "object",
-        "anonymous"
+        "anonymous",
+        "object"
       ],
       "id": "206"
     }

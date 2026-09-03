@@ -1,17 +1,17 @@
 <https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso7498/instances/1.0.0> .
-<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/aias/odp/iso7498> .
+<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso7498/instances/2.0.0> .
+<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/aias/odp/iso7498/2.0.0> .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/created> "2026-08-17"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
-<https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/description> "Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.\r\n\r\nThey are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself."@en .
+<https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/description> "Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.\n\nThey are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself."@en .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/publisher> "TODO: institution" .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/dc/terms/title> "ISO/IEC 7498-1 Pattern: Named Individuals"@en .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/ontology/bibo/status> "Draft"@en .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso7498-inst" .
 <https://w3id.org/aias/odp/iso7498/instances> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso7498/instances#" .
-<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2000/01/rdf-schema#comment> "Three groups of individual, with different standing.\r\n\r\nThe seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.\r\n\r\nThe protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.\r\n\r\nThe quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."@en .
-<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2000/01/rdf-schema#comment> "Three groups of individual, with different standing.\n\nThe seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.\n\nThe protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.\n\nThe quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."@en .
+<https://w3id.org/aias/odp/iso7498/instances> <http://www.w3.org/2002/07/owl#versionInfo> "2.0.0" .
 # 
 # 
 # #################################################################
@@ -54,54 +54,6 @@
 # http://www.w3.org/2004/02/skos/core#note
 <http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# https://w3id.org/aias/odp/iso7498#atLayer
-<https://w3id.org/aias/odp/iso7498#atLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# https://w3id.org/aias/odp/iso7498#layerNumber
-<https://w3id.org/aias/odp/iso7498#layerNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# https://w3id.org/aias/odp/iso7498#realisesLayer
-<https://w3id.org/aias/odp/iso7498#realisesLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2001/XMLSchema#date
-<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# https://w3id.org/aias/odp/iso7498#CommunicationDirection
-<https://w3id.org/aias/odp/iso7498#CommunicationDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/aias/odp/iso7498#Layer
-<https://w3id.org/aias/odp/iso7498#Layer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/aias/odp/iso7498#ProtocolDataUnit
-<https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/aias/odp/iso7498#QoSParameter
-<https://w3id.org/aias/odp/iso7498#QoSParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/aias/odp/iso7498#ServiceDataUnit
-<https://w3id.org/aias/odp/iso7498#ServiceDataUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://w3id.org/aias/odp/iso7498#Technology
-<https://w3id.org/aias/odp/iso7498#Technology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # 
 # 
 # #################################################################
@@ -114,17 +66,17 @@
 # https://w3id.org/aias/odp/iso7498/instances#AMQP
 <https://w3id.org/aias/odp/iso7498/instances#AMQP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#AMQP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#AMQP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#AMQP> <http://www.w3.org/2000/01/rdf-schema#comment> "Advanced message queuing protocol, after ISO/IEC 19464."@en .
 <https://w3id.org/aias/odp/iso7498/instances#AMQP> <http://www.w3.org/2000/01/rdf-schema#label> "AMQP"@en .
-<https://w3id.org/aias/odp/iso7498/instances#AMQP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer
 <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "7"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "The highest layer, providing the sole means for an application process to access the OSI environment. It has no boundary with a higher layer."@en .
 <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Application Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.1.2. Consists of the application entities that cooperate in the OSI environment, 6.1.4."@en .
-<https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "7"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Availability
 <https://w3id.org/aias/odp/iso7498/instances#Availability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -136,40 +88,40 @@
 # https://w3id.org/aias/odp/iso7498/instances#Bit
 <https://w3id.org/aias/odp/iso7498/instances#Bit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Bit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#ServiceDataUnit> .
+<https://w3id.org/aias/odp/iso7498/instances#Bit> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Bit> <http://www.w3.org/2000/01/rdf-schema#comment> "The service data unit of the physical layer."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Bit> <http://www.w3.org/2000/01/rdf-schema#label> "Bit"@en .
 <https://w3id.org/aias/odp/iso7498/instances#Bit> <http://www.w3.org/2004/02/skos/core#note> "The one practice term ISO/IEC 7498-1 names: 7.6.4.5 refers to physical service data units, that is bits, and 7.7.3.3.1 to the transparent transmission of bit streams."@en .
-<https://w3id.org/aias/odp/iso7498/instances#Bit> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#CANopen
 <https://w3id.org/aias/odp/iso7498/instances#CANopen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#CANopen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#CANopen> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#CANopen> <http://www.w3.org/2000/01/rdf-schema#comment> "Communication protocol for embedded automation on CAN, after EN 50325-4."@en .
 <https://w3id.org/aias/odp/iso7498/instances#CANopen> <http://www.w3.org/2000/01/rdf-schema#label> "CANopen"@en .
-<https://w3id.org/aias/odp/iso7498/instances#CANopen> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#DHCP
 <https://w3id.org/aias/odp/iso7498/instances#DHCP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#DHCP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#DHCP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#DHCP> <http://www.w3.org/2000/01/rdf-schema#comment> "Dynamic host configuration protocol."@en .
 <https://w3id.org/aias/odp/iso7498/instances#DHCP> <http://www.w3.org/2000/01/rdf-schema#label> "DHCP"@en .
-<https://w3id.org/aias/odp/iso7498/instances#DHCP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer
 <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides the functional and procedural means for the transfer of data between network entities and detects and possibly corrects errors occurring in the physical layer."@en .
 <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Data Link Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.6.2."@en .
-<https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Datagram
 <https://w3id.org/aias/odp/iso7498/instances#Datagram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Datagram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> .
+<https://w3id.org/aias/odp/iso7498/instances#Datagram> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Datagram> <http://www.w3.org/2000/01/rdf-schema#comment> "The protocol data unit of a connectionless-mode transport or network service."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Datagram> <http://www.w3.org/2000/01/rdf-schema#label> "Datagram"@en .
 <https://w3id.org/aias/odp/iso7498/instances#Datagram> <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. Named by the protocol standards of connectionless-mode services."@en .
-<https://w3id.org/aias/odp/iso7498/instances#Datagram> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay
 <https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -181,80 +133,80 @@
 # https://w3id.org/aias/odp/iso7498/instances#EtherCAT
 <https://w3id.org/aias/odp/iso7498/instances#EtherCAT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#EtherCAT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#EtherCAT> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#EtherCAT> <http://www.w3.org/2000/01/rdf-schema#comment> "Real-time capable fieldbus technology on Ethernet, after IEC 61158."@en .
 <https://w3id.org/aias/odp/iso7498/instances#EtherCAT> <http://www.w3.org/2000/01/rdf-schema#label> "EtherCAT"@en .
-<https://w3id.org/aias/odp/iso7498/instances#EtherCAT> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Ethernet
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#Ethernet> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet> <http://www.w3.org/2000/01/rdf-schema#comment> "Frame based data link technology after IEEE 802.3."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet> <http://www.w3.org/2000/01/rdf-schema#label> "Ethernet"@en .
-<https://w3id.org/aias/odp/iso7498/instances#Ethernet> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T> <http://www.w3.org/2000/01/rdf-schema#comment> "Gigabit Ethernet over twisted pair, 1000 Mbit/s."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T> <http://www.w3.org/2000/01/rdf-schema#label> "1000BASE-T"@en .
-<https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX> <http://www.w3.org/2000/01/rdf-schema#comment> "Fast Ethernet over twisted pair, 100 Mbit/s."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX> <http://www.w3.org/2000/01/rdf-schema#label> "100BASE-TX"@en .
-<https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#FTP
 <https://w3id.org/aias/odp/iso7498/instances#FTP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#FTP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#FTP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#FTP> <http://www.w3.org/2000/01/rdf-schema#comment> "File transfer protocol."@en .
 <https://w3id.org/aias/odp/iso7498/instances#FTP> <http://www.w3.org/2000/01/rdf-schema#label> "FTP"@en .
-<https://w3id.org/aias/odp/iso7498/instances#FTP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Frame
 <https://w3id.org/aias/odp/iso7498/instances#Frame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Frame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> .
+<https://w3id.org/aias/odp/iso7498/instances#Frame> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Frame> <http://www.w3.org/2000/01/rdf-schema#comment> "The protocol data unit of the data link layer."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Frame> <http://www.w3.org/2000/01/rdf-schema#label> "Frame"@en .
 <https://w3id.org/aias/odp/iso7498/instances#Frame> <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting and synchronisation functions of the data link layer are sometimes referred to as framing, but the standard defines no such data unit."@en .
-<https://w3id.org/aias/odp/iso7498/instances#Frame> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#HTTP
 <https://w3id.org/aias/odp/iso7498/instances#HTTP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#HTTP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#HTTP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#HTTP> <http://www.w3.org/2000/01/rdf-schema#comment> "Hypertext transfer protocol."@en .
 <https://w3id.org/aias/odp/iso7498/instances#HTTP> <http://www.w3.org/2000/01/rdf-schema#label> "HTTP"@en .
-<https://w3id.org/aias/odp/iso7498/instances#HTTP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#HTTPS
 <https://w3id.org/aias/odp/iso7498/instances#HTTPS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#HTTPS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#HTTPS> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#HTTPS> <http://www.w3.org/2000/01/rdf-schema#comment> "Hypertext transfer protocol over a transport layer security connection."@en .
 <https://w3id.org/aias/odp/iso7498/instances#HTTPS> <http://www.w3.org/2000/01/rdf-schema#label> "HTTPS"@en .
-<https://w3id.org/aias/odp/iso7498/instances#HTTPS> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#IOLink
 <https://w3id.org/aias/odp/iso7498/instances#IOLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#IOLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#IOLink> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#IOLink> <http://www.w3.org/2000/01/rdf-schema#comment> "Point to point communication with sensors and actuators, after IEC 61131-9."@en .
 <https://w3id.org/aias/odp/iso7498/instances#IOLink> <http://www.w3.org/2000/01/rdf-schema#label> "IO-Link"@en .
-<https://w3id.org/aias/odp/iso7498/instances#IOLink> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#IPv4
 <https://w3id.org/aias/odp/iso7498/instances#IPv4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#IPv4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#IPv4> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#IPv4> <http://www.w3.org/2000/01/rdf-schema#comment> "Internet protocol version 4."@en .
 <https://w3id.org/aias/odp/iso7498/instances#IPv4> <http://www.w3.org/2000/01/rdf-schema#label> "IPv4"@en .
-<https://w3id.org/aias/odp/iso7498/instances#IPv4> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#IPv6
 <https://w3id.org/aias/odp/iso7498/instances#IPv6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#IPv6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#IPv6> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#IPv6> <http://www.w3.org/2000/01/rdf-schema#comment> "Internet protocol version 6."@en .
 <https://w3id.org/aias/odp/iso7498/instances#IPv6> <http://www.w3.org/2000/01/rdf-schema#label> "IPv6"@en .
-<https://w3id.org/aias/odp/iso7498/instances#IPv6> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Jitter
 <https://w3id.org/aias/odp/iso7498/instances#Jitter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -266,31 +218,31 @@
 # https://w3id.org/aias/odp/iso7498/instances#MQTT
 <https://w3id.org/aias/odp/iso7498/instances#MQTT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#MQTT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#MQTT> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#MQTT> <http://www.w3.org/2000/01/rdf-schema#comment> "Publish and subscribe messaging protocol for constrained devices, after ISO/IEC 20922."@en .
 <https://w3id.org/aias/odp/iso7498/instances#MQTT> <http://www.w3.org/2000/01/rdf-schema#label> "MQTT"@en .
-<https://w3id.org/aias/odp/iso7498/instances#MQTT> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Modbus
 <https://w3id.org/aias/odp/iso7498/instances#Modbus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Modbus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#Modbus> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Modbus> <http://www.w3.org/2000/01/rdf-schema#comment> "Request and response protocol widely used in industrial equipment."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Modbus> <http://www.w3.org/2000/01/rdf-schema#label> "Modbus"@en .
-<https://w3id.org/aias/odp/iso7498/instances#Modbus> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#NetworkLayer
 <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides the means to establish, maintain and terminate network connections between open systems and the means to exchange data units over them, independently of routing and relay considerations."@en .
 <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Network Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.5.2."@en .
-<https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#OPCUA
 <https://w3id.org/aias/odp/iso7498/instances#OPCUA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#OPCUA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#OPCUA> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#OPCUA> <http://www.w3.org/2000/01/rdf-schema#comment> "Platform independent service oriented architecture for industrial interoperability, after IEC 62541."@en .
 <https://w3id.org/aias/odp/iso7498/instances#OPCUA> <http://www.w3.org/2000/01/rdf-schema#label> "OPC UA"@en .
-<https://w3id.org/aias/odp/iso7498/instances#OPCUA> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#OneWay
 <https://w3id.org/aias/odp/iso7498/instances#OneWay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -302,26 +254,26 @@
 # https://w3id.org/aias/odp/iso7498/instances#Packet
 <https://w3id.org/aias/odp/iso7498/instances#Packet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Packet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> .
+<https://w3id.org/aias/odp/iso7498/instances#Packet> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Packet> <http://www.w3.org/2000/01/rdf-schema#comment> "The protocol data unit of the network layer."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Packet> <http://www.w3.org/2000/01/rdf-schema#label> "Packet"@en .
 <https://w3id.org/aias/odp/iso7498/instances#Packet> <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1. Named by the network layer protocol standards."@en .
-<https://w3id.org/aias/odp/iso7498/instances#Packet> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#NetworkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer
 <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides the mechanical, electrical, functional and procedural means to activate, maintain and de-activate physical connections for bit transmission between data link entities."@en .
 <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.7.2."@en .
-<https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#PresentationLayer
 <https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides for the representation of information that application entities either communicate or refer to in their communication, so that the syntax used is preserved in meaning."@en .
 <https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Presentation Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.2.2."@en .
-<https://w3id.org/aias/odp/iso7498/instances#PresentationLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Priority
 <https://w3id.org/aias/odp/iso7498/instances#Priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -333,17 +285,17 @@
 # https://w3id.org/aias/odp/iso7498/instances#Profibus
 <https://w3id.org/aias/odp/iso7498/instances#Profibus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Profibus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#Profibus> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Profibus> <http://www.w3.org/2000/01/rdf-schema#comment> "Fieldbus for automation with master and slave access, after IEC 61158 and IEC 61784."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Profibus> <http://www.w3.org/2000/01/rdf-schema#label> "PROFIBUS"@en .
 <https://w3id.org/aias/odp/iso7498/instances#Profibus> <http://www.w3.org/2004/02/skos/core#note> "Its master and slave access makes a segment two-way alternate in the sense of 5.3.1.15: both sides send, but never at the same time."@en .
-<https://w3id.org/aias/odp/iso7498/instances#Profibus> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Profinet
 <https://w3id.org/aias/odp/iso7498/instances#Profinet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Profinet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#Profinet> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Profinet> <http://www.w3.org/2000/01/rdf-schema#comment> "Industrial Ethernet standard for automation, after IEC 61158 and IEC 61784."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Profinet> <http://www.w3.org/2000/01/rdf-schema#label> "PROFINET"@en .
-<https://w3id.org/aias/odp/iso7498/instances#Profinet> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate
 <https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -355,25 +307,25 @@
 # https://w3id.org/aias/odp/iso7498/instances#Segment
 <https://w3id.org/aias/odp/iso7498/instances#Segment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#Segment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#ProtocolDataUnit> .
+<https://w3id.org/aias/odp/iso7498/instances#Segment> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#Segment> <http://www.w3.org/2000/01/rdf-schema#comment> "The protocol data unit of the transport layer."@en .
 <https://w3id.org/aias/odp/iso7498/instances#Segment> <http://www.w3.org/2000/01/rdf-schema#label> "Segment"@en .
 <https://w3id.org/aias/odp/iso7498/instances#Segment> <http://www.w3.org/2004/02/skos/core#note> "Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto multiple protocol data units."@en .
-<https://w3id.org/aias/odp/iso7498/instances#Segment> <https://w3id.org/aias/odp/iso7498#atLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#SessionLayer
 <https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides the means for cooperating presentation entities to organise and synchronise their dialogue and to manage their data exchange."@en .
 <https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Session Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.3.2."@en .
-<https://w3id.org/aias/odp/iso7498/instances#SessionLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#TCP
 <https://w3id.org/aias/odp/iso7498/instances#TCP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#TCP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#TCP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#TCP> <http://www.w3.org/2000/01/rdf-schema#comment> "Transmission control protocol, connection oriented."@en .
 <https://w3id.org/aias/odp/iso7498/instances#TCP> <http://www.w3.org/2000/01/rdf-schema#label> "TCP"@en .
-<https://w3id.org/aias/odp/iso7498/instances#TCP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#Throughput
 <https://w3id.org/aias/odp/iso7498/instances#Throughput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -392,10 +344,10 @@
 # https://w3id.org/aias/odp/iso7498/instances#TransportLayer
 <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Layer> .
+<https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides transparent transfer of data between session entities, relieving them of any concern with how reliable and cost effective transfer is achieved."@en .
 <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <http://www.w3.org/2000/01/rdf-schema#label> "Transport Layer"@en .
 <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <http://www.w3.org/2004/02/skos/core#note> "ISO/IEC 7498-1, 7.4.2. Clause 7.4.4 names the quality of service parameters of this layer."@en .
-<https://w3id.org/aias/odp/iso7498/instances#TransportLayer> <https://w3id.org/aias/odp/iso7498#layerNumber> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate
 <https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -414,16 +366,16 @@
 # https://w3id.org/aias/odp/iso7498/instances#UDP
 <https://w3id.org/aias/odp/iso7498/instances#UDP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#UDP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#UDP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#UDP> <http://www.w3.org/2000/01/rdf-schema#comment> "User datagram protocol, connectionless."@en .
 <https://w3id.org/aias/odp/iso7498/instances#UDP> <http://www.w3.org/2000/01/rdf-schema#label> "UDP"@en .
-<https://w3id.org/aias/odp/iso7498/instances#UDP> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#TransportLayer> .
 # 
 # https://w3id.org/aias/odp/iso7498/instances#WLAN
 <https://w3id.org/aias/odp/iso7498/instances#WLAN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/aias/odp/iso7498/instances#WLAN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/aias/odp/iso7498#Technology> .
+<https://w3id.org/aias/odp/iso7498/instances#WLAN> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 <https://w3id.org/aias/odp/iso7498/instances#WLAN> <http://www.w3.org/2000/01/rdf-schema#comment> "Wireless local area network after IEEE 802.11."@en .
 <https://w3id.org/aias/odp/iso7498/instances#WLAN> <http://www.w3.org/2000/01/rdf-schema#label> "WLAN"@en .
-<https://w3id.org/aias/odp/iso7498/instances#WLAN> <https://w3id.org/aias/odp/iso7498#realisesLayer> <https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer> .
 # 
 # 
 # 

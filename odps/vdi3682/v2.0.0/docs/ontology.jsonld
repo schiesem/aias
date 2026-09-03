@@ -326,10 +326,10 @@
     "@value" : "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\n\nRelation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.\n\nStructural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/aias/odp/vdi3682/1.0.0"
+    "@id" : "https://w3id.org/aias/odp/vdi3682/2.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
+    "@value" : "2.0.0"
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
@@ -478,7 +478,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#note" : [ {
     "@language" : "en",
-    "@value" : "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. The reification is required because the AIAS alignment ontology treats flows as instances of Relation so that the modelling assistance can annotate them, and because the graphical notation of this work carries a class field and a naming field inside every symbol, which an edge cannot hold.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification."
+    "@value" : "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. A reified flow can be identified, annotated and marked as parallel or alternative, none of which an edge can carry.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification."
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/vdi3682#Identification",
@@ -517,7 +517,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#note" : [ {
     "@language" : "en",
-    "@value" : "VDI 3682 Part 1, Section 4.1. Information leaving a process is the point of contact with the communication pattern of the AIAS information model."
+    "@value" : "VDI 3682 Part 1, Section 4.1. One of the three kinds of state a process moves, alongside product and energy."
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
@@ -663,7 +663,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#note" : [ {
     "@language" : "en",
-    "@value" : "VDI 3682 Part 1, Section 4.2. In the AIAS information model this class is the anchor for the elements of the automated plant, such as sensors, actuators, controllers and computing resources."
+    "@value" : "VDI 3682 Part 1, Section 4.2. The class is what a process needs to say who does the work: an operator states what happens, a resource states what performs it, and the assignment ties the two."
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/vdi3682#assignedResource",

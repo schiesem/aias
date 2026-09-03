@@ -46,16 +46,16 @@
         "value" : "TODO: institution",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "undefined",
-        "value" : "1.0.0",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://w3id.org/aias/odp/iec60050/instances#",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
         "type" : "label"
       } ],
       "title" : [ {
@@ -77,26 +77,1552 @@
     "id" : "0",
     "type" : "owl:Class"
   }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
     "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "69",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "owl:Class"
+  }, {
+    "id" : "74",
+    "type" : "owl:Class"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "76",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
+  }, {
+    "id" : "89",
+    "type" : "owl:Class"
+  }, {
+    "id" : "90",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "71",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  }, {
+    "id" : "106",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "132",
+    "type" : "owl:Class"
+  }, {
+    "id" : "134",
+    "type" : "owl:Class"
+  }, {
+    "id" : "88",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "114",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "138",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "139",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "140",
+    "type" : "owl:Class"
+  }, {
+    "id" : "141",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "92",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "14",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "81",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "162",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "154",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "93",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "owl:Class"
+  }, {
+    "id" : "85",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "152",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
+    "iri" : "https://w3id.org/aias/odp/iec60050#StateVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-08. The entry states this through the state equation and the output equation; the wording here is the prose form of that.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "StateVariable",
+      "en" : "State Variable"
+    },
+    "comment" : {
+      "en" : "An element of the state vector of a system, from which together with the input variables the output variables are determined."
+    },
+    "attributes" : [ "external" ],
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#SequentialControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-59. The one kind in this group the standard assigns to open-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SequentialControl",
+      "en" : "Sequential Control"
+    },
+    "comment" : {
+      "en" : "Open-loop control with stepwise control actions in which the transition from one step to the following is determined by a program in accordance with specified transition conditions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "2",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#SensingElement",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-26, with a thermocouple, a foil strain gauge and a pH electrode as its examples. The standard defines no term sensor; this is the entry practice means by it.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SensingElement",
+      "en" : "Sensing Element"
+    },
+    "comment" : {
+      "en" : "A functional unit that senses the effect of a measurand at its input and places a corresponding measurement signal at its output."
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ClosedActionPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-03. A closed path alone does not make a closed-loop control: see the open action, 351-47-06.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ClosedActionPath",
+      "en" : "Closed Action Path"
+    },
+    "comment" : {
+      "en" : "An action path between the input variable and the output variable at which an additional action path goes back from the output variable to the input variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ProgrammableController",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-25. The standard defines no programmable logic controller as a device; 351-47-22 covers that as a kind of control instead.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ProgrammableController",
+      "en" : "Programmable Controller"
+    },
+    "comment" : {
+      "en" : "A microprocessor-based controller with a programmable memory for the internal storage of user-defined instructions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "8",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ComparingElement",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-03. The summing point of Figure 2, and the place where a closed action path returns.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ComparingElement",
+      "en" : "Comparing Element"
+    },
+    "comment" : {
+      "en" : "A functional unit that forms the control difference variable from the reference variable and the feedback variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Stability",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-20.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Stability",
+      "en" : "Stability"
+    },
+    "comment" : {
+      "en" : "The property of a system implying that for a sufficiently small initial displacement from the rest position, or a sufficiently small disturbance, the state variables remain within a sufficiently small neighbourhood of the rest position."
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#MeasuringTransmitter",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-29. The standardised signal is where the communication subdomain begins, which makes this the handover point to the communication pattern.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MeasuringTransmitter",
+      "en" : "Measuring Transmitter"
+    },
+    "comment" : {
+      "en" : "A measuring transducer the output variable of which is a standardized signal."
+    },
+    "attributes" : [ "external" ],
+    "id" : "20",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControllerOutputVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-06, marked m in Figures 1 and 2.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControllerOutputVariable",
+      "en" : "Controller Output Variable"
+    },
+    "comment" : {
+      "en" : "The output variable of the controlling element, which is the input variable of the actuator."
+    },
+    "attributes" : [ "external" ],
+    "id" : "21",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ForwardPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-07.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ForwardPath",
+      "en" : "Forward Path"
+    },
+    "comment" : {
+      "en" : "An action path connecting the output of a comparing element to the output of the controlled system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "26",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FeedbackPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-08.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FeedbackPath",
+      "en" : "Feedback Path"
+    },
+    "comment" : {
+      "en" : "An action path connecting an output of the controlled system to one of the inputs of the related comparing element."
+    },
+    "attributes" : [ "external" ],
+    "id" : "27",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#SamplingControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-15. Its sampling period, 351-47-16, is the normative equivalent of what practice calls cycle time, a term the standard does not define.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SamplingControl",
+      "en" : "Sampling Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control in which the input variables of the controlling system are taken discontinuously in time to generate new values of the manipulated variable, which are updated discontinuously and maintained by holding elements between updates."
+    },
+    "attributes" : [ "external" ],
+    "id" : "28",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlFunction",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Collecting class of this pattern for the tasks of 351-43. The standard lists them as verbs without naming a common superclass.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlFunction",
+      "en" : "Control Function"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Measure",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-01.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To obtain experimentally one or more quantity values that can reasonably be attributed to a quantity."
+      },
+      "labels" : {
+        "IRI-based" : "Measure",
+        "en" : "Measure"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Alarm",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-08.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To indicate that the system has switched or will immediately switch to a state which is outside the specified operating conditions."
+      },
+      "labels" : {
+        "IRI-based" : "Alarm",
+        "en" : "Alarm"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Evaluate",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-13.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To determine characteristics of a process from measured or recorded variable quantities."
+      },
+      "labels" : {
+        "IRI-based" : "Evaluate",
+        "en" : "Evaluate"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Warn",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-07. Still inside the operating conditions, which is what separates warning from alarming.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To indicate the entrance of the system into a state which is still inside the specified operating conditions, but from which without intervention there will be the risk of switching into a state outside them."
+      },
+      "labels" : {
+        "IRI-based" : "Warn",
+        "en" : "Warn"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Notify",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-05. Directed outside the system, as against alerting, 351-43-06, which is directed inside it.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To inform selected non-system clients about the occurrence of a specified event by a predefined message or indication."
+      },
+      "labels" : {
+        "IRI-based" : "Notify",
+        "en" : "Notify"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Intervene",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-15. The entry gives a normative form of what practice calls keeping a human in the loop, including the priority between units.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To modify an automatic procedure by an input of the operator or a prioritized technical unit at an unscheduled instant."
+      },
+      "labels" : {
+        "IRI-based" : "Intervene",
+        "en" : "Intervene"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Manipulate",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-12.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To change or set flows of mass, energy, or information by means of a final controlling element."
+      },
+      "labels" : {
+        "IRI-based" : "Manipulate",
+        "en" : "Manipulate"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Operate",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-24.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To enter instructions to a process or system via interfaces."
+      },
+      "labels" : {
+        "IRI-based" : "Operate",
+        "en" : "Operate"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Monitor",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries."
+      },
+      "labels" : {
+        "IRI-based" : "Monitor",
+        "en" : "Monitor"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050#Optimize",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-43-14.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "To design a process or act upon a process such that the performance criterion used for evaluating the process states assumes a value either as large or as small as possible within given limitations."
+      },
+      "labels" : {
+        "IRI-based" : "Optimize",
+        "en" : "Optimize"
+      }
+    } ],
+    "comment" : {
+      "en" : "A task of control technology performed on or in a process."
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#OutputVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-07.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OutputVariable",
+      "en" : "Output Variable"
+    },
+    "subClasses" : [ "30", "31", "21" ],
+    "comment" : {
+      "en" : "A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables."
+    },
+    "attributes" : [ "external" ],
+    "id" : "22",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-10. The German term is Fuehrungsgroessenbildner. Its note states that such an element often ensures that critical limits are not exceeded, for example by limiting the rate of change.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ReferenceVariableGeneratingElement",
+      "en" : "Reference-variable Generating Element"
+    },
+    "comment" : {
+      "en" : "A functional unit that, in closed-loop control, forms the reference variable at its output from the command variable at its input."
+    },
+    "attributes" : [ "external" ],
+    "id" : "36",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Controller",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-11, where the full term is controller for closed-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Controller",
+      "en" : "Controller"
+    },
+    "subClasses" : [ "8" ],
+    "comment" : {
+      "en" : "A functional unit, consisting of a comparing element and a controlling element, that performs a specified control function."
+    },
+    "attributes" : [ "external" ],
+    "id" : "9",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlSystem",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-06. The outermost frame of Figures 1 and 2, covering an open-loop and a closed-loop control alike.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlSystem",
+      "en" : "Control System"
+    },
+    "comment" : {
+      "en" : "A functional unit consisting of the controlling system and the controlled system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Signal",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-17. The separation of the carrier from the information it carries is what lets a model tell sensing hardware from the data point it produces.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Signal",
+      "en" : "Signal"
+    },
+    "comment" : {
+      "en" : "A physical variable quantity, one or more parameters of which carry information about one or more variable quantities."
+    },
+    "attributes" : [ "external" ],
+    "id" : "40",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FeedbackVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-03.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FeedbackVariable",
+      "en" : "Feedback Variable"
+    },
+    "comment" : {
+      "en" : "A variable quantity which represents the controlled variable and is returned to the comparing element."
+    },
+    "attributes" : [ "external" ],
+    "id" : "41",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Model",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-26. The identification named in the definition is the data driven case, so the standard treats an identified model as an equal kind rather than as an exception.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Model",
+      "en" : "Model"
+    },
+    "comment" : {
+      "en" : "A mathematical or physical representation of a system or a process, based with sufficient precision upon known laws, identification or specified suppositions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlledVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-01. Only a closed-loop control has one: it is what is measured and compared with the reference variable.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlledVariable",
+      "en" : "Controlled Variable"
+    },
+    "comment" : {
+      "en" : "The output variable of the controlled system that will be acted upon by one or more manipulated variables."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Actuator",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-07.\n\nThe German term is Steller, and the entry is the signal side of the manipulating equipment, not the element acting on the flow. That element is the final controlling element, 351-49-08. The common rendering of the German Aktor as actuator conflates the two and would put the wrong class on a valve.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Actuator",
+      "en" : "Actuator"
+    },
+    "comment" : {
+      "en" : "A functional unit that generates the manipulated variable, required to drive the final controlling element, from the output variable of the controlling element."
+    },
+    "attributes" : [ "external" ],
+    "id" : "45",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Observer",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-31. Structurally the definition of what practice calls a soft sensor, without the standard assuming any particular technique.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Observer",
+      "en" : "Observer"
+    },
+    "comment" : {
+      "en" : "A system for the complete reconstruction of the state of a controlled system from measured input and output variables, by means of a model of the controlled system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "48",
+    "superClasses" : [ "49" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#MeasuringElement",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-05, where the full term is measuring element in control technology.\n\nNot the same entry as the sensing element, 351-56-26. The sensing element responds to the measurand, whereas this element produces the feedback variable that closes the action path. A model may realise both through one physical unit.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MeasuringElement",
+      "en" : "Measuring Element"
+    },
+    "comment" : {
+      "en" : "A functional unit that forms the feedback variable at its output from the controlled variable applied to its input."
+    },
+    "attributes" : [ "external" ],
+    "id" : "55",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FunctionalUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-02. The functional view: what something does, irrespective of how it is built.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FunctionalUnit",
+      "en" : "Functional Unit"
+    },
+    "subClasses" : [ "55", "36", "18", "20", "9", "4", "39", "45", "12", "57", "58", "59", "60", "61" ],
+    "comment" : {
+      "en" : "An item under consideration defined according to function or effect."
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "56" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ReferenceVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-02.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ReferenceVariable",
+      "en" : "Reference Variable"
+    },
+    "comment" : {
+      "en" : "An input variable to a comparing element in a controlling system, which sets the desired value of the controlled variable and is deducted from the command variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "47",
+    "superClasses" : [ "62" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#AdaptiveControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-42. The automatic modification is what a learning system performs online.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "AdaptiveControl",
+      "en" : "Adaptive Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control with automatic modification of the structure or parameters of the controlling system to compensate for varying operating conditions and states."
+    },
+    "attributes" : [ "external" ],
+    "id" : "65",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#VariableQuantity",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-01. The standard notes that the short form quantity is often used for it.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "VariableQuantity",
+      "en" : "Variable Quantity"
+    },
+    "subClasses" : [ "66", "41", "0", "62", "67", "22", "40" ],
+    "comment" : {
+      "en" : "A physical quantity the value of which is subject to change and which can usually be measured."
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ComputerControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-52. No genus beyond control is stated.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ComputerControl",
+      "en" : "Computer Control"
+    },
+    "comment" : {
+      "en" : "A type of control in which a computer is used in the controlling system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "68",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FuzzyControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-56.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FuzzyControl",
+      "en" : "Fuzzy Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control in which the control algorithm is expressed by fuzzy logic using facts, inference rules and quantifiers based on experience and intuition."
+    },
+    "attributes" : [ "external" ],
+    "id" : "69",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FunctionalSafety",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-57-06. The standard defines no safety integrity level; IEC 61508 does.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FunctionalSafety",
+      "en" : "Functional Safety"
+    },
+    "comment" : {
+      "en" : "The part of the overall safety that depends on functional and physical units operating correctly in response to their inputs."
+    },
+    "attributes" : [ "external" ],
+    "id" : "73"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ClosedAction",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-04. This, not the closed path, is what closed-loop control requires.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ClosedAction",
+      "en" : "Closed Action"
+    },
+    "comment" : {
+      "en" : "An action in a closed action path in which the output variable is continuously or sequentially influencing the input variable and thus continuously or sequentially influencing itself."
+    },
+    "attributes" : [ "external" ],
+    "id" : "74",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Controllability",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-22. The formal precondition for any application that intervenes in a process.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Controllability",
+      "en" : "Controllability"
+    },
+    "comment" : {
+      "en" : "The property of a system implying that its state variables may be changed from an initial state into a desired final state within a finite time interval, via proper time variations of the input variables."
+    },
+    "attributes" : [ "external" ],
+    "id" : "75"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#RobustControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-45. The deviation from the properties assumed for the design is what a data driven model faces as a shift of its operating conditions.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RobustControl",
+      "en" : "Robust Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control able to keep system properties within a prescribed area even if the properties of the controlled system or of the controller deviate from those assumed for the design."
+    },
+    "attributes" : [ "external" ],
+    "id" : "76",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControllingSystem",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-02.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControllingSystem",
+      "en" : "Controlling System"
+    },
+    "comment" : {
+      "en" : "A functional unit that generates the manipulated variable at its output, from the command variable in open-loop control and from the reference variable and the feedback variable in closed-loop control."
+    },
+    "attributes" : [ "external" ],
+    "id" : "59",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Fault",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Collecting class of this pattern for 351-56-22 and 351-56-23, which the standard states individually.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Fault",
+      "en" : "Fault"
+    },
+    "subClasses" : [ "78", "79" ],
+    "comment" : {
+      "en" : "A fault in control equipment, classified by its effect on the output variables."
+    },
+    "attributes" : [ "external" ],
+    "id" : "77"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Characteristic",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Collecting class of this pattern.** The standard defines the individual characteristics in 351-45, 351-46 and 351-47 without naming a common superclass. Named individuals are supplied in IEC60050-instances.ttl.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Characteristic",
+      "en" : "Characteristic"
+    },
+    "subClasses" : [ "80", "81" ],
+    "comment" : {
+      "en" : "A named characteristic of the behaviour of a system or a transfer element, such as a settling time or an overshoot, to which a model assigns a value."
+    },
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlledSystem",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-01. The German terms are Regelstrecke and Steuerstrecke, so the class covers the plant side of both kinds of control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlledSystem",
+      "en" : "Controlled System"
+    },
+    "comment" : {
+      "en" : "A functional unit which is to be influenced according to the control task."
+    },
+    "attributes" : [ "external" ],
+    "id" : "12",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FinalControllingEquipment",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-09. The German term is Stelleinrichtung, drawn as the dashed grouping in Figures 1 and 2.\n\nIt groups the signal side, 351-49-07, and the element acting on the flow, 351-49-08, which the standard otherwise keeps apart. Membership is recorded through consistsOfUnit rather than through a subclass axiom, since the two parts stay units in their own right.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FinalControllingEquipment",
+      "en" : "Final Controlling Equipment"
+    },
+    "comment" : {
+      "en" : "A functional unit consisting of the actuator and the final controlling element."
+    },
+    "attributes" : [ "external" ],
+    "id" : "58",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#InputVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-06.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InputVariable",
+      "en" : "Input Variable"
+    },
+    "subClasses" : [ "85", "34", "47" ],
+    "comment" : {
+      "en" : "A variable quantity which is acting on a system from the outside and which is independent of the other variable quantities of the system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "62",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ActiveFault",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-22.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ActiveFault",
+      "en" : "Active Fault"
+    },
+    "comment" : {
+      "en" : "A fault that causes alterations of the output variables of the control equipment although the program-defined conditions for such alterations are not fulfilled."
+    },
+    "attributes" : [ "external" ],
+    "id" : "79",
+    "superClasses" : [ "77" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ProgrammedControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-20. The standard states no genus beyond control, so the class sits under Control. Storage-programmable logic control, 351-47-22, is a kind of this, which is how the standard covers what practice calls a programmable logic controller.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ProgrammedControl",
+      "en" : "Programmed Control"
+    },
+    "comment" : {
+      "en" : "Control the functions of which are defined by a program that was previously entered."
+    },
+    "attributes" : [ "external" ],
+    "id" : "89",
+    "superClasses" : [ "38" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "49", "38", "56" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "90"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Action",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-24. Behaviour, not structure.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Action",
+      "en" : "Action"
+    },
+    "subClasses" : [ "74", "93" ],
+    "comment" : {
+      "en" : "The influence of one variable quantity on another variable quantity."
+    },
+    "attributes" : [ "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FinalControlledVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-10, marked q in Figures 1 and 2.\n\nThe entry adds that the final controlled variable need not belong to the control loop itself: where a mixture composition cannot be measured directly, a dependent property such as density or thermal conductivity is used as the controlled variable while the composition remains the final controlled variable.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FinalControlledVariable",
+      "en" : "Final Controlled Variable"
+    },
+    "comment" : {
+      "en" : "The variable quantity that the control is ultimately intended to influence, formed from the controlled variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "31",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#RuleBasedControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-58. The standard assigns this to closed-loop control explicitly, so the pattern follows rather than leaving it open.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RuleBasedControl",
+      "en" : "Rule-based Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control in which the control algorithm explicitly incorporates one or more sets of rules."
+    },
+    "attributes" : [ "external" ],
+    "id" : "94",
+    "superClasses" : [ "29" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "49", "38", "56" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "33"
+  }, {
+    "instances" : 0,
+    "union" : [ "49", "38", "56" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "71"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#System",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-08.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "System",
+      "en" : "System"
+    },
+    "subClasses" : [ "48", "96" ],
+    "comment" : {
+      "en" : "A set of interrelated elements considered in a defined context as a whole and separated from their environment."
+    },
+    "attributes" : [ "external" ],
+    "id" : "49"
+  }, {
+    "instances" : 0,
+    "union" : [ "59", "38" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlDifferenceVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-05, marked e in Figure 2. It exists only where a comparison takes place, which is why it appears in the closed-loop figure alone.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlDifferenceVariable",
+      "en" : "Control Difference Variable"
+    },
+    "comment" : {
+      "en" : "The difference between the reference variable and the feedback variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "67",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlEquipment",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-24. A note to the entry includes the process control station and the operating manuals, which is how the standard covers what practice calls a control room.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlEquipment",
+      "en" : "Control Equipment"
+    },
+    "comment" : {
+      "en" : "The entirety of devices and programs used for the task of controlling, and in a broader sense all instructions and programs used for it."
+    },
+    "attributes" : [ "external" ],
+    "id" : "106",
+    "superClasses" : [ "56" ]
+  }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
     "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Grouping of this pattern, so that a model may ask for the time behaviour without listing every characteristic by name.",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "TimeCharacteristic"
+      "IRI-based" : "TimeCharacteristic",
+      "en" : "Time Characteristic"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime",
       "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
       "annotations" : {
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "T_cs",
-          "type" : "label"
-        } ],
         "note" : [ {
           "identifier" : "note",
           "language" : "en",
@@ -115,12 +1641,6 @@
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime",
       "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
       "annotations" : {
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "T_cr",
-          "type" : "label"
-        } ],
         "note" : [ {
           "identifier" : "note",
           "language" : "en",
@@ -143,12 +1663,6 @@
           "identifier" : "note",
           "language" : "en",
           "value" : "IEC 60050-351, 351-50-30. The interval by which a processing step delays what passes through it.",
-          "type" : "label"
-        } ],
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "T_t",
           "type" : "label"
         } ]
       },
@@ -178,30 +1692,6 @@
         "en" : "Settling Time"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime",
-      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
-      "annotations" : {
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "T_u",
-          "type" : "label"
-        } ],
-        "note" : [ {
-          "identifier" : "note",
-          "language" : "en",
-          "value" : "IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot.",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."
-      },
-      "labels" : {
-        "IRI-based" : "EquivalentDeadTime",
-        "en" : "Equivalent Dead Time"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime",
       "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
       "annotations" : {
@@ -218,6 +1708,24 @@
       "labels" : {
         "IRI-based" : "InterruptReactionTime",
         "en" : "Interrupt Reaction Time"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-45-34. English wording reconstructed from the German entry, since the English text is interrupted by a formula figure in the printed standard. The entry notes that the definition holds only for systems without overshoot.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."
+      },
+      "labels" : {
+        "IRI-based" : "EquivalentDeadTime",
+        "en" : "Equivalent Dead Time"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime",
@@ -264,12 +1772,6 @@
           "language" : "en",
           "value" : "IEC 60050-351, 351-45-32.",
           "type" : "label"
-        } ],
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "T",
-          "type" : "label"
         } ]
       },
       "comment" : {
@@ -280,49 +1782,185 @@
         "en" : "Time Constant"
       }
     } ],
+    "comment" : {
+      "en" : "A characteristic expressed as a duration."
+    },
     "attributes" : [ "external" ],
-    "id" : "0"
+    "id" : "80",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "**Not a term of the standard.** IEC 60050-351 draws this unit at the right-hand edge of Figures 1 and 2, where x enters and q leaves the control system, but gives it no entry, no number and no index line. A search of the full text finds the wording only inside the two figures.\n\nThe class is nevertheless kept, because the final controlled variable it produces is a term of the standard, 351-48-10, and without a unit for it that variable would have no origin in a model. The last step of both figures would then go unrecorded.\n\nAnyone aligning this pattern with another should treat the class as a construct of this work rather than as normative vocabulary. REFERENCE.md lists it under the elements taken from the figures instead of from the entries.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FinalControlledVariableGeneration",
+      "en" : "Generation of the Final Controlled Variable"
+    },
+    "comment" : {
+      "en" : "A functional unit that forms the final controlled variable from the controlled variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "61",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Observability",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-23. The formal precondition for reconstructing a state that is not measured, which is what an observer does.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Observability",
+      "en" : "Observability"
+    },
+    "comment" : {
+      "en" : "The property of a system implying that its initial state may be determined from input and output variables observed within a finite time interval."
+    },
+    "attributes" : [ "external" ],
+    "id" : "132"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Redundancy",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-28. Stated over an item, so it applies to any item under consideration.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Redundancy",
+      "en" : "Redundancy"
+    },
+    "comment" : {
+      "en" : "In an item, the existence of more than one means for performing a required function."
+    },
+    "attributes" : [ "external" ],
+    "id" : "134"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "88",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "48", "38" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "114"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "138",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#CascadeControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-25.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CascadeControl",
+      "en" : "Cascade Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control in which the output variable of one controller is the reference variable of one or more secondary control loops."
+    },
+    "attributes" : [ "external" ],
+    "id" : "139",
+    "superClasses" : [ "29" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "49", "38", "56" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#InformationParameter",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-18.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InformationParameter",
+      "en" : "Information Parameter"
+    },
+    "comment" : {
+      "en" : "A parameter of a signal that represents information according to a rule."
+    },
+    "attributes" : [ "external" ],
+    "id" : "140"
+  }, {
+    "instances" : 0,
+    "union" : [ "75", "132", "142", "134", "19", "143", "73" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "141"
+  }, {
+    "instances" : 0,
+    "union" : [ "83", "98" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "92"
+  }, {
+    "instances" : 0,
+    "union" : [ "38", "56" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "14"
   }, {
     "iri" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic",
     "baseIri" : "https://w3id.org/aias/odp/iec60050",
     "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Grouping of this pattern, covering overshoot and the stability margins.",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "QualityCharacteristic"
+      "IRI-based" : "QualityCharacteristic",
+      "en" : "Quality Characteristic"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin",
-      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
-      "annotations" : {
-        "note" : [ {
-          "identifier" : "note",
-          "language" : "en",
-          "value" : "IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable.",
-          "type" : "label"
-        } ],
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "phi_m",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."
-      },
-      "labels" : {
-        "IRI-based" : "PhaseMargin",
-        "en" : "Phase Margin"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#Overshoot",
       "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
       "annotations" : {
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "X_m",
-          "type" : "label"
-        } ],
         "note" : [ {
           "identifier" : "note",
           "language" : "en",
@@ -336,6 +1974,24 @@
       "labels" : {
         "IRI-based" : "Overshoot",
         "en" : "Overshoot"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin",
+      "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "IEC 60050-351, 351-46-05. English wording reconstructed from the German entry. A stability reserve: how much additional phase lag a loop tolerates before it becomes unstable.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."
+      },
+      "labels" : {
+        "IRI-based" : "PhaseMargin",
+        "en" : "Phase Margin"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#DeadBand",
@@ -365,12 +2021,6 @@
       "iri" : "https://w3id.org/aias/odp/iec60050/instances#GainMargin",
       "baseIri" : "https://w3id.org/aias/odp/iec60050/instances",
       "annotations" : {
-        "symbol" : [ {
-          "identifier" : "symbol",
-          "language" : "undefined",
-          "value" : "G_m",
-          "type" : "label"
-        } ],
         "note" : [ {
           "identifier" : "note",
           "language" : "en",
@@ -386,7 +2036,2008 @@
         "en" : "Gain Margin"
       }
     } ],
+    "comment" : {
+      "en" : "A characteristic expressing how well a control performs, rather than how long it takes."
+    },
     "attributes" : [ "external" ],
-    "id" : "1"
+    "id" : "81",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#OpenActionPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-05.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OpenActionPath",
+      "en" : "Open Action Path"
+    },
+    "comment" : {
+      "en" : "An action path between the input variable and the output variable at which no action path goes back from the output variable to the input variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "101",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ActionLine",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-44-04, drawn as the arrows of Figures 1 and 2.\n\nThe class resolves an action path into the units it runs through. Without it a path can only be asserted to be open or closed; with it the assertion becomes checkable against the units and the variables actually recorded.\n\nDisjoint from the action path: a line is a part of a path, not a path of its own.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ActionLine",
+      "en" : "Action Line"
+    },
+    "comment" : {
+      "en" : "A part of the action path between two functional units, the direction of action being indicated by an arrow."
+    },
+    "attributes" : [ "external" ],
+    "id" : "54"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#DisturbanceVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-08.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DisturbanceVariable",
+      "en" : "Disturbance Variable"
+    },
+    "comment" : {
+      "en" : "An undesired, independent and mostly unpredictable input variable acting from the outside on the system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "34",
+    "superClasses" : [ "62" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ItemUnderConsideration",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-01.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ItemUnderConsideration",
+      "en" : "Item under Consideration"
+    },
+    "subClasses" : [ "64", "106", "5" ],
+    "comment" : {
+      "en" : "An object under consideration defined according to function and scope."
+    },
+    "attributes" : [ "external" ],
+    "id" : "56"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#OptimalControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-41. The standard says type of control rather than closed-loop control, so the class sits under Control and a model may assign it either way.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OptimalControl",
+      "en" : "Optimal Control"
+    },
+    "comment" : {
+      "en" : "A type of control for which the performance index reaches a largest or smallest value under specified conditions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "162",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ActionPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-44-03. Structure, not behaviour.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ActionPath",
+      "en" : "Action Path"
+    },
+    "subClasses" : [ "26", "101", "6", "27" ],
+    "comment" : {
+      "en" : "A directed path within a control structure, which connects two selected variable quantities."
+    },
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#FinalControllingElement",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-08. The German term is Stellglied, and a valve is the typical case.\n\nThe standard places it inside the controlled system. This pattern records that through the relation partOfControlledSystem rather than through a subclass axiom, so another pattern may hold the same valve as a resource executing a process operation without the two contradicting each other.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FinalControllingElement",
+      "en" : "Final Controlling Element"
+    },
+    "comment" : {
+      "en" : "A functional unit forming part of the controlled system and arranged at its input, driven by the manipulated variable and manipulating the mass flow or energy flow."
+    },
+    "attributes" : [ "external" ],
+    "id" : "57",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ClosedLoopControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-01. Characteristic for closed-loop control is the closed action in which the controlled variable continuously or sequentially influences itself in the action path of the closed loop. The closed action is required, not merely a closed path.",
+        "type" : "label"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "feedback control",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ClosedLoopControl",
+      "en" : "Closed-loop Control"
+    },
+    "subClasses" : [ "154", "152", "76", "69", "65", "139", "94", "28" ],
+    "comment" : {
+      "en" : "A process whereby one variable quantity, namely the controlled variable, is continuously or sequentially measured, compared with another variable quantity, namely the reference variable, and influenced in such a manner as to adjust to the reference variable."
+    },
+    "attributes" : [ "external" ],
+    "id" : "29",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#MultivariableControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-35.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MultivariableControl",
+      "en" : "Multivariable Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control of several controlled variables of a multivariable system by several controllers."
+    },
+    "attributes" : [ "external" ],
+    "id" : "154",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlLoop",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-11.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlLoop",
+      "en" : "Control Loop"
+    },
+    "comment" : {
+      "en" : "A set of elements or systems incorporated in the closed action of a closed-loop control."
+    },
+    "attributes" : [ "external" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Control",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-19. The German term is Leiten, which covers both open-loop and closed-loop control as well as the supervisory tasks around them. National footnote N1 of that entry states this explicitly: control is the general term here, and the narrower Regeln and Steuern belong to the entries below.\n\nNo class for automating sits between this class and the two kinds of control. The standard defines automating in 351-43 as a task, alongside measuring and monitoring, not in 351-47 as a kind of control, and 351-42-31 treats the degree of automation as a proportion of the functions of a system. A hand-operated closed-loop control is a closed-loop control by 351-47-01 without being automated, so a subclass axiom would state more than the standard does. Whether a control runs by itself is recorded through the AI pattern, where automation is a function, and the two are related in the alignment.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Control",
+      "en" : "Control"
+    },
+    "subClasses" : [ "29", "68", "162", "3", "89" ],
+    "comment" : {
+      "en" : "Purposeful action on or in a process to meet specified objectives."
+    },
+    "attributes" : [ "external" ],
+    "id" : "38"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#RealTimeCapability",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-54-06, where the entry is stated for a process computer system.\n\nReal time is a capability of a system with a stated interval, not a property of time itself. The pattern follows that reading, so a model states the capability and the interval separately rather than calling a duration real time.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RealTimeCapability",
+      "en" : "Real-time Capability"
+    },
+    "comment" : {
+      "en" : "The capability to keep tasks in a runnable state, so that they are able to react to technical process events within a pre-determined time interval."
+    },
+    "attributes" : [ "external" ],
+    "id" : "143"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#OpenAction",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-06. The note to the entry states that a reset circuit, 351-47-62, has an open action although its structure has a closed action path.\n\nThis is the case that separates the pattern from the simplified reading that feedback alone makes a closed-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OpenAction",
+      "en" : "Open Action"
+    },
+    "comment" : {
+      "en" : "An action in an open action path, or in a closed action path where the output variable influences the input variable only under certain non-permanently acting conditions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "93",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControlChain",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-12. The arrangement of an open-loop control, as against the loop of a closed-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControlChain",
+      "en" : "Control Chain"
+    },
+    "comment" : {
+      "en" : "A set of elements or systems which act upon one another in a series structure."
+    },
+    "attributes" : [ "external" ],
+    "id" : "98"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#PassiveFault",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-23.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PassiveFault",
+      "en" : "Passive Fault"
+    },
+    "comment" : {
+      "en" : "A fault that inhibits alterations of the output variables of the control equipment although all program-defined conditions for such alterations are fulfilled."
+    },
+    "attributes" : [ "external" ],
+    "id" : "78",
+    "superClasses" : [ "77" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#CommandVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-09.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CommandVariable",
+      "en" : "Command Variable"
+    },
+    "comment" : {
+      "en" : "A variable quantity which is not influenced by the control but is introduced into the control system from outside with the aim of making the final controlled variable follow it."
+    },
+    "attributes" : [ "external" ],
+    "id" : "85",
+    "superClasses" : [ "62" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ManipulatedVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-07. It is what carries the influence from the controlling side to the controlled side, in open-loop as in closed-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ManipulatedVariable",
+      "en" : "Manipulated Variable"
+    },
+    "comment" : {
+      "en" : "The output variable of the controlling system, which is also an input variable of the controlled system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "66",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#CharacteristicValue",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Reified so that a value can be referred to and annotated, in the same arrangement and for the same reason as the quality of service value of the ISO 7498 pattern.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CharacteristicValue",
+      "en" : "Characteristic Value"
+    },
+    "comment" : {
+      "en" : "The value a model assigns to one characteristic, together with its unit."
+    },
+    "attributes" : [ "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ModelBasedControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-33. The definition names a real-time model of the process, which is the natural place for a data driven process model in a control structure.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ModelBasedControl",
+      "en" : "Model-based Control"
+    },
+    "comment" : {
+      "en" : "Closed-loop control which includes explicitly in its structure a real-time model of the process expressing the static and dynamic relationships between manipulated variables and controlled variables."
+    },
+    "attributes" : [ "external" ],
+    "id" : "152",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#Plant",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-35. The technical process pattern has no class for the plant as a whole, only for its individual resources, so this fills a gap rather than duplicating one.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Plant",
+      "en" : "Plant"
+    },
+    "comment" : {
+      "en" : "A complete set of technical equipment and facilities for solving a defined technical task."
+    },
+    "attributes" : [ "external" ],
+    "id" : "96",
+    "superClasses" : [ "49" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#PhysicalUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-03. The building view: the device as it is bought and installed. Not disjoint with the functional unit, since the two are views rather than kinds.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PhysicalUnit",
+      "en" : "Physical Unit"
+    },
+    "comment" : {
+      "en" : "An item under consideration defined according to construction or configuration."
+    },
+    "attributes" : [ "external" ],
+    "id" : "64",
+    "superClasses" : [ "56" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#DegreeOfAutomation",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-42-31. May be given only for a defined system whose limits are specified. Full automatic operation means all functions except switching on and off are automated.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DegreeOfAutomation",
+      "en" : "Degree of Automation"
+    },
+    "comment" : {
+      "en" : "The proportion of automatic functions to the entire set of functions of a system or plant."
+    },
+    "attributes" : [ "external" ],
+    "id" : "142"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#ControllingElement",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-04. The German terms are Steuerglied and Regelglied, one entry for both.\n\nThe entry is the element that appears in Figure 1 as well as in Figure 2, which is why the same class serves an open-loop and a closed-loop control. What differs is the variable at its input, not the unit.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ControllingElement",
+      "en" : "Controlling Element"
+    },
+    "comment" : {
+      "en" : "A functional unit that forms its output variable from the command variable in open-loop control and from the control difference variable in closed-loop control."
+    },
+    "attributes" : [ "external" ],
+    "id" : "60",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#OpenLoopControl",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-02. Characteristic for open-loop control is the open action path, or in a closed action path the fact that the output variables being influenced by the input variables are not continuously or sequentially influencing themselves and not by the same input variables.\n\nDeliberately **not** disjoint with closed-loop control: the standard admits open-loop control in a closed action path, so a disjointness axiom would contradict it. What separates the two is the action, not the path.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OpenLoopControl",
+      "en" : "Open-loop Control"
+    },
+    "subClasses" : [ "2" ],
+    "comment" : {
+      "en" : "A process whereby one or more variable quantities as input variables influence other variable quantities as output variables in accordance with the proper laws of the system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "3",
+    "superClasses" : [ "38" ]
+  } ],
+  "property" : [ {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "63",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "82",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "84",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "86",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "87",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "97",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "99",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "100",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "102",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "103",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "104",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "105",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "107",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "108",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "109",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "111",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "112",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "113",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "116",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "117",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "118",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "120",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "121",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "123",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "124",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "125",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "126",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "127",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "128",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "129",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "130",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "133",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "135",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "136",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "137",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "145",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "146",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "147",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "148",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "149",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "150",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "151",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "153",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "155",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "156",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "157",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "158",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "159",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "160",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "161",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "163",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "164",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "165",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "166",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "167",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "168",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "169",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "170",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "171",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "172",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "173",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "174",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "175",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "176",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "177",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "122",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "178",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "179",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "180",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "181",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "182",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "183",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "184",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "185",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "186",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "187",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "189",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "190",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "191",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "192",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "193",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "194",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "195",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "196",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "197",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "188",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "198",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "199",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "200",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "201",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "202",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "203",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "204",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "205",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "206",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/aias/odp/iec60050#actsOn",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "12",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-01 and 351-49-02.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "actsOn",
+      "en" : "acts on"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "Relates a controlling system or an automation to the controlled system it influences."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#performsFunction",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "15",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-43. Mapping an application onto the tasks the standard names keeps a model connected to existing plant documentation.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "performsFunction",
+      "en" : "performs function"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "Relates an item under consideration to a function of control technology it performs."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#actionOverPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "7",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-04 and 351-47-06 both define the action with respect to a path. Functional: one action belongs to one path.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "actionOverPath",
+      "en" : "action over path"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Relates an action to the action path it takes place over."
+    },
+    "attributes" : [ "functional", "object", "external" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#forCharacteristic",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "25",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Functional: one value quantifies exactly one characteristic.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "forCharacteristic",
+      "en" : "for characteristic"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Relates a characteristic value to the characteristic it quantifies."
+    },
+    "attributes" : [ "functional", "object", "external" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasDisturbanceVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "34",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-08.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasDisturbanceVariable",
+      "en" : "has disturbance variable"
+    },
+    "superproperty" : [ "35" ],
+    "domain" : "33",
+    "comment" : {
+      "en" : "Relates a system to a disturbance variable acting on it from the outside."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasControlledVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "30",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-01. Only closed-loop control has one, since the controlled variable is what is measured and compared.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasControlledVariable",
+      "en" : "has controlled variable"
+    },
+    "superproperty" : [ "35" ],
+    "domain" : "38",
+    "comment" : {
+      "en" : "Relates a closed-loop control to the controlled variable it acts upon."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#unit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "44",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "unit",
+      "en" : "unit"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "The unit of a characteristic value, for example ms or percent."
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "43"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasReferenceVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "47",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-02.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasReferenceVariable",
+      "en" : "has reference variable"
+    },
+    "superproperty" : [ "35" ],
+    "domain" : "38",
+    "comment" : {
+      "en" : "Relates a closed-loop control to the reference variable the controlled variable is adjusted to."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasAction",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "17",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The behavioural half of the distinction. Closed-loop control requires the closed action, 351-47-04, not merely the closed path.\n\nA model that states only the path cannot be told apart from a reset circuit, 351-47-62, which has a closed path and an open action and is therefore open-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAction",
+      "en" : "has action"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Relates an automation to the action taking place over its action path."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "1",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Super property of the role specific relations below, so that a model may record a variable before its role is settled.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasVariable",
+      "en" : "has variable"
+    },
+    "domain" : "51",
+    "subproperty" : [ "32", "37", "52", "46" ],
+    "comment" : {
+      "en" : "Relates an automation or a system to a variable quantity involved in it."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#carriesVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "1",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The letters of the figure legends, c, w, e, m, y, x, q and r, are recorded through this relation. Functional: one line carries one variable quantity.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "carriesVariable",
+      "en" : "carries variable"
+    },
+    "domain" : "54",
+    "comment" : {
+      "en" : "Relates an action line to the variable quantity transmitted along it."
+    },
+    "attributes" : [ "functional", "object", "external" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#realisedByPhysicalUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "64",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-56-02 and 351-56-03 define the two as views of one item under consideration, taken by function and by construction.\n\nThe relation is the axis the technical process pattern lacks, where a technical resource is atomic. One physical unit may realise several functional units and one functional unit may be spread over several physical units, so no cardinality is asserted.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "realisedByPhysicalUnit",
+      "en" : "realised by physical unit"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a functional unit to a physical unit realising it."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasCharacteristicValue",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "hasCharacteristicValue",
+      "en" : "has characteristic value"
+    },
+    "domain" : "71",
+    "comment" : {
+      "en" : "Relates an item, a system or a control to a value it states for one of its characteristics."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "70"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasManipulatedVariable",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "66",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasManipulatedVariable",
+      "en" : "has manipulated variable"
+    },
+    "superproperty" : [ "35" ],
+    "domain" : "38",
+    "comment" : {
+      "en" : "Relates a control to the manipulated variable through which it acts on the controlled system."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "52"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#fromUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "5",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The direction of action, IEC 60050-351, 351-44-05, is carried by this relation together with toUnit rather than by a class of its own.\n\nNote 2 of that entry states that the direction of action need not agree with the direction of the mass or energy flow. Modelling it as a class would invite an alignment to equate it with the direction of a flow in the technical process pattern, where a flow does transport material.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "fromUnit",
+      "en" : "from unit"
+    },
+    "domain" : "54",
+    "comment" : {
+      "en" : "Relates an action line to the functional unit at which it starts."
+    },
+    "attributes" : [ "functional", "object", "external" ],
+    "id" : "72"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasForwardPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "26",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-07.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasForwardPath",
+      "en" : "has forward path"
+    },
+    "domain" : "83",
+    "comment" : {
+      "en" : "Relates a control loop to its forward path."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "82"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#consistsOfUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "5",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351 composes several units from others: the final controlling equipment from actuator and final controlling element, 351-49-09, the controller from comparing and controlling element, 351-49-11, and the control system from controlling and controlled system, 351-49-06.\n\nStated as a relation rather than through subclass axioms, since the parts remain units in their own right and one part may belong to more than one whole.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "consistsOfUnit",
+      "en" : "consists of unit"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a functional unit to another functional unit it is composed of."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "84"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit",
+    "inverse" : "63",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "5",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The inverse of realisedByPhysicalUnit, so that a model can start from a device.\n\nNote that the answer may name several units. IEC 60050-351 keeps the functional and the physical view apart on purpose, 351-56-02 against 351-56-03, and one device may realise a comparing element and a controlling element at once. A question asking what role a device plays therefore has more than one answer where the device carries more than one function, and that is the correct result rather than an ambiguity to remove.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "realisesFunctionalUnit",
+      "en" : "realises functional unit"
+    },
+    "domain" : "64",
+    "comment" : {
+      "en" : "Relates a physical unit to a functional unit it realises."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "86"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#quantity",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "88",
+    "label" : {
+      "IRI-based" : "quantity",
+      "en" : "quantity"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "The numeric quantity of a characteristic value."
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "87"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#realisedBy",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "92",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-11 and 351-47-12. A closed-loop control is carried by a loop, an open-loop control by a chain.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "realisedBy",
+      "en" : "realised by"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "91"
+  }, {
+    "range" : "59",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "95"
+  }, {
+    "range" : "83",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "97"
+  }, {
+    "range" : "1",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "99"
+  }, {
+    "range" : "101",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "100"
+  }, {
+    "range" : "93",
+    "domain" : "74",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "102"
+  }, {
+    "range" : "1",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "103"
+  }, {
+    "range" : "56",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "104"
+  }, {
+    "range" : "1",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "105"
+  }, {
+    "range" : "38",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "107"
+  }, {
+    "range" : "56",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "108"
+  }, {
+    "range" : "56",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "109"
+  }, {
+    "range" : "38",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "110"
+  }, {
+    "range" : "1",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "111"
+  }, {
+    "range" : "24",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#usesModel",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "42",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-31 and 351-47-33. Both name a model of the controlled system as part of their structure.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "usesModel",
+      "en" : "uses model"
+    },
+    "domain" : "114",
+    "comment" : {
+      "en" : "Relates a control or an observer to a model of the process it uses."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "113"
+  }, {
+    "range" : "25",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "115"
+  }, {
+    "range" : "78",
+    "domain" : "79",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "116"
+  }, {
+    "range" : "24",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "117"
+  }, {
+    "range" : "7",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "118"
+  }, {
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "119"
+  }, {
+    "range" : "7",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "120"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#partOfActionPath",
+    "inverse" : "122",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "7",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The inverse of hasActionLine. With it a model can go from a line to the path and on to the control running over it, which is how a device reaches the kind of control it takes part in.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "partOfActionPath",
+      "en" : "part of action path"
+    },
+    "domain" : "54",
+    "comment" : {
+      "en" : "Relates an action line to the action path it forms part of."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "121"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#runsOverActionPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "7",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The structural half of the distinction: whether something returns from the output to the input, 351-47-03 against 351-47-05.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "runsOverActionPath",
+      "en" : "runs over action path"
+    },
+    "domain" : "38",
+    "comment" : {
+      "en" : "Relates an automation to the action path it runs over."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "123"
+  }, {
+    "range" : "56",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "124"
+  }, {
+    "range" : "9",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "125"
+  }, {
+    "range" : "56",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "126"
+  }, {
+    "range" : "56",
+    "domain" : "106",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "127"
+  }, {
+    "range" : "22",
+    "domain" : "30",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "128"
+  }, {
+    "range" : "49",
+    "domain" : "96",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "129"
+  }, {
+    "range" : "22",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "130"
+  }, {
+    "range" : "22",
+    "domain" : "31",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "131"
+  }, {
+    "range" : "49",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "133"
+  }, {
+    "range" : "17",
+    "domain" : "93",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "135"
+  }, {
+    "range" : "17",
+    "domain" : "74",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "136"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#partOfControlledSystem",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "12",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-49-08 places the final controlling element inside the controlled system.\n\nStated as a relation rather than a subclass axiom on purpose. VDI 3682 would hold the same valve as a technical resource executing a process operation, and a subclass axiom here would make the two readings contradict. As a relation both stand.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "partOfControlledSystem",
+      "en" : "part of controlled system"
+    },
+    "domain" : "57",
+    "comment" : {
+      "en" : "Relates a final controlling element to the controlled system it forms part of."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "137"
+  }, {
+    "range" : "29",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "144"
+  }, {
+    "range" : "29",
+    "domain" : "69",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "145"
+  }, {
+    "range" : "29",
+    "domain" : "94",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "146"
+  }, {
+    "range" : "29",
+    "domain" : "139",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "147"
+  }, {
+    "range" : "29",
+    "domain" : "76",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "148"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#carriesInformationParameter",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "140",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-41-17 and 351-41-18.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "carriesInformationParameter",
+      "en" : "carries information parameter"
+    },
+    "domain" : "40",
+    "comment" : {
+      "en" : "Relates a signal to a parameter of it that represents information."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "149"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#isSourceOfActionLine",
+    "inverse" : "72",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "54",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The inverse of fromUnit. Together with the next one it says where a unit sits in the chain, and therefore whether it lies in the forward or in the feedback branch.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isSourceOfActionLine",
+      "en" : "is source of action line"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a functional unit to an action line starting at it."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "150"
+  }, {
+    "range" : "29",
+    "domain" : "152",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "151"
+  }, {
+    "range" : "29",
+    "domain" : "154",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "153"
+  }, {
+    "range" : "5",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "155"
+  }, {
+    "range" : "5",
+    "domain" : "58",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "156"
+  }, {
+    "range" : "5",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "157"
+  }, {
+    "range" : "5",
+    "domain" : "60",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "158"
+  }, {
+    "range" : "5",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "159"
+  }, {
+    "range" : "5",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "160"
+  }, {
+    "range" : "5",
+    "domain" : "57",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "161"
+  }, {
+    "range" : "5",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "163"
+  }, {
+    "range" : "5",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "164"
+  }, {
+    "range" : "5",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "165"
+  }, {
+    "range" : "5",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "166"
+  }, {
+    "range" : "5",
+    "domain" : "55",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "167"
+  }, {
+    "range" : "7",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "168"
+  }, {
+    "range" : "5",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "169"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#symbol",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "138",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351 states a formula symbol for most characteristics of 351-45 and 351-46, which makes a model checkable against the figures of the standard.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "symbol",
+      "en" : "symbol"
+    },
+    "domain" : "25",
+    "comment" : {
+      "en" : "The formula symbol the standard gives for a characteristic, for example T_cs for the control settling time."
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "170"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasProperty",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "141",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Collects 351-42-20, -22, -23, -28, -31 and 351-54-06, which the standard states as properties of a system.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasProperty",
+      "en" : "has property"
+    },
+    "domain" : "90",
+    "comment" : {
+      "en" : "Relates an item or a system to a property it has, such as stability, observability or real-time capability."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "171"
+  }, {
+    "range" : "5",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "172"
+  }, {
+    "range" : "62",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "173"
+  }, {
+    "range" : "62",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "174"
+  }, {
+    "range" : "3",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "175"
+  }, {
+    "range" : "25",
+    "domain" : "80",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "176"
+  }, {
+    "range" : "62",
+    "domain" : "85",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "177"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasActionLine",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "54",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-44-03 and 351-44-04. An action path is composed of action lines, which is what makes the path traceable through the units.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasActionLine",
+      "en" : "has action line"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Relates an action path to a part of it running between two functional units."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "122"
+  }, {
+    "range" : "25",
+    "domain" : "81",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "178"
+  }, {
+    "range" : "25",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "179"
+  }, {
+    "range" : "7",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "180"
+  }, {
+    "range" : "1",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "181"
+  }, {
+    "range" : "24",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "182"
+  }, {
+    "range" : "7",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "183"
+  }, {
+    "range" : "1",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "184"
+  }, {
+    "range" : "38",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "185"
+  }, {
+    "range" : "56",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "186"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#isTargetOfActionLine",
+    "inverse" : "188",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "54",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "The inverse of toUnit.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isTargetOfActionLine",
+      "en" : "is target of action line"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a functional unit to an action line ending at it."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "187"
+  }, {
+    "range" : "56",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "189"
+  }, {
+    "range" : "38",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "190"
+  }, {
+    "range" : "1",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "191"
+  }, {
+    "range" : "1",
+    "domain" : "22",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "192"
+  }, {
+    "range" : "77",
+    "domain" : "79",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "193"
+  }, {
+    "range" : "77",
+    "domain" : "78",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "194"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "195"
+  }, {
+    "range" : "1",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "196"
+  }, {
+    "range" : "1",
+    "domain" : "67",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "197"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#toUnit",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "5",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-44-05. Together with fromUnit it carries the direction of action.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "toUnit",
+      "en" : "to unit"
+    },
+    "domain" : "54",
+    "comment" : {
+      "en" : "Relates an action line to the functional unit at which it ends."
+    },
+    "attributes" : [ "functional", "object", "external" ],
+    "id" : "188"
+  }, {
+    "range" : "1",
+    "domain" : "62",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "198"
+  }, {
+    "range" : "1",
+    "domain" : "66",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "199"
+  }, {
+    "range" : "38",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "200"
+  }, {
+    "iri" : "https://w3id.org/aias/odp/iec60050#hasFeedbackPath",
+    "baseIri" : "https://w3id.org/aias/odp/iec60050",
+    "range" : "27",
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "IEC 60050-351, 351-47-08.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasFeedbackPath",
+      "en" : "has feedback path"
+    },
+    "domain" : "83",
+    "comment" : {
+      "en" : "Relates a control loop to its feedback path."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "201"
+  }, {
+    "range" : "38",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "202"
+  }, {
+    "range" : "38",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "203"
+  }, {
+    "range" : "29",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "204"
+  }, {
+    "range" : "38",
+    "domain" : "162",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "205"
+  }, {
+    "range" : "38",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "206"
   } ]
 }

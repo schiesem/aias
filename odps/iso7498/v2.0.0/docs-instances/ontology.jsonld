@@ -142,40 +142,10 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#note",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#CommunicationDirection",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Layer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#ServiceDataUnit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#Technology",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#atLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#layerNumber",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iso7498#realisesLayer",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances",
@@ -189,7 +159,7 @@
   } ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.\r\n\r\nThey are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself."
+    "@value" : "Named individuals for the ISO/IEC 7498-1 ontology design pattern: the seven layers of the reference model, the protocol data units practice names per layer, common technologies of industrial communication, and the quality of service parameters.\n\nThey are kept apart from the pattern so that the terminology and the vocabulary can be maintained separately. A model importing only the pattern gets the classes; one importing this file gets the vocabulary as well, and need not declare that MQTT is an application layer technology for itself."
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
@@ -213,23 +183,20 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Three groups of individual, with different standing.\r\n\r\nThe seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.\r\n\r\nThe protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.\r\n\r\nThe quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."
+    "@value" : "Three groups of individual, with different standing.\n\nThe seven layers are normative: ISO/IEC 7498-1, 6.1.2 enumerates them and gives each a number.\n\nThe protocol data units and the technologies are conventional. Frame, packet, and segment do not occur in the standard, and 1.3 states that it implies no particular technology. They are supplied because an engineering model needs them and because naming them once keeps models comparable. The list of technologies is open by design.\n\nThe quality of service parameters follow 7.4.4 for the four the standard names, and extend beyond it where practice requires, which is marked at the affected individuals."
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498"
+    "@id" : "https://w3id.org/aias/odp/iso7498/2.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498/instances/1.0.0"
+    "@id" : "https://w3id.org/aias/odp/iso7498/instances/2.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
+    "@value" : "2.0.0"
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#AMQP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Advanced message queuing protocol, after ISO/IEC 19464."
@@ -243,10 +210,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#ApplicationLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The highest layer, providing the sole means for an application process to access the OSI environment. It has no boundary with a higher layer."
@@ -265,10 +229,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Availability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The share of time a communication is usable."
@@ -283,10 +244,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Bit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#ServiceDataUnit" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The service data unit of the physical layer."
@@ -304,10 +262,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#CANopen",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Communication protocol for embedded automation on CAN, after EN 50325-4."
@@ -321,10 +276,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#DHCP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Dynamic host configuration protocol."
@@ -338,10 +290,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#DataLinkLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Provides the functional and procedural means for the transfer of data between network entities and detects and possibly corrects errors occurring in the physical layer."
@@ -360,10 +309,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Datagram",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The protocol data unit of a connectionless-mode transport or network service."
@@ -381,10 +327,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#EstablishmentDelay",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The elapsed time between the request to establish a connection and its confirmation."
@@ -399,10 +342,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#EtherCAT",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Real-time capable fieldbus technology on Ethernet, after IEC 61158."
@@ -416,10 +356,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Ethernet",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Frame based data link technology after IEEE 802.3."
@@ -433,10 +370,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Ethernet1000BASE-T",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Gigabit Ethernet over twisted pair, 1000 Mbit/s."
@@ -450,10 +384,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Ethernet100BASE-TX",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Fast Ethernet over twisted pair, 100 Mbit/s."
@@ -467,10 +398,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#FTP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "File transfer protocol."
@@ -484,10 +412,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Frame",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The protocol data unit of the data link layer."
@@ -505,10 +430,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#HTTP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Hypertext transfer protocol."
@@ -522,10 +444,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#HTTPS",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Hypertext transfer protocol over a transport layer security connection."
@@ -539,10 +458,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#IOLink",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Point to point communication with sensors and actuators, after IEC 61131-9."
@@ -556,10 +472,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#IPv4",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Internet protocol version 4."
@@ -573,10 +486,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#IPv6",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Internet protocol version 6."
@@ -590,10 +500,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Jitter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The variation of transit delay between successive transfers."
@@ -608,10 +515,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#MQTT",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Publish and subscribe messaging protocol for constrained devices, after ISO/IEC 20922."
@@ -625,10 +529,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Modbus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Request and response protocol widely used in industrial equipment."
@@ -642,10 +543,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#NetworkLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Provides the means to establish, maintain and terminate network connections between open systems and the means to exchange data units over them, independently of routing and relay considerations."
@@ -664,10 +562,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#OPCUA",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Platform independent service oriented architecture for industrial interoperability, after IEC 62541."
@@ -681,10 +576,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#OneWay",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#CommunicationDirection"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#CommunicationDirection" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Data communication in one pre-assigned direction."
@@ -699,10 +591,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Packet",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The protocol data unit of the network layer."
@@ -720,10 +609,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#PhysicalLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Provides the mechanical, electrical, functional and procedural means to activate, maintain and de-activate physical connections for bit transmission between data link entities."
@@ -742,10 +628,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#PresentationLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Provides for the representation of information that application entities either communicate or refer to in their communication, so that the syntax used is preserved in meaning."
@@ -764,10 +647,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Priority",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The precedence a communication takes over others competing for the same resources."
@@ -782,10 +662,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Profibus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Fieldbus for automation with master and slave access, after IEC 61158 and IEC 61784."
@@ -803,10 +680,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Profinet",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Industrial Ethernet standard for automation, after IEC 61158 and IEC 61784."
@@ -820,10 +694,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#ResidualErrorRate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The ratio of data lost, duplicated, or delivered incorrectly to data transferred in total."
@@ -838,10 +709,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Segment",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The protocol data unit of the transport layer."
@@ -859,10 +727,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#SessionLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Provides the means for cooperating presentation entities to organise and synchronise their dialogue and to manage their data exchange."
@@ -881,10 +746,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#TCP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Transmission control protocol, connection oriented."
@@ -898,10 +760,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#Throughput",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The rate at which data is transferred over a communication."
@@ -916,10 +775,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#TransitDelay",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#QoSParameter"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#QoSParameter" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The elapsed time between the request to transfer data and its delivery."
@@ -934,10 +790,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#TransportLayer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Layer"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Layer" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Provides transparent transfer of data between session entities, relieving them of any concern with how reliable and cost effective transfer is achieved."
@@ -956,10 +809,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#CommunicationDirection"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#CommunicationDirection" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Data communication in both directions, one direction at a time."
@@ -974,10 +824,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#TwoWaySimultaneous",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#CommunicationDirection"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#CommunicationDirection" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Data communication in both directions at the same time."
@@ -992,10 +839,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#UDP",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "User datagram protocol, connectionless."
@@ -1009,10 +853,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iso7498/instances#WLAN",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iso7498#Technology"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iso7498#Technology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Wireless local area network after IEEE 802.11."

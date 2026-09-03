@@ -19,8 +19,8 @@
     "version": "1.0.0",
     "author": [
       "Marvin Schieseck",
-      "Philip Topalis",
       "Alexander Fay",
+      "Philip Topalis",
       "Felix Gehlhoff",
       "Lasse Reinpold"
     ],
@@ -70,13 +70,13 @@
         {
           "identifier": "subject",
           "language": "en",
-          "value": "Ontology Design Pattern",
+          "value": "VDI 3682",
           "type": "label"
         },
         {
           "identifier": "subject",
           "language": "en",
-          "value": "VDI 3682",
+          "value": "Ontology Design Pattern",
           "type": "label"
         },
         {
@@ -92,20 +92,20 @@
           "type": "label"
         }
       ],
-      "hasVersion": [
-        {
-          "identifier": "hasVersion",
-          "language": "undefined",
-          "value": "https://w3id.org/aias/odp/vdi3682",
-          "type": "iri"
-        }
-      ],
       "created": [
         {
           "identifier": "created",
           "language": "undefined",
           "value": "2024-09-01",
           "type": "label"
+        }
+      ],
+      "hasVersion": [
+        {
+          "identifier": "hasVersion",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/vdi3682",
+          "type": "iri"
         }
       ],
       "source": [
@@ -156,19 +156,19 @@
           "type": "iri"
         }
       ],
-      "preferredNamespacePrefix": [
-        {
-          "identifier": "preferredNamespacePrefix",
-          "language": "undefined",
-          "value": "vdi3682",
-          "type": "label"
-        }
-      ],
       "rights": [
         {
           "identifier": "rights",
           "language": "en",
           "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
+          "type": "label"
+        }
+      ],
+      "preferredNamespacePrefix": [
+        {
+          "identifier": "preferredNamespacePrefix",
+          "language": "undefined",
+          "value": "vdi3682",
           "type": "label"
         }
       ],
@@ -188,14 +188,6 @@
           "type": "label"
         }
       ],
-      "bibliographicCitation": [
-        {
-          "identifier": "bibliographicCitation",
-          "language": "en",
-          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
-          "type": "label"
-        }
-      ],
       "codeRepository": [
         {
           "identifier": "codeRepository",
@@ -209,6 +201,14 @@
           "identifier": "preferredNamespaceUri",
           "language": "undefined",
           "value": "https://w3id.org/aias/odp/vdi3682#",
+          "type": "label"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "en",
+          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
           "type": "label"
         }
       ],
@@ -1119,35 +1119,6 @@
       "id": "43"
     },
     {
-      "iri": "https://w3id.org/aias/odp/vdi3682#consistsOf",
-      "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "10",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "The range takes in the process itself, which is how decomposition is recorded here: a process consists of further processes.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "de": "besteht aus",
-        "IRI-based": "consistsOf",
-        "en": "consists of"
-      },
-      "domain": "12",
-      "comment": {
-        "de": "Verbindet einen Prozess mit den Elementen, die ihn beschreiben.",
-        "en": "Relates a process to the elements describing it."
-      },
-      "attributes": [
-        "object"
-      ],
-      "id": "44"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
       "range": "5",
@@ -1170,6 +1141,35 @@
       "comment": {
         "de": "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource.",
         "en": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "44"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#consistsOf",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "10",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The range takes in the process itself, which is how decomposition is recorded here: a process consists of further processes.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "besteht aus",
+        "IRI-based": "consistsOf",
+        "en": "consists of"
+      },
+      "domain": "12",
+      "comment": {
+        "de": "Verbindet einen Prozess mit den Elementen, die ihn beschreiben.",
+        "en": "Relates a process to the elements describing it."
       },
       "attributes": [
         "object"

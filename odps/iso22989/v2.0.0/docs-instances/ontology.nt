@@ -1,6 +1,6 @@
 <https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso22989/instances/1.0.0> .
-<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/aias/odp/iso22989> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aias/odp/iso22989/instances/2.0.0> .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/aias/odp/iso22989/2.0.0> .
 <https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/created> "2026-08-19"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" .
 <https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/dc/terms/description> "Named individuals for the ISO/IEC 22989 ontology design pattern: the qualities a model states about an AI system.\n\nThey are kept apart from the pattern so that terminology and vocabulary can be maintained separately, in the same arrangement as the characteristics of the IEC 60050-351 pattern and the quality of service parameters of the ISO 7498 pattern. A model importing only the pattern gets the classes, one importing this file gets the vocabulary as well."@en .
@@ -11,7 +11,7 @@
 <https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/vocab/vann/preferredNamespacePrefix> "iso22989-inst" .
 <https://w3id.org/aias/odp/iso22989/instances> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aias/odp/iso22989/instances#" .
 <https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2000/01/rdf-schema#comment> "Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.\n\nThe pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it."@en .
-<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<https://w3id.org/aias/odp/iso22989/instances> <http://www.w3.org/2002/07/owl#versionInfo> "2.0.0" .
 # 
 # 
 # #################################################################
@@ -53,30 +53,6 @@
 # 
 # http://www.w3.org/2004/02/skos/core#note
 <http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2001/XMLSchema#date
-<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# https://w3id.org/aias/odp/iso22989#VariableCharacteristic
-<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # 
 # 

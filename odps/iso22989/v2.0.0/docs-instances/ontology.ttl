@@ -7,8 +7,8 @@
 @base <https://w3id.org/aias/odp/iso22989/instances#> .
 
 <https://w3id.org/aias/odp/iso22989/instances> rdf:type owl:Ontology ;
-                                                owl:versionIRI <https://w3id.org/aias/odp/iso22989/instances/1.0.0> ;
-                                                owl:imports <https://w3id.org/aias/odp/iso22989> ;
+                                                owl:versionIRI <https://w3id.org/aias/odp/iso22989/instances/2.0.0> ;
+                                                owl:imports <https://w3id.org/aias/odp/iso22989/2.0.0> ;
                                                 <http://purl.org/dc/terms/created> "2026-08-19"^^xsd:date ;
                                                 <http://purl.org/dc/terms/creator> "TODO: author name, ORCID" ;
                                                 <http://purl.org/dc/terms/description> """Named individuals for the ISO/IEC 22989 ontology design pattern: the qualities a model states about an AI system.
@@ -23,7 +23,7 @@ They are kept apart from the pattern so that terminology and vocabulary can be m
                                                 rdfs:comment """Every individual here carries the clause of ISO/IEC 22989:2022 that defines it.
 
 The pattern records that a value belongs to a quality, not how the quality is measured. Robustness as a number between zero and one is one convention among several, and prescribing a scale here would put a measurement decision into a terminology pattern. A model states the scale it uses through the unit of the value, or through an annotation on it."""@en ;
-                                                owl:versionInfo "1.0.0" .
+                                                owl:versionInfo "2.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -71,22 +71,6 @@ The pattern records that a value belongs to a quality, not how the quality is me
 
 ###  http://www.w3.org/2004/02/skos/core#note
 <http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://w3id.org/aias/odp/iso22989#VariableCharacteristic
-<https://w3id.org/aias/odp/iso22989#VariableCharacteristic> rdf:type owl:Class .
 
 
 #################################################################

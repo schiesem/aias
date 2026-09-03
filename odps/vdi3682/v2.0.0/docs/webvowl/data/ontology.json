@@ -1,1694 +1,2305 @@
 {
-  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
-  "header" : {
-    "languages" : [ "en", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/aias/odp/vdi3682" ],
-    "title" : {
-      "en" : "VDI 3682 Ontology Design Pattern"
+  "_comment": "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header": {
+    "languages": [
+      "en",
+      "undefined"
+    ],
+    "baseIris": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+      "http://www.w3.org/2000/01/rdf-schema",
+      "http://www.w3.org/2001/XMLSchema",
+      "https://w3id.org/aias/odp/vdi3682"
+    ],
+    "title": {
+      "en": "VDI 3682 Ontology Design Pattern"
     },
-    "iri" : "https://w3id.org/aias/odp/vdi3682",
-    "version" : "1.0.0",
-    "author" : [ "TODO: author name, ORCID" ],
-    "description" : {
-      "en" : "Ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 Part 1 (concept and graphic representation) and Part 2 (information model), issue May 2015.\n\nThe pattern covers the process network of states and process operators, the technical resources realising the operators, the system limit bounding the observation horizon, and the attribute structure of identification and characteristics.\n\nThe pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology."
+    "iri": "https://w3id.org/aias/odp/vdi3682",
+    "version": "2.0.0",
+    "author": [
+      "TODO: author name, ORCID"
+    ],
+    "description": {
+      "en": "Ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 Part 1 (concept and graphic representation) and Part 2 (information model), issue May 2015.\n\nThe pattern covers the process network of states and process operators, the technical resources realising the operators, the system limit bounding the observation horizon, and the attribute structure of identification and characteristics.\n\nThe pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology."
     },
-    "comments" : {
-      "en" : "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\n\nRelation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.\n\nStructural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."
+    "comments": {
+      "en": "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\n\nRelation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.\n\nStructural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."
     },
-    "other" : {
-      "creator" : [ {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "TODO: author name, ORCID",
-        "type" : "label"
-      } ],
-      "created" : [ {
-        "identifier" : "created",
-        "language" : "undefined",
-        "value" : "2026-08-14",
-        "type" : "label"
-      } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "undefined",
-        "value" : "1.0.0",
-        "type" : "label"
-      } ],
-      "source" : [ {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung",
-        "type" : "iri"
-      } ],
-      "title" : [ {
-        "identifier" : "title",
-        "language" : "en",
-        "value" : "VDI 3682 Ontology Design Pattern",
-        "type" : "label"
-      } ],
-      "license" : [ {
-        "identifier" : "license",
-        "language" : "undefined",
-        "value" : "https://creativecommons.org/licenses/by/4.0/",
-        "type" : "iri"
-      } ],
-      "contributor" : [ {
-        "identifier" : "contributor",
-        "language" : "undefined",
-        "value" : "TODO: co-authors",
-        "type" : "label"
-      } ],
-      "rights" : [ {
-        "identifier" : "rights",
-        "language" : "undefined",
-        "value" : "TODO: funding statement, projects EKI and OptiFlex, dtec.bw",
-        "type" : "label"
-      } ],
-      "preferredNamespacePrefix" : [ {
-        "identifier" : "preferredNamespacePrefix",
-        "language" : "undefined",
-        "value" : "vdi3682",
-        "type" : "label"
-      } ],
-      "publisher" : [ {
-        "identifier" : "publisher",
-        "language" : "undefined",
-        "value" : "TODO: institution",
-        "type" : "label"
-      } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/aias/odp/vdi3682#",
-        "type" : "label"
-      } ],
-      "bibliographicCitation" : [ {
-        "identifier" : "bibliographicCitation",
-        "language" : "undefined",
-        "value" : "TODO: citation of the accompanying publication",
-        "type" : "label"
-      } ],
-      "status" : [ {
-        "identifier" : "status",
-        "language" : "en",
-        "value" : "Draft",
-        "type" : "label"
-      } ]
+    "other": {
+      "creator": [
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "TODO: author name, ORCID",
+          "type": "label"
+        }
+      ],
+      "created": [
+        {
+          "identifier": "created",
+          "language": "undefined",
+          "value": "2026-08-14",
+          "type": "label"
+        }
+      ],
+      "versionInfo": [
+        {
+          "identifier": "versionInfo",
+          "language": "undefined",
+          "value": "2.0.0",
+          "type": "label"
+        }
+      ],
+      "source": [
+        {
+          "identifier": "source",
+          "language": "undefined",
+          "value": "https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung",
+          "type": "iri"
+        }
+      ],
+      "title": [
+        {
+          "identifier": "title",
+          "language": "en",
+          "value": "VDI 3682 Ontology Design Pattern",
+          "type": "label"
+        }
+      ],
+      "license": [
+        {
+          "identifier": "license",
+          "language": "undefined",
+          "value": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "iri"
+        }
+      ],
+      "contributor": [
+        {
+          "identifier": "contributor",
+          "language": "undefined",
+          "value": "TODO: co-authors",
+          "type": "label"
+        }
+      ],
+      "rights": [
+        {
+          "identifier": "rights",
+          "language": "undefined",
+          "value": "TODO: funding statement, projects EKI and OptiFlex, dtec.bw",
+          "type": "label"
+        }
+      ],
+      "preferredNamespacePrefix": [
+        {
+          "identifier": "preferredNamespacePrefix",
+          "language": "undefined",
+          "value": "vdi3682",
+          "type": "label"
+        }
+      ],
+      "publisher": [
+        {
+          "identifier": "publisher",
+          "language": "undefined",
+          "value": "TODO: institution",
+          "type": "label"
+        }
+      ],
+      "preferredNamespaceUri": [
+        {
+          "identifier": "preferredNamespaceUri",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/vdi3682#",
+          "type": "label"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "undefined",
+          "value": "TODO: citation of the accompanying publication",
+          "type": "label"
+        }
+      ],
+      "status": [
+        {
+          "identifier": "status",
+          "language": "en",
+          "value": "Draft",
+          "type": "label"
+        }
+      ]
     }
   },
-  "namespace" : [ ],
-  "class" : [ {
-    "id" : "4",
-    "type" : "owl:Class"
-  }, {
-    "id" : "8",
-    "type" : "owl:Class"
-  }, {
-    "id" : "41",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "34",
-    "type" : "owl:Class"
-  }, {
-    "id" : "44",
-    "type" : "owl:Class"
-  }, {
-    "id" : "36",
-    "type" : "owl:Class"
-  }, {
-    "id" : "21",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "45",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "46",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "23",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "6",
-    "type" : "owl:Class"
-  }, {
-    "id" : "47",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "48",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "27",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "49",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "52",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "53",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "32",
-    "type" : "owl:Class"
-  }, {
-    "id" : "56",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "17",
-    "type" : "owl:Class"
-  }, {
-    "id" : "57",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "50",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "58",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "59",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "60",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "62",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "63",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "71",
-    "type" : "owl:Class"
-  }, {
-    "id" : "2",
-    "type" : "owl:Class"
-  }, {
-    "id" : "18",
-    "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:Class"
-  }, {
-    "id" : "13",
-    "type" : "owl:Class"
-  }, {
-    "id" : "77",
-    "type" : "owl:Class"
-  }, {
-    "id" : "20",
-    "type" : "owl:Class"
-  } ],
-  "classAttribute" : [ {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.2. In the AIAS information model this class is the anchor for the elements of the automated plant, such as sensors, actuators, controllers and computing resources.",
-        "type" : "label"
-      } ]
+  "namespace": [],
+  "class": [
+    {
+      "id": "4",
+      "type": "owl:Class"
     },
-    "label" : {
-      "IRI-based" : "TechnicalResource",
-      "en" : "Technical Resource"
+    {
+      "id": "8",
+      "type": "owl:Class"
     },
-    "comment" : {
-      "en" : "A physical component of an automated plant that realises the transformation carried out by a process operator."
+    {
+      "id": "41",
+      "type": "owl:Thing"
     },
-    "id" : "4"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Process",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1. Part 2, Figure 2 constrains a process to exactly one system limit, at least one process operator and at least two states.",
-        "type" : "label"
-      } ]
+    {
+      "id": "34",
+      "type": "owl:Class"
     },
-    "label" : {
-      "IRI-based" : "Process",
-      "en" : "Process"
+    {
+      "id": "44",
+      "type": "owl:Class"
     },
-    "comment" : {
-      "en" : "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."
+    {
+      "id": "36",
+      "type": "owl:Class"
     },
-    "id" : "8"
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "41",
-    "label" : {
-      "undefined" : "Thing"
+    {
+      "id": "21",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "45",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "46",
+      "type": "owl:Thing"
+    },
+    {
+      "id": "23",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "6",
+      "type": "owl:Class"
+    },
+    {
+      "id": "47",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "48",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "27",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "49",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "52",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "53",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "32",
+      "type": "owl:Class"
+    },
+    {
+      "id": "56",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "17",
+      "type": "owl:Class"
+    },
+    {
+      "id": "57",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "50",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "58",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "59",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "60",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "62",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "63",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "71",
+      "type": "owl:Class"
+    },
+    {
+      "id": "2",
+      "type": "owl:Class"
+    },
+    {
+      "id": "18",
+      "type": "owl:Class"
+    },
+    {
+      "id": "1",
+      "type": "owl:Class"
+    },
+    {
+      "id": "13",
+      "type": "owl:Class"
+    },
+    {
+      "id": "77",
+      "type": "owl:Class"
+    },
+    {
+      "id": "20",
+      "type": "owl:Class"
     }
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Attribute",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5 and Figure 3.",
-        "type" : "label"
-      } ]
+  ],
+  "classAttribute": [
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2. The class is what a process needs to say who does the work: an operator states what happens, a resource states what performs it, and the assignment ties the two.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "TechnicalResource",
+        "en": "Technical Resource"
+      },
+      "comment": {
+        "en": "A physical component of an automated plant that realises the transformation carried out by a process operator."
+      },
+      "id": "4"
     },
-    "label" : {
-      "IRI-based" : "Attribute",
-      "en" : "Attribute"
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Process",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1. Part 2, Figure 2 constrains a process to exactly one system limit, at least one process operator and at least two states.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Process",
+        "en": "Process"
+      },
+      "comment": {
+        "en": "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."
+      },
+      "id": "8"
     },
-    "subClasses" : [ "20", "32" ],
-    "comment" : {
-      "en" : "A property of an object of the formalised process description. Two kinds of attribute exist, the identification and the characteristics."
+    {
+      "iri": "http://www.w3.org/2002/07/owl#Thing",
+      "baseIri": "http://owl2vowl.de",
+      "id": "41",
+      "label": {
+        "undefined": "Thing"
+      }
     },
-    "id" : "34"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. Introducing a class for the alternative flow is a design decision of this pattern. Where alternative flows are present, the system limit must not be used as a balance limit.",
-        "type" : "label"
-      } ]
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Attribute",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5 and Figure 3.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Attribute",
+        "en": "Attribute"
+      },
+      "subClasses": [
+        "20",
+        "32"
+      ],
+      "comment": {
+        "en": "A property of an object of the formalised process description. Two kinds of attribute exist, the identification and the characteristics."
+      },
+      "id": "34"
     },
-    "label" : {
-      "IRI-based" : "AlternativeFlow",
-      "en" : "Alternative Flow"
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. Introducing a class for the alternative flow is a design decision of this pattern. Where alternative flows are present, the system limit must not be used as a balance limit.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "AlternativeFlow",
+        "en": "Alternative Flow"
+      },
+      "comment": {
+        "en": "A flow that is part of a separate flow denoting mutually exclusive process paths."
+      },
+      "id": "44",
+      "superClasses": [
+        "13"
+      ]
     },
-    "comment" : {
-      "en" : "A flow that is part of a separate flow denoting mutually exclusive process paths."
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Energy",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Energy",
+        "en": "Energy"
+      },
+      "comment": {
+        "en": "Energy required or released by a process operator, for example electrical energy or heat. Energy occurs as input and as output of a process."
+      },
+      "id": "36",
+      "superClasses": [
+        "1"
+      ]
     },
-    "id" : "44",
-    "superClasses" : [ "13" ]
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Energy",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1.",
-        "type" : "label"
-      } ]
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "21",
+      "label": {
+        "IRI-based": "string"
+      }
     },
-    "label" : {
-      "IRI-based" : "Energy",
-      "en" : "Energy"
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "45",
+      "label": {
+        "IRI-based": "string"
+      }
     },
-    "comment" : {
-      "en" : "Energy required or released by a process operator, for example electrical energy or heat. Energy occurs as input and as output of a process."
+    {
+      "iri": "http://www.w3.org/2002/07/owl#Thing",
+      "baseIri": "http://owl2vowl.de",
+      "id": "46",
+      "label": {
+        "undefined": "Thing"
+      }
     },
-    "id" : "36",
-    "superClasses" : [ "1" ]
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "21",
-    "label" : {
-      "IRI-based" : "string"
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "23",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed; states are not decomposed (Part 1, Section 2).\n\nThe defined class axiom follows the VDI 3682 ODP of Helmut Schmidt University: anything with an input and an output that is contained in a process is a process operator. Anything with an input and an output alone may also be a process.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "ProcessOperator",
+        "en": "Process Operator"
+      },
+      "comment": {
+        "en": "An operation transforming the input state of products, energies or information into an output state. The process operator realises this transformation by means of technical resources."
+      },
+      "id": "6"
+    },
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "47",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "48",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "27",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "49",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "52",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema",
+      "id": "53",
+      "label": {
+        "IRI-based": "string"
+      }
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Characteristic",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.2 and Figures 5 to 7.\n\nThe standard fixes this three-part structure but does not prescribe a vocabulary of properties. The entries shown in its figures, such as setpoint value or validity limits, are examples closed by an open placeholder. Non-functional properties of resources therefore have to draw their vocabulary from a further standard.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Characteristic",
+        "en": "Characteristic"
+      },
+      "comment": {
+        "en": "An attribute describing a process specific property of an object. It consists of a category, a descriptive element and a relational element."
+      },
+      "id": "32",
+      "superClasses": [
+        "34"
+      ]
+    },
+    {
+      "instances": 0,
+      "union": [
+        "13",
+        "6",
+        "1"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "56"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Information",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1. One of the three kinds of state a process moves, alongside product and energy.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Information",
+        "en": "Information"
+      },
+      "comment": {
+        "en": "Information required by a process operator to carry out its transformation, or information created by it."
+      },
+      "id": "17",
+      "superClasses": [
+        "1"
+      ]
+    },
+    {
+      "instances": 0,
+      "union": [
+        "8",
+        "6"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "57"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "6",
+        "1"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "50"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "8",
+        "6"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "58"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "6",
+        "1"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "59"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "2",
+        "13",
+        "6",
+        "1"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "60"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "8",
+        "6"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "62"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "8",
+        "6"
+      ],
+      "attributes": [
+        "anonymous",
+        "union"
+      ],
+      "id": "63"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Assignment",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Figure 3 carries this relation as the usage symbol, an edge of the graphical notation.\n\nReifying the assignment as a class is a design decision of this pattern, taken for the same reasons as the reification of the flow. The VDI 3682 ODP of Helmut Schmidt University models it as the object property isAssignedTo.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Assignment",
+        "en": "Assignment"
+      },
+      "comment": {
+        "en": "The structural connection through which the execution of a process operator is assigned to a technical resource."
+      },
+      "id": "71"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#SystemLimit",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1. The system limit must not be used as a balance limit when alternative process runs are described.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "SystemLimit",
+        "en": "System Limit"
+      },
+      "comment": {
+        "en": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
+      },
+      "id": "2"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Product",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Product",
+        "en": "Product"
+      },
+      "comment": {
+        "en": "Things of the real world that are transformed within a technical process. The generic term also covers flows of materials and substances."
+      },
+      "id": "18",
+      "superClasses": [
+        "1"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#State",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1, Section 4.1 deliberately avoids the term in the graphical notation because it is considered ambiguous there, and works with product, energy and information directly. This pattern follows Part 2.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "State",
+        "en": "State"
+      },
+      "subClasses": [
+        "36",
+        "17",
+        "18"
+      ],
+      "comment": {
+        "en": "The condition of a product, an energy or an information at a given point of a process, either as the status ante operationem before a transformation or as the status post operationem after it."
+      },
+      "id": "1"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Flow",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. A reified flow can be identified, annotated and marked as parallel or alternative, none of which an edge can carry.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Flow",
+        "en": "Flow"
+      },
+      "subClasses": [
+        "44",
+        "77"
+      ],
+      "comment": {
+        "en": "A directed connection transporting a product, an energy or an information between a state and a process operator."
+      },
+      "id": "13"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.2.1 recommends modelling parallel process runs as a partially shared flow and explicitly requires no additional graphical elements for them. Introducing a class for the parallel flow is therefore a design decision of this pattern rather than an adoption from the standard.\n\nA parallel flow states that a single connection belongs to a concurrent run. Grouping several connections into one conjunction is expressed through the dependency property between the states involved.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "ParallelFlow",
+        "en": "Parallel Flow"
+      },
+      "comment": {
+        "en": "A flow that is part of a partially shared flow denoting process steps running concurrently."
+      },
+      "id": "77",
+      "superClasses": [
+        "13"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#Identification",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1, after IEC 61360-1. It carries a unique ident, a long name, a short name, references to external identification systems, a version number and a revision number.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Identification",
+        "en": "Identification"
+      },
+      "comment": {
+        "en": "The attribute uniquely identifying an object and its characteristics over the life cycle of a process description."
+      },
+      "id": "20",
+      "superClasses": [
+        "34"
+      ]
     }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "45",
-    "label" : {
-      "IRI-based" : "string"
+  ],
+  "property": [
+    {
+      "id": "0",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "3",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "5",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "7",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "9",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "10",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "11",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "12",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "14",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "15",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "16",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "19",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "22",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "24",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "26",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "28",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "29",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "30",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "31",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "33",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "35",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "37",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "38",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "39",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "40",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "42",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "43",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "25",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "51",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "54",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "55",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "61",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "64",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "65",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "66",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "67",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "68",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "70",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "72",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "73",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "74",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "75",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "76",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "78",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "79",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "80",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "81",
+      "type": "rdfs:SubClassOf"
+    },
+    {
+      "id": "82",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "83",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "84",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "85",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "86",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "87",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "88",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "89",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "90",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "91",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "92",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "93",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "94",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "69",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "95",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "96",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "97",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "98",
+      "type": "owl:datatypeProperty"
+    },
+    {
+      "id": "99",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "100",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "101",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "102",
+      "type": "owl:objectProperty"
     }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "46",
-    "label" : {
-      "undefined" : "Thing"
+  ],
+  "propertyAttribute": [
+    {
+      "range": "2",
+      "domain": "1",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "0"
+    },
+    {
+      "range": "4",
+      "domain": "1",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "3"
+    },
+    {
+      "range": "4",
+      "domain": "6",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "5"
+    },
+    {
+      "range": "4",
+      "domain": "8",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "7"
+    },
+    {
+      "range": "1",
+      "domain": "8",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "9"
+    },
+    {
+      "range": "2",
+      "domain": "6",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "10"
+    },
+    {
+      "range": "1",
+      "domain": "6",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "11"
+    },
+    {
+      "range": "8",
+      "domain": "13",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "12"
+    },
+    {
+      "range": "1",
+      "domain": "13",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "14"
+    },
+    {
+      "range": "2",
+      "domain": "8",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "15"
+    },
+    {
+      "range": "18",
+      "domain": "17",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "16"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#uniqueIdent",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "21",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1, after IEC 61360-1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "uniqueIdent",
+        "en": "unique ident"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "The unique code identifying an object."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "19"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#versionNumber",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "23",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1. This property is a standard backed anchor for tracking the model states of an AI application across the engineering method.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "versionNumber",
+        "en": "version number"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "The version of an object. A new version arises when the values of its attributes change."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "22"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasOperatorSource",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "6",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasOperatorSource",
+        "en": "has operator source"
+      },
+      "superproperty": [
+        "25"
+      ],
+      "domain": "13",
+      "comment": {
+        "en": "Relates a flow to the process operator it originates from."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "24"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#revisionNumber",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "27",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "revisionNumber",
+        "en": "revision number"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "The revision of an object, describing its accredited version."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "26"
+    },
+    {
+      "range": "6",
+      "domain": "13",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "28"
+    },
+    {
+      "range": "4",
+      "domain": "13",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "29"
+    },
+    {
+      "range": "2",
+      "domain": "13",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "30"
+    },
+    {
+      "range": "20",
+      "domain": "32",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "31"
+    },
+    {
+      "range": "13",
+      "domain": "34",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "33"
+    },
+    {
+      "range": "17",
+      "domain": "36",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "35"
+    },
+    {
+      "range": "18",
+      "domain": "36",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "37"
+    },
+    {
+      "range": "8",
+      "domain": "34",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "38"
+    },
+    {
+      "range": "6",
+      "domain": "34",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "39"
+    },
+    {
+      "range": "1",
+      "domain": "34",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "40"
+    },
+    {
+      "range": "34",
+      "domain": "32",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "42"
+    },
+    {
+      "range": "34",
+      "domain": "20",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "43"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasSource",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "50",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Super property of the two typed source properties. Chains are defined on the typed sub properties only, so that inference cannot fire between two elements of the same kind.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasSource",
+        "en": "has source"
+      },
+      "domain": "13",
+      "subproperty": [
+        "51",
+        "24"
+      ],
+      "comment": {
+        "en": "Relates a flow to the element it originates from."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "25"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasStateSource",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasStateSource",
+        "en": "has state source"
+      },
+      "superproperty": [
+        "25"
+      ],
+      "domain": "13",
+      "comment": {
+        "en": "Relates a flow to the state it originates from."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "51"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#externalReference",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "48",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1 and Part 2, Section 5.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "externalReference",
+        "en": "external reference"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "A reference from an object to an external identification system such as AKZ, KKS or NE 100."
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "id": "54"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#dependency",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University and not contained in the standard itself.\n\nUnder the open world assumption several inputs of one process operator always denote alternatives. Where inputs are required jointly, this has to be stated explicitly. The property acts as a conjunction between states, so that an expression such as \"A and B, or C and D\" becomes representable: dependency is asserted between A and B and between C and D.\n\nThe property complements ParallelFlow. A parallel flow qualifies a single connection, whereas dependency groups several connections into one conjunction.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "dependency",
+        "en": "dependency"
+      },
+      "domain": "1",
+      "comment": {
+        "en": "Expresses that two states are required together rather than as alternatives to one another."
+      },
+      "attributes": [
+        "symmetric",
+        "object"
+      ],
+      "id": "55"
+    },
+    {
+      "range": "4",
+      "domain": "2",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "61"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasSubProcess",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "8",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows isComposedOf and the inverse of consistsOf.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasSubProcess",
+        "en": "has sub process"
+      },
+      "domain": "57",
+      "comment": {
+        "en": "Relates a process operator to the process describing its decomposition. Inferred, not modelled."
+      },
+      "attributes": [
+        "object",
+        "transitive"
+      ],
+      "id": "64"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#category",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "53",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 5.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "category",
+        "en": "category"
+      },
+      "domain": "32",
+      "comment": {
+        "en": "The name of a characteristic."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "65"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isWithin",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "2",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isWithin",
+        "en": "is within"
+      },
+      "domain": "56",
+      "comment": {
+        "en": "Relates a state, a process operator or a flow to the system limit enclosing it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "66"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isCharacterizedBy",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "32",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 3.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isCharacterizedBy",
+        "en": "is characterized by"
+      },
+      "domain": "46",
+      "comment": {
+        "en": "Relates an object of the formalised process description to one of its characteristics."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "67"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasStateTarget",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasStateTarget",
+        "en": "has state target"
+      },
+      "superproperty": [
+        "69"
+      ],
+      "domain": "13",
+      "comment": {
+        "en": "Relates a flow to the state it leads to."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "68"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasUpperProcess",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "8",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows the inverse of isComposedOf and the inverse of consistsOf.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasUpperProcess",
+        "en": "has upper process"
+      },
+      "domain": "58",
+      "comment": {
+        "en": "Relates a process operator to its parent process. Inferred, not modelled."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "70"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#longName",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "47",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "longName",
+        "en": "long name"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "The preferred name of an object."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "72"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#relationalElement",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "49",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 5 and Figure 7.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "relationalElement",
+        "en": "relational element"
+      },
+      "domain": "32",
+      "comment": {
+        "en": "The relation establishing part of a characteristic."
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "id": "73"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasOperatorTarget",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "6",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasOperatorTarget",
+        "en": "has operator target"
+      },
+      "superproperty": [
+        "69"
+      ],
+      "domain": "13",
+      "comment": {
+        "en": "Relates a flow to the process operator it leads to."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "74"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasInput",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The chain reads: a flow leading to this operator originates from that state. Typed sub properties keep the inference from firing between two states or two operators.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasInput",
+        "en": "has input"
+      },
+      "domain": "63",
+      "comment": {
+        "en": "Relates a process operator to a state entering it. Inferred from the reified flows, not modelled directly."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "75"
+    },
+    {
+      "range": "13",
+      "domain": "77",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "76"
+    },
+    {
+      "range": "1",
+      "domain": "17",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "78"
+    },
+    {
+      "range": "1",
+      "domain": "36",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "79"
+    },
+    {
+      "range": "13",
+      "domain": "44",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "80"
+    },
+    {
+      "range": "1",
+      "domain": "18",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "81"
+    },
+    {
+      "range": "1",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "82"
+    },
+    {
+      "range": "6",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "83"
+    },
+    {
+      "range": "8",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "84"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasOutput",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "1",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The chain reads: a flow originating from this operator leads to that state.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasOutput",
+        "en": "has output"
+      },
+      "domain": "62",
+      "comment": {
+        "en": "Relates a process operator to a state leaving it. Inferred from the reified flows, not modelled directly."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "85"
+    },
+    {
+      "range": "4",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "86"
+    },
+    {
+      "range": "13",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "87"
+    },
+    {
+      "range": "2",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "88"
+    },
+    {
+      "range": "4",
+      "domain": "34",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "89"
+    },
+    {
+      "range": "2",
+      "domain": "34",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "90"
+    },
+    {
+      "range": "77",
+      "domain": "44",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "91"
+    },
+    {
+      "range": "34",
+      "domain": "71",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "92"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#assignedResource",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "4",
+      "label": {
+        "IRI-based": "assignedResource",
+        "en": "assigned resource"
+      },
+      "domain": "71",
+      "comment": {
+        "en": "Relates an assignment to the technical resource realising the assigned process operator."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "93"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#descriptiveElement",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "52",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 5 and Figure 6. The standard fixes the part but leaves its content open.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "descriptiveElement",
+        "en": "descriptive element"
+      },
+      "domain": "32",
+      "comment": {
+        "en": "The describing part of a characteristic."
+      },
+      "attributes": [
+        "datatype"
+      ],
+      "id": "94"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasTarget",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "59",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Super property of the two typed target properties.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasTarget",
+        "en": "has target"
+      },
+      "domain": "13",
+      "subproperty": [
+        "74",
+        "68"
+      ],
+      "comment": {
+        "en": "Relates a flow to the element it leads to."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "69"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isComposedOf",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "6",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isComposedOf",
+        "en": "is composed of"
+      },
+      "domain": "6",
+      "comment": {
+        "en": "Relates a process operator to the more detailed process operators it decomposes into."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "95"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasSuccessor",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "6",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasSuccessor",
+        "en": "has successor"
+      },
+      "domain": "6",
+      "comment": {
+        "en": "Relates a process operator to a process operator following it. Inferred, not modelled."
+      },
+      "attributes": [
+        "object",
+        "transitive"
+      ],
+      "id": "96"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasAssignment",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "71",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Directed counterpart of the usage symbol of VDI 3682 Part 1, Figure 3.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasAssignment",
+        "en": "has assignment"
+      },
+      "domain": "6",
+      "comment": {
+        "en": "Relates a process operator to an assignment describing which technical resource realises it."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "97"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#shortName",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "45",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Section 5.1.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "shortName",
+        "en": "short name"
+      },
+      "domain": "20",
+      "comment": {
+        "en": "The coded name of an object."
+      },
+      "attributes": [
+        "datatype",
+        "functional"
+      ],
+      "id": "98"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "20",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 3, cardinality one.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isIdentifiedBy",
+        "en": "is identified by"
+      },
+      "domain": "41",
+      "comment": {
+        "en": "Relates an object of the formalised process description to its identification."
+      },
+      "attributes": [
+        "functional",
+        "object"
+      ],
+      "id": "99"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#consistsOf",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "60",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "VDI 3682 Part 2, Figure 2, aggregation.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "consistsOf",
+        "en": "consists of"
+      },
+      "domain": "8",
+      "comment": {
+        "en": "Relates a process to the elements it contains, namely its states, process operators and its system limit."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "100"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "4",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Shortcut across the reified assignment, provided so that queries need not traverse the reification. The VDI 3682 ODP of Helmut Schmidt University carries this property as the primary modelling construct.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "isAssignedTo",
+        "en": "is assigned to"
+      },
+      "domain": "6",
+      "comment": {
+        "en": "Relates a process operator directly to the technical resource realising it. Inferred from the reified assignment, not modelled directly."
+      },
+      "attributes": [
+        "object"
+      ],
+      "id": "101"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/vdi3682#hasPredecessor",
+      "inverse": "96",
+      "baseIri": "https://w3id.org/aias/odp/vdi3682",
+      "range": "6",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. Two operators are never adjacent directly; the chain passes through the shared state.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "hasPredecessor",
+        "en": "has predecessor"
+      },
+      "domain": "6",
+      "comment": {
+        "en": "Relates a process operator to a process operator preceding it. Inferred, not modelled."
+      },
+      "attributes": [
+        "object",
+        "transitive"
+      ],
+      "id": "102"
     }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "23",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed; states are not decomposed (Part 1, Section 2).\n\nThe defined class axiom follows the VDI 3682 ODP of Helmut Schmidt University: anything with an input and an output that is contained in a process is a process operator. Anything with an input and an output alone may also be a process.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ProcessOperator",
-      "en" : "Process Operator"
-    },
-    "comment" : {
-      "en" : "An operation transforming the input state of products, energies or information into an output state. The process operator realises this transformation by means of technical resources."
-    },
-    "id" : "6"
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "47",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "48",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "27",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "49",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "52",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "53",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Characteristic",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.2 and Figures 5 to 7.\n\nThe standard fixes this three-part structure but does not prescribe a vocabulary of properties. The entries shown in its figures, such as setpoint value or validity limits, are examples closed by an open placeholder. Non-functional properties of resources therefore have to draw their vocabulary from a further standard.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Characteristic",
-      "en" : "Characteristic"
-    },
-    "comment" : {
-      "en" : "An attribute describing a process specific property of an object. It consists of a category, a descriptive element and a relational element."
-    },
-    "id" : "32",
-    "superClasses" : [ "34" ]
-  }, {
-    "instances" : 0,
-    "union" : [ "13", "6", "1" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "56"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Information",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1. Information leaving a process is the point of contact with the communication pattern of the AIAS information model.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Information",
-      "en" : "Information"
-    },
-    "comment" : {
-      "en" : "Information required by a process operator to carry out its transformation, or information created by it."
-    },
-    "id" : "17",
-    "superClasses" : [ "1" ]
-  }, {
-    "instances" : 0,
-    "union" : [ "8", "6" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "57"
-  }, {
-    "instances" : 0,
-    "union" : [ "6", "1" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "50"
-  }, {
-    "instances" : 0,
-    "union" : [ "8", "6" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "58"
-  }, {
-    "instances" : 0,
-    "union" : [ "6", "1" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "59"
-  }, {
-    "instances" : 0,
-    "union" : [ "2", "13", "6", "1" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "60"
-  }, {
-    "instances" : 0,
-    "union" : [ "8", "6" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "62"
-  }, {
-    "instances" : 0,
-    "union" : [ "8", "6" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "63"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Assignment",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Figure 3 carries this relation as the usage symbol, an edge of the graphical notation.\n\nReifying the assignment as a class is a design decision of this pattern, taken for the same reasons as the reification of the flow. The VDI 3682 ODP of Helmut Schmidt University models it as the object property isAssignedTo.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Assignment",
-      "en" : "Assignment"
-    },
-    "comment" : {
-      "en" : "The structural connection through which the execution of a process operator is assigned to a technical resource."
-    },
-    "id" : "71"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#SystemLimit",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1. The system limit must not be used as a balance limit when alternative process runs are described.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "SystemLimit",
-      "en" : "System Limit"
-    },
-    "comment" : {
-      "en" : "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
-    },
-    "id" : "2"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Product",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Product",
-      "en" : "Product"
-    },
-    "comment" : {
-      "en" : "Things of the real world that are transformed within a technical process. The generic term also covers flows of materials and substances."
-    },
-    "id" : "18",
-    "superClasses" : [ "1" ]
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#State",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1, Section 4.1 deliberately avoids the term in the graphical notation because it is considered ambiguous there, and works with product, energy and information directly. This pattern follows Part 2.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "State",
-      "en" : "State"
-    },
-    "subClasses" : [ "36", "17", "18" ],
-    "comment" : {
-      "en" : "The condition of a product, an energy or an information at a given point of a process, either as the status ante operationem before a transformation or as the status post operationem after it."
-    },
-    "id" : "1"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Flow",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. The reification is required because the AIAS alignment ontology treats flows as instances of Relation so that the modelling assistance can annotate them, and because the graphical notation of this work carries a class field and a naming field inside every symbol, which an edge cannot hold.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Flow",
-      "en" : "Flow"
-    },
-    "subClasses" : [ "44", "77" ],
-    "comment" : {
-      "en" : "A directed connection transporting a product, an energy or an information between a state and a process operator."
-    },
-    "id" : "13"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.2.1 recommends modelling parallel process runs as a partially shared flow and explicitly requires no additional graphical elements for them. Introducing a class for the parallel flow is therefore a design decision of this pattern rather than an adoption from the standard.\n\nA parallel flow states that a single connection belongs to a concurrent run. Grouping several connections into one conjunction is expressed through the dependency property between the states involved.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ParallelFlow",
-      "en" : "Parallel Flow"
-    },
-    "comment" : {
-      "en" : "A flow that is part of a partially shared flow denoting process steps running concurrently."
-    },
-    "id" : "77",
-    "superClasses" : [ "13" ]
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#Identification",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "instances" : 0,
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.1, after IEC 61360-1. It carries a unique ident, a long name, a short name, references to external identification systems, a version number and a revision number.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Identification",
-      "en" : "Identification"
-    },
-    "comment" : {
-      "en" : "The attribute uniquely identifying an object and its characteristics over the life cycle of a process description."
-    },
-    "id" : "20",
-    "superClasses" : [ "34" ]
-  } ],
-  "property" : [ {
-    "id" : "0",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "3",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "5",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "7",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "9",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "10",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "11",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "12",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "14",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "15",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "16",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "19",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "22",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "24",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "26",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "28",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "29",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "30",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "31",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "33",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "35",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "37",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "38",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "39",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "40",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "42",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "43",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "25",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "51",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "54",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "55",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "61",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "64",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "65",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "66",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "67",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "68",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "70",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "72",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "73",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "74",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "75",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "76",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "78",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "79",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "80",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "81",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "82",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "83",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "84",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "85",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "86",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "87",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "88",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "89",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "90",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "91",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "92",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "93",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "94",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "69",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "95",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "96",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "97",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "98",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "99",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "100",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "101",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "102",
-    "type" : "owl:objectProperty"
-  } ],
-  "propertyAttribute" : [ {
-    "range" : "2",
-    "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "0"
-  }, {
-    "range" : "4",
-    "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "3"
-  }, {
-    "range" : "1",
-    "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "5"
-  }, {
-    "range" : "4",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "7"
-  }, {
-    "range" : "2",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "9"
-  }, {
-    "range" : "4",
-    "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "10"
-  }, {
-    "range" : "2",
-    "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "11"
-  }, {
-    "range" : "1",
-    "domain" : "13",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "12"
-  }, {
-    "range" : "2",
-    "domain" : "13",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "14"
-  }, {
-    "range" : "1",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "15"
-  }, {
-    "range" : "18",
-    "domain" : "17",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "16"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#uniqueIdent",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "21",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.1, after IEC 61360-1.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "uniqueIdent",
-      "en" : "unique ident"
-    },
-    "domain" : "20",
-    "comment" : {
-      "en" : "The unique code identifying an object."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "19"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#versionNumber",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "23",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.1. This property is a standard backed anchor for tracking the model states of an AI application across the engineering method.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "versionNumber",
-      "en" : "version number"
-    },
-    "domain" : "20",
-    "comment" : {
-      "en" : "The version of an object. A new version arises when the values of its attributes change."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "22"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasOperatorSource",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "6",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasOperatorSource",
-      "en" : "has operator source"
-    },
-    "superproperty" : [ "25" ],
-    "domain" : "13",
-    "comment" : {
-      "en" : "Relates a flow to the process operator it originates from."
-    },
-    "attributes" : [ "object" ],
-    "id" : "24"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#revisionNumber",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "27",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.1.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "revisionNumber",
-      "en" : "revision number"
-    },
-    "domain" : "20",
-    "comment" : {
-      "en" : "The revision of an object, describing its accredited version."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "26"
-  }, {
-    "range" : "4",
-    "domain" : "13",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "28"
-  }, {
-    "range" : "8",
-    "domain" : "13",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "29"
-  }, {
-    "range" : "6",
-    "domain" : "13",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "30"
-  }, {
-    "range" : "20",
-    "domain" : "32",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "31"
-  }, {
-    "range" : "6",
-    "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "33"
-  }, {
-    "range" : "17",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "35"
-  }, {
-    "range" : "18",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "37"
-  }, {
-    "range" : "2",
-    "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "38"
-  }, {
-    "range" : "1",
-    "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "39"
-  }, {
-    "range" : "8",
-    "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "40"
-  }, {
-    "range" : "34",
-    "domain" : "32",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "42"
-  }, {
-    "range" : "34",
-    "domain" : "20",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "43"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasSource",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "50",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Super property of the two typed source properties. Chains are defined on the typed sub properties only, so that inference cannot fire between two elements of the same kind.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasSource",
-      "en" : "has source"
-    },
-    "domain" : "13",
-    "subproperty" : [ "51", "24" ],
-    "comment" : {
-      "en" : "Relates a flow to the element it originates from."
-    },
-    "attributes" : [ "object" ],
-    "id" : "25"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasStateSource",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "1",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasStateSource",
-      "en" : "has state source"
-    },
-    "superproperty" : [ "25" ],
-    "domain" : "13",
-    "comment" : {
-      "en" : "Relates a flow to the state it originates from."
-    },
-    "attributes" : [ "object" ],
-    "id" : "51"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#externalReference",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "48",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1 and Part 2, Section 5.1.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "externalReference",
-      "en" : "external reference"
-    },
-    "domain" : "20",
-    "comment" : {
-      "en" : "A reference from an object to an external identification system such as AKZ, KKS or NE 100."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "54"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#dependency",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "1",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Adopted from the VDI 3682 ODP of Helmut Schmidt University and not contained in the standard itself.\n\nUnder the open world assumption several inputs of one process operator always denote alternatives. Where inputs are required jointly, this has to be stated explicitly. The property acts as a conjunction between states, so that an expression such as \"A and B, or C and D\" becomes representable: dependency is asserted between A and B and between C and D.\n\nThe property complements ParallelFlow. A parallel flow qualifies a single connection, whereas dependency groups several connections into one conjunction.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "dependency",
-      "en" : "dependency"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Expresses that two states are required together rather than as alternatives to one another."
-    },
-    "attributes" : [ "symmetric", "object" ],
-    "id" : "55"
-  }, {
-    "range" : "4",
-    "domain" : "2",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "61"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasSubProcess",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "8",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows isComposedOf and the inverse of consistsOf.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasSubProcess",
-      "en" : "has sub process"
-    },
-    "domain" : "57",
-    "comment" : {
-      "en" : "Relates a process operator to the process describing its decomposition. Inferred, not modelled."
-    },
-    "attributes" : [ "object", "transitive" ],
-    "id" : "64"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#isWithin",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "2",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isWithin",
-      "en" : "is within"
-    },
-    "domain" : "56",
-    "comment" : {
-      "en" : "Relates a state, a process operator or a flow to the system limit enclosing it."
-    },
-    "attributes" : [ "object" ],
-    "id" : "65"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#category",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "53",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 5.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "category",
-      "en" : "category"
-    },
-    "domain" : "32",
-    "comment" : {
-      "en" : "The name of a characteristic."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "66"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#isCharacterizedBy",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "32",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 3.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isCharacterizedBy",
-      "en" : "is characterized by"
-    },
-    "domain" : "46",
-    "comment" : {
-      "en" : "Relates an object of the formalised process description to one of its characteristics."
-    },
-    "attributes" : [ "object" ],
-    "id" : "67"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasStateTarget",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "1",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasStateTarget",
-      "en" : "has state target"
-    },
-    "superproperty" : [ "69" ],
-    "domain" : "13",
-    "comment" : {
-      "en" : "Relates a flow to the state it leads to."
-    },
-    "attributes" : [ "object" ],
-    "id" : "68"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasUpperProcess",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "8",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows the inverse of isComposedOf and the inverse of consistsOf.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasUpperProcess",
-      "en" : "has upper process"
-    },
-    "domain" : "58",
-    "comment" : {
-      "en" : "Relates a process operator to its parent process. Inferred, not modelled."
-    },
-    "attributes" : [ "object" ],
-    "id" : "70"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#longName",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "47",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.1.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "longName",
-      "en" : "long name"
-    },
-    "domain" : "20",
-    "comment" : {
-      "en" : "The preferred name of an object."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "72"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#relationalElement",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "49",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 5 and Figure 7.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "relationalElement",
-      "en" : "relational element"
-    },
-    "domain" : "32",
-    "comment" : {
-      "en" : "The relation establishing part of a characteristic."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "73"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasOperatorTarget",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "6",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasOperatorTarget",
-      "en" : "has operator target"
-    },
-    "superproperty" : [ "69" ],
-    "domain" : "13",
-    "comment" : {
-      "en" : "Relates a flow to the process operator it leads to."
-    },
-    "attributes" : [ "object" ],
-    "id" : "74"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasInput",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "1",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "The chain reads: a flow leading to this operator originates from that state. Typed sub properties keep the inference from firing between two states or two operators.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasInput",
-      "en" : "has input"
-    },
-    "domain" : "63",
-    "comment" : {
-      "en" : "Relates a process operator to a state entering it. Inferred from the reified flows, not modelled directly."
-    },
-    "attributes" : [ "object" ],
-    "id" : "75"
-  }, {
-    "range" : "13",
-    "domain" : "77",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "76"
-  }, {
-    "range" : "1",
-    "domain" : "17",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "78"
-  }, {
-    "range" : "1",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "79"
-  }, {
-    "range" : "13",
-    "domain" : "44",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "80"
-  }, {
-    "range" : "1",
-    "domain" : "18",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "81"
-  }, {
-    "range" : "4",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "82"
-  }, {
-    "range" : "2",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "83"
-  }, {
-    "range" : "8",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "84"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasOutput",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "1",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "The chain reads: a flow originating from this operator leads to that state.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasOutput",
-      "en" : "has output"
-    },
-    "domain" : "62",
-    "comment" : {
-      "en" : "Relates a process operator to a state leaving it. Inferred from the reified flows, not modelled directly."
-    },
-    "attributes" : [ "object" ],
-    "id" : "85"
-  }, {
-    "range" : "13",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "86"
-  }, {
-    "range" : "6",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "87"
-  }, {
-    "range" : "1",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "88"
-  }, {
-    "range" : "13",
-    "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "89"
-  }, {
-    "range" : "4",
-    "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "90"
-  }, {
-    "range" : "77",
-    "domain" : "44",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "91"
-  }, {
-    "range" : "34",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "92"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#assignedResource",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "4",
-    "label" : {
-      "IRI-based" : "assignedResource",
-      "en" : "assigned resource"
-    },
-    "domain" : "71",
-    "comment" : {
-      "en" : "Relates an assignment to the technical resource realising the assigned process operator."
-    },
-    "attributes" : [ "object" ],
-    "id" : "93"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#descriptiveElement",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "52",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 5 and Figure 6. The standard fixes the part but leaves its content open.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "descriptiveElement",
-      "en" : "descriptive element"
-    },
-    "domain" : "32",
-    "comment" : {
-      "en" : "The describing part of a characteristic."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "94"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasTarget",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "59",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Super property of the two typed target properties.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasTarget",
-      "en" : "has target"
-    },
-    "domain" : "13",
-    "subproperty" : [ "74", "68" ],
-    "comment" : {
-      "en" : "Relates a flow to the element it leads to."
-    },
-    "attributes" : [ "object" ],
-    "id" : "69"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#isComposedOf",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "6",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 1, Section 4.1. Only process operators may be decomposed.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isComposedOf",
-      "en" : "is composed of"
-    },
-    "domain" : "6",
-    "comment" : {
-      "en" : "Relates a process operator to the more detailed process operators it decomposes into."
-    },
-    "attributes" : [ "object" ],
-    "id" : "95"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasSuccessor",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "6",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Adopted from the VDI 3682 ODP of Helmut Schmidt University.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasSuccessor",
-      "en" : "has successor"
-    },
-    "domain" : "6",
-    "comment" : {
-      "en" : "Relates a process operator to a process operator following it. Inferred, not modelled."
-    },
-    "attributes" : [ "object", "transitive" ],
-    "id" : "96"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasAssignment",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "71",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Directed counterpart of the usage symbol of VDI 3682 Part 1, Figure 3.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasAssignment",
-      "en" : "has assignment"
-    },
-    "domain" : "6",
-    "comment" : {
-      "en" : "Relates a process operator to an assignment describing which technical resource realises it."
-    },
-    "attributes" : [ "object" ],
-    "id" : "97"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "20",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 3, cardinality one.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isIdentifiedBy",
-      "en" : "is identified by"
-    },
-    "domain" : "41",
-    "comment" : {
-      "en" : "Relates an object of the formalised process description to its identification."
-    },
-    "attributes" : [ "functional", "object" ],
-    "id" : "98"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#shortName",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "45",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Section 5.1.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "shortName",
-      "en" : "short name"
-    },
-    "domain" : "20",
-    "comment" : {
-      "en" : "The coded name of an object."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "99"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#consistsOf",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "60",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "VDI 3682 Part 2, Figure 2, aggregation.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "consistsOf",
-      "en" : "consists of"
-    },
-    "domain" : "8",
-    "comment" : {
-      "en" : "Relates a process to the elements it contains, namely its states, process operators and its system limit."
-    },
-    "attributes" : [ "object" ],
-    "id" : "100"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "4",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Shortcut across the reified assignment, provided so that queries need not traverse the reification. The VDI 3682 ODP of Helmut Schmidt University carries this property as the primary modelling construct.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isAssignedTo",
-      "en" : "is assigned to"
-    },
-    "domain" : "6",
-    "comment" : {
-      "en" : "Relates a process operator directly to the technical resource realising it. Inferred from the reified assignment, not modelled directly."
-    },
-    "attributes" : [ "object" ],
-    "id" : "101"
-  }, {
-    "iri" : "https://w3id.org/aias/odp/vdi3682#hasPredecessor",
-    "inverse" : "96",
-    "baseIri" : "https://w3id.org/aias/odp/vdi3682",
-    "range" : "6",
-    "annotations" : {
-      "note" : [ {
-        "identifier" : "note",
-        "language" : "en",
-        "value" : "Adopted from the VDI 3682 ODP of Helmut Schmidt University. Two operators are never adjacent directly; the chain passes through the shared state.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasPredecessor",
-      "en" : "has predecessor"
-    },
-    "domain" : "6",
-    "comment" : {
-      "en" : "Relates a process operator to a process operator preceding it. Inferred, not modelled."
-    },
-    "attributes" : [ "object", "transitive" ],
-    "id" : "102"
-  } ]
+  ]
 }

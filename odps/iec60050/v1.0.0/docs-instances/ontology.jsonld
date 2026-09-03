@@ -58,22 +58,10 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#note",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/aias/odp/iec60050#symbol",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances",
@@ -124,10 +112,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#ControlRiseTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it first returns into that band."
@@ -145,10 +130,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#ControlSettlingTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The interval after a step change of the reference variable or a disturbance variable, beginning when the controlled variable first leaves an agreed tolerance band around its desired value and ending when it returns into that band and remains within it."
@@ -166,10 +148,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#DeadBand",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#QualityCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A finite range of values of the input variable within which a variation of the input variable does not produce any measurable change in the output variable."
@@ -188,10 +167,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#DeadTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "In a dead-time element, the duration of the time interval by which the output variable is shifted relative to the input variable."
@@ -209,10 +185,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#EquivalentDeadTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "In a step response, the interval between the step change of the input variable and the intersection of the inflection tangent with the horizontal axis of the initial value."
@@ -230,10 +203,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#GainMargin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#QualityCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The reciprocal of the gain response of the open control loop at the phase crossover angular frequency."
@@ -251,10 +221,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#InterruptReactionTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The duration of the time interval that elapses between the arrival of an interrupt signal at the interrupt input unit and the instant of decision whether the interrupt is handled or not."
@@ -269,10 +236,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#ManipulatingTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The duration of the time interval in which the manipulated variable runs with the highest speed through its whole range."
@@ -287,10 +251,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#Overshoot",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#QualityCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "In a step response, the largest transient deviation of the output variable from its final steady-state value, usually expressed as a percentage of the difference between its final and its initial steady-state value."
@@ -308,10 +269,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#PhaseMargin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#QualityCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#QualityCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The difference between the phase response of the open control loop at the gain crossover angular frequency and minus pi radians."
@@ -329,10 +287,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#SamplingPeriod",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The duration of the time interval between two consecutive observations in a periodic sampling control system."
@@ -347,10 +302,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#SettlingTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "In a step response, the interval between the step change of the input variable and the instant from which the difference between the step response and its steady-state value stays smaller than the tolerance band."
@@ -365,10 +317,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/aias/odp/iec60050/instances#TimeConstant",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/aias/odp/iec60050#TimeCharacteristic"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/aias/odp/iec60050#TimeCharacteristic" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "For a quantity growing or decaying exponentially towards a constant value, the duration of a time interval at the end of which the absolute difference to that value has decreased to 1/e of its initial amount."

@@ -306,6 +306,63 @@ def fix_webvowl(directory: Path, out: Path) -> list:
 
 
 
+def fix_serializations(directory: Path, ontology: Path, out: Path) -> list:
+    """Put the ontology header of the source back into what Widoco emitted.
+
+    Widoco resolves owl:imports while it works and lets the header of the last
+    ontology it read win, so the serializations it writes can carry the IRI of
+    an import rather than of the ontology itself. These files are what a
+    reasoner downloads, so the defect is not cosmetic: an alignment that names
+    itself after one of its imports cannot be loaded at all.
+    """
+    from rdflib import Graph, URIRef
+    from rdflib.namespace import OWL, RDF
+
+    src = Graph()
+    src.parse(str(ontology), format="turtle")
+    subject = next(src.subjects(RDF.type, OWL.Ontology), None)
+    if subject is None:
+        return []
+    want = {p: set(src.objects(subject, p))
+            for p in (OWL.versionIRI, OWL.imports)}
+
+    fixed = []
+    for name, fmt in (("ontology.ttl", "turtle"), ("ontology.owl", "xml"),
+                      ("ontology.nt", "nt"), ("ontology.jsonld", "json-ld")):
+        f = out / name
+        if not f.is_file():
+            continue
+        g = Graph()
+        try:
+            g.parse(str(f), format=fmt)
+        except Exception:
+            continue
+
+        wrong = [s for s in g.subjects(RDF.type, OWL.Ontology) if s != subject]
+        if not wrong and want[OWL.versionIRI] <= set(g.objects(subject, OWL.versionIRI)):
+            continue
+
+        # Move every statement of the misnamed ontology onto the right subject,
+        # then restore the header from the source.
+        for s in wrong:
+            for pred, obj in list(g.predicate_objects(s)):
+                g.remove((s, pred, obj))
+                if pred not in (OWL.versionIRI, OWL.imports):
+                    g.add((subject, pred, obj))
+        g.add((subject, RDF.type, OWL.Ontology))
+        for pred in (OWL.versionIRI, OWL.imports):
+            for obj in list(g.objects(subject, pred)):
+                g.remove((subject, pred, obj))
+            for obj in want[pred]:
+                g.add((subject, pred, obj))
+
+        g.serialize(destination=str(f), format=fmt)
+        fixed.append(name.split(".")[-1])
+
+    return ["header: " + ", ".join(fixed)] if fixed else []
+
+
+
 def write_references(directory: Path, out: Path) -> list:
     """Replace Widoco's placeholder References section with the real ones.
 
@@ -538,6 +595,7 @@ def generate(directory: Path, ontology: Path, outdir: str = "docs") -> bool:
     # vocabulary of named individuals is documented from the ontology alone.
     sections = write_sections(directory, out) if outdir == "docs" else []
     if outdir == "docs":
+        sections += fix_serializations(directory, ontology, out)
         sections += write_references(directory, out)
         sections += fix_webvowl(directory, out)
         sections += fix_header(directory, out)
