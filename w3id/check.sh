@@ -21,10 +21,8 @@ ask() {           # ask <iri> <accept> <what>
     # which every client handles, so it is not a failure.
     if [ "$code" = "301" ]; then
         out=$(curl -sI -H "Accept: $2" "$1/")
-        code=$(printf '%s' "$out" | head -1 | tr -d '
-' | cut -d' ' -f2)
-        loc=$(printf '%s' "$out" | tr -d '
-' | grep -i '^location:' | cut -d' ' -f2-)
+        code=$(printf '%s' "$out" | head -1 | tr -d '\r' | cut -d' ' -f2)
+        loc=$(printf '%s' "$out" | tr -d '\r' | grep -i '^location:' | cut -d' ' -f2-)
     fi
 
     if [ "$code" != "303" ]; then
