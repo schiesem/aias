@@ -16,6 +16,17 @@ ask() {           # ask <iri> <accept> <what>
     code=$(printf '%s' "$out" | head -1 | tr -d '\r' | cut -d' ' -f2)
     loc=$(printf '%s' "$out" | tr -d '\r' | grep -i '^location:' | cut -d' ' -f2-)
 
+    # Apache answers a directory without a trailing slash with a 301 to the
+    # slashed form, and the 303 follows from there. Two hops rather than one,
+    # which every client handles, so it is not a failure.
+    if [ "$code" = "301" ]; then
+        out=$(curl -sI -H "Accept: $2" "$1/")
+        code=$(printf '%s' "$out" | head -1 | tr -d '
+' | cut -d' ' -f2)
+        loc=$(printf '%s' "$out" | tr -d '
+' | grep -i '^location:' | cut -d' ' -f2-)
+    fi
+
     if [ "$code" != "303" ]; then
         printf '  FAIL  %-34s %-6s HTTP %s\n' "$1" "$3" "${code:-none}"
         fail=1
