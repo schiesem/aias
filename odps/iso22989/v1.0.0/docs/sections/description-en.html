@@ -24,4 +24,4 @@
 <p>A <code>DataSource</code> is where data comes from, a <code>DataSink</code> where it is written. The relations <code>isAcquiredBy</code>, <code>isProcessedBy</code> and <code>isStoredBy</code> tie a dataset to the functions acting on it, which is what makes provenance answerable: follow <code>isProcessedBy</code> backwards from a merged dataset and every origin appears.</p>
 <h3>Disjointness</h3>
 <p>The root classes are pairwise disjoint, and so are the members of each set of subclasses: the four tasks, the four learning types, the three system designs, the four metrics and the kinds of data. Nothing can be a task and a metric at once.</p>
-<p><code>TestData</code> and <code>EvaluationData</code> are deliberately outside the data axiom, since they are equivalent rather than distinct.</p>
+<p><code>TestData</code> and <code>EvaluationData</code> cannot be disjoint from <strong>each other</strong>, since they are equivalent. Against the other three kinds of data they are, which a second axiom states: training, validation and production data on one side, evaluation data on the other.</p>

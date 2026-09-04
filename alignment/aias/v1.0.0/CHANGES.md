@@ -119,3 +119,42 @@ six files concerned.
 **Result:** 11 own classes and 8 relations, against 12 classes and 7 relations
 in version 2.0.0, which reaches further with fewer own terms because it leans
 on the fourth pattern.
+
+---
+
+## Disjointness added after publication, 3 September 2026
+
+The version stays 1.0.0. Nothing that was valid before is invalid now: the
+three use cases were checked against every axiom below and none of them
+conflicts, so no model loses its standing. Raising the version would have
+meant renaming directories, import IRIs, catalogues and the w3id rules for an
+addition that takes nothing away.
+
+**What was added:**
+
+- the three collecting classes, `Function`, `Component` and `Relation`,
+  pairwise disjoint
+- the seven kinds of device, pairwise disjoint
+- `Assignment`, `Flow` and `Communication`, pairwise disjoint
+- in ISO/IEC 22989, `EvaluationData` against training, validation and
+  production data
+
+**Why it matters:** without a disjointness axiom a wrong `rdfs:domain` does
+not fail. The reasoner quietly infers that an individual belongs to both
+classes, and the mistake stays invisible. These axioms make it visible.
+
+**What was deliberately left out, and why:**
+
+- **`Resource` and `Product`** differ in their role rather than in their
+  nature. A workpiece may be a product now and serve as a fixture later, and
+  case 3 already has a pane that communicates.
+- **`ProcessOperator` and `AIFunction`**, because the automation function of
+  ISO/IEC 22989 acts on the process. In case 3 the AI steers the rework, so
+  the two meet in one step.
+- **`ParallelFlow` and `AlternativeFlow`**, since a flow may be part of a
+  parallel run at one point of a process and of an alternative one at another.
+  The note on the two classes has said so from the start.
+- **`TestData` and `EvaluationData`** against each other, since they are
+  equivalent. Confusing that was the defect the dissertation carried, where
+  the figure drew the equivalence while the OWL file listed both in one
+  disjointness axiom, which is unsatisfiable.

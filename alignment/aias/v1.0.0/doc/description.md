@@ -106,3 +106,21 @@ All three have `Component` as their domain rather than `Resource`, and that is
 deliberate. A product may take part in a communication: a workpiece carrying an
 RFID tag or a barcode is read along the line, and restricting the relation to
 resources would rule that out.
+
+## Disjointness
+
+Three axioms. The three collecting classes are pairwise disjoint, so are the
+seven kinds of device, and so are the three relations the patterns contribute.
+
+Without them a wrong `rdfs:domain` does not fail. It quietly infers that
+something is a function and a component at once, and no query asking which
+resource carries which function has a reliable answer any more.
+
+Three things are deliberately **not** disjoint:
+
+- `Resource` and `Product` differ in their role rather than in their nature. A
+  workpiece may be a product now and serve as a fixture later.
+- `ProcessOperator` and `AIFunction`, because an automation function of
+  ISO/IEC 22989 acts on the process, so the two can meet in one step.
+- `ParallelFlow` and `AlternativeFlow`, since a flow may be part of a parallel
+  run at one point of a process and of an alternative one at another.

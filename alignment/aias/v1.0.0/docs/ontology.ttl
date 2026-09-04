@@ -51,49 +51,6 @@ foaf:fundedBy a owl:AnnotationProperty .
 
 schema:codeRepository a owl:AnnotationProperty .
 
-aias:Actuator a owl:Class ;
-    rdfs:label "Aktor"@de,
-        "Actuator"@en ;
-    rdfs:comment "Geräte, die physisch in den technischen Prozess eingreifen."@de,
-        "Devices intervening physically in the technical process."@en ;
-    rdfs:subClassOf aias:Resource .
-
-aias:Computer a owl:Class ;
-    rdfs:label "Rechner"@de,
-        "Computer"@en ;
-    rdfs:comment "Geräte mit fester, höherer Rechenleistung, die durch zusätzliche Hardware erweiterbar sind."@de,
-        "Devices with fixed, higher computing capacity that can be extended by additional hardware."@en ;
-    rdfs:subClassOf aias:Resource .
-
-aias:Controller a owl:Class ;
-    rdfs:label "Steuerung"@de,
-        "Controller"@en ;
-    rdfs:comment "Geräte zur deterministischen und echtzeitkritischen Verarbeitung von Signalen zur Steuerung und Regelung des automatisierten Systems beziehungsweise Prozesses."@de,
-        "Devices for the deterministic and time-critical processing of signals in order to control the automated system or process."@en ;
-    rdfs:subClassOf aias:Resource .
-
-aias:EdgeDevice a owl:Class ;
-    rdfs:label "Edge-Gerät"@de,
-        "Edge Device"@en ;
-    rdfs:comment "Mikrocontroller oder kompakte Industriecomputer mit begrenzter, lokal verfügbarer Rechenleistung im Anlagennetzwerk oder Unternehmensnetzwerk."@de,
-        "Microcontrollers or compact industrial computers with limited computing capacity available locally in the plant network or the company network."@en ;
-    rdfs:subClassOf aias:Resource .
-
-aias:ExternalCloud a owl:Class ;
-    rdfs:label "Externe Cloud"@de,
-        "External Cloud"@en ;
-    rdfs:comment "Flexibel skalierbare Rechenressourcen außerhalb des Anlagen- oder Unternehmensnetzes, deren Zugriff typischerweise ein externes Netzwerk, etwa eine Internetverbindung, erfordert."@de,
-        "Flexibly scalable computing resources outside the plant or company network, reaching which typically requires an external network such as an internet connection."@en ;
-    rdfs:subClassOf aias:Resource ;
-    skos:note "A function running here leaves the organisation, which is what separates it from the internal cloud."@en .
-
-aias:InternalCloud a owl:Class ;
-    rdfs:label "Interne Cloud"@de,
-        "Internal Cloud"@en ;
-    rdfs:comment "Flexibel skalierbare Rechenressourcen innerhalb des Anlagen- oder Unternehmensnetzes."@de,
-        "Flexibly scalable computing resources inside the plant or company network."@en ;
-    rdfs:subClassOf aias:Resource .
-
 aias:Product a owl:Class ;
     rdfs:label "Produkt"@de,
         "Product"@en ;
@@ -104,14 +61,6 @@ aias:Product a owl:Class ;
     skos:note """A construct of this work, corresponding to the product of VDI 3682.
 
 Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them."""@en .
-
-aias:Sensor a owl:Class ;
-    rdfs:label "Sensor"@de,
-        "Sensor"@en ;
-    rdfs:comment "Geräte, die Messwerte aus dem technischen Prozess erfassen und digitalisieren."@de,
-        "Devices acquiring measured values from the technical process and digitising them."@en ;
-    rdfs:subClassOf aias:Resource ;
-    skos:note "A construct of this work. None of the seven device classes rests on a standard."@en .
 
 aias:hasCommunication a owl:ObjectProperty ;
     rdfs:label "hat Kommunikation"@de,
@@ -202,7 +151,7 @@ vdi3682:ProcessOperator rdfs:subClassOf aias:Function .
         "Philip Topalis" ;
     dcterms:hasVersion <https://w3id.org/aias> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:modified "2026-09-03"^^xsd:date ;
     dcterms:publisher "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
     dcterms:references "R. Haberfellner, O. de Weck, E. Fricke and S. Vössner, Systems Engineering. Springer, 2019. ISBN 978-3-030-13430-3"@en ;
     dcterms:rights "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"@en ;
@@ -228,6 +177,57 @@ Scope: the three patterns named above and the classes that tie them together. Th
     owl:versionInfo "1.0.0" ;
     foaf:fundedBy <https://dtecbw.de/> ;
     schema:codeRepository <https://github.com/schiesem/aias> .
+
+aias:Actuator a owl:Class ;
+    rdfs:label "Aktor"@de,
+        "Actuator"@en ;
+    rdfs:comment "Geräte, die physisch in den technischen Prozess eingreifen."@de,
+        "Devices intervening physically in the technical process."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Computer a owl:Class ;
+    rdfs:label "Rechner"@de,
+        "Computer"@en ;
+    rdfs:comment "Geräte mit fester, höherer Rechenleistung, die durch zusätzliche Hardware erweiterbar sind."@de,
+        "Devices with fixed, higher computing capacity that can be extended by additional hardware."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Controller a owl:Class ;
+    rdfs:label "Steuerung"@de,
+        "Controller"@en ;
+    rdfs:comment "Geräte zur deterministischen und echtzeitkritischen Verarbeitung von Signalen zur Steuerung und Regelung des automatisierten Systems beziehungsweise Prozesses."@de,
+        "Devices for the deterministic and time-critical processing of signals in order to control the automated system or process."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:EdgeDevice a owl:Class ;
+    rdfs:label "Edge-Gerät"@de,
+        "Edge Device"@en ;
+    rdfs:comment "Mikrocontroller oder kompakte Industriecomputer mit begrenzter, lokal verfügbarer Rechenleistung im Anlagennetzwerk oder Unternehmensnetzwerk."@de,
+        "Microcontrollers or compact industrial computers with limited computing capacity available locally in the plant network or the company network."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:ExternalCloud a owl:Class ;
+    rdfs:label "Externe Cloud"@de,
+        "External Cloud"@en ;
+    rdfs:comment "Flexibel skalierbare Rechenressourcen außerhalb des Anlagen- oder Unternehmensnetzes, deren Zugriff typischerweise ein externes Netzwerk, etwa eine Internetverbindung, erfordert."@de,
+        "Flexibly scalable computing resources outside the plant or company network, reaching which typically requires an external network such as an internet connection."@en ;
+    rdfs:subClassOf aias:Resource ;
+    skos:note "A function running here leaves the organisation, which is what separates it from the internal cloud."@en .
+
+aias:InternalCloud a owl:Class ;
+    rdfs:label "Interne Cloud"@de,
+        "Internal Cloud"@en ;
+    rdfs:comment "Flexibel skalierbare Rechenressourcen innerhalb des Anlagen- oder Unternehmensnetzes."@de,
+        "Flexibly scalable computing resources inside the plant or company network."@en ;
+    rdfs:subClassOf aias:Resource .
+
+aias:Sensor a owl:Class ;
+    rdfs:label "Sensor"@de,
+        "Sensor"@en ;
+    rdfs:comment "Geräte, die Messwerte aus dem technischen Prozess erfassen und digitalisieren."@de,
+        "Devices acquiring measured values from the technical process and digitising them."@en ;
+    rdfs:subClassOf aias:Resource ;
+    skos:note "A construct of this work. None of the seven device classes rests on a standard."@en .
 
 vdi3682:Assignment rdfs:subClassOf aias:Relation .
 
@@ -272,4 +272,13 @@ aias:Component a owl:Class ;
     skos:note """A construct of this work, following the system elements of Haberfellner. It covers physical elements only.
 
 Software artefacts such as models or AI components are deliberately not modelled as components. They stay in the AI subdomain, and their place in the whole is recorded through the functions they realise and the assignment of those functions to a resource."""@en .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( aias:Component aias:Function aias:Relation ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( iso7498:Communication vdi3682:Assignment vdi3682:Flow ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( aias:Actuator aias:Computer aias:Controller aias:EdgeDevice aias:ExternalCloud aias:InternalCloud aias:Sensor ) .
 

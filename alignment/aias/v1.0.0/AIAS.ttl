@@ -24,7 +24,7 @@
     dcterms:title "AIAS Alignment Ontology"@en ;
     dcterms:abstract """An alignment ontology describing artificial intelligence applications in automated plants together with the plant and the technical process it runs. It imports three subdomain patterns, for the technical process after VDI/VDE 3682, for communication after ISO/IEC 7498-1 and for artificial intelligence after ISO/IEC 22989, and ties them together through three collecting classes: a function, a component and a relation. Placing a process operator and an inference under one function class is what makes them comparable, so that the same assignment states which resource carries out which function, whichever subdomain that function comes from. Twelve own classes and eight own relations. Nothing here is normative: the patterns rest on standards, the alignment rests on design decisions."""@en ;
     dcterms:created "2024-09-01"^^xsd:date ;
-    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:modified "2026-09-03"^^xsd:date ;
     dcterms:creator "Marvin Schieseck" ;
     dcterms:creator "Philip Topalis" ;
     dcterms:creator "Lasse Reinpold" ;
@@ -313,3 +313,33 @@ aias:hasFlow
     rdfs:comment "Verbindet eine Funktion, eine Komponente oder ein Produkt mit einem Fluss, an dem sie teilnimmt."@de ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( aias:Function aias:Component ) ] ;
     rdfs:range vdi3682:Flow .
+
+#################################################################
+#    Disjointness
+#
+#    Without these a wrong domain does not fail, it quietly infers that
+#    something is a function and a component at once, and no query asking
+#    which resource carries which function has a reliable answer any more.
+#
+#    Three things are deliberately NOT disjoint:
+#
+#      Resource and Product      differ in their role rather than in their
+#                                nature. A workpiece may be a product now and
+#                                serve as a fixture later.
+#      ProcessOperator and       an automation function of ISO/IEC 22989 acts
+#      AIFunction                on the process, so the two can meet in one
+#                                step.
+#      ParallelFlow and          a flow may be part of a parallel run at one
+#      AlternativeFlow           point of a process and of an alternative one
+#                                at another. The note on the two says so.
+#################################################################
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( aias:Function aias:Component aias:Relation ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( aias:Sensor aias:Actuator aias:Controller aias:EdgeDevice
+                 aias:Computer aias:InternalCloud aias:ExternalCloud ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( vdi3682:Assignment vdi3682:Flow iso7498:Communication ) .

@@ -60,15 +60,6 @@ iso22989:DataProcessing a owl:Class ;
     rdfs:subClassOf iso22989:AIFunction ;
     skos:note "ISO/IEC 22989, clause 5.10."@en .
 
-iso22989:EvaluationData a owl:Class ;
-    rdfs:label "Evaluationsdaten"@de,
-        "Evaluation Data"@en ;
-    rdfs:comment "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind."@de,
-        "Data used to assess the performance of a final model, disjoint from training and validation data."@en ;
-    rdfs:subClassOf iso22989:Data ;
-    owl:equivalentClass iso22989:TestData ;
-    skos:note "ISO/IEC 22989, definition 3.2.14."@en .
-
 iso22989:SubSymbolicAI a owl:Class ;
     rdfs:label "Subsymbolische KI"@de,
         "Subsymbolic AI"@en ;
@@ -304,7 +295,7 @@ iso22989:usesMetric a owl:ObjectProperty ;
         "Philip Topalis" ;
     dcterms:hasVersion <https://w3id.org/aias/odp/iso22989> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:modified "2026-09-03"^^xsd:date ;
     dcterms:publisher "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg" ;
     dcterms:rights "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU"@en ;
     dcterms:source <https://www.iso.org/standard/74296.html> ;
@@ -391,6 +382,15 @@ iso22989:Edge a owl:Class ;
         "An AI system running close to the process it serves."@en ;
     rdfs:subClassOf iso22989:SystemDesign .
 
+iso22989:EvaluationData a owl:Class ;
+    rdfs:label "Evaluationsdaten"@de,
+        "Evaluation Data"@en ;
+    rdfs:comment "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind."@de,
+        "Data used to assess the performance of a final model, disjoint from training and validation data."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    owl:equivalentClass iso22989:TestData ;
+    skos:note "ISO/IEC 22989, definition 3.2.14."@en .
+
 iso22989:F1Score a owl:Class ;
     rdfs:label "F1-Maß"@de,
         "F1 Score"@en ;
@@ -476,14 +476,6 @@ iso22989:Precision a owl:Class ;
         "The proportion of correct results among those reported positive."@en ;
     rdfs:subClassOf iso22989:EvaluationMetric .
 
-iso22989:ProductionData a owl:Class ;
-    rdfs:label "Betriebsdaten"@de,
-        "Production Data"@en ;
-    rdfs:comment "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet."@de,
-        "Data arising during the operation of a deployed AI system, for which the system computes inferences."@en ;
-    rdfs:subClassOf iso22989:Data ;
-    skos:note "ISO/IEC 22989, definition 3.2.12."@en .
-
 iso22989:Recall a owl:Class ;
     rdfs:label "Trefferquote"@de,
         "Recall"@en ;
@@ -547,14 +539,6 @@ iso22989:TestData a owl:Class ;
     rdfs:subClassOf iso22989:Data ;
     skos:note "Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice."@en .
 
-iso22989:TrainingData a owl:Class ;
-    rdfs:label "Trainingsdaten"@de,
-        "Training Data"@en ;
-    rdfs:comment "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden."@de,
-        "Data used to determine the parameters of a model during training."@en ;
-    rdfs:subClassOf iso22989:Data ;
-    skos:note "ISO/IEC 22989, definition 3.3.16."@en .
-
 iso22989:UnsupervisedLearning a owl:Class ;
     rdfs:label "Unüberwachtes Lernen"@de,
         "Unsupervised Learning"@en ;
@@ -562,14 +546,6 @@ iso22989:UnsupervisedLearning a owl:Class ;
         "Machine learning using unlabelled data only during training."@en ;
     rdfs:subClassOf iso22989:LearningType ;
     skos:note "ISO/IEC 22989, definition 3.3.17."@en .
-
-iso22989:ValidationData a owl:Class ;
-    rdfs:label "Validierungsdaten"@de,
-        "Validation Data"@en ;
-    rdfs:comment "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen."@de,
-        "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."@en ;
-    rdfs:subClassOf iso22989:Data ;
-    skos:note "ISO/IEC 22989, definition 3.2.15."@en .
 
 iso22989:DataSink a owl:Class ;
     rdfs:label "Datensenke"@de,
@@ -607,6 +583,14 @@ iso22989:MachineLearning a owl:Class ;
         "A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience."@en ;
     skos:note "ISO/IEC 22989, definition 3.3.5."@en .
 
+iso22989:ProductionData a owl:Class ;
+    rdfs:label "Betriebsdaten"@de,
+        "Production Data"@en ;
+    rdfs:comment "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet."@de,
+        "Data arising during the operation of a deployed AI system, for which the system computes inferences."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "ISO/IEC 22989, definition 3.2.12."@en .
+
 iso22989:TrainingAlgorithm a owl:Class ;
     rdfs:label "Trainingsalgorithmus"@de,
         "Training Algorithm"@en ;
@@ -615,6 +599,14 @@ iso22989:TrainingAlgorithm a owl:Class ;
     rdfs:subClassOf iso22989:Algorithm ;
     skos:note "Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own."@en .
 
+iso22989:TrainingData a owl:Class ;
+    rdfs:label "Trainingsdaten"@de,
+        "Training Data"@en ;
+    rdfs:comment "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden."@de,
+        "Data used to determine the parameters of a model during training."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "ISO/IEC 22989, definition 3.3.16."@en .
+
 iso22989:Validation a owl:Class ;
     rdfs:label "Validierung"@de,
         "Validation"@en ;
@@ -622,6 +614,14 @@ iso22989:Validation a owl:Class ;
         "Confirmation that the requirements for an intended use are met."@en ;
     rdfs:subClassOf iso22989:AIFunction ;
     skos:note "ISO/IEC 22989, definition 3.5.18."@en .
+
+iso22989:ValidationData a owl:Class ;
+    rdfs:label "Validierungsdaten"@de,
+        "Validation Data"@en ;
+    rdfs:comment "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen."@de,
+        "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."@en ;
+    rdfs:subClassOf iso22989:Data ;
+    skos:note "ISO/IEC 22989, definition 3.2.15."@en .
 
 iso22989:AIComponent a owl:Class ;
     rdfs:label "KI-Komponente"@de,
@@ -777,6 +777,9 @@ iso22989:Data a owl:Class ;
     skos:note "ISO/IEC 22989, definition 3.2.3."@en .
 
 [] a owl:AllDisjointClasses ;
+    owl:members ( iso22989:ProductionData iso22989:TrainingData iso22989:ValidationData ) .
+
+[] a owl:AllDisjointClasses ;
     owl:members ( iso22989:ReinforcementLearning iso22989:SemiSupervisedLearning iso22989:SupervisedLearning iso22989:UnsupervisedLearning ) .
 
 [] a owl:AllDisjointClasses ;
@@ -801,5 +804,5 @@ iso22989:Data a owl:Class ;
     owl:members ( iso22989:EvaluationAlgorithm iso22989:ModelAlgorithm iso22989:TrainingAlgorithm ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( iso22989:ProductionData iso22989:TrainingData iso22989:ValidationData ) .
+    owl:members ( iso22989:EvaluationData iso22989:ProductionData iso22989:TrainingData iso22989:ValidationData ) .
 

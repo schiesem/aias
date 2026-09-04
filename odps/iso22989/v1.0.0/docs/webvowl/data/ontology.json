@@ -19,8 +19,8 @@
     "version": "1.0.0",
     "author": [
       "Marvin Schieseck",
-      "Philip Topalis",
       "Alexander Fay",
+      "Philip Topalis",
       "Felix Gehlhoff",
       "Lasse Reinpold"
     ],
@@ -60,27 +60,7 @@
           "type": "label"
         }
       ],
-      "hasVersion": [
-        {
-          "identifier": "hasVersion",
-          "language": "undefined",
-          "value": "https://w3id.org/aias/odp/iso22989",
-          "type": "iri"
-        }
-      ],
       "subject": [
-        {
-          "identifier": "subject",
-          "language": "en",
-          "value": "Ontology Design Pattern",
-          "type": "label"
-        },
-        {
-          "identifier": "subject",
-          "language": "en",
-          "value": "Machine Learning",
-          "type": "label"
-        },
         {
           "identifier": "subject",
           "language": "en",
@@ -96,8 +76,28 @@
         {
           "identifier": "subject",
           "language": "en",
+          "value": "Machine Learning",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
           "value": "AI Life Cycle",
           "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Ontology Design Pattern",
+          "type": "label"
+        }
+      ],
+      "hasVersion": [
+        {
+          "identifier": "hasVersion",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/iso22989",
+          "type": "iri"
         }
       ],
       "created": [
@@ -105,6 +105,14 @@
           "identifier": "created",
           "language": "undefined",
           "value": "2024-09-01",
+          "type": "label"
+        }
+      ],
+      "abstract": [
+        {
+          "identifier": "abstract",
+          "language": "en",
+          "value": "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-two classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own.",
           "type": "label"
         }
       ],
@@ -121,14 +129,6 @@
           "identifier": "versionInfo",
           "language": "undefined",
           "value": "1.0.0",
-          "type": "label"
-        }
-      ],
-      "abstract": [
-        {
-          "identifier": "abstract",
-          "language": "en",
-          "value": "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-two classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own.",
           "type": "label"
         }
       ],
@@ -184,7 +184,15 @@
         {
           "identifier": "modified",
           "language": "undefined",
-          "value": "2026-09-02",
+          "value": "2026-09-03",
+          "type": "label"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "en",
+          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
           "type": "label"
         }
       ],
@@ -194,14 +202,6 @@
           "language": "undefined",
           "value": "https://github.com/schiesem/aias",
           "type": "iri"
-        }
-      ],
-      "bibliographicCitation": [
-        {
-          "identifier": "bibliographicCitation",
-          "language": "en",
-          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
-          "type": "label"
         }
       ],
       "preferredNamespaceUri": [
@@ -273,23 +273,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "119",
+      "id": "120",
       "type": "owl:Class"
     },
     {
-      "id": "146",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "148",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "150",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "152",
+      "id": "135",
       "type": "owl:unionOf"
     },
     {
@@ -297,31 +285,43 @@
       "type": "owl:unionOf"
     },
     {
+      "id": "138",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "146",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "149",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "151",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "153",
+      "type": "owl:unionOf"
+    },
+    {
       "id": "155",
       "type": "owl:unionOf"
     },
     {
-      "id": "158",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "160",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "162",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "165",
-      "type": "owl:unionOf"
-    },
-    {
-      "id": "167",
+      "id": "157",
       "type": "owl:unionOf"
     },
     {
       "id": "169",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "171",
+      "type": "owl:unionOf"
+    },
+    {
+      "id": "173",
       "type": "owl:Class"
     },
     {
@@ -341,7 +341,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "173",
+      "id": "179",
       "type": "owl:Class"
     },
     {
@@ -353,7 +353,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "137",
+      "id": "117",
       "type": "owl:Class"
     },
     {
@@ -365,7 +365,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "174",
+      "id": "161",
       "type": "owl:Class"
     },
     {
@@ -373,7 +373,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "142",
+      "id": "123",
       "type": "owl:Class"
     },
     {
@@ -389,11 +389,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "178",
+      "id": "164",
       "type": "owl:Class"
     },
     {
-      "id": "134",
+      "id": "142",
       "type": "owl:Class"
     },
     {
@@ -413,7 +413,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "127",
+      "id": "109",
       "type": "owl:Class"
     },
     {
@@ -421,11 +421,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "177",
+      "id": "160",
       "type": "owl:Class"
     },
     {
-      "id": "185",
+      "id": "167",
       "type": "owl:Class"
     },
     {
@@ -433,7 +433,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "156",
+      "id": "139",
       "type": "owl:Class"
     },
     {
@@ -441,7 +441,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "277",
+      "id": "282",
       "type": "owl:Class"
     },
     {
@@ -461,7 +461,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "118",
+      "id": "128",
       "type": "owl:Class"
     },
     {
@@ -485,7 +485,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "274",
+      "id": "279",
       "type": "owl:Class"
     },
     {
@@ -497,7 +497,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "124",
+      "id": "133",
       "type": "owl:Class"
     },
     {
@@ -517,7 +517,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "163",
+      "id": "147",
       "type": "owl:Class"
     },
     {
@@ -801,7 +801,7 @@
         "de": "Harmonisches Mittel aus Präzision und Trefferquote.",
         "en": "The harmonic mean of precision and recall."
       },
-      "id": "119",
+      "id": "120",
       "superClasses": [
         "22"
       ],
@@ -811,25 +811,14 @@
       "instances": 0,
       "union": [
         "1",
-        "47"
-      ],
-      "attributes": [
-        "anonymous",
-        "union"
-      ],
-      "id": "146"
-    },
-    {
-      "instances": 0,
-      "union": [
         "47",
         "11"
       ],
       "attributes": [
-        "anonymous",
-        "union"
+        "union",
+        "anonymous"
       ],
-      "id": "148"
+      "id": "135"
     },
     {
       "instances": 0,
@@ -839,87 +828,34 @@
         "11"
       ],
       "attributes": [
-        "anonymous",
-        "union"
-      ],
-      "id": "150"
-    },
-    {
-      "instances": 0,
-      "union": [
-        "1",
-        "47",
-        "11"
-      ],
-      "attributes": [
-        "anonymous",
-        "union"
-      ],
-      "id": "152"
-    },
-    {
-      "instances": 0,
-      "union": [
-        "1",
-        "47",
-        "11"
-      ],
-      "attributes": [
-        "anonymous",
-        "union"
+        "union",
+        "anonymous"
       ],
       "id": "88"
     },
     {
       "instances": 0,
       "union": [
-        "156",
-        "124"
+        "139",
+        "133"
       ],
       "attributes": [
-        "anonymous",
-        "union"
+        "union",
+        "anonymous"
       ],
-      "id": "155"
+      "id": "138"
     },
     {
       "instances": 0,
       "union": [
-        "44",
-        "68",
-        "124",
-        "91"
-      ],
-      "attributes": [
-        "anonymous",
-        "union"
-      ],
-      "id": "158"
-    },
-    {
-      "instances": 0,
-      "union": [
-        "1",
-        "47",
-        "11"
-      ],
-      "attributes": [
-        "anonymous",
-        "union"
-      ],
-      "id": "160"
-    },
-    {
-      "instances": 0,
-      "union": [
-        "163",
+        "147",
         "44"
       ],
       "attributes": [
-        "anonymous",
-        "union"
+        "union",
+        "anonymous"
       ],
-      "id": "162"
+      "id": "146"
     },
     {
       "instances": 0,
@@ -928,10 +864,10 @@
         "2"
       ],
       "attributes": [
-        "anonymous",
-        "union"
+        "union",
+        "anonymous"
       ],
-      "id": "165"
+      "id": "149"
     },
     {
       "instances": 0,
@@ -941,10 +877,74 @@
         "11"
       ],
       "attributes": [
-        "anonymous",
-        "union"
+        "union",
+        "anonymous"
       ],
-      "id": "167"
+      "id": "151"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "1",
+        "47"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "153"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "47",
+        "11"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "155"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "1",
+        "47",
+        "11"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "157"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "44",
+        "68",
+        "133",
+        "91"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "169"
+    },
+    {
+      "instances": 0,
+      "union": [
+        "1",
+        "47",
+        "11"
+      ],
+      "attributes": [
+        "union",
+        "anonymous"
+      ],
+      "id": "171"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm",
@@ -972,9 +972,9 @@
         "de": "Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien.",
         "en": "A procedure determining the parameters of a model from data according to given criteria."
       },
-      "id": "169",
+      "id": "173",
       "superClasses": [
-        "163"
+        "147"
       ],
       "attributes": []
     },
@@ -1127,7 +1127,7 @@
         "de": "Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen.",
         "en": "Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward."
       },
-      "id": "173",
+      "id": "179",
       "superClasses": [
         "30"
       ],
@@ -1216,7 +1216,7 @@
         "de": "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden.",
         "en": "Data used to determine the parameters of a model during training."
       },
-      "id": "137",
+      "id": "117",
       "superClasses": [
         "47"
       ],
@@ -1268,7 +1268,7 @@
         "en": "AI Type"
       },
       "subClasses": [
-        "185",
+        "167",
         "34"
       ],
       "comment": {
@@ -1301,7 +1301,7 @@
         "de": "Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet.",
         "en": "Machine learning using unlabelled data only during training."
       },
-      "id": "174",
+      "id": "161",
       "superClasses": [
         "30"
       ],
@@ -1359,7 +1359,7 @@
         "de": "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen.",
         "en": "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."
       },
-      "id": "142",
+      "id": "123",
       "superClasses": [
         "47"
       ],
@@ -1438,9 +1438,9 @@
       },
       "subClasses": [
         "70",
-        "274",
-        "119",
-        "277"
+        "279",
+        "120",
+        "282"
       ],
       "comment": {
         "de": "Maß, anhand dessen die Leistung eines Modells bewertet wird.",
@@ -1472,7 +1472,7 @@
         "de": "Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet.",
         "en": "Machine learning using labelled data only during training."
       },
-      "id": "178",
+      "id": "164",
       "superClasses": [
         "30"
       ],
@@ -1501,7 +1501,7 @@
         "de": "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet.",
         "en": "Data arising during the operation of a deployed AI system, for which the system computes inferences."
       },
-      "id": "134",
+      "id": "142",
       "superClasses": [
         "47"
       ],
@@ -1616,10 +1616,10 @@
         "en": "Data"
       },
       "subClasses": [
-        "134",
-        "137",
-        "102",
         "142",
+        "117",
+        "102",
+        "123",
         "103"
       ],
       "comment": {
@@ -1652,7 +1652,7 @@
         "de": "Ausführung eines Vorgangs ohne menschliches Eingreifen.",
         "en": "Carrying out a procedure without human intervention."
       },
-      "id": "127",
+      "id": "109",
       "superClasses": [
         "87"
       ],
@@ -1678,10 +1678,10 @@
         "en": "AI Function"
       },
       "subClasses": [
-        "118",
+        "128",
         "68",
-        "124",
-        "127",
+        "133",
+        "109",
         "106",
         "93",
         "79",
@@ -1718,7 +1718,7 @@
         "de": "Maschinelles Lernen, das während des Trainings sowohl gekennzeichnete als auch nicht gekennzeichnete Daten nutzt.",
         "en": "Machine learning using both labelled and unlabelled data during training."
       },
-      "id": "177",
+      "id": "160",
       "superClasses": [
         "30"
       ],
@@ -1747,7 +1747,7 @@
         "de": "Techniken, deren Repräsentationen implizit aus Daten oder Erfahrung abgeleitet werden.",
         "en": "Techniques whose representations are derived implicitly from data or experience."
       },
-      "id": "185",
+      "id": "167",
       "superClasses": [
         "35"
       ],
@@ -1773,10 +1773,10 @@
         "en": "Learning Type"
       },
       "subClasses": [
-        "178",
-        "173",
-        "174",
-        "177"
+        "164",
+        "179",
+        "161",
+        "160"
       ],
       "comment": {
         "de": "Art des maschinellen Lernens.",
@@ -1808,9 +1808,9 @@
         "de": "Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik.",
         "en": "A procedure assessing a model against an evaluation metric."
       },
-      "id": "156",
+      "id": "139",
       "superClasses": [
-        "163"
+        "147"
       ],
       "attributes": []
     },
@@ -1856,7 +1856,7 @@
         "de": "Anteil der korrekten Ergebnisse an allen Ergebnissen.",
         "en": "The proportion of correct results among all results."
       },
-      "id": "277",
+      "id": "282",
       "superClasses": [
         "22"
       ],
@@ -1988,7 +1988,7 @@
         "de": "Umwandlung von Eingangsdaten in Ausgangsdaten.",
         "en": "Transformation of input data into output data."
       },
-      "id": "118",
+      "id": "128",
       "superClasses": [
         "87"
       ],
@@ -2140,7 +2140,7 @@
         "de": "Anteil der korrekten Ergebnisse an den als positiv gemeldeten.",
         "en": "The proportion of correct results among those reported positive."
       },
-      "id": "274",
+      "id": "279",
       "superClasses": [
         "22"
       ],
@@ -2227,7 +2227,7 @@
         "de": "Bewertung der Leistung des KI-Systems vor dem Einsatz.",
         "en": "Assessment of the performance of an AI system before it is deployed."
       },
-      "id": "124",
+      "id": "133",
       "superClasses": [
         "87"
       ],
@@ -2258,7 +2258,7 @@
       },
       "id": "188",
       "superClasses": [
-        "163"
+        "147"
       ],
       "attributes": []
     },
@@ -2369,15 +2369,15 @@
         "en": "Algorithm"
       },
       "subClasses": [
-        "156",
-        "169",
+        "139",
+        "173",
         "188"
       ],
       "comment": {
         "de": "Oberklasse für parametrisierbare mathematische Verfahren.",
         "en": "Superclass of parameterisable mathematical procedures."
       },
-      "id": "163",
+      "id": "147",
       "attributes": []
     },
     {
@@ -2405,7 +2405,7 @@
       },
       "id": "145",
       "superClasses": [
-        "169"
+        "173"
       ],
       "attributes": []
     }
@@ -2680,104 +2680,92 @@
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "109",
-      "type": "owl:disjointWith"
-    },
-    {
       "id": "110",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "111",
-      "type": "owl:objectProperty"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "112",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "113",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "114",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "115",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "116",
-      "type": "owl:disjointWith"
-    },
-    {
-      "id": "117",
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "120",
+      "id": "118",
       "type": "owl:disjointWith"
+    },
+    {
+      "id": "119",
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "121",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "122",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
-      "id": "123",
-      "type": "rdfs:SubClassOf"
+      "id": "124",
+      "type": "owl:disjointWith"
     },
     {
       "id": "125",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "126",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
-      "id": "128",
-      "type": "owl:disjointWith"
+      "id": "127",
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "129",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "130",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "131",
-      "type": "rdfs:SubClassOf"
-    },
-    {
-      "id": "132",
       "type": "owl:disjointWith"
     },
     {
-      "id": "133",
+      "id": "132",
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "135",
+      "id": "134",
       "type": "owl:disjointWith"
     },
     {
       "id": "136",
-      "type": "rdfs:SubClassOf"
-    },
-    {
-      "id": "138",
       "type": "owl:disjointWith"
     },
     {
-      "id": "139",
-      "type": "rdfs:SubClassOf"
+      "id": "137",
+      "type": "owl:disjointWith"
     },
     {
       "id": "140",
@@ -2796,19 +2784,15 @@
       "type": "owl:objectProperty"
     },
     {
-      "id": "147",
+      "id": "148",
       "type": "owl:disjointWith"
     },
     {
-      "id": "149",
+      "id": "150",
       "type": "owl:disjointWith"
     },
     {
-      "id": "151",
-      "type": "owl:disjointWith"
-    },
-    {
-      "id": "153",
+      "id": "152",
       "type": "owl:disjointWith"
     },
     {
@@ -2816,7 +2800,11 @@
       "type": "owl:disjointWith"
     },
     {
-      "id": "157",
+      "id": "156",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "158",
       "type": "owl:disjointWith"
     },
     {
@@ -2824,11 +2812,15 @@
       "type": "owl:disjointWith"
     },
     {
-      "id": "161",
+      "id": "162",
       "type": "owl:disjointWith"
     },
     {
-      "id": "164",
+      "id": "163",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "165",
       "type": "owl:disjointWith"
     },
     {
@@ -2841,26 +2833,30 @@
     },
     {
       "id": "170",
-      "type": "owl:objectProperty"
-    },
-    {
-      "id": "171",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "172",
       "type": "owl:disjointWith"
     },
     {
+      "id": "174",
+      "type": "owl:objectProperty"
+    },
+    {
       "id": "175",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "176",
       "type": "owl:disjointWith"
     },
     {
-      "id": "179",
+      "id": "177",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "178",
       "type": "owl:disjointWith"
     },
     {
@@ -2881,6 +2877,10 @@
     },
     {
       "id": "184",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "185",
       "type": "owl:disjointWith"
     },
     {
@@ -3149,7 +3149,7 @@
     },
     {
       "id": "255",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "256",
@@ -3157,7 +3157,7 @@
     },
     {
       "id": "257",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "258",
@@ -3165,7 +3165,7 @@
     },
     {
       "id": "259",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "260",
@@ -3173,7 +3173,7 @@
     },
     {
       "id": "261",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "262",
@@ -3201,7 +3201,7 @@
     },
     {
       "id": "268",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "269",
@@ -3221,6 +3221,10 @@
     },
     {
       "id": "273",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "274",
       "type": "rdfs:SubClassOf"
     },
     {
@@ -3232,11 +3236,11 @@
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "278",
+      "id": "277",
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "279",
+      "id": "278",
       "type": "rdfs:SubClassOf"
     },
     {
@@ -3245,15 +3249,11 @@
     },
     {
       "id": "281",
-      "type": "owl:disjointWith"
-    },
-    {
-      "id": "282",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "283",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "284",
@@ -3301,7 +3301,7 @@
     },
     {
       "id": "295",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "296",
@@ -3313,7 +3313,7 @@
     },
     {
       "id": "298",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "299",
@@ -3365,7 +3365,7 @@
     },
     {
       "id": "311",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "312",
@@ -3373,11 +3373,11 @@
     },
     {
       "id": "313",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "314",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "315",
@@ -3389,11 +3389,11 @@
     },
     {
       "id": "317",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "318",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "319",
@@ -3405,15 +3405,15 @@
     },
     {
       "id": "321",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "322",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "323",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "324",
@@ -3449,7 +3449,7 @@
     },
     {
       "id": "332",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "333",
@@ -3461,7 +3461,7 @@
     },
     {
       "id": "335",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "336",
@@ -3493,7 +3493,7 @@
     },
     {
       "id": "343",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "344",
@@ -3501,7 +3501,7 @@
     },
     {
       "id": "345",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "346",
@@ -3513,147 +3513,147 @@
     },
     {
       "id": "348",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:objectProperty"
     },
     {
       "id": "349",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "350",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "351",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "352",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "353",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "354",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "355",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "356",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "357",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "358",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "359",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "360",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "361",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "362",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "363",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "364",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "365",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "366",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "367",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "368",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "369",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "370",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "371",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "372",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "373",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "374",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "375",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "376",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "377",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "378",
-      "type": "rdfs:SubClassOf"
+      "type": "owl:disjointWith"
     },
     {
       "id": "379",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "380",
-      "type": "rdfs:SubClassOf"
-    },
-    {
-      "id": "381",
       "type": "owl:disjointWith"
     },
     {
-      "id": "382",
+      "id": "381",
       "type": "rdfs:SubClassOf"
     },
     {
+      "id": "382",
+      "type": "owl:disjointWith"
+    },
+    {
       "id": "383",
-      "type": "owl:objectProperty"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "384",
@@ -3661,11 +3661,11 @@
     },
     {
       "id": "385",
-      "type": "owl:disjointWith"
+      "type": "rdfs:SubClassOf"
     },
     {
       "id": "386",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "387",
@@ -3693,7 +3693,7 @@
     },
     {
       "id": "393",
-      "type": "owl:objectProperty"
+      "type": "owl:disjointWith"
     },
     {
       "id": "394",
@@ -3701,6 +3701,18 @@
     },
     {
       "id": "395",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "396",
+      "type": "owl:objectProperty"
+    },
+    {
+      "id": "397",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "398",
       "type": "owl:objectProperty"
     }
   ],
@@ -3709,8 +3721,8 @@
       "range": "2",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "0"
     },
@@ -3718,8 +3730,8 @@
       "range": "5",
       "domain": "4",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "3"
     },
@@ -3727,8 +3739,8 @@
       "range": "7",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "6"
     },
@@ -3736,8 +3748,8 @@
       "range": "9",
       "domain": "4",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "8"
     },
@@ -3745,8 +3757,8 @@
       "range": "11",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "10"
     },
@@ -3754,8 +3766,8 @@
       "range": "13",
       "domain": "4",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "12"
     },
@@ -3763,8 +3775,8 @@
       "range": "15",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "14"
     },
@@ -3772,8 +3784,8 @@
       "range": "9",
       "domain": "5",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "16"
     },
@@ -3781,8 +3793,8 @@
       "range": "19",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "17"
     },
@@ -3790,8 +3802,8 @@
       "range": "13",
       "domain": "5",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "20"
     },
@@ -3799,8 +3811,8 @@
       "range": "22",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "21"
     },
@@ -3808,8 +3820,8 @@
       "range": "13",
       "domain": "9",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "23"
     },
@@ -3817,8 +3829,8 @@
       "range": "26",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "25"
     },
@@ -3826,8 +3838,8 @@
       "range": "24",
       "domain": "28",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "27"
     },
@@ -3835,8 +3847,8 @@
       "range": "30",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "29"
     },
@@ -3863,8 +3875,8 @@
       "range": "38",
       "domain": "37",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "36"
     },
@@ -3872,8 +3884,8 @@
       "range": "40",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "39"
     },
@@ -3881,8 +3893,8 @@
       "range": "42",
       "domain": "37",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "41"
     },
@@ -3890,8 +3902,8 @@
       "range": "44",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "43"
     },
@@ -3899,8 +3911,8 @@
       "range": "42",
       "domain": "38",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "45"
     },
@@ -3908,8 +3920,8 @@
       "range": "2",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "46"
     },
@@ -3917,8 +3929,8 @@
       "range": "42",
       "domain": "49",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "48"
     },
@@ -3926,8 +3938,8 @@
       "range": "7",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "50"
     },
@@ -3935,8 +3947,8 @@
       "range": "53",
       "domain": "52",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "51"
     },
@@ -3944,8 +3956,8 @@
       "range": "11",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "54"
     },
@@ -3953,8 +3965,8 @@
       "range": "37",
       "domain": "52",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "55"
     },
@@ -3962,8 +3974,8 @@
       "range": "15",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "56"
     },
@@ -3971,8 +3983,8 @@
       "range": "38",
       "domain": "52",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "57"
     },
@@ -3980,8 +3992,8 @@
       "range": "18",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "58"
     },
@@ -3989,8 +4001,8 @@
       "range": "42",
       "domain": "52",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "59"
     },
@@ -3998,8 +4010,8 @@
       "range": "19",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "60"
     },
@@ -4007,8 +4019,8 @@
       "range": "37",
       "domain": "53",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "61"
     },
@@ -4016,8 +4028,8 @@
       "range": "22",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "62"
     },
@@ -4025,8 +4037,8 @@
       "range": "38",
       "domain": "53",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "63"
     },
@@ -4034,8 +4046,8 @@
       "range": "26",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "64"
     },
@@ -4043,8 +4055,8 @@
       "range": "42",
       "domain": "53",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "65"
     },
@@ -4052,8 +4064,8 @@
       "range": "30",
       "domain": "1",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "66"
     },
@@ -4099,8 +4111,8 @@
       "range": "37",
       "domain": "49",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "71"
     },
@@ -4108,8 +4120,8 @@
       "range": "44",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "72"
     },
@@ -4117,8 +4129,8 @@
       "range": "38",
       "domain": "49",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "73"
     },
@@ -4126,8 +4138,8 @@
       "range": "42",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "74"
     },
@@ -4135,8 +4147,8 @@
       "range": "49",
       "domain": "77",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "76"
     },
@@ -4144,8 +4156,8 @@
       "range": "52",
       "domain": "77",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "78"
     },
@@ -4153,8 +4165,8 @@
       "range": "53",
       "domain": "77",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "80"
     },
@@ -4162,8 +4174,8 @@
       "range": "37",
       "domain": "77",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "81"
     },
@@ -4171,8 +4183,8 @@
       "range": "38",
       "domain": "77",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "82"
     },
@@ -4180,8 +4192,8 @@
       "range": "42",
       "domain": "77",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "83"
     },
@@ -4189,8 +4201,8 @@
       "range": "52",
       "domain": "49",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "84"
     },
@@ -4198,8 +4210,8 @@
       "range": "53",
       "domain": "49",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "85"
     },
@@ -4226,8 +4238,8 @@
       "range": "38",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "89"
     },
@@ -4235,8 +4247,8 @@
       "range": "91",
       "domain": "68",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "90"
     },
@@ -4244,8 +4256,8 @@
       "range": "93",
       "domain": "68",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "92"
     },
@@ -4253,8 +4265,8 @@
       "range": "91",
       "domain": "95",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "94"
     },
@@ -4262,8 +4274,8 @@
       "range": "93",
       "domain": "95",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "96"
     },
@@ -4271,8 +4283,8 @@
       "range": "93",
       "domain": "91",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "97"
     },
@@ -4280,8 +4292,8 @@
       "range": "77",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "98"
     },
@@ -4289,8 +4301,8 @@
       "range": "49",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "99"
     },
@@ -4298,8 +4310,8 @@
       "range": "52",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "100"
     },
@@ -4307,8 +4319,8 @@
       "range": "53",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "101"
     },
@@ -4316,8 +4328,8 @@
       "range": "37",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "104"
     },
@@ -4344,17 +4356,17 @@
       "range": "44",
       "domain": "40",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "107"
     },
     {
       "range": "87",
-      "domain": "79",
+      "domain": "109",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "108"
     },
@@ -4362,19 +4374,19 @@
       "range": "2",
       "domain": "40",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "109"
+      "id": "110"
     },
     {
       "range": "87",
-      "domain": "95",
+      "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "110"
+      "id": "111"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#determines",
@@ -4393,185 +4405,167 @@
       "attributes": [
         "object"
       ],
-      "id": "111"
-    },
-    {
-      "range": "7",
-      "domain": "40",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
       "id": "112"
     },
     {
-      "range": "87",
-      "domain": "91",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "113"
-    },
-    {
-      "range": "11",
+      "range": "7",
       "domain": "40",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "114"
-    },
-    {
-      "range": "47",
-      "domain": "103",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "115"
-    },
-    {
-      "range": "40",
-      "domain": "30",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "116"
-    },
-    {
-      "range": "87",
-      "domain": "118",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "117"
-    },
-    {
-      "range": "44",
-      "domain": "30",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "120"
-    },
-    {
-      "range": "87",
-      "domain": "68",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "121"
-    },
-    {
-      "range": "2",
-      "domain": "30",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "122"
-    },
-    {
-      "range": "87",
-      "domain": "124",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "123"
-    },
-    {
-      "range": "7",
-      "domain": "30",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "125"
-    },
-    {
-      "range": "87",
-      "domain": "127",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "126"
-    },
-    {
-      "range": "11",
-      "domain": "30",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "128"
-    },
-    {
-      "range": "87",
-      "domain": "106",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "129"
-    },
-    {
-      "range": "15",
-      "domain": "30",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "130"
+      "id": "113"
     },
     {
       "range": "87",
       "domain": "93",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
+      ],
+      "id": "114"
+    },
+    {
+      "range": "11",
+      "domain": "40",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "115"
+    },
+    {
+      "range": "47",
+      "domain": "117",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "116"
+    },
+    {
+      "range": "40",
+      "domain": "30",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "118"
+    },
+    {
+      "range": "47",
+      "domain": "102",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "119"
+    },
+    {
+      "range": "44",
+      "domain": "30",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "121"
+    },
+    {
+      "range": "47",
+      "domain": "123",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "122"
+    },
+    {
+      "range": "2",
+      "domain": "30",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "124"
+    },
+    {
+      "range": "47",
+      "domain": "103",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "125"
+    },
+    {
+      "range": "7",
+      "domain": "30",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "126"
+    },
+    {
+      "range": "87",
+      "domain": "128",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "127"
+    },
+    {
+      "range": "11",
+      "domain": "30",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "129"
+    },
+    {
+      "range": "87",
+      "domain": "68",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "130"
+    },
+    {
+      "range": "15",
+      "domain": "30",
+      "attributes": [
+        "object",
+        "anonymous"
       ],
       "id": "131"
+    },
+    {
+      "range": "87",
+      "domain": "133",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "132"
     },
     {
       "range": "44",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "132"
-    },
-    {
-      "range": "47",
-      "domain": "134",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "133"
+      "id": "134"
     },
     {
       "range": "2",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "135"
-    },
-    {
-      "range": "47",
-      "domain": "137",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "136"
     },
@@ -4579,26 +4573,17 @@
       "range": "7",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "138"
-    },
-    {
-      "range": "47",
-      "domain": "102",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "139"
+      "id": "137"
     },
     {
       "range": "11",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "140"
     },
@@ -4606,8 +4591,8 @@
       "range": "47",
       "domain": "142",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "141"
     },
@@ -4615,8 +4600,8 @@
       "range": "15",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "143"
     },
@@ -4643,105 +4628,132 @@
       "range": "7",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "147"
+      "id": "148"
     },
     {
       "range": "11",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "149"
+      "id": "150"
     },
     {
       "range": "15",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "151"
+      "id": "152"
     },
     {
       "range": "30",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "153"
+      "id": "154"
     },
     {
       "range": "40",
       "domain": "26",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "154"
+      "id": "156"
     },
     {
       "range": "15",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "157"
+      "id": "158"
+    },
+    {
+      "range": "161",
+      "domain": "160",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "159"
     },
     {
       "range": "26",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "159"
+      "id": "162"
+    },
+    {
+      "range": "161",
+      "domain": "164",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "163"
     },
     {
       "range": "30",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "161"
+      "id": "165"
+    },
+    {
+      "range": "34",
+      "domain": "167",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "166"
     },
     {
       "range": "40",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "164"
+      "id": "168"
     },
     {
       "range": "44",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "166"
+      "id": "170"
     },
     {
       "range": "2",
       "domain": "22",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "168"
+      "id": "172"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#createsProcessedData",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "160",
+      "range": "171",
       "label": {
         "de": "erzeugt verarbeitete Daten",
         "IRI-based": "createsProcessedData",
@@ -4755,12 +4767,12 @@
       "attributes": [
         "object"
       ],
-      "id": "170"
+      "id": "174"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasParameter",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "165",
+      "range": "149",
       "annotations": {
         "note": [
           {
@@ -4776,7 +4788,7 @@
         "IRI-based": "hasParameter",
         "en": "has parameter"
       },
-      "domain": "162",
+      "domain": "146",
       "comment": {
         "de": "Verbindet einen Algorithmus mit einem ihn steuernden Hyperparameter sowie ein Modell mit einem für es bestimmten Parameter.",
         "en": "Relates an algorithm to a hyperparameter governing it, and a model to a parameter determined for it."
@@ -4784,104 +4796,104 @@
       "attributes": [
         "object"
       ],
-      "id": "171"
+      "id": "175"
     },
     {
-      "range": "174",
-      "domain": "173",
+      "range": "123",
+      "domain": "117",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "172"
+      "id": "176"
     },
     {
       "range": "44",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "175"
+      "id": "177"
     },
     {
-      "range": "178",
-      "domain": "177",
+      "range": "160",
+      "domain": "179",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "176"
+      "id": "178"
     },
     {
       "range": "2",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "179"
-    },
-    {
-      "range": "174",
-      "domain": "177",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "180"
+    },
+    {
+      "range": "164",
+      "domain": "179",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "181"
     },
     {
       "range": "7",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "181"
-    },
-    {
-      "range": "174",
-      "domain": "178",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "182"
+    },
+    {
+      "range": "161",
+      "domain": "179",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "183"
     },
     {
       "range": "11",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "183"
-    },
-    {
-      "range": "34",
-      "domain": "185",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "184"
+    },
+    {
+      "range": "164",
+      "domain": "160",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "185"
     },
     {
       "range": "7",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "186"
     },
     {
-      "range": "169",
+      "range": "173",
       "domain": "188",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "187"
     },
@@ -4889,17 +4901,17 @@
       "range": "11",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "189"
     },
     {
-      "range": "137",
-      "domain": "134",
+      "range": "142",
+      "domain": "102",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "190"
     },
@@ -4907,17 +4919,17 @@
       "range": "15",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "191"
     },
     {
-      "range": "142",
-      "domain": "134",
+      "range": "117",
+      "domain": "102",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "192"
     },
@@ -4925,17 +4937,17 @@
       "range": "22",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "193"
     },
     {
-      "range": "142",
-      "domain": "137",
+      "range": "123",
+      "domain": "102",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "194"
     },
@@ -4943,17 +4955,17 @@
       "range": "26",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "195"
     },
     {
-      "range": "177",
-      "domain": "173",
+      "range": "117",
+      "domain": "142",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "196"
     },
@@ -4961,17 +4973,17 @@
       "range": "30",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "197"
     },
     {
-      "range": "178",
-      "domain": "173",
+      "range": "123",
+      "domain": "142",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "198"
     },
@@ -4979,8 +4991,8 @@
       "range": "40",
       "domain": "19",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "199"
     },
@@ -4988,8 +5000,8 @@
       "range": "201",
       "domain": "28",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "200"
     },
@@ -4997,8 +5009,8 @@
       "range": "40",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "202"
     },
@@ -5006,8 +5018,8 @@
       "range": "201",
       "domain": "24",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "203"
     },
@@ -5015,17 +5027,17 @@
       "range": "44",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "204"
     },
     {
       "range": "188",
-      "domain": "156",
+      "domain": "139",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "205"
     },
@@ -5033,17 +5045,17 @@
       "range": "2",
       "domain": "18",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "206"
     },
     {
-      "range": "169",
-      "domain": "156",
+      "range": "173",
+      "domain": "139",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "207"
     },
@@ -5051,8 +5063,8 @@
       "range": "44",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "208"
     },
@@ -5060,8 +5072,8 @@
       "range": "40",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "209"
     },
@@ -5069,8 +5081,8 @@
       "range": "30",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "210"
     },
@@ -5078,8 +5090,8 @@
       "range": "19",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "211"
     },
@@ -5087,8 +5099,8 @@
       "range": "18",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "212"
     },
@@ -5096,8 +5108,8 @@
       "range": "26",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "213"
     },
@@ -5105,17 +5117,17 @@
       "range": "22",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "214"
     },
     {
-      "range": "163",
+      "range": "147",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "215"
     },
@@ -5123,8 +5135,8 @@
       "range": "35",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "216"
     },
@@ -5132,8 +5144,8 @@
       "range": "1",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "217"
     },
@@ -5141,15 +5153,15 @@
       "range": "47",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "218"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isEvaluatedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "124",
+      "range": "133",
       "label": {
         "de": "wird evaluiert durch",
         "IRI-based": "isEvaluatedBy",
@@ -5169,8 +5181,8 @@
       "range": "32",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "220"
     },
@@ -5178,8 +5190,8 @@
       "range": "15",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "221"
     },
@@ -5187,8 +5199,8 @@
       "range": "33",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "223"
     },
@@ -5196,8 +5208,8 @@
       "range": "2",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "224"
     },
@@ -5205,8 +5217,8 @@
       "range": "44",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "225"
     },
@@ -5214,8 +5226,8 @@
       "range": "11",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "226"
     },
@@ -5223,21 +5235,21 @@
       "range": "7",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "227"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#basedOnAlgorithm",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "163",
+      "range": "147",
       "label": {
         "de": "basiert auf Algorithmus",
         "IRI-based": "basedOnAlgorithm",
         "en": "based on algorithm"
       },
-      "domain": "158",
+      "domain": "169",
       "comment": {
         "de": "Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt.",
         "en": "Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs."
@@ -5251,8 +5263,8 @@
       "range": "26",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "229"
     },
@@ -5260,8 +5272,8 @@
       "range": "40",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "230"
     },
@@ -5269,8 +5281,8 @@
       "range": "30",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "231"
     },
@@ -5278,17 +5290,17 @@
       "range": "15",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "232"
     },
     {
-      "range": "163",
+      "range": "147",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "233"
     },
@@ -5296,8 +5308,8 @@
       "range": "35",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "234"
     },
@@ -5305,8 +5317,8 @@
       "range": "2",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "235"
     },
@@ -5314,8 +5326,8 @@
       "range": "44",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "236"
     },
@@ -5323,8 +5335,8 @@
       "range": "11",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "237"
     },
@@ -5332,8 +5344,8 @@
       "range": "7",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "238"
     },
@@ -5341,8 +5353,8 @@
       "range": "26",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "239"
     },
@@ -5350,8 +5362,8 @@
       "range": "22",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "240"
     },
@@ -5359,8 +5371,8 @@
       "range": "40",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "241"
     },
@@ -5368,8 +5380,8 @@
       "range": "30",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "242"
     },
@@ -5377,8 +5389,8 @@
       "range": "19",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "243"
     },
@@ -5386,8 +5398,8 @@
       "range": "18",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "244"
     },
@@ -5395,8 +5407,8 @@
       "range": "1",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "245"
     },
@@ -5404,8 +5416,8 @@
       "range": "35",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "246"
     },
@@ -5413,8 +5425,8 @@
       "range": "33",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "247"
     },
@@ -5422,17 +5434,17 @@
       "range": "47",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "248"
     },
     {
-      "range": "163",
+      "range": "147",
       "domain": "32",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "249"
     },
@@ -5440,8 +5452,8 @@
       "range": "7",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "250"
     },
@@ -5449,8 +5461,8 @@
       "range": "2",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "251"
     },
@@ -5458,8 +5470,8 @@
       "range": "15",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "252"
     },
@@ -5467,8 +5479,8 @@
       "range": "11",
       "domain": "87",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "253"
     },
@@ -5476,46 +5488,64 @@
       "range": "26",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "254"
+    },
+    {
+      "range": "147",
+      "domain": "173",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "255"
     },
     {
       "range": "22",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "255"
+      "id": "256"
+    },
+    {
+      "range": "147",
+      "domain": "188",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "257"
     },
     {
       "range": "40",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "256"
+      "id": "258"
     },
     {
       "range": "30",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "257"
+      "id": "259"
     },
     {
       "range": "19",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "258"
+      "id": "260"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#fulfillsTask",
@@ -5534,304 +5564,313 @@
       "attributes": [
         "object"
       ],
-      "id": "259"
+      "id": "261"
     },
     {
       "range": "18",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "260"
+      "id": "262"
     },
     {
       "range": "1",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "261"
+      "id": "263"
     },
     {
       "range": "15",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "262"
+      "id": "264"
     },
     {
       "range": "11",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "263"
+      "id": "265"
     },
     {
       "range": "47",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "264"
+      "id": "266"
     },
     {
-      "range": "163",
+      "range": "147",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "265"
+      "id": "267"
     },
     {
       "range": "44",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "266"
+      "id": "268"
     },
     {
       "range": "40",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "267"
+      "id": "269"
     },
     {
-      "range": "35",
-      "domain": "185",
+      "range": "15",
+      "domain": "201",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "268"
+      "id": "270"
     },
     {
       "range": "7",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "269"
+      "id": "271"
     },
     {
-      "range": "35",
-      "domain": "34",
+      "range": "15",
+      "domain": "24",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "270"
+      "id": "272"
     },
     {
       "range": "2",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "271"
+      "id": "273"
+    },
+    {
+      "range": "15",
+      "domain": "28",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "274"
+    },
+    {
+      "range": "35",
+      "domain": "167",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "275"
+    },
+    {
+      "range": "35",
+      "domain": "34",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "276"
     },
     {
       "range": "22",
       "domain": "70",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "272"
+      "id": "277"
     },
     {
       "range": "22",
-      "domain": "274",
+      "domain": "279",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "273"
-    },
-    {
-      "range": "22",
-      "domain": "119",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "275"
-    },
-    {
-      "range": "22",
-      "domain": "277",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "276"
-    },
-    {
-      "range": "163",
-      "domain": "156",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "278"
     },
     {
-      "range": "163",
-      "domain": "169",
+      "range": "22",
+      "domain": "120",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "279"
-    },
-    {
-      "range": "163",
-      "domain": "188",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "280"
+    },
+    {
+      "range": "22",
+      "domain": "282",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "281"
+    },
+    {
+      "range": "147",
+      "domain": "139",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "283"
     },
     {
       "range": "26",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "281"
+      "id": "284"
     },
     {
       "range": "22",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "282"
+      "id": "285"
     },
     {
       "range": "30",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "283"
+      "id": "286"
     },
     {
       "range": "1",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "284"
+      "id": "287"
     },
     {
       "range": "47",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "285"
+      "id": "288"
     },
     {
       "range": "19",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "286"
+      "id": "289"
     },
     {
       "range": "18",
       "domain": "33",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "287"
+      "id": "290"
     },
     {
       "range": "18",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "288"
+      "id": "291"
     },
     {
       "range": "1",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "289"
+      "id": "292"
     },
     {
       "range": "22",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "290"
+      "id": "293"
     },
     {
       "range": "19",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "291"
+      "id": "294"
     },
     {
       "range": "7",
-      "domain": "163",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "292"
+      "id": "295"
     },
     {
       "range": "15",
-      "domain": "163",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "293"
+      "id": "296"
     },
     {
       "range": "11",
-      "domain": "163",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "294"
+      "id": "297"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isValidatedBy",
@@ -5850,142 +5889,142 @@
       "attributes": [
         "object"
       ],
-      "id": "295"
-    },
-    {
-      "range": "40",
-      "domain": "163",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "296"
-    },
-    {
-      "range": "30",
-      "domain": "163",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "297"
-    },
-    {
-      "range": "2",
-      "domain": "163",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
       "id": "298"
     },
     {
-      "range": "44",
-      "domain": "163",
+      "range": "40",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "299"
     },
     {
-      "range": "19",
-      "domain": "163",
+      "range": "30",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "300"
     },
     {
-      "range": "18",
-      "domain": "163",
+      "range": "2",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "301"
     },
     {
-      "range": "26",
-      "domain": "163",
+      "range": "44",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "302"
     },
     {
-      "range": "22",
-      "domain": "163",
+      "range": "19",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "303"
     },
     {
-      "range": "1",
-      "domain": "163",
+      "range": "18",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "304"
     },
     {
-      "range": "47",
-      "domain": "163",
+      "range": "26",
+      "domain": "147",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "305"
+    },
+    {
+      "range": "22",
+      "domain": "147",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "306"
+    },
+    {
+      "range": "1",
+      "domain": "147",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "307"
+    },
+    {
+      "range": "47",
+      "domain": "147",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "308"
     },
     {
       "range": "15",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "306"
+      "id": "309"
     },
     {
       "range": "2",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "307"
+      "id": "310"
     },
     {
       "range": "44",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "308"
+      "id": "311"
     },
     {
       "range": "11",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "309"
+      "id": "312"
     },
     {
       "range": "7",
       "domain": "35",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "310"
+      "id": "313"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#usesMetric",
@@ -5996,7 +6035,7 @@
         "IRI-based": "usesMetric",
         "en": "uses metric"
       },
-      "domain": "155",
+      "domain": "138",
       "comment": {
         "de": "Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird.",
         "en": "Relates an evaluation, or the algorithm it runs, to the metric it measures against."
@@ -6004,16 +6043,16 @@
       "attributes": [
         "object"
       ],
-      "id": "311"
+      "id": "314"
     },
     {
       "range": "30",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "312"
+      "id": "315"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasDesign",
@@ -6032,25 +6071,25 @@
       "attributes": [
         "object"
       ],
-      "id": "313"
+      "id": "316"
     },
     {
       "range": "26",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "314"
+      "id": "317"
     },
     {
       "range": "40",
       "domain": "47",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "315"
+      "id": "318"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasType",
@@ -6079,7 +6118,7 @@
       "attributes": [
         "object"
       ],
-      "id": "316"
+      "id": "319"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isStoredBy",
@@ -6090,7 +6129,7 @@
         "IRI-based": "isStoredBy",
         "en": "is stored by"
       },
-      "domain": "152",
+      "domain": "135",
       "comment": {
         "de": "Verbindet Daten mit der Speicherung, die sie abgelegt hat.",
         "en": "Relates data to the storing that persisted it."
@@ -6098,12 +6137,12 @@
       "attributes": [
         "object"
       ],
-      "id": "317"
+      "id": "320"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isComposedOf",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "148",
+      "range": "155",
       "annotations": {
         "note": [
           {
@@ -6119,7 +6158,7 @@
         "IRI-based": "isComposedOf",
         "en": "is composed of"
       },
-      "domain": "146",
+      "domain": "153",
       "comment": {
         "de": "Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen.",
         "en": "Relates a dataset to the data it collects, and data to the samples it consists of."
@@ -6127,7 +6166,7 @@
       "attributes": [
         "object"
       ],
-      "id": "318"
+      "id": "321"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasFunction",
@@ -6146,7 +6185,7 @@
       "attributes": [
         "object"
       ],
-      "id": "319"
+      "id": "322"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasDataSink",
@@ -6165,106 +6204,106 @@
       "attributes": [
         "object"
       ],
-      "id": "320"
-    },
-    {
-      "range": "124",
-      "domain": "79",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "321"
-    },
-    {
-      "range": "68",
-      "domain": "79",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "322"
-    },
-    {
-      "range": "95",
-      "domain": "79",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
       "id": "323"
     },
     {
-      "range": "91",
+      "range": "133",
       "domain": "79",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "324"
     },
     {
-      "range": "93",
+      "range": "68",
       "domain": "79",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "325"
     },
     {
-      "range": "68",
-      "domain": "124",
+      "range": "95",
+      "domain": "79",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "326"
     },
     {
-      "range": "95",
-      "domain": "124",
+      "range": "91",
+      "domain": "79",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "327"
     },
     {
-      "range": "91",
-      "domain": "124",
+      "range": "93",
+      "domain": "79",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "328"
     },
     {
-      "range": "93",
-      "domain": "124",
+      "range": "68",
+      "domain": "133",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "329"
     },
     {
       "range": "95",
-      "domain": "68",
+      "domain": "133",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "330"
     },
     {
-      "range": "93",
-      "domain": "127",
+      "range": "91",
+      "domain": "133",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "331"
+    },
+    {
+      "range": "93",
+      "domain": "133",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "332"
+    },
+    {
+      "range": "95",
+      "domain": "68",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "333"
+    },
+    {
+      "range": "93",
+      "domain": "109",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "334"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isProcessedBy",
@@ -6275,7 +6314,7 @@
         "IRI-based": "isProcessedBy",
         "en": "is processed by"
       },
-      "domain": "150",
+      "domain": "157",
       "comment": {
         "de": "Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet.",
         "en": "Relates data to the data process acting on it."
@@ -6283,115 +6322,115 @@
       "attributes": [
         "object"
       ],
-      "id": "332"
+      "id": "335"
     },
     {
       "range": "68",
       "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "333"
+      "id": "336"
     },
     {
       "range": "95",
       "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "334"
+      "id": "337"
     },
     {
       "range": "91",
       "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "335"
+      "id": "338"
     },
     {
       "range": "93",
       "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "336"
-    },
-    {
-      "range": "79",
-      "domain": "127",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "337"
-    },
-    {
-      "range": "124",
-      "domain": "127",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "338"
-    },
-    {
-      "range": "68",
-      "domain": "127",
-      "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "339"
     },
     {
-      "range": "95",
-      "domain": "127",
+      "range": "79",
+      "domain": "109",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "340"
     },
     {
-      "range": "91",
-      "domain": "127",
+      "range": "133",
+      "domain": "109",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
       "id": "341"
+    },
+    {
+      "range": "68",
+      "domain": "109",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "342"
+    },
+    {
+      "range": "95",
+      "domain": "109",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "343"
+    },
+    {
+      "range": "91",
+      "domain": "109",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "344"
     },
     {
       "range": "79",
       "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "342"
+      "id": "345"
     },
     {
-      "range": "15",
-      "domain": "28",
+      "range": "33",
+      "domain": "9",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "343"
+      "id": "346"
     },
     {
-      "range": "124",
+      "range": "133",
       "domain": "106",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "344"
+      "id": "347"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isPerformedBy",
@@ -6420,340 +6459,340 @@
       "attributes": [
         "object"
       ],
-      "id": "345"
-    },
-    {
-      "range": "79",
-      "domain": "38",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "346"
-    },
-    {
-      "range": "15",
-      "domain": "11",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "347"
-    },
-    {
-      "range": "79",
-      "domain": "49",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
       "id": "348"
-    },
-    {
-      "range": "119",
-      "domain": "277",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "349"
-    },
-    {
-      "range": "79",
-      "domain": "37",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "350"
-    },
-    {
-      "range": "274",
-      "domain": "277",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "351"
-    },
-    {
-      "range": "33",
-      "domain": "13",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "352"
-    },
-    {
-      "range": "70",
-      "domain": "277",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "353"
-    },
-    {
-      "range": "33",
-      "domain": "5",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "354"
-    },
-    {
-      "range": "274",
-      "domain": "119",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "355"
-    },
-    {
-      "range": "33",
-      "domain": "4",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "356"
-    },
-    {
-      "range": "70",
-      "domain": "119",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "357"
-    },
-    {
-      "range": "33",
-      "domain": "9",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "358"
-    },
-    {
-      "range": "70",
-      "domain": "274",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "359"
-    },
-    {
-      "range": "15",
-      "domain": "201",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "360"
-    },
-    {
-      "range": "127",
-      "domain": "106",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "361"
-    },
-    {
-      "range": "15",
-      "domain": "24",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "362"
-    },
-    {
-      "range": "15",
-      "domain": "2",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "363"
-    },
-    {
-      "range": "79",
-      "domain": "53",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "364"
-    },
-    {
-      "range": "11",
-      "domain": "7",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "365"
-    },
-    {
-      "range": "79",
-      "domain": "77",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "366"
-    },
-    {
-      "range": "15",
-      "domain": "7",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "367"
-    },
-    {
-      "range": "30",
-      "domain": "178",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "368"
-    },
-    {
-      "range": "15",
-      "domain": "40",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "369"
-    },
-    {
-      "range": "30",
-      "domain": "173",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "370"
-    },
-    {
-      "range": "2",
-      "domain": "44",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "371"
-    },
-    {
-      "range": "30",
-      "domain": "174",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "372"
-    },
-    {
-      "range": "7",
-      "domain": "44",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "373"
-    },
-    {
-      "range": "30",
-      "domain": "177",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "374"
-    },
-    {
-      "range": "11",
-      "domain": "44",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "375"
-    },
-    {
-      "range": "169",
-      "domain": "145",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "376"
-    },
-    {
-      "range": "15",
-      "domain": "44",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "377"
-    },
-    {
-      "range": "79",
-      "domain": "52",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "378"
-    },
-    {
-      "range": "7",
-      "domain": "2",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "379"
-    },
-    {
-      "range": "79",
-      "domain": "42",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "380"
-    },
-    {
-      "range": "11",
-      "domain": "2",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "381"
     },
     {
       "range": "79",
       "domain": "75",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
+      ],
+      "id": "349"
+    },
+    {
+      "range": "15",
+      "domain": "11",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "350"
+    },
+    {
+      "range": "79",
+      "domain": "53",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "351"
+    },
+    {
+      "range": "120",
+      "domain": "282",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "352"
+    },
+    {
+      "range": "79",
+      "domain": "77",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "353"
+    },
+    {
+      "range": "279",
+      "domain": "282",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "354"
+    },
+    {
+      "range": "79",
+      "domain": "38",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "355"
+    },
+    {
+      "range": "70",
+      "domain": "282",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "356"
+    },
+    {
+      "range": "79",
+      "domain": "49",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "357"
+    },
+    {
+      "range": "279",
+      "domain": "120",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "358"
+    },
+    {
+      "range": "79",
+      "domain": "37",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "359"
+    },
+    {
+      "range": "70",
+      "domain": "120",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "360"
+    },
+    {
+      "range": "33",
+      "domain": "13",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "361"
+    },
+    {
+      "range": "70",
+      "domain": "279",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "362"
+    },
+    {
+      "range": "33",
+      "domain": "5",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "363"
+    },
+    {
+      "range": "109",
+      "domain": "106",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "364"
+    },
+    {
+      "range": "33",
+      "domain": "4",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "365"
+    },
+    {
+      "range": "15",
+      "domain": "2",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "366"
+    },
+    {
+      "range": "79",
+      "domain": "52",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "367"
+    },
+    {
+      "range": "11",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "368"
+    },
+    {
+      "range": "79",
+      "domain": "42",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "369"
+    },
+    {
+      "range": "15",
+      "domain": "7",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "370"
+    },
+    {
+      "range": "87",
+      "domain": "79",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "371"
+    },
+    {
+      "range": "15",
+      "domain": "40",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "372"
+    },
+    {
+      "range": "87",
+      "domain": "95",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "373"
+    },
+    {
+      "range": "2",
+      "domain": "44",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "374"
+    },
+    {
+      "range": "87",
+      "domain": "91",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "375"
+    },
+    {
+      "range": "7",
+      "domain": "44",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "376"
+    },
+    {
+      "range": "30",
+      "domain": "164",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "377"
+    },
+    {
+      "range": "11",
+      "domain": "44",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "378"
+    },
+    {
+      "range": "30",
+      "domain": "179",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "379"
+    },
+    {
+      "range": "15",
+      "domain": "44",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "380"
+    },
+    {
+      "range": "30",
+      "domain": "161",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "381"
+    },
+    {
+      "range": "7",
+      "domain": "2",
+      "attributes": [
+        "object",
+        "anonymous"
       ],
       "id": "382"
+    },
+    {
+      "range": "30",
+      "domain": "160",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "383"
+    },
+    {
+      "range": "11",
+      "domain": "2",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "384"
+    },
+    {
+      "range": "173",
+      "domain": "145",
+      "attributes": [
+        "object",
+        "anonymous"
+      ],
+      "id": "385"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#consistsOf",
@@ -6772,88 +6811,88 @@
       "attributes": [
         "object"
       ],
-      "id": "383"
+      "id": "386"
     },
     {
       "range": "33",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "384"
+      "id": "387"
     },
     {
       "range": "35",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "385"
+      "id": "388"
     },
     {
-      "range": "163",
+      "range": "147",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "386"
+      "id": "389"
     },
     {
       "range": "47",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "387"
+      "id": "390"
     },
     {
       "range": "1",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "388"
+      "id": "391"
     },
     {
       "range": "18",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "389"
+      "id": "392"
     },
     {
       "range": "19",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "390"
+      "id": "393"
     },
     {
       "range": "22",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "391"
+      "id": "394"
     },
     {
       "range": "87",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "392"
+      "id": "395"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isCreatedBy",
@@ -6872,16 +6911,16 @@
       "attributes": [
         "object"
       ],
-      "id": "393"
+      "id": "396"
     },
     {
       "range": "32",
       "domain": "222",
       "attributes": [
-        "anonymous",
-        "object"
+        "object",
+        "anonymous"
       ],
-      "id": "394"
+      "id": "397"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isAcquiredBy",
@@ -6892,7 +6931,7 @@
         "IRI-based": "isAcquiredBy",
         "en": "is acquired by"
       },
-      "domain": "167",
+      "domain": "151",
       "comment": {
         "de": "Verbindet Daten mit der Erfassung, die sie gewonnen hat.",
         "en": "Relates data to the acquisition that obtained it."
@@ -6900,7 +6939,7 @@
       "attributes": [
         "object"
       ],
-      "id": "395"
+      "id": "398"
     }
   ]
 }

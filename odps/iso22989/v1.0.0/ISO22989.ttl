@@ -21,7 +21,7 @@
     dcterms:title "ISO/IEC 22989 Ontology Design Pattern"@en ;
     dcterms:abstract """An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-two classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."""@en ;
     dcterms:created "2024-09-01"^^xsd:date ;
-    dcterms:modified "2026-09-02"^^xsd:date ;
+    dcterms:modified "2026-09-03"^^xsd:date ;
     dcterms:creator "Marvin Schieseck" ;
     dcterms:creator "Philip Topalis" ;
     dcterms:creator "Lasse Reinpold" ;
@@ -624,9 +624,16 @@ iso22989:Merging
    owl:members ( iso22989:ModelAlgorithm iso22989:TrainingAlgorithm
                  iso22989:EvaluationAlgorithm ) .
 
+# Test data and evaluation data are equivalent, one term of practice and one
+# of the standard, so they cannot be disjoint from each other. Against the
+# other three they are, which is what this second axiom states.
 [] a owl:AllDisjointClasses ;
    owl:members ( iso22989:TrainingData iso22989:ValidationData
                  iso22989:ProductionData ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( iso22989:TrainingData iso22989:ValidationData
+                 iso22989:ProductionData iso22989:EvaluationData ) .
 
 [] a owl:AllDisjointClasses ;
    owl:members ( iso22989:Acquisition iso22989:DataProcess iso22989:Evaluation

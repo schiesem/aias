@@ -106,5 +106,7 @@ subclasses: the four tasks, the four learning types, the three system designs,
 the four metrics and the kinds of data. Nothing can be a task and a metric at
 once.
 
-`TestData` and `EvaluationData` are deliberately outside the data axiom, since
-they are equivalent rather than distinct.
+`TestData` and `EvaluationData` cannot be disjoint from **each other**, since
+they are equivalent. Against the other three kinds of data they are, which a
+second axiom states: training, validation and production data on one side,
+evaluation data on the other.
