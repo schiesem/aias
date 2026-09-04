@@ -1,1130 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#DataProcessing",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Transformation of input data into output data."
-      },
-      {
-        "@language": "de",
-        "@value": "Umwandlung von Eingangsdaten in Ausgangsdaten."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Data Processing"
-      },
-      {
-        "@language": "de",
-        "@value": "Datenverarbeitung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#TrainingData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Data used to determine the parameters of a model during training."
-      },
-      {
-        "@language": "de",
-        "@value": "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Training Data"
-      },
-      {
-        "@language": "de",
-        "@value": "Trainingsdaten"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.16."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Hyperparameter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A property of an algorithm governing its behaviour."
-      },
-      {
-        "@language": "de",
-        "@value": "Eigenschaft eines Algorithmus, die dessen Verhalten steuert."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Hyperparameter"
-      },
-      {
-        "@language": "en",
-        "@value": "Hyperparameter"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.4. Placed on the algorithm superclass, so that a training algorithm, a model algorithm and an evaluation algorithm may each carry one: a learning rate, the number of layers of a network, the threshold of a metric."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#isProcessedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates data to the data process acting on it."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid26"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is processed by"
-      },
-      {
-        "@language": "de",
-        "@value": "wird verarbeitet durch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid26",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Data"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/source",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/publisher",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#ValidationData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."
-      },
-      {
-        "@language": "de",
-        "@value": "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Validation Data"
-      },
-      {
-        "@language": "de",
-        "@value": "Validierungsdaten"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.15."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#MLAlgorithm",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A specialisation of the training algorithm for machine learning, to which a kind of learning is assigned."
-      },
-      {
-        "@language": "de",
-        "@value": "Spezialisierung des Trainingsalgorithmus für das maschinelle Lernen, dem eine Lernart zugeordnet ist."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ML-Algorithmus"
-      },
-      {
-        "@language": "en",
-        "@value": "Machine Learning Algorithm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.6."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Filtering",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Entfernung unerwünschter Daten."
-      },
-      {
-        "@language": "en",
-        "@value": "Removal of unwanted data."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Filtering"
-      },
-      {
-        "@language": "de",
-        "@value": "Filterung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid66",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Acquisition"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Automate"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Inference"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Storing"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Training"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Validation"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#ModelParameter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An internal variable of a model affecting how its outputs are computed."
-      },
-      {
-        "@language": "de",
-        "@value": "Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Model Parameter"
-      },
-      {
-        "@language": "de",
-        "@value": "Modellparameter"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.8."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#basedOnAlgorithm",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid1"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "based on algorithm"
-      },
-      {
-        "@language": "de",
-        "@value": "basiert auf Algorithmus"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Inference"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Model"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Training"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#creates",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an inference to the prediction it produces."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Inference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "creates"
-      },
-      {
-        "@language": "de",
-        "@value": "erzeugt"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Prediction"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#MachineLearning",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience."
-      },
-      {
-        "@language": "de",
-        "@value": "Prozess zur Optimierung von Modellparametern durch rechnergestützte Verfahren, sodass das Verhalten des Modells die zugrunde liegenden Daten oder Erfahrungen widerspiegelt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Machine Learning"
-      },
-      {
-        "@language": "de",
-        "@value": "Maschinelles Lernen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.5."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#AITask",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A task to be carried out by the AI in order to reach a given objective."
-      },
-      {
-        "@language": "de",
-        "@value": "Eine durch die KI auszuführende Aufgabe zur Erreichung eines bestimmten Ziels."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "AI Task"
-      },
-      {
-        "@language": "de",
-        "@value": "KI-Aufgabe"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.1.35."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#DataProcess",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A step transforming input data into output data."
-      },
-      {
-        "@language": "de",
-        "@value": "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Data Process"
-      },
-      {
-        "@language": "de",
-        "@value": "Datenprozess"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the steps of clause 5.10."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid106",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#ReinforcementLearning"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#SupervisedLearning"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#UnsupervisedLearning"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#AIComponent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A functional element that together with further components constitutes an AI system."
-      },
-      {
-        "@language": "de",
-        "@value": "Ein funktionales Element, das zusammen mit weiteren Komponenten ein KI-System bildet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "AI Component"
-      },
-      {
-        "@language": "de",
-        "@value": "KI-Komponente"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.1.2."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Validation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Confirmation that the requirements for an intended use are met."
-      },
-      {
-        "@language": "de",
-        "@value": "Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Validation"
-      },
-      {
-        "@language": "de",
-        "@value": "Validierung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.5.18."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Storing",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Ablage von Daten in einer Datensenke."
-      },
-      {
-        "@language": "en",
-        "@value": "Persisting data to a data sink."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Speicherung"
-      },
-      {
-        "@language": "en",
-        "@value": "Storing"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#F1Score",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Harmonisches Mittel aus Präzision und Trefferquote."
-      },
-      {
-        "@language": "en",
-        "@value": "The harmonic mean of precision and recall."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "F1 Score"
-      },
-      {
-        "@language": "de",
-        "@value": "F1-Maß"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#isComposedOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a dataset to the data it collects, and data to the samples it consists of."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "besteht aus"
-      },
-      {
-        "@language": "en",
-        "@value": "is composed of"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:genid23"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "One relation used at two levels: a dataset is composed of data, and data of samples. Its domain and range are therefore unions, since each covers both levels."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid20",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Data"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:genid23",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Data"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#hasDataSource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an acquisition to the source it obtains data from."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine Erfassung mit der Quelle, aus der sie Daten gewinnt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Acquisition"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has data source"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Datenquelle"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataSource"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid84",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Classification"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Clustering"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Generation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Regression"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Machine learning using both labelled and unlabelled data during training."
-      },
-      {
-        "@language": "de",
-        "@value": "Maschinelles Lernen, das während des Trainings sowohl gekennzeichnete als auch nicht gekennzeichnete Daten nutzt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Semi-supervised Learning"
-      },
-      {
-        "@language": "de",
-        "@value": "Teilüberwachtes Lernen"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.11."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Recall",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Anteil der gefundenen an allen positiven Fällen."
-      },
-      {
-        "@language": "en",
-        "@value": "The proportion of positive cases that were found."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Recall"
-      },
-      {
-        "@language": "de",
-        "@value": "Trefferquote"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#TestData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Data used to assess the performance of a final model."
-      },
-      {
-        "@language": "de",
-        "@value": "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Test Data"
-      },
-      {
-        "@language": "de",
-        "@value": "Testdaten"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Clustering",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identification of groups of similar examples."
-      },
-      {
-        "@language": "de",
-        "@value": "Identifikation von Gruppen ähnlicher Beispiele."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Clustering"
-      },
-      {
-        "@language": "en",
-        "@value": "Clustering"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.11.2."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/bibliographicCitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://xmlns.com/foaf/0.1/fundedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/rights",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/ontology/bibo/doi",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "_:genid75",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Annotation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Augmentation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Filtering"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Imputation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Labeling"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Merging"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Normalization"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Sampling"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#executes",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a model to the inference it carries out."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Modell mit der Inferenz, die es ausführt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Model"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "executes"
-      },
-      {
-        "@language": "de",
-        "@value": "führt aus"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Inference"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#UnsupervisedLearning",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Machine learning using unlabelled data only during training."
-      },
-      {
-        "@language": "de",
-        "@value": "Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Unsupervised Learning"
-      },
-      {
-        "@language": "de",
-        "@value": "Unüberwachtes Lernen"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.17."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/aias/odp/iso22989",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
@@ -1273,6 +148,1698 @@
     ]
   },
   {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#isEvaluatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a model to the evaluation assessing it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein Modell mit der Evaluation, die es bewertet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Model"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is evaluated by"
+      },
+      {
+        "@language": "de",
+        "@value": "wird evaluiert durch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Augmentation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Creation of additional data by transforming existing data in order to enlarge a dataset."
+      },
+      {
+        "@language": "de",
+        "@value": "Erzeugung zusätzlicher Daten durch Transformation vorhandener Daten, um einen Datensatz zu erweitern."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Augmentation"
+      },
+      {
+        "@language": "de",
+        "@value": "Augmentierung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Accuracy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Anteil der korrekten Ergebnisse an allen Ergebnissen."
+      },
+      {
+        "@language": "en",
+        "@value": "The proportion of correct results among all results."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Accuracy"
+      },
+      {
+        "@language": "de",
+        "@value": "Genauigkeit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid89",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Cloud"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Edge"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Hybrid"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A procedure determining the parameters of a model from data according to given criteria."
+      },
+      {
+        "@language": "de",
+        "@value": "Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Training Algorithm"
+      },
+      {
+        "@language": "de",
+        "@value": "Trainingsalgorithmus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#ValidationData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Data used to compare the performance of candidate models, for example when selecting hyperparameters or models."
+      },
+      {
+        "@language": "de",
+        "@value": "Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Validation Data"
+      },
+      {
+        "@language": "de",
+        "@value": "Validierungsdaten"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.15."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Classification",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Assignment of inputs to discrete classes."
+      },
+      {
+        "@language": "de",
+        "@value": "Zuordnung von Eingaben zu diskreten Klassen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Classification"
+      },
+      {
+        "@language": "de",
+        "@value": "Klassifikation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 9."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#DataSink",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Ort, an dem Daten abgelegt werden."
+      },
+      {
+        "@language": "en",
+        "@value": "Where data is persisted to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Sink"
+      },
+      {
+        "@language": "de",
+        "@value": "Datensenke"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A construct of this model, needed by the storing."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Inference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Reasoning by which results are derived from given premises or data."
+      },
+      {
+        "@language": "de",
+        "@value": "Schlussfolgern, bei dem aus gegebenen Prämissen beziehungsweise Daten Ergebnisse abgeleitet werden."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Inference"
+      },
+      {
+        "@language": "de",
+        "@value": "Inferenz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.1.17."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#F1Score",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Harmonisches Mittel aus Präzision und Trefferquote."
+      },
+      {
+        "@language": "en",
+        "@value": "The harmonic mean of precision and recall."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "F1 Score"
+      },
+      {
+        "@language": "de",
+        "@value": "F1-Maß"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Sample",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An atomic data element processed in large numbers by an ML algorithm or an AI system."
+      },
+      {
+        "@language": "de",
+        "@value": "Atomares Datenelement, das von einem ML-Algorithmus oder KI-System in großer Zahl verarbeitet wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Datenelement"
+      },
+      {
+        "@language": "en",
+        "@value": "Sample"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.13."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Hybrid",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An AI system split between cloud infrastructure and the edge."
+      },
+      {
+        "@language": "de",
+        "@value": "Ein KI-System, das auf Cloud und Edge verteilt ausgeführt wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Hybrid"
+      },
+      {
+        "@language": "en",
+        "@value": "Hybrid"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Normalization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Adjustment of data values to a common scale so that they become mathematically comparable."
+      },
+      {
+        "@language": "de",
+        "@value": "Anpassung von Datenwerten auf eine gemeinsame Skala, um sie mathematisch vergleichbar zu machen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Normalisierung"
+      },
+      {
+        "@language": "en",
+        "@value": "Normalization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#SubSymbolicAI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Techniken, deren Repräsentationen implizit aus Daten oder Erfahrung abgeleitet werden."
+      },
+      {
+        "@language": "en",
+        "@value": "Techniques whose representations are derived implicitly from data or experience."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Subsymbolic AI"
+      },
+      {
+        "@language": "de",
+        "@value": "Subsymbolische KI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIType"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#SymbolicAI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.1.34."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#hasDesign",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an AI system to where it runs."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein KI-System mit dem Ort seiner Ausführung."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has design"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Auslegung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/fundedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A reinterpretable representation of information in a formalised manner suitable for communication, interpretation or processing."
+      },
+      {
+        "@language": "de",
+        "@value": "Reinterpretierbare Darstellung von Information in formalisierter Weise, geeignet zur Kommunikation, Interpretation oder Verarbeitung."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data"
+      },
+      {
+        "@language": "de",
+        "@value": "Daten"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.3."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A procedure assessing a model against an evaluation metric."
+      },
+      {
+        "@language": "de",
+        "@value": "Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Evaluation Algorithm"
+      },
+      {
+        "@language": "de",
+        "@value": "Evaluationsalgorithmus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A construct of this model."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#fulfillsTask",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a prediction to the task it addresses."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Vorhersage mit der Aufgabe, die sie adressiert."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Prediction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "erfüllt Aufgabe"
+      },
+      {
+        "@language": "en",
+        "@value": "fulfills task"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#executes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a model to the inference it carries out."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein Modell mit der Inferenz, die es ausführt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Model"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "executes"
+      },
+      {
+        "@language": "de",
+        "@value": "führt aus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Inference"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Precision",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Anteil der korrekten Ergebnisse an den als positiv gemeldeten."
+      },
+      {
+        "@language": "en",
+        "@value": "The proportion of correct results among those reported positive."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Precision"
+      },
+      {
+        "@language": "de",
+        "@value": "Präzision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#createsProcessedData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a data process to the data it produces."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet einen Datenprozess mit den Daten, die er erzeugt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "creates processed data"
+      },
+      {
+        "@language": "de",
+        "@value": "erzeugt verarbeitete Daten"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:genid6"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Data"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#ProductionData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Data arising during the operation of a deployed AI system, for which the system computes inferences."
+      },
+      {
+        "@language": "de",
+        "@value": "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Betriebsdaten"
+      },
+      {
+        "@language": "en",
+        "@value": "Production Data"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.12."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#AIType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Characterises the kind of AI employed."
+      },
+      {
+        "@language": "de",
+        "@value": "Charakterisiert die Art der eingesetzten KI."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AI Type"
+      },
+      {
+        "@language": "de",
+        "@value": "KI-Art"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the two kinds the standard defines separately."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Imputation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Ersetzung fehlender Daten durch geschätzte oder modellierte Werte."
+      },
+      {
+        "@language": "en",
+        "@value": "Replacement of missing data by estimated or modelled values."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Imputation"
+      },
+      {
+        "@language": "en",
+        "@value": "Imputation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.8."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/hasVersion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#ModelParameter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An internal variable of a model affecting how its outputs are computed."
+      },
+      {
+        "@language": "de",
+        "@value": "Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Model Parameter"
+      },
+      {
+        "@language": "de",
+        "@value": "Modellparameter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.8."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Merging",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Combination of several data sources into one."
+      },
+      {
+        "@language": "de",
+        "@value": "Zusammenführung mehrerer Datenquellen zu einer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Merging"
+      },
+      {
+        "@language": "de",
+        "@value": "Zusammenführung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Training",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Bestimmung oder Verbesserung der Parameter eines Modells anhand von Trainingsdaten."
+      },
+      {
+        "@language": "en",
+        "@value": "Determining or improving the parameters of a model from training data."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Training"
+      },
+      {
+        "@language": "en",
+        "@value": "Training"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.15."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Evaluation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Assessment of the performance of an AI system before it is deployed."
+      },
+      {
+        "@language": "de",
+        "@value": "Bewertung der Leistung des KI-Systems vor dem Einsatz."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Evaluation"
+      },
+      {
+        "@language": "en",
+        "@value": "Evaluation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#usesMetric",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an evaluation, or the algorithm it runs, to the metric it measures against."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid38"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "nutzt Metrik"
+      },
+      {
+        "@language": "en",
+        "@value": "uses metric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid38",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#isProcessedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates data to the data process acting on it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid26"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is processed by"
+      },
+      {
+        "@language": "de",
+        "@value": "wird verarbeitet durch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid26",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Data"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#SupervisedLearning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Machine learning using labelled data only during training."
+      },
+      {
+        "@language": "de",
+        "@value": "Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Supervised Learning"
+      },
+      {
+        "@language": "de",
+        "@value": "Überwachtes Lernen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.12."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/bibliographicCitation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#LearningType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Art des maschinellen Lernens."
+      },
+      {
+        "@language": "en",
+        "@value": "The kind of machine learning employed."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Learning Type"
+      },
+      {
+        "@language": "de",
+        "@value": "Lernart"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the four kinds the standard defines separately."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid93",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#ModelAlgorithm"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Generation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Creation of new outputs such as text, images or audio from learned representations."
+      },
+      {
+        "@language": "de",
+        "@value": "Erzeugung neuer Ausgaben, etwa Texte, Bilder oder Audio, auf Basis gelernter Repräsentationen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Generation"
+      },
+      {
+        "@language": "de",
+        "@value": "Generierung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 9.2."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/status",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#AIComponent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A functional element that together with further components constitutes an AI system."
+      },
+      {
+        "@language": "de",
+        "@value": "Ein funktionales Element, das zusammen mit weiteren Komponenten ein KI-System bildet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AI Component"
+      },
+      {
+        "@language": "de",
+        "@value": "KI-Komponente"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.1.2."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Sampling",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Auswahl einer repräsentativen Teilmenge der Daten."
+      },
+      {
+        "@language": "en",
+        "@value": "Selection of a representative subset of the data."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sampling"
+      },
+      {
+        "@language": "de",
+        "@value": "Stichprobenziehung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.4."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#TestData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Data used to assess the performance of a final model."
+      },
+      {
+        "@language": "de",
+        "@value": "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Test Data"
+      },
+      {
+        "@language": "de",
+        "@value": "Testdaten"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Filtering",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Entfernung unerwünschter Daten."
+      },
+      {
+        "@language": "en",
+        "@value": "Removal of unwanted data."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Filtering"
+      },
+      {
+        "@language": "de",
+        "@value": "Filterung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#hasDataSink",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a storing to the sink it persists data to."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Storing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has data sink"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Datensenke"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataSink"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#UnsupervisedLearning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Machine learning using unlabelled data only during training."
+      },
+      {
+        "@language": "de",
+        "@value": "Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Unsupervised Learning"
+      },
+      {
+        "@language": "de",
+        "@value": "Unüberwachtes Lernen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.17."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A measure against which the performance of a model is assessed."
+      },
+      {
+        "@language": "de",
+        "@value": "Maß, anhand dessen die Leistung eines Modells bewertet wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Evaluation Metric"
+      },
+      {
+        "@language": "de",
+        "@value": "Evaluationsmetrik"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A construct of this model."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#TrainingData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Data used to determine the parameters of a model during training."
+      },
+      {
+        "@language": "de",
+        "@value": "Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Training Data"
+      },
+      {
+        "@language": "de",
+        "@value": "Trainingsdaten"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.16."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#consistsOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an AI system to a component it is built from."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein KI-System mit einer Komponente, aus der es aufgebaut ist."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "besteht aus"
+      },
+      {
+        "@language": "en",
+        "@value": "consists of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIComponent"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid41",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#AIComponent"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#AIType"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Data"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSink"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSource"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Hyperparameter"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#MachineLearning"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Model"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#ModelParameter"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Prediction"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#note",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
     "@id": "https://w3id.org/aias/odp/iso22989#hasParameter",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -1351,45 +1918,7 @@
     ]
   },
   {
-    "@id": "http://www.w3.org/2004/02/skos/core#note",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#AISystem",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An engineered system that generates outputs such as predictions, recommendations or decisions from data in order to support human-defined objectives."
-      },
-      {
-        "@language": "de",
-        "@value": "Ein konstruiertes System, das auf Basis von Daten Ausgaben wie Vorhersagen, Empfehlungen oder Entscheidungen erzeugt, um menschlich definierte Ziele zu unterstützen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "AI System"
-      },
-      {
-        "@language": "de",
-        "@value": "KI-System"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.1.4."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid102",
+    "@id": "_:genid106",
     "@type": [
       "http://www.w3.org/2002/07/owl#AllDisjointClasses"
     ],
@@ -1397,399 +1926,129 @@
       {
         "@list": [
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#ProductionData"
+            "@id": "https://w3id.org/aias/odp/iso22989#ReinforcementLearning"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#TrainingData"
+            "@id": "https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#ValidationData"
+            "@id": "https://w3id.org/aias/odp/iso22989#SupervisedLearning"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#UnsupervisedLearning"
           }
         ]
       }
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/modified",
+    "@id": "https://w3id.org/aias/odp/iso22989#DataProcessing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Transformation of input data into output data."
+      },
+      {
+        "@language": "de",
+        "@value": "Umwandlung von Eingangsdaten in Ausgangsdaten."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Processing"
+      },
+      {
+        "@language": "de",
+        "@value": "Datenverarbeitung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/license",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#isPerformedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a training to the machine learning carrying it out."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Training mit dem maschinellen Lernen, das es durchführt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Training"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is performed by"
-      },
-      {
-        "@language": "de",
-        "@value": "wird durchgeführt durch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#MachineLearning"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A training is performed by a machine learning, not the other way round, so the relation is directed rather than symmetric."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#ReinforcementLearning",
+    "@id": "https://w3id.org/aias/odp/iso22989#EvaluationData",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward."
+        "@value": "Data used to assess the performance of a final model, disjoint from training and validation data."
       },
       {
         "@language": "de",
-        "@value": "Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen."
+        "@value": "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Bestärkendes Lernen"
+        "@language": "en",
+        "@value": "Evaluation Data"
       },
       {
-        "@language": "en",
-        "@value": "Reinforcement Learning"
+        "@language": "de",
+        "@value": "Evaluationsdaten"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
+        "@id": "https://w3id.org/aias/odp/iso22989#Data"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#TestData"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.9."
+        "@value": "ISO/IEC 22989, definition 3.2.14."
       }
     ]
   },
   {
-    "@id": "_:genid93",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#ModelAlgorithm"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm",
+    "@id": "https://w3id.org/aias/odp/iso22989#Annotation",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A procedure determining the parameters of a model from data according to given criteria."
+        "@value": "Addition of significant information as metadata, for example labels or provenance."
       },
       {
         "@language": "de",
-        "@value": "Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Training Algorithm"
-      },
-      {
-        "@language": "de",
-        "@value": "Trainingsalgorithmus"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#consistsOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an AI system to a component it is built from."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein KI-System mit einer Komponente, aus der es aufgebaut ist."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+        "@value": "Ergänzung signifikanter Informationen als Metadaten, etwa Labels oder Herkunftsinformationen."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "besteht aus"
+        "@value": "Annotation"
       },
       {
         "@language": "en",
-        "@value": "consists of"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIComponent"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#determines",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a training to the model parameters it determines."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Training mit den Modellparametern, die es bestimmt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Training"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "bestimmt"
-      },
-      {
-        "@language": "en",
-        "@value": "determines"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#ModelParameter"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#isAcquiredBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates data to the acquisition that obtained it."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet Daten mit der Erfassung, die sie gewonnen hat."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid16"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is acquired by"
-      },
-      {
-        "@language": "de",
-        "@value": "wird erfasst durch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Acquisition"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid16",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Data"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/abstract",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#SubSymbolicAI",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Techniken, deren Repräsentationen implizit aus Daten oder Erfahrung abgeleitet werden."
-      },
-      {
-        "@language": "en",
-        "@value": "Techniques whose representations are derived implicitly from data or experience."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Subsymbolic AI"
-      },
-      {
-        "@language": "de",
-        "@value": "Subsymbolische KI"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIType"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#SymbolicAI"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.1.34."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Model",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A mathematical construction generating inference or predictions from input data."
-      },
-      {
-        "@language": "de",
-        "@value": "Mathematische Konstruktion, die auf Basis von Eingangsdaten Inferenz oder Vorhersagen erzeugt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Model"
-      },
-      {
-        "@language": "de",
-        "@value": "Modell"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.7. A model is a parameterised instance of an algorithm: the model algorithm describes the procedure without learned parameters, the model carries them."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Normalization",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Adjustment of data values to a common scale so that they become mathematically comparable."
-      },
-      {
-        "@language": "de",
-        "@value": "Anpassung von Datenwerten auf eine gemeinsame Skala, um sie mathematisch vergleichbar zu machen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Normalisierung"
-      },
-      {
-        "@language": "en",
-        "@value": "Normalization"
+        "@value": "Annotation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1805,39 +2064,484 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric",
+    "@id": "https://schema.org/codeRepository",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Algorithm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Oberklasse für parametrisierbare mathematische Verfahren."
+      },
+      {
+        "@language": "en",
+        "@value": "Superclass of parameterisable mathematical procedures."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Algorithm"
+      },
+      {
+        "@language": "de",
+        "@value": "Algorithmus"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989, which defines the machine learning algorithm alone, 3.3.6. The superclass and two of the three specialisations are constructs of this model."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/subject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#AITask",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A measure against which the performance of a model is assessed."
+        "@value": "A task to be carried out by the AI in order to reach a given objective."
       },
       {
         "@language": "de",
-        "@value": "Maß, anhand dessen die Leistung eines Modells bewertet wird."
+        "@value": "Eine durch die KI auszuführende Aufgabe zur Erreichung eines bestimmten Ziels."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Evaluation Metric"
+        "@value": "AI Task"
       },
       {
         "@language": "de",
-        "@value": "Evaluationsmetrik"
+        "@value": "KI-Aufgabe"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A construct of this model."
+        "@value": "ISO/IEC 22989, definition 3.1.35."
       }
     ]
   },
   {
-    "@id": "_:genid89",
+    "@id": "https://w3id.org/aias/odp/iso22989#Acquisition",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Gewinnung von Daten aus Datenquellen."
+      },
+      {
+        "@language": "en",
+        "@value": "Obtaining data from data sources."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Acquisition"
+      },
+      {
+        "@language": "de",
+        "@value": "Datenerfassung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/source",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#hasDataSource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an acquisition to the source it obtains data from."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Erfassung mit der Quelle, aus der sie Daten gewinnt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Acquisition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has data source"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Datenquelle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#DataSource"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Automate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Ausführung eines Vorgangs ohne menschliches Eingreifen."
+      },
+      {
+        "@language": "en",
+        "@value": "Carrying out a procedure without human intervention."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Automate"
+      },
+      {
+        "@language": "de",
+        "@value": "Automatisieren"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. Definition 3.1.7 defines automatic as an adjective, not as a thing a model instantiates. The class is kept for the function it names in a plant."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#creates",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an inference to the prediction it produces."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Inference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "creates"
+      },
+      {
+        "@language": "de",
+        "@value": "erzeugt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Prediction"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#isValidatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a model to the validation confirming it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein Modell mit der Validierung, die es bestätigt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Model"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is validated by"
+      },
+      {
+        "@language": "de",
+        "@value": "wird validiert durch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Validation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Validation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Confirmation that the requirements for an intended use are met."
+      },
+      {
+        "@language": "de",
+        "@value": "Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Validation"
+      },
+      {
+        "@language": "de",
+        "@value": "Validierung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.5.18."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Prediction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden."
+      },
+      {
+        "@language": "en",
+        "@value": "The primary output of an AI system when input data is processed."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Prediction"
+      },
+      {
+        "@language": "de",
+        "@value": "Vorhersage"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.1.27."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#MachineLearning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience."
+      },
+      {
+        "@language": "de",
+        "@value": "Prozess zur Optimierung von Modellparametern durch rechnergestützte Verfahren, sodass das Verhalten des Modells die zugrunde liegenden Daten oder Erfahrungen widerspiegelt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Machine Learning"
+      },
+      {
+        "@language": "de",
+        "@value": "Maschinelles Lernen"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.5."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Cloud",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An AI system running on cloud infrastructure."
+      },
+      {
+        "@language": "de",
+        "@value": "Ein KI-System, das auf Cloud-Infrastruktur ausgeführt wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Cloud"
+      },
+      {
+        "@language": "en",
+        "@value": "Cloud"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Regression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Prediction of continuous quantities."
+      },
+      {
+        "@language": "de",
+        "@value": "Vorhersage kontinuierlicher Größen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Regression"
+      },
+      {
+        "@language": "en",
+        "@value": "Regression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 9."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#DataSource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Ort, aus dem Daten gewonnen werden."
+      },
+      {
+        "@language": "en",
+        "@value": "Where data is obtained from."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Source"
+      },
+      {
+        "@language": "de",
+        "@value": "Datenquelle"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A construct of this model, needed by the acquisition."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid75",
     "@type": [
       "http://www.w3.org/2002/07/owl#AllDisjointClasses"
     ],
@@ -1845,104 +2549,30 @@
       {
         "@list": [
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#Cloud"
+            "@id": "https://w3id.org/aias/odp/iso22989#Annotation"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#Edge"
+            "@id": "https://w3id.org/aias/odp/iso22989#Augmentation"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#Hybrid"
+            "@id": "https://w3id.org/aias/odp/iso22989#Filtering"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Imputation"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Labeling"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Merging"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Normalization"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Sampling"
           }
         ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#createsProcessedData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a data process to the data it produces."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen Datenprozess mit den Daten, die er erzeugt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "creates processed data"
-      },
-      {
-        "@language": "de",
-        "@value": "erzeugt verarbeitete Daten"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:genid6"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Data"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Data",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A reinterpretable representation of information in a formalised manner suitable for communication, interpretation or processing."
-      },
-      {
-        "@language": "de",
-        "@value": "Reinterpretierbare Darstellung von Information in formalisierter Weise, geeignet zur Kommunikation, Interpretation oder Verarbeitung."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Data"
-      },
-      {
-        "@language": "de",
-        "@value": "Daten"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.3."
       }
     ]
   },
@@ -1989,297 +2619,216 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#Merging",
+    "@id": "https://w3id.org/aias/odp/iso22989#Edge",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Combination of several data sources into one."
+        "@value": "An AI system running close to the process it serves."
       },
       {
         "@language": "de",
-        "@value": "Zusammenführung mehrerer Datenquellen zu einer."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Merging"
-      },
-      {
-        "@language": "de",
-        "@value": "Zusammenführung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Evaluation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Assessment of the performance of an AI system before it is deployed."
-      },
-      {
-        "@language": "de",
-        "@value": "Bewertung der Leistung des KI-Systems vor dem Einsatz."
+        "@value": "Ein KI-System, das prozessnah ausgeführt wird."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Evaluation"
+        "@value": "Edge"
       },
       {
         "@language": "en",
-        "@value": "Evaluation"
+        "@value": "Edge"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
+        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#Annotation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Addition of significant information as metadata, for example labels or provenance."
-      },
-      {
-        "@language": "de",
-        "@value": "Ergänzung signifikanter Informationen als Metadaten, etwa Labels oder Herkunftsinformationen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Annotation"
-      },
-      {
-        "@language": "en",
-        "@value": "Annotation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#hasDataSink",
+    "@id": "https://w3id.org/aias/odp/iso22989#determines",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a storing to the sink it persists data to."
+        "@value": "Relates a training to the model parameters it determines."
       },
       {
         "@language": "de",
-        "@value": "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt."
+        "@value": "Verbindet ein Training mit den Modellparametern, die es bestimmt."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#Storing"
+        "@id": "https://w3id.org/aias/odp/iso22989#Training"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "has data sink"
+        "@language": "de",
+        "@value": "bestimmt"
       },
       {
-        "@language": "de",
-        "@value": "hat Datensenke"
+        "@language": "en",
+        "@value": "determines"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataSink"
+        "@id": "https://w3id.org/aias/odp/iso22989#ModelParameter"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#AIType",
+    "@id": "https://w3id.org/aias/odp/iso22989#AISystem",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Characterises the kind of AI employed."
+        "@value": "An engineered system that generates outputs such as predictions, recommendations or decisions from data in order to support human-defined objectives."
       },
       {
         "@language": "de",
-        "@value": "Charakterisiert die Art der eingesetzten KI."
+        "@value": "Ein konstruiertes System, das auf Basis von Daten Ausgaben wie Vorhersagen, Empfehlungen oder Entscheidungen erzeugt, um menschlich definierte Ziele zu unterstützen."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "AI Type"
+        "@value": "AI System"
       },
       {
         "@language": "de",
-        "@value": "KI-Art"
+        "@value": "KI-System"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the two kinds the standard defines separately."
+        "@value": "ISO/IEC 22989, definition 3.1.4."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm",
+    "@id": "https://w3id.org/aias/odp/iso22989#hasFunction",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A procedure assessing a model against an evaluation metric."
+        "@value": "Relates an AI component to a function it performs."
       },
       {
         "@language": "de",
-        "@value": "Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik."
+        "@value": "Verbindet eine KI-Komponente mit einer Funktion, die sie ausführt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIComponent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Evaluation Algorithm"
+        "@value": "has function"
       },
       {
         "@language": "de",
-        "@value": "Evaluationsalgorithmus"
+        "@value": "hat Funktion"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A construct of this model."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Inference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Reasoning by which results are derived from given premises or data."
-      },
-      {
-        "@language": "de",
-        "@value": "Schlussfolgern, bei dem aus gegebenen Prämissen beziehungsweise Daten Ergebnisse abgeleitet werden."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Inference"
-      },
-      {
-        "@language": "de",
-        "@value": "Inferenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
       }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.1.17."
-      }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#Sampling",
+    "@id": "https://w3id.org/aias/odp/iso22989#isPerformedBy",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@language": "de",
-        "@value": "Auswahl einer repräsentativen Teilmenge der Daten."
+        "@language": "en",
+        "@value": "Relates a training to the machine learning carrying it out."
       },
       {
-        "@language": "en",
-        "@value": "Selection of a representative subset of the data."
+        "@language": "de",
+        "@value": "Verbindet ein Training mit dem maschinellen Lernen, das es durchführt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Training"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Sampling"
+        "@value": "is performed by"
       },
       {
         "@language": "de",
-        "@value": "Stichprobenziehung"
+        "@value": "wird durchgeführt durch"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+        "@id": "https://w3id.org/aias/odp/iso22989#MachineLearning"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.4."
+        "@value": "A training is performed by a machine learning, not the other way round, so the relation is directed rather than symmetric."
       }
     ]
   },
   {
-    "@id": "_:genid61",
+    "@id": "https://w3id.org/aias/odp/iso22989#AIFunction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A function transforming inputs into outputs and thereby representing one step of the AI life cycle."
+      },
+      {
+        "@language": "de",
+        "@value": "Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AI Function"
+      },
+      {
+        "@language": "de",
+        "@value": "KI-Funktion"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid84",
     "@type": [
       "http://www.w3.org/2002/07/owl#AllDisjointClasses"
     ],
@@ -2287,16 +2836,16 @@
       {
         "@list": [
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#Accuracy"
+            "@id": "https://w3id.org/aias/odp/iso22989#Classification"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#F1Score"
+            "@id": "https://w3id.org/aias/odp/iso22989#Clustering"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#Precision"
+            "@id": "https://w3id.org/aias/odp/iso22989#Generation"
           },
           {
-            "@id": "https://w3id.org/aias/odp/iso22989#Recall"
+            "@id": "https://w3id.org/aias/odp/iso22989#Regression"
           }
         ]
       }
@@ -2340,196 +2889,34 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#LearningType",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Art des maschinellen Lernens."
-      },
-      {
-        "@language": "en",
-        "@value": "The kind of machine learning employed."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Learning Type"
-      },
-      {
-        "@language": "de",
-        "@value": "Lernart"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the four kinds the standard defines separately."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@id": "http://purl.org/ontology/bibo/doi",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#Precision",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Anteil der korrekten Ergebnisse an den als positiv gemeldeten."
-      },
-      {
-        "@language": "en",
-        "@value": "The proportion of correct results among those reported positive."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Precision"
-      },
-      {
-        "@language": "de",
-        "@value": "Präzision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Hybrid",
+    "@id": "https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An AI system split between cloud infrastructure and the edge."
+        "@value": "Machine learning using both labelled and unlabelled data during training."
       },
       {
         "@language": "de",
-        "@value": "Ein KI-System, das auf Cloud und Edge verteilt ausgeführt wird."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Hybrid"
-      },
-      {
-        "@language": "en",
-        "@value": "Hybrid"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Sample",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An atomic data element processed in large numbers by an ML algorithm or an AI system."
-      },
-      {
-        "@language": "de",
-        "@value": "Atomares Datenelement, das von einem ML-Algorithmus oder KI-System in großer Zahl verarbeitet wird."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Datenelement"
-      },
-      {
-        "@language": "en",
-        "@value": "Sample"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.13."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#hasTask",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an AI system to a task it fulfils."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein KI-System mit einer Aufgabe, die es erfüllt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+        "@value": "Maschinelles Lernen, das während des Trainings sowohl gekennzeichnete als auch nicht gekennzeichnete Daten nutzt."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has task"
+        "@value": "Semi-supervised Learning"
       },
       {
         "@language": "de",
-        "@value": "hat Aufgabe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#SupervisedLearning",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Machine learning using labelled data only during training."
-      },
-      {
-        "@language": "de",
-        "@value": "Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Supervised Learning"
-      },
-      {
-        "@language": "de",
-        "@value": "Überwachtes Lernen"
+        "@value": "Teilüberwachtes Lernen"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -2540,1115 +2927,88 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.12."
+        "@value": "ISO/IEC 22989, definition 3.3.11."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#DataSet",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A collection of data with a shared format."
-      },
-      {
-        "@language": "de",
-        "@value": "Sammlung von Daten mit gemeinsamem Format."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Data Set"
-      },
-      {
-        "@language": "de",
-        "@value": "Datensatz"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.5."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Automate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Ausführung eines Vorgangs ohne menschliches Eingreifen."
-      },
-      {
-        "@language": "en",
-        "@value": "Carrying out a procedure without human intervention."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Automate"
-      },
-      {
-        "@language": "de",
-        "@value": "Automatisieren"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. Definition 3.1.7 defines automatic as an adjective, not as a thing a model instantiates. The class is kept for the function it names in a plant."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Prediction",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden."
-      },
-      {
-        "@language": "en",
-        "@value": "The primary output of an AI system when input data is processed."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Prediction"
-      },
-      {
-        "@language": "de",
-        "@value": "Vorhersage"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.1.27."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Accuracy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Anteil der korrekten Ergebnisse an allen Ergebnissen."
-      },
-      {
-        "@language": "en",
-        "@value": "The proportion of correct results among all results."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Accuracy"
-      },
-      {
-        "@language": "de",
-        "@value": "Genauigkeit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#usesMetric",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an evaluation, or the algorithm it runs, to the metric it measures against."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid38"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "nutzt Metrik"
-      },
-      {
-        "@language": "en",
-        "@value": "uses metric"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid38",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#DataSource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Ort, aus dem Daten gewonnen werden."
-      },
-      {
-        "@language": "en",
-        "@value": "Where data is obtained from."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Data Source"
-      },
-      {
-        "@language": "de",
-        "@value": "Datenquelle"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A construct of this model, needed by the acquisition."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid41",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#AIComponent"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#AIType"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Data"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSink"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#DataSource"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Hyperparameter"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#MachineLearning"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Model"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#ModelParameter"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Prediction"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Classification",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Assignment of inputs to discrete classes."
-      },
-      {
-        "@language": "de",
-        "@value": "Zuordnung von Eingaben zu diskreten Klassen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Classification"
-      },
-      {
-        "@language": "de",
-        "@value": "Klassifikation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 9."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2001/XMLSchema#date",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Algorithm",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Oberklasse für parametrisierbare mathematische Verfahren."
-      },
-      {
-        "@language": "en",
-        "@value": "Superclass of parameterisable mathematical procedures."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Algorithm"
-      },
-      {
-        "@language": "de",
-        "@value": "Algorithmus"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989, which defines the machine learning algorithm alone, 3.3.6. The superclass and two of the three specialisations are constructs of this model."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Training",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Bestimmung oder Verbesserung der Parameter eines Modells anhand von Trainingsdaten."
-      },
-      {
-        "@language": "en",
-        "@value": "Determining or improving the parameters of a model from training data."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Training"
-      },
-      {
-        "@language": "en",
-        "@value": "Training"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.3.15."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid97",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationData"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#ProductionData"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#TrainingData"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso22989#ValidationData"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://schema.org/codeRepository",
+    "@id": "http://purl.org/dc/terms/modified",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#ModelAlgorithm",
+    "@id": "https://w3id.org/aias/odp/iso22989#ReinforcementLearning",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A procedure describing the structure of a model, for example the architecture of a neural network."
+        "@value": "Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward."
       },
       {
         "@language": "de",
-        "@value": "Verfahren zur Beschreibung der Struktur eines Modells, etwa die Architektur eines neuronalen Netzes."
+        "@value": "Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "Model Algorithm"
+        "@language": "de",
+        "@value": "Bestärkendes Lernen"
       },
       {
-        "@language": "de",
-        "@value": "Modellalgorithmus"
+        "@language": "en",
+        "@value": "Reinforcement Learning"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Derived from ISO/IEC 22989, definition 3.3.7."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#isCreatedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a model to the training that produced it."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Modell mit dem Training, das es erzeugt hat."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Model"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is created by"
-      },
-      {
-        "@language": "de",
-        "@value": "wird erzeugt durch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Training"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#EvaluationData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Data used to assess the performance of a final model, disjoint from training and validation data."
-      },
-      {
-        "@language": "de",
-        "@value": "Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Evaluation Data"
-      },
-      {
-        "@language": "de",
-        "@value": "Evaluationsdaten"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Data"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#TestData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.14."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#hasDesign",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an AI system to where it runs."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein KI-System mit dem Ort seiner Ausführung."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has design"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Auslegung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#hasFunction",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an AI component to a function it performs."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine KI-Komponente mit einer Funktion, die sie ausführt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIComponent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has function"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Funktion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Imputation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Ersetzung fehlender Daten durch geschätzte oder modellierte Werte."
-      },
-      {
-        "@language": "en",
-        "@value": "Replacement of missing data by estimated or modelled values."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Imputation"
-      },
-      {
-        "@language": "en",
-        "@value": "Imputation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.8."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#ProductionData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Data arising during the operation of a deployed AI system, for which the system computes inferences."
-      },
-      {
-        "@language": "de",
-        "@value": "Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Betriebsdaten"
-      },
-      {
-        "@language": "en",
-        "@value": "Production Data"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, definition 3.2.12."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#AIFunction",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A function transforming inputs into outputs and thereby representing one step of the AI life cycle."
-      },
-      {
-        "@language": "de",
-        "@value": "Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "AI Function"
-      },
-      {
-        "@language": "de",
-        "@value": "KI-Funktion"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/title",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#fulfillsTask",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a prediction to the task it addresses."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine Vorhersage mit der Aufgabe, die sie adressiert."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Prediction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "erfüllt Aufgabe"
-      },
-      {
-        "@language": "en",
-        "@value": "fulfills task"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#isEvaluatedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a model to the evaluation assessing it."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Modell mit der Evaluation, die es bewertet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Model"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is evaluated by"
-      },
-      {
-        "@language": "de",
-        "@value": "wird evaluiert durch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/subject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Acquisition",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Gewinnung von Daten aus Datenquellen."
-      },
-      {
-        "@language": "en",
-        "@value": "Obtaining data from data sources."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Acquisition"
-      },
-      {
-        "@language": "de",
-        "@value": "Datenerfassung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#basedOnLearning",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a machine learning algorithm to the kind of learning it performs."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen ML-Algorithmus mit der Lernart, die er ausführt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#MLAlgorithm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "based on learning"
-      },
-      {
-        "@language": "de",
-        "@value": "basiert auf Lernart"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
       }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.9."
+      }
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/created",
+    "@id": "http://purl.org/dc/terms/abstract",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#DataSink",
+    "@id": "https://w3id.org/aias/odp/iso22989#Model",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@language": "de",
-        "@value": "Ort, an dem Daten abgelegt werden."
+        "@language": "en",
+        "@value": "A mathematical construction generating inference or predictions from input data."
       },
       {
-        "@language": "en",
-        "@value": "Where data is persisted to."
+        "@language": "de",
+        "@value": "Mathematische Konstruktion, die auf Basis von Eingangsdaten Inferenz oder Vorhersagen erzeugt."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Data Sink"
+        "@value": "Model"
       },
       {
         "@language": "de",
-        "@value": "Datensenke"
+        "@value": "Modell"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. A construct of this model, needed by the storing."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Edge",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An AI system running close to the process it serves."
-      },
-      {
-        "@language": "de",
-        "@value": "Ein KI-System, das prozessnah ausgeführt wird."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Edge"
-      },
-      {
-        "@language": "en",
-        "@value": "Edge"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/license",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Generation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Creation of new outputs such as text, images or audio from learned representations."
-      },
-      {
-        "@language": "de",
-        "@value": "Erzeugung neuer Ausgaben, etwa Texte, Bilder oder Audio, auf Basis gelernter Repräsentationen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Generation"
-      },
-      {
-        "@language": "de",
-        "@value": "Generierung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 9.2."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#isValidatedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a model to the validation confirming it."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet ein Modell mit der Validierung, die es bestätigt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Model"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is validated by"
-      },
-      {
-        "@language": "de",
-        "@value": "wird validiert durch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Validation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two."
-      },
-      {
-        "@language": "de",
-        "@value": "Wo ein KI-System ausgeführt wird, also auf Cloud-Infrastruktur, prozessnah am Edge oder auf beide verteilt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "System Design"
-      },
-      {
-        "@language": "de",
-        "@value": "Systemauslegung"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Not a term of ISO/IEC 22989. Clause 8.6.2 discusses cloud and edge computing without defining the choice between them."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/ontology/bibo/status",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Cloud",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An AI system running on cloud infrastructure."
-      },
-      {
-        "@language": "de",
-        "@value": "Ein KI-System, das auf Cloud-Infrastruktur ausgeführt wird."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Cloud"
-      },
-      {
-        "@language": "en",
-        "@value": "Cloud"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign"
+        "@value": "ISO/IEC 22989, definition 3.3.7. A model is a parameterised instance of an algorithm: the model algorithm describes the procedure without learned parameters, the model carries them."
       }
     ]
   },
@@ -3690,43 +3050,131 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#usesData",
+    "@id": "_:genid61",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Accuracy"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#F1Score"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Precision"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Recall"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#DataProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A step transforming input data into output data."
+      },
+      {
+        "@language": "de",
+        "@value": "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Process"
+      },
+      {
+        "@language": "de",
+        "@value": "Datenprozess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. A collecting class of this model for the steps of clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid102",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#ProductionData"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#TrainingData"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#ValidationData"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#isComposedOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a function to the data it works on."
+        "@value": "Relates a dataset to the data it collects, and data to the samples it consists of."
       },
       {
         "@language": "de",
-        "@value": "Verbindet eine Funktion mit den Daten, auf denen sie arbeitet."
+        "@value": "Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+        "@id": "_:genid20"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "nutzt Daten"
+        "@value": "besteht aus"
       },
       {
         "@language": "en",
-        "@value": "uses data"
+        "@value": "is composed of"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:genid34"
+        "@id": "_:genid23"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "One relation used at two levels: a dataset is composed of data, and data of samples. Its domain and range are therefore unions, since each covers both levels."
       }
     ]
   },
   {
-    "@id": "_:genid34",
+    "@id": "_:genid20",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -3738,6 +3186,21 @@
           },
           {
             "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid23",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Data"
           },
           {
             "@id": "https://w3id.org/aias/odp/iso22989#Sample"
@@ -3747,76 +3210,33 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso22989#Regression",
+    "@id": "https://w3id.org/aias/odp/iso22989#Recall",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@language": "en",
-        "@value": "Prediction of continuous quantities."
-      },
-      {
         "@language": "de",
-        "@value": "Vorhersage kontinuierlicher Größen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Regression"
+        "@value": "Anteil der gefundenen an allen positiven Fällen."
       },
       {
         "@language": "en",
-        "@value": "Regression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 9."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Augmentation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Creation of additional data by transforming existing data in order to enlarge a dataset."
-      },
-      {
-        "@language": "de",
-        "@value": "Erzeugung zusätzlicher Daten durch Transformation vorhandener Daten, um einen Datensatz zu erweitern."
+        "@value": "The proportion of positive cases that were found."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Augmentation"
+        "@value": "Recall"
       },
       {
         "@language": "de",
-        "@value": "Augmentierung"
+        "@value": "Trefferquote"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 22989, clause 5.10."
+        "@id": "https://w3id.org/aias/odp/iso22989#EvaluationMetric"
       }
     ]
   },
@@ -3878,9 +3298,589 @@
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/hasVersion",
+    "@id": "_:genid97",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#EvaluationData"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#ProductionData"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#TrainingData"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#ValidationData"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#usesData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a function to the data it works on."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Funktion mit den Daten, auf denen sie arbeitet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "nutzt Daten"
+      },
+      {
+        "@language": "en",
+        "@value": "uses data"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:genid34"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid34",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Data"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#hasTask",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an AI system to a task it fulfils."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein KI-System mit einer Aufgabe, die es erfüllt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has task"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Aufgabe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#basedOnLearning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a machine learning algorithm to the kind of learning it performs."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet einen ML-Algorithmus mit der Lernart, die er ausführt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#MLAlgorithm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "based on learning"
+      },
+      {
+        "@language": "de",
+        "@value": "basiert auf Lernart"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#LearningType"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#isCreatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a model to the training that produced it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein Modell mit dem Training, das es erzeugt hat."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Model"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is created by"
+      },
+      {
+        "@language": "de",
+        "@value": "wird erzeugt durch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Training"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Storing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Ablage von Daten in einer Datensenke."
+      },
+      {
+        "@language": "en",
+        "@value": "Persisting data to a data sink."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Speicherung"
+      },
+      {
+        "@language": "en",
+        "@value": "Storing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AIFunction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#MLAlgorithm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A specialisation of the training algorithm for machine learning, to which a kind of learning is assigned."
+      },
+      {
+        "@language": "de",
+        "@value": "Spezialisierung des Trainingsalgorithmus für das maschinelle Lernen, dem eine Lernart zugeordnet ist."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ML-Algorithmus"
+      },
+      {
+        "@language": "en",
+        "@value": "Machine Learning Algorithm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.6."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#basedOnAlgorithm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "based on algorithm"
+      },
+      {
+        "@language": "de",
+        "@value": "basiert auf Algorithmus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Inference"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Model"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Training"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Hyperparameter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property of an algorithm governing its behaviour."
+      },
+      {
+        "@language": "de",
+        "@value": "Eigenschaft eines Algorithmus, die dessen Verhalten steuert."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Hyperparameter"
+      },
+      {
+        "@language": "en",
+        "@value": "Hyperparameter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.3.4. Placed on the algorithm superclass, so that a training algorithm, a model algorithm and an evaluation algorithm may each carry one: a learning rate, the number of layers of a network, the threshold of a metric."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Clustering",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identification of groups of similar examples."
+      },
+      {
+        "@language": "de",
+        "@value": "Identifikation von Gruppen ähnlicher Beispiele."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Clustering"
+      },
+      {
+        "@language": "en",
+        "@value": "Clustering"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AITask"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, clause 5.11.2."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#ModelAlgorithm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A procedure describing the structure of a model, for example the architecture of a neural network."
+      },
+      {
+        "@language": "de",
+        "@value": "Verfahren zur Beschreibung der Struktur eines Modells, etwa die Architektur eines neuronalen Netzes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Model Algorithm"
+      },
+      {
+        "@language": "de",
+        "@value": "Modellalgorithmus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Algorithm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Derived from ISO/IEC 22989, definition 3.3.7."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#DataSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A collection of data with a shared format."
+      },
+      {
+        "@language": "de",
+        "@value": "Sammlung von Daten mit gemeinsamem Format."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Set"
+      },
+      {
+        "@language": "de",
+        "@value": "Datensatz"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 22989, definition 3.2.5."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#isAcquiredBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates data to the acquisition that obtained it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet Daten mit der Erfassung, die sie gewonnen hat."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid16"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is acquired by"
+      },
+      {
+        "@language": "de",
+        "@value": "wird erfasst durch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Acquisition"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid16",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Data"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataSet"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Sample"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#SystemDesign",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two."
+      },
+      {
+        "@language": "de",
+        "@value": "Wo ein KI-System ausgeführt wird, also auf Cloud-Infrastruktur, prozessnah am Edge oder auf beide verteilt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "System Design"
+      },
+      {
+        "@language": "de",
+        "@value": "Systemauslegung"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Not a term of ISO/IEC 22989. Clause 8.6.2 discusses cloud and edge computing without defining the choice between them."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid66",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Acquisition"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Automate"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#DataProcess"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Evaluation"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Inference"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Storing"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Training"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso22989#Validation"
+          }
+        ]
+      }
     ]
   }
 ]

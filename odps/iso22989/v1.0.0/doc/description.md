@@ -36,7 +36,7 @@ An `AIFunction` is a step of the life cycle. Nine are supplied:
 | `Validation` | checks the model during training |
 | `Evaluation` | measures the finished model |
 | `Inference` | runs the model on new data |
-| `Automate` | acts on what the inference produced |
+| `Automate` | carries out a procedure without human intervention |
 | `DataProcess` | the eight preparation steps, below |
 
 A function is the level at which this pattern meets the others. In the AIAS
