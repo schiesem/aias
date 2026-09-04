@@ -42,20 +42,20 @@
           "type": "label"
         }
       ],
-      "versionInfo": [
-        {
-          "identifier": "versionInfo",
-          "language": "undefined",
-          "value": "2.0.0",
-          "type": "label"
-        }
-      ],
       "source": [
         {
           "identifier": "source",
           "language": "undefined",
           "value": "https://www.iso.org/standard/74296.html",
           "type": "iri"
+        }
+      ],
+      "versionInfo": [
+        {
+          "identifier": "versionInfo",
+          "language": "undefined",
+          "value": "2.0.0",
+          "type": "label"
         }
       ],
       "title": [
@@ -106,19 +106,19 @@
           "type": "label"
         }
       ],
-      "preferredNamespaceUri": [
-        {
-          "identifier": "preferredNamespaceUri",
-          "language": "undefined",
-          "value": "https://w3id.org/aias/odp/iso22989#",
-          "type": "label"
-        }
-      ],
       "bibliographicCitation": [
         {
           "identifier": "bibliographicCitation",
           "language": "undefined",
           "value": "TODO: citation of the accompanying publication",
+          "type": "label"
+        }
+      ],
+      "preferredNamespaceUri": [
+        {
+          "identifier": "preferredNamespaceUri",
+          "language": "undefined",
+          "value": "https://w3id.org/aias/odp/iso22989#",
           "type": "label"
         }
       ],
@@ -179,11 +179,11 @@
       "type": "owl:unionOf"
     },
     {
-      "id": "30",
+      "id": "14",
       "type": "owl:Class"
     },
     {
-      "id": "14",
+      "id": "38",
       "type": "owl:Class"
     },
     {
@@ -251,11 +251,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "45",
+      "id": "84",
       "type": "owl:Class"
     },
     {
-      "id": "84",
+      "id": "45",
       "type": "owl:Class"
     },
     {
@@ -275,7 +275,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "31",
+      "id": "30",
       "type": "owl:Class"
     },
     {
@@ -311,11 +311,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "34",
+      "id": "33",
       "type": "owl:Class"
     },
     {
-      "id": "35",
+      "id": "34",
       "type": "owl:Class"
     },
     {
@@ -323,7 +323,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "33",
+      "id": "32",
       "type": "owl:Class"
     },
     {
@@ -335,11 +335,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "128",
+      "id": "126",
       "type": "owl:Class"
     },
     {
-      "id": "38",
+      "id": "37",
       "type": "owl:Class"
     },
     {
@@ -347,11 +347,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "32",
+      "id": "31",
       "type": "owl:Class"
     },
     {
-      "id": "36",
+      "id": "35",
       "type": "owl:Class"
     },
     {
@@ -363,7 +363,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "59",
+      "id": "61",
       "type": "owl:Class"
     },
     {
@@ -403,15 +403,15 @@
       "type": "owl:Class"
     },
     {
-      "id": "127",
+      "id": "128",
       "type": "owl:Class"
     },
     {
-      "id": "61",
+      "id": "59",
       "type": "owl:Class"
     },
     {
-      "id": "37",
+      "id": "36",
       "type": "owl:Class"
     },
     {
@@ -456,7 +456,8 @@
       "comment": {
         "en": "A collection of samples an AI system acquires, processes or computes outputs for."
       },
-      "id": "2"
+      "id": "2",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#DataProcessing",
@@ -482,7 +483,8 @@
       "id": "13",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#ReinforcementLearning",
@@ -516,7 +518,8 @@
       "id": "15",
       "superClasses": [
         "16"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Clustering",
@@ -542,7 +545,8 @@
       "id": "19",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#SymbolicAI",
@@ -568,7 +572,8 @@
       "id": "20",
       "superClasses": [
         "21"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#decimal",
@@ -576,7 +581,10 @@
       "id": "22",
       "label": {
         "IRI-based": "decimal"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -584,7 +592,10 @@
       "id": "23",
       "label": {
         "IRI-based": "boolean"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#AIComponent",
@@ -607,7 +618,8 @@
       "comment": {
         "en": "A functional element that constructs an AI system."
       },
-      "id": "25"
+      "id": "25",
+      "attributes": []
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -615,7 +627,10 @@
       "id": "26",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Prediction",
@@ -638,7 +653,8 @@
       "comment": {
         "en": "The primary output of an AI system when provided with input data or information."
       },
-      "id": "27"
+      "id": "27",
+      "attributes": []
     },
     {
       "instances": 0,
@@ -651,6 +667,41 @@
         "anonymous"
       ],
       "id": "28"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#AIFunction",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "**Collecting class of this pattern.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.\n\nNote that clause 8.3 of the standard uses the term AI function in a narrower sense, for computing a prediction alone. This class is broader on purpose, since a model has to record the whole life cycle rather than the operating step only.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "AIFunction",
+        "en": "AI Function"
+      },
+      "subClasses": [
+        "30",
+        "13",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "comment": {
+        "en": "An activity in the life cycle of an AI system, transforming inputs into outputs."
+      },
+      "id": "14",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Sample",
@@ -673,41 +724,8 @@
       "comment": {
         "en": "An atomic data element processed in quantities by a machine learning algorithm or an AI system."
       },
-      "id": "30"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso22989#AIFunction",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "**Collecting class of this pattern.** The standard describes the activities in clause 5.10 and clause 6.2 without naming a superclass for them.\n\nNote that clause 8.3 of the standard uses the term AI function in a narrower sense, for computing a prediction alone. This class is broader on purpose, since a model has to record the whole life cycle rather than the operating step only.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "AIFunction",
-        "en": "AI Function"
-      },
-      "subClasses": [
-        "31",
-        "13",
-        "32",
-        "33",
-        "34",
-        "35",
-        "36",
-        "37",
-        "38"
-      ],
-      "comment": {
-        "en": "An activity in the life cycle of an AI system, transforming inputs into outputs."
-      },
-      "id": "14"
+      "id": "38",
+      "attributes": []
     },
     {
       "instances": 0,
@@ -725,7 +743,7 @@
       "instances": 0,
       "union": [
         "41",
-        "33"
+        "32"
       ],
       "attributes": [
         "union",
@@ -737,7 +755,7 @@
       "instances": 0,
       "union": [
         "2",
-        "30"
+        "38"
       ],
       "attributes": [
         "union",
@@ -769,7 +787,8 @@
       "id": "43",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Retraining",
@@ -794,8 +813,9 @@
       },
       "id": "46",
       "superClasses": [
-        "38"
-      ]
+        "37"
+      ],
+      "attributes": []
     },
     {
       "instances": 0,
@@ -895,7 +915,8 @@
       "comment": {
         "en": "Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two."
       },
-      "id": "51"
+      "id": "51",
+      "attributes": []
     },
     {
       "instances": 0,
@@ -914,7 +935,7 @@
       "instances": 0,
       "union": [
         "2",
-        "30"
+        "38"
       ],
       "attributes": [
         "union",
@@ -955,7 +976,8 @@
       "comment": {
         "en": "A collection of data with a shared format."
       },
-      "id": "29"
+      "id": "29",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#VariableCharacteristic",
@@ -978,7 +1000,8 @@
       "comment": {
         "en": "A named property of an AI system to which a model assigns a value, such as robustness or reliability."
       },
-      "id": "72"
+      "id": "72",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Task",
@@ -1007,7 +1030,8 @@
       "comment": {
         "en": "An action required to achieve a specific goal."
       },
-      "id": "5"
+      "id": "5",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#TrainingData",
@@ -1033,7 +1057,8 @@
       "id": "10",
       "superClasses": [
         "2"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Augmentation",
@@ -1059,7 +1084,8 @@
       "id": "85",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#ModelParameter",
@@ -1090,33 +1116,8 @@
       "comment": {
         "en": "An internal variable of a model that affects how it computes its outputs."
       },
-      "id": "87"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso22989#Model",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "Model",
-        "en": "Model"
-      },
-      "subClasses": [
-        "93"
-      ],
-      "comment": {
-        "en": "A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data."
-      },
-      "id": "45"
+      "id": "87",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#SubsymbolicAI",
@@ -1142,7 +1143,35 @@
       "id": "84",
       "superClasses": [
         "21"
-      ]
+      ],
+      "attributes": []
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#Model",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Model",
+        "en": "Model"
+      },
+      "subClasses": [
+        "93"
+      ],
+      "comment": {
+        "en": "A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data."
+      },
+      "id": "45",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#EvaluationData",
@@ -1176,7 +1205,8 @@
       "id": "1",
       "superClasses": [
         "2"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Normalization",
@@ -1202,7 +1232,8 @@
       "id": "97",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning",
@@ -1228,7 +1259,8 @@
       "id": "74",
       "superClasses": [
         "16"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#AIType",
@@ -1255,7 +1287,8 @@
       "comment": {
         "en": "The kind of technique an AI system is based on, that is symbolic or subsymbolic."
       },
-      "id": "21"
+      "id": "21",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Verification",
@@ -1278,10 +1311,11 @@
       "comment": {
         "en": "Confirmation, through the provision of objective evidence, that specified requirements have been fulfilled."
       },
-      "id": "31",
+      "id": "30",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Sampling",
@@ -1307,7 +1341,8 @@
       "id": "98",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#InputData",
@@ -1333,7 +1368,8 @@
       "id": "11",
       "superClasses": [
         "2"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#LearningType",
@@ -1362,7 +1398,8 @@
       "comment": {
         "en": "The kind of machine learning an algorithm performs."
       },
-      "id": "16"
+      "id": "16",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm",
@@ -1388,7 +1425,8 @@
       "id": "41",
       "superClasses": [
         "7"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Imputation",
@@ -1414,7 +1452,8 @@
       "id": "110",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#UnsupervisedLearning",
@@ -1440,7 +1479,8 @@
       "id": "69",
       "superClasses": [
         "16"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Generation",
@@ -1466,7 +1506,8 @@
       "id": "76",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Annotation",
@@ -1492,7 +1533,8 @@
       "id": "114",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Acquisition",
@@ -1515,10 +1557,11 @@
       "comment": {
         "en": "The function obtaining data from a data source."
       },
-      "id": "34",
+      "id": "33",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Control",
@@ -1541,10 +1584,11 @@
       "comment": {
         "en": "Purposeful action on or in a process to meet specified objectives."
       },
-      "id": "35",
+      "id": "34",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#ValidationData",
@@ -1578,7 +1622,8 @@
       "id": "12",
       "superClasses": [
         "2"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Evaluation",
@@ -1601,10 +1646,11 @@
       "comment": {
         "en": "The function assessing the performance of a final model before it is deployed."
       },
-      "id": "33",
+      "id": "32",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Controllability",
@@ -1627,7 +1673,8 @@
       "comment": {
         "en": "The property of an AI system that allows a human or another external agent to intervene in the system's functioning."
       },
-      "id": "125"
+      "id": "125",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#AISystem",
@@ -1650,7 +1697,8 @@
       "comment": {
         "en": "An engineered system that generates outputs such as content, forecasts, recommendations or decisions for a given set of human-defined objectives."
       },
-      "id": "4"
+      "id": "4",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#ModelAlgorithm",
@@ -1673,10 +1721,11 @@
       "comment": {
         "en": "The procedure describing the structure of a model, such as the architecture of a neural network or a set of rules."
       },
-      "id": "128",
+      "id": "126",
       "superClasses": [
         "7"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Training",
@@ -1711,10 +1760,11 @@
       "comment": {
         "en": "The process to determine or to improve the parameters of a machine learning model, based on a machine learning algorithm, by using training data."
       },
-      "id": "38",
+      "id": "37",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Hyperparameter",
@@ -1737,7 +1787,8 @@
       "comment": {
         "en": "A characteristic of an algorithm that affects its behaviour, chosen in advance rather than determined by training."
       },
-      "id": "8"
+      "id": "8",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Inference",
@@ -1760,10 +1811,11 @@
       "comment": {
         "en": "Reasoning by which conclusions are derived from known premises."
       },
-      "id": "32",
+      "id": "31",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Validation",
@@ -1786,10 +1838,11 @@
       "comment": {
         "en": "Confirmation, through the provision of objective evidence, that the requirements for a specific intended use or application have been fulfilled."
       },
-      "id": "36",
+      "id": "35",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#MachineLearning",
@@ -1822,8 +1875,9 @@
       },
       "id": "71",
       "superClasses": [
-        "38"
-      ]
+        "37"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Label",
@@ -1846,7 +1900,8 @@
       "comment": {
         "en": "A target variable assigned to a sample."
       },
-      "id": "130"
+      "id": "130",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#EvaluationMetric",
@@ -1869,7 +1924,8 @@
       "comment": {
         "en": "What an evaluation measures a model against, for example an F1 score or an error rate."
       },
-      "id": "59"
+      "id": "61",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#TrainingAlgorithm",
@@ -1890,7 +1946,7 @@
         "en": "Training Algorithm"
       },
       "subClasses": [
-        "127"
+        "128"
       ],
       "comment": {
         "en": "The procedure determining the parameters of a model from data according to given criteria."
@@ -1898,7 +1954,8 @@
       "id": "136",
       "superClasses": [
         "7"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#MLModel",
@@ -1924,7 +1981,8 @@
       "id": "93",
       "superClasses": [
         "45"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Algorithm",
@@ -1947,12 +2005,13 @@
       "subClasses": [
         "41",
         "136",
-        "128"
+        "126"
       ],
       "comment": {
         "en": "A parameterisable mathematical procedure, described apart from any execution of it."
       },
-      "id": "7"
+      "id": "7",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#SupervisedLearning",
@@ -1978,7 +2037,8 @@
       "id": "89",
       "superClasses": [
         "16"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#ProductionData",
@@ -2004,7 +2064,8 @@
       "id": "9",
       "superClasses": [
         "2"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#DataSink",
@@ -2027,7 +2088,8 @@
       "comment": {
         "en": "Where data is stored, for example a database or a cloud service."
       },
-      "id": "154"
+      "id": "154",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#DataProcess",
@@ -2059,7 +2121,8 @@
       "comment": {
         "en": "A step preparing data, transforming input data into output data."
       },
-      "id": "49"
+      "id": "49",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Filtering",
@@ -2085,7 +2148,8 @@
       "id": "118",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#DataSource",
@@ -2108,7 +2172,8 @@
       "comment": {
         "en": "Where data is acquired from, for example a sensor or a database."
       },
-      "id": "100"
+      "id": "100",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#MLAlgorithm",
@@ -2131,10 +2196,11 @@
       "comment": {
         "en": "An algorithm to determine parameters of a machine learning model from data according to given criteria."
       },
-      "id": "127",
+      "id": "128",
       "superClasses": [
         "136"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#CharacteristicValue",
@@ -2157,7 +2223,8 @@
       "comment": {
         "en": "The value a model assigns to one characteristic, together with its unit."
       },
-      "id": "61"
+      "id": "59",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Storing",
@@ -2180,10 +2247,11 @@
       "comment": {
         "en": "The function persisting data to a data sink, so that it stays available."
       },
-      "id": "37",
+      "id": "36",
       "superClasses": [
         "14"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Labelling",
@@ -2209,7 +2277,8 @@
       "id": "120",
       "superClasses": [
         "49"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Classification",
@@ -2235,7 +2304,8 @@
       "id": "75",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Risk",
@@ -2258,7 +2328,8 @@
       "comment": {
         "en": "The effect of uncertainty on objectives."
       },
-      "id": "162"
+      "id": "162",
+      "attributes": []
     }
   ],
   "property": [
@@ -2499,7 +2570,7 @@
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "126",
+      "id": "127",
       "type": "owl:objectProperty"
     },
     {
@@ -2717,7 +2788,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isEvaluatedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "33",
+      "range": "32",
       "annotations": {
         "note": [
           {
@@ -2759,7 +2830,7 @@
         "IRI-based": "creates",
         "en": "creates"
       },
-      "domain": "32",
+      "domain": "31",
       "comment": {
         "en": "Relates an inference to the prediction it produces."
       },
@@ -2832,36 +2903,9 @@
       "id": "57"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#usesMetric",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "59",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "**Construct of this work.** The standard describes evaluation without naming the measure it uses.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "usesMetric",
-        "en": "uses metric"
-      },
-      "domain": "40",
-      "comment": {
-        "en": "Relates an evaluation or an evaluation algorithm to the metric it measures against."
-      },
-      "attributes": [
-        "object"
-      ],
-      "id": "58"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso22989#hasSetting",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "61",
+      "range": "59",
       "annotations": {
         "note": [
           {
@@ -2881,7 +2925,34 @@
         "en": "Relates a hyperparameter to the value chosen for it."
       },
       "attributes": [
-        "functional",
+        "object",
+        "functional"
+      ],
+      "id": "58"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#usesMetric",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "61",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "**Construct of this work.** The standard describes evaluation without naming the measure it uses.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "usesMetric",
+        "en": "uses metric"
+      },
+      "domain": "40",
+      "comment": {
+        "en": "Relates an evaluation or an evaluation algorithm to the metric it measures against."
+      },
+      "attributes": [
         "object"
       ],
       "id": "60"
@@ -2954,8 +3025,8 @@
         "en": "Relates an AI system to where it runs."
       },
       "attributes": [
-        "functional",
-        "object"
+        "object",
+        "functional"
       ],
       "id": "65"
     },
@@ -2970,7 +3041,7 @@
     },
     {
       "range": "2",
-      "domain": "61",
+      "domain": "59",
       "attributes": [
         "object",
         "anonymous"
@@ -2987,7 +3058,7 @@
       "id": "68"
     },
     {
-      "range": "38",
+      "range": "37",
       "domain": "71",
       "attributes": [
         "object",
@@ -3022,7 +3093,7 @@
         "IRI-based": "isExecutedBy",
         "en": "is executed by"
       },
-      "domain": "32",
+      "domain": "31",
       "comment": {
         "en": "Relates an inference to the model performing it."
       },
@@ -3049,13 +3120,13 @@
         "IRI-based": "forCharacteristic",
         "en": "for characteristic"
       },
-      "domain": "61",
+      "domain": "59",
       "comment": {
         "en": "Relates a characteristic value to the characteristic it quantifies."
       },
       "attributes": [
-        "functional",
-        "object"
+        "object",
+        "functional"
       ],
       "id": "78"
     },
@@ -3089,7 +3160,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isStoredBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "37",
+      "range": "36",
       "label": {
         "IRI-based": "isStoredBy",
         "en": "is stored by"
@@ -3213,7 +3284,7 @@
     },
     {
       "range": "14",
-      "domain": "38",
+      "domain": "37",
       "attributes": [
         "object",
         "anonymous"
@@ -3238,7 +3309,7 @@
         "IRI-based": "hasDataSource",
         "en": "has data source"
       },
-      "domain": "34",
+      "domain": "33",
       "comment": {
         "en": "Relates an acquisition to where the data comes from."
       },
@@ -3249,7 +3320,7 @@
     },
     {
       "range": "14",
-      "domain": "37",
+      "domain": "36",
       "attributes": [
         "object",
         "anonymous"
@@ -3258,7 +3329,7 @@
     },
     {
       "range": "14",
-      "domain": "34",
+      "domain": "33",
       "attributes": [
         "object",
         "anonymous"
@@ -3267,7 +3338,7 @@
     },
     {
       "range": "14",
-      "domain": "33",
+      "domain": "32",
       "attributes": [
         "object",
         "anonymous"
@@ -3276,7 +3347,7 @@
     },
     {
       "range": "14",
-      "domain": "36",
+      "domain": "35",
       "attributes": [
         "object",
         "anonymous"
@@ -3285,7 +3356,7 @@
     },
     {
       "range": "14",
-      "domain": "35",
+      "domain": "34",
       "attributes": [
         "object",
         "anonymous"
@@ -3294,7 +3365,7 @@
     },
     {
       "range": "14",
-      "domain": "31",
+      "domain": "30",
       "attributes": [
         "object",
         "anonymous"
@@ -3312,7 +3383,7 @@
     },
     {
       "range": "14",
-      "domain": "32",
+      "domain": "31",
       "attributes": [
         "object",
         "anonymous"
@@ -3346,7 +3417,7 @@
         "IRI-based": "determines",
         "en": "determines"
       },
-      "domain": "38",
+      "domain": "37",
       "comment": {
         "en": "Relates a training to the model parameters it determines."
       },
@@ -3354,6 +3425,34 @@
         "object"
       ],
       "id": "111"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#fulfilsTask",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "5",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "What closes the circle from the output back to the objective the system was built for, 3.1.4.\n\nFunctional: one prediction addresses one task. A prediction serving two purposes is two predictions.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "fulfilsTask",
+        "en": "fulfils task"
+      },
+      "domain": "27",
+      "comment": {
+        "en": "Relates a prediction to the task it addresses."
+      },
+      "attributes": [
+        "object",
+        "functional"
+      ],
+      "id": "112"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#consistsOfStep",
@@ -3380,34 +3479,6 @@
       "attributes": [
         "object"
       ],
-      "id": "112"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso22989#fulfilsTask",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "5",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "What closes the circle from the output back to the objective the system was built for, 3.1.4.\n\nFunctional: one prediction addresses one task. A prediction serving two purposes is two predictions.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "fulfilsTask",
-        "en": "fulfils task"
-      },
-      "domain": "27",
-      "comment": {
-        "en": "Relates a prediction to the task it addresses."
-      },
-      "attributes": [
-        "functional",
-        "object"
-      ],
       "id": "113"
     },
     {
@@ -3428,7 +3499,7 @@
         "IRI-based": "unit",
         "en": "unit"
       },
-      "domain": "61",
+      "domain": "59",
       "comment": {
         "en": "The unit of a characteristic value, where the characteristic has one."
       },
@@ -3446,7 +3517,7 @@
         "IRI-based": "quantity",
         "en": "quantity"
       },
-      "domain": "61",
+      "domain": "59",
       "comment": {
         "en": "The numeric quantity of a characteristic value."
       },
@@ -3546,15 +3617,15 @@
         "IRI-based": "basedOnLearning",
         "en": "based on learning"
       },
-      "domain": "127",
+      "domain": "128",
       "comment": {
         "en": "Relates a machine learning algorithm to the kind of learning it performs."
       },
       "attributes": [
-        "functional",
-        "object"
+        "object",
+        "functional"
       ],
-      "id": "126"
+      "id": "127"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasLabel",
@@ -3621,7 +3692,7 @@
     },
     {
       "range": "7",
-      "domain": "128",
+      "domain": "126",
       "attributes": [
         "object",
         "anonymous"
@@ -3639,7 +3710,7 @@
     },
     {
       "range": "136",
-      "domain": "127",
+      "domain": "128",
       "attributes": [
         "object",
         "anonymous"
@@ -3647,7 +3718,7 @@
       "id": "135"
     },
     {
-      "range": "38",
+      "range": "37",
       "domain": "46",
       "attributes": [
         "object",
@@ -3674,7 +3745,7 @@
       "id": "139"
     },
     {
-      "range": "4",
+      "range": "2",
       "domain": "14",
       "attributes": [
         "object",
@@ -3683,7 +3754,7 @@
       "id": "140"
     },
     {
-      "range": "7",
+      "range": "4",
       "domain": "14",
       "attributes": [
         "object",
@@ -3692,7 +3763,7 @@
       "id": "141"
     },
     {
-      "range": "45",
+      "range": "2",
       "domain": "4",
       "attributes": [
         "object",
@@ -3701,7 +3772,7 @@
       "id": "142"
     },
     {
-      "range": "72",
+      "range": "45",
       "domain": "4",
       "attributes": [
         "object",
@@ -3719,7 +3790,7 @@
       "id": "144"
     },
     {
-      "range": "2",
+      "range": "59",
       "domain": "4",
       "attributes": [
         "object",
@@ -3728,7 +3799,7 @@
       "id": "145"
     },
     {
-      "range": "61",
+      "range": "72",
       "domain": "4",
       "attributes": [
         "object",
@@ -3775,7 +3846,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isValidatedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "36",
+      "range": "35",
       "annotations": {
         "note": [
           {
@@ -3800,7 +3871,7 @@
       "id": "149"
     },
     {
-      "range": "2",
+      "range": "7",
       "domain": "14",
       "attributes": [
         "object",
@@ -3811,7 +3882,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isCreatedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "38",
+      "range": "37",
       "annotations": {
         "note": [
           {
@@ -3970,7 +4041,7 @@
         "IRI-based": "hasDataSink",
         "en": "has data sink"
       },
-      "domain": "37",
+      "domain": "36",
       "comment": {
         "en": "Relates a storing to where the data goes."
       },
@@ -3982,7 +4053,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#hasCharacteristicValue",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "61",
+      "range": "59",
       "label": {
         "IRI-based": "hasCharacteristicValue",
         "en": "has characteristic value"
@@ -3999,7 +4070,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isAcquiredBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "34",
+      "range": "33",
       "annotations": {
         "note": [
           {

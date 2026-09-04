@@ -242,7 +242,7 @@ def _md(text: str) -> str:
     return "\n".join(html)
 
 
-def fix_webvowl(directory: Path, out: Path) -> list:
+def fix_webvowl(directory: Path, ontology: Path, out: Path) -> list:
     """Rewrite webvowl/data/ontology.json as UTF-8, authors in paper order.
 
     Widoco writes the file in the platform encoding, so one en dash from the
@@ -280,7 +280,44 @@ def fix_webvowl(directory: Path, out: Path) -> list:
                        for line in m.group(1).splitlines() if line.strip()]
 
     changed = False
-    other = doc.get("header", {}).get("other", {})
+    header = doc.setdefault("header", {})
+
+    # The IRI Widoco puts here is the one of whichever ontology it read last
+    # while resolving the imports, which for an alignment is one of its own
+    # imports. Taken from the source instead.
+    from rdflib import Graph
+    from rdflib.namespace import OWL, RDF
+
+    src = Graph()
+    src.parse(data=ontology.read_text(encoding="utf-8").replace("\r\n", "\n"),
+              format="turtle")
+    subject = next(src.subjects(RDF.type, OWL.Ontology), None)
+    if subject is not None and header.get("iri") != str(subject):
+        header["iri"] = str(subject)
+        changed = True
+
+    # An element flagged "external" is greyed out or dropped from the graph
+    # as foreign vocabulary. Widoco decides that against the ontology IRI it
+    # believes it is documenting, which for an alignment is one of its
+    # imports, so its own classes disappear from the picture. Recomputed from
+    # the namespace of the ontology itself.
+    if subject is not None:
+        base = str(subject).rstrip("/") + "#"
+        for group in ("classAttribute", "propertyAttribute"):
+            for element in doc.get(group, []):
+                iri = element.get("iri") or ""
+                if not iri:
+                    continue
+                attrs = element.setdefault("attributes", [])
+                own = iri.startswith(base)
+                if own and "external" in attrs:
+                    attrs.remove("external")
+                    changed = True
+                elif not own and "external" not in attrs:
+                    attrs.append("external")
+                    changed = True
+
+    other = header.setdefault("other", {})
     for key in ("author", "creator"):
         entries = other.get(key)
         if not (authors and isinstance(entries, list) and len(entries) > 1):
@@ -632,7 +669,7 @@ def generate(directory: Path, ontology: Path, outdir: str = "docs") -> bool:
     if outdir == "docs":
         sections += fix_serializations(directory, ontology, out)
         sections += write_references(directory, out)
-        sections += fix_webvowl(directory, out)
+        sections += fix_webvowl(directory, ontology, out)
         sections += fix_header(directory, out)
 
     n_vowl = len(list((out / "webvowl" / "data").glob("*.json"))) \

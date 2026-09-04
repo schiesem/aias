@@ -358,7 +358,8 @@
       "id": "0",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#DataUnit",
@@ -398,7 +399,8 @@
         "de": "Abgegrenzte, zusammenhängende Datenmenge, die von einer Schicht des OSI-Modells als Einheit verarbeitet oder übertragen wird.",
         "en": "A delimited, coherent quantity of data processed or transmitted by a layer of the OSI model as one unit."
       },
-      "id": "5"
+      "id": "5",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Network",
@@ -426,7 +428,8 @@
       "id": "9",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Bit",
@@ -454,7 +457,8 @@
       "id": "7",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#IP",
@@ -472,7 +476,8 @@
       "id": "23",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Session",
@@ -500,7 +505,8 @@
       "id": "19",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#DHCP",
@@ -518,7 +524,8 @@
       "id": "26",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Layer",
@@ -552,7 +559,8 @@
         "de": "Abgegrenzte Funktionsgruppe, die auf einem bestimmten Abstraktionsniveau definierte Kommunikationsaufgaben erfüllt.",
         "en": "A delimited group of functions carrying out defined communication tasks at a given level of abstraction."
       },
-      "id": "10"
+      "id": "10",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Presentation",
@@ -580,7 +588,8 @@
       "id": "28",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#FTP",
@@ -598,7 +607,8 @@
       "id": "46",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Frame",
@@ -626,7 +636,8 @@
       "id": "8",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Ethernet",
@@ -644,7 +655,8 @@
       "id": "45",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Ethernet1000BASET",
@@ -672,7 +684,8 @@
       "id": "50",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Transport",
@@ -700,7 +713,8 @@
       "id": "20",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#DataLink",
@@ -728,7 +742,8 @@
       "id": "37",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Application",
@@ -756,7 +771,8 @@
       "id": "36",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Technology",
@@ -792,7 +808,8 @@
         "de": "Konkretes Protokoll oder Übertragungsverfahren, das die Aufgaben einer Schicht realisiert.",
         "en": "A concrete protocol or transmission technique realising the tasks of a layer."
       },
-      "id": "1"
+      "id": "1",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#HTTP",
@@ -810,7 +827,8 @@
       "id": "40",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#TCP",
@@ -828,7 +846,8 @@
       "id": "55",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Communication",
@@ -853,7 +872,8 @@
         "de": "Verbindung zwischen mindestens zwei Systemkomponenten, die den gerichteten Austausch von Daten beschreibt.",
         "en": "A connection between at least two system components describing the directed exchange of data."
       },
-      "id": "69"
+      "id": "69",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#HTTPS",
@@ -871,7 +891,8 @@
       "id": "48",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Data",
@@ -899,7 +920,8 @@
       "id": "6",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Segment",
@@ -927,7 +949,8 @@
       "id": "4",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Packet",
@@ -955,7 +978,8 @@
       "id": "3",
       "superClasses": [
         "5"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Physical",
@@ -983,7 +1007,8 @@
       "id": "30",
       "superClasses": [
         "10"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Name",
@@ -1008,7 +1033,8 @@
         "de": "Bezeichnung, unter der eine Kommunikation bekannt ist.",
         "en": "The designation under which a communication is known."
       },
-      "id": "62"
+      "id": "62",
+      "attributes": []
     },
     {
       "instances": 0,

@@ -347,7 +347,8 @@
         "de": "Strukturelle Verbindung zwischen Prozessoperator und technischer Ressource, über die einer Ressource die Ausführung eines Prozessoperators zugewiesen wird.",
         "en": "The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource."
       },
-      "id": "7"
+      "id": "7",
+      "attributes": []
     },
     {
       "instances": 0,
@@ -398,7 +399,8 @@
         "de": "Physische Komponenten, aus denen automatisierte Anlagen aufgebaut sind und die die Umwandlungen der Produkte durch Prozessoperatoren realisieren.",
         "en": "Physical components of which automated plants are built and which realise the transformations carried out by process operators."
       },
-      "id": "6"
+      "id": "6",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Process",
@@ -423,7 +425,8 @@
         "de": "Netz zur Beschreibung technischer Prozesse, dessen Knoten die Zustände von Produkten und dessen gerichtete Kanten die Umwandlungsschritte durch Prozessoperatoren darstellen.",
         "en": "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."
       },
-      "id": "12"
+      "id": "12",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Product",
@@ -448,7 +451,8 @@
         "de": "Dinge der realen Welt, die im Rahmen eines technischen Prozesses umgewandelt werden.",
         "en": "Things of the real world that are transformed within a technical process."
       },
-      "id": "19"
+      "id": "19",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#State",
@@ -473,7 +477,8 @@
         "de": "Zustand eines Produkts, einer Energie oder einer Information an einer bestimmten Stelle eines Prozesses, entweder vor einer Umwandlung oder danach.",
         "en": "The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it."
       },
-      "id": "13"
+      "id": "13",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
@@ -501,7 +506,8 @@
       "id": "4",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Flow",
@@ -530,7 +536,8 @@
         "de": "Gerichtete Verbindung von Produkten zwischen Prozessoperatoren.",
         "en": "A directed connection of products between process operators."
       },
-      "id": "1"
+      "id": "1",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Energy",
@@ -555,7 +562,8 @@
         "de": "Energie, die von einem Prozessoperator benötigt oder freigesetzt wird, beispielsweise elektrische Energie oder Wärme.",
         "en": "Energy required or released by a process operator, for example electrical energy or heat."
       },
-      "id": "17"
+      "id": "17",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
@@ -580,7 +588,8 @@
         "de": "Vorgang, durch den der Eingangszustand von Produkten, Energien oder Informationen in einen Ausgangszustand umgewandelt wird.",
         "en": "An operation transforming the input state of products, energies or information into an output state."
       },
-      "id": "2"
+      "id": "2",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
@@ -608,7 +617,8 @@
       "id": "9",
       "superClasses": [
         "1"
-      ]
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#SystemBorder",
@@ -633,7 +643,8 @@
         "de": "Grenze, die den Betrachtungshorizont eines Prozesses festlegt. Unter bestimmten Bedingungen kann sie auch als Bilanzgrenze für ein- und ausgehende Produkte und Energien aufgefasst werden.",
         "en": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
       },
-      "id": "11"
+      "id": "11",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Information",
@@ -658,7 +669,8 @@
         "de": "Information, die ein Prozessoperator zur Durchführung seiner Umwandlung benötigt oder die durch ihn entsteht.",
         "en": "Information required by a process operator to carry out its transformation, or information created by it."
       },
-      "id": "18"
+      "id": "18",
+      "attributes": []
     }
   ],
   "property": [

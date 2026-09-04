@@ -1,266 +1,5 @@
 [
   {
-    "@id": "http://purl.org/dc/terms/contributor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/bibliographicCitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#employsProtocol",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an entity to a protocol it employs."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "employs protocol"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.8.2.2: an entity may employ one or more protocols, and meaningful communication requires the agreed selection of one, 5.8.2.3."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#usesTechnology",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a communication to a technology realising it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "uses technology"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Addition of this pattern, for the reason given at Technology. A communication may use several technologies, one per layer."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#quantity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The numeric quantity of a quality of service value."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "quantity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#QoSValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The value a quality of service statement assigns to one parameter, together with its unit."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Quality of Service Value"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Reified so that a value can be annotated and referred to, in the same way and for the same reason as the flow of the VDI 3682 pattern. The parameter it belongs to is a named individual, the value and unit are literals of this model."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasSourceSystem",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a communication to an open system data flows from."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has source system"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#connects"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 6.5.1.1 calls an open system that is the ultimate source or destination of data an end system. Source here means the origin of the data, that is the sending system, which is the reading the standard uses throughout.\n\nDirection follows from how the two properties are filled rather than from a separate statement. A system named as source alone sends, one named as target alone receives, and one named on both sides both sends and receives, which is what makes a communication bidirectional. A bus segment names its master as source and its slaves as targets."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a protocol data unit of one layer to the service data unit of the layer below that carries it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "maps to service data unit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, Figure 9 and its note 3: a protocol data unit of a layer may be mapped one to one into a service data unit of the layer below, though other relationships are possible.\n\nThis is the encapsulation that recurs down the layers, and it is what makes the practice terms frame, packet, and segment unnecessary as classes: each is the protocol data unit of a particular layer, and the relation states how one becomes the payload of the next."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/license",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/description",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The point at which the services of a layer are provided by an entity of that layer to an entity of the next higher layer."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Service Access Point"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.8. A service access point is attached to only one entity of its layer and to only one entity of the layer above at a time, 5.5.5, and both are in the same system, 5.5.2."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -308,231 +47,68 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#layerNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The number of a layer in the reference model, from one for the physical layer to seven for the application layer."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "layer number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 6.1.2. Carrying the number as a value is what lets a query order the layers and ask which lies above which, without asserting an ordering relation between all pairs."
-      }
-    ]
-  },
-  {
     "@id": "http://purl.org/ontology/bibo/status",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#peerEntity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an entity to an entity of the same layer with which it communicates."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "peer entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.3 defines peer entities as entities within the same layer. Symmetric, since the relation holds equally in both directions. Not every pair of peer entities can communicate, 5.2.2.2, so the relation records those that do."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#DataUnit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A unit of information transferred between entities."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Data Unit"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Service"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Collecting class of this pattern.** ISO/IEC 7498-1, 5.6.1 defines the three kinds below individually without naming a common superclass, and clause 5.6 groups them under the heading data-units.\n\nTerms such as frame, packet, or segment do not occur in the standard: they are the names practice gives to the protocol data unit of a particular layer. The standard mentions framing only in a note to 7.6.4.5, which observes that the delimiting functions are sometimes referred to that way. Those names are supplied as individuals in ISO7498-instances.ttl, each related to its layer."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The characteristics of a communication, expressed through a set of parameters, that the participating entities can select and observe."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Quality of Service"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Service"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.10 and 7.4.4. The standard treats quality of service as a set of parameters selected by the entities and observed during the communication.\n\nThis is where a model records what a communication delivers rather than how it is built, which makes the class the anchor for non-functional properties of the communication subdomain."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#Technology",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A concrete protocol or transmission technique realising the services of a layer."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Addition of this pattern, not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular systems implementation, technology or means of interconnection, so the standard names none.\n\nAn engineering model has to record which protocol is used, which is why the class exists. Named individuals such as Ethernet, TCP, or MQTT are supplied in ISO7498-instances.ttl, each related to the layer it realises. Whether a given technology fits the layer a model claims for it is not checked here. Nothing stops a model from placing MQTT at the network layer, and rejecting that needs a rule base rather than an axiom, which keeps the pattern descriptive."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasUserData",
+    "@id": "https://w3id.org/aias/odp/iso7498#isSublayerOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a protocol data unit to the user data it carries."
+        "@value": "Relates a layer to the layer it subdivides."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has user data"
+        "@value": "is sublayer of"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.4 defines a sublayer as a subdivision of a layer, and 6.2.1 m) provides for creating them where distinct communication services need it."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An amount of information whose identity is preserved when transferred between peer entities and which is not interpreted by the supporting entities."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Service Data Unit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
       {
         "@id": "https://w3id.org/aias/odp/iso7498#UserData"
       }
@@ -540,261 +116,47 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.6.1.3: a protocol data unit consists of control information and possibly user data, so this relation is optional."
+        "@value": "ISO/IEC 7498-1, 5.6.1.4. A bit is the service data unit of the physical layer, 7.6.4.5 and 7.7.3.2, which is the one practice term the standard does name."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasControlInformation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a protocol data unit to the protocol control information it carries."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has control information"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolControlInformation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.6.1.3 and Figure 8. Figure 9 notes that no positional relationship between control information and user data within a protocol data unit is implied."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a quality of service statement to one of its parameter values."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has value"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#attachedTo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a service access point to an entity attached to it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "attached to"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.5.5: a service access point is attached to only one entity of its layer and to only one entity of the layer above at a time. Both are in the same system, 5.5.2."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#connects",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a communication to an open system taking part in it, without stating the direction of the data flow."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "connects"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.1.3 c). The standard places no upper bound on the number of participants: 5.3.1.4 calls a connection with more than two endpoints a multi-endpoint connection, and 5.3.1.9 defines data transmission as conveying service data units from one entity to one or more entities. No cardinality is asserted here, so one communication can carry a whole bus segment with its participants.\n\nSuper property of hasSourceSystem and hasTargetSystem, so a model that knows the direction states it through those, and a model that does not may still record who takes part."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#transmits",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a communication to a data unit conveyed over it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "transmits"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Addition of this pattern, connecting the reference model of clause 6 to the data units of 5.6."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#Layer",
+    "@id": "https://w3id.org/aias/odp/iso7498#ProtocolControlInformation",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A subdivision of the OSI architecture, constituted by subsystems of the same rank."
+        "@value": "Information exchanged between entities to co-ordinate their joint operation."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Layer"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Service"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers and numbers them from the physical layer as one to the application layer as seven.\n\nThe seven layers are named individuals rather than subclasses of this class. They are a closed enumeration of particular things, not kinds of thing, and as individuals they can carry their number as a value, which makes an ordering between them expressible. They are supplied in ISO7498-instances.ttl."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#note",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A communication established, held, and released as a connection between the participating entities."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Connection-mode Communication"
+        "@value": "Protocol Control Information"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
       }
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation"
+        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.3 and 6.4. A connection is established before data transfer and released afterwards, so the transfer can rely on state held for its duration."
+        "@value": "ISO/IEC 7498-1, 5.6.1.1."
       }
     ]
   },
@@ -838,46 +200,146 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#Protocol",
+    "@id": "https://w3id.org/aias/odp/iso7498#quantity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The numeric quantity of a quality of service value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "quantity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasUserData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a protocol data unit to the user data it carries."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has user data"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.6.1.3: a protocol data unit consists of control information and possibly user data, so this relation is optional."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a subsystem to an entity within it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.2.1: a subsystem consists of one or several entities."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#QoSValue",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A set of rules and formats, semantic and syntactic, determining the communication behaviour of entities in the performance of their functions."
+        "@value": "The value a quality of service statement assigns to one parameter, together with its unit."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Protocol"
+        "@value": "Quality of Service Value"
       }
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
-      },
-      {
         "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Service"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.9. One or more protocols may be defined for a layer, and an entity may employ one or more of them, 5.8.2.2. A protocol is the abstract set of rules; a technology is a concrete realisation named in practice."
+        "@value": "Reified so that a value can be annotated and referred to, in the same way and for the same reason as the flow of the VDI 3682 pattern. The parameter it belongs to is a named individual, the value and unit are literals of this model."
       }
     ]
   },
@@ -916,47 +378,89 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#CommunicationDirection",
+    "@id": "https://w3id.org/aias/odp/iso7498#usesTechnology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to a technology realising it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "uses technology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Addition of this pattern, for the reason given at Technology. A communication may use several technologies, one per layer."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The direction in which data communication takes place over a communication."
+        "@value": "The point at which the services of a layer are provided by an entity of that layer to an entity of the next higher layer."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Communication Direction"
+        "@value": "Service Access Point"
       }
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
       },
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      },
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      },
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.8. A service access point is attached to only one entity of its layer and to only one entity of the layer above at a time, 5.5.5, and both are in the same system, 5.5.2."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Service",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      },
+        "@language": "en",
+        "@value": "A capability of a layer and the layers beneath it, provided to the entities of the next higher layer at the boundary between the two layers."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Service"
-      },
+        "@language": "en",
+        "@value": "Service"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
       {
         "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
       },
@@ -970,42 +474,7 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16 define three kinds of data communication by direction: two-way simultaneous, two-way alternate, and one-way. The three are supplied as named individuals in ISO7498-instances.ttl.\n\nThe direction complements the source and target systems rather than repeating them. Which systems send and which receive follows from hasSourceSystem and hasTargetSystem; whether both directions are possible at once or only in turn does not, and that is what this class records. A Profibus segment carries data in both directions but one at a time, which makes it two-way alternate, while a full duplex Ethernet link is two-way simultaneous."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#forParameter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a quality of service value to the parameter it quantifies."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "for parameter"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Functional: one value quantifies exactly one parameter."
+        "@value": "ISO/IEC 7498-1, 5.2.1.5."
       }
     ]
   },
@@ -1050,69 +519,6 @@
       {
         "@language": "en",
         "@value": "ISO/IEC 7498-1, 7.4.4 names throughput, transit delay, residual error rate, and establishment delay among the parameters of the transport service. Named individuals for these are supplied in ISO7498-instances.ttl, where the list stays open, since a model may need parameters the standard does not enumerate."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A communication in which each transmission is independent of every other and carries all the information needed to deliver it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Connectionless-mode Communication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.8.4. All the information required to deliver a service data unit, that is the destination address, the quality of service required, and any options, is presented together with the data in a single access."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasEntity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a subsystem to an entity within it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.2.1: a subsystem consists of one or several entities."
       }
     ]
   },
@@ -1185,14 +591,89 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasQualityOfService",
+    "@id": "https://w3id.org/aias/odp/iso7498#hasSubsystem",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a communication to the quality of service observed on it."
+        "@value": "Relates an open system to one of its subsystems."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has subsystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.2.1: an open system is logically composed of an ordered set of subsystems, one per layer."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#peerEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an entity to an entity of the same layer with which it communicates."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "peer entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.3 defines peer entities as entities within the same layer. Symmetric, since the relation holds equally in both directions. Not every pair of peer entities can communicate, 5.2.2.2, so the relation records those that do."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#connects",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to an open system taking part in it, without stating the direction of the data flow."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1203,23 +684,226 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has quality of service"
+        "@value": "connects"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.10."
+        "@value": "ISO/IEC 7498-1, 5.1.3 c). The standard places no upper bound on the number of participants: 5.3.1.4 calls a connection with more than two endpoints a multi-endpoint connection, and 5.3.1.9 defines data transmission as conveying service data units from one entity to one or more entities. No cardinality is asserted here, so one communication can carry a whole bus segment with its participants.\n\nSuper property of hasSourceSystem and hasTargetSystem, so a model that knows the direction states it through those, and a model that does not may still record who takes part."
       }
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/source",
+    "@id": "https://w3id.org/aias/odp/iso7498#forParameter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a quality of service value to the parameter it quantifies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "for parameter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Functional: one value quantifies exactly one parameter."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Technology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A concrete protocol or transmission technique realising the services of a layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Addition of this pattern, not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular systems implementation, technology or means of interconnection, so the standard names none.\n\nAn engineering model has to record which protocol is used, which is why the class exists. Named individuals such as Ethernet, TCP, or MQTT are supplied in ISO7498-instances.ttl, each related to the layer it realises. Whether a given technology fits the layer a model claims for it is not checked here. Nothing stops a model from placing MQTT at the network layer, and rejecting that needs a rule base rather than an axiom, which keeps the pattern descriptive."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#employsProtocol",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an entity to a protocol it employs."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "employs protocol"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.8.2.2: an entity may employ one or more protocols, and meaningful communication requires the agreed selection of one, 5.8.2.3."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasSourceSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to an open system data flows from."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has source system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#connects"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 6.5.1.1 calls an open system that is the ultimate source or destination of data an end system. Source here means the origin of the data, that is the sending system, which is the reading the standard uses throughout.\n\nDirection follows from how the two properties are filled rather than from a separate statement. A system named as source alone sends, one named as target alone receives, and one named on both sides both sends and receives, which is what makes a communication bidirectional. A bus segment names its master as source and its slaves as targets."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#DataUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A unit of information transferred between entities."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Data Unit"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Service"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Collecting class of this pattern.** ISO/IEC 7498-1, 5.6.1 defines the three kinds below individually without naming a common superclass, and clause 5.6 groups them under the heading data-units.\n\nTerms such as frame, packet, or segment do not occur in the standard: they are the names practice gives to the protocol data unit of a particular layer. The standard mentions framing only in a note to 7.6.4.5, which observes that the delimiting functions are sometimes referred to that way. Those names are supplied as individuals in ISO7498-instances.ttl, each related to its layer."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/bibliographicCitation",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
@@ -1275,6 +959,795 @@
         "@language": "en",
         "@value": "ISO/IEC 7498-1, 5.2.1.11. Entities in the same layer are termed peer entities, 5.2.1.3, which this pattern expresses through the peerEntity relation rather than a separate class."
       }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/contributor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A communication established, held, and released as a connection between the participating entities."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Connection-mode Communication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.3 and 6.4. A connection is established before data transfer and released afterwards, so the transfer can rely on state held for its duration."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#note",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#realisesLayer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a technology to the layer whose services it realises."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "realises layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Addition of this pattern. Asserted once per technology in ISO7498-instances.ttl, so that a model need only name the technology. Functional: a technology realises the services of one layer, and a protocol spanning two would be modelled as two technologies."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#ConnectionlessModeAssociation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A communication in which each transmission is independent of every other and carries all the information needed to deliver it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Connectionless-mode Communication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.8.4. All the information required to deliver a service data unit, that is the destination address, the quality of service required, and any options, is presented together with the data in a single access."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasQualityOfService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to the quality of service observed on it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has quality of service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.10."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#unit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The unit of a quality of service value, for example ms or Mbit/s."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "unit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports. A model needing formal units can align this property to one."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#attachedTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a service access point to an entity attached to it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "attached to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.5.5: a service access point is attached to only one entity of its layer and to only one entity of the layer above at a time. Both are in the same system, 5.5.2."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#layerNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The number of a layer in the reference model, from one for the physical layer to seven for the application layer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "layer number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 6.1.2. Carrying the number as a value is what lets a query order the layers and ask which lies above which, without asserting an ordering relation between all pairs."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The characteristics of a communication, expressed through a set of parameters, that the participating entities can select and observe."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Quality of Service"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Service"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.10 and 7.4.4. The standard treats quality of service as a set of parameters selected by the entities and observed during the communication.\n\nThis is where a model records what a communication delivers rather than how it is built, which makes the class the anchor for non-functional properties of the communication subdomain."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#transmits",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to a data unit conveyed over it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "transmits"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Addition of this pattern, connecting the reference model of clause 6 to the data units of 5.6."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A unit of data specified in a protocol, consisting of protocol control information and possibly user data."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Protocol Data Unit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.6.1.3. Figure 9 shows that a protocol data unit of one layer becomes a service data unit of the layer below, which is the encapsulation the mapsToServiceDataUnit relation expresses."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasControlInformation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a protocol data unit to the protocol control information it carries."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has control information"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolControlInformation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.6.1.3 and Figure 8. Figure 9 notes that no positional relationship between control information and user data within a protocol data unit is implied."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a quality of service statement to one of its parameter values."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#CommunicationDirection",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The direction in which data communication takes place over a communication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Communication Direction"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Service"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16 define three kinds of data communication by direction: two-way simultaneous, two-way alternate, and one-way. The three are supplied as named individuals in ISO7498-instances.ttl.\n\nThe direction complements the source and target systems rather than repeating them. Which systems send and which receive follows from hasSourceSystem and hasTargetSystem; whether both directions are possible at once or only in turn does not, and that is what this class records. A Profibus segment carries data in both directions but one at a time, which makes it two-way alternate, while a full duplex Ethernet link is two-way simultaneous."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A subdivision of the OSI architecture, constituted by subsystems of the same rank."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Layer"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Service"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers and numbers them from the physical layer as one to the application layer as seven.\n\nThe seven layers are named individuals rather than subclasses of this class. They are a closed enumeration of particular things, not kinds of thing, and as individuals they can carry their number as a value, which makes an ordering between them expressible. They are supplied in ISO7498-instances.ttl."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/source",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a protocol data unit of one layer to the service data unit of the layer below that carries it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "maps to service data unit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, Figure 9 and its note 3: a protocol data unit of a layer may be mapped one to one into a service data unit of the layer below, though other relationships are possible.\n\nThis is the encapsulation that recurs down the layers, and it is what makes the practice terms frame, packet, and segment unnecessary as classes: each is the protocol data unit of a particular layer, and the relation states how one becomes the payload of the next."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#usesLayer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to the layer whose services it uses."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "uses layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Addition of this pattern. It records at which level of the reference model a communication is described, which is the question an engineering model asks and the standard leaves to the specific service definitions."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Protocol",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A set of rules and formats, semantic and syntactic, determining the communication behaviour of entities in the performance of their functions."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Protocol"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QoSParameter"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#QualityOfService"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Service"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.9. One or more protocols may be defined for a layer, and an entity may employ one or more of them, 5.8.2.2. A protocol is the abstract set of rules; a technology is a concrete realisation named in practice."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#atLayer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a subsystem, an entity, or a data unit to the layer it belongs to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "at layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.1 and 5.2.1.11. Subsystems of the same rank collectively form a layer, and an entity exists within a subsystem of that layer."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Entity"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Service"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Subsystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An element in the hierarchical division of an open system which interacts directly only with elements in the next higher division or the next lower division of that open system."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Subsystem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.2.1.1. There is one and only one subsystem in an open system for a given layer, 5.2.2.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#hasDirection",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a communication to the direction in which data communication takes place over it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Association"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has direction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#CommunicationDirection"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16. Functional: a communication has one direction at a time. What the direction adds over the source and target systems is whether both directions are possible at once or only in turn."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -1369,384 +1842,9 @@
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/publisher",
+    "@id": "http://purl.org/dc/terms/license",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#usesLayer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a communication to the layer whose services it uses."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "uses layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Addition of this pattern. It records at which level of the reference model a communication is described, which is the question an engineering model asks and the standard leaves to the specific service definitions."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/title",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2001/XMLSchema#date",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasSubsystem",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an open system to one of its subsystems."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has subsystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.2.1: an open system is logically composed of an ordered set of subsystems, one per layer."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#hasDirection",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a communication to the direction in which data communication takes place over it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Association"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has direction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#CommunicationDirection"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.3.1.14 to 5.3.1.16. Functional: a communication has one direction at a time. What the direction adds over the source and target systems is whether both directions are possible at once or only in turn."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/created",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#unit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The unit of a quality of service value, for example ms or Mbit/s."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#QoSValue"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "unit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports. A model needing formal units can align this property to one."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#atLayer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a subsystem, an entity, or a data unit to the layer it belongs to."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid1"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "at layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.1 and 5.2.1.11. Subsystems of the same rank collectively form a layer, and an entity exists within a subsystem of that layer."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso7498#Entity"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso7498#Protocol"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso7498#Service"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#ProtocolControlInformation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Information exchanged between entities to co-ordinate their joint operation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Protocol Control Information"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.6.1.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A unit of data specified in a protocol, consisting of protocol control information and possibly user data."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Protocol Data Unit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.6.1.3. Figure 9 shows that a protocol data unit of one layer becomes a service data unit of the layer below, which is the encapsulation the mapsToServiceDataUnit relation expresses."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#ServiceDataUnit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An amount of information whose identity is preserved when transferred between peer entities and which is not interpreted by the supporting entities."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Service Data Unit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#DataUnit"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.6.1.4. A bit is the service data unit of the physical layer, 7.6.4.5 and 7.7.3.2, which is the one practice term the standard does name."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/rights",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#Subsystem",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An element in the hierarchical division of an open system which interacts directly only with elements in the next higher division or the next lower division of that open system."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Subsystem"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.1. There is one and only one subsystem in an open system for a given layer, 5.2.2.1."
-      }
     ]
   },
   {
@@ -1779,107 +1877,9 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/iso7498#realisesLayer",
+    "@id": "http://purl.org/dc/terms/created",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a technology to the layer whose services it realises."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "realises layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Addition of this pattern. Asserted once per technology in ISO7498-instances.ttl, so that a model need only name the technology. Functional: a technology realises the services of one layer, and a protocol spanning two would be modelled as two technologies."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#Service",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A capability of a layer and the layers beneath it, provided to the entities of the next higher layer at the boundary between the two layers."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Service"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Subsystem"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.5."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#isSublayerOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a layer to the layer it subdivides."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is sublayer of"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Layer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 5.2.1.4 defines a sublayer as a subdivision of a layer, and 6.2.1 m) provides for creating them where distinct communication services need it."
-      }
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   }
 ]

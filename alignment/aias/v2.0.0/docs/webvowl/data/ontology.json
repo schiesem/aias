@@ -62,19 +62,19 @@
           "type": "label"
         }
       ],
-      "rights": [
-        {
-          "identifier": "rights",
-          "language": "undefined",
-          "value": "TODO: funding statement, projects EKI and OptiFlex, dtec.bw",
-          "type": "label"
-        }
-      ],
       "preferredNamespacePrefix": [
         {
           "identifier": "preferredNamespacePrefix",
           "language": "undefined",
           "value": "aias",
+          "type": "label"
+        }
+      ],
+      "rights": [
+        {
+          "identifier": "rights",
+          "language": "undefined",
+          "value": "TODO: funding statement, projects EKI and OptiFlex, dtec.bw",
           "type": "label"
         }
       ],
@@ -86,11 +86,11 @@
           "type": "label"
         }
       ],
-      "versionInfo": [
+      "preferredNamespaceUri": [
         {
-          "identifier": "versionInfo",
+          "identifier": "preferredNamespaceUri",
           "language": "undefined",
-          "value": "2.0.0",
+          "value": "https://w3id.org/aias#",
           "type": "label"
         }
       ],
@@ -102,11 +102,11 @@
           "type": "label"
         }
       ],
-      "preferredNamespaceUri": [
+      "versionInfo": [
         {
-          "identifier": "preferredNamespaceUri",
+          "identifier": "versionInfo",
           "language": "undefined",
-          "value": "https://w3id.org/aias#",
+          "value": "2.0.0",
           "type": "label"
         }
       ],
@@ -139,7 +139,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "35",
+      "id": "2",
       "type": "owl:Class"
     },
     {
@@ -159,7 +159,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "71",
+      "id": "72",
       "type": "owl:Class"
     },
     {
@@ -299,15 +299,15 @@
       "type": "owl:Class"
     },
     {
-      "id": "2",
+      "id": "60",
       "type": "owl:Class"
     },
     {
-      "id": "53",
+      "id": "69",
       "type": "owl:Class"
     },
     {
-      "id": "74",
+      "id": "75",
       "type": "owl:Class"
     },
     {
@@ -335,11 +335,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "88",
+      "id": "301",
       "type": "owl:Class"
     },
     {
-      "id": "301",
+      "id": "88",
       "type": "owl:Class"
     },
     {
@@ -391,11 +391,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "199",
+      "id": "202",
       "type": "owl:equivalentClass"
     },
     {
-      "id": "209",
+      "id": "210",
       "type": "owl:Class"
     },
     {
@@ -427,15 +427,15 @@
       "type": "owl:Class"
     },
     {
-      "id": "298",
-      "type": "owl:Class"
-    },
-    {
       "id": "311",
       "type": "owl:Class"
     },
     {
-      "id": "73",
+      "id": "298",
+      "type": "owl:Class"
+    },
+    {
+      "id": "74",
       "type": "owl:equivalentClass"
     },
     {
@@ -447,11 +447,11 @@
       "type": "owl:Class"
     },
     {
-      "id": "45",
+      "id": "228",
       "type": "owl:Class"
     },
     {
-      "id": "228",
+      "id": "45",
       "type": "owl:Class"
     },
     {
@@ -471,7 +471,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "293",
+      "id": "294",
       "type": "owl:Class"
     },
     {
@@ -559,7 +559,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "294",
+      "id": "292",
       "type": "owl:Class"
     },
     {
@@ -691,7 +691,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "60",
+      "id": "53",
       "type": "owl:Class"
     },
     {
@@ -763,7 +763,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "76",
+      "id": "35",
       "type": "owl:Class"
     },
     {
@@ -971,7 +971,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "203",
+      "id": "204",
       "type": "owl:equivalentClass"
     },
     {
@@ -979,7 +979,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "210",
+      "id": "199",
       "type": "owl:Class"
     },
     {
@@ -1023,7 +1023,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "207",
+      "id": "208",
       "type": "owl:Class"
     },
     {
@@ -1150,7 +1150,7 @@
       "attributes": [
         "external"
       ],
-      "id": "35"
+      "id": "2"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#ProgrammableController",
@@ -1289,7 +1289,7 @@
       "attributes": [
         "external"
       ],
-      "id": "71"
+      "id": "72"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Layer",
@@ -1323,7 +1323,10 @@
       "id": "111",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2002/07/owl#Thing",
@@ -1331,7 +1334,10 @@
       "id": "115",
       "label": {
         "undefined": "Thing"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2002/07/owl#Thing",
@@ -1339,7 +1345,10 @@
       "id": "118",
       "label": {
         "undefined": "Thing"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#MeasuringTransmitter",
@@ -1686,27 +1695,6 @@
           }
         },
         {
-          "iri": "https://w3id.org/aias/odp/iec60050#Evaluate",
-          "baseIri": "https://w3id.org/aias/odp/iec60050",
-          "annotations": {
-            "note": [
-              {
-                "identifier": "note",
-                "language": "en",
-                "value": "IEC 60050-351, 351-43-13.",
-                "type": "label"
-              }
-            ]
-          },
-          "comment": {
-            "en": "To determine characteristics of a process from measured or recorded variable quantities."
-          },
-          "labels": {
-            "IRI-based": "Evaluate",
-            "en": "Evaluate"
-          }
-        },
-        {
           "iri": "https://w3id.org/aias/odp/iec60050#Alarm",
           "baseIri": "https://w3id.org/aias/odp/iec60050",
           "annotations": {
@@ -1725,6 +1713,27 @@
           "labels": {
             "IRI-based": "Alarm",
             "en": "Alarm"
+          }
+        },
+        {
+          "iri": "https://w3id.org/aias/odp/iec60050#Evaluate",
+          "baseIri": "https://w3id.org/aias/odp/iec60050",
+          "annotations": {
+            "note": [
+              {
+                "identifier": "note",
+                "language": "en",
+                "value": "IEC 60050-351, 351-43-13.",
+                "type": "label"
+              }
+            ]
+          },
+          "comment": {
+            "en": "To determine characteristics of a process from measured or recorded variable quantities."
+          },
+          "labels": {
+            "IRI-based": "Evaluate",
+            "en": "Evaluate"
           }
         },
         {
@@ -1889,7 +1898,10 @@
       "id": "157",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#integer",
@@ -1897,7 +1909,10 @@
       "id": "159",
       "label": {
         "IRI-based": "integer"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement",
@@ -1934,7 +1949,10 @@
       "id": "77",
       "label": {
         "IRI-based": "decimal"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -1942,7 +1960,10 @@
       "id": "164",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -1950,7 +1971,10 @@
       "id": "167",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -1958,7 +1982,10 @@
       "id": "170",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#Controller",
@@ -1998,7 +2025,10 @@
       "id": "173",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -2006,7 +2036,10 @@
       "id": "176",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -2014,7 +2047,10 @@
       "id": "179",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -2022,7 +2058,10 @@
       "id": "182",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#EvaluationData",
@@ -2067,7 +2106,10 @@
       "id": "189",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Normalization",
@@ -2235,7 +2277,7 @@
       "attributes": [
         "external"
       ],
-      "id": "2"
+      "id": "60"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint",
@@ -2261,7 +2303,7 @@
       "attributes": [
         "external"
       ],
-      "id": "53"
+      "id": "69"
     },
     {
       "iri": "https://w3id.org/aias#Component",
@@ -2282,13 +2324,14 @@
         "en": "Component"
       },
       "subClasses": [
-        "73",
+        "74",
         "80"
       ],
       "comment": {
         "en": "A physical element of a system, either performing functions or being transformed by them."
       },
-      "id": "74"
+      "id": "75",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#Observer",
@@ -2465,6 +2508,35 @@
       ]
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#ControllingSystem",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "IEC 60050-351, 351-49-02.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "ControllingSystem",
+        "en": "Controlling System"
+      },
+      "comment": {
+        "en": "A functional unit that generates the manipulated variable at its output, from the command variable in open-loop control and from the reference variable and the feedback variable in closed-loop control."
+      },
+      "attributes": [
+        "external"
+      ],
+      "id": "301",
+      "superClasses": [
+        "28"
+      ]
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iec60050#Fault",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -2493,35 +2565,6 @@
         "external"
       ],
       "id": "88"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iec60050#ControllingSystem",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "IEC 60050-351, 351-49-02.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "ControllingSystem",
-        "en": "Controlling System"
-      },
-      "comment": {
-        "en": "A functional unit that generates the manipulated variable at its output, from the command variable in open-loop control and from the reference variable and the feedback variable in closed-loop control."
-      },
-      "attributes": [
-        "external"
-      ],
-      "id": "301",
-      "superClasses": [
-        "28"
-      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#Characteristic",
@@ -2698,8 +2741,9 @@
       },
       "id": "326",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#ActiveFault",
@@ -2782,8 +2826,9 @@
       },
       "id": "334",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#DataUnit",
@@ -2905,10 +2950,10 @@
         "en": "A physical component of an automated plant that realises the transformation carried out by a process operator."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
-      "id": "199"
+      "id": "202"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#Process",
@@ -2934,7 +2979,7 @@
       "attributes": [
         "external"
       ],
-      "id": "209"
+      "id": "210"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#Protocol",
@@ -3208,35 +3253,6 @@
       "id": "409"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#Model",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "Model",
-        "en": "Model"
-      },
-      "subClasses": [
-        "297"
-      ],
-      "comment": {
-        "en": "A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data."
-      },
-      "attributes": [
-        "external"
-      ],
-      "id": "298"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso22989#SubsymbolicAI",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
       "instances": 0,
@@ -3266,9 +3282,38 @@
       ]
     },
     {
+      "iri": "https://w3id.org/aias/odp/iso22989#Model",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "ISO/IEC 22989, 3.1.23.\n\nBoth kinds of AI rest on models: 3.1.33 and 3.1.34 each reference this entry rather than the machine learning one. A rule-based system therefore instantiates this class and nothing below it.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Model",
+        "en": "Model"
+      },
+      "subClasses": [
+        "297"
+      ],
+      "comment": {
+        "en": "A physical, mathematical or otherwise logical representation of a system, entity, phenomenon, process or data."
+      },
+      "attributes": [
+        "external"
+      ],
+      "id": "298"
+    },
+    {
       "iri": "https://w3id.org/aias#Resource",
       "equivalent": [
-        "199"
+        "202"
       ],
       "baseIri": "https://w3id.org/aias",
       "instances": 0,
@@ -3301,10 +3346,10 @@
       "attributes": [
         "equivalent"
       ],
-      "id": "73",
+      "id": "74",
       "superClasses": [
         "272",
-        "74"
+        "75"
       ]
     },
     {
@@ -3363,6 +3408,35 @@
       ]
     },
     {
+      "iri": "https://w3id.org/aias/odp/iso22989#Verification",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "ISO/IEC 22989, 3.5.17. See the note on validation for the difference between the two.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "Verification",
+        "en": "Verification"
+      },
+      "comment": {
+        "en": "Confirmation, through the provision of objective evidence, that specified requirements have been fulfilled."
+      },
+      "attributes": [
+        "external"
+      ],
+      "id": "228",
+      "superClasses": [
+        "148"
+      ]
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iso22989#AIType",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
       "instances": 0,
@@ -3391,35 +3465,6 @@
         "external"
       ],
       "id": "45"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso22989#Verification",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "ISO/IEC 22989, 3.5.17. See the note on validation for the difference between the two.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "Verification",
-        "en": "Verification"
-      },
-      "comment": {
-        "en": "Confirmation, through the provision of objective evidence, that specified requirements have been fulfilled."
-      },
-      "attributes": [
-        "external"
-      ],
-      "id": "228",
-      "superClasses": [
-        "148"
-      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#ProtocolControlInformation",
@@ -3558,7 +3603,7 @@
       "attributes": [
         "external"
       ],
-      "id": "293"
+      "id": "294"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Acquisition",
@@ -3707,8 +3752,9 @@
       },
       "id": "323",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#OptimalControl",
@@ -3858,7 +3904,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iec60050#Control",
       "equivalent": [
-        "203"
+        "204"
       ],
       "baseIri": "https://w3id.org/aias/odp/iec60050",
       "instances": 0,
@@ -3887,8 +3933,8 @@
         "en": "Purposeful action on or in a process to meet specified objectives."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "186",
       "superClasses": [
@@ -4205,7 +4251,7 @@
       "attributes": [
         "external"
       ],
-      "id": "294",
+      "id": "292",
       "superClasses": [
         "153"
       ]
@@ -4339,7 +4385,7 @@
         "en": "Physical Unit"
       },
       "subClasses": [
-        "73"
+        "74"
       ],
       "comment": {
         "en": "An item under consideration defined according to construction or configuration."
@@ -4491,8 +4537,9 @@
       },
       "id": "308",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#StateVariable",
@@ -4608,8 +4655,9 @@
       },
       "id": "329",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias#Relation",
@@ -4637,7 +4685,8 @@
       "comment": {
         "en": "A recorded tie between functions and components, or between components."
       },
-      "id": "220"
+      "id": "220",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#AIFunction",
@@ -4663,8 +4712,8 @@
         "99",
         "240",
         "192",
-        "203",
-        "207",
+        "204",
+        "208",
         "340",
         "97"
       ],
@@ -5105,8 +5154,9 @@
       },
       "id": "305",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Generation",
@@ -5161,7 +5211,7 @@
       "attributes": [
         "external"
       ],
-      "id": "60"
+      "id": "53"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#MeasuringElement",
@@ -5340,7 +5390,7 @@
         "en": "Variable Quantity"
       },
       "subClasses": [
-        "294",
+        "292",
         "457",
         "460",
         "447",
@@ -5460,8 +5510,9 @@
       },
       "id": "320",
       "superClasses": [
-        "73"
-      ]
+        "74"
+      ],
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#RobustControl",
@@ -5689,7 +5740,7 @@
       "attributes": [
         "external"
       ],
-      "id": "76"
+      "id": "35"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#ConnectionModeAssociation",
@@ -5811,7 +5862,7 @@
     {
       "instances": 0,
       "union": [
-        "209",
+        "210",
         "151"
       ],
       "attributes": [
@@ -5864,7 +5915,7 @@
     {
       "instances": 0,
       "union": [
-        "209",
+        "210",
         "151"
       ],
       "attributes": [
@@ -5922,7 +5973,10 @@
       "id": "579",
       "label": {
         "IRI-based": "decimal"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#AIComponent",
@@ -5956,7 +6010,10 @@
       "id": "483",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Prediction",
@@ -5990,7 +6047,10 @@
       "id": "544",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Sample",
@@ -6024,7 +6084,10 @@
       "id": "104",
       "label": {
         "IRI-based": "boolean"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#decimal",
@@ -6032,7 +6095,10 @@
       "id": "218",
       "label": {
         "IRI-based": "decimal"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "iri": "http://www.w3.org/2001/XMLSchema#string",
@@ -6040,7 +6106,10 @@
       "id": "216",
       "label": {
         "IRI-based": "string"
-      }
+      },
+      "attributes": [
+        "external"
+      ]
     },
     {
       "instances": 0,
@@ -6206,8 +6275,8 @@
       "union": [
         "8",
         "399",
-        "35",
-        "71",
+        "2",
+        "72",
         "1"
       ],
       "attributes": [
@@ -6219,7 +6288,7 @@
     {
       "instances": 0,
       "union": [
-        "210",
+        "199",
         "133",
         "151",
         "114"
@@ -6233,7 +6302,7 @@
     {
       "instances": 0,
       "union": [
-        "209",
+        "210",
         "151"
       ],
       "attributes": [
@@ -6245,7 +6314,7 @@
     {
       "instances": 0,
       "union": [
-        "209",
+        "210",
         "151"
       ],
       "attributes": [
@@ -6331,8 +6400,9 @@
       },
       "id": "80",
       "superClasses": [
-        "74"
-      ]
+        "75"
+      ],
+      "attributes": []
     },
     {
       "instances": 0,
@@ -6518,7 +6588,8 @@
       "comment": {
         "en": "A purposeful transformation, turning inputs into outputs to meet an objective of the system."
       },
-      "id": "152"
+      "id": "152",
+      "attributes": []
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#QualityCharacteristic",
@@ -6632,10 +6703,10 @@
         "en": "Purposeful action on or in a process to meet specified objectives."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
-      "id": "203",
+      "id": "204",
       "superClasses": [
         "148"
       ]
@@ -6695,7 +6766,7 @@
       "attributes": [
         "external"
       ],
-      "id": "210"
+      "id": "199"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#Evaluation",
@@ -7036,7 +7107,7 @@
       "attributes": [
         "external"
       ],
-      "id": "207",
+      "id": "208",
       "superClasses": [
         "148"
       ]
@@ -7445,19 +7516,19 @@
       "type": "owl:disjointWith"
     },
     {
-      "id": "69",
+      "id": "70",
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "70",
+      "id": "71",
       "type": "owl:disjointWith"
     },
     {
-      "id": "72",
+      "id": "73",
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "75",
+      "id": "76",
       "type": "owl:datatypeProperty"
     },
     {
@@ -7653,23 +7724,23 @@
       "type": "owl:disjointWith"
     },
     {
-      "id": "202",
+      "id": "203",
       "type": "rdfs:SubClassOf"
-    },
-    {
-      "id": "204",
-      "type": "owl:objectProperty"
     },
     {
       "id": "205",
-      "type": "owl:disjointWith"
+      "type": "owl:objectProperty"
     },
     {
       "id": "206",
+      "type": "owl:disjointWith"
+    },
+    {
+      "id": "207",
       "type": "rdfs:SubClassOf"
     },
     {
-      "id": "208",
+      "id": "209",
       "type": "owl:disjointWith"
     },
     {
@@ -7885,11 +7956,11 @@
       "type": "owl:disjointWith"
     },
     {
-      "id": "292",
+      "id": "231",
       "type": "owl:objectProperty"
     },
     {
-      "id": "231",
+      "id": "293",
       "type": "owl:objectProperty"
     },
     {
@@ -9067,8 +9138,8 @@
         "en": "Relates a communication to a data unit conveyed over it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "6"
     },
@@ -9212,8 +9283,8 @@
         "en": "Relates an AI system to a task it addresses."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "36"
     },
@@ -9240,8 +9311,8 @@
         "en": "Relates an algorithm to a characteristic chosen in advance that affects its behaviour."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "39"
     },
@@ -9268,8 +9339,8 @@
         "en": "Relates an item under consideration to a function of control technology it performs."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "46"
     },
@@ -9323,9 +9394,9 @@
         "en": "Relates an action to the action path it takes place over."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "56"
     },
@@ -9366,7 +9437,7 @@
       "id": "65"
     },
     {
-      "range": "32",
+      "range": "69",
       "domain": "64",
       "attributes": [
         "anonymous",
@@ -9381,25 +9452,25 @@
         "anonymous",
         "object"
       ],
-      "id": "69"
+      "id": "70"
     },
     {
-      "range": "71",
+      "range": "72",
       "domain": "64",
       "attributes": [
         "anonymous",
         "object"
       ],
-      "id": "70"
+      "id": "71"
     },
     {
-      "range": "74",
-      "domain": "73",
+      "range": "75",
+      "domain": "74",
       "attributes": [
         "anonymous",
         "object"
       ],
-      "id": "72"
+      "id": "73"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#quantity",
@@ -9409,16 +9480,16 @@
         "IRI-based": "quantity",
         "en": "quantity"
       },
-      "domain": "76",
+      "domain": "35",
       "comment": {
         "en": "The numeric quantity of a quality of service value."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
-      "id": "75"
+      "id": "76"
     },
     {
       "range": "1",
@@ -9430,7 +9501,7 @@
       "id": "78"
     },
     {
-      "range": "74",
+      "range": "75",
       "domain": "80",
       "attributes": [
         "anonymous",
@@ -9439,7 +9510,7 @@
       "id": "79"
     },
     {
-      "range": "53",
+      "range": "2",
       "domain": "64",
       "attributes": [
         "anonymous",
@@ -9457,7 +9528,7 @@
       "id": "82"
     },
     {
-      "range": "35",
+      "range": "32",
       "domain": "64",
       "attributes": [
         "anonymous",
@@ -9475,7 +9546,7 @@
       "id": "86"
     },
     {
-      "range": "32",
+      "range": "69",
       "domain": "1",
       "attributes": [
         "anonymous",
@@ -9493,7 +9564,7 @@
       "id": "90"
     },
     {
-      "range": "35",
+      "range": "72",
       "domain": "1",
       "attributes": [
         "anonymous",
@@ -9511,7 +9582,7 @@
       "id": "93"
     },
     {
-      "range": "71",
+      "range": "32",
       "domain": "1",
       "attributes": [
         "anonymous",
@@ -9542,8 +9613,8 @@
         "en": "Relates an inference to the prediction it produces."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "98"
     },
@@ -9570,9 +9641,9 @@
         "en": "Whether the samples of a dataset carry labels."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "102"
     },
@@ -9586,7 +9657,7 @@
       "id": "106"
     },
     {
-      "range": "2",
+      "range": "53",
       "domain": "64",
       "attributes": [
         "anonymous",
@@ -9743,9 +9814,9 @@
         "en": "Relates a characteristic value to the characteristic it quantifies."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "143"
     },
@@ -9772,8 +9843,8 @@
         "en": "Relates a function to the data it works on."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "147"
     },
@@ -9902,8 +9973,8 @@
         "en": "Relates a closed-loop control to the controlled variable it acts upon."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "185"
     },
@@ -9930,8 +10001,8 @@
         "en": "Relates an acquisition to where the data comes from."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "191"
     },
@@ -9963,7 +10034,7 @@
       "id": "200"
     },
     {
-      "range": "151",
+      "range": "202",
       "domain": "133",
       "attributes": [
         "anonymous",
@@ -9973,12 +10044,12 @@
     },
     {
       "range": "148",
-      "domain": "203",
+      "domain": "204",
       "attributes": [
         "anonymous",
         "object"
       ],
-      "id": "202"
+      "id": "203"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#determines",
@@ -10003,10 +10074,10 @@
         "en": "Relates a training to the model parameters it determines."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
-      "id": "204"
+      "id": "205"
     },
     {
       "range": "117",
@@ -10015,25 +10086,25 @@
         "anonymous",
         "object"
       ],
-      "id": "205"
-    },
-    {
-      "range": "148",
-      "domain": "207",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
       "id": "206"
     },
     {
-      "range": "210",
-      "domain": "209",
+      "range": "148",
+      "domain": "208",
       "attributes": [
         "anonymous",
         "object"
       ],
-      "id": "208"
+      "id": "207"
+    },
+    {
+      "range": "114",
+      "domain": "210",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
+      "id": "209"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#category",
@@ -10058,9 +10129,9 @@
         "en": "The name of a characteristic."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "211"
     },
@@ -10087,9 +10158,9 @@
         "en": "The unit of a characteristic value, where the characteristic has one."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "214"
     },
@@ -10106,9 +10177,9 @@
         "en": "The numeric quantity of a characteristic value."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "217"
     },
@@ -10140,7 +10211,7 @@
       "id": "222"
     },
     {
-      "range": "113",
+      "range": "117",
       "domain": "146",
       "attributes": [
         "anonymous",
@@ -10158,7 +10229,7 @@
       "id": "224"
     },
     {
-      "range": "117",
+      "range": "113",
       "domain": "146",
       "attributes": [
         "anonymous",
@@ -10204,8 +10275,8 @@
         "en": "Relates an automation or a system to a variable quantity involved in it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "187"
     },
@@ -10228,7 +10299,7 @@
       "id": "234"
     },
     {
-      "range": "209",
+      "range": "151",
       "domain": "133",
       "attributes": [
         "anonymous",
@@ -10264,7 +10335,7 @@
       "id": "239"
     },
     {
-      "range": "151",
+      "range": "202",
       "domain": "140",
       "attributes": [
         "anonymous",
@@ -10282,7 +10353,7 @@
       "id": "242"
     },
     {
-      "range": "133",
+      "range": "210",
       "domain": "140",
       "attributes": [
         "anonymous",
@@ -10300,7 +10371,7 @@
       "id": "245"
     },
     {
-      "range": "210",
+      "range": "114",
       "domain": "140",
       "attributes": [
         "anonymous",
@@ -10318,7 +10389,7 @@
       "id": "247"
     },
     {
-      "range": "114",
+      "range": "151",
       "domain": "140",
       "attributes": [
         "anonymous",
@@ -10361,13 +10432,13 @@
         "en": "Relates a communication to an open system data flows from."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "251"
     },
     {
-      "range": "209",
+      "range": "199",
       "domain": "140",
       "attributes": [
         "anonymous",
@@ -10398,9 +10469,9 @@
         "en": "Relates a machine learning algorithm to the kind of learning it performs."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "255"
     },
@@ -10427,8 +10498,8 @@
         "en": "The relation establishing part of a characteristic."
       },
       "attributes": [
-        "datatype",
-        "external"
+        "external",
+        "datatype"
       ],
       "id": "257"
     },
@@ -10455,8 +10526,8 @@
         "en": "Relates a sample or a dataset to the label assigned to it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "258"
     },
@@ -10483,8 +10554,8 @@
         "en": "Relates a process operator to a state entering it. Inferred from the reified flows, not modelled directly."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "261"
     },
@@ -10498,7 +10569,7 @@
       "id": "263"
     },
     {
-      "range": "140",
+      "range": "210",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10516,7 +10587,7 @@
       "id": "266"
     },
     {
-      "range": "151",
+      "range": "202",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10534,7 +10605,7 @@
       "id": "268"
     },
     {
-      "range": "133",
+      "range": "140",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10544,7 +10615,7 @@
     },
     {
       "range": "272",
-      "domain": "73",
+      "domain": "74",
       "attributes": [
         "anonymous",
         "object"
@@ -10552,7 +10623,7 @@
       "id": "271"
     },
     {
-      "range": "209",
+      "range": "151",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10570,7 +10641,7 @@
       "id": "274"
     },
     {
-      "range": "199",
+      "range": "133",
       "domain": "140",
       "attributes": [
         "anonymous",
@@ -10606,8 +10677,8 @@
       "id": "279"
     },
     {
-      "range": "60",
-      "domain": "35",
+      "range": "53",
+      "domain": "2",
       "attributes": [
         "anonymous",
         "object"
@@ -10642,7 +10713,7 @@
       "id": "285"
     },
     {
-      "range": "114",
+      "range": "199",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10660,7 +10731,7 @@
       "id": "288"
     },
     {
-      "range": "210",
+      "range": "114",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10678,7 +10749,7 @@
       "id": "290"
     },
     {
-      "range": "199",
+      "range": "133",
       "domain": "225",
       "attributes": [
         "anonymous",
@@ -10687,38 +10758,9 @@
       "id": "291"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iec60050#fromUnit",
-      "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "28",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "The direction of action, IEC 60050-351, 351-44-05, is carried by this relation together with toUnit rather than by a class of its own.\n\nNote 2 of that entry states that the direction of action need not agree with the direction of the mass or energy flow. Modelling it as a class would invite an alignment to equate it with the direction of a flow in the technical process pattern, where a flow does transport material.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "fromUnit",
-        "en": "from unit"
-      },
-      "domain": "293",
-      "comment": {
-        "en": "Relates an action line to the functional unit at which it starts."
-      },
-      "attributes": [
-        "object",
-        "functional",
-        "external"
-      ],
-      "id": "292"
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iec60050#hasManipulatedVariable",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "294",
+      "range": "292",
       "annotations": {
         "note": [
           {
@@ -10741,15 +10783,44 @@
         "en": "Relates a control to the manipulated variable through which it acts on the controlled system."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "231"
     },
     {
+      "iri": "https://w3id.org/aias/odp/iec60050#fromUnit",
+      "baseIri": "https://w3id.org/aias/odp/iec60050",
+      "range": "28",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The direction of action, IEC 60050-351, 351-44-05, is carried by this relation together with toUnit rather than by a class of its own.\n\nNote 2 of that entry states that the direction of action need not agree with the direction of the mass or energy flow. Modelling it as a class would invite an alignment to equate it with the direction of a flow in the technical process pattern, where a flow does transport material.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "fromUnit",
+        "en": "from unit"
+      },
+      "domain": "294",
+      "comment": {
+        "en": "Relates an action line to the functional unit at which it starts."
+      },
+      "attributes": [
+        "external",
+        "functional",
+        "object"
+      ],
+      "id": "293"
+    },
+    {
       "iri": "https://w3id.org/aias/odp/iso7498#usesTechnology",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "range": "60",
+      "range": "53",
       "annotations": {
         "note": [
           {
@@ -10769,8 +10840,8 @@
         "en": "Relates a communication to a technology realising it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "295"
     },
@@ -10797,8 +10868,8 @@
         "en": "Relates a model to an internal variable affecting how it computes its outputs."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "299"
     },
@@ -10820,21 +10891,21 @@
         "IRI-based": "unit",
         "en": "unit"
       },
-      "domain": "76",
+      "domain": "35",
       "comment": {
         "en": "The unit of a quality of service value, for example ms or Mbit/s."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "300"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#assignedResource",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "199",
+      "range": "202",
       "label": {
         "IRI-based": "assignedResource",
         "en": "assigned resource"
@@ -10844,8 +10915,8 @@
         "en": "Relates an assignment to the technical resource realising the assigned process operator."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "302"
     },
@@ -10877,7 +10948,7 @@
       "id": "303"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "305",
       "attributes": [
         "anonymous",
@@ -10886,8 +10957,8 @@
       "id": "304"
     },
     {
-      "range": "60",
-      "domain": "71",
+      "range": "69",
+      "domain": "72",
       "attributes": [
         "anonymous",
         "object"
@@ -10895,7 +10966,7 @@
       "id": "306"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "308",
       "attributes": [
         "anonymous",
@@ -10904,8 +10975,8 @@
       "id": "307"
     },
     {
-      "range": "35",
-      "domain": "71",
+      "range": "53",
+      "domain": "72",
       "attributes": [
         "anonymous",
         "object"
@@ -10922,8 +10993,8 @@
       "id": "310"
     },
     {
-      "range": "60",
-      "domain": "53",
+      "range": "53",
+      "domain": "69",
       "attributes": [
         "anonymous",
         "object"
@@ -10940,8 +11011,8 @@
       "id": "313"
     },
     {
-      "range": "35",
-      "domain": "53",
+      "range": "2",
+      "domain": "69",
       "attributes": [
         "anonymous",
         "object"
@@ -10958,7 +11029,7 @@
       "id": "315"
     },
     {
-      "range": "76",
+      "range": "60",
       "domain": "32",
       "attributes": [
         "anonymous",
@@ -10976,8 +11047,8 @@
       "id": "317"
     },
     {
-      "range": "2",
-      "domain": "76",
+      "range": "60",
+      "domain": "35",
       "attributes": [
         "anonymous",
         "object"
@@ -10985,7 +11056,7 @@
       "id": "318"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "320",
       "attributes": [
         "anonymous",
@@ -10994,8 +11065,8 @@
       "id": "319"
     },
     {
-      "range": "35",
-      "domain": "2",
+      "range": "69",
+      "domain": "60",
       "attributes": [
         "anonymous",
         "object"
@@ -11003,7 +11074,7 @@
       "id": "321"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "323",
       "attributes": [
         "anonymous",
@@ -11012,8 +11083,8 @@
       "id": "322"
     },
     {
-      "range": "71",
-      "domain": "2",
+      "range": "72",
+      "domain": "60",
       "attributes": [
         "anonymous",
         "object"
@@ -11021,7 +11092,7 @@
       "id": "324"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "326",
       "attributes": [
         "anonymous",
@@ -11030,8 +11101,8 @@
       "id": "325"
     },
     {
-      "range": "60",
-      "domain": "2",
+      "range": "53",
+      "domain": "60",
       "attributes": [
         "anonymous",
         "object"
@@ -11039,7 +11110,7 @@
       "id": "327"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "329",
       "attributes": [
         "anonymous",
@@ -11070,14 +11141,14 @@
         "en": "Relates a component to the model carrying its behaviour."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "330"
     },
     {
-      "range": "53",
-      "domain": "2",
+      "range": "2",
+      "domain": "60",
       "attributes": [
         "anonymous",
         "object"
@@ -11085,7 +11156,7 @@
       "id": "332"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "334",
       "attributes": [
         "anonymous",
@@ -11116,15 +11187,15 @@
         "en": "Relates a communication to the direction in which data communication takes place over it."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "335"
     },
     {
-      "range": "53",
-      "domain": "71",
+      "range": "2",
+      "domain": "72",
       "attributes": [
         "anonymous",
         "object"
@@ -11144,8 +11215,8 @@
         "en": "Relates an AI system, a component or a model to a value it states for one of its characteristics."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "338"
     },
@@ -11172,9 +11243,9 @@
         "en": "The coded name of an object."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "341"
     },
@@ -11202,15 +11273,15 @@
         "en": "Relates a physical unit to a functional unit it realises."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "342"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "199",
+      "range": "202",
       "annotations": {
         "note": [
           {
@@ -11230,8 +11301,8 @@
         "en": "Relates a process operator directly to the technical resource realising it. Inferred from the reified assignment, not modelled directly."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "344"
     },
@@ -11245,7 +11316,7 @@
       "id": "345"
     },
     {
-      "range": "60",
+      "range": "53",
       "domain": "32",
       "attributes": [
         "anonymous",
@@ -11263,7 +11334,7 @@
       "id": "347"
     },
     {
-      "range": "53",
+      "range": "69",
       "domain": "32",
       "attributes": [
         "anonymous",
@@ -11281,7 +11352,7 @@
       "id": "349"
     },
     {
-      "range": "71",
+      "range": "72",
       "domain": "32",
       "attributes": [
         "anonymous",
@@ -11333,8 +11404,8 @@
         "en": "Relates a communication to an open system data flows to."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "355"
     },
@@ -11375,7 +11446,7 @@
       "id": "363"
     },
     {
-      "range": "197",
+      "range": "153",
       "domain": "186",
       "attributes": [
         "anonymous",
@@ -11384,7 +11455,7 @@
       "id": "365"
     },
     {
-      "range": "153",
+      "range": "197",
       "domain": "186",
       "attributes": [
         "anonymous",
@@ -11402,7 +11473,7 @@
       "id": "367"
     },
     {
-      "range": "186",
+      "range": "153",
       "domain": "51",
       "attributes": [
         "anonymous",
@@ -11468,13 +11539,13 @@
         "en": "Relates a model to an evaluation performed on it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "372"
     },
     {
-      "range": "153",
+      "range": "197",
       "domain": "51",
       "attributes": [
         "anonymous",
@@ -11483,7 +11554,7 @@
       "id": "373"
     },
     {
-      "range": "144",
+      "range": "186",
       "domain": "51",
       "attributes": [
         "anonymous",
@@ -11492,7 +11563,7 @@
       "id": "375"
     },
     {
-      "range": "197",
+      "range": "144",
       "domain": "51",
       "attributes": [
         "anonymous",
@@ -11501,7 +11572,7 @@
       "id": "376"
     },
     {
-      "range": "197",
+      "range": "51",
       "domain": "58",
       "attributes": [
         "anonymous",
@@ -11510,7 +11581,7 @@
       "id": "377"
     },
     {
-      "range": "51",
+      "range": "153",
       "domain": "58",
       "attributes": [
         "anonymous",
@@ -11528,7 +11599,7 @@
       "id": "379"
     },
     {
-      "range": "153",
+      "range": "197",
       "domain": "58",
       "attributes": [
         "anonymous",
@@ -11559,28 +11630,19 @@
         "en": "Relates a model to the algorithm describing its structure, or a function to the algorithm it executes."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "381"
     },
     {
       "range": "58",
-      "domain": "293",
+      "domain": "294",
       "attributes": [
         "anonymous",
         "object"
       ],
       "id": "383"
-    },
-    {
-      "range": "186",
-      "domain": "58",
-      "attributes": [
-        "anonymous",
-        "object"
-      ],
-      "id": "384"
     },
     {
       "range": "144",
@@ -11589,10 +11651,19 @@
         "anonymous",
         "object"
       ],
+      "id": "384"
+    },
+    {
+      "range": "186",
+      "domain": "58",
+      "attributes": [
+        "anonymous",
+        "object"
+      ],
       "id": "385"
     },
     {
-      "range": "35",
+      "range": "53",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -11601,7 +11672,7 @@
       "id": "386"
     },
     {
-      "range": "1",
+      "range": "60",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -11610,7 +11681,7 @@
       "id": "387"
     },
     {
-      "range": "71",
+      "range": "336",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -11637,20 +11708,20 @@
         "IRI-based": "partOfActionPath",
         "en": "part of action path"
       },
-      "domain": "293",
+      "domain": "294",
       "comment": {
         "en": "Relates an action line to the action path it forms part of."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "389"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#hasSubsystem",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "range": "35",
+      "range": "2",
       "annotations": {
         "note": [
           {
@@ -11670,8 +11741,8 @@
         "en": "Relates an open system to one of its subsystems."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "391"
     },
@@ -11698,8 +11769,8 @@
         "en": "Relates an automation to the action path it runs over."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "392"
     },
@@ -11726,9 +11797,9 @@
         "en": "Relates a characteristic value to the characteristic it quantifies."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "393"
     },
@@ -11751,7 +11822,7 @@
       "id": "396"
     },
     {
-      "range": "32",
+      "range": "72",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -11777,18 +11848,18 @@
         "IRI-based": "attachedTo",
         "en": "attached to"
       },
-      "domain": "53",
+      "domain": "69",
       "comment": {
         "en": "Relates a service access point to an entity attached to it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "398"
     },
     {
-      "range": "105",
+      "range": "64",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -11859,13 +11930,13 @@
         "en": "Relates a flow to the element it originates from."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "405"
     },
     {
-      "range": "298",
+      "range": "103",
       "domain": "40",
       "attributes": [
         "anonymous",
@@ -11874,7 +11945,7 @@
       "id": "410"
     },
     {
-      "range": "103",
+      "range": "298",
       "domain": "40",
       "attributes": [
         "anonymous",
@@ -11883,7 +11954,7 @@
       "id": "412"
     },
     {
-      "range": "40",
+      "range": "298",
       "domain": "37",
       "attributes": [
         "anonymous",
@@ -11892,7 +11963,7 @@
       "id": "413"
     },
     {
-      "range": "215",
+      "range": "103",
       "domain": "37",
       "attributes": [
         "anonymous",
@@ -11901,7 +11972,7 @@
       "id": "414"
     },
     {
-      "range": "103",
+      "range": "215",
       "domain": "37",
       "attributes": [
         "anonymous",
@@ -11910,7 +11981,7 @@
       "id": "415"
     },
     {
-      "range": "298",
+      "range": "40",
       "domain": "37",
       "attributes": [
         "anonymous",
@@ -11937,7 +12008,7 @@
       "id": "418"
     },
     {
-      "range": "298",
+      "range": "103",
       "domain": "148",
       "attributes": [
         "anonymous",
@@ -11946,7 +12017,7 @@
       "id": "420"
     },
     {
-      "range": "103",
+      "range": "298",
       "domain": "148",
       "attributes": [
         "anonymous",
@@ -11964,7 +12035,7 @@
       "id": "422"
     },
     {
-      "range": "399",
+      "range": "72",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12000,7 +12071,7 @@
       "id": "426"
     },
     {
-      "range": "53",
+      "range": "69",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12018,7 +12089,7 @@
       "id": "428"
     },
     {
-      "range": "76",
+      "range": "35",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12054,7 +12125,7 @@
       "id": "434"
     },
     {
-      "range": "399",
+      "range": "53",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12074,7 +12145,7 @@
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#isWithin",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "210",
+      "range": "199",
       "annotations": {
         "note": [
           {
@@ -12094,8 +12165,8 @@
         "en": "Relates a state, a process operator or a flow to the system limit enclosing it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "437"
     },
@@ -12144,18 +12215,18 @@
         "IRI-based": "hasEntity",
         "en": "has entity"
       },
-      "domain": "35",
+      "domain": "2",
       "comment": {
         "en": "Relates a subsystem to an entity within it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "443"
     },
     {
-      "range": "105",
+      "range": "399",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12164,7 +12235,7 @@
       "id": "444"
     },
     {
-      "range": "53",
+      "range": "64",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12173,7 +12244,7 @@
       "id": "445"
     },
     {
-      "range": "32",
+      "range": "8",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12182,7 +12253,7 @@
       "id": "448"
     },
     {
-      "range": "35",
+      "range": "105",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12191,7 +12262,7 @@
       "id": "449"
     },
     {
-      "range": "64",
+      "range": "60",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12200,7 +12271,7 @@
       "id": "450"
     },
     {
-      "range": "60",
+      "range": "72",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12209,7 +12280,7 @@
       "id": "451"
     },
     {
-      "range": "1",
+      "range": "69",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12218,7 +12289,7 @@
       "id": "452"
     },
     {
-      "range": "8",
+      "range": "32",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12228,7 +12299,7 @@
     },
     {
       "range": "153",
-      "domain": "294",
+      "domain": "292",
       "attributes": [
         "anonymous",
         "object"
@@ -12254,7 +12325,7 @@
       "id": "456"
     },
     {
-      "range": "71",
+      "range": "1",
       "domain": "336",
       "attributes": [
         "anonymous",
@@ -12303,9 +12374,9 @@
         "en": "The preferred name of an object."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "462"
     },
@@ -12377,8 +12448,8 @@
         "en": "Relates an entity to a protocol it employs."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "470"
     },
@@ -12446,7 +12517,7 @@
       "id": "474"
     },
     {
-      "range": "64",
+      "range": "2",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12455,7 +12526,7 @@
       "id": "475"
     },
     {
-      "range": "336",
+      "range": "32",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12464,7 +12535,7 @@
       "id": "476"
     },
     {
-      "range": "53",
+      "range": "69",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12473,7 +12544,7 @@
       "id": "478"
     },
     {
-      "range": "60",
+      "range": "399",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12482,7 +12553,7 @@
       "id": "479"
     },
     {
-      "range": "399",
+      "range": "1",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12491,7 +12562,7 @@
       "id": "480"
     },
     {
-      "range": "2",
+      "range": "8",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12522,14 +12593,14 @@
         "en": "The formula symbol the standard gives for a characteristic, for example T_cs for the control settling time."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "482"
     },
     {
-      "range": "8",
+      "range": "105",
       "domain": "7",
       "attributes": [
         "anonymous",
@@ -12538,7 +12609,7 @@
       "id": "484"
     },
     {
-      "range": "64",
+      "range": "32",
       "domain": "105",
       "attributes": [
         "anonymous",
@@ -12547,7 +12618,7 @@
       "id": "485"
     },
     {
-      "range": "71",
+      "range": "60",
       "domain": "105",
       "attributes": [
         "anonymous",
@@ -12556,7 +12627,7 @@
       "id": "486"
     },
     {
-      "range": "35",
+      "range": "1",
       "domain": "105",
       "attributes": [
         "anonymous",
@@ -12565,7 +12636,7 @@
       "id": "487"
     },
     {
-      "range": "32",
+      "range": "72",
       "domain": "105",
       "attributes": [
         "anonymous",
@@ -12574,7 +12645,7 @@
       "id": "488"
     },
     {
-      "range": "64",
+      "range": "60",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12594,7 +12665,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iec60050#hasActionLine",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "293",
+      "range": "294",
       "annotations": {
         "note": [
           {
@@ -12614,13 +12685,13 @@
         "en": "Relates an action path to a part of it running between two functional units."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "390"
     },
     {
-      "range": "71",
+      "range": "53",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12651,16 +12722,16 @@
         "en": "The number of a layer in the reference model, from one for the physical layer to seven for the application layer."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "493"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isValidatedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "207",
+      "range": "208",
       "annotations": {
         "note": [
           {
@@ -12680,8 +12751,8 @@
         "en": "Relates a model to a validation performed on it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "495"
     },
@@ -12695,7 +12766,7 @@
       "id": "496"
     },
     {
-      "range": "60",
+      "range": "69",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12704,7 +12775,7 @@
       "id": "497"
     },
     {
-      "range": "105",
+      "range": "32",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12713,7 +12784,7 @@
       "id": "498"
     },
     {
-      "range": "1",
+      "range": "64",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12722,7 +12793,7 @@
       "id": "499"
     },
     {
-      "range": "35",
+      "range": "1",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12731,7 +12802,7 @@
       "id": "500"
     },
     {
-      "range": "1",
+      "range": "105",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12740,7 +12811,7 @@
       "id": "501"
     },
     {
-      "range": "32",
+      "range": "105",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12749,7 +12820,7 @@
       "id": "502"
     },
     {
-      "range": "53",
+      "range": "72",
       "domain": "399",
       "attributes": [
         "anonymous",
@@ -12758,7 +12829,7 @@
       "id": "503"
     },
     {
-      "range": "71",
+      "range": "60",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12798,9 +12869,9 @@
         "en": "Relates a process operator to a process operator following it. Inferred, not modelled."
       },
       "attributes": [
-        "object",
+        "external",
         "transitive",
-        "external"
+        "object"
       ],
       "id": "506"
     },
@@ -12827,26 +12898,26 @@
         "en": "Relates a process operator to an assignment describing which technical resource realises it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "507"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#hasValue",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "range": "76",
+      "range": "35",
       "label": {
         "IRI-based": "hasValue",
         "en": "has value"
       },
-      "domain": "2",
+      "domain": "60",
       "comment": {
         "en": "Relates a quality of service statement to one of its parameter values."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "508"
     },
@@ -12873,14 +12944,14 @@
         "en": "Relates an object of the formalised process description to its identification."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "509"
     },
     {
-      "range": "2",
+      "range": "32",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12889,7 +12960,7 @@
       "id": "510"
     },
     {
-      "range": "35",
+      "range": "399",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12898,7 +12969,7 @@
       "id": "511"
     },
     {
-      "range": "32",
+      "range": "2",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12930,14 +13001,14 @@
         "en": "Relates a process operator to a process operator preceding it. Inferred, not modelled."
       },
       "attributes": [
-        "object",
+        "external",
         "transitive",
-        "external"
+        "object"
       ],
       "id": "514"
     },
     {
-      "range": "60",
+      "range": "1",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12946,7 +13017,7 @@
       "id": "515"
     },
     {
-      "range": "105",
+      "range": "53",
       "domain": "8",
       "attributes": [
         "anonymous",
@@ -12981,8 +13052,8 @@
         "en": "Relates a communication to an open system taking part in it, without stating the direction of the data flow."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "252"
     },
@@ -13009,8 +13080,8 @@
         "en": "Relates a controlling system or an automation to the controlled system it influences."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "517"
     },
@@ -13037,9 +13108,9 @@
         "en": "The unique code identifying an object."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "520"
     },
@@ -13066,9 +13137,9 @@
         "en": "The version of an object. A new version arises when the values of its attributes change."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "521"
     },
@@ -13098,8 +13169,8 @@
         "en": "Relates a flow to the process operator it originates from."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "408"
     },
@@ -13126,9 +13197,9 @@
         "en": "The revision of an object, describing its accredited version."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "522"
     },
@@ -13155,8 +13226,8 @@
         "en": "Relates an evaluation or an evaluation algorithm to the metric it measures against."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "523"
     },
@@ -13192,14 +13263,14 @@
         "en": "Relates an AI system to where it runs."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "526"
     },
     {
-      "range": "1",
+      "range": "69",
       "domain": "105",
       "attributes": [
         "anonymous",
@@ -13208,7 +13279,7 @@
       "id": "527"
     },
     {
-      "range": "60",
+      "range": "64",
       "domain": "105",
       "attributes": [
         "anonymous",
@@ -13239,8 +13310,8 @@
         "en": "Relates an inference to the model performing it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "529"
     },
@@ -13267,8 +13338,8 @@
         "en": "Relates an AI system or a component to the kind of technique it is based on."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "530"
     },
@@ -13295,8 +13366,8 @@
         "en": "Relates a subsystem, an entity, or a data unit to the layer it belongs to."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "532"
     },
@@ -13313,15 +13384,15 @@
         "en": "Relates data to the storing that persisted it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "534"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#hasQualityOfService",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "range": "2",
+      "range": "60",
       "annotations": {
         "note": [
           {
@@ -13341,8 +13412,8 @@
         "en": "Relates a communication to the quality of service observed on it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "535"
     },
@@ -13372,8 +13443,8 @@
         "en": "Relates a system to a disturbance variable acting on it from the outside."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "230"
     },
@@ -13403,8 +13474,8 @@
         "en": "Relates a flow to the state it originates from."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "407"
     },
@@ -13431,8 +13502,8 @@
         "en": "Relates a protocol data unit to the user data it carries."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "537"
     },
@@ -13459,16 +13530,16 @@
         "en": "Expresses that two states are required together rather than as alternatives to one another."
       },
       "attributes": [
+        "external",
         "object",
-        "symmetric",
-        "external"
+        "symmetric"
       ],
       "id": "538"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#hasSubProcess",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "209",
+      "range": "210",
       "annotations": {
         "note": [
           {
@@ -13488,9 +13559,9 @@
         "en": "Relates a process operator to the process describing its decomposition. Inferred, not modelled."
       },
       "attributes": [
-        "object",
+        "external",
         "transitive",
-        "external"
+        "object"
       ],
       "id": "541"
     },
@@ -13517,9 +13588,9 @@
         "en": "The unit of a characteristic value, for example ms or percent."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "543"
     },
@@ -13549,8 +13620,8 @@
         "en": "Relates a closed-loop control to the reference variable the controlled variable is adjusted to."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "232"
     },
@@ -13577,8 +13648,8 @@
         "en": "Relates an object of the formalised process description to one of its characteristics."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "546"
     },
@@ -13608,8 +13679,8 @@
         "en": "Relates a flow to the state it leads to."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "547"
     },
@@ -13636,15 +13707,15 @@
         "en": "Relates an automation to the action taking place over its action path."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "549"
     },
     {
       "iri": "https://w3id.org/aias/odp/vdi3682#hasUpperProcess",
       "baseIri": "https://w3id.org/aias/odp/vdi3682",
-      "range": "209",
+      "range": "210",
       "annotations": {
         "note": [
           {
@@ -13664,8 +13735,8 @@
         "en": "Relates a process operator to its parent process. Inferred, not modelled."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "550"
     },
@@ -13687,14 +13758,14 @@
         "IRI-based": "carriesVariable",
         "en": "carries variable"
       },
-      "domain": "293",
+      "domain": "294",
       "comment": {
         "en": "Relates an action line to the variable quantity transmitted along it."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "552"
     },
@@ -13724,8 +13795,8 @@
         "en": "Relates a flow to the process operator it leads to."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "558"
     },
@@ -13752,8 +13823,8 @@
         "en": "Relates a dataset to the data it groups, or data to the samples it consists of."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "559"
     },
@@ -13780,8 +13851,8 @@
         "en": "Relates a functional unit to a physical unit realising it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "343"
     },
@@ -13803,14 +13874,14 @@
         "IRI-based": "realisesLayer",
         "en": "realises layer"
       },
-      "domain": "60",
+      "domain": "53",
       "comment": {
         "en": "Relates a technology to the layer whose services it realises."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "562"
     },
@@ -13827,8 +13898,8 @@
         "en": "Relates an item, a system or a control to a value it states for one of its characteristics."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "563"
     },
@@ -13855,8 +13926,8 @@
         "en": "Relates a function to the component performing it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "567"
     },
@@ -13883,8 +13954,8 @@
         "en": "Relates a control loop to its forward path."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "568"
     },
@@ -13911,8 +13982,8 @@
         "en": "Relates an AI system or a component to a function it performs."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "570"
     },
@@ -13939,8 +14010,8 @@
         "en": "The describing part of a characteristic."
       },
       "attributes": [
-        "datatype",
-        "external"
+        "external",
+        "datatype"
       ],
       "id": "572"
     },
@@ -13967,8 +14038,8 @@
         "en": "Relates an AI system to a recorded way for an external agent to intervene in its functioning."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "573"
     },
@@ -13995,15 +14066,15 @@
         "en": "Relates a storing to where the data goes."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "574"
     },
     {
       "iri": "https://w3id.org/aias#hasComponent",
       "baseIri": "https://w3id.org/aias",
-      "range": "74",
+      "range": "75",
       "label": {
         "IRI-based": "hasComponent",
         "en": "has component"
@@ -14040,8 +14111,8 @@
         "en": "Relates a functional unit to another functional unit it is composed of."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "576"
     },
@@ -14068,8 +14139,8 @@
         "en": "Relates a process operator to the more detailed process operators it decomposes into."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "577"
     },
@@ -14086,9 +14157,9 @@
         "en": "The numeric quantity of a characteristic value."
       },
       "attributes": [
-        "datatype",
+        "external",
         "functional",
-        "external"
+        "datatype"
       ],
       "id": "578"
     },
@@ -14115,8 +14186,8 @@
         "en": "Relates an AI system to a risk recorded for it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "580"
     },
@@ -14143,8 +14214,8 @@
         "en": "Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "581"
     },
@@ -14171,8 +14242,8 @@
         "en": "Relates a communication to the layer whose services it uses."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "583"
     },
@@ -14189,8 +14260,8 @@
         "en": "Relates data to a data process step applied to it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "586"
     },
@@ -14217,9 +14288,9 @@
         "en": "Relates a hyperparameter to the value chosen for it."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "588"
     },
@@ -14246,8 +14317,8 @@
         "en": "Relates a control or an observer to a model of the process it uses."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "589"
     },
@@ -14283,8 +14354,8 @@
         "en": "Relates a protocol data unit of one layer to the service data unit of the layer below that carries it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "594"
     },
@@ -14306,14 +14377,14 @@
         "IRI-based": "forParameter",
         "en": "for parameter"
       },
-      "domain": "76",
+      "domain": "35",
       "comment": {
         "en": "Relates a quality of service value to the parameter it quantifies."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "595"
     },
@@ -14399,8 +14470,8 @@
       "id": "607"
     },
     {
-      "range": "199",
-      "domain": "210",
+      "range": "202",
+      "domain": "199",
       "attributes": [
         "anonymous",
         "object"
@@ -14448,9 +14519,9 @@
         "en": "Relates an entity to an entity of the same layer with which it communicates."
       },
       "attributes": [
+        "external",
         "object",
-        "symmetric",
-        "external"
+        "symmetric"
       ],
       "id": "611"
     },
@@ -14477,8 +14548,8 @@
         "en": "A reference from an object to an external identification system such as AKZ, KKS or NE 100."
       },
       "attributes": [
-        "datatype",
-        "external"
+        "external",
+        "datatype"
       ],
       "id": "612"
     },
@@ -14505,8 +14576,8 @@
         "en": "Relates a final controlling element to the controlled system it forms part of."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "613"
     },
@@ -14520,8 +14591,8 @@
       "id": "614"
     },
     {
-      "range": "199",
-      "domain": "209",
+      "range": "202",
+      "domain": "210",
       "attributes": [
         "anonymous",
         "object"
@@ -14538,8 +14609,8 @@
       "id": "616"
     },
     {
-      "range": "114",
-      "domain": "209",
+      "range": "199",
+      "domain": "210",
       "attributes": [
         "anonymous",
         "object"
@@ -14556,7 +14627,7 @@
       "id": "618"
     },
     {
-      "range": "114",
+      "range": "199",
       "domain": "151",
       "attributes": [
         "anonymous",
@@ -14574,7 +14645,7 @@
       "id": "620"
     },
     {
-      "range": "199",
+      "range": "202",
       "domain": "151",
       "attributes": [
         "anonymous",
@@ -14592,7 +14663,7 @@
       "id": "622"
     },
     {
-      "range": "210",
+      "range": "114",
       "domain": "151",
       "attributes": [
         "anonymous",
@@ -14610,7 +14681,7 @@
       "id": "624"
     },
     {
-      "range": "210",
+      "range": "202",
       "domain": "114",
       "attributes": [
         "anonymous",
@@ -14663,7 +14734,7 @@
         "IRI-based": "appearsAsOpenSystem",
         "en": "appears as open system"
       },
-      "domain": "74",
+      "domain": "75",
       "comment": {
         "en": "Relates a component to the open system it appears as when its communication is described."
       },
@@ -14695,38 +14766,10 @@
         "en": "Relates a signal to a parameter of it that represents information."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "630"
-    },
-    {
-      "iri": "https://w3id.org/aias/odp/iso22989#consistsOfStep",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "5",
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "The step from the function to what it actually does, so that a model can record an order of preparation rather than one opaque activity.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "IRI-based": "consistsOfStep",
-        "en": "consists of step"
-      },
-      "domain": "235",
-      "comment": {
-        "en": "Relates a data processing function to the steps it is made of."
-      },
-      "attributes": [
-        "object",
-        "external"
-      ],
-      "id": "631"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso22989#fulfilsTask",
@@ -14751,17 +14794,45 @@
         "en": "Relates a prediction to the task it addresses."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
+      ],
+      "id": "631"
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#consistsOfStep",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "range": "5",
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "The step from the function to what it actually does, so that a model can record an order of preparation rather than one opaque activity.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "IRI-based": "consistsOfStep",
+        "en": "consists of step"
+      },
+      "domain": "235",
+      "comment": {
+        "en": "Relates a data processing function to the steps it is made of."
+      },
+      "attributes": [
+        "external",
+        "object"
       ],
       "id": "632"
     },
     {
       "iri": "https://w3id.org/aias/odp/iec60050#isSourceOfActionLine",
-      "inverse": "292",
+      "inverse": "293",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "293",
+      "range": "294",
       "annotations": {
         "note": [
           {
@@ -14781,8 +14852,8 @@
         "en": "Relates a functional unit to an action line starting at it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "633"
     },
@@ -14809,8 +14880,8 @@
         "en": "Relates an AI system to a component constructing it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "634"
     },
@@ -14837,8 +14908,8 @@
         "en": "Relates a protocol data unit to the protocol control information it carries."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "635"
     },
@@ -14865,8 +14936,8 @@
         "en": "Relates an item or a system to a property it has, such as stability, observability or real-time capability."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "636"
     },
@@ -14880,7 +14951,7 @@
       "id": "637"
     },
     {
-      "range": "73",
+      "range": "74",
       "domain": "80",
       "attributes": [
         "anonymous",
@@ -14889,7 +14960,7 @@
       "id": "638"
     },
     {
-      "range": "144",
+      "range": "51",
       "domain": "57",
       "attributes": [
         "anonymous",
@@ -14920,13 +14991,13 @@
         "en": "Relates a process operator to a state leaving it. Inferred from the reified flows, not modelled directly."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "640"
     },
     {
-      "range": "153",
+      "range": "58",
       "domain": "57",
       "attributes": [
         "anonymous",
@@ -14935,7 +15006,7 @@
       "id": "641"
     },
     {
-      "range": "51",
+      "range": "153",
       "domain": "57",
       "attributes": [
         "anonymous",
@@ -14944,7 +15015,7 @@
       "id": "642"
     },
     {
-      "range": "186",
+      "range": "144",
       "domain": "57",
       "attributes": [
         "anonymous",
@@ -14953,7 +15024,7 @@
       "id": "643"
     },
     {
-      "range": "197",
+      "range": "186",
       "domain": "57",
       "attributes": [
         "anonymous",
@@ -14962,7 +15033,7 @@
       "id": "644"
     },
     {
-      "range": "58",
+      "range": "197",
       "domain": "57",
       "attributes": [
         "anonymous",
@@ -14993,8 +15064,8 @@
         "en": "Relates a layer to the layer it subdivides."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "646"
     },
@@ -15002,7 +15073,7 @@
       "iri": "https://w3id.org/aias/odp/iec60050#isTargetOfActionLine",
       "inverse": "648",
       "baseIri": "https://w3id.org/aias/odp/iec60050",
-      "range": "293",
+      "range": "294",
       "annotations": {
         "note": [
           {
@@ -15022,15 +15093,15 @@
         "en": "Relates a functional unit to an action line ending at it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "647"
     },
     {
       "iri": "https://w3id.org/aias/odp/iso7498#providesService",
       "baseIri": "https://w3id.org/aias/odp/iso7498",
-      "range": "71",
+      "range": "72",
       "annotations": {
         "note": [
           {
@@ -15050,14 +15121,14 @@
         "en": "Relates an entity to a service it provides to the layer above."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "649"
     },
     {
       "range": "220",
-      "domain": "74",
+      "domain": "75",
       "attributes": [
         "anonymous",
         "object"
@@ -15087,14 +15158,14 @@
         "en": "Relates a machine learning model to the training that produced it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "651"
     },
     {
       "range": "152",
-      "domain": "74",
+      "domain": "75",
       "attributes": [
         "anonymous",
         "object"
@@ -15119,14 +15190,14 @@
         "IRI-based": "toUnit",
         "en": "to unit"
       },
-      "domain": "293",
+      "domain": "294",
       "comment": {
         "en": "Relates an action line to the functional unit at which it ends."
       },
       "attributes": [
-        "object",
+        "external",
         "functional",
-        "external"
+        "object"
       ],
       "id": "648"
     },
@@ -15157,8 +15228,8 @@
         "en": "Relates a flow to the element it leads to."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "548"
     },
@@ -15212,8 +15283,8 @@
         "en": "Relates data to the acquisition that obtained it."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "654"
     },
@@ -15240,8 +15311,8 @@
         "en": "Relates a control loop to its feedback path."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "655"
     },
@@ -15263,13 +15334,13 @@
         "IRI-based": "consistsOf",
         "en": "consists of"
       },
-      "domain": "209",
+      "domain": "210",
       "comment": {
         "en": "Relates a process to the elements it contains, namely its states, process operators and its system limit."
       },
       "attributes": [
-        "object",
-        "external"
+        "external",
+        "object"
       ],
       "id": "656"
     }

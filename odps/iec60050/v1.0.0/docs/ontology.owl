@@ -12,6 +12,247 @@
 
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:iec60050="https://w3id.org/aias/odp/iec60050#">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Measure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To obtain experimentally one or more quantity values that can reasonably be attributed to a quantity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Measure</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-01.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#partOfActionPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasActionLine"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:comment xml:lang="en">Relates an action line to the action path it forms part of.</rdfs:comment>
+    <rdfs:label xml:lang="en">part of action path</rdfs:label>
+    <skos:note xml:lang="en">The inverse of hasActionLine. With it a model can go from a line to the path and on to the control running over it, which is how a device reaches the kind of control it takes part in.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#consistsOfUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">Relates a functional unit to another functional unit it is composed of.</rdfs:comment>
+    <rdfs:label xml:lang="en">consists of unit</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351 composes several units from others: the final controlling equipment from actuator and final controlling element, 351-49-09, the controller from comparing and controlling element, 351-49-11, and the control system from controlling and controlled system, 351-49-06.
+
+Stated as a relation rather than through subclass axioms, since the parts remain units in their own right and one part may belong to more than one whole.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Manipulate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To change or set flows of mass, energy, or information by means of a final controlling element.</rdfs:comment>
+    <rdfs:label xml:lang="en">Manipulate</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-12.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Evaluate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To determine characteristics of a process from measured or recorded variable quantities.</rdfs:comment>
+    <rdfs:label xml:lang="en">Evaluate</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-13.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#MeasuringElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that forms the feedback variable at its output from the controlled variable applied to its input.</rdfs:comment>
+    <rdfs:label xml:lang="en">Measuring Element</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-05, where the full term is measuring element in control technology.
+
+Not the same entry as the sensing element, 351-56-26. The sensing element responds to the measurand, whereas this element produces the feedback variable that closes the action path. A model may realise both through one physical unit.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasFeedbackPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FeedbackPath"/>
+    <rdfs:comment xml:lang="en">Relates a control loop to its feedback path.</rdfs:comment>
+    <rdfs:label xml:lang="en">has feedback path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-08.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#realisedByPhysicalUnit"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#PhysicalUnit"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">Relates a physical unit to a functional unit it realises.</rdfs:comment>
+    <rdfs:label xml:lang="en">realises functional unit</rdfs:label>
+    <skos:note xml:lang="en">The inverse of realisedByPhysicalUnit, so that a model can start from a device.
+
+Note that the answer may name several units. IEC 60050-351 keeps the functional and the physical view apart on purpose, 351-56-02 against 351-56-03, and one device may realise a comparing element and a controlling element at once. A question asking what role a device plays therefore has more than one answer where the device carries more than one function, and that is the correct result rather than an ambiguity to remove.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#PassiveFault">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Fault"/>
+    <rdfs:comment xml:lang="en">A fault that inhibits alterations of the output variables of the control equipment although all program-defined conditions for such alterations are fulfilled.</rdfs:comment>
+    <rdfs:label xml:lang="en">Passive Fault</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-23.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Alarm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To indicate that the system has switched or will immediately switch to a state which is outside the specified operating conditions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Alarm</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-08.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3dd3f83e67cd46c881566dfcdc25682e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="N3fec630e6208407aa5d29739fcdf5a8e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d6e26819a4046419299cc375bb7c492">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdf:rest rdf:nodeID="N3ccb4e19ec5a4fb7bf5dbddc20fb97bb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Characteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">A named characteristic of the behaviour of a system or a transfer element, such as a settling time or an overshoot, to which a model assigns a value.</rdfs:comment>
+    <rdfs:label xml:lang="en">Characteristic</rdfs:label>
+    <skos:note xml:lang="en">**Collecting class of this pattern.** The standard defines the individual characteristics in 351-45, 351-46 and 351-47 without naming a common superclass. Named individuals are supplied in IEC60050-instances.ttl.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ClosedAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Action"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#OpenAction"/>
+    <rdfs:comment xml:lang="en">An action in a closed action path in which the output variable is continuously or sequentially influencing the input variable and thus continuously or sequentially influencing itself.</rdfs:comment>
+    <rdfs:label xml:lang="en">Closed Action</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-04. This, not the closed path, is what closed-loop control requires.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#InputVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">A variable quantity which is acting on a system from the outside and which is independent of the other variable quantities of the system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Input Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-41-06.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that, in closed-loop control, forms the reference variable at its output from the command variable at its input.</rdfs:comment>
+    <rdfs:label xml:lang="en">Reference-variable Generating Element</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-10. The German term is Fuehrungsgroessenbildner. Its note states that such an element often ensures that critical limits are not exceeded, for example by limiting the rate of change.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#realisedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:range rdf:nodeID="N560e065eeaf04d05bf499137064d245c"/>
+    <rdfs:comment xml:lang="en">Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain.</rdfs:comment>
+    <rdfs:label xml:lang="en">realised by</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-11 and 351-47-12. A closed-loop control is carried by a loop, an open-loop control by a chain.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Stability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The property of a system implying that for a sufficiently small initial displacement from the rest position, or a sufficiently small disturbance, the state variables remain within a sufficiently small neighbourhood of the rest position.</rdfs:comment>
+    <rdfs:label xml:lang="en">Stability</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-20.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlDifferenceVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">The difference between the reference variable and the feedback variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control Difference Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-05, marked e in Figure 2. It exists only where a comparison takes place, which is why it appears in the closed-loop figure alone.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#fromUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">Relates an action line to the functional unit at which it starts.</rdfs:comment>
+    <rdfs:label xml:lang="en">from unit</rdfs:label>
+    <skos:note xml:lang="en">The direction of action, IEC 60050-351, 351-44-05, is carried by this relation together with toUnit rather than by a class of its own.
+
+Note 2 of that entry states that the direction of action need not agree with the direction of the mass or energy flow. Modelling it as a class would invite an alignment to equate it with the direction of a flow in the technical process pattern, where a flow does transport material.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#MeasuringTransmitter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A measuring transducer the output variable of which is a standardized signal.</rdfs:comment>
+    <rdfs:label xml:lang="en">Measuring Transmitter</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-29. The standardised signal is where the communication subdomain begins, which makes this the handover point to the communication pattern.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1ded123aa91b46aca85d8091049635ee">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#CharacteristicValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">The value a model assigns to one characteristic, together with its unit.</rdfs:comment>
+    <rdfs:label xml:lang="en">Characteristic Value</rdfs:label>
+    <skos:note xml:lang="en">Reified so that a value can be referred to and annotated, in the same arrangement and for the same reason as the quality of service value of the ISO 7498 pattern.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ProgrammableController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Controller"/>
+    <rdfs:comment xml:lang="en">A microprocessor-based controller with a programmable memory for the internal storage of user-defined instructions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Programmable Controller</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-25. The standard defines no programmable logic controller as a device; 351-47-22 covers that as a kind of control instead.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#PhysicalUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdfs:comment xml:lang="en">An item under consideration defined according to construction or configuration.</rdfs:comment>
+    <rdfs:label xml:lang="en">Physical Unit</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-03. The building view: the device as it is bought and installed. Not disjoint with the functional unit, since the two are views rather than kinds.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ActionPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">A directed path within a control structure, which connects two selected variable quantities.</rdfs:comment>
+    <rdfs:label xml:lang="en">Action Path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-44-03. Structure, not behaviour.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#RealTimeCapability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The capability to keep tasks in a runnable state, so that they are able to react to technical process events within a pre-determined time interval.</rdfs:comment>
+    <rdfs:label xml:lang="en">Real-time Capability</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-54-06, where the entry is stated for a process computer system.
+
+Real time is a capability of a system with a stated interval, not a property of time itself. The pattern follows that reading, so a model states the capability and the interval separately rather than calling a duration real time.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#toUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">Relates an action line to the functional unit at which it ends.</rdfs:comment>
+    <rdfs:label xml:lang="en">to unit</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-44-05. Together with fromUnit it carries the direction of action.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ActionLine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:comment xml:lang="en">A part of the action path between two functional units, the direction of action being indicated by an arrow.</rdfs:comment>
+    <rdfs:label xml:lang="en">Action Line</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-44-04, drawn as the arrows of Figures 1 and 2.
+
+The class resolves an action path into the units it runs through. Without it a path can only be asserted to be open or closed; with it the assertion becomes checkable against the units and the variables actually recorded.
+
+Disjoint from the action path: a line is a part of a path, not a path of its own.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na3ddb5fe1e424d749d250f9ffabb4d01">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdf:rest rdf:nodeID="N0aca23df80b04fa4b41f63a00a6c7e6b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FeedbackPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:comment xml:lang="en">An action path connecting an output of the controlled system to one of the inputs of the related comparing element.</rdfs:comment>
+    <rdfs:label xml:lang="en">Feedback Path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-08.</skos:note>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Observer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
@@ -19,25 +260,29 @@
     <rdfs:label xml:lang="en">Observer</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-47-31. Structurally the definition of what practice calls a soft sensor, without the standard assuming any particular technique.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasActionLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:comment xml:lang="en">Relates an action path to a part of it running between two functional units.</rdfs:comment>
-    <rdfs:label xml:lang="en">has action line</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-44-03 and 351-44-04. An action path is composed of action lines, which is what makes the path traceable through the units.</skos:note>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ClosedLoopControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:comment xml:lang="en">A process whereby one variable quantity, namely the controlled variable, is continuously or sequentially measured, compared with another variable quantity, namely the reference variable, and influenced in such a manner as to adjust to the reference variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Closed-loop Control</rdfs:label>
+    <skos:altLabel xml:lang="en">feedback control</skos:altLabel>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-01. Characteristic for closed-loop control is the closed action in which the controlled variable continuously or sequentially influences itself in the action path of the closed loop. The closed action is required, not merely a closed path.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#runsOverActionPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:comment xml:lang="en">Relates an automation to the action path it runs over.</rdfs:comment>
-    <rdfs:label xml:lang="en">runs over action path</rdfs:label>
-    <skos:note xml:lang="en">The structural half of the distinction: whether something returns from the output to the input, 351-47-03 against 351-47-05.</skos:note>
+  <rdf:Description rdf:nodeID="N7e3f93c3075443ccb593d5c809889139">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Measure"/>
+    <rdf:rest rdf:nodeID="N6615a69e28b84776b71cfe8505c0de80"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N733be1ec236047c6b4eeaddaa3b4104b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Monitor"/>
-    <rdf:rest rdf:nodeID="Ncfc9f17cde0b406ba4170c5aa6a5c957"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Model">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A mathematical or physical representation of a system or a process, based with sufficient precision upon known laws, identification or specified suppositions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Model</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-26. The identification named in the definition is the data driven case, so the standard treats an identified model as an equal kind rather than as an exception.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#DegreeOfAutomation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The proportion of automatic functions to the entire set of functions of a system or plant.</rdfs:comment>
+    <rdfs:label xml:lang="en">Degree of Automation</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-31. May be given only for a defined system whose limits are specified. Full automatic operation means all functions except switching on and off are automated.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#actionOverPath">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -48,27 +293,33 @@
     <rdfs:label xml:lang="en">action over path</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-47-04 and 351-47-06 both define the action with respect to a path. Functional: one action belongs to one path.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FuzzyControl">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FunctionalUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control in which the control algorithm is expressed by fuzzy logic using facts, inference rules and quantifiers based on experience and intuition.</rdfs:comment>
-    <rdfs:label xml:lang="en">Fuzzy Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-56.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdfs:comment xml:lang="en">An item under consideration defined according to function or effect.</rdfs:comment>
+    <rdfs:label xml:lang="en">Functional Unit</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-02. The functional view: what something does, irrespective of how it is built.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Alarm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To indicate that the system has switched or will immediately switch to a state which is outside the specified operating conditions.</rdfs:comment>
-    <rdfs:label xml:lang="en">Alarm</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-08.</skos:note>
+  <rdf:Description rdf:nodeID="N3ccb4e19ec5a4fb7bf5dbddc20fb97bb">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ClosedLoopControl">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#quantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment xml:lang="en">The numeric quantity of a characteristic value.</rdfs:comment>
+    <rdfs:label xml:lang="en">quantity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Actuator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:comment xml:lang="en">A process whereby one variable quantity, namely the controlled variable, is continuously or sequentially measured, compared with another variable quantity, namely the reference variable, and influenced in such a manner as to adjust to the reference variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Closed-loop Control</rdfs:label>
-    <skos:altLabel xml:lang="en">feedback control</skos:altLabel>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-01. Characteristic for closed-loop control is the closed action in which the controlled variable continuously or sequentially influences itself in the action path of the closed loop. The closed action is required, not merely a closed path.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that generates the manipulated variable, required to drive the final controlling element, from the output variable of the controlling element.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actuator</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-07.
+
+The German term is Steller, and the entry is the signal side of the manipulating equipment, not the element acting on the flow. That element is the final controlling element, 351-49-08. The common rendering of the German Aktor as actuator conflates the two and would put the wrong class on a valve.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -102,64 +353,12 @@ Terms the standard does not define, and which have to come from elsewhere: avail
     <foaf:fundedBy rdf:resource="https://dtecbw.de/"/>
     <schema:codeRepository rdf:resource="https://github.com/schiesem/aias"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlDifferenceVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">The difference between the reference variable and the feedback variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control Difference Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-05, marked e in Figure 2. It exists only where a comparison takes place, which is why it appears in the closed-loop figure alone.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlChain">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
-    <rdfs:comment xml:lang="en">A set of elements or systems which act upon one another in a series structure.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control Chain</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-12. The arrangement of an open-loop control, as against the loop of a closed-loop control.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Measure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To obtain experimentally one or more quantity values that can reasonably be attributed to a quantity.</rdfs:comment>
-    <rdfs:label xml:lang="en">Measure</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-01.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControllingElement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that forms its output variable from the command variable in open-loop control and from the control difference variable in closed-loop control.</rdfs:comment>
-    <rdfs:label xml:lang="en">Controlling Element</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-04. The German terms are Steuerglied and Regelglied, one entry for both.
-
-The entry is the element that appears in Figure 1 as well as in Figure 2, which is why the same class serves an open-loop and a closed-loop control. What differs is the variable at its input, not the unit.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncfc9f17cde0b406ba4170c5aa6a5c957">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Notify"/>
-    <rdf:rest rdf:nodeID="N19e4f2dcb5c74232a84ec2f9e3cd27af"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#CommandVariable">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#InputVariable"/>
     <rdfs:comment xml:lang="en">A variable quantity which is not influenced by the control but is introduced into the control system from outside with the aim of making the final controlled variable follow it.</rdfs:comment>
     <rdfs:label xml:lang="en">Command Variable</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-48-09.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4c3149f37bfa4ffa838ead1afcf7bcd7">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ControllingSystem"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne444b0cab2714f759aa756a1d420dbf8">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalSafety"/>
-    <rdf:rest rdf:nodeID="N6f191c0c342b4ab68ba29921b0775d97"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Controllability">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The property of a system implying that its state variables may be changed from an initial state into a desired final state within a finite time interval, via proper time variations of the input variables.</rdfs:comment>
-    <rdfs:label xml:lang="en">Controllability</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-22. The formal precondition for any application that intervenes in a process.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nda4170af078c49da89732371c8a99cf8">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdf:rest rdf:nodeID="N0fbd66d705934beb9abb333188eae0bd"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControllingSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -168,52 +367,186 @@ The entry is the element that appears in Figure 1 as well as in Figure 2, which 
     <rdfs:label xml:lang="en">Controlling System</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-49-02.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OpenAction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Action"/>
-    <rdfs:comment xml:lang="en">An action in an open action path, or in a closed action path where the output variable influences the input variable only under certain non-permanently acting conditions.</rdfs:comment>
-    <rdfs:label xml:lang="en">Open Action</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-06. The note to the entry states that a reset circuit, 351-47-62, has an open action although its structure has a closed action path.
-
-This is the case that separates the pattern from the simplified reading that feedback alone makes a closed-loop control.</skos:note>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#carriesVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">Relates an action line to the variable quantity transmitted along it.</rdfs:comment>
+    <rdfs:label xml:lang="en">carries variable</rdfs:label>
+    <skos:note xml:lang="en">The letters of the figure legends, c, w, e, m, y, x, q and r, are recorded through this relation. Functional: one line carries one variable quantity.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FunctionalSafety">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The part of the overall safety that depends on functional and physical units operating correctly in response to their inputs.</rdfs:comment>
-    <rdfs:label xml:lang="en">Functional Safety</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-57-06. The standard defines no safety integrity level; IEC 61508 does.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#MeasuringElement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that forms the feedback variable at its output from the controlled variable applied to its input.</rdfs:comment>
-    <rdfs:label xml:lang="en">Measuring Element</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-05, where the full term is measuring element in control technology.
-
-Not the same entry as the sensing element, 351-56-26. The sensing element responds to the measurand, whereas this element produces the feedback variable that closes the action path. A model may realise both through one physical unit.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#VariableQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A physical quantity the value of which is subject to change and which can usually be measured.</rdfs:comment>
-    <rdfs:label xml:lang="en">Variable Quantity</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-41-01. The standard notes that the short form quantity is often used for it.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#SamplingControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control in which the input variables of the controlling system are taken discontinuously in time to generate new values of the manipulated variable, which are updated discontinuously and maintained by holding elements between updates.</rdfs:comment>
-    <rdfs:label xml:lang="en">Sampling Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-15. Its sampling period, 351-47-16, is the normative equivalent of what practice calls cycle time, a term the standard does not define.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FeedbackVariable">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlEquipment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdfs:comment xml:lang="en">The entirety of devices and programs used for the task of controlling, and in a broader sense all instructions and programs used for it.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control Equipment</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-24. A note to the entry includes the process control station and the operating manuals, which is how the standard covers what practice calls a control room.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OpenActionPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:comment xml:lang="en">An action path between the input variable and the output variable at which no action path goes back from the output variable to the input variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Open Action Path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-05.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N0723cd9e6ae34eaaa8e8d95652c893ad"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">Relates an automation or a system to a variable quantity involved in it.</rdfs:comment>
+    <rdfs:label xml:lang="en">has variable</rdfs:label>
+    <skos:note xml:lang="en">Super property of the role specific relations below, so that a model may record a variable before its role is settled.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb084f503a62d4d98b570efa36113df58">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#performsFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nc44aaa3849db48f4a2fb35ca9263d6ba"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">Relates an item under consideration to a function of control technology it performs.</rdfs:comment>
+    <rdfs:label xml:lang="en">performs function</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43. Mapping an application onto the tasks the standard names keeps a model connected to existing plant documentation.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlChain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
+    <rdfs:comment xml:lang="en">A set of elements or systems which act upon one another in a series structure.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control Chain</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-12. The arrangement of an open-loop control, as against the loop of a closed-loop control.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ProgrammedControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:comment xml:lang="en">Control the functions of which are defined by a program that was previously entered.</rdfs:comment>
+    <rdfs:label xml:lang="en">Programmed Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-20. The standard states no genus beyond control, so the class sits under Control. Storage-programmable logic control, 351-47-22, is a kind of this, which is how the standard covers what practice calls a programmable logic controller.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#actsOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Naad438773cd54ed498828fc8e2030cb6"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ControlledSystem"/>
+    <rdfs:comment xml:lang="en">Relates a controlling system or an automation to the controlled system it influences.</rdfs:comment>
+    <rdfs:label xml:lang="en">acts on</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-01 and 351-49-02.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Signal">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">A variable quantity which represents the controlled variable and is returned to the comparing element.</rdfs:comment>
-    <rdfs:label xml:lang="en">Feedback Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-03.</skos:note>
+    <rdfs:comment xml:lang="en">A physical variable quantity, one or more parameters of which carry information about one or more variable quantities.</rdfs:comment>
+    <rdfs:label xml:lang="en">Signal</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-41-17. The separation of the carrier from the information it carries is what lets a model tell sensing hardware from the data point it produces.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#runsOverActionPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:comment xml:lang="en">Relates an automation to the action path it runs over.</rdfs:comment>
+    <rdfs:label xml:lang="en">runs over action path</rdfs:label>
+    <skos:note xml:lang="en">The structural half of the distinction: whether something returns from the output to the input, 351-47-03 against 351-47-05.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#forCharacteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
+    <rdfs:comment xml:lang="en">Relates a characteristic value to the characteristic it quantifies.</rdfs:comment>
+    <rdfs:label xml:lang="en">for characteristic</rdfs:label>
+    <skos:note xml:lang="en">Functional: one value quantifies exactly one characteristic.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naad438773cd54ed498828fc8e2030cb6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N3dd3f83e67cd46c881566dfcdc25682e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na49c5d9c47d14933882c6b7566b53e4d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdf:rest rdf:nodeID="Nb084f503a62d4d98b570efa36113df58"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N06d366b7f97a4e0f8de8190d945777e5">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Optimize"/>
+    <rdf:rest rdf:nodeID="N4ee8e71b619d4d3499dc7ae61c0cfc67"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasControlledVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ControlledVariable"/>
+    <rdfs:comment xml:lang="en">Relates a closed-loop control to the controlled variable it acts upon.</rdfs:comment>
+    <rdfs:label xml:lang="en">has controlled variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-01. Only closed-loop control has one, since the controlled variable is what is measured and compared.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nde486cb6b7c74c76952234c7eefd7947">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Redundancy"/>
+    <rdf:rest rdf:nodeID="Ne109a75c509547d69a728efecb210f26"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasDisturbanceVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
+    <rdfs:domain rdf:nodeID="N23872fc0dbeb4759b3ca816bb0b472de"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#DisturbanceVariable"/>
+    <rdfs:comment xml:lang="en">Relates a system to a disturbance variable acting on it from the outside.</rdfs:comment>
+    <rdfs:label xml:lang="en">has disturbance variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-08.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasReferenceVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ReferenceVariable"/>
+    <rdfs:comment xml:lang="en">Relates a closed-loop control to the reference variable the controlled variable is adjusted to.</rdfs:comment>
+    <rdfs:label xml:lang="en">has reference variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-02.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#System">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A set of interrelated elements considered in a defined context as a whole and separated from their environment.</rdfs:comment>
+    <rdfs:label xml:lang="en">System</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-08.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/codeRepository">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlledSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ControllingSystem"/>
+    <rdfs:comment xml:lang="en">A functional unit which is to be influenced according to the control task.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controlled System</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-01. The German terms are Regelstrecke and Steuerstrecke, so the class covers the plant side of both kinds of control.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControllingEquipment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit consisting of the actuator and the final controlling element.</rdfs:comment>
+    <rdfs:label xml:lang="en">Final Controlling Equipment</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-09. The German term is Stelleinrichtung, drawn as the dashed grouping in Figures 1 and 2.
+
+It groups the signal side, 351-49-07, and the element acting on the flow, 351-49-08, which the standard otherwise keeps apart. Membership is recorded through consistsOfUnit rather than through a subclass axiom, since the two parts stay units in their own right.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasActionLine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:comment xml:lang="en">Relates an action path to a part of it running between two functional units.</rdfs:comment>
+    <rdfs:label xml:lang="en">has action line</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-44-03 and 351-44-04. An action path is composed of action lines, which is what makes the path traceable through the units.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OpenLoopControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdfs:comment xml:lang="en">A process whereby one or more variable quantities as input variables influence other variable quantities as output variables in accordance with the proper laws of the system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Open-loop Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-02. Characteristic for open-loop control is the open action path, or in a closed action path the fact that the output variables being influenced by the input variables are not continuously or sequentially influencing themselves and not by the same input variables.
+
+Deliberately **not** disjoint with closed-loop control: the standard admits open-loop control in a closed action path, so a disjointness axiom would contradict it. What separates the two is the action, not the path.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasAction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -225,78 +558,11 @@ Not the same entry as the sensing element, 351-56-26. The sensing element respon
 
 A model that states only the path cannot be told apart from a reset circuit, 351-47-62, which has a closed path and an open action and is therefore open-loop control.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#realisesFunctionalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#realisedByPhysicalUnit"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#PhysicalUnit"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">Relates a physical unit to a functional unit it realises.</rdfs:comment>
-    <rdfs:label xml:lang="en">realises functional unit</rdfs:label>
-    <skos:note xml:lang="en">The inverse of realisedByPhysicalUnit, so that a model can start from a device.
-
-Note that the answer may name several units. IEC 60050-351 keeps the functional and the physical view apart on purpose, 351-56-02 against 351-56-03, and one device may realise a comparing element and a controlling element at once. A question asking what role a device plays therefore has more than one answer where the device carries more than one function, and that is the correct result rather than an ambiguity to remove.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0756d1eba19e4c83a7a455512f7c4426">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="N83a2b05cd1264e649d04071bee0fb1cd"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4bcd8bdb11b247ec922a4704c60350bd">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Stability"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Optimize">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To design a process or act upon a process such that the performance criterion used for evaluating the process states assumes a value either as large or as small as possible within given limitations.</rdfs:comment>
-    <rdfs:label xml:lang="en">Optimize</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-14.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#MultivariableControl">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#VariableQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control of several controlled variables of a multivariable system by several controllers.</rdfs:comment>
-    <rdfs:label xml:lang="en">Multivariable Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-35.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ProgrammableController">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Controller"/>
-    <rdfs:comment xml:lang="en">A microprocessor-based controller with a programmable memory for the internal storage of user-defined instructions.</rdfs:comment>
-    <rdfs:label xml:lang="en">Programmable Controller</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-25. The standard defines no programmable logic controller as a device; 351-47-22 covers that as a kind of control instead.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/codeRepository">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#PhysicalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdfs:comment xml:lang="en">An item under consideration defined according to construction or configuration.</rdfs:comment>
-    <rdfs:label xml:lang="en">Physical Unit</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-03. The building view: the device as it is bought and installed. Not disjoint with the functional unit, since the two are views rather than kinds.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasReferenceVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ReferenceVariable"/>
-    <rdfs:comment xml:lang="en">Relates a closed-loop control to the reference variable the controlled variable is adjusted to.</rdfs:comment>
-    <rdfs:label xml:lang="en">has reference variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-02.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#usesModel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N79282fea8b3d45e9a7a72b5d84ccf371"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#Model"/>
-    <rdfs:comment xml:lang="en">Relates a control or an observer to a model of the process it uses.</rdfs:comment>
-    <rdfs:label xml:lang="en">uses model</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-31 and 351-47-33. Both name a model of the controlled system as part of their structure.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Observability">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The property of a system implying that its initial state may be determined from input and output variables observed within a finite time interval.</rdfs:comment>
-    <rdfs:label xml:lang="en">Observability</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-23. The formal precondition for reconstructing a state that is not measured, which is what an observer does.</skos:note>
+    <rdfs:comment xml:lang="en">A physical quantity the value of which is subject to change and which can usually be measured.</rdfs:comment>
+    <rdfs:label xml:lang="en">Variable Quantity</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-41-01. The standard notes that the short form quantity is often used for it.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#realisedByPhysicalUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -308,72 +574,16 @@ Note that the answer may name several units. IEC 60050-351 keeps the functional 
 
 The relation is the axis the technical process pattern lacks, where a technical resource is atomic. One physical unit may realise several functional units and one functional unit may be spread over several physical units, so no cardinality is asserted.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#InformationParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A parameter of a signal that represents information according to a rule.</rdfs:comment>
-    <rdfs:label xml:lang="en">Information Parameter</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-41-18.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#AdaptiveControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control with automatic modification of the structure or parameters of the controlling system to compensate for varying operating conditions and states.</rdfs:comment>
-    <rdfs:label xml:lang="en">Adaptive Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-42. The automatic modification is what a learning system performs online.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FeedbackPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:comment xml:lang="en">An action path connecting an output of the controlled system to one of the inputs of the related comparing element.</rdfs:comment>
-    <rdfs:label xml:lang="en">Feedback Path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-08.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControllingEquipment">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit consisting of the actuator and the final controlling element.</rdfs:comment>
-    <rdfs:label xml:lang="en">Final Controlling Equipment</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-09. The German term is Stelleinrichtung, drawn as the dashed grouping in Figures 1 and 2.
-
-It groups the signal side, 351-49-07, and the element acting on the flow, 351-49-08, which the standard otherwise keeps apart. Membership is recorded through consistsOfUnit rather than through a subclass axiom, since the two parts stay units in their own right.</skos:note>
+    <rdfs:comment xml:lang="en">A functional unit consisting of the controlling system and the controlled system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control System</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-06. The outermost frame of Figures 1 and 2, covering an open-loop and a closed-loop control alike.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that forms the final controlled variable from the controlled variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Generation of the Final Controlled Variable</rdfs:label>
-    <skos:note xml:lang="en">**Not a term of the standard.** IEC 60050-351 draws this unit at the right-hand edge of Figures 1 and 2, where x enters and q leaves the control system, but gives it no entry, no number and no index line. A search of the full text finds the wording only inside the two figures.
-
-The class is nevertheless kept, because the final controlled variable it produces is a term of the standard, 351-48-10, and without a unit for it that variable would have no origin in a model. The last step of both figures would then go unrecorded.
-
-Anyone aligning this pattern with another should treat the class as a construct of this work rather than as normative vocabulary. REFERENCE.md lists it under the elements taken from the figures instead of from the entries.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OutputVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables.</rdfs:comment>
-    <rdfs:label xml:lang="en">Output Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-41-07.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Signal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">A physical variable quantity, one or more parameters of which carry information about one or more variable quantities.</rdfs:comment>
-    <rdfs:label xml:lang="en">Signal</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-41-17. The separation of the carrier from the information it carries is what lets a model tell sensing hardware from the data point it produces.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#RobustControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control able to keep system properties within a prescribed area even if the properties of the controlled system or of the controller deviate from those assumed for the design.</rdfs:comment>
-    <rdfs:label xml:lang="en">Robust Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-45. The deviation from the properties assumed for the design is what a data driven model faces as a shift of its operating conditions.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Redundancy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">In an item, the existence of more than one means for performing a required function.</rdfs:comment>
-    <rdfs:label xml:lang="en">Redundancy</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-28. Stated over an item, so it applies to any item under consideration.</skos:note>
+  <rdf:Description rdf:nodeID="Ne109a75c509547d69a728efecb210f26">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Stability"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Notify">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -382,168 +592,6 @@ Anyone aligning this pattern with another should treat the class as a construct 
     <rdfs:label xml:lang="en">Notify</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-43-05. Directed outside the system, as against alerting, 351-43-06, which is directed inside it.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasProperty">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N63401df8019d4d2e8e7f920b7f2481b3"/>
-    <rdfs:range rdf:nodeID="Nbb0f36432f3a49ae915349627db36ae3"/>
-    <rdfs:comment xml:lang="en">Relates an item or a system to a property it has, such as stability, observability or real-time capability.</rdfs:comment>
-    <rdfs:label xml:lang="en">has property</rdfs:label>
-    <skos:note xml:lang="en">Collects 351-42-20, -22, -23, -28, -31 and 351-54-06, which the standard states as properties of a system.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasDisturbanceVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
-    <rdfs:domain rdf:nodeID="N1a546509ffcd4ba2b308452a15311f1d"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#DisturbanceVariable"/>
-    <rdfs:comment xml:lang="en">Relates a system to a disturbance variable acting on it from the outside.</rdfs:comment>
-    <rdfs:label xml:lang="en">has disturbance variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-08.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#fromUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">Relates an action line to the functional unit at which it starts.</rdfs:comment>
-    <rdfs:label xml:lang="en">from unit</rdfs:label>
-    <skos:note xml:lang="en">The direction of action, IEC 60050-351, 351-44-05, is carried by this relation together with toUnit rather than by a class of its own.
-
-Note 2 of that entry states that the direction of action need not agree with the direction of the mass or energy flow. Modelling it as a class would invite an alignment to equate it with the direction of a flow in the technical process pattern, where a flow does transport material.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#unit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en">The unit of a characteristic value, for example ms or percent.</rdfs:comment>
-    <rdfs:label xml:lang="en">unit</rdfs:label>
-    <skos:note xml:lang="en">A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#forCharacteristic">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
-    <rdfs:comment xml:lang="en">Relates a characteristic value to the characteristic it quantifies.</rdfs:comment>
-    <rdfs:label xml:lang="en">for characteristic</rdfs:label>
-    <skos:note xml:lang="en">Functional: one value quantifies exactly one characteristic.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasCharacteristicValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N28401a221503454f8262d28ef66c21fb"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
-    <rdfs:comment xml:lang="en">Relates an item, a system or a control to a value it states for one of its characteristics.</rdfs:comment>
-    <rdfs:label xml:lang="en">has characteristic value</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasForwardPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ForwardPath"/>
-    <rdfs:comment xml:lang="en">Relates a control loop to its forward path.</rdfs:comment>
-    <rdfs:label xml:lang="en">has forward path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-07.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#isSourceOfActionLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#fromUnit"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:comment xml:lang="en">Relates a functional unit to an action line starting at it.</rdfs:comment>
-    <rdfs:label xml:lang="en">is source of action line</rdfs:label>
-    <skos:note xml:lang="en">The inverse of fromUnit. Together with the next one it says where a unit sits in the chain, and therefore whether it lies in the forward or in the feedback branch.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N564d3e02b5d1494a9252fed60dc5a8aa">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N38c36f3d8e1b481aba61bf53f36c7b15"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ActionPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">A directed path within a control structure, which connects two selected variable quantities.</rdfs:comment>
-    <rdfs:label xml:lang="en">Action Path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-44-03. Structure, not behaviour.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Intervene">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To modify an automatic procedure by an input of the operator or a prioritized technical unit at an unscheduled instant.</rdfs:comment>
-    <rdfs:label xml:lang="en">Intervene</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-15. The entry gives a normative form of what practice calls keeping a human in the loop, including the priority between units.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3813467f514f408883543078918a72fd">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="N4c3149f37bfa4ffa838ead1afcf7bcd7"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#CascadeControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control in which the output variable of one controller is the reference variable of one or more secondary control loops.</rdfs:comment>
-    <rdfs:label xml:lang="en">Cascade Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-25.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Control">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">Purposeful action on or in a process to meet specified objectives.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-19. The German term is Leiten, which covers both open-loop and closed-loop control as well as the supervisory tasks around them. National footnote N1 of that entry states this explicitly: control is the general term here, and the narrower Regeln and Steuern belong to the entries below.
-
-No class for automating sits between this class and the two kinds of control. The standard defines automating in 351-43 as a task, alongside measuring and monitoring, not in 351-47 as a kind of control, and 351-42-31 treats the degree of automation as a proportion of the functions of a system. A hand-operated closed-loop control is a closed-loop control by 351-47-01 without being automated, so a subclass axiom would state more than the standard does. Whether a control runs by itself is recorded through the AI pattern, where automation is a function, and the two are related in the alignment.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">An object under consideration defined according to function and scope.</rdfs:comment>
-    <rdfs:label xml:lang="en">Item under Consideration</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-01.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ReferenceVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#InputVariable"/>
-    <rdfs:comment xml:lang="en">An input variable to a comparing element in a controlling system, which sets the desired value of the controlled variable and is deducted from the command variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Reference Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-02.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#symbol">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en">The formula symbol the standard gives for a characteristic, for example T_cs for the control settling time.</rdfs:comment>
-    <rdfs:label xml:lang="en">symbol</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351 states a formula symbol for most characteristics of 351-45 and 351-46, which makes a model checkable against the figures of the standard.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ComputerControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:comment xml:lang="en">A type of control in which a computer is used in the controlling system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Computer Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-52. No genus beyond control is stated.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbb0f36432f3a49ae915349627db36ae3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Ne29785024ddb4f5d963a83e1b4da5120"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8f6de4b4404d4fb1aca8550e3b059a6c">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-    <owl:distinctMembers rdf:nodeID="N661a166cf53c4cf89d40b5d0f5ce8deb"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ActionLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:comment xml:lang="en">A part of the action path between two functional units, the direction of action being indicated by an arrow.</rdfs:comment>
-    <rdfs:label xml:lang="en">Action Line</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-44-04, drawn as the arrows of Figures 1 and 2.
-
-The class resolves an action path into the units it runs through. Without it a path can only be asserted to be open or closed; with it the assertion becomes checkable against the units and the variables actually recorded.
-
-Disjoint from the action path: a line is a part of a path, not a path of its own.</skos:note>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#SequentialControl">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#OpenLoopControl"/>
@@ -551,269 +599,30 @@ Disjoint from the action path: a line is a part of a path, not a path of its own
     <rdfs:label xml:lang="en">Sequential Control</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-47-59. The one kind in this group the standard assigns to open-loop control.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Monitor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries.</rdfs:comment>
-    <rdfs:label xml:lang="en">Monitor</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#quantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:comment xml:lang="en">The numeric quantity of a characteristic value.</rdfs:comment>
-    <rdfs:label xml:lang="en">quantity</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A task of control technology performed on or in a process.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control Function</rdfs:label>
-    <skos:note xml:lang="en">Collecting class of this pattern for the tasks of 351-43. The standard lists them as verbs without naming a common superclass.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N79282fea8b3d45e9a7a72b5d84ccf371">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N392ac965b4df431b8b8c5cd08e02f902"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N392ac965b4df431b8b8c5cd08e02f902">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="Ncafaf2b189b749d49964d07f581b7486"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Operate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To enter instructions to a process or system via interfaces.</rdfs:comment>
-    <rdfs:label xml:lang="en">Operate</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-24.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ManipulatedVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">The output variable of the controlling system, which is also an input variable of the controlled system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Manipulated Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-07. It is what carries the influence from the controlling side to the controlled side, in open-loop as in closed-loop control.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FunctionalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdfs:comment xml:lang="en">An item under consideration defined according to function or effect.</rdfs:comment>
-    <rdfs:label xml:lang="en">Functional Unit</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-02. The functional view: what something does, irrespective of how it is built.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Plant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
-    <rdfs:comment xml:lang="en">A complete set of technical equipment and facilities for solving a defined technical task.</rdfs:comment>
-    <rdfs:label xml:lang="en">Plant</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-35. The technical process pattern has no class for the plant as a whole, only for its individual resources, so this fills a gap rather than duplicating one.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne29785024ddb4f5d963a83e1b4da5120">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Controllability"/>
-    <rdf:rest rdf:nodeID="Nf7116a76fdaa49fdb3ea3c61be86e007"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N2e72307c2f114967b6d0afc6a963ce3e"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">Relates an automation or a system to a variable quantity involved in it.</rdfs:comment>
-    <rdfs:label xml:lang="en">has variable</rdfs:label>
-    <skos:note xml:lang="en">Super property of the role specific relations below, so that a model may record a variable before its role is settled.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OpenLoopControl">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OptimalControl">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:comment xml:lang="en">A process whereby one or more variable quantities as input variables influence other variable quantities as output variables in accordance with the proper laws of the system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Open-loop Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-02. Characteristic for open-loop control is the open action path, or in a closed action path the fact that the output variables being influenced by the input variables are not continuously or sequentially influencing themselves and not by the same input variables.
-
-Deliberately **not** disjoint with closed-loop control: the standard admits open-loop control in a closed action path, so a disjointness axiom would contradict it. What separates the two is the action, not the path.</skos:note>
+    <rdfs:comment xml:lang="en">A type of control for which the performance index reaches a largest or smallest value under specified conditions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Optimal Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-41. The standard says type of control rather than closed-loop control, so the class sits under Control and a model may assign it either way.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Characteristic">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">A named characteristic of the behaviour of a system or a transfer element, such as a settling time or an overshoot, to which a model assigns a value.</rdfs:comment>
-    <rdfs:label xml:lang="en">Characteristic</rdfs:label>
-    <skos:note xml:lang="en">**Collecting class of this pattern.** The standard defines the individual characteristics in 351-45, 351-46 and 351-47 without naming a common superclass. Named individuals are supplied in IEC60050-instances.ttl.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#CharacteristicValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">The value a model assigns to one characteristic, together with its unit.</rdfs:comment>
-    <rdfs:label xml:lang="en">Characteristic Value</rdfs:label>
-    <skos:note xml:lang="en">Reified so that a value can be referred to and annotated, in the same arrangement and for the same reason as the quality of service value of the ISO 7498 pattern.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#performsFunction">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#isTargetOfActionLine">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N16cb8f47c3c64a749672a4446be91713"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">Relates an item under consideration to a function of control technology it performs.</rdfs:comment>
-    <rdfs:label xml:lang="en">performs function</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43. Mapping an application onto the tasks the standard names keeps a model connected to existing plant documentation.</skos:note>
+    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#toUnit"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:comment xml:lang="en">Relates a functional unit to an action line ending at it.</rdfs:comment>
+    <rdfs:label xml:lang="en">is target of action line</rdfs:label>
+    <skos:note xml:lang="en">The inverse of toUnit.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OpenActionPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:comment xml:lang="en">An action path between the input variable and the output variable at which no action path goes back from the output variable to the input variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Open Action Path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-05.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#RuleBasedControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control in which the control algorithm explicitly incorporates one or more sets of rules.</rdfs:comment>
-    <rdfs:label xml:lang="en">Rule-based Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-58. The standard assigns this to closed-loop control explicitly, so the pattern follows rather than leaving it open.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Fault">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A fault in control equipment, classified by its effect on the output variables.</rdfs:comment>
-    <rdfs:label xml:lang="en">Fault</rdfs:label>
-    <skos:note xml:lang="en">Collecting class of this pattern for 351-56-22 and 351-56-23, which the standard states individually.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlLoop">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A set of elements or systems incorporated in the closed action of a closed-loop control.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control Loop</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-11.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#PassiveFault">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Fault"/>
-    <rdfs:comment xml:lang="en">A fault that inhibits alterations of the output variables of the control equipment although all program-defined conditions for such alterations are fulfilled.</rdfs:comment>
-    <rdfs:label xml:lang="en">Passive Fault</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-23.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#realisedBy">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasManipulatedVariable">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
     <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:range rdf:nodeID="N564d3e02b5d1494a9252fed60dc5a8aa"/>
-    <rdfs:comment xml:lang="en">Relates an automation to the arrangement of elements carrying it out, that is a control loop or a control chain.</rdfs:comment>
-    <rdfs:label xml:lang="en">realised by</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-11 and 351-47-12. A closed-loop control is carried by a loop, an open-loop control by a chain.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#SensingElement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that senses the effect of a measurand at its input and places a corresponding measurement signal at its output.</rdfs:comment>
-    <rdfs:label xml:lang="en">Sensing Element</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-26, with a thermocouple, a foil strain gauge and a pH electrode as its examples. The standard defines no term sensor; this is the entry practice means by it.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#InputVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">A variable quantity which is acting on a system from the outside and which is independent of the other variable quantities of the system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Input Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-41-06.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ClosedActionPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#OpenActionPath"/>
-    <rdfs:comment xml:lang="en">An action path between the input variable and the output variable at which an additional action path goes back from the output variable to the input variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Closed Action Path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-03. A closed path alone does not make a closed-loop control: see the open action, 351-47-06.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#toUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">Relates an action line to the functional unit at which it ends.</rdfs:comment>
-    <rdfs:label xml:lang="en">to unit</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-44-05. Together with fromUnit it carries the direction of action.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlEquipment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdfs:comment xml:lang="en">The entirety of devices and programs used for the task of controlling, and in a broader sense all instructions and programs used for it.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control Equipment</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-24. A note to the entry includes the process control station and the operating manuals, which is how the standard covers what practice calls a control room.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N38c36f3d8e1b481aba61bf53f36c7b15">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ControlChain"/>
-    <rdf:rest rdf:nodeID="N173600ec624c47c1804b579377aa5e10"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#StateVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">An element of the state vector of a system, from which together with the input variables the output variables are determined.</rdfs:comment>
-    <rdfs:label xml:lang="en">State Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-41-08. The entry states this through the state equation and the output equation; the wording here is the prose form of that.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N19e4f2dcb5c74232a84ec2f9e3cd27af">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Operate"/>
-    <rdf:rest rdf:nodeID="Nab78f8fd3d184defb2ecc26bc400de03"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#partOfActionPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasActionLine"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:comment xml:lang="en">Relates an action line to the action path it forms part of.</rdfs:comment>
-    <rdfs:label xml:lang="en">part of action path</rdfs:label>
-    <skos:note xml:lang="en">The inverse of hasActionLine. With it a model can go from a line to the path and on to the control running over it, which is how a device reaches the kind of control it takes part in.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na3b232ff197e453287c7e1bd40b8d2ad">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Measure"/>
-    <rdf:rest rdf:nodeID="N733be1ec236047c6b4eeaddaa3b4104b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlledSystem">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ControllingSystem"/>
-    <rdfs:comment xml:lang="en">A functional unit which is to be influenced according to the control task.</rdfs:comment>
-    <rdfs:label xml:lang="en">Controlled System</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-01. The German terms are Regelstrecke and Steuerstrecke, so the class covers the plant side of both kinds of control.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#MeasuringTransmitter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A measuring transducer the output variable of which is a standardized signal.</rdfs:comment>
-    <rdfs:label xml:lang="en">Measuring Transmitter</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-29. The standardised signal is where the communication subdomain begins, which makes this the handover point to the communication pattern.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlSystem">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit consisting of the controlling system and the controlled system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Control System</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-06. The outermost frame of Figures 1 and 2, covering an open-loop and a closed-loop control alike.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2e72307c2f114967b6d0afc6a963ce3e">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Nb0ed57833dff4d1a9be992816e85eb99"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ModelBasedControl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
-    <rdfs:comment xml:lang="en">Closed-loop control which includes explicitly in its structure a real-time model of the process expressing the static and dynamic relationships between manipulated variables and controlled variables.</rdfs:comment>
-    <rdfs:label xml:lang="en">Model-based Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-33. The definition names a real-time model of the process, which is the natural place for a data driven process model in a control structure.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ReferenceVariableGeneratingElement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that, in closed-loop control, forms the reference variable at its output from the command variable at its input.</rdfs:comment>
-    <rdfs:label xml:lang="en">Reference-variable Generating Element</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-10. The German term is Fuehrungsgroessenbildner. Its note states that such an element often ensures that critical limits are not exceeded, for example by limiting the rate of change.</skos:note>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ManipulatedVariable"/>
+    <rdfs:comment xml:lang="en">Relates a control to the manipulated variable through which it acts on the controlled system.</rdfs:comment>
+    <rdfs:label xml:lang="en">has manipulated variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Action">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -827,6 +636,156 @@ Deliberately **not** disjoint with closed-loop control: the standard admits open
     <rdfs:label xml:lang="en">Action</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-42-24. Behaviour, not structure.</skos:note>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="N78152c30764c40dd84f856c658b9f533">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Controllability"/>
+    <rdf:rest rdf:nodeID="Nf75c2ae9a1564be0bb7e1c439522b676"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#StateVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">An element of the state vector of a system, from which together with the input variables the output variables are determined.</rdfs:comment>
+    <rdfs:label xml:lang="en">State Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-41-08. The entry states this through the state equation and the output equation; the wording here is the prose form of that.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Observability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The property of a system implying that its initial state may be determined from input and output variables observed within a finite time interval.</rdfs:comment>
+    <rdfs:label xml:lang="en">Observability</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-23. The formal precondition for reconstructing a state that is not measured, which is what an observer does.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d0509ce139f4b3996bba75a27a18891">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="Nbd1772d5156e4bc8a41650cb3ba22c9c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#usesModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N687f0185c7e046a7910ac9a5b034646e"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#Model"/>
+    <rdfs:comment xml:lang="en">Relates a control or an observer to a model of the process it uses.</rdfs:comment>
+    <rdfs:label xml:lang="en">uses model</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-31 and 351-47-33. Both name a model of the controlled system as part of their structure.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#SensingElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that senses the effect of a measurand at its input and places a corresponding measurement signal at its output.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sensing Element</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-26, with a thermocouple, a foil strain gauge and a pH electrode as its examples. The standard defines no term sensor; this is the entry practice means by it.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf75c2ae9a1564be0bb7e1c439522b676">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#DegreeOfAutomation"/>
+    <rdf:rest rdf:nodeID="N069ecb37a23448b0b67b3c54b6665f6d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbfd76571d50f4d3596e41b4dadfafc4c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <rdf:rest rdf:nodeID="Nbb9b41b5325b46c5af5861285a49ceab"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbd25bc50e3e949a7ace0369fbedbc5bf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N6e612e6b262e47f3921c042fd8b86232"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#RuleBasedControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control in which the control algorithm explicitly incorporates one or more sets of rules.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rule-based Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-58. The standard assigns this to closed-loop control explicitly, so the pattern follows rather than leaving it open.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FunctionalSafety">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The part of the overall safety that depends on functional and physical units operating correctly in response to their inputs.</rdfs:comment>
+    <rdfs:label xml:lang="en">Functional Safety</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-57-06. The standard defines no safety integrity level; IEC 61508 does.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Optimize">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To design a process or act upon a process such that the performance criterion used for evaluating the process states assumes a value either as large or as small as possible within given limitations.</rdfs:comment>
+    <rdfs:label xml:lang="en">Optimize</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-14.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6615a69e28b84776b71cfe8505c0de80">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Monitor"/>
+    <rdf:rest rdf:nodeID="N5c3d25ecb28549c282ad92bee8495ab6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControlledVariableGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that forms the final controlled variable from the controlled variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Generation of the Final Controlled Variable</rdfs:label>
+    <skos:note xml:lang="en">**Not a term of the standard.** IEC 60050-351 draws this unit at the right-hand edge of Figures 1 and 2, where x enters and q leaves the control system, but gives it no entry, no number and no index line. A search of the full text finds the wording only inside the two figures.
+
+The class is nevertheless kept, because the final controlled variable it produces is a term of the standard, 351-48-10, and without a unit for it that variable would have no origin in a model. The last step of both figures would then go unrecorded.
+
+Anyone aligning this pattern with another should treat the class as a construct of this work rather than as normative vocabulary. REFERENCE.md lists it under the elements taken from the figures instead of from the entries.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">An object under consideration defined according to function and scope.</rdfs:comment>
+    <rdfs:label xml:lang="en">Item under Consideration</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-01.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#MultivariableControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control of several controlled variables of a multivariable system by several controllers.</rdfs:comment>
+    <rdfs:label xml:lang="en">Multivariable Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-35.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A task of control technology performed on or in a process.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control Function</rdfs:label>
+    <skos:note xml:lang="en">Collecting class of this pattern for the tasks of 351-43. The standard lists them as verbs without naming a common superclass.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#RobustControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control able to keep system properties within a prescribed area even if the properties of the controlled system or of the controller deviate from those assumed for the design.</rdfs:comment>
+    <rdfs:label xml:lang="en">Robust Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-45. The deviation from the properties assumed for the design is what a data driven model faces as a shift of its operating conditions.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControllingElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit forming part of the controlled system and arranged at its input, driven by the manipulated variable and manipulating the mass flow or energy flow.</rdfs:comment>
+    <rdfs:label xml:lang="en">Final Controlling Element</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-08. The German term is Stellglied, and a valve is the typical case.
+
+The standard places it inside the controlled system. This pattern records that through the relation partOfControlledSystem rather than through a subclass axiom, so another pattern may hold the same valve as a resource executing a process operation without the two contradicting each other.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlledVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#OutputVariable"/>
+    <rdfs:comment xml:lang="en">The output variable of the controlled system that will be acted upon by one or more manipulated variables.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controlled Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-01. Only a closed-loop control has one: it is what is measured and compared with the reference variable.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ReferenceVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#InputVariable"/>
+    <rdfs:comment xml:lang="en">An input variable to a comparing element in a controlling system, which sets the desired value of the controlled variable and is deducted from the command variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Reference Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-02.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FuzzyControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control in which the control algorithm is expressed by fuzzy logic using facts, inference rules and quantifiers based on experience and intuition.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fuzzy Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-56.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#AdaptiveControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control with automatic modification of the structure or parameters of the controlling system to compensate for varying operating conditions and states.</rdfs:comment>
+    <rdfs:label xml:lang="en">Adaptive Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-42. The automatic modification is what a learning system performs online.</skos:note>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControlledVariable">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#OutputVariable"/>
@@ -836,108 +795,24 @@ Deliberately **not** disjoint with closed-loop control: the standard admits open
 
 The entry adds that the final controlled variable need not belong to the control loop itself: where a mixture composition cannot be measured directly, a dependent property such as density or thermal conductivity is used as the controlled variable while the composition remains the final controlled variable.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlledVariable">
+  <rdf:Description rdf:nodeID="Nc44aaa3849db48f4a2fb35ca9263d6ba">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#OutputVariable"/>
-    <rdfs:comment xml:lang="en">The output variable of the controlled system that will be acted upon by one or more manipulated variables.</rdfs:comment>
-    <rdfs:label xml:lang="en">Controlled Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-01. Only a closed-loop control has one: it is what is measured and compared with the reference variable.</skos:note>
+    <owl:unionOf rdf:nodeID="N66d52e801af249708627e30d8e9b77c3"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Manipulate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To change or set flows of mass, energy, or information by means of a final controlling element.</rdfs:comment>
-    <rdfs:label xml:lang="en">Manipulate</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-12.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Stability">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ComparingElement">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The property of a system implying that for a sufficiently small initial displacement from the rest position, or a sufficiently small disturbance, the state variables remain within a sufficiently small neighbourhood of the rest position.</rdfs:comment>
-    <rdfs:label xml:lang="en">Stability</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-20.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that forms the control difference variable from the reference variable and the feedback variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Comparing Element</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-03. The summing point of Figure 2, and the place where a closed action path returns.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Evaluate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
-    <rdfs:comment xml:lang="en">To determine characteristics of a process from measured or recorded variable quantities.</rdfs:comment>
-    <rdfs:label xml:lang="en">Evaluate</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-43-13.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#DisturbanceVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#InputVariable"/>
-    <rdfs:comment xml:lang="en">An undesired, independent and mostly unpredictable input variable acting from the outside on the system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Disturbance Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-08.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ClosedAction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Action"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#OpenAction"/>
-    <rdfs:comment xml:lang="en">An action in a closed action path in which the output variable is continuously or sequentially influencing the input variable and thus continuously or sequentially influencing itself.</rdfs:comment>
-    <rdfs:label xml:lang="en">Closed Action</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-04. This, not the closed path, is what closed-loop control requires.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0fba6a8163fd4e088506b965ad69ffea">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#RealTimeCapability"/>
-    <rdf:rest rdf:nodeID="Nf9bd635e1a8240318bbbb9c09fcf473c"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#consistsOfUnit">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasForwardPath">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">Relates a functional unit to another functional unit it is composed of.</rdfs:comment>
-    <rdfs:label xml:lang="en">consists of unit</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351 composes several units from others: the final controlling equipment from actuator and final controlling element, 351-49-09, the controller from comparing and controlling element, 351-49-11, and the control system from controlling and controlled system, 351-49-06.
-
-Stated as a relation rather than through subclass axioms, since the parts remain units in their own right and one part may belong to more than one whole.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#RealTimeCapability">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The capability to keep tasks in a runnable state, so that they are able to react to technical process events within a pre-determined time interval.</rdfs:comment>
-    <rdfs:label xml:lang="en">Real-time Capability</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-54-06, where the entry is stated for a process computer system.
-
-Real time is a capability of a system with a stated interval, not a property of time itself. The pattern follows that reading, so a model states the capability and the interval separately rather than calling a duration real time.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Model">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A mathematical or physical representation of a system or a process, based with sufficient precision upon known laws, identification or specified suppositions.</rdfs:comment>
-    <rdfs:label xml:lang="en">Model</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-26. The identification named in the definition is the data driven case, so the standard treats an identified model as an equal kind rather than as an exception.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#carriesVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
-    <rdfs:comment xml:lang="en">Relates an action line to the variable quantity transmitted along it.</rdfs:comment>
-    <rdfs:label xml:lang="en">carries variable</rdfs:label>
-    <skos:note xml:lang="en">The letters of the figure legends, c, w, e, m, y, x, q and r, are recorded through this relation. Functional: one line carries one variable quantity.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd44ecbae0a9a46619538653534562e40">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Warn"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasControlledVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ControlledVariable"/>
-    <rdfs:comment xml:lang="en">Relates a closed-loop control to the controlled variable it acts upon.</rdfs:comment>
-    <rdfs:label xml:lang="en">has controlled variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-01. Only closed-loop control has one, since the controlled variable is what is measured and compared.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#TimeCharacteristic">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
-    <rdfs:comment xml:lang="en">A characteristic expressed as a duration.</rdfs:comment>
-    <rdfs:label xml:lang="en">Time Characteristic</rdfs:label>
-    <skos:note xml:lang="en">Grouping of this pattern, so that a model may ask for the time behaviour without listing every characteristic by name.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nef4447109dea4ecfb5d47ed13a0cf405">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ForwardPath"/>
+    <rdfs:comment xml:lang="en">Relates a control loop to its forward path.</rdfs:comment>
+    <rdfs:label xml:lang="en">has forward path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-07.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#carriesInformationParameter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -947,40 +822,247 @@ Real time is a capability of a system with a stated interval, not a property of 
     <rdfs:label xml:lang="en">carries information parameter</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-41-17 and 351-41-18.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf7116a76fdaa49fdb3ea3c61be86e007">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#DegreeOfAutomation"/>
-    <rdf:rest rdf:nodeID="Ne444b0cab2714f759aa756a1d420dbf8"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasCharacteristicValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N517d7fd055cf49d085a058cc2dfe534a"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
+    <rdfs:comment xml:lang="en">Relates an item, a system or a control to a value it states for one of its characteristics.</rdfs:comment>
+    <rdfs:label xml:lang="en">has characteristic value</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Controller">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ForwardPath">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit, consisting of a comparing element and a controlling element, that performs a specified control function.</rdfs:comment>
-    <rdfs:label xml:lang="en">Controller</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-11, where the full term is controller for closed-loop control.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <rdfs:comment xml:lang="en">An action path connecting the output of a comparing element to the output of the controlled system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Forward Path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-07.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasFeedbackPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#FeedbackPath"/>
-    <rdfs:comment xml:lang="en">Relates a control loop to its feedback path.</rdfs:comment>
-    <rdfs:label xml:lang="en">has feedback path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-08.</skos:note>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ManipulatedVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">The output variable of the controlling system, which is also an input variable of the controlled system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Manipulated Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-07. It is what carries the influence from the controlling side to the controlled side, in open-loop as in closed-loop control.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#isTargetOfActionLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#toUnit"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
-    <rdfs:comment xml:lang="en">Relates a functional unit to an action line ending at it.</rdfs:comment>
-    <rdfs:label xml:lang="en">is target of action line</rdfs:label>
-    <skos:note xml:lang="en">The inverse of toUnit.</skos:note>
+  <rdf:Description rdf:nodeID="N560e065eeaf04d05bf499137064d245c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nd54f7600d1154a9793a9cdcaf9616c18"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ProgrammedControl">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Redundancy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">In an item, the existence of more than one means for performing a required function.</rdfs:comment>
+    <rdfs:label xml:lang="en">Redundancy</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-28. Stated over an item, so it applies to any item under consideration.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3fec630e6208407aa5d29739fcdf5a8e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ControllingSystem"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ActiveFault">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Fault"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#PassiveFault"/>
+    <rdfs:comment xml:lang="en">A fault that causes alterations of the output variables of the control equipment although the program-defined conditions for such alterations are not fulfilled.</rdfs:comment>
+    <rdfs:label xml:lang="en">Active Fault</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-56-22.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Control">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">Purposeful action on or in a process to meet specified objectives.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-19. The German term is Leiten, which covers both open-loop and closed-loop control as well as the supervisory tasks around them. National footnote N1 of that entry states this explicitly: control is the general term here, and the narrower Regeln and Steuern belong to the entries below.
+
+No class for automating sits between this class and the two kinds of control. The standard defines automating in 351-43 as a task, alongside measuring and monitoring, not in 351-47 as a kind of control, and 351-42-31 treats the degree of automation as a proportion of the functions of a system. A hand-operated closed-loop control is a closed-loop control by 351-47-01 without being automated, so a subclass axiom would state more than the standard does. Whether a control runs by itself is recorded through the AI pattern, where automation is a function, and the two are related in the alignment.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66d52e801af249708627e30d8e9b77c3">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="N1ded123aa91b46aca85d8091049635ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#SamplingControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control in which the input variables of the controlling system are taken discontinuously in time to generate new values of the manipulated variable, which are updated discontinuously and maintained by holding elements between updates.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sampling Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-15. Its sampling period, 351-47-16, is the normative equivalent of what practice calls cycle time, a term the standard does not define.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Monitor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To acquire a quantity value continuously or sequentially in order to check whether it is within normal operating limits and, where appropriate, to signal if it passes its tolerance boundaries.</rdfs:comment>
+    <rdfs:label xml:lang="en">Monitor</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-03. One of the tasks data driven applications typically occupy.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#InformationParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A parameter of a signal that represents information according to a rule.</rdfs:comment>
+    <rdfs:label xml:lang="en">Information Parameter</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-41-18.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N069ecb37a23448b0b67b3c54b6665f6d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalSafety"/>
+    <rdf:rest rdf:nodeID="Nd4fd1e833a84443fa83b656e0181ba4e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Operate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To enter instructions to a process or system via interfaces.</rdfs:comment>
+    <rdfs:label xml:lang="en">Operate</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-24.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OpenAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Action"/>
+    <rdfs:comment xml:lang="en">An action in an open action path, or in a closed action path where the output variable influences the input variable only under certain non-permanently acting conditions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Open Action</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-06. The note to the entry states that a reset circuit, 351-47-62, has an open action although its structure has a closed action path.
+
+This is the case that separates the pattern from the simplified reading that feedback alone makes a closed-loop control.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ComputerControl">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:comment xml:lang="en">Control the functions of which are defined by a program that was previously entered.</rdfs:comment>
-    <rdfs:label xml:lang="en">Programmed Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-20. The standard states no genus beyond control, so the class sits under Control. Storage-programmable logic control, 351-47-22, is a kind of this, which is how the standard covers what practice calls a programmable logic controller.</skos:note>
+    <rdfs:comment xml:lang="en">A type of control in which a computer is used in the controlling system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Computer Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-52. No genus beyond control is stated.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FeedbackVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">A variable quantity which represents the controlled variable and is returned to the comparing element.</rdfs:comment>
+    <rdfs:label xml:lang="en">Feedback Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-03.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Fault">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A fault in control equipment, classified by its effect on the output variables.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fault</rdfs:label>
+    <skos:note xml:lang="en">Collecting class of this pattern for 351-56-22 and 351-56-23, which the standard states individually.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne98cd35319794f1487df430c20a0ca44">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="Na705eee908d44303b28885f37d25741d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na705eee908d44303b28885f37d25741d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Observer"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N517d7fd055cf49d085a058cc2dfe534a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N304e1da04f3a4d50a61b2df85486deca"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2bd9c54a09954a0190358928b890a156">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Intervene"/>
+    <rdf:rest rdf:nodeID="N6582229f0ccd4cc4a46ff0a3ddbf248f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControlLoop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A set of elements or systems incorporated in the closed action of a closed-loop control.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control Loop</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-11.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#symbol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The formula symbol the standard gives for a characteristic, for example T_cs for the control settling time.</rdfs:comment>
+    <rdfs:label xml:lang="en">symbol</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351 states a formula symbol for most characteristics of 351-45 and 351-46, which makes a model checkable against the figures of the standard.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ClosedActionPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#OpenActionPath"/>
+    <rdfs:comment xml:lang="en">An action path between the input variable and the output variable at which an additional action path goes back from the output variable to the input variable.</rdfs:comment>
+    <rdfs:label xml:lang="en">Closed Action Path</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-03. A closed path alone does not make a closed-loop control: see the open action, 351-47-06.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#DisturbanceVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#InputVariable"/>
+    <rdfs:comment xml:lang="en">An undesired, independent and mostly unpredictable input variable acting from the outside on the system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Disturbance Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-08.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfd848438db334d6494ac51008473beb2">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="Na3ddb5fe1e424d749d250f9ffabb4d01"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd54f7600d1154a9793a9cdcaf9616c18">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ControlChain"/>
+    <rdf:rest rdf:nodeID="Nbbb1530133de43138f2fd75f1cb56be6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#unit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#CharacteristicValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The unit of a characteristic value, for example ms or percent.</rdfs:comment>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <skos:note xml:lang="en">A literal rather than a reference to a unit ontology, so that the pattern stays free of further imports.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ModelBasedControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control which includes explicitly in its structure a real-time model of the process expressing the static and dynamic relationships between manipulated variables and controlled variables.</rdfs:comment>
+    <rdfs:label xml:lang="en">Model-based Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-33. The definition names a real-time model of the process, which is the natural place for a data driven process model in a control structure.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControllerOutputVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#OutputVariable"/>
+    <rdfs:comment xml:lang="en">The output variable of the controlling element, which is the input variable of the actuator.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controller Output Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-48-06, marked m in Figures 1 and 2.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControllingElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:comment xml:lang="en">A functional unit that forms its output variable from the command variable in open-loop control and from the control difference variable in closed-loop control.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controlling Element</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-04. The German terms are Steuerglied and Regelglied, one entry for both.
+
+The entry is the element that appears in Figure 1 as well as in Figure 2, which is why the same class serves an open-loop and a closed-loop control. What differs is the variable at its input, not the unit.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OutputVariable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#VariableQuantity"/>
+    <rdfs:comment xml:lang="en">A recordable variable quantity generated by a system, influenced only by the system and via the system by its input variables.</rdfs:comment>
+    <rdfs:label xml:lang="en">Output Variable</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-41-07.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nbd25bc50e3e949a7ace0369fbedbc5bf"/>
+    <rdfs:range rdf:nodeID="Nc3b5bc47879741d29a52a387e4805fca"/>
+    <rdfs:comment xml:lang="en">Relates an item or a system to a property it has, such as stability, observability or real-time capability.</rdfs:comment>
+    <rdfs:label xml:lang="en">has property</rdfs:label>
+    <skos:note xml:lang="en">Collects 351-42-20, -22, -23, -28, -31 and 351-54-06, which the standard states as properties of a system.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd4fd1e833a84443fa83b656e0181ba4e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Observability"/>
+    <rdf:rest rdf:nodeID="Nfcb3f13bda584c5ea976f0e6cbdc8ce3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Controllability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The property of a system implying that its state variables may be changed from an initial state into a desired final state within a finite time interval, via proper time variations of the input variables.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controllability</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-22. The formal precondition for any application that intervenes in a process.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4ee8e71b619d4d3499dc7ae61c0cfc67">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Warn"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e612e6b262e47f3921c042fd8b86232">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="N8d6e26819a4046419299cc375bb7c492"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#partOfControlledSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -992,72 +1074,54 @@ Real time is a capability of a system with a stated interval, not a property of 
 
 Stated as a relation rather than a subclass axiom on purpose. VDI 3682 would hold the same valve as a technical resource executing a process operation, and a subclass axiom here would make the two readings contradict. As a relation both stand.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="Na7b15edd3d8a4afcb72857bbf9ddcda4">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="Na49c5d9c47d14933882c6b7566b53e4d"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Plant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
+    <rdfs:comment xml:lang="en">A complete set of technical equipment and facilities for solving a defined technical task.</rdfs:comment>
+    <rdfs:label xml:lang="en">Plant</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-42-35. The technical process pattern has no class for the plant as a whole, only for its individual resources, so this fills a gap rather than duplicating one.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Actuator">
+  <rdf:Description rdf:nodeID="Nbd1772d5156e4bc8a41650cb3ba22c9c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Alarm"/>
+    <rdf:rest rdf:nodeID="N4ceea59d1caf40fda6512fb135292de3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Intervene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/aias/odp/iec60050#ControlFunction"/>
+    <rdfs:comment xml:lang="en">To modify an automatic procedure by an input of the operator or a prioritized technical unit at an unscheduled instant.</rdfs:comment>
+    <rdfs:label xml:lang="en">Intervene</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-43-15. The entry gives a normative form of what practice calls keeping a human in the loop, including the priority between units.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N304e1da04f3a4d50a61b2df85486deca">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
+    <rdf:rest rdf:nodeID="Nbfd76571d50f4d3596e41b4dadfafc4c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Controller">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that generates the manipulated variable, required to drive the final controlling element, from the output variable of the controlling element.</rdfs:comment>
-    <rdfs:label xml:lang="en">Actuator</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-07.
-
-The German term is Steller, and the entry is the signal side of the manipulating equipment, not the element acting on the flow. That element is the final controlling element, 351-49-08. The common rendering of the German Aktor as actuator conflates the two and would put the wrong class on a valve.</skos:note>
+    <rdfs:comment xml:lang="en">A functional unit, consisting of a comparing element and a controlling element, that performs a specified control function.</rdfs:comment>
+    <rdfs:label xml:lang="en">Controller</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-49-11, where the full term is controller for closed-loop control.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N1a546509ffcd4ba2b308452a15311f1d">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#CascadeControl">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N399e135468d744c7b09807f63f847c3e"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ClosedLoopControl"/>
+    <rdfs:comment xml:lang="en">Closed-loop control in which the output variable of one controller is the reference variable of one or more secondary control loops.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cascade Control</rdfs:label>
+    <skos:note xml:lang="en">IEC 60050-351, 351-47-25.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#actsOn">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#isSourceOfActionLine">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N8c0d0a265e5d4cfeb1898018d63ebd80"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ControlledSystem"/>
-    <rdfs:comment xml:lang="en">Relates a controlling system or an automation to the controlled system it influences.</rdfs:comment>
-    <rdfs:label xml:lang="en">acts on</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-01 and 351-49-02.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#System">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A set of interrelated elements considered in a defined context as a whole and separated from their environment.</rdfs:comment>
-    <rdfs:label xml:lang="en">System</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-08.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N661a166cf53c4cf89d40b5d0f5ce8deb">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Alarm"/>
-    <rdf:rest rdf:nodeID="Nc717a617c3aa47ee895a50e90115f3e4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc717a617c3aa47ee895a50e90115f3e4">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Evaluate"/>
-    <rdf:rest rdf:nodeID="Ndfa14f2d96cb442a91faf2ac73765fb5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb0ed57833dff4d1a9be992816e85eb99">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="N356be0b3a1ae4b3eb4c4a7c79618af1f"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N16cb8f47c3c64a749672a4446be91713">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N0756d1eba19e4c83a7a455512f7c4426"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nab78f8fd3d184defb2ecc26bc400de03">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Optimize"/>
-    <rdf:rest rdf:nodeID="Nd44ecbae0a9a46619538653534562e40"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6f191c0c342b4ab68ba29921b0775d97">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Observability"/>
-    <rdf:rest rdf:nodeID="N0fba6a8163fd4e088506b965ad69ffea"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7fd13086100348988c20380973940320">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdf:rest rdf:nodeID="N68cd70af8943454eb7dd9b3223a59afa"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/aias/odp/iec60050#fromUnit"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ActionLine"/>
+    <rdfs:comment xml:lang="en">Relates a functional unit to an action line starting at it.</rdfs:comment>
+    <rdfs:label xml:lang="en">is source of action line</rdfs:label>
+    <skos:note xml:lang="en">The inverse of fromUnit. Together with the next one it says where a unit sits in the chain, and therefore whether it lies in the forward or in the feedback branch.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#QualityCharacteristic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1066,118 +1130,44 @@ The German term is Steller, and the entry is the signal side of the manipulating
     <rdfs:label xml:lang="en">Quality Characteristic</rdfs:label>
     <skos:note xml:lang="en">Grouping of this pattern, covering overshoot and the stability margins.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N356be0b3a1ae4b3eb4c4a7c79618af1f">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdf:rest rdf:nodeID="Nef4447109dea4ecfb5d47ed13a0cf405"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndecc8ea431ba43b6b43c0a216782f198">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdf:rest rdf:nodeID="N185ad0e5321e4c61ba3cd78fe2915696"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6c04a3e79476487a8fd67abddcc95c54">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="N7fd13086100348988c20380973940320"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndfa14f2d96cb442a91faf2ac73765fb5">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Intervene"/>
-    <rdf:rest rdf:nodeID="Ne74a96471daf4570b573137cdd579715"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#OptimalControl">
+  <rdf:Description rdf:nodeID="N687f0185c7e046a7910ac9a5b034646e">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:comment xml:lang="en">A type of control for which the performance index reaches a largest or smallest value under specified conditions.</rdfs:comment>
-    <rdfs:label xml:lang="en">Optimal Control</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-41. The standard says type of control rather than closed-loop control, so the class sits under Control and a model may assign it either way.</skos:note>
+    <owl:unionOf rdf:nodeID="Ne98cd35319794f1487df430c20a0ca44"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0fbd66d705934beb9abb333188eae0bd">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
+  <rdf:Description rdf:nodeID="Nbbb1530133de43138f2fd75f1cb56be6">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne74a96471daf4570b573137cdd579715">
+  <rdf:Description rdf:nodeID="N89579bebdee943a28a73bfc11eaa9659">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Operate"/>
+    <rdf:rest rdf:nodeID="N06d366b7f97a4e0f8de8190d945777e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#TimeCharacteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Characteristic"/>
+    <rdfs:comment xml:lang="en">A characteristic expressed as a duration.</rdfs:comment>
+    <rdfs:label xml:lang="en">Time Characteristic</rdfs:label>
+    <skos:note xml:lang="en">Grouping of this pattern, so that a model may ask for the time behaviour without listing every characteristic by name.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23872fc0dbeb4759b3ca816bb0b472de">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nfd848438db334d6494ac51008473beb2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6582229f0ccd4cc4a46ff0a3ddbf248f">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Manipulate"/>
-    <rdf:rest rdf:nodeID="Na3b232ff197e453287c7e1bd40b8d2ad"/>
+    <rdf:rest rdf:nodeID="N7e3f93c3075443ccb593d5c809889139"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N28401a221503454f8262d28ef66c21fb">
+  <rdf:Description rdf:nodeID="N0723cd9e6ae34eaaa8e8d95652c893ad">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N7cf41a93f13d40949429ca28e76a35eb"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ControllerOutputVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#OutputVariable"/>
-    <rdfs:comment xml:lang="en">The output variable of the controlling element, which is the input variable of the actuator.</rdfs:comment>
-    <rdfs:label xml:lang="en">Controller Output Variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-06, marked m in Figures 1 and 2.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ActiveFault">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#Fault"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/aias/odp/iec60050#PassiveFault"/>
-    <rdfs:comment xml:lang="en">A fault that causes alterations of the output variables of the control equipment although the program-defined conditions for such alterations are not fulfilled.</rdfs:comment>
-    <rdfs:label xml:lang="en">Active Fault</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-56-22.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ForwardPath">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#ActionPath"/>
-    <rdfs:comment xml:lang="en">An action path connecting the output of a comparing element to the output of the controlled system.</rdfs:comment>
-    <rdfs:label xml:lang="en">Forward Path</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-47-07.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#DegreeOfAutomation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The proportion of automatic functions to the entire set of functions of a system or plant.</rdfs:comment>
-    <rdfs:label xml:lang="en">Degree of Automation</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-42-31. May be given only for a defined system whose limits are specified. Full automatic operation means all functions except switching on and off are automated.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N83a2b05cd1264e649d04071bee0fb1cd">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ItemUnderConsideration"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8c0d0a265e5d4cfeb1898018d63ebd80">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N3813467f514f408883543078918a72fd"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#hasManipulatedVariable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/aias/odp/iec60050#hasVariable"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iec60050#ManipulatedVariable"/>
-    <rdfs:comment xml:lang="en">Relates a control to the manipulated variable through which it acts on the controlled system.</rdfs:comment>
-    <rdfs:label xml:lang="en">has manipulated variable</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-48-07. Present in open-loop as in closed-loop control.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N68cd70af8943454eb7dd9b3223a59afa">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#FinalControllingElement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit forming part of the controlled system and arranged at its input, driven by the manipulated variable and manipulating the mass flow or energy flow.</rdfs:comment>
-    <rdfs:label xml:lang="en">Final Controlling Element</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-08. The German term is Stellglied, and a valve is the typical case.
-
-The standard places it inside the controlled system. This pattern records that through the relation partOfControlledSystem rather than through a subclass axiom, so another pattern may hold the same valve as a resource executing a process operation without the two contradicting each other.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#ComparingElement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iec60050#FunctionalUnit"/>
-    <rdfs:comment xml:lang="en">A functional unit that forms the control difference variable from the reference variable and the feedback variable.</rdfs:comment>
-    <rdfs:label xml:lang="en">Comparing Element</rdfs:label>
-    <skos:note xml:lang="en">IEC 60050-351, 351-49-03. The summing point of Figure 2, and the place where a closed action path returns.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncafaf2b189b749d49964d07f581b7486">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Observer"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N63401df8019d4d2e8e7f920b7f2481b3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N6c04a3e79476487a8fd67abddcc95c54"/>
+    <owl:unionOf rdf:nodeID="Na7b15edd3d8a4afcb72857bbf9ddcda4"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iec60050#Warn">
@@ -1187,45 +1177,55 @@ The standard places it inside the controlled system. This pattern records that t
     <rdfs:label xml:lang="en">Warn</rdfs:label>
     <skos:note xml:lang="en">IEC 60050-351, 351-43-07. Still inside the operating conditions, which is what separates warning from alarming.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4ceea59d1caf40fda6512fb135292de3">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Evaluate"/>
+    <rdf:rest rdf:nodeID="N2bd9c54a09954a0190358928b890a156"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfcb3f13bda584c5ea976f0e6cbdc8ce3">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#RealTimeCapability"/>
+    <rdf:rest rdf:nodeID="Nde486cb6b7c74c76952234c7eefd7947"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb9b41b5325b46c5af5861285a49ceab">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c3d25ecb28549c282ad92bee8495ab6">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Notify"/>
+    <rdf:rest rdf:nodeID="N89579bebdee943a28a73bfc11eaa9659"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3b5bc47879741d29a52a387e4805fca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N78152c30764c40dd84f856c658b9f533"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/created">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N399e135468d744c7b09807f63f847c3e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="Nda4170af078c49da89732371c8a99cf8"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7cf41a93f13d40949429ca28e76a35eb">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Control"/>
-    <rdf:rest rdf:nodeID="Ndecc8ea431ba43b6b43c0a216782f198"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf9bd635e1a8240318bbbb9c09fcf473c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#Redundancy"/>
-    <rdf:rest rdf:nodeID="N4bcd8bdb11b247ec922a4704c60350bd"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N173600ec624c47c1804b579377aa5e10">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#ControlLoop"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N185ad0e5321e4c61ba3cd78fe2915696">
+  <rdf:Description rdf:nodeID="N0aca23df80b04fa4b41f63a00a6c7e6b">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iec60050#System"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
 </rdf:RDF>

@@ -46,16 +46,16 @@
         "value" : "TODO: institution",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/aias/odp/iso7498/instances#",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "2.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/aias/odp/iso7498/instances#",
         "type" : "label"
       } ],
       "title" : [ {
@@ -86,16 +86,16 @@
     "id" : "3",
     "type" : "owl:Class"
   }, {
-    "id" : "19",
+    "id" : "20",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "36",
     "type" : "owl:Class"
   }, {
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "21",
+    "id" : "26",
     "type" : "owl:Class"
   }, {
     "id" : "9",
@@ -104,19 +104,19 @@
     "id" : "14",
     "type" : "owl:Class"
   }, {
-    "id" : "24",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
     "id" : "12",
     "type" : "owl:Class"
   }, {
-    "id" : "26",
-    "type" : "owl:Class"
-  }, {
     "id" : "38",
     "type" : "owl:Class"
   }, {
-    "id" : "44",
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
     "type" : "owl:Class"
   }, {
     "id" : "15",
@@ -252,7 +252,7 @@
       "en" : "An element in the hierarchical division of an open system which interacts directly only with elements in the next higher division or the next lower division of that open system."
     },
     "attributes" : [ "external" ],
-    "id" : "19"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#Protocol",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -273,7 +273,7 @@
       "en" : "A set of rules and formats, semantic and syntactic, determining the communication behaviour of entities in the performance of their functions."
     },
     "attributes" : [ "external" ],
-    "id" : "30"
+    "id" : "36"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#Association",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -322,7 +322,7 @@
       "en" : "A capability of a layer and the layers beneath it, provided to the entities of the next higher layer at the boundary between the two layers."
     },
     "attributes" : [ "external" ],
-    "id" : "21"
+    "id" : "26"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#Layer",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -640,7 +640,7 @@
       "en" : "A named characteristic of a communication, such as throughput or transit delay, that a quality of service statement assigns a value to."
     },
     "attributes" : [ "external" ],
-    "id" : "24"
+    "id" : "19"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#ProtocolControlInformation",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -683,7 +683,7 @@
       "en" : "The characteristics of a communication, expressed through a set of parameters, that the participating entities can select and observe."
     },
     "attributes" : [ "external" ],
-    "id" : "26"
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#ServiceAccessPoint",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -704,7 +704,7 @@
       "en" : "The point at which the services of a layer are provided by an entity of that layer to an entity of the next higher layer."
     },
     "attributes" : [ "external" ],
-    "id" : "38"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#Technology",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -742,16 +742,6 @@
         "en" : "1000BASE-T"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TCP",
-      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
-      "comment" : {
-        "en" : "Transmission control protocol, connection oriented."
-      },
-      "labels" : {
-        "IRI-based" : "TCP",
-        "en" : "TCP"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#UDP",
       "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
       "comment" : {
@@ -760,6 +750,16 @@
       "labels" : {
         "IRI-based" : "UDP",
         "en" : "UDP"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TCP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "comment" : {
+        "en" : "Transmission control protocol, connection oriented."
+      },
+      "labels" : {
+        "IRI-based" : "TCP",
+        "en" : "TCP"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#FTP",
@@ -840,16 +840,6 @@
         "en" : "DHCP"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Modbus",
-      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
-      "comment" : {
-        "en" : "Request and response protocol widely used in industrial equipment."
-      },
-      "labels" : {
-        "IRI-based" : "Modbus",
-        "en" : "Modbus"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#CANopen",
       "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
       "comment" : {
@@ -858,6 +848,16 @@
       "labels" : {
         "IRI-based" : "CANopen",
         "en" : "CANopen"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#Modbus",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "comment" : {
+        "en" : "Request and response protocol widely used in industrial equipment."
+      },
+      "labels" : {
+        "IRI-based" : "Modbus",
+        "en" : "Modbus"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#MQTT",
@@ -890,16 +890,6 @@
         "en" : "OPC UA"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iso7498/instances#WLAN",
-      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
-      "comment" : {
-        "en" : "Wireless local area network after IEEE 802.11."
-      },
-      "labels" : {
-        "IRI-based" : "WLAN",
-        "en" : "WLAN"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#HTTP",
       "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
       "comment" : {
@@ -910,14 +900,14 @@
         "en" : "HTTP"
       }
     }, {
-      "iri" : "https://w3id.org/aias/odp/iso7498/instances#AMQP",
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#WLAN",
       "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
       "comment" : {
-        "en" : "Advanced message queuing protocol, after ISO/IEC 19464."
+        "en" : "Wireless local area network after IEEE 802.11."
       },
       "labels" : {
-        "IRI-based" : "AMQP",
-        "en" : "AMQP"
+        "IRI-based" : "WLAN",
+        "en" : "WLAN"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#IPv6",
@@ -939,12 +929,22 @@
         "IRI-based" : "HTTPS",
         "en" : "HTTPS"
       }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#AMQP",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "comment" : {
+        "en" : "Advanced message queuing protocol, after ISO/IEC 19464."
+      },
+      "labels" : {
+        "IRI-based" : "AMQP",
+        "en" : "AMQP"
+      }
     } ],
     "comment" : {
       "en" : "A concrete protocol or transmission technique realising the services of a layer."
     },
     "attributes" : [ "external" ],
-    "id" : "44"
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#ProtocolDataUnit",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
@@ -1119,24 +1119,6 @@
       "en" : "Communication Direction"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate",
-      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
-      "annotations" : {
-        "note" : [ {
-          "identifier" : "note",
-          "language" : "en",
-          "value" : "ISO/IEC 7498-1, 5.3.1.15. The transmission underlying it is half duplex, 5.3.1.11, where an entity of the layer above chooses the direction. A master and slave bus segment is of this kind: both sides send, but never at once.",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Data communication in both directions, one direction at a time."
-      },
-      "labels" : {
-        "IRI-based" : "TwoWayAlternate",
-        "en" : "Two-way Alternate"
-      }
-    }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#TwoWaySimultaneous",
       "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
       "annotations" : {
@@ -1153,6 +1135,24 @@
       "labels" : {
         "IRI-based" : "TwoWaySimultaneous",
         "en" : "Two-way Simultaneous"
+      }
+    }, {
+      "iri" : "https://w3id.org/aias/odp/iso7498/instances#TwoWayAlternate",
+      "baseIri" : "https://w3id.org/aias/odp/iso7498/instances",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "ISO/IEC 7498-1, 5.3.1.15. The transmission underlying it is half duplex, 5.3.1.11, where an entity of the layer above chooses the direction. A master and slave bus segment is of this kind: both sides send, but never at once.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Data communication in both directions, one direction at a time."
+      },
+      "labels" : {
+        "IRI-based" : "TwoWayAlternate",
+        "en" : "Two-way Alternate"
       }
     }, {
       "iri" : "https://w3id.org/aias/odp/iso7498/instances#OneWay",
@@ -1223,8 +1223,8 @@
     }
   }, {
     "instances" : 0,
-    "union" : [ "3", "0", "19", "21", "30" ],
-    "attributes" : [ "anonymous", "union" ],
+    "union" : [ "3", "0", "20", "26", "36" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "55"
   } ],
   "property" : [ {
@@ -1249,13 +1249,13 @@
     "id" : "18",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "20",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "owl:disjointWith"
   }, {
     "id" : "23",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "24",
     "type" : "owl:disjointWith"
   }, {
     "id" : "25",
@@ -1264,7 +1264,7 @@
     "id" : "27",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "29",
+    "id" : "30",
     "type" : "owl:disjointWith"
   }, {
     "id" : "31",
@@ -1275,9 +1275,6 @@
   }, {
     "id" : "34",
     "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "36",
-    "type" : "owl:disjointWith"
   }, {
     "id" : "37",
     "type" : "owl:disjointWith"
@@ -1295,6 +1292,9 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "43",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "44",
     "type" : "owl:disjointWith"
   }, {
     "id" : "45",
@@ -1605,12 +1605,12 @@
     "comment" : {
       "en" : "Relates a communication to a data unit conveyed over it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "1"
   }, {
     "range" : "5",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "4"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#usesLayer",
@@ -1632,7 +1632,7 @@
     "comment" : {
       "en" : "Relates a communication to the layer whose services it uses."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "8"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasTargetSystem",
@@ -1655,7 +1655,7 @@
     "comment" : {
       "en" : "Relates a communication to an open system data flows to."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "10"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#connects",
@@ -1678,57 +1678,57 @@
     "comment" : {
       "en" : "Relates a communication to an open system taking part in it, without stating the direction of the data flow."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "11"
+  }, {
+    "range" : "0",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "17"
+  }, {
+    "range" : "19",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "18"
+  }, {
+    "range" : "22",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "21"
   }, {
     "range" : "6",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "17"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "23"
   }, {
     "range" : "9",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "18"
-  }, {
-    "range" : "21",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "20"
-  }, {
-    "range" : "0",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "22"
-  }, {
-    "range" : "24",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "23"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
   }, {
     "range" : "26",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "25"
   }, {
-    "range" : "0",
+    "range" : "29",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "27"
-  }, {
-    "range" : "30",
-    "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "29"
-  }, {
-    "range" : "32",
-    "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "31"
   }, {
     "range" : "9",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "30"
+  }, {
+    "range" : "32",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "31"
+  }, {
+    "range" : "26",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "33"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#quantity",
@@ -1742,67 +1742,67 @@
     "comment" : {
       "en" : "The numeric quantity of a quality of service value."
     },
-    "attributes" : [ "datatype", "functional", "external" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "34"
-  }, {
-    "range" : "24",
-    "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "36"
   }, {
     "range" : "38",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "37"
   }, {
-    "range" : "26",
+    "range" : "22",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "39"
   }, {
-    "range" : "21",
+    "range" : "0",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
-    "range" : "5",
+    "range" : "36",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "41"
+  }, {
+    "range" : "20",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
   }, {
     "range" : "19",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "42"
-  }, {
-    "range" : "44",
-    "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "43"
   }, {
-    "range" : "28",
+    "range" : "5",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "range" : "29",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "45"
   }, {
     "range" : "2",
     "domain" : "32",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "46"
   }, {
     "range" : "3",
     "domain" : "28",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "47"
   }, {
-    "range" : "5",
+    "range" : "38",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "48"
   }, {
-    "range" : "38",
+    "range" : "29",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "49"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#mapsToServiceDataUnit",
@@ -1824,22 +1824,22 @@
     "comment" : {
       "en" : "Relates a protocol data unit of one layer to the service data unit of the layer below that carries it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "50"
   }, {
-    "range" : "30",
+    "range" : "38",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "51"
   }, {
-    "range" : "44",
+    "range" : "5",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "52"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasSubsystem",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
-    "range" : "19",
+    "range" : "20",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -1856,7 +1856,7 @@
     "comment" : {
       "en" : "Relates an open system to one of its subsystems."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "53"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#atLayer",
@@ -1878,12 +1878,12 @@
     "comment" : {
       "en" : "Relates a subsystem, an entity, or a data unit to the layer it belongs to."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "54"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#forParameter",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
-    "range" : "24",
+    "range" : "19",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -1900,22 +1900,22 @@
     "comment" : {
       "en" : "Relates a quality of service value to the parameter it quantifies."
     },
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "56"
   }, {
-    "range" : "21",
+    "range" : "20",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "57"
   }, {
-    "range" : "30",
+    "range" : "19",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "58"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasQualityOfService",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
-    "range" : "26",
+    "range" : "38",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -1932,12 +1932,12 @@
     "comment" : {
       "en" : "Relates a communication to the quality of service observed on it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "59"
   }, {
-    "range" : "19",
+    "range" : "38",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "60"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#attachedTo",
@@ -1955,46 +1955,46 @@
       "IRI-based" : "attachedTo",
       "en" : "attached to"
     },
-    "domain" : "38",
+    "domain" : "29",
     "comment" : {
       "en" : "Relates a service access point to an entity attached to it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "61"
   }, {
     "range" : "26",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "62"
   }, {
-    "range" : "21",
+    "range" : "19",
     "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "63"
   }, {
-    "range" : "44",
+    "range" : "29",
     "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "64"
   }, {
-    "range" : "5",
+    "range" : "36",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "65"
   }, {
-    "range" : "24",
+    "range" : "22",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "66"
-  }, {
-    "range" : "5",
-    "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "67"
   }, {
     "range" : "9",
     "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
+  }, {
+    "range" : "38",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "68"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#peerEntity",
@@ -2016,7 +2016,7 @@
     "comment" : {
       "en" : "Relates an entity to an entity of the same layer with which it communicates."
     },
-    "attributes" : [ "object", "external", "symmetric" ],
+    "attributes" : [ "external", "symmetric", "object" ],
     "id" : "69"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasUserData",
@@ -2038,77 +2038,77 @@
     "comment" : {
       "en" : "Relates a protocol data unit to the user data it carries."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "70"
   }, {
-    "range" : "19",
+    "range" : "22",
     "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "71"
   }, {
-    "range" : "24",
+    "range" : "36",
     "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "72"
+  }, {
+    "range" : "5",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "73"
+  }, {
+    "range" : "20",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "74"
   }, {
     "range" : "26",
     "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "73"
-  }, {
-    "range" : "30",
-    "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "74"
-  }, {
-    "range" : "38",
-    "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "75"
   }, {
-    "range" : "30",
+    "range" : "38",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "76"
   }, {
-    "range" : "38",
+    "range" : "20",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "77"
   }, {
-    "range" : "19",
+    "range" : "36",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "78"
   }, {
-    "range" : "44",
+    "range" : "29",
     "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "79"
   }, {
-    "range" : "19",
-    "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "38",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "80"
   }, {
-    "range" : "38",
-    "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "22",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "81"
   }, {
     "range" : "6",
-    "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "82"
   }, {
-    "range" : "21",
-    "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "20",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "83"
   }, {
-    "range" : "44",
-    "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "29",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "84"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasEntity",
@@ -2126,61 +2126,61 @@
       "IRI-based" : "hasEntity",
       "en" : "has entity"
     },
-    "domain" : "19",
+    "domain" : "20",
     "comment" : {
       "en" : "Relates a subsystem to an entity within it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "85"
   }, {
-    "range" : "13",
+    "range" : "14",
     "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "86"
   }, {
-    "range" : "14",
+    "range" : "13",
     "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "87"
+  }, {
+    "range" : "14",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "88"
+  }, {
+    "range" : "38",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "89"
   }, {
     "range" : "13",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "88"
-  }, {
-    "range" : "21",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "89"
-  }, {
-    "range" : "14",
-    "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "90"
   }, {
     "range" : "15",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "91"
   }, {
-    "range" : "26",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "20",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "92"
   }, {
-    "range" : "38",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "22",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "93"
   }, {
-    "range" : "44",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "26",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "94"
   }, {
-    "range" : "24",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "29",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "95"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasSourceSystem",
@@ -2203,12 +2203,12 @@
     "comment" : {
       "en" : "Relates a communication to an open system data flows from."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "16"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#employsProtocol",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
-    "range" : "30",
+    "range" : "36",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -2225,7 +2225,7 @@
     "comment" : {
       "en" : "Relates an entity to a protocol it employs."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "96"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasControlInformation",
@@ -2247,42 +2247,42 @@
     "comment" : {
       "en" : "Relates a protocol data unit to the protocol control information it carries."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "97"
   }, {
-    "range" : "26",
+    "range" : "22",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "98"
   }, {
-    "range" : "38",
+    "range" : "36",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "99"
   }, {
     "range" : "19",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "100"
   }, {
-    "range" : "21",
+    "range" : "26",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "101"
   }, {
-    "range" : "44",
+    "range" : "20",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "102"
-  }, {
-    "range" : "24",
-    "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "103"
   }, {
     "range" : "19",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "103"
+  }, {
+    "range" : "29",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "104"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#realisesLayer",
@@ -2300,41 +2300,41 @@
       "IRI-based" : "realisesLayer",
       "en" : "realises layer"
     },
-    "domain" : "44",
+    "domain" : "22",
     "comment" : {
       "en" : "Relates a technology to the layer whose services it realises."
     },
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "105"
   }, {
     "range" : "3",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "106"
   }, {
     "range" : "3",
     "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "107"
   }, {
     "range" : "2",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "108"
   }, {
     "range" : "3",
     "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "109"
   }, {
     "range" : "3",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "110"
   }, {
-    "range" : "9",
+    "range" : "19",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "112"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#layerNumber",
@@ -2356,32 +2356,32 @@
     "comment" : {
       "en" : "The number of a layer in the reference model, from one for the physical layer to seven for the application layer."
     },
-    "attributes" : [ "datatype", "functional", "external" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "113"
-  }, {
-    "range" : "38",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "115"
-  }, {
-    "range" : "30",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "116"
-  }, {
-    "range" : "0",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "117"
   }, {
     "range" : "26",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "115"
+  }, {
+    "range" : "3",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "116"
+  }, {
+    "range" : "22",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "117"
+  }, {
+    "range" : "0",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "118"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#usesTechnology",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
-    "range" : "44",
+    "range" : "22",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -2398,22 +2398,22 @@
     "comment" : {
       "en" : "Relates a communication to a technology realising it."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "119"
   }, {
-    "range" : "3",
+    "range" : "36",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "120"
   }, {
-    "range" : "21",
+    "range" : "9",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "121"
   }, {
-    "range" : "19",
+    "range" : "28",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "122"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#isSublayerOf",
@@ -2435,7 +2435,7 @@
     "comment" : {
       "en" : "Relates a layer to the layer it subdivides."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "123"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#unit",
@@ -2457,12 +2457,12 @@
     "comment" : {
       "en" : "The unit of a quality of service value, for example ms or Mbit/s."
     },
-    "attributes" : [ "datatype", "functional", "external" ],
+    "attributes" : [ "datatype", "external", "functional" ],
     "id" : "124"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#providesService",
     "baseIri" : "https://w3id.org/aias/odp/iso7498",
-    "range" : "21",
+    "range" : "26",
     "annotations" : {
       "note" : [ {
         "identifier" : "note",
@@ -2479,47 +2479,47 @@
     "comment" : {
       "en" : "Relates an entity to a service it provides to the layer above."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "125"
   }, {
-    "range" : "44",
+    "range" : "5",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "126"
   }, {
-    "range" : "24",
+    "range" : "20",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "127"
   }, {
-    "range" : "44",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "22",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "128"
   }, {
     "range" : "14",
     "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "129"
   }, {
-    "range" : "38",
-    "domain" : "21",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "29",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "130"
   }, {
-    "range" : "44",
-    "domain" : "21",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "22",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "131"
   }, {
-    "range" : "44",
-    "domain" : "38",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "22",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "132"
   }, {
-    "range" : "19",
-    "domain" : "38",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "20",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "133"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasDirection",
@@ -2541,17 +2541,17 @@
     "comment" : {
       "en" : "Relates a communication to the direction in which data communication takes place over it."
     },
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "134"
   }, {
-    "range" : "19",
-    "domain" : "21",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "20",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "135"
   }, {
-    "range" : "44",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "20",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "136"
   }, {
     "iri" : "https://w3id.org/aias/odp/iso7498#hasValue",
@@ -2561,36 +2561,36 @@
       "IRI-based" : "hasValue",
       "en" : "has value"
     },
-    "domain" : "26",
+    "domain" : "38",
     "comment" : {
       "en" : "Relates a quality of service statement to one of its parameter values."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "137"
   }, {
-    "range" : "21",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "29",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "138"
   }, {
-    "range" : "26",
+    "range" : "38",
     "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "139"
   }, {
     "range" : "26",
-    "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "140"
   }, {
-    "range" : "38",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "22",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "141"
   }, {
-    "range" : "19",
-    "domain" : "26",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "26",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "142"
   } ]
 }

@@ -1,194 +1,23 @@
 [
   {
-    "@id": "http://purl.org/dc/terms/hasVersion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Relation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Beschreibt strukturierte Beziehungen und Abhängigkeiten zwischen Funktionen und Komponenten."
-      },
-      {
-        "@language": "en",
-        "@value": "Describes structured relationships and dependencies between functions and components."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Relation"
-      },
-      {
-        "@language": "en",
-        "@value": "Relation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A construct of this work, following the system elements of Haberfellner.\r\n\r\nThree specialisations concretise it, each taken from a subdomain pattern: the assignment and the flow of VDI 3682, and the communication of ISO/IEC 7498-1. Relations are classes rather than object properties so that a model can annotate one: an assignment is a thing, not an arrow."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/license",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Function",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Beschreibt Transformationen, durch die Eingaben in Ausgaben überführt werden, um Systemziele zu erreichen."
-      },
-      {
-        "@language": "en",
-        "@value": "Describes transformations by which inputs are turned into outputs in order to reach the objectives of a system."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Function"
-      },
-      {
-        "@language": "de",
-        "@value": "Funktion"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A construct of this work, following the system elements of Haberfellner et al., Systems Engineering, Springer 2019. The notion of a function is the general one of a purposeful transformation.\r\n\r\nWithout this class a process operator of VDI 3682 and an inference of ISO/IEC 22989 are unrelated things, and nothing can be said about both at once. Under one superclass they become comparable and are treated by the same mechanisms, above all the assignment to a component."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Resource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A physical component performing a function."
-      },
-      {
-        "@language": "de",
-        "@value": "Physische Komponente, die eine Funktion ausführt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Resource"
-      },
-      {
-        "@language": "de",
-        "@value": "Ressource"
-      }
-    ],
+    "@id": "https://w3id.org/aias/odp/iso7498#Communication",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias#Component"
+        "@id": "https://w3id.org/aias#Relation"
       }
-    ],
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Data",
     "http://www.w3.org/2002/07/owl#equivalentClass": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A construct of this work, equated with the technical resource of VDI 3682: a resource is what performs a function, which is what that standard defines the technical resource as.\r\n\r\nThe kinds of resource below are the devices of a plant. They come from no standard and can be refined further through a classification of equipment such as ECLASS."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/subject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/references",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Computer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Devices with fixed, higher computing capacity that can be extended by additional hardware."
-      },
-      {
-        "@language": "de",
-        "@value": "Geräte mit fester, höherer Rechenleistung, die durch zusätzliche Hardware erweiterbar sind."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Computer"
-      },
-      {
-        "@language": "de",
-        "@value": "Rechner"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Component",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Beschreibt physische Systemelemente, die Funktionen ausführen oder durch sie umgewandelt werden."
-      },
-      {
-        "@language": "en",
-        "@value": "Describes physical system elements that perform functions or are transformed by them."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Component"
-      },
-      {
-        "@language": "de",
-        "@value": "Komponente"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A construct of this work, following the system elements of Haberfellner. It covers physical elements only.\r\n\r\nSoftware artefacts such as models or AI components are deliberately not modelled as components. They stay in the AI subdomain, and their place in the whole is recorded through the functions they realise and the assignment of those functions to a resource."
+        "@id": "https://w3id.org/aias/odp/iso7498#Data"
       }
     ]
   },
@@ -196,6 +25,48 @@
     "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#hasCommunication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a component to a communication it takes part in. States a bidirectional use."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Komponente mit einer Kommunikation, an der sie teilnimmt. Definiert eine bidirektionale Nutzung."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has communication"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Kommunikation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A communication describes the exchange of information between at least two resources, and an instance of it is tied to the components taking part, which makes the technical realisation of a data flow explicit.\r\n\r\nThe two relations below differentiate the direction. They are not subproperties of this one: a sensor that only sends carries hasOutputCommunication and nothing else, and a reasoner that inferred hasCommunication from it would report the sensor as bidirectional, which is the opposite of what the model states.\r\n\r\nThe domain is the component rather than the resource on purpose. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and restricting the relation to resources would rule that out."
+      }
     ]
   },
   {
@@ -259,74 +130,76 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias#hasFunction",
+    "@id": "http://purl.org/dc/terms/title",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Controller",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates an AI system to a function it carries out, whichever subdomain the function comes from."
+        "@value": "Devices for the deterministic and time-critical processing of signals in order to control the automated system or process."
       },
       {
         "@language": "de",
-        "@value": "Verbindet ein KI-System mit einer Funktion, die es ausführt, aus welchem Teilbereich sie auch stammt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+        "@value": "Geräte zur deterministischen und echtzeitkritischen Verarbeitung von Signalen zur Steuerung und Regelung des automatisierten Systems beziehungsweise Prozesses."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has function"
+        "@value": "Controller"
       },
       {
         "@language": "de",
-        "@value": "hat Funktion"
+        "@value": "Steuerung"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias#Function"
+        "@id": "https://w3id.org/aias#Resource"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias#hasInputCommunication",
+    "@id": "http://purl.org/dc/terms/modified",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#InternalCloud",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "de",
-        "@value": "Beschreibt eine unidirektionale Nutzung als Empfänger."
+        "@value": "Flexibel skalierbare Rechenressourcen innerhalb des Anlagen- oder Unternehmensnetzes."
       },
       {
         "@language": "en",
-        "@value": "Describes a unidirectional use as a receiver."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias#Component"
+        "@value": "Flexibly scalable computing resources inside the plant or company network."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has input communication"
+        "@value": "Internal Cloud"
       },
       {
         "@language": "de",
-        "@value": "hat eingehende Kommunikation"
+        "@value": "Interne Cloud"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+        "@id": "https://w3id.org/aias#Resource"
       }
     ]
   },
@@ -367,254 +240,7 @@
     ]
   },
   {
-    "@id": "https://schema.org/codeRepository",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/publisher",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#AIFunction",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Function"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Actuator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Devices intervening physically in the technical process."
-      },
-      {
-        "@language": "de",
-        "@value": "Geräte, die physisch in den technischen Prozess eingreifen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Actuator"
-      },
-      {
-        "@language": "de",
-        "@value": "Aktor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#hasCommunication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a component to a communication it takes part in. States a bidirectional use."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine Komponente mit einer Kommunikation, an der sie teilnimmt. Definiert eine bidirektionale Nutzung."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias#Component"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has communication"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Kommunikation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Communication"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A communication describes the exchange of information between at least two resources, and an instance of it is tied to the components taking part, which makes the technical realisation of a data flow explicit.\r\n\r\nThe two relations below differentiate the direction. They are not subproperties of this one: a sensor that only sends carries hasOutputCommunication and nothing else, and a reasoner that inferred hasCommunication from it would report the sensor as bidirectional, which is the opposite of what the model states.\r\n\r\nThe domain is the component rather than the resource on purpose. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and restricting the relation to resources would rule that out."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Product",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Physical objects created, changed or consumed in the course of a technical process."
-      },
-      {
-        "@language": "de",
-        "@value": "Physische Objekte, die im Verlauf eines technischen Prozesses erzeugt, verändert oder verbraucht werden."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Product"
-      },
-      {
-        "@language": "de",
-        "@value": "Produkt"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Component"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A construct of this work, corresponding to the product of VDI 3682.\r\n\r\nProducts and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#hasFlow",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a function, a component or a product to a flow it takes part in."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet eine Funktion, eine Komponente oder ein Produkt mit einem Fluss, an dem sie teilnimmt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid1"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has flow"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Fluss"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias#Component"
-          },
-          {
-            "@id": "https://w3id.org/aias#Function"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/abstract",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/rights",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Function"
-      }
-    ]
-  },
-  {
-    "@id": "http://xmlns.com/foaf/0.1/fundedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/modified",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/bibliographicCitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
     "@id": "http://purl.org/dc/terms/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/title",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/ontology/bibo/status",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
@@ -656,212 +282,9 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias#EdgeDevice",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Microcontrollers or compact industrial computers with limited computing capacity available locally in the plant network or the company network."
-      },
-      {
-        "@language": "de",
-        "@value": "Mikrocontroller oder kompakte Industriecomputer mit begrenzter, lokal verfügbarer Rechenleistung im Anlagennetzwerk oder Unternehmensnetzwerk."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Edge Device"
-      },
-      {
-        "@language": "de",
-        "@value": "Edge-Gerät"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Controller",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Devices for the deterministic and time-critical processing of signals in order to control the automated system or process."
-      },
-      {
-        "@language": "de",
-        "@value": "Geräte zur deterministischen und echtzeitkritischen Verarbeitung von Signalen zur Steuerung und Regelung des automatisierten Systems beziehungsweise Prozesses."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Controller"
-      },
-      {
-        "@language": "de",
-        "@value": "Steuerung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/ontology/bibo/doi",
+    "@id": "http://purl.org/dc/terms/publisher",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#Communication",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#InternalCloud",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Flexibel skalierbare Rechenressourcen innerhalb des Anlagen- oder Unternehmensnetzes."
-      },
-      {
-        "@language": "en",
-        "@value": "Flexibly scalable computing resources inside the plant or company network."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Internal Cloud"
-      },
-      {
-        "@language": "de",
-        "@value": "Interne Cloud"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Assignment",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#note",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Sensor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Devices acquiring measured values from the technical process and digitising them."
-      },
-      {
-        "@language": "de",
-        "@value": "Geräte, die Messwerte aus dem technischen Prozess erfassen und digitalisieren."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Sensor"
-      },
-      {
-        "@language": "en",
-        "@value": "Sensor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A construct of this work. None of the seven device classes rests on a standard."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/created",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Data",
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#Data"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#ExternalCloud",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Flexibel skalierbare Rechenressourcen außerhalb des Anlagen- oder Unternehmensnetzes, deren Zugriff typischerweise ein externes Netzwerk, etwa eine Internetverbindung, erfordert."
-      },
-      {
-        "@language": "en",
-        "@value": "Flexibly scalable computing resources outside the plant or company network, reaching which typically requires an external network such as an internet connection."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "External Cloud"
-      },
-      {
-        "@language": "de",
-        "@value": "Externe Cloud"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A function running here leaves the organisation, which is what separates it from the internal cloud."
-      }
     ]
   },
   {
@@ -994,13 +417,13 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
+        "@id": "https://w3id.org/aias/odp/iso7498/1.0.0"
+      },
+      {
         "@id": "https://w3id.org/aias/odp/vdi3682/1.0.0"
       },
       {
         "@id": "https://w3id.org/aias/odp/iso22989/1.0.0"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498/1.0.0"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionIRI": [
@@ -1021,6 +444,589 @@
     "https://schema.org/codeRepository": [
       {
         "@id": "https://github.com/schiesem/aias"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Function",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Beschreibt Transformationen, durch die Eingaben in Ausgaben überführt werden, um Systemziele zu erreichen."
+      },
+      {
+        "@language": "en",
+        "@value": "Describes transformations by which inputs are turned into outputs in order to reach the objectives of a system."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Function"
+      },
+      {
+        "@language": "de",
+        "@value": "Funktion"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A construct of this work, following the system elements of Haberfellner et al., Systems Engineering, Springer 2019. The notion of a function is the general one of a purposeful transformation.\r\n\r\nWithout this class a process operator of VDI 3682 and an inference of ISO/IEC 22989 are unrelated things, and nothing can be said about both at once. Under one superclass they become comparable and are treated by the same mechanisms, above all the assignment to a component."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/bibliographicCitation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Actuator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Devices intervening physically in the technical process."
+      },
+      {
+        "@language": "de",
+        "@value": "Geräte, die physisch in den technischen Prozess eingreifen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Actuator"
+      },
+      {
+        "@language": "de",
+        "@value": "Aktor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#hasFlow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a function, a component or a product to a flow it takes part in."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet eine Funktion, eine Komponente oder ein Produkt mit einem Fluss, an dem sie teilnimmt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has flow"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Fluss"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias#Component"
+          },
+          {
+            "@id": "https://w3id.org/aias#Function"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/status",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#note",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/doi",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Relation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Beschreibt strukturierte Beziehungen und Abhängigkeiten zwischen Funktionen und Komponenten."
+      },
+      {
+        "@language": "en",
+        "@value": "Describes structured relationships and dependencies between functions and components."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Relation"
+      },
+      {
+        "@language": "en",
+        "@value": "Relation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A construct of this work, following the system elements of Haberfellner.\r\n\r\nThree specialisations concretise it, each taken from a subdomain pattern: the assignment and the flow of VDI 3682, and the communication of ISO/IEC 7498-1. Relations are classes rather than object properties so that a model can annotate one: an assignment is a thing, not an arrow."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#hasFunction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an AI system to a function it carries out, whichever subdomain the function comes from."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet ein KI-System mit einer Funktion, die es ausführt, aus welchem Teilbereich sie auch stammt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has function"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Funktion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#AIFunction",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Computer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Devices with fixed, higher computing capacity that can be extended by additional hardware."
+      },
+      {
+        "@language": "de",
+        "@value": "Geräte mit fester, höherer Rechenleistung, die durch zusätzliche Hardware erweiterbar sind."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Computer"
+      },
+      {
+        "@language": "de",
+        "@value": "Rechner"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/hasVersion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/abstract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Assignment",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Resource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A physical component performing a function."
+      },
+      {
+        "@language": "de",
+        "@value": "Physische Komponente, die eine Funktion ausführt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Resource"
+      },
+      {
+        "@language": "de",
+        "@value": "Ressource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A construct of this work, equated with the technical resource of VDI 3682: a resource is what performs a function, which is what that standard defines the technical resource as.\r\n\r\nThe kinds of resource below are the devices of a plant. They come from no standard and can be refined further through a classification of equipment such as ECLASS."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Product",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Physical objects created, changed or consumed in the course of a technical process."
+      },
+      {
+        "@language": "de",
+        "@value": "Physische Objekte, die im Verlauf eines technischen Prozesses erzeugt, verändert oder verbraucht werden."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Product"
+      },
+      {
+        "@language": "de",
+        "@value": "Produkt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Product"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A construct of this work, corresponding to the product of VDI 3682.\r\n\r\nProducts and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them."
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/codeRepository",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/references",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#hasInputCommunication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Beschreibt eine unidirektionale Nutzung als Empfänger."
+      },
+      {
+        "@language": "en",
+        "@value": "Describes a unidirectional use as a receiver."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has input communication"
+      },
+      {
+        "@language": "de",
+        "@value": "hat eingehende Kommunikation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#Communication"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/fundedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#EdgeDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Microcontrollers or compact industrial computers with limited computing capacity available locally in the plant network or the company network."
+      },
+      {
+        "@language": "de",
+        "@value": "Mikrocontroller oder kompakte Industriecomputer mit begrenzter, lokal verfügbarer Rechenleistung im Anlagennetzwerk oder Unternehmensnetzwerk."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Edge Device"
+      },
+      {
+        "@language": "de",
+        "@value": "Edge-Gerät"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#ExternalCloud",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Flexibel skalierbare Rechenressourcen außerhalb des Anlagen- oder Unternehmensnetzes, deren Zugriff typischerweise ein externes Netzwerk, etwa eine Internetverbindung, erfordert."
+      },
+      {
+        "@language": "en",
+        "@value": "Flexibly scalable computing resources outside the plant or company network, reaching which typically requires an external network such as an internet connection."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "External Cloud"
+      },
+      {
+        "@language": "de",
+        "@value": "Externe Cloud"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A function running here leaves the organisation, which is what separates it from the internal cloud."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/subject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Sensor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Devices acquiring measured values from the technical process and digitising them."
+      },
+      {
+        "@language": "de",
+        "@value": "Geräte, die Messwerte aus dem technischen Prozess erfassen und digitalisieren."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Sensor"
+      },
+      {
+        "@language": "en",
+        "@value": "Sensor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A construct of this work. None of the seven device classes rests on a standard."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Component",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Beschreibt physische Systemelemente, die Funktionen ausführen oder durch sie umgewandelt werden."
+      },
+      {
+        "@language": "en",
+        "@value": "Describes physical system elements that perform functions or are transformed by them."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Component"
+      },
+      {
+        "@language": "de",
+        "@value": "Komponente"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A construct of this work, following the system elements of Haberfellner. It covers physical elements only.\r\n\r\nSoftware artefacts such as models or AI components are deliberately not modelled as components. They stay in the AI subdomain, and their place in the whole is recorded through the functions they realise and the assignment of those functions to a resource."
       }
     ]
   },
@@ -1058,12 +1064,6 @@
       {
         "@id": "https://w3id.org/aias/odp/iso7498#Communication"
       }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   }
 ]

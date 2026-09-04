@@ -12,90 +12,17 @@
 
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:iso7498="https://w3id.org/aias/odp/iso7498#">
-  <rdf:Description rdf:nodeID="N4545e7990a9744b2b84ac867bca8b9de">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#MQTT"/>
-    <rdf:rest rdf:nodeID="N97c821e097b7480785574961c608e8cc"/>
+  <rdf:Description rdf:nodeID="N15b184c18f9743f79791002bbb0974e4">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Network"/>
+    <rdf:rest rdf:nodeID="Nab0fef57c0fe4d4a9af7063adf71b756"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#IP">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#FTP">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="de">Internet Protocol, eine Technologie der Vermittlungsschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The Internet Protocol, a technology of the network layer.</rdfs:comment>
-    <rdfs:label xml:lang="de">IP</rdfs:label>
-    <rdfs:label xml:lang="en">IP</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Session">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Manages sessions between applications, their establishment, control and synchronisation.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verwaltet Sitzungen zwischen Anwendungen, deren Aufbau, Steuerung und Synchronisation.</rdfs:comment>
-    <rdfs:label xml:lang="en">Session Layer</rdfs:label>
-    <rdfs:label xml:lang="de">Sitzungsschicht</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.3.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Physical">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Transmits raw bits as electrical, optical or radio signals over a physical medium.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Überträgt rohe Bits als elektrische, optische oder Funksignale über ein physisches Medium.</rdfs:comment>
-    <rdfs:label xml:lang="de">Bitübertragungsschicht</rdfs:label>
-    <rdfs:label xml:lang="en">Physical Layer</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.7.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Communication">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A connection between at least two system components describing the directed exchange of data.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindung zwischen mindestens zwei Systemkomponenten, die den gerichteten Austausch von Daten beschreibt.</rdfs:comment>
-    <rdfs:label xml:lang="en">Communication</rdfs:label>
-    <rdfs:label xml:lang="de">Kommunikation</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, definition 4.2.10. The standard itself calls this an association. Communication is the plainer term, and is the one used here.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#hasName">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#Name"/>
-    <rdfs:comment xml:lang="en">Relates a communication to its designation.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Kommunikation mit ihrer Bezeichnung.</rdfs:comment>
-    <rdfs:label xml:lang="en">has name</rdfs:label>
-    <rdfs:label xml:lang="de">hat Namen</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#MQTT">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="en">A publish and subscribe protocol of the application layer.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Publish-Subscribe-Protokoll der Anwendungsschicht.</rdfs:comment>
-    <rdfs:label xml:lang="de">MQTT</rdfs:label>
-    <rdfs:label xml:lang="en">MQTT</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#usesTechnology">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="en">Relates a layer to the technology realising it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Schicht mit der Technologie, die sie realisiert.</rdfs:comment>
-    <rdfs:label xml:lang="de">nutzt Technologie</rdfs:label>
-    <rdfs:label xml:lang="en">uses technology</rdfs:label>
-    <skos:note xml:lang="en">Whether a given technology fits the layer it is claimed for is not checked here. Nothing stops a model from placing MQTT at the network layer.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Presentation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Converts data into a common format and carries out coding, compression and where required encryption.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Wandelt Daten in ein gemeinsames Format und übernimmt Codierung, Kompression und gegebenenfalls Verschlüsselung.</rdfs:comment>
-    <rdfs:label xml:lang="de">Darstellungsschicht</rdfs:label>
-    <rdfs:label xml:lang="en">Presentation Layer</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.2.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#HTTPS">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="en">HTTP over a secured connection, a technology of the application layer.</rdfs:comment>
-    <rdfs:comment xml:lang="de">HTTP über eine gesicherte Verbindung, eine Technologie der Anwendungsschicht.</rdfs:comment>
-    <rdfs:label xml:lang="de">HTTPS</rdfs:label>
-    <rdfs:label xml:lang="en">HTTPS</rdfs:label>
+    <rdfs:comment xml:lang="de">File Transfer Protocol, eine Technologie der Anwendungsschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The File Transfer Protocol, a technology of the application layer.</rdfs:comment>
+    <rdfs:label xml:lang="de">FTP</rdfs:label>
+    <rdfs:label xml:lang="en">FTP</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -135,10 +62,6 @@ Scope: the layered structure of a communication and what travels over it. The op
     <foaf:fundedBy rdf:resource="https://dtecbw.de/"/>
     <schema:codeRepository rdf:resource="https://github.com/schiesem/aias"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N324e59aadcbc4d038d1bbe2670ff3054">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Technology">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A concrete protocol or transmission technique realising the tasks of a layer.</rdfs:comment>
@@ -147,43 +70,9 @@ Scope: the layered structure of a communication and what travels over it. The op
     <rdfs:label xml:lang="en">Technology</rdfs:label>
     <skos:note xml:lang="en">Not a class of ISO/IEC 7498-1. Clause 1.3 states that the fact a system is open implies no particular implementation or technology, so the standard names none.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N66f75f2a24d341228a0202272dda1cba">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Session"/>
-    <rdf:rest rdf:nodeID="N0488e14956db40ff8c017357fa8160fc"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Network">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Organises the forwarding of data packet by packet across several networks.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Organisiert die paketweise Weiterleitung von Daten über mehrere Netze hinweg.</rdfs:comment>
-    <rdfs:label xml:lang="en">Network Layer</rdfs:label>
-    <rdfs:label xml:lang="de">Vermittlungsschicht</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.5.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#hasLayer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Relates a communication to a layer it is structured into.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Kommunikation mit einer Schicht, in die sie gegliedert ist.</rdfs:comment>
-    <rdfs:label xml:lang="en">has layer</rdfs:label>
-    <rdfs:label xml:lang="de">hat Schicht</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4d3c3feb987e465eacb78124ad953e9e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Name"/>
-    <rdf:rest rdf:nodeID="N403e6f84aace4fa19de25192b1252da9"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#TCP">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="en">The Transmission Control Protocol, a technology of the transport layer.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Transmission Control Protocol, eine Technologie der Transportschicht.</rdfs:comment>
-    <rdfs:label xml:lang="de">TCP</rdfs:label>
-    <rdfs:label xml:lang="en">TCP</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#hasDataUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="Na89156f428984fd5b6e503a8f1978289"/>
+    <rdfs:domain rdf:nodeID="N5ccca8dc12694ddba9bb3b0c408a72d7"/>
     <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
     <rdfs:comment xml:lang="en">Relates a layer, or a communication itself, to the data unit it processes or transmits.</rdfs:comment>
     <rdfs:comment xml:lang="de">Verbindet eine Schicht oder die Kommunikation selbst mit der Dateneinheit, die sie verarbeitet oder überträgt.</rdfs:comment>
@@ -194,63 +83,52 @@ Scope: the layered structure of a communication and what travels over it. The op
 
 hasDU is kept as an alternative label, since that is the short form the relation is commonly written as.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5318af2ecbc8408a941c15364afd93f4">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
-    <rdf:rest rdf:nodeID="N724fe8622980445a879fd93d0490816f"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N75ba92411459405a870f2d6f77aa6438">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Ethernet1000BASET"/>
-    <rdf:rest rdf:nodeID="Nde8a8da93ed540c5982f6145a749a083"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Layer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A delimited group of functions carrying out defined communication tasks at a given level of abstraction.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Abgegrenzte Funktionsgruppe, die auf einem bestimmten Abstraktionsniveau definierte Kommunikationsaufgaben erfüllt.</rdfs:comment>
-    <rdfs:label xml:lang="en">Layer</rdfs:label>
-    <rdfs:label xml:lang="de">Schicht</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Application">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Provides services such as file transfer or remote access directly to the application, using the services of the layers below.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten.</rdfs:comment>
-    <rdfs:label xml:lang="de">Anwendungsschicht</rdfs:label>
-    <rdfs:label xml:lang="en">Application Layer</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.1.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbacac9570d6f4dd784f6e743b5bbbb5d">
+  <rdf:Description rdf:nodeID="N61e8ab6cd9e545a4afd187dcc82747bd">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Presentation"/>
-    <rdf:rest rdf:nodeID="N66f75f2a24d341228a0202272dda1cba"/>
+    <rdf:rest rdf:nodeID="N711ddc7a859a46dd87928c82ba797013"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#FTP">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="de">Bezeichnung, unter der eine Kommunikation bekannt ist.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The designation under which a communication is known.</rdfs:comment>
+    <rdfs:label xml:lang="de">Name</rdfs:label>
+    <rdfs:label xml:lang="en">Name</rdfs:label>
+    <skos:note xml:lang="en">Not a class of ISO/IEC 7498-1. A construct of this model, so that a communication can be referred to by a name of its own.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#DHCP">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="de">File Transfer Protocol, eine Technologie der Anwendungsschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The File Transfer Protocol, a technology of the application layer.</rdfs:comment>
-    <rdfs:label xml:lang="de">FTP</rdfs:label>
-    <rdfs:label xml:lang="en">FTP</rdfs:label>
+    <rdfs:comment xml:lang="de">Dynamic Host Configuration Protocol, eine Technologie der Anwendungsschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The Dynamic Host Configuration Protocol, a technology of the application layer.</rdfs:comment>
+    <rdfs:label xml:lang="de">DHCP</rdfs:label>
+    <rdfs:label xml:lang="en">DHCP</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Segment">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Physical">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
-    <rdfs:comment xml:lang="de">Dateneinheit der Transportschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The data unit of the transport layer.</rdfs:comment>
-    <rdfs:label xml:lang="de">Segment</rdfs:label>
-    <rdfs:label xml:lang="en">Segment</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto several protocol data units.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Transmits raw bits as electrical, optical or radio signals over a physical medium.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Überträgt rohe Bits als elektrische, optische oder Funksignale über ein physisches Medium.</rdfs:comment>
+    <rdfs:label xml:lang="de">Bitübertragungsschicht</rdfs:label>
+    <rdfs:label xml:lang="en">Physical Layer</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.7.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Data">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
-    <rdfs:comment xml:lang="de">Dateneinheit der oberen Schichten, also das, was eine Anwendung austauscht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The data unit of the upper layers, that is what an application exchanges.</rdfs:comment>
-    <rdfs:label xml:lang="en">Data</rdfs:label>
-    <rdfs:label xml:lang="de">Daten</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1 for a data unit. It stands for what an application exchanges, without separating the payload of a single transmission from a dataset as a whole.</skos:note>
+  <rdf:Description rdf:nodeID="Neff1c1988419473e831b415c58951e11">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
+    <rdf:rest rdf:nodeID="Nfef52f184f594194af9ef3fd26c74291"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N69c5f90a6ed14c078edd9e9e625161d2">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Bit"/>
+    <rdf:rest rdf:nodeID="N8e99301d9d2844f5b52cbf06e68dc1d2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#usesTechnology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="en">Relates a layer to the technology realising it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Schicht mit der Technologie, die sie realisiert.</rdfs:comment>
+    <rdfs:label xml:lang="de">nutzt Technologie</rdfs:label>
+    <rdfs:label xml:lang="en">uses technology</rdfs:label>
+    <skos:note xml:lang="en">Whether a given technology fits the layer it is claimed for is not checked here. Nothing stops a model from placing MQTT at the network layer.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Bit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -261,137 +139,17 @@ hasDU is kept as an alternative label, since that is the short form the relation
     <rdfs:label xml:lang="en">Bit</rdfs:label>
     <skos:note xml:lang="en">The one practice term ISO/IEC 7498-1 names: 7.7.3.3.1 refers to the transparent transmission of bit streams.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N49abd6856047456eb951a5fe047fa3e3">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Packet"/>
-    <rdf:rest rdf:nodeID="N3ccaea3bc377427c97d9ebb1921bf9e4"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Name">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Data">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="de">Bezeichnung, unter der eine Kommunikation bekannt ist.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The designation under which a communication is known.</rdfs:comment>
-    <rdfs:label xml:lang="de">Name</rdfs:label>
-    <rdfs:label xml:lang="en">Name</rdfs:label>
-    <skos:note xml:lang="en">Not a class of ISO/IEC 7498-1. A construct of this model, so that a communication can be referred to by a name of its own.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
+    <rdfs:comment xml:lang="de">Dateneinheit der oberen Schichten, also das, was eine Anwendung austauscht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The data unit of the upper layers, that is what an application exchanges.</rdfs:comment>
+    <rdfs:label xml:lang="en">Data</rdfs:label>
+    <rdfs:label xml:lang="de">Daten</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1 for a data unit. It stands for what an application exchanges, without separating the payload of a single transmission from a dataset as a whole.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N1504cdae65a641ed83172e609c75be71">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Ethernet"/>
-    <rdf:rest rdf:nodeID="N75ba92411459405a870f2d6f77aa6438"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N85f1a883446b4ad0bdd4bcb30f3ed092">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#HTTP"/>
-    <rdf:rest rdf:nodeID="Nf051cf76c8ec4c09b7aa7d24deff85fb"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Ethernet1000BASET">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="en">Gigabit Ethernet over twisted pair cabling, a technology of the physical layer.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Gigabit-Ethernet über Twisted-Pair-Verkabelung, eine Technologie der Bitübertragungsschicht.</rdfs:comment>
-    <rdfs:label xml:lang="de">1000BASE-T</rdfs:label>
-    <rdfs:label xml:lang="en">1000BASE-T</rdfs:label>
-    <skos:note xml:lang="en">A class name beginning with a digit is awkward in a namespace, so the class is called Ethernet1000BASET and carries the practice name 1000BASE-T as its label.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N403e6f84aace4fa19de25192b1252da9">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Packet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
-    <rdfs:comment xml:lang="de">Dateneinheit der Vermittlungsschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The data unit of the network layer.</rdfs:comment>
-    <rdfs:label xml:lang="en">Packet</rdfs:label>
-    <rdfs:label xml:lang="de">Paket</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1, but of the network layer protocol standards.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3d98fd78785c411e88ecbb59df7afc61">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
-    <rdf:rest rdf:nodeID="N324e59aadcbc4d038d1bbe2670ff3054"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N44e04f5850f5421787fac83c3fc5c8b0">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N9cac3633f3184d769047d81267df8d4c"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Transport">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdfs:comment xml:lang="en">Provides end-to-end connections between communicating partners and segments data streams.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Stellt Ende-zu-Ende-Verbindungen zwischen Kommunikationspartnern bereit und segmentiert Datenströme.</rdfs:comment>
-    <rdfs:label xml:lang="en">Transport Layer</rdfs:label>
-    <rdfs:label xml:lang="de">Transportschicht</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.4.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#DataUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A delimited, coherent quantity of data processed or transmitted by a layer of the OSI model as one unit.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Abgegrenzte, zusammenhängende Datenmenge, die von einer Schicht des OSI-Modells als Einheit verarbeitet oder übertragen wird.</rdfs:comment>
-    <rdfs:label xml:lang="en">Data Unit</rdfs:label>
-    <rdfs:label xml:lang="de">Dateneinheit</rdfs:label>
-    <skos:altLabel xml:lang="en">DU</skos:altLabel>
-    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 5.6.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4e1aaadec2f24b8886c078589c9a94c3">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Physical"/>
-    <rdf:rest rdf:nodeID="Nbacac9570d6f4dd784f6e743b5bbbb5d"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0d2bf37d08244c24bfb041f349fb9d0d">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
-    <rdf:rest rdf:nodeID="N5318af2ecbc8408a941c15364afd93f4"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#HTTP">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="de">Hypertext Transfer Protocol, eine Technologie der Anwendungsschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The Hypertext Transfer Protocol, a technology of the application layer.</rdfs:comment>
-    <rdfs:label xml:lang="de">HTTP</rdfs:label>
-    <rdfs:label xml:lang="en">HTTP</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Frame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
-    <rdfs:comment xml:lang="de">Dateneinheit der Sicherungsschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The data unit of the data link layer.</rdfs:comment>
-    <rdfs:label xml:lang="de">Datenrahmen</rdfs:label>
-    <rdfs:label xml:lang="en">Frame</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting function of the data link layer is sometimes referred to as framing, but the standard defines no such data unit.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne33f6a18351c460a8783dede0ee2bd1c">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N9acb8a648e534318944b88d3f8de2d1e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9cac3633f3184d769047d81267df8d4c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#DHCP"/>
-    <rdf:rest rdf:nodeID="N1504cdae65a641ed83172e609c75be71"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0488e14956db40ff8c017357fa8160fc">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Transport"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbc3a1e674de94cf589d079d8c2c00e95">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N0d2bf37d08244c24bfb041f349fb9d0d"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#DHCP">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="de">Dynamic Host Configuration Protocol, eine Technologie der Anwendungsschicht.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The Dynamic Host Configuration Protocol, a technology of the application layer.</rdfs:comment>
-    <rdfs:label xml:lang="de">DHCP</rdfs:label>
-    <rdfs:label xml:lang="en">DHCP</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Ethernet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
-    <rdfs:comment xml:lang="en">A family of technologies of the data link layer.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Technologiefamilie der Sicherungsschicht.</rdfs:comment>
-    <rdfs:label xml:lang="de">Ethernet</rdfs:label>
-    <rdfs:label xml:lang="en">Ethernet</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na89156f428984fd5b6e503a8f1978289">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N3d98fd78785c411e88ecbb59df7afc61"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#DataLink">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -402,110 +160,352 @@ hasDU is kept as an alternative label, since that is the short form the relation
     <rdfs:label xml:lang="de">Sicherungsschicht</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.6.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8386882b9e07425380bc84c05e8643c5">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Ethernet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="en">A family of technologies of the data link layer.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Technologiefamilie der Sicherungsschicht.</rdfs:comment>
+    <rdfs:label xml:lang="de">Ethernet</rdfs:label>
+    <rdfs:label xml:lang="en">Ethernet</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Frame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
+    <rdfs:comment xml:lang="de">Dateneinheit der Sicherungsschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The data unit of the data link layer.</rdfs:comment>
+    <rdfs:label xml:lang="de">Datenrahmen</rdfs:label>
+    <rdfs:label xml:lang="en">Frame</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1. A note to 7.6.4.5 observes that the delimiting function of the data link layer is sometimes referred to as framing, but the standard defines no such data unit.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#TCP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="en">The Transmission Control Protocol, a technology of the transport layer.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Transmission Control Protocol, eine Technologie der Transportschicht.</rdfs:comment>
+    <rdfs:label xml:lang="de">TCP</rdfs:label>
+    <rdfs:label xml:lang="en">TCP</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Presentation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Converts data into a common format and carries out coding, compression and where required encryption.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Wandelt Daten in ein gemeinsames Format und übernimmt Codierung, Kompression und gegebenenfalls Verschlüsselung.</rdfs:comment>
+    <rdfs:label xml:lang="de">Darstellungsschicht</rdfs:label>
+    <rdfs:label xml:lang="en">Presentation Layer</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.2.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#Name"/>
+    <rdfs:comment xml:lang="en">Relates a communication to its designation.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Kommunikation mit ihrer Bezeichnung.</rdfs:comment>
+    <rdfs:label xml:lang="en">has name</rdfs:label>
+    <rdfs:label xml:lang="de">hat Namen</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Segment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
+    <rdfs:comment xml:lang="de">Dateneinheit der Transportschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The data unit of the transport layer.</rdfs:comment>
+    <rdfs:label xml:lang="de">Segment</rdfs:label>
+    <rdfs:label xml:lang="en">Segment</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1 in this sense. The standard uses segmenting as the name of a function, 5.8.1.9, that maps one service data unit onto several protocol data units.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba93b4b8ebd84ae1bc51259c78021bfa">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Frame"/>
-    <rdf:rest rdf:nodeID="N49abd6856047456eb951a5fe047fa3e3"/>
+    <rdf:rest rdf:nodeID="N0f22d3559a284fd69226098773add9dc"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N724fe8622980445a879fd93d0490816f">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
-    <rdf:rest rdf:nodeID="N4d3c3feb987e465eacb78124ad953e9e"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Session">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Manages sessions between applications, their establishment, control and synchronisation.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verwaltet Sitzungen zwischen Anwendungen, deren Aufbau, Steuerung und Synchronisation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Session Layer</rdfs:label>
+    <rdfs:label xml:lang="de">Sitzungsschicht</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.3.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N72c1e6dc0dee44d6adefdeaf6708e914">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#DataLink"/>
-    <rdf:rest rdf:nodeID="Ne89656ce96b943ff8ac162ac889e478c"/>
+  <rdf:Description rdf:nodeID="Nfbabca5121624602baccddffc2feed74">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#HTTP"/>
+    <rdf:rest rdf:nodeID="N2d3670d10f764c378097918058476155"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N82f9ac2e4e4e4f3384cee281c48b21bf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N81e492217c8c4b4086d8aa7c1740d1e1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Ethernet1000BASET">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="en">Gigabit Ethernet over twisted pair cabling, a technology of the physical layer.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Gigabit-Ethernet über Twisted-Pair-Verkabelung, eine Technologie der Bitübertragungsschicht.</rdfs:comment>
+    <rdfs:label xml:lang="de">1000BASE-T</rdfs:label>
+    <rdfs:label xml:lang="en">1000BASE-T</rdfs:label>
+    <skos:note xml:lang="en">A class name beginning with a digit is awkward in a namespace, so the class is called Ethernet1000BASET and carries the practice name 1000BASE-T as its label.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/doi">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Application">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Provides services such as file transfer or remote access directly to the application, using the services of the layers below.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Stellt direkt der Anwendung Dienste wie Dateiübertragung oder Remote-Zugriff zur Verfügung und nutzt dafür die Dienste der unteren Schichten.</rdfs:comment>
+    <rdfs:label xml:lang="de">Anwendungsschicht</rdfs:label>
+    <rdfs:label xml:lang="en">Application Layer</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.1.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nada53d86db434490ae30af5c46f2c8ae">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#IP"/>
-    <rdf:rest rdf:nodeID="N4545e7990a9744b2b84ac867bca8b9de"/>
+  <rdf:Description rdf:nodeID="Ne0b8eb83416c4235ab305d6ec0161d48">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
+    <rdf:rest rdf:nodeID="N8e68b570ad874929b79c433ebbd0c232"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0e4fb8993a4c4b50a10039996550ed8d">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Data"/>
-    <rdf:rest rdf:nodeID="N8386882b9e07425380bc84c05e8643c5"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Transport">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Provides end-to-end connections between communicating partners and segments data streams.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Stellt Ende-zu-Ende-Verbindungen zwischen Kommunikationspartnern bereit und segmentiert Datenströme.</rdfs:comment>
+    <rdfs:label xml:lang="en">Transport Layer</rdfs:label>
+    <rdfs:label xml:lang="de">Transportschicht</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.4.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N3ccaea3bc377427c97d9ebb1921bf9e4">
+  <rdf:Description rdf:nodeID="N5ccca8dc12694ddba9bb3b0c408a72d7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Neff1c1988419473e831b415c58951e11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3eacb21700fa4868a276bf2d2398dfc4">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#MQTT"/>
+    <rdf:rest rdf:nodeID="Ne3a668ab6cd74b58809bfe6587d61ab5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#HTTPS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="en">HTTP over a secured connection, a technology of the application layer.</rdfs:comment>
+    <rdfs:comment xml:lang="de">HTTP über eine gesicherte Verbindung, eine Technologie der Anwendungsschicht.</rdfs:comment>
+    <rdfs:label xml:lang="de">HTTPS</rdfs:label>
+    <rdfs:label xml:lang="en">HTTPS</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd250d21300254fb98b7f55655b138282">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Transport"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#DataUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A delimited, coherent quantity of data processed or transmitted by a layer of the OSI model as one unit.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Abgegrenzte, zusammenhängende Datenmenge, die von einer Schicht des OSI-Modells als Einheit verarbeitet oder übertragen wird.</rdfs:comment>
+    <rdfs:label xml:lang="en">Data Unit</rdfs:label>
+    <rdfs:label xml:lang="de">Dateneinheit</rdfs:label>
+    <skos:altLabel xml:lang="en">DU</skos:altLabel>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 5.6.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Layer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A delimited group of functions carrying out defined communication tasks at a given level of abstraction.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Abgegrenzte Funktionsgruppe, die auf einem bestimmten Abstraktionsniveau definierte Kommunikationsaufgaben erfüllt.</rdfs:comment>
+    <rdfs:label xml:lang="en">Layer</rdfs:label>
+    <rdfs:label xml:lang="de">Schicht</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, 5.2.1.2. Clause 6.1.2 enumerates exactly seven layers.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neee7ed75369a48099143525ac74b62b0">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Segment"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N81e492217c8c4b4086d8aa7c1740d1e1">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Bit"/>
-    <rdf:rest rdf:nodeID="N0e4fb8993a4c4b50a10039996550ed8d"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N97c821e097b7480785574961c608e8cc">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#TCP"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Communication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A connection between at least two system components describing the directed exchange of data.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindung zwischen mindestens zwei Systemkomponenten, die den gerichteten Austausch von Daten beschreibt.</rdfs:comment>
+    <rdfs:label xml:lang="en">Communication</rdfs:label>
+    <rdfs:label xml:lang="de">Kommunikation</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, definition 4.2.10. The standard itself calls this an association. Communication is the plainer term, and is the one used here.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Packet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#DataUnit"/>
+    <rdfs:comment xml:lang="de">Dateneinheit der Vermittlungsschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The data unit of the network layer.</rdfs:comment>
+    <rdfs:label xml:lang="en">Packet</rdfs:label>
+    <rdfs:label xml:lang="de">Paket</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 7498-1, but of the network layer protocol standards.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e99301d9d2844f5b52cbf06e68dc1d2">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Data"/>
+    <rdf:rest rdf:nodeID="Nba93b4b8ebd84ae1bc51259c78021bfa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0bea6165098e410f8c0196caaf12bd9f">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#IP"/>
+    <rdf:rest rdf:nodeID="N3eacb21700fa4868a276bf2d2398dfc4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#Network">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Organises the forwarding of data packet by packet across several networks.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Organisiert die paketweise Weiterleitung von Daten über mehrere Netze hinweg.</rdfs:comment>
+    <rdfs:label xml:lang="en">Network Layer</rdfs:label>
+    <rdfs:label xml:lang="de">Vermittlungsschicht</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 7498-1, clause 7.5.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/bibliographicCitation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="N3fa8684fd03647b4bb67322f32112611">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nf1be60b0aea54b5d90b9669cb1fbd953"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="Nd43e84fd48b946cfa78211ad072e6143">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#DHCP"/>
+    <rdf:rest rdf:nodeID="Nbc2c8b8bf96747cb91ad20109eccef89"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne89656ce96b943ff8ac162ac889e478c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Network"/>
-    <rdf:rest rdf:nodeID="N4e1aaadec2f24b8886c078589c9a94c3"/>
+  <rdf:Description rdf:nodeID="N0f22d3559a284fd69226098773add9dc">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Packet"/>
+    <rdf:rest rdf:nodeID="Neee7ed75369a48099143525ac74b62b0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#MQTT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="en">A publish and subscribe protocol of the application layer.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Publish-Subscribe-Protokoll der Anwendungsschicht.</rdfs:comment>
+    <rdfs:label xml:lang="de">MQTT</rdfs:label>
+    <rdfs:label xml:lang="en">MQTT</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf5365eb95e16472584b6a2578c73059c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Name"/>
+    <rdf:rest rdf:nodeID="Neb58a81506704ddbaf02ee1adc69da04"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#hasLayer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdfs:comment xml:lang="en">Relates a communication to a layer it is structured into.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Kommunikation mit einer Schicht, in die sie gegliedert ist.</rdfs:comment>
+    <rdfs:label xml:lang="en">has layer</rdfs:label>
+    <rdfs:label xml:lang="de">hat Schicht</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfef52f184f594194af9ef3fd26c74291">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#HTTP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="de">Hypertext Transfer Protocol, eine Technologie der Anwendungsschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The Hypertext Transfer Protocol, a technology of the application layer.</rdfs:comment>
+    <rdfs:label xml:lang="de">HTTP</rdfs:label>
+    <rdfs:label xml:lang="en">HTTP</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf23983c7006d496cbde712dc55607852">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N69c5f90a6ed14c078edd9e9e625161d2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nab0fef57c0fe4d4a9af7063adf71b756">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Physical"/>
+    <rdf:rest rdf:nodeID="N61e8ab6cd9e545a4afd187dcc82747bd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso7498#IP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdfs:comment xml:lang="de">Internet Protocol, eine Technologie der Vermittlungsschicht.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The Internet Protocol, a technology of the network layer.</rdfs:comment>
+    <rdfs:label xml:lang="de">IP</rdfs:label>
+    <rdfs:label xml:lang="en">IP</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neb58a81506704ddbaf02ee1adc69da04">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Technology"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N112c1a74710b44998022a3e89c6fe8c0">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Application"/>
+    <rdf:rest rdf:nodeID="N8b7746e5abad4c179e64a37706c2ba09"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N711ddc7a859a46dd87928c82ba797013">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Session"/>
+    <rdf:rest rdf:nodeID="Nd250d21300254fb98b7f55655b138282"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+  <rdf:Description rdf:nodeID="N8b7746e5abad4c179e64a37706c2ba09">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#DataLink"/>
+    <rdf:rest rdf:nodeID="N15b184c18f9743f79791002bbb0974e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbc2c8b8bf96747cb91ad20109eccef89">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Ethernet"/>
+    <rdf:rest rdf:nodeID="Nfe8b8cc042bb4ffd9bf0044cb7e6dd8e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2d3670d10f764c378097918058476155">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#HTTPS"/>
+    <rdf:rest rdf:nodeID="N0bea6165098e410f8c0196caaf12bd9f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
+  <rdf:Description rdf:nodeID="Nfe8b8cc042bb4ffd9bf0044cb7e6dd8e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Ethernet1000BASET"/>
+    <rdf:rest rdf:nodeID="N9018ebaa3e064b29bef306fde08cefd8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/doi">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3a668ab6cd74b58809bfe6587d61ab5">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#TCP"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7f922f5801dd47b5b073894caae2e49c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N112c1a74710b44998022a3e89c6fe8c0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e68b570ad874929b79c433ebbd0c232">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Layer"/>
+    <rdf:rest rdf:nodeID="Nf5365eb95e16472584b6a2578c73059c"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/codeRepository">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nde8a8da93ed540c5982f6145a749a083">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#FTP"/>
-    <rdf:rest rdf:nodeID="N85f1a883446b4ad0bdd4bcb30f3ed092"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9acb8a648e534318944b88d3f8de2d1e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Application"/>
-    <rdf:rest rdf:nodeID="N72c1e6dc0dee44d6adefdeaf6708e914"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf051cf76c8ec4c09b7aa7d24deff85fb">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#HTTPS"/>
-    <rdf:rest rdf:nodeID="Nada53d86db434490ae30af5c46f2c8ae"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9018ebaa3e064b29bef306fde08cefd8">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#FTP"/>
+    <rdf:rest rdf:nodeID="Nfbabca5121624602baccddffc2feed74"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf1be60b0aea54b5d90b9669cb1fbd953">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso7498#Communication"/>
+    <rdf:rest rdf:nodeID="Ne0b8eb83416c4235ab305d6ec0161d48"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0940f3c77aa94b4b840d24fd6ba826ac">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nd43e84fd48b946cfa78211ad072e6143"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
 </rdf:RDF>

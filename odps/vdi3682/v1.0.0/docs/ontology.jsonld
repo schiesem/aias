@@ -1,5 +1,587 @@
 [
   {
+    "@id": "https://w3id.org/aias/odp/vdi3682#State",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it."
+      },
+      {
+        "@language": "de",
+        "@value": "Zustand eines Produkts, einer Energie oder einer Information an einer bestimmten Stelle eines Prozesses, entweder vor einer Umwandlung oder danach."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "State"
+      },
+      {
+        "@language": "de",
+        "@value": "Zustand"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1 avoids the term in the graphical notation, where the three kinds appear directly."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Energy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Energie, die von einem Prozessoperator benötigt oder freigesetzt wird, beispielsweise elektrische Energie oder Wärme."
+      },
+      {
+        "@language": "en",
+        "@value": "Energy required or released by a process operator, for example electrical energy or heat."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Energie"
+      },
+      {
+        "@language": "en",
+        "@value": "Energy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a flow to the state it carries."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet einen Fluss mit dem Zustand, den er trägt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has state"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Zustand"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in two places. A flow carries a state, and a product, an energy or an information has one. The thing is therefore separate from the condition it is in, which is what lets one product appear in a process before and after a transformation."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Energy"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Information"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Product"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An operation transforming the input state of products, energies or information into an output state."
+      },
+      {
+        "@language": "de",
+        "@value": "Vorgang, durch den der Eingangszustand von Produkten, Energien oder Informationen in einen Ausgangszustand umgewandelt wird."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Process Operator"
+      },
+      {
+        "@language": "de",
+        "@value": "Prozessoperator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1, pages 8 and 9."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Information",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Information required by a process operator to carry out its transformation, or information created by it."
+      },
+      {
+        "@language": "de",
+        "@value": "Information, die ein Prozessoperator zur Durchführung seiner Umwandlung benötigt oder die durch ihn entsteht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Information"
+      },
+      {
+        "@language": "en",
+        "@value": "Information"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A directed connection of products between process operators."
+      },
+      {
+        "@language": "de",
+        "@value": "Gerichtete Verbindung von Produkten zwischen Prozessoperatoren."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Flow"
+      },
+      {
+        "@language": "de",
+        "@value": "Fluss"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1, page 8. Figure 3 lists the flow among the eight symbols of the graphical notation, where it is an edge rather than an object. Reifying it as a class is a design decision of this pattern."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/doi",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://schema.org/codeRepository",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Assignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Strukturelle Verbindung zwischen Prozessoperator und technischer Ressource, über die einer Ressource die Ausführung eines Prozessoperators zugewiesen wird."
+      },
+      {
+        "@language": "en",
+        "@value": "The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Assignment"
+      },
+      {
+        "@language": "de",
+        "@value": "Zuordnung"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2. Figure 3 carries this relation as the usage symbol, an edge of the graphical notation. Reifying it as a class is a design decision of this pattern."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A flow that is part of a separate flow denoting mutually exclusive process paths."
+      },
+      {
+        "@language": "de",
+        "@value": "Fluss, der Teil eines getrennten Flusses ist und sich gegenseitig ausschließende Prozesswege bezeichnet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Alternative Flow"
+      },
+      {
+        "@language": "de",
+        "@value": "Alternativfluss"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. The class is a design decision of this pattern."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A flow that is part of a partially shared flow denoting process steps running concurrently."
+      },
+      {
+        "@language": "de",
+        "@value": "Fluss, der Teil eines teilweise gemeinsamen Flusses ist und nebenläufig ablaufende Prozessschritte bezeichnet."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Parallel Flow"
+      },
+      {
+        "@language": "de",
+        "@value": "Parallelfluss"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2.1 models parallel process runs as a partially shared flow and requires no additional graphical elements for them. The class is a design decision of this pattern."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasOutput",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a process operator to a flow leaving it."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet einen Prozessoperator mit einem aus ihm ausgehenden Fluss."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has output"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Ausgang"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#isOutput"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/hasVersion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/abstract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Physical components of which automated plants are built and which realise the transformations carried out by process operators."
+      },
+      {
+        "@language": "de",
+        "@value": "Physische Komponenten, aus denen automatisierte Anlagen aufgebaut sind und die die Umwandlungen der Produkte durch Prozessoperatoren realisieren."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Technical Resource"
+      },
+      {
+        "@language": "de",
+        "@value": "Technische Ressource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid11"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is assigned to"
+      },
+      {
+        "@language": "de",
+        "@value": "ist zugeordnet"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:genid14"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid11",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid14",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid17",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#State"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#SystemBorder"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/source",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/bibliographicCitation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/subject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
     "@id": "https://w3id.org/aias/odp/vdi3682#hasInput",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -43,303 +625,6 @@
       {
         "@language": "en",
         "@value": "The flow is the input, not the state. The state is reached from the flow through hasState, one step further along."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Physical components of which automated plants are built and which realise the transformations carried out by process operators."
-      },
-      {
-        "@language": "de",
-        "@value": "Physische Komponenten, aus denen automatisierte Anlagen aufgebaut sind und die die Umwandlungen der Produkte durch Prozessoperatoren realisieren."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Technical Resource"
-      },
-      {
-        "@language": "de",
-        "@value": "Technische Ressource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An operation transforming the input state of products, energies or information into an output state."
-      },
-      {
-        "@language": "de",
-        "@value": "Vorgang, durch den der Eingangszustand von Produkten, Energien oder Informationen in einen Ausgangszustand umgewandelt wird."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Process Operator"
-      },
-      {
-        "@language": "de",
-        "@value": "Prozessoperator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1, pages 8 and 9."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/modified",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/subject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Energy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Energie, die von einem Prozessoperator benötigt oder freigesetzt wird, beispielsweise elektrische Energie oder Wärme."
-      },
-      {
-        "@language": "en",
-        "@value": "Energy required or released by a process operator, for example electrical energy or heat."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Energie"
-      },
-      {
-        "@language": "en",
-        "@value": "Energy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid17",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Process"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#State"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#SystemBorder"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#isInput",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a flow to the process operator it enters."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen Fluss mit dem Prozessoperator, in den er eingeht."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is input of"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Eingang von"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The inverse of hasInput. Both directions are stated because a model may describe a process from either end."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#SystemBorder",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Grenze, die den Betrachtungshorizont eines Prozesses festlegt. Unter bestimmten Bedingungen kann sie auch als Bilanzgrenze für ein- und ausgehende Produkte und Energien aufgefasst werden."
-      },
-      {
-        "@language": "en",
-        "@value": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "System Border"
-      },
-      {
-        "@language": "de",
-        "@value": "Systemgrenze"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1. The standard calls this the Systemgrenze, which is a system limit rather than a border. The class name follows the English wording of the standard's own translation."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/ontology/bibo/status",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/rights",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Assignment",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Strukturelle Verbindung zwischen Prozessoperator und technischer Ressource, über die einer Ressource die Ausführung eines Prozessoperators zugewiesen wird."
-      },
-      {
-        "@language": "en",
-        "@value": "The structural connection between a process operator and a technical resource through which the execution of the operator is assigned to the resource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Assignment"
-      },
-      {
-        "@language": "de",
-        "@value": "Zuordnung"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2. Figure 3 carries this relation as the usage symbol, an edge of the graphical notation. Reifying it as a class is a design decision of this pattern."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Product",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "de",
-        "@value": "Dinge der realen Welt, die im Rahmen eines technischen Prozesses umgewandelt werden."
-      },
-      {
-        "@language": "en",
-        "@value": "Things of the real world that are transformed within a technical process."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Product"
-      },
-      {
-        "@language": "de",
-        "@value": "Produkt"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1, page 8. A product is not a kind of state: it has one, which hasState records. The thing and the condition it is in are kept apart, so the same sheet of metal before and after a stamping is one product in two states."
       }
     ]
   },
@@ -492,167 +777,7 @@
     ]
   },
   {
-    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A directed connection of products between process operators."
-      },
-      {
-        "@language": "de",
-        "@value": "Gerichtete Verbindung von Produkten zwischen Prozessoperatoren."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Flow"
-      },
-      {
-        "@language": "de",
-        "@value": "Fluss"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1, page 8. Figure 3 lists the flow among the eight symbols of the graphical notation, where it is an edge rather than an object. Reifying it as a class is a design decision of this pattern."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasState",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a flow to the state it carries."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen Fluss mit dem Zustand, den er trägt."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid6"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has state"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Zustand"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Used in two places. A flow carries a state, and a product, an energy or an information has one. The thing is therefore separate from the condition it is in, which is what lets one product appear in a process before and after a transformation."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Energy"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Information"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Product"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#note",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/hasVersion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/abstract",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Process",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."
-      },
-      {
-        "@language": "de",
-        "@value": "Netz zur Beschreibung technischer Prozesse, dessen Knoten die Zustände von Produkten und dessen gerichtete Kanten die Umwandlungsschritte durch Prozessoperatoren darstellen."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Process"
-      },
-      {
-        "@language": "de",
-        "@value": "Prozess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1, page 8."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/created",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/license",
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
@@ -664,81 +789,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#isAssignedTo",
+    "@id": "http://purl.org/dc/terms/license",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a process operator to the assignment stating which resource performs it, and an assignment to that resource."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen Prozessoperator mit der Zuordnung, die angibt, welche Ressource ihn ausführt, sowie eine Zuordnung mit dieser Ressource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid11"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is assigned to"
-      },
-      {
-        "@language": "de",
-        "@value": "ist zugeordnet"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:genid14"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "One relation used along a chain of two steps, from the operator to the assignment and from the assignment to the resource. Its domain and range are therefore unions, since each covers both ends of the chain."
-      }
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "_:genid11",
+    "@id": "http://purl.org/ontology/bibo/status",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:genid14",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-          }
-        ]
-      }
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -778,196 +837,169 @@
     ]
   },
   {
-    "@id": "https://schema.org/codeRepository",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A flow that is part of a partially shared flow denoting process steps running concurrently."
-      },
-      {
-        "@language": "de",
-        "@value": "Fluss, der Teil eines teilweise gemeinsamen Flusses ist und nebenläufig ablaufende Prozessschritte bezeichnet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Parallel Flow"
-      },
-      {
-        "@language": "de",
-        "@value": "Parallelfluss"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2.1 models parallel process runs as a partially shared flow and requires no additional graphical elements for them. The class is a design decision of this pattern."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasOutput",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a process operator to a flow leaving it."
-      },
-      {
-        "@language": "de",
-        "@value": "Verbindet einen Prozessoperator mit einem aus ihm ausgehenden Fluss."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has output"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Ausgang"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#isOutput"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/title",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Information",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Information required by a process operator to carry out its transformation, or information created by it."
-      },
-      {
-        "@language": "de",
-        "@value": "Information, die ein Prozessoperator zur Durchführung seiner Umwandlung benötigt oder die durch ihn entsteht."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Information"
-      },
-      {
-        "@language": "en",
-        "@value": "Information"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A flow that is part of a separate flow denoting mutually exclusive process paths."
-      },
-      {
-        "@language": "de",
-        "@value": "Fluss, der Teil eines getrennten Flusses ist und sich gegenseitig ausschließende Prozesswege bezeichnet."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Alternative Flow"
-      },
-      {
-        "@language": "de",
-        "@value": "Alternativfluss"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. The class is a design decision of this pattern."
-      }
-    ]
-  },
-  {
     "@id": "http://xmlns.com/foaf/0.1/fundedBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/bibliographicCitation",
+    "@id": "https://w3id.org/aias/odp/vdi3682#Product",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Dinge der realen Welt, die im Rahmen eines technischen Prozesses umgewandelt werden."
+      },
+      {
+        "@language": "en",
+        "@value": "Things of the real world that are transformed within a technical process."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Product"
+      },
+      {
+        "@language": "de",
+        "@value": "Produkt"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1, page 8. A product is not a kind of state: it has one, which hasState records. The thing and the condition it is in are kept apart, so the same sheet of metal before and after a stamping is one product in two states."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/publisher",
+    "@id": "https://w3id.org/aias/odp/vdi3682#SystemBorder",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "de",
+        "@value": "Grenze, die den Betrachtungshorizont eines Prozesses festlegt. Unter bestimmten Bedingungen kann sie auch als Bilanzgrenze für ein- und ausgehende Produkte und Energien aufgefasst werden."
+      },
+      {
+        "@language": "en",
+        "@value": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "System Border"
+      },
+      {
+        "@language": "de",
+        "@value": "Systemgrenze"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1. The standard calls this the Systemgrenze, which is a system limit rather than a border. The class name follows the English wording of the standard's own translation."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/modified",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/source",
+    "@id": "http://www.w3.org/2004/02/skos/core#note",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "http://purl.org/ontology/bibo/doi",
+    "@id": "https://w3id.org/aias/odp/vdi3682#Process",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A network describing a technical process. Its nodes are the states of products, energies and information, its directed edges are the transformation steps carried out by process operators."
+      },
+      {
+        "@language": "de",
+        "@value": "Netz zur Beschreibung technischer Prozesse, dessen Knoten die Zustände von Produkten und dessen gerichtete Kanten die Umwandlungsschritte durch Prozessoperatoren darstellen."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Process"
+      },
+      {
+        "@language": "de",
+        "@value": "Prozess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1, page 8."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#isInput",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a flow to the process operator it enters."
+      },
+      {
+        "@language": "de",
+        "@value": "Verbindet einen Fluss mit dem Prozessoperator, in den er eingeht."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is input of"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Eingang von"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The inverse of hasInput. Both directions are stated because a model may describe a process from either end."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
@@ -1035,38 +1067,6 @@
             "@id": "https://w3id.org/aias/odp/vdi3682#SystemBorder"
           }
         ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#State",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The condition of a product, an energy or an information at a given point of a process, either before a transformation or after it."
-      },
-      {
-        "@language": "de",
-        "@value": "Zustand eines Produkts, einer Energie oder einer Information an einer bestimmten Stelle eines Prozesses, entweder vor einer Umwandlung oder danach."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "State"
-      },
-      {
-        "@language": "de",
-        "@value": "Zustand"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1 avoids the term in the graphical notation, where the three kinds appear directly."
       }
     ]
   }

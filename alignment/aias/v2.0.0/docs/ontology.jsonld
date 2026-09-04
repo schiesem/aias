@@ -1,48 +1,83 @@
 [
   {
-    "@id": "https://w3id.org/aias#Function",
+    "@id": "http://purl.org/dc/terms/bibliographicCitation",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#assignedFunction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A purposeful transformation, turning inputs into outputs to meet an objective of the system."
+        "@value": "Relates an assignment to the function it assigns to a resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Function"
+        "@value": "assigned function"
       }
     ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias#Relation"
+        "@id": "https://w3id.org/aias#Function"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "**Construct of this work**, after the system elements of Haberfellner.\n\nThe class is what makes the alignment work. A process operator of VDI 3682 transforms products, an inference of ISO/IEC 22989 derives a conclusion, and a control of IEC 60050-351 acts on a process. In their own standards the three have nothing in common. Below this class they are assigned to a resource through one mechanism, and a question asking what a device does answers with all of them."
+        "@value": "VDI 3682 states the assignment from the process operator: hasAssignment runs from the process operator to the assignment, and assignedResource from there to the resource. Both follow the guideline, and neither reaches a function that is not a process operator.\n\nThis relation closes that gap. It says which function an assignment carries, whatever subdomain the function comes from, and it is what makes the common function level usable rather than merely stated. Without it a model could group a process operator and an inference under one superclass and still have no way to assign the second to a device.\n\nDeliberately not a superproperty of hasAssignment. The two run in opposite directions, from the function and from the assignment, and relating them would require an inverse the pattern does not state."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias#Computer",
+    "@id": "https://w3id.org/aias#Relation",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A general purpose computing resource within the plant."
+        "@value": "A recorded tie between functions and components, or between components."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Computer"
+        "@value": "Relation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work**, after Haberfellner.\n\nRelations are classes rather than object properties, so that a tie can carry properties of its own. An assignment is a thing a model annotates with a reason or a date, not an arrow between two boxes."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Controller",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A resource running control programs, such as a programmable logic controller."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Controller"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -53,41 +88,58 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "**Construct of this work.**"
+        "@value": "**Construct of this work.** IEC 60050-351 defines a controller, 351-49-11, as a functional unit consisting of a comparing and a controlling element. A device may realise such a unit, which is what realisedByPhysicalUnit records in that pattern, but the two are not the same thing."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias#actsOnProcessOperator",
+    "@id": "http://purl.org/ontology/bibo/status",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#InternalCloud",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a control to the process step it acts on."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iec60050#Control"
+        "@value": "Computing infrastructure operated by the plant operator, away from the process but inside the organisation."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "acts on process operator"
+        "@value": "Internal Cloud"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+        "@id": "https://w3id.org/aias#Resource"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "IEC 60050-351 has a control act on a controlled system, 351-49-01, which is a functional unit rather than a process step. VDI 3682 describes what happens in that system as a process operator.\n\nThe relation joins the two, so that a model can answer which step of the technical process a control influences. Neither standard states it, since neither knows the other."
+        "@value": "**Construct of this work.** The distinction from the external cloud is who operates it, which is what a data protection review turns on rather than any technical property."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Product",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Product"
       }
     ]
   },
@@ -122,6 +174,439 @@
       {
         "@language": "en",
         "@value": "**Construct of this work**, matching the product of VDI 3682. Products and resources share the component level and differ in their role: a resource performs functions, a product is transformed by them."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Sensor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A resource that senses a physical quantity and makes it available as data."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sensor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work.** IEC 60050-351 defines a sensing element, 351-56-26, but as a functional unit rather than as a device, so the two are not related here.\n\nA model relating this class to a catalogue of equipment would give it the basis it currently lacks."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iec60050#Control",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Control"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#appearsAsOpenSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a component to the open system it appears as when its communication is described."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "appears as open system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "ISO/IEC 7498-1, 4.1.3 defines the open system as the representation of those aspects of a real system that are pertinent to open systems interconnection. A thing is not an open system in itself, it is one under that view, which is why this is a relation rather than a subclass axiom.\n\nThe domain is the component rather than the resource. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and narrowing this to resources would rule that out.\n\nThe ISO 7498 pattern already states the intent on its own class. This relation is what a model uses to record it."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#hasComponent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a modelled system to a component it is built from."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has component"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/contributor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#note",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#carriesData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates the payload of a transmission to the dataset it carries."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "carries data"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#Data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The bridge between the communication subdomain and the AI subdomain, and a relation rather than an equivalence on purpose.\n\nSetting the data of the two subdomains equal does not hold. ISO/IEC 7498-1, 5.6.1.2 defines user data as the payload of one transmission, ISO/IEC 22989 defines data as a collection of samples, and the two differ in what determines them and in how many of them there are. A ping carries payload with no dataset involved, and a training dataset exists whether or not it is ever transmitted.\n\nKeeping them apart is what makes a question answerable: which communications carry a given dataset, on which layer and with which quality of service. Under an equivalence the dataset would be the payload of one transmission, and the question would be meaningless."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#AIFunction",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Component",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A physical element of a system, either performing functions or being transformed by them."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Component"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      },
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work**, after Haberfellner.\n\nPhysical on purpose. A model, a dataset or an AI component is not a component here, since none of them is a thing one can point at in a plant. Their place in the whole is recorded through the functions they carry and the assignment of those functions to a resource."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#EdgeDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A resource with computing capacity placed near the process it serves."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Edge Device"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work.** Clause 8.6.2 of ISO/IEC 22989 discusses edge computing without defining a device for it. What makes a device an edge device here is where it sits, not what it is built from."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Computer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A general purpose computing resource within the plant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Computer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work.**"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Function",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A purposeful transformation, turning inputs into outputs to meet an objective of the system."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Function"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work**, after the system elements of Haberfellner.\n\nThe class is what makes the alignment work. A process operator of VDI 3682 transforms products, an inference of ISO/IEC 22989 derives a conclusion, and a control of IEC 60050-351 acts on a process. In their own standards the three have nothing in common. Below this class they are assigned to a resource through one mechanism, and a question asking what a device does answers with all of them."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#ExternalCloud",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Computing infrastructure operated by a third party."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "External Cloud"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work.** A function running here leaves the organisation, which is what separates it from the internal cloud."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso22989#Data",
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#hasRelation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a modelled system to a recorded tie between its parts."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has relation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/iso7498#Association",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Relation"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Actuator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A resource that acts on a mass flow, an energy flow or a movement."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Actuator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work**, and a name that has to be read with care.\n\nIEC 60050-351 uses actuator, 351-49-07, for the **signal side**: the unit generating the manipulated variable that drives the element acting on the flow. The element acting on the flow is the final controlling element, 351-49-08, and that is what this class means.\n\nRelating this class to iec60050:Actuator would therefore state the opposite of what is intended. The nearest match is the final controlling element, and even that is a functional unit rather than a device."
       }
     ]
   },
@@ -202,16 +687,16 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://w3id.org/aias/odp/iso22989/2.0.0"
-      },
-      {
         "@id": "https://w3id.org/aias/odp/iec60050/1.0.0"
       },
       {
-        "@id": "https://w3id.org/aias/odp/iso7498/2.0.0"
+        "@id": "https://w3id.org/aias/odp/vdi3682/2.0.0"
       },
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682/2.0.0"
+        "@id": "https://w3id.org/aias/odp/iso22989/2.0.0"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iso7498/2.0.0"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionIRI": [
@@ -222,6 +707,51 @@
     "http://www.w3.org/2002/07/owl#versionInfo": [
       {
         "@value": "2.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Function"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias#Resource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A physical component of a plant that performs functions."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias#Component"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/iec60050#PhysicalUnit"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "**Construct of this work**, equivalent to the technical resource of VDI 3682.\n\nA resource is what a function is assigned to. Where its communication is described it also appears as an open system in the sense of ISO/IEC 7498-1, 4.1.3, which that pattern states on its own class.\n\n**A subclass of the physical unit, not equivalent to it.** IEC 60050-351, 351-56-03 defines the physical unit as an item under consideration seen by construction, and every resource is one: VDI 3682 calls the technical resource a physical component of an automated plant. The reverse does not hold. A terminal block or a power supply is a physical unit and realises no transformation, so it is no technical resource, and an equivalence would be wrong in that direction.\n\nThe subclass axiom is what makes the chain from a device to its role in a control walkable. A model states a resource, the reasoner infers a physical unit, and the inverse relations of the IEC 60050-351 pattern lead from there through the functional units it realises to the action lines and the kind of path."
       }
     ]
   },
@@ -260,431 +790,37 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias#assignedFunction",
+    "@id": "https://w3id.org/aias#actsOnProcessOperator",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates an assignment to the function it assigns to a resource."
+        "@value": "Relates a control to the process step it acts on."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
+        "@id": "https://w3id.org/aias/odp/iec60050#Control"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "assigned function"
+        "@value": "acts on process operator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias#Function"
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 states the assignment from the process operator: hasAssignment runs from the process operator to the assignment, and assignedResource from there to the resource. Both follow the guideline, and neither reaches a function that is not a process operator.\n\nThis relation closes that gap. It says which function an assignment carries, whatever subdomain the function comes from, and it is what makes the common function level usable rather than merely stated. Without it a model could group a process operator and an inference under one superclass and still have no way to assign the second to a device.\n\nDeliberately not a superproperty of hasAssignment. The two run in opposite directions, from the function and from the assignment, and relating them would require an inverse the pattern does not state."
+        "@value": "IEC 60050-351 has a control act on a controlled system, 351-49-01, which is a functional unit rather than a process step. VDI 3682 describes what happens in that system as a process operator.\n\nThe relation joins the two, so that a model can answer which step of the technical process a control influences. Neither standard states it, since neither knows the other."
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Controller",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A resource running control programs, such as a programmable logic controller."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Controller"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work.** IEC 60050-351 defines a controller, 351-49-11, as a functional unit consisting of a comparing and a controlling element. A device may realise such a unit, which is what realisedByPhysicalUnit records in that pattern, but the two are not the same thing."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#appearsAsOpenSystem",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a component to the open system it appears as when its communication is described."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias#Component"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "appears as open system"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#OpenSystem"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "ISO/IEC 7498-1, 4.1.3 defines the open system as the representation of those aspects of a real system that are pertinent to open systems interconnection. A thing is not an open system in itself, it is one under that view, which is why this is a relation rather than a subclass axiom.\n\nThe domain is the component rather than the resource. A product may take part in a communication as well: a workpiece carrying an RFID tag or a barcode is read along the line, and narrowing this to resources would rule that out.\n\nThe ISO 7498 pattern already states the intent on its own class. This relation is what a model uses to record it."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#carriesData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates the payload of a transmission to the dataset it carries."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "carries data"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The bridge between the communication subdomain and the AI subdomain, and a relation rather than an equivalence on purpose.\n\nSetting the data of the two subdomains equal does not hold. ISO/IEC 7498-1, 5.6.1.2 defines user data as the payload of one transmission, ISO/IEC 22989 defines data as a collection of samples, and the two differ in what determines them and in how many of them there are. A ping carries payload with no dataset involved, and a training dataset exists whether or not it is ever transmitted.\n\nKeeping them apart is what makes a question answerable: which communications carry a given dataset, on which layer and with which quality of service. Under an equivalence the dataset would be the payload of one transmission, and the question would be meaningless."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#AIFunction",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Function"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Function"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/ontology/bibo/status",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Component",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A physical element of a system, either performing functions or being transformed by them."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Component"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias#Function"
-      },
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work**, after Haberfellner.\n\nPhysical on purpose. A model, a dataset or an AI component is not a component here, since none of them is a thing one can point at in a plant. Their place in the whole is recorded through the functions they carry and the assignment of those functions to a resource."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/created",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/contributor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iec60050#Control",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Function"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#Control"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#ExternalCloud",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Computing infrastructure operated by a third party."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "External Cloud"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work.** A function running here leaves the organisation, which is what separates it from the internal cloud."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso7498#Association",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/rights",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#note",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#hasRelation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a modelled system to a recorded tie between its parts."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has relation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Product",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Product"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/bibliographicCitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/iso22989#Data",
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso7498#UserData"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Relation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A recorded tie between functions and components, or between components."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Relation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work**, after Haberfellner.\n\nRelations are classes rather than object properties, so that a tie can carry properties of its own. An assignment is a thing a model annotates with a reason or a date, not an arrow between two boxes."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/publisher",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#InternalCloud",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Computing infrastructure operated by the plant operator, away from the process but inside the organisation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Internal Cloud"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work.** The distinction from the external cloud is who operates it, which is what a data protection review turns on rather than any technical property."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#hasComponent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a modelled system to a component it is built from."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/iso22989#AISystem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has component"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias#Component"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/license",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -694,146 +830,10 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias#Sensor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A resource that senses a physical quantity and makes it available as data."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Sensor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work.** IEC 60050-351 defines a sensing element, 351-56-26, but as a functional unit rather than as a device, so the two are not related here.\n\nA model relating this class to a catalogue of equipment would give it the basis it currently lacks."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Actuator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A resource that acts on a mass flow, an energy flow or a movement."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Actuator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work**, and a name that has to be read with care.\n\nIEC 60050-351 uses actuator, 351-49-07, for the **signal side**: the unit generating the manipulated variable that drives the element acting on the flow. The element acting on the flow is the final controlling element, 351-49-08, and that is what this class means.\n\nRelating this class to iec60050:Actuator would therefore state the opposite of what is intended. The nearest match is the final controlling element, and even that is a functional unit rather than a device."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/description",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
     "@id": "https://w3id.org/aias/odp/vdi3682#Assignment",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://w3id.org/aias#Relation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#EdgeDevice",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A resource with computing capacity placed near the process it serves."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Edge Device"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work.** Clause 8.6.2 of ISO/IEC 22989 discusses edge computing without defining a device for it. What makes a device an edge device here is where it sits, not what it is built from."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias#Resource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A physical component of a plant that performs functions."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias#Component"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/iec60050#PhysicalUnit"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "**Construct of this work**, equivalent to the technical resource of VDI 3682.\n\nA resource is what a function is assigned to. Where its communication is described it also appears as an open system in the sense of ISO/IEC 7498-1, 4.1.3, which that pattern states on its own class.\n\n**A subclass of the physical unit, not equivalent to it.** IEC 60050-351, 351-56-03 defines the physical unit as an item under consideration seen by construction, and every resource is one: VDI 3682 calls the technical resource a physical component of an automated plant. The reverse does not hold. A terminal block or a power supply is a physical unit and realises no transformation, so it is no technical resource, and an equivalence would be wrong in that direction.\n\nThe subclass axiom is what makes the chain from a device to its role in a control walkable. A model states a resource, the reasoner infers a physical unit, and the inverse relations of the IEC 60050-351 pattern lead from there through the functional units it realises to the action lines and the kind of path."
       }
     ]
   }

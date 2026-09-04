@@ -18,7 +18,7 @@
     "title": {
       "en": "AIAS Alignment Ontology"
     },
-    "iri": "https://w3id.org/aias/odp/iso7498/1.0.0",
+    "iri": "https://w3id.org/aias",
     "version": "1.0.0",
     "author": [
       "Marvin Schieseck",
@@ -81,18 +81,6 @@
         {
           "identifier": "subject",
           "language": "en",
-          "value": "Ontology Alignment",
-          "type": "label"
-        },
-        {
-          "identifier": "subject",
-          "language": "en",
-          "value": "Automated Plant",
-          "type": "label"
-        },
-        {
-          "identifier": "subject",
-          "language": "en",
           "value": "Artificial Intelligence",
           "type": "label"
         },
@@ -101,13 +89,17 @@
           "language": "en",
           "value": "System Architecture",
           "type": "label"
-        }
-      ],
-      "created": [
+        },
         {
-          "identifier": "created",
-          "language": "undefined",
-          "value": "2024-09-01",
+          "identifier": "subject",
+          "language": "en",
+          "value": "Ontology Alignment",
+          "type": "label"
+        },
+        {
+          "identifier": "subject",
+          "language": "en",
+          "value": "Automated Plant",
           "type": "label"
         }
       ],
@@ -117,6 +109,14 @@
           "language": "undefined",
           "value": "https://w3id.org/aias",
           "type": "iri"
+        }
+      ],
+      "created": [
+        {
+          "identifier": "created",
+          "language": "undefined",
+          "value": "2024-09-01",
+          "type": "label"
         }
       ],
       "versionInfo": [
@@ -159,14 +159,6 @@
           "type": "iri"
         }
       ],
-      "rights": [
-        {
-          "identifier": "rights",
-          "language": "en",
-          "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
-          "type": "label"
-        }
-      ],
       "preferredNamespacePrefix": [
         {
           "identifier": "preferredNamespacePrefix",
@@ -175,11 +167,11 @@
           "type": "label"
         }
       ],
-      "modified": [
+      "rights": [
         {
-          "identifier": "modified",
-          "language": "undefined",
-          "value": "2026-09-02",
+          "identifier": "rights",
+          "language": "en",
+          "value": "This research is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU",
           "type": "label"
         }
       ],
@@ -191,11 +183,27 @@
           "type": "label"
         }
       ],
+      "modified": [
+        {
+          "identifier": "modified",
+          "language": "undefined",
+          "value": "2026-09-02",
+          "type": "label"
+        }
+      ],
       "preferredNamespaceUri": [
         {
           "identifier": "preferredNamespaceUri",
           "language": "undefined",
           "value": "https://w3id.org/aias#",
+          "type": "label"
+        }
+      ],
+      "bibliographicCitation": [
+        {
+          "identifier": "bibliographicCitation",
+          "language": "en",
+          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
           "type": "label"
         }
       ],
@@ -207,11 +215,11 @@
           "type": "iri"
         }
       ],
-      "bibliographicCitation": [
+      "status": [
         {
-          "identifier": "bibliographicCitation",
+          "identifier": "status",
           "language": "en",
-          "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
+          "value": "Draft",
           "type": "label"
         }
       ],
@@ -220,14 +228,6 @@
           "identifier": "doi",
           "language": "undefined",
           "value": "10.1109/ETFA61755.2024.10710890",
-          "type": "label"
-        }
-      ],
-      "status": [
-        {
-          "identifier": "status",
-          "language": "en",
-          "value": "Draft",
           "type": "label"
         }
       ]
@@ -1318,8 +1318,8 @@
         "en": "Data used to assess the performance of a final model, disjoint from training and validation data."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "188",
       "superClasses": [
@@ -1477,9 +1477,7 @@
         "de": "Beschreibt physische Systemelemente, die Funktionen ausführen oder durch sie umgewandelt werden.",
         "en": "Describes physical system elements that perform functions or are transformed by them."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "7"
     },
     {
@@ -1822,9 +1820,7 @@
         "de": "Geräte, die Messwerte aus dem technischen Prozess erfassen und digitalisieren.",
         "en": "Devices acquiring measured values from the technical process and digitising them."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "207",
       "superClasses": [
         "202"
@@ -1906,9 +1902,7 @@
         "de": "Geräte, die physisch in den technischen Prozess eingreifen.",
         "en": "Devices intervening physically in the technical process."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "349",
       "superClasses": [
         "202"
@@ -2077,8 +2071,8 @@
         "en": "Physical components of which automated plants are built and which realise the transformations carried out by process operators."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "64"
     },
@@ -2269,8 +2263,7 @@
         "en": "A physical component performing a function."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "equivalent"
       ],
       "id": "202",
       "superClasses": [
@@ -2474,9 +2467,7 @@
         "de": "Geräte zur deterministischen und echtzeitkritischen Verarbeitung von Signalen zur Steuerung und Regelung des automatisierten Systems beziehungsweise Prozesses.",
         "en": "Devices for the deterministic and time-critical processing of signals in order to control the automated system or process."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "201",
       "superClasses": [
         "202"
@@ -2661,8 +2652,8 @@
         "en": "Data used to assess the performance of a final model."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "189",
       "superClasses": [
@@ -2831,9 +2822,7 @@
         "de": "Flexibel skalierbare Rechenressourcen innerhalb des Anlagen- oder Unternehmensnetzes.",
         "en": "Flexibly scalable computing resources inside the plant or company network."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "387",
       "superClasses": [
         "202"
@@ -2894,8 +2883,8 @@
         "en": "A reinterpretable representation of information in a formalised manner suitable for communication, interpretation or processing."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "23"
     },
@@ -2953,9 +2942,7 @@
         "de": "Flexibel skalierbare Rechenressourcen außerhalb des Anlagen- oder Unternehmensnetzes, deren Zugriff typischerweise ein externes Netzwerk, etwa eine Internetverbindung, erfordert.",
         "en": "Flexibly scalable computing resources outside the plant or company network, reaching which typically requires an external network such as an internet connection."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "385",
       "superClasses": [
         "202"
@@ -2989,9 +2976,7 @@
         "de": "Beschreibt strukturierte Beziehungen und Abhängigkeiten zwischen Funktionen und Komponenten.",
         "en": "Describes structured relationships and dependencies between functions and components."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "289"
     },
     {
@@ -3266,9 +3251,7 @@
         "de": "Mikrocontroller oder kompakte Industriecomputer mit begrenzter, lokal verfügbarer Rechenleistung im Anlagennetzwerk oder Unternehmensnetzwerk.",
         "en": "Microcontrollers or compact industrial computers with limited computing capacity available locally in the plant network or the company network."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "386",
       "superClasses": [
         "202"
@@ -3448,9 +3431,7 @@
         "de": "Geräte mit fester, höherer Rechenleistung, die durch zusätzliche Hardware erweiterbar sind.",
         "en": "Devices with fixed, higher computing capacity that can be extended by additional hardware."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "238",
       "superClasses": [
         "202"
@@ -3511,8 +3492,8 @@
         "en": "The data unit of the upper layers, that is what an application exchanges."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "215",
       "superClasses": [
@@ -3806,8 +3787,7 @@
         "en": "Physical objects created, changed or consumed in the course of a technical process."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "equivalent"
       ],
       "id": "213",
       "superClasses": [
@@ -3924,9 +3904,7 @@
         "de": "Beschreibt Transformationen, durch die Eingaben in Ausgaben überführt werden, um Systemziele zu erreichen.",
         "en": "Describes transformations by which inputs are turned into outputs in order to reach the objectives of a system."
       },
-      "attributes": [
-        "external"
-      ],
+      "attributes": [],
       "id": "8"
     },
     {
@@ -4070,8 +4048,8 @@
         "en": "Things of the real world that are transformed within a technical process."
       },
       "attributes": [
-        "equivalent",
-        "external"
+        "external",
+        "equivalent"
       ],
       "id": "328"
     },
@@ -6398,8 +6376,7 @@
         "en": "Relates a function, a component or a product to a flow it takes part in."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "52"
     },
@@ -8520,8 +8497,7 @@
         "en": "Describes a unidirectional use as a receiver."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "348"
     },
@@ -8630,8 +8606,7 @@
         "en": "Relates an AI system to a tie between its functions and its components."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "360"
     },
@@ -9442,8 +9417,7 @@
         "en": "Describes a unidirectional use as a sender."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "449"
     },
@@ -9978,8 +9952,7 @@
         "en": "Relates a function or a component to the assignment stating which resource carries out which function."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "508"
     },
@@ -10269,8 +10242,7 @@
         "en": "Relates a component to a communication it takes part in. States a bidirectional use."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "525"
     },
@@ -10309,8 +10281,7 @@
         "en": "Relates an AI system to a physical component it is built from."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "527"
     },
@@ -11090,8 +11061,7 @@
         "en": "Relates an AI system to a function it carries out, whichever subdomain the function comes from."
       },
       "attributes": [
-        "object",
-        "external"
+        "object"
       ],
       "id": "604"
     },

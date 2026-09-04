@@ -1,5 +1,29 @@
 [
   {
+    "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A physical component of an automated plant that realises the transformation carried out by a process operator."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Technical Resource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2. The class is what a process needs to say who does the work: an operator states what happens, a resource states what performs it, and the assignment ties the two."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/aias/odp/vdi3682#hasOutput",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -72,7 +96,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#shortName",
+    "@id": "https://w3id.org/aias/odp/vdi3682#longName",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "http://www.w3.org/2002/07/owl#FunctionalProperty"
@@ -80,7 +104,7 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The coded name of an object."
+        "@value": "The preferred name of an object."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -91,7 +115,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "short name"
+        "@value": "long name"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -107,419 +131,30 @@
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/title",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Energy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Energy required or released by a process operator, for example electrical energy or heat. Energy occurs as input and as output of a process."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Energy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Information"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#dependency",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Expresses that two states are required together rather than as alternatives to one another."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "dependency"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University and not contained in the standard itself.\n\nUnder the open world assumption several inputs of one process operator always denote alternatives. Where inputs are required jointly, this has to be stated explicitly. The property acts as a conjunction between states, so that an expression such as \"A and B, or C and D\" becomes representable: dependency is asserted between A and B and between C and D.\n\nThe property complements ParallelFlow. A parallel flow qualifies a single connection, whereas dependency groups several connections into one conjunction."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/created",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#externalReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A reference from an object to an external identification system such as AKZ, KKS or NE 100."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "external reference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1 and Part 2, Section 5.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An attribute describing a process specific property of an object. It consists of a category, a descriptive element and a relational element."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Characteristic"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Attribute"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5.2 and Figures 5 to 7.\n\nThe standard fixes this three-part structure but does not prescribe a vocabulary of properties. The entries shown in its figures, such as setpoint value or validity limits, are examples closed by an open placeholder. Non-functional properties of resources therefore have to draw their vocabulary from a further standard."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasSource",
+    "@id": "https://w3id.org/aias/odp/vdi3682#assignedResource",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a flow to the element it originates from."
+        "@value": "Relates an assignment to the technical resource realising the assigned process operator."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+        "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has source"
+        "@value": "assigned resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:genid21"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Super property of the two typed source properties. Chains are defined on the typed sub properties only, so that inference cannot fire between two elements of the same kind."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid21",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#State"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#category",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The name of a characteristic."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "category"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 5."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasUpperProcess",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a process operator to its parent process. Inferred, not modelled."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid36"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has upper process"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "_:genid42"
-          },
-          {
-            "@id": "_:genid40"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows the inverse of isComposedOf and the inverse of consistsOf."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid36",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Process"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:genid42",
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#isComposedOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:genid40",
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#consistsOf"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A physical component of an automated plant that realises the transformation carried out by a process operator."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Technical Resource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2. The class is what a process needs to say who does the work: an operator states what happens, a resource states what performs it, and the assignment ties the two."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2001/XMLSchema#date",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasOperatorSource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a flow to the process operator it originates from."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has operator source"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#hasSource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "System Limit"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
       {
         "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1. The system limit must not be used as a balance limit when alternative process runs are described."
       }
     ]
   },
@@ -530,101 +165,23 @@
     ]
   },
   {
-    "@id": "http://purl.org/ontology/bibo/status",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#isCharacterizedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an object of the formalised process description to one of its characteristics."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is characterized by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 3."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/publisher",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#descriptiveElement",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The describing part of a characteristic."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "descriptive element"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 5 and Figure 6. The standard fixes the part but leaves its content open."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Attribute",
+    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A property of an object of the formalised process description. Two kinds of attribute exist, the identification and the characteristics."
+        "@value": "A directed connection transporting a product, an energy or an information between a state and a process operator."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Attribute"
+        "@value": "Flow"
       }
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      },
       {
         "@id": "https://w3id.org/aias/odp/vdi3682#Process"
       },
@@ -644,210 +201,7 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5 and Figure 3."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasSuccessor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a process operator to a process operator following it. Inferred, not modelled."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has successor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#hasOutput"
-          },
-          {
-            "@id": "_:genid31"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid31",
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#hasInput"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#versionNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The version of an object. A new version arises when the values of its attributes change."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "version number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5.1. This property is a standard backed anchor for tracking the model states of an AI application across the engineering method."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasSubProcess",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a process operator to the process describing its decomposition. Inferred, not modelled."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid24"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has sub process"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#isComposedOf"
-          },
-          {
-            "@id": "_:genid28"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows isComposedOf and the inverse of consistsOf."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid24",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Process"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:genid28",
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#consistsOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/source",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A flow that is part of a separate flow denoting mutually exclusive process paths."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Alternative Flow"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ParallelFlow"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. Introducing a class for the alternative flow is a design decision of this pattern. Where alternative flows are present, the system limit must not be used as a balance limit."
+        "@value": "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. A reified flow can be identified, annotated and marked as parallel or alternative, none of which an edge can carry.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification."
       }
     ]
   },
@@ -924,132 +278,176 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682",
+    "@id": "https://w3id.org/aias/odp/vdi3682#Product",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/bibliographicCitation": [
-      {
-        "@value": "TODO: citation of the accompanying publication"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "TODO: co-authors"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-08-14"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@value": "TODO: author name, ORCID"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 Part 1 (concept and graphic representation) and Part 2 (information model), issue May 2015.\n\nThe pattern covers the process network of states and process operators, the technical resources realising the operators, the system limit bounding the observation horizon, and the attribute structure of identification and characteristics.\n\nThe pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/licenses/by/4.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@value": "TODO: institution"
-      }
-    ],
-    "http://purl.org/dc/terms/rights": [
-      {
-        "@value": "TODO: funding statement, projects EKI and OptiFlex, dtec.bw"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Ontology Design Pattern"
-      }
-    ],
-    "http://purl.org/ontology/bibo/status": [
-      {
-        "@language": "en",
-        "@value": "Draft"
-      }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
-      {
-        "@value": "vdi3682"
-      }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespaceUri": [
-      {
-        "@value": "https://w3id.org/aias/odp/vdi3682#"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\n\nRelation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.\n\nStructural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."
+        "@value": "Things of the real world that are transformed within a technical process. The generic term also covers flows of materials and substances."
       }
     ],
-    "http://www.w3.org/2002/07/owl#versionIRI": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682/2.0.0"
+        "@language": "en",
+        "@value": "Product"
       }
     ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@value": "2.0.0"
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#consistsOf",
+    "@id": "http://purl.org/dc/terms/source",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasOperatorSource",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a process to the elements it contains, namely its states, process operators and its system limit."
+        "@value": "Relates a flow to the process operator it originates from."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "consists of"
+        "@value": "has operator source"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:genid1"
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#hasSource"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 2, aggregation."
+        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."
       }
     ]
   },
   {
-    "@id": "_:genid1",
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasSuccessor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a process operator to a process operator following it. Inferred, not modelled."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has successor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#hasOutput"
+          },
+          {
+            "@id": "_:genid31"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid31",
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#hasInput"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#isWithin",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a state, a process operator or a flow to the system limit enclosing it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid45"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is within"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid45",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1064,96 +462,100 @@
           },
           {
             "@id": "https://w3id.org/aias/odp/vdi3682#State"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
           }
         ]
       }
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/license",
+    "@id": "http://purl.org/dc/terms/creator",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Identification",
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasSubProcess",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The attribute uniquely identifying an object and its characteristics over the life cycle of a process description."
+        "@value": "Relates a process operator to the process describing its decomposition. Inferred, not modelled."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid24"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Identification"
+        "@value": "has sub process"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Attribute"
+        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#isComposedOf"
+          },
+          {
+            "@id": "_:genid28"
+          }
+        ]
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5.1, after IEC 61360-1. It carries a unique ident, a long name, a short name, references to external identification systems, a version number and a revision number."
+        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows isComposedOf and the inverse of consistsOf."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#State",
+    "@id": "_:genid24",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#unionOf": [
       {
-        "@language": "en",
-        "@value": "The condition of a product, an energy or an information at a given point of a process, either as the status ante operationem before a transformation or as the status post operationem after it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "State"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1, Section 4.1 deliberately avoids the term in the graphical notation because it is considered ambiguous there, and works with product, energy and information directly. This pattern follows Part 2."
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+          }
+        ]
       }
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/contributor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    "@id": "_:genid28",
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#consistsOf"
+      }
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#relationalElement",
+    "@id": "https://w3id.org/aias/odp/vdi3682#category",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The relation establishing part of a characteristic."
+        "@value": "The name of a characteristic."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1164,7 +566,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "relational element"
+        "@value": "category"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1175,7 +577,76 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 5 and Figure 7."
+        "@value": "VDI 3682 Part 2, Figure 5."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A flow that is part of a partially shared flow denoting process steps running concurrently."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Parallel Flow"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2.1 recommends modelling parallel process runs as a partially shared flow and explicitly requires no additional graphical elements for them. Introducing a class for the parallel flow is therefore a design decision of this pattern rather than an adoption from the standard.\n\nA parallel flow states that a single connection belongs to a concurrent run. Grouping several connections into one conjunction is expressed through the dependency property between the states involved."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#descriptiveElement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The describing part of a characteristic."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "descriptive element"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 5 and Figure 6. The standard fixes the part but leaves its content open."
       }
     ]
   },
@@ -1186,7 +657,7 @@
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/rights",
+    "@id": "http://purl.org/dc/terms/description",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
@@ -1239,149 +710,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
+    "@id": "http://purl.org/dc/terms/created",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an object of the formalised process description to its identification."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is identified by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Figure 3, cardinality one."
-      }
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#longName",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The preferred name of an object."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "long name"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Product",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Things of the real world that are transformed within a technical process. The generic term also covers flows of materials and substances."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Product"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Flow",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A directed connection transporting a product, an energy or an information between a state and a process operator."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Flow"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
-      },
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Figure 3 lists the flow as one of the eight symbols of the graphical notation, where it is an edge rather than an object.\n\nReifying the flow as a class is a design decision of this pattern and deviates from the VDI 3682 ODP of Helmut Schmidt University, which models flows as object properties. A reified flow can be identified, annotated and marked as parallel or alternative, none of which an edge can carry.\n\nThe direct properties hasInput and hasOutput are retained and inferred from the reified flows through property chains, so that reasoning over predecessor and successor is unaffected by the reification."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasOperatorTarget",
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasTarget",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a flow to the process operator it leads to."
+        "@value": "Relates a flow to the element it leads to."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1392,270 +734,29 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has operator target"
+        "@value": "has target"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#hasTarget"
+        "@id": "_:genid33"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."
+        "@value": "Super property of the two typed target properties."
       }
     ]
   },
   {
-    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#assignedResource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates an assignment to the technical resource realising the assigned process operator."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "assigned resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/creator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasStateTarget",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a flow to the state it leads to."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has state target"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#hasTarget"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#Information",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Information required by a process operator to carry out its transformation, or information created by it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Information"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1. One of the three kinds of state a process moves, alongside product and energy."
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/description",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#revisionNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The revision of an object, describing its accredited version."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "revision number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5.1."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasStateSource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a flow to the state it originates from."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has state source"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#State"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#hasSource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#isWithin",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relates a state, a process operator or a flow to the system limit enclosing it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:genid45"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is within"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.1 introduces the system limit as the observation horizon but does not name a relation locating elements inside it. This relation is an addition of this pattern, required to determine which elements lie within a given system limit and whether that limit may serve as a balance limit."
-      }
-    ]
-  },
-  {
-    "@id": "_:genid45",
+    "@id": "_:genid33",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2002/07/owl#unionOf": [
       {
         "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
-          },
           {
             "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
           },
@@ -1839,6 +940,208 @@
     ]
   },
   {
+    "@id": "https://w3id.org/aias/odp/vdi3682#AlternativeFlow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A flow that is part of a separate flow denoting mutually exclusive process paths."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Alternative Flow"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ParallelFlow"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.2.2 models alternative process runs as separate flows, again without additional graphical elements. Introducing a class for the alternative flow is a design decision of this pattern. Where alternative flows are present, the system limit must not be used as a balance limit."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#revisionNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The revision of an object, describing its accredited version."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "revision number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Section 5.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#uniqueIdent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The unique code identifying an object."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "unique ident"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Section 5.1, after IEC 61360-1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Identification",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The attribute uniquely identifying an object and its characteristics over the life cycle of a process description."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Identification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Attribute"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Section 5.1, after IEC 61360-1. It carries a unique ident, a long name, a short name, references to external identification systems, a version number and a revision number."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Information",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Information required by a process operator to carry out its transformation, or information created by it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Information"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Product"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1. One of the three kinds of state a process moves, alongside product and energy."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#shortName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The coded name of an object."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "short name"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Section 5.1."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/aias/odp/vdi3682#hasPredecessor",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty",
@@ -1899,14 +1202,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasTarget",
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasStateTarget",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a flow to the element it leads to."
+        "@value": "Relates a flow to the state it leads to."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1917,71 +1220,96 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has target"
+        "@value": "has state target"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:genid33"
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#hasTarget"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Super property of the two typed target properties."
+        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasOutput."
       }
     ]
   },
   {
-    "@id": "_:genid33",
+    "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
-          },
-          {
-            "@id": "https://w3id.org/aias/odp/vdi3682#State"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/aias/odp/vdi3682#uniqueIdent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The unique code identifying an object."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+        "@value": "An attribute describing a process specific property of an object. It consists of a category, a descriptive element and a relational element."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "unique ident"
+        "@value": "Characteristic"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "https://w3id.org/aias/odp/vdi3682#Attribute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 Part 2, Section 5.1, after IEC 61360-1."
+        "@value": "VDI 3682 Part 2, Section 5.2 and Figures 5 to 7.\n\nThe standard fixes this three-part structure but does not prescribe a vocabulary of properties. The entries shown in its figures, such as setpoint value or validity limits, are examples closed by an open placeholder. Non-functional properties of resources therefore have to draw their vocabulary from a further standard."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasOperatorTarget",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a flow to the process operator it leads to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has operator target"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#hasTarget"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."
       }
     ]
   },
@@ -2098,31 +1426,518 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#ParallelFlow",
+    "@id": "http://purl.org/dc/terms/license",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#dependency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Expresses that two states are required together rather than as alternatives to one another."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "dependency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University and not contained in the standard itself.\n\nUnder the open world assumption several inputs of one process operator always denote alternatives. Where inputs are required jointly, this has to be stated explicitly. The property acts as a conjunction between states, so that an expression such as \"A and B, or C and D\" becomes representable: dependency is asserted between A and B and between C and D.\n\nThe property complements ParallelFlow. A parallel flow qualifies a single connection, whereas dependency groups several connections into one conjunction."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#isIdentifiedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an object of the formalised process description to its identification."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is identified by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 3, cardinality one."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#relationalElement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation establishing part of a characteristic."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relational element"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 5 and Figure 7."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/contributor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A flow that is part of a partially shared flow denoting process steps running concurrently."
+        "@value": "The boundary determining the observation horizon of a process. Under certain conditions it may also be regarded as a balance limit for incoming and outgoing products and energies."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Parallel Flow"
+        "@value": "System Limit"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2002/07/owl#disjointWith": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "VDI 3682 Part 1, Section 4.2.1 recommends modelling parallel process runs as a partially shared flow and explicitly requires no additional graphical elements for them. Introducing a class for the parallel flow is therefore a design decision of this pattern rather than an adoption from the standard.\n\nA parallel flow states that a single connection belongs to a concurrent run. Grouping several connections into one conjunction is expressed through the dependency property between the states involved."
+        "@value": "VDI 3682 Part 1, Section 4.1. The system limit must not be used as a balance limit when alternative process runs are described."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasUpperProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a process operator to its parent process. Inferred, not modelled."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:genid36"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has upper process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "_:genid42"
+          },
+          {
+            "@id": "_:genid40"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Adopted from the VDI 3682 ODP of Helmut Schmidt University. The chain follows the inverse of isComposedOf and the inverse of consistsOf."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid36",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:genid42",
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#isComposedOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid40",
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#consistsOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#isCharacterizedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an object of the formalised process description to one of its characteristics."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is characterized by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Characteristic"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 3."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/bibliographicCitation": [
+      {
+        "@value": "TODO: citation of the accompanying publication"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "TODO: co-authors"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-08-14"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@value": "TODO: author name, ORCID"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Ontology design pattern for the formalised description of technical processes according to VDI/VDE 3682 Part 1 (concept and graphic representation) and Part 2 (information model), issue May 2015.\n\nThe pattern covers the process network of states and process operators, the technical resources realising the operators, the system limit bounding the observation horizon, and the attribute structure of identification and characteristics.\n\nThe pattern is one of four subdomain patterns of the AIAS information model, which describes AI applications in automated plants together with the automated plant and the technical process. It is designed to be imported through owl:imports and aligned by way of the AIAS alignment ontology."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@value": "TODO: institution"
+      }
+    ],
+    "http://purl.org/dc/terms/rights": [
+      {
+        "@value": "TODO: funding statement, projects EKI and OptiFlex, dtec.bw"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://www.vdi.de/richtlinien/details/vdivde-3682-blatt-1-formalisierte-prozessbeschreibungen-konzept-und-grafische-darstellung"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Ontology Design Pattern"
+      }
+    ],
+    "http://purl.org/ontology/bibo/status": [
+      {
+        "@language": "en",
+        "@value": "Draft"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "vdi3682"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "https://w3id.org/aias/odp/vdi3682#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Normative basis: VDI/VDE 3682 Part 1 and Part 2, issue May 2015.\n\nRelation to prior work: this pattern is built independently but adopts several design decisions from the VDI 3682 ODP of the Institute of Automation Technology at Helmut Schmidt University (https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682, MIT licence). Adopted are the property chains for predecessor, successor, sub process and upper process, the defined class axiom for ProcessOperator, the dependency property expressing conjunction between states under the open world assumption, and the attribute structure of Identification and Characteristic.\n\nStructural deviations from that pattern are deliberate and documented at the affected elements: flows are reified as classes rather than expressed as object properties, assignments are reified as classes, and the system limit carries an explicit containment relation. See the notes on Flow, Assignment and SystemLimit."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682/2.0.0"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "2.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#versionNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The version of an object. A new version arises when the values of its attributes change."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "version number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Section 5.1. This property is a standard backed anchor for tracking the model states of an AI application across the engineering method."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasStateSource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a flow to the state it originates from."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has state source"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#hasSource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Set by the modelling tool according to the type of the connected element. Carries the chain inferring hasInput."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Attribute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property of an object of the formalised process description. Two kinds of attribute exist, the identification and the characteristics."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Attribute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Section 5 and Figure 3."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a process operator to an assignment describing which technical resource realises it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Directed counterpart of the usage symbol of VDI 3682 Part 1, Figure 3."
       }
     ]
   },
@@ -2161,36 +1976,221 @@
     ]
   },
   {
-    "@id": "https://w3id.org/aias/odp/vdi3682#hasAssignment",
+    "@id": "https://w3id.org/aias/odp/vdi3682#externalReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A reference from an object to an external identification system such as AKZ, KKS or NE 100."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Identification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "external reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1 and Part 2, Section 5.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#hasSource",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relates a process operator to an assignment describing which technical resource realises it."
+        "@value": "Relates a flow to the element it originates from."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+        "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has assignment"
+        "@value": "has source"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/aias/odp/vdi3682#Assignment"
+        "@id": "_:genid21"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Directed counterpart of the usage symbol of VDI 3682 Part 1, Figure 3."
+        "@value": "Super property of the two typed source properties. Chains are defined on the typed sub properties only, so that inference cannot fire between two elements of the same kind."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid21",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#State"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/ontology/bibo/status",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#Energy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Energy required or released by a process operator, for example electrical energy or heat. Energy occurs as input and as output of a process."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Energy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#State"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Information"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Product"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 1, Section 4.1."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#State",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The condition of a product, an energy or an information at a given point of a process, either as the status ante operationem before a transformation or as the status post operationem after it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "State"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
+      },
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#TechnicalResource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 2 carries state as a class of the information model. Part 1, Section 4.1 deliberately avoids the term in the graphical notation because it is considered ambiguous there, and works with product, energy and information directly. This pattern follows Part 2."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/aias/odp/vdi3682#consistsOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates a process to the elements it contains, namely its states, process operators and its system limit."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aias/odp/vdi3682#Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "consists of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:genid1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "VDI 3682 Part 2, Figure 2, aggregation."
+      }
+    ]
+  },
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#Flow"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#ProcessOperator"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#State"
+          },
+          {
+            "@id": "https://w3id.org/aias/odp/vdi3682#SystemLimit"
+          }
+        ]
       }
     ]
   },
