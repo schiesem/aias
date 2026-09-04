@@ -29,26 +29,42 @@ plant and what it acts on. It covers the following key features:
 
 ## The patterns
 
-| Package | Standard | Documentation | Visualization |
-|---|---|---|---|
-| VDI 3682 ODP | VDI/VDE 3682 | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/vdi3682/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/vdi3682/v1.0.0/docs/webvowl/index.html#) |
-| ISO/IEC 7498-1 ODP | ISO/IEC 7498-1 | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/iso7498/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/iso7498/v1.0.0/docs/webvowl/index.html#) |
-| ISO/IEC 22989 ODP | ISO/IEC 22989 | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/iso22989/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/iso22989/v1.0.0/docs/webvowl/index.html#) |
-| IEC 60050-351 ODP | IEC 60050-351 | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/iec60050/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/iec60050/v1.0.0/docs/webvowl/index.html#) |
-| AIAS Alignment | — | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/alignment/aias/v1.0.0/docs/webvowl/index.html#) |
+| Package | Standard | IRI | Documentation | Visualization |
+|---|---|---|---|---|
+| VDI 3682 ODP | VDI/VDE 3682 | `w3id.org/aias/odp/vdi3682` | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/vdi3682/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/vdi3682/v1.0.0/docs/webvowl/index.html#) |
+| ISO/IEC 7498-1 ODP | ISO/IEC 7498-1 | `w3id.org/aias/odp/iso7498` | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/iso7498/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/iso7498/v1.0.0/docs/webvowl/index.html#) |
+| ISO/IEC 22989 ODP | ISO/IEC 22989 | `w3id.org/aias/odp/iso22989` | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/iso22989/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/iso22989/v1.0.0/docs/webvowl/index.html#) |
+| IEC 60050-351 ODP | IEC 60050-351 | `w3id.org/aias/odp/iec60050` | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/odp/iec60050/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/odps/iec60050/v1.0.0/docs/webvowl/index.html#) |
+| AIAS Alignment | — | `w3id.org/aias` | [![Documentation](https://img.shields.io/badge/Documentation-Ontology_Specification-blue.svg)](https://w3id.org/aias/1.0.0) | [![WebVowl](https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg)](https://schiesem.github.io/aias/alignment/aias/v1.0.0/docs/webvowl/index.html#) |
 
-Serializations of each ontology are linked from its documentation page as
-JSON-LD, RDF/XML, N-Triples and Turtle.
+Every IRI resolves through [w3id.org](https://w3id.org) by content
+negotiation: a browser is served the documentation, a reasoner the ontology as
+JSON-LD, RDF/XML, N-Triples or Turtle, whichever it asks for.
 
 ## Versions
 
-Each package holds its versions in directories of their own, `v1.0.0` and so
-on. A version is a maintained branch rather than a frozen copy: a model written
-against `v1.0.0` keeps working, and that version may still receive a `v1.0.1`.
+**Version 1.0.0 is the stable one.** It is the model the ETFA paper and the
+dissertation both rest on, and it is what an IRI without a version number
+resolves to.
 
-Import the versioned IRI, never the bare one. Two versions of a pattern share
-the ontology IRI and differ only in their version IRI, so an import naming the
-bare IRI is ambiguous:
+| IRI | Resolves to |
+|---|---|
+| `https://w3id.org/aias` | the alignment, currently 1.0.0 |
+| `https://w3id.org/aias/1.0.0` | the alignment, that version, for good |
+| `https://w3id.org/aias/odp/<name>` | a pattern, currently 1.0.0 |
+| `https://w3id.org/aias/odp/<name>/<version>` | a pattern, that version, for good |
+
+Version 2.0.0 is a reworking and is still being written. It is reachable under
+its own IRI, and the unversioned IRI moves to it once it is released.
+
+Each package holds its versions in directories of their own. A version is a
+maintained branch rather than a frozen copy: a model written against `v1.0.0`
+keeps working, and that version may still receive a `v1.0.1`.
+
+**Import the versioned IRI, never the bare one.** Two versions of a pattern
+share the ontology IRI and differ only in their version IRI, so an import
+naming the bare IRI is ambiguous and follows whatever the current version
+happens to be:
 
 ```turtle
 @prefix vdi3682: <https://w3id.org/aias/odp/vdi3682#> .
@@ -57,6 +73,11 @@ bare IRI is ambiguous:
     a owl:Ontology ;
     owl:imports <https://w3id.org/aias/odp/vdi3682/1.0.0> .
 ```
+
+Note the difference between the two. The **namespace** of the prefix carries a
+`#` and no version, so `vdi3682:ProcessOperator` means the same in every
+version. The **import** names a version and no `#`, since it has to say which
+one applies.
 
 ## Documentation
 
