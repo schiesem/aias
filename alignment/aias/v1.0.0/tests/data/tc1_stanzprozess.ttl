@@ -49,12 +49,13 @@ ex:StanzKI
     aias:hasFunction   ex:PositionDataAcquisition , ex:Vorverarbeitung ,
                        ex:Speicherung , ex:Zusammenfuehrung ,
                        ex:MotorDataAcquisition , ex:Training1 , ex:Evaluation1 ,
-                       ex:Inferenz1 , ex:Stanzprozessautomatisierung ;
+                       ex:Inferenz1 , ex:Stanzprozessautomatisierung ,
+                       ex:ZustandsDarstellung ;
     aias:hasComponent  ex:Elektromotor1 , ex:Elektromotor2 , ex:Positionssensor ,
                        ex:SiemensS7 , ex:RaspberryPI4 , ex:ProCube ,
                        ex:Blech , ex:Fertigteil ;
     aias:hasRelation   ex:ZuwMotor1 , ex:ZuwMotor2 , ex:ZuwPosSens1 ,
-                       ex:ZuwVorverarbeitung , ex:ZuwProCube , ex:ZuwRaspberryPI4 ,
+                       ex:ZuwRaspberryPI4 , ex:ZuwProCube , ex:ZuwPosSens2 ,
                        ex:InputStanze , ex:OutputStanze ,
                        ex:Profibus1 , ex:Ethernet1 , ex:Internet1 .
 
@@ -215,7 +216,8 @@ ex:RawPositionData
 ex:VorverarbeiteteDaten
     a iso22989:ProductionData ;
     rdfs:label "Prepared position data"@en ;
-    rdfs:label "Vorverarbeitete Positionsdaten"@de .
+    rdfs:label "Vorverarbeitete Positionsdaten"@de ;
+    iso22989:isStoredBy ex:Speicherung .
 
 ex:RawMotorData
     a iso22989:ProductionData ;
@@ -350,10 +352,18 @@ ex:Inferenz1
     iso22989:creates  ex:Verschleisszustand .
 
 ex:Verschleisszustand
-    a iso22989:Prediction ;
+    a iso22989:Prediction , iso22989:ProductionData ;
     rdfs:label "The classified state of the belt"@en ;
     rdfs:label "Klassifizierter Verschleißzustand"@de ;
-    iso22989:fulfillsTask ex:Verschleissklassifikation .
+    rdfs:comment "Stated as a prediction and as production data at once, which is what lets the presentation pick it up. The two classes are not disjoint, so this says nothing about predictions in general."@en ;
+    iso22989:fulfillsTask  ex:Verschleissklassifikation ;
+    iso22989:isProcessedBy ex:ZustandsDarstellung .
+
+ex:ZustandsDarstellung
+    a iso22989:DataProcess ;
+    rdfs:label "Presentation of the wear state to the operator"@en ;
+    rdfs:label "Darstellung des Verschleißzustands für den Anwender"@de ;
+    rdfs:comment "The prediction of the inference is prepared for display on the control, which is where the operator reads it."@en .
 
 #################################################################
 #    Which resource carries which function
@@ -363,7 +373,7 @@ ex:Verschleisszustand
 #    for a stamping step and for an inference alike.
 #################################################################
 
-ex:ZuwVorverarbeitung
+ex:ZuwRaspberryPI4
     a vdi3682:Assignment ;
     rdfs:label "The Raspberry Pi prepares the data"@en ;
     vdi3682:isAssignedTo ex:RaspberryPI4 .
@@ -373,20 +383,21 @@ ex:ZuwProCube
     rdfs:label "ProCube stores, trains, evaluates and infers"@en ;
     vdi3682:isAssignedTo ex:ProCube .
 
-ex:ZuwRaspberryPI4
+ex:ZuwPosSens2
     a vdi3682:Assignment ;
     rdfs:label "The position sensor acquires the data"@en ;
     vdi3682:isAssignedTo ex:Positionssensor .
 
-ex:Vorverarbeitung  aias:isAssignedTo ex:ZuwVorverarbeitung .
+ex:Vorverarbeitung  aias:isAssignedTo ex:ZuwRaspberryPI4 .
 ex:Speicherung      aias:isAssignedTo ex:ZuwProCube .
 ex:Zusammenfuehrung aias:isAssignedTo ex:ZuwProCube .
 ex:Training1        aias:isAssignedTo ex:ZuwProCube .
 ex:Evaluation1      aias:isAssignedTo ex:ZuwProCube .
 ex:Inferenz1        aias:isAssignedTo ex:ZuwProCube .
-ex:PositionDataAcquisition aias:isAssignedTo ex:ZuwRaspberryPI4 .
+ex:PositionDataAcquisition aias:isAssignedTo ex:ZuwPosSens2 .
 ex:MotorDataAcquisition    aias:isAssignedTo ex:ZuwSiemensS7 .
 ex:Stanzprozessautomatisierung aias:isAssignedTo ex:ZuwSiemensS7 .
+ex:ZustandsDarstellung         aias:isAssignedTo ex:ZuwSiemensS7 .
 
 ex:ZuwSiemensS7
     a vdi3682:Assignment ;

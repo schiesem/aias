@@ -151,6 +151,7 @@ WHERE {
 |---|---|---|---|---|---|
 | tc1_stanzprozess | RawMotorData | ProductionData | Speicherung | CloudAlsSenke | ProCube |
 | tc1_stanzprozess | RawPositionData | ProductionData | Speicherung | CloudAlsSenke | ProCube |
+| tc1_stanzprozess | VorverarbeiteteDaten | ProductionData | Speicherung | CloudAlsSenke | ProCube |
 | tc1_stanzprozess | Zusammengefuehrt | ProductionData | Speicherung | CloudAlsSenke | ProCube |
 | tc2_eki_instandhaltung | PositionsProduktionsdaten | ProductionData | Speicherung | SenkeProCube | ProCube |
 | tc3_eki_primerauftrag | Zusammengefuehrt | ProductionData | Datenspeicherung | SenkeProCube | ProCube |
@@ -437,6 +438,7 @@ WHERE {
 | tc1_stanzprozess | RaspberryPI4 | EdgeDevice | Vorverarbeitung | DataProcess |
 | tc1_stanzprozess | SiemensS7 | Controller | MotorDataAcquisition | Acquisition |
 | tc1_stanzprozess | SiemensS7 | Controller | Stanzprozessautomatisierung | Automate |
+| tc1_stanzprozess | SiemensS7 | Controller | ZustandsDarstellung | DataProcess |
 | tc2_eki_instandhaltung | Maschinensteuerung | Controller | Anlagensteuerung | Automate |
 | tc2_eki_instandhaltung | Maschinensteuerung | Controller | Datensatzerstellung | Merging |
 | tc2_eki_instandhaltung | Maschinensteuerung | Controller | Ergebnisabruf | Inference |

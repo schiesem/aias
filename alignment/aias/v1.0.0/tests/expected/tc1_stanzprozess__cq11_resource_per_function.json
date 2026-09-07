@@ -10,5 +10,6 @@
   "https://w3id.org/aias/example/stanzprozess#ProCube|https://w3id.org/aias#ExternalCloud|https://w3id.org/aias/example/stanzprozess#Zusammenfuehrung|https://w3id.org/aias/odp/iso22989#Merging",
   "https://w3id.org/aias/example/stanzprozess#RaspberryPI4|https://w3id.org/aias#EdgeDevice|https://w3id.org/aias/example/stanzprozess#Vorverarbeitung|https://w3id.org/aias/odp/iso22989#DataProcess",
   "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|https://w3id.org/aias/example/stanzprozess#MotorDataAcquisition|https://w3id.org/aias/odp/iso22989#Acquisition",
-  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|https://w3id.org/aias/example/stanzprozess#Stanzprozessautomatisierung|https://w3id.org/aias/odp/iso22989#Automate"
+  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|https://w3id.org/aias/example/stanzprozess#Stanzprozessautomatisierung|https://w3id.org/aias/odp/iso22989#Automate",
+  "https://w3id.org/aias/example/stanzprozess#SiemensS7|https://w3id.org/aias#Controller|https://w3id.org/aias/example/stanzprozess#ZustandsDarstellung|https://w3id.org/aias/odp/iso22989#DataProcess"
 ]
