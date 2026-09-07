@@ -2,7 +2,7 @@
      Written by hand, the source for the Widoco section of the same name.
      Never edit the generated HTML. -->
 
-Sixty-two classes and twenty-five relations, arranged in three views. Every
+Sixty-one classes and twenty-five relations, arranged in three views. Every
 class carries a German wording alongside its English translation, and the
 `skos:note` of each element names the clause of ISO/IEC 22989 it rests on. Where
 a class is a term of engineering practice rather than of the standard, the note
@@ -25,19 +25,18 @@ was built for.
 
 ## Functions of the life cycle
 
-An `AIFunction` is a step of the life cycle. Nine are supplied:
+An `AIFunction` is a step of the life cycle. Eight are supplied:
 
 | Function | What it does |
 |---|---|
 | `Acquisition` | records data from a source |
-| `DataProcessing` | prepares it |
+| `DataProcess` | prepares it, in the eight steps below |
 | `Storing` | writes it to a sink |
 | `Training` | produces a model from data |
 | `Validation` | checks the model during training |
 | `Evaluation` | measures the finished model |
 | `Inference` | runs the model on new data |
 | `Automate` | carries out a procedure without human intervention |
-| `DataProcess` | the eight preparation steps, below |
 
 A function is the level at which this pattern meets the others. In the AIAS
 alignment a function and a process operator are treated alike, so the same
@@ -101,8 +100,9 @@ functions acting on it, which is what makes provenance answerable: follow
 
 ## Disjointness
 
-The root classes are pairwise disjoint, and so are the members of each set of
-subclasses: the four tasks, the four learning types, the three system designs,
+The root classes are disjoint from one another, with one deliberate
+exception named below, and so are the members of each set of subclasses:
+the four tasks, the four learning types, the three system designs,
 the four metrics and the kinds of data. Nothing can be a task and a metric at
 once.
 
@@ -110,3 +110,11 @@ once.
 they are equivalent. Against the other three kinds of data they are, which a
 second axiom states: training, validation and production data on one side,
 evaluation data on the other.
+
+`Prediction` is deliberately left out of the first axiom. The output of a
+model is the input of something else, a presentation, a control loop, a
+further model, and every data relation asks for `Data`, `DataSet` or
+`Sample` as its domain. A prediction disjoint from all three could not be
+carried any further, so the chain would end at the inference. Leaving it out
+does not make every prediction a piece of data: it only allows an instance to
+be stated as both where a model says so.

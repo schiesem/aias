@@ -93,7 +93,7 @@ abstract:
   that configure them, and the data with the processes that acquire, prepare
   and store it. The three meet where a training consumes a dataset and produces
   a model, which is what lets a model be traced back to the data it was built
-  from. Sixty-two classes and twenty-five relations. The pattern is one of
+  from. Sixty-one classes and twenty-five relations. The pattern is one of
   three subdomain patterns of the AIAS information model and is meant to be
   imported and aligned rather than used on its own.
 

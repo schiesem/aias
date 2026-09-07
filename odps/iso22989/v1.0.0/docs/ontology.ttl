@@ -52,14 +52,6 @@ foaf:fundedBy a owl:AnnotationProperty .
 
 schema:codeRepository a owl:AnnotationProperty .
 
-iso22989:DataProcessing a owl:Class ;
-    rdfs:label "Datenverarbeitung"@de,
-        "Data Processing"@en ;
-    rdfs:comment "Umwandlung von Eingangsdaten in Ausgangsdaten."@de,
-        "Transformation of input data into output data."@en ;
-    rdfs:subClassOf iso22989:AIFunction ;
-    skos:note "ISO/IEC 22989, clause 5.10."@en .
-
 iso22989:SubSymbolicAI a owl:Class ;
     rdfs:label "Subsymbolische KI"@de,
         "Subsymbolic AI"@en ;
@@ -285,7 +277,7 @@ iso22989:usesMetric a owl:ObjectProperty ;
     rdfs:range iso22989:EvaluationMetric .
 
 <https://w3id.org/aias/odp/iso22989> a owl:Ontology ;
-    dcterms:abstract "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-two classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."@en ;
+    dcterms:abstract "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-one classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own."@en ;
     dcterms:bibliographicCitation "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890"@en ;
     dcterms:created "2024-09-01"^^xsd:date ;
     dcterms:creator "Alexander Fay",
@@ -583,6 +575,13 @@ iso22989:MachineLearning a owl:Class ;
         "A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience."@en ;
     skos:note "ISO/IEC 22989, definition 3.3.5."@en .
 
+iso22989:Prediction a owl:Class ;
+    rdfs:label "Vorhersage"@de,
+        "Prediction"@en ;
+    rdfs:comment "Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden."@de,
+        "The primary output of an AI system when input data is processed."@en ;
+    skos:note "ISO/IEC 22989, definition 3.1.27."@en .
+
 iso22989:ProductionData a owl:Class ;
     rdfs:label "Betriebsdaten"@de,
         "Production Data"@en ;
@@ -644,13 +643,6 @@ iso22989:ModelParameter a owl:Class ;
     rdfs:comment "Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden."@de,
         "An internal variable of a model affecting how its outputs are computed."@en ;
     skos:note "ISO/IEC 22989, definition 3.3.8."@en .
-
-iso22989:Prediction a owl:Class ;
-    rdfs:label "Vorhersage"@de,
-        "Prediction"@en ;
-    rdfs:comment "Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden."@de,
-        "The primary output of an AI system when input data is processed."@en ;
-    skos:note "ISO/IEC 22989, definition 3.1.27."@en .
 
 iso22989:Storing a owl:Class ;
     rdfs:label "Speicherung"@de,
@@ -754,20 +746,22 @@ iso22989:Sample a owl:Class ;
         "An atomic data element processed in large numbers by an ML algorithm or an AI system."@en ;
     skos:note "ISO/IEC 22989, definition 3.2.13."@en .
 
-iso22989:DataProcess a owl:Class ;
-    rdfs:label "Datenprozess"@de,
-        "Data Process"@en ;
-    rdfs:comment "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt."@de,
-        "A step transforming input data into output data."@en ;
-    rdfs:subClassOf iso22989:AIFunction ;
-    skos:note "Not a term of ISO/IEC 22989. A collecting class of this model for the steps of clause 5.10."@en .
-
 iso22989:AIFunction a owl:Class ;
     rdfs:label "KI-Funktion"@de,
         "AI Function"@en ;
     rdfs:comment "Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet."@de,
         "A function transforming inputs into outputs and thereby representing one step of the AI life cycle."@en ;
     skos:note "Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below."@en .
+
+iso22989:DataProcess a owl:Class ;
+    rdfs:label "Datenprozess"@de,
+        "Data Process"@en ;
+    rdfs:comment "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt."@de,
+        "A step transforming input data into output data."@en ;
+    rdfs:subClassOf iso22989:AIFunction ;
+    skos:altLabel "Datenverarbeitung"@de,
+        "data processing"@en ;
+    skos:note "ISO/IEC 22989, clause 5.10, which describes the transformation of input data into output data without giving it an entry of its own. The class collects the steps that transformation is made of, and carries the wording of the standard as an alternative label."@en .
 
 iso22989:Data a owl:Class ;
     rdfs:label "Daten"@de,
@@ -783,7 +777,7 @@ iso22989:Data a owl:Class ;
     owl:members ( iso22989:ReinforcementLearning iso22989:SemiSupervisedLearning iso22989:SupervisedLearning iso22989:UnsupervisedLearning ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( iso22989:AIComponent iso22989:AIFunction iso22989:AISystem iso22989:AITask iso22989:AIType iso22989:Algorithm iso22989:Data iso22989:DataSet iso22989:DataSink iso22989:DataSource iso22989:EvaluationMetric iso22989:Hyperparameter iso22989:LearningType iso22989:MachineLearning iso22989:Model iso22989:ModelParameter iso22989:Prediction iso22989:Sample iso22989:SystemDesign ) .
+    owl:members ( iso22989:AIComponent iso22989:AIFunction iso22989:AISystem iso22989:AITask iso22989:AIType iso22989:Algorithm iso22989:Data iso22989:DataSet iso22989:DataSink iso22989:DataSource iso22989:EvaluationMetric iso22989:Hyperparameter iso22989:LearningType iso22989:MachineLearning iso22989:Model iso22989:ModelParameter iso22989:Sample iso22989:SystemDesign ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( iso22989:Accuracy iso22989:F1Score iso22989:Precision iso22989:Recall ) .
