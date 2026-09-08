@@ -1,0 +1,31 @@
+# H28  WENN Training und Inference unterschiedlichen Resource zugewiesen sind
+#
+# Hinweisregel, severity sh:Info.
+#
+# Traeger ist das Training. Die Abfrage sucht eine Inferenz, die auf einer
+# anderen Ressource laeuft als es selbst.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H28_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Training ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Training und Inferenz sind auf unterschiedlichen Geraeten. Bitte pruefen, dass die Leistungsgroessen der Inferenzressource ausreichend sind." ;
+        sh:select """
+            SELECT $this ?trainingsressource ?inferenzressource
+            WHERE {
+                $this  aias:isAssignedTo    ?at .
+                ?at    vdi3682:isAssignedTo ?trainingsressource .
+                ?inf   a iso22989:Inference ;
+                       aias:isAssignedTo    ?ai .
+                ?ai    vdi3682:isAssignedTo ?inferenzressource .
+                FILTER (?trainingsressource != ?inferenzressource)
+            }
+        """ ;
+    ] .

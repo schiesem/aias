@@ -1,0 +1,26 @@
+# H10  Acquisition auf einem Aktor
+#
+# Hinweisregel, severity sh:Info: kein Fehler, sondern ein Hinweis.
+#
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H10_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Acquisition ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Ein Tausch, eine Reparatur des Aktors oder eine Rekalibrierung hat einen Einfluss auf die KI-Anwendung. Bitte den Anlagenbetreiber informieren." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                ?resource a aias:Actuator .
+            }
+        """ ;
+    ] .

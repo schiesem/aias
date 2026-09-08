@@ -1,0 +1,20 @@
+# H18  ProcessOperator vorhanden
+#
+# Hinweisregel, severity sh:Info. Gilt fuer jede Instanz der Klasse.
+#
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H18_Shape
+    a sh:NodeShape ;
+    sh:targetClass vdi3682:ProcessOperator ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Bitte die Prozessverantwortlichen am besten schriftlich informieren, dass dieser Prozessschritt Teil einer KI-Anwendung wird." ;
+        sh:select """
+            SELECT $this WHERE { $this a vdi3682:ProcessOperator }
+        """ ;
+    ] .

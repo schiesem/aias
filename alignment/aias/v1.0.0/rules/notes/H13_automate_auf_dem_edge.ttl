@@ -1,0 +1,26 @@
+# H13  Automate auf dem Edge
+#
+# Hinweisregel, severity sh:Info: kein Fehler, sondern ein Hinweis.
+#
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H13_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Automate ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Jede Anpassung des Edge-Geraets kann einen Einfluss auf die KI-Anwendung haben. Bitte den Anlagenbetreiber informieren." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                ?resource a aias:EdgeDevice .
+            }
+        """ ;
+    ] .

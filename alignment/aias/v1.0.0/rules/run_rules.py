@@ -88,6 +88,10 @@ def main():
                 data[t], shacl_graph=sg, ont_graph=ont, inference="rdfs",
                 advanced=True, abort_on_first=False)
             nodes = focus_nodes(text)
+            if "Validation Failure" in text:
+                cells.append("FEHLER")
+                detail.append((t, [text.strip().splitlines()[0]]))
+                continue
             cells.append("konform" if conforms else "%d Treffer" % len(nodes))
             if nodes:
                 detail.append((t, nodes))

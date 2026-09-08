@@ -1,0 +1,26 @@
+# H2  Inference in der Cloud, Ausfallsicherheit
+#
+# Hinweisregel, severity sh:Info: kein Fehler, sondern ein Hinweis.
+#
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H2_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Inference ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Bei der Inferenz auf einer externen Cloud ist keine Ausfallsicherheit gegeben. Sobald die Verbindung zur Cloud oder der Anlage abbricht, kann die Inferenz nicht ausgefuehrt werden." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                { ?resource a aias:ExternalCloud } UNION { ?resource a aias:InternalCloud }
+            }
+        """ ;
+    ] .

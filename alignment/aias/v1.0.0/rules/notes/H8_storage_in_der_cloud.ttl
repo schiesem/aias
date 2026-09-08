@@ -1,0 +1,26 @@
+# H8  Storage in der Cloud
+#
+# Hinweisregel, severity sh:Info: kein Fehler, sondern ein Hinweis.
+#
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H8_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Storage ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Zusaetzlicher Speicher in der Cloud kann teuer werden. Bitte Konditionen ueber den Anbieter pruefen." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                { ?resource a aias:ExternalCloud } UNION { ?resource a aias:InternalCloud }
+            }
+        """ ;
+    ] .

@@ -1,0 +1,20 @@
+# H14  Automate vorhanden
+#
+# Hinweisregel, severity sh:Info. Gilt fuer jede Instanz der Klasse.
+#
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:H14_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Automate ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Wird die der Automatisierungsfunktion zugewiesene Komponente angepasst, kann das einen Einfluss auf die KI-Anwendung haben." ;
+        sh:select """
+            SELECT $this WHERE { $this a iso22989:Automate }
+        """ ;
+    ] .
