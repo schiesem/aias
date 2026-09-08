@@ -61,7 +61,7 @@ nicht hat.
 das nur weiterleitet, wie der Raspberry Pi in tc2, trägt keine und ist
 trotzdem eine sinnvolle Architektur.
 
-**V8 und V9.** Sie fragen, ob die Ausgabe einer Inferenz die Eingabe einer
-Automatisierung ist und umgekehrt. `Automate` hat im Muster keine einzige
-Relation, weder für Eingang noch für Ausgang. Die Verbindung ist nicht
-modellierbar.
+**V9** ist geschrieben, bleibt in den Testfällen aber ohne Treffer. Eine
+Automatisierung, die Daten hervorbringt, müsste zugleich `DataProcess` sein,
+denn `createsProcessedData` hat diese Klasse als Domain. Keiner der drei Fälle
+modelliert das.

@@ -1,0 +1,33 @@
+# V9  WENN die Ausgabe einer Automate die Eingabe einer Inference ist
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+# Die Gegenrichtung zu V8. Die Automatisierung erzeugt Daten, die Inferenz
+# liest sie: zusammen mit V8 ist das ein geschlossener Regelkreis.
+#
+# Automate erzeugt ihre Ausgabe ueber createsProcessedData. Die Relation hat
+# DataProcess als Domain, eine Automate ist keine. Eine Automatisierung, die
+# Daten hervorbringt, muss daher beide Klassen tragen. Keiner der drei
+# Testfaelle tut das, die Regel bleibt dort ohne Treffer.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V9_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Automate ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Es liegt ein geschlossener Regelkreis zwischen KI und Automatisierung vor. Pruefen, ob eine Hochrisikoeinstufung nach EU AI Act vorliegt." ;
+        sh:select """
+            SELECT $this ?ausgabe ?inference
+            WHERE {
+                $this      iso22989:createsProcessedData ?ausgabe .
+                ?inference a iso22989:Inference ;
+                           iso22989:usesData ?ausgabe .
+            }
+        """ ;
+    ] .

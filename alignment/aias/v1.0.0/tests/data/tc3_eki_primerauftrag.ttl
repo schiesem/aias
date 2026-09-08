@@ -240,11 +240,6 @@ ex:Trainingsdaten a iso22989:TrainingData   ; rdfs:label "Training data of segme
 ex:Testdaten      a iso22989:EvaluationData ; rdfs:label "TestData"@en .
 ex:Inferenzeingabe a iso22989:ProductionData ; rdfs:label "Segments to be classified"@en .
 
-ex:Segmentklassifikation
-    a iso22989:ProductionData ;
-    rdfs:label "InferenceOutput_Model_segmentation"@en ;
-    rdfs:comment "One class per segment of the path: coated or faulty. The rework function reads it."@en .
-
 ex:Nacharbeitsauftrag
     a iso22989:ProductionData ;
     rdfs:label "Movement commands for the faulty segments"@en ;
@@ -335,9 +330,10 @@ ex:Modelausfuehrung
     iso22989:creates  ex:Segmentbewertung .
 
 ex:Segmentbewertung
-    a iso22989:Prediction ;
+    a iso22989:Prediction , iso22989:ProductionData ;
     rdfs:label "Which segments are faulty"@en ;
     rdfs:label "Segmentbewertung"@de ;
+    rdfs:comment "Stated as a prediction and as production data at once, which is what lets the rework function read it. The two classes are not disjoint."@en ;
     iso22989:fulfillsTask ex:Fehlstellenerkennung .
 
 #################################################################
@@ -359,7 +355,7 @@ ex:Segmentnacharbeitssteuerung
     rdfs:label "Rework control for faulty segments"@en ;
     rdfs:label "Segmentnacharbeitssteuerung"@de ;
     rdfs:comment "Takes the classification of the segments and turns a faulty one into a movement command for the robot."@en ;
-    iso22989:usesData ex:Segmentklassifikation .
+    iso22989:usesData ex:Segmentbewertung .
 
 #################################################################
 #    Which resource carries which function

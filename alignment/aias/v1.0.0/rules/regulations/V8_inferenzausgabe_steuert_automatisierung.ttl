@@ -1,0 +1,35 @@
+# V8  WENN die Ausgabe einer Inference die Eingabe einer Automate ist
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+# Die Kette laeuft ueber die Ausgabe: die Inferenz erzeugt sie mit creates,
+# die Automatisierung liest sie mit usesData. Beide Relationen gibt es,
+# usesData hat AIFunction als Domain und gilt damit auch fuer Automate.
+#
+# Damit dieselbe Instanz an beiden Enden stehen kann, muss sie zugleich
+# Prediction und Data sein. Das ist zulaessig, seit Prediction das grosse
+# Disjunktheitsaxiom von ISO 22989 verlassen hat. tc3 modelliert es so:
+# ex:Segmentbewertung wird von der Modelausfuehrung erzeugt und von der
+# Segmentnacharbeitssteuerung gelesen.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V8_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Inference ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Die Inferenzausgabe steuert direkt eine automatisierte Aktion. Pruefen, ob eine Hochrisikoeinstufung nach EU AI Act vorliegt." ;
+        sh:select """
+            SELECT $this ?ausgabe ?automate
+            WHERE {
+                $this     iso22989:creates  ?ausgabe .
+                ?automate a iso22989:Automate ;
+                          iso22989:usesData ?ausgabe .
+            }
+        """ ;
+    ] .
