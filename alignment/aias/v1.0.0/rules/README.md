@@ -65,3 +65,27 @@ trotzdem eine sinnvolle Architektur.
 Automatisierung, die Daten hervorbringt, müsste zugleich `DataProcess` sein,
 denn `createsProcessedData` hat diese Klasse als Domain. Keiner der drei Fälle
 modelliert das.
+
+## Der Werkzeugstapel
+
+Die Regeln sind mit den Bibliotheken geprüft, die auch das Werkzeug der
+Dissertation verwendet: **rdflib 7.6.0** für den Graphen, **pyshacl 0.40.1**
+für die Validierung. `shared/run_rules.py` braucht nichts weiter.
+
+**owlready2 0.51** lädt die Ontologien ebenfalls, mit zwei Vorbehalten:
+
+Turtle liest es nur aus einer Datei, nicht aus einem Dateiobjekt, und file-URIs
+mit Laufwerksbuchstaben scheitern unter Windows. Der Weg führt über
+`onto_path` und eine RDF/XML-Fassung, die rdflib schreibt. Das Werkzeug legt
+seine Modelle ohnehin als `.owl` ab.
+
+Die Testfälle deklarieren kein `owl:NamedIndividual`. rdflib und pyshacl finden
+die 51 Instanzen von tc1 trotzdem, `world.individuals()` zählt aber nur, was
+ausdrücklich als Individuum ausgewiesen ist, und liefert null. Wer die Modelle
+mit owlready2 lädt, ergänzt die Deklaration am besten beim Import; danach sind
+es die erwarteten 51.
+
+Pellet, das owlready2 mitbringt, lief hier nicht: Das gebündelte Jar ist gegen
+eine neuere Java-Version übersetzt als die installierte (class file 69 gegen
+61). Das ist eine Frage der Umgebung, nicht der Modelle. Die Konsistenz wird
+daher mit HermiT über ROBOT geprüft, wie im übrigen Testlauf auch.

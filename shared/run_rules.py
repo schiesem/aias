@@ -1,8 +1,8 @@
 """Jede Regel der Regelbasis gegen die Testfaelle des Alignments.
 
-    python alignment/aias/v1.0.0/rules/run_rules.py
-    python ... run_rules.py --only S4
-    python ... run_rules.py --tc tc1_stanzprozess
+    python shared/run_rules.py
+    python shared/run_rules.py --only S4
+    python shared/run_rules.py --tc tc1_stanzprozess
 
 Eine Regel je Datei. Der Dateiname traegt die Nummer des Anhangs, damit sich
 Tabelle und Datei zuordnen lassen. Die Ausgabe nennt je Testfall, wie viele
@@ -21,7 +21,8 @@ import pyshacl
 from rdflib import Graph
 
 HERE = pathlib.Path(__file__).resolve().parent
-REPO = HERE.parents[3]
+REPO = HERE.parent
+RULES = REPO / "alignment/aias/v1.0.0/rules"
 
 ONT = ["alignment/aias/v1.0.0/AIAS.ttl",
        "odps/vdi3682/v1.0.0/VDI3682.ttl",
@@ -64,7 +65,7 @@ def main():
     args = ap.parse_args()
 
     files = sorted(p for d in ["static", "consistency", "notes", "regulations"]
-                   for p in (HERE / d).glob("*.ttl")) if True else []
+                   for p in (RULES / d).glob("*.ttl"))
     files = [f for f in files if args.only.lower() in f.name.lower()]
     tcs = [t for t in TCS if args.tc.lower() in t.lower()]
     if not files:
