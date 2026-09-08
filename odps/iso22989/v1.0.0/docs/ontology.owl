@@ -12,173 +12,38 @@
 
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:iso22989="https://w3id.org/aias/odp/iso22989#">
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#basedOnLearning">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#MLAlgorithm"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
-    <rdfs:comment xml:lang="en">Relates a machine learning algorithm to the kind of learning it performs.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet einen ML-Algorithmus mit der Lernart, die er ausführt.</rdfs:comment>
-    <rdfs:label xml:lang="en">based on learning</rdfs:label>
-    <rdfs:label xml:lang="de">basiert auf Lernart</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf10fa742fe4c4efabc8521d10ccf82a0">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:nodeID="N129eb38452864856b44e2e3d4896837f"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Regression">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
-    <rdfs:comment xml:lang="en">Prediction of continuous quantities.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Vorhersage kontinuierlicher Größen.</rdfs:comment>
-    <rdfs:label xml:lang="de">Regression</rdfs:label>
-    <rdfs:label xml:lang="en">Regression</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 9.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isProcessedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="Necc46d47baa1406a865532517b4a9597"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="en">Relates data to the data process acting on it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet.</rdfs:comment>
-    <rdfs:label xml:lang="en">is processed by</rdfs:label>
-    <rdfs:label xml:lang="de">wird verarbeitet durch</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Hybrid">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
-    <rdfs:comment xml:lang="en">An AI system split between cloud infrastructure and the edge.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Ein KI-System, das auf Cloud und Edge verteilt ausgeführt wird.</rdfs:comment>
-    <rdfs:label xml:lang="de">Hybrid</rdfs:label>
-    <rdfs:label xml:lang="en">Hybrid</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#createsProcessedData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:range rdf:nodeID="Nce2e37c1890c4863aa4fe9d462ac202c"/>
-    <rdfs:comment xml:lang="en">Relates a data process to the data it produces.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet einen Datenprozess mit den Daten, die er erzeugt.</rdfs:comment>
-    <rdfs:label xml:lang="en">creates processed data</rdfs:label>
-    <rdfs:label xml:lang="de">erzeugt verarbeitete Daten</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N65450a43d4244d98a97b1f80c33e6736">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Hyperparameter"/>
-    <rdf:rest rdf:nodeID="N6f96e24994774dd3ae4535e5f7a228ab"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SymbolicAI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIType"/>
-    <rdfs:comment xml:lang="de">Techniken, die mit expliziten Symbolen und Regeln arbeiten, um Schlussfolgerungen zu ziehen.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Techniques working with explicit symbols and rules in order to draw inferences.</rdfs:comment>
-    <rdfs:label xml:lang="en">Symbolic AI</rdfs:label>
-    <rdfs:label xml:lang="de">Symbolische KI</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.33.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Training">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:comment xml:lang="de">Bestimmung oder Verbesserung der Parameter eines Modells anhand von Trainingsdaten.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Determining or improving the parameters of a model from training data.</rdfs:comment>
-    <rdfs:label xml:lang="de">Training</rdfs:label>
-    <rdfs:label xml:lang="en">Training</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.15.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#TestData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdfs:comment xml:lang="en">Data used to assess the performance of a final model.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden.</rdfs:comment>
-    <rdfs:label xml:lang="en">Test Data</rdfs:label>
-    <rdfs:label xml:lang="de">Testdaten</rdfs:label>
-    <skos:note xml:lang="en">Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd399a02d8d074bab96a29d2ede7470ee">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
-    <rdf:rest rdf:nodeID="N33bb2432102a495da4d89717fb55d270"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na78e4c9d044d4c8f98097abfb179c1ae">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N7fb01f43e28342f2b74590662a1f34c7"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7726765980c146a09875fa38aa06480c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Augmentation"/>
-    <rdf:rest rdf:nodeID="N8e7107eedfb14c6d8cd445072a570658"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Precision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
-    <rdfs:comment xml:lang="de">Anteil der korrekten Ergebnisse an den als positiv gemeldeten.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The proportion of correct results among those reported positive.</rdfs:comment>
-    <rdfs:label xml:lang="en">Precision</rdfs:label>
-    <rdfs:label xml:lang="de">Präzision</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasDataSink">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Storing"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#DataSink"/>
-    <rdfs:comment xml:lang="en">Relates a storing to the sink it persists data to.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt.</rdfs:comment>
-    <rdfs:label xml:lang="en">has data sink</rdfs:label>
-    <rdfs:label xml:lang="de">hat Datensenke</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Accuracy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
-    <rdfs:comment xml:lang="de">Anteil der korrekten Ergebnisse an allen Ergebnissen.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The proportion of correct results among all results.</rdfs:comment>
-    <rdfs:label xml:lang="en">Accuracy</rdfs:label>
-    <rdfs:label xml:lang="de">Genauigkeit</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#creates">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Prediction"/>
-    <rdfs:comment xml:lang="en">Relates an inference to the prediction it produces.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt.</rdfs:comment>
-    <rdfs:label xml:lang="en">creates</rdfs:label>
-    <rdfs:label xml:lang="de">erzeugt</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isCreatedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
-    <rdfs:comment xml:lang="en">Relates a model to the training that produced it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Modell mit dem Training, das es erzeugt hat.</rdfs:comment>
-    <rdfs:label xml:lang="en">is created by</rdfs:label>
-    <rdfs:label xml:lang="de">wird erzeugt durch</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#TrainingData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdfs:comment xml:lang="en">Data used to determine the parameters of a model during training.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden.</rdfs:comment>
-    <rdfs:label xml:lang="en">Training Data</rdfs:label>
-    <rdfs:label xml:lang="de">Trainingsdaten</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.16.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ReinforcementLearning">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
-    <rdfs:comment xml:lang="en">Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen.</rdfs:comment>
-    <rdfs:label xml:lang="de">Bestärkendes Lernen</rdfs:label>
-    <rdfs:label xml:lang="en">Reinforcement Learning</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.9.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N113034ed22674d17aad2f52a1da91576">
+  <rdf:Description rdf:nodeID="Nebf71f952b7444339e024222a99fb375">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="N24f06b214d8a494eb9c9dba1130c6eca"/>
+    <rdf:rest rdf:nodeID="Ncd14536c73c7448cb53e4799572f9059"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Labeling">
+  <rdf:Description rdf:nodeID="N7c6984b9f934495f88c3b198d54f3889">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdf:rest rdf:nodeID="N458f50a0b12944349779aaec624b8ec4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Annotation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="en">Assignment of a label to a data element.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Zuordnung eines Labels zu einem Datenelement.</rdfs:comment>
-    <rdfs:label xml:lang="de">Kennzeichnung</rdfs:label>
-    <rdfs:label xml:lang="en">Labeling</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10, where labelling is discussed as part of the annotation rather than defined as a process of its own.</skos:note>
+    <rdfs:comment xml:lang="en">Addition of significant information as metadata, for example labels or provenance.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ergänzung signifikanter Informationen als Metadaten, etwa Labels oder Herkunftsinformationen.</rdfs:comment>
+    <rdfs:label xml:lang="de">Annotation</rdfs:label>
+    <rdfs:label xml:lang="en">Annotation</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Normalization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
+    <rdfs:comment xml:lang="en">Adjustment of data values to a common scale so that they become mathematically comparable.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Anpassung von Datenwerten auf eine gemeinsame Skala, um sie mathematisch vergleichbar zu machen.</rdfs:comment>
+    <rdfs:label xml:lang="de">Normalisierung</rdfs:label>
+    <rdfs:label xml:lang="en">Normalization</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N37799eb49b354cf795a59d6f559a7af2">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Acquisition"/>
+    <rdf:rest rdf:nodeID="N5eeb414b4b604435afc6462029528989"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Imputation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -189,18 +54,6 @@
     <rdfs:label xml:lang="en">Imputation</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.8.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N3d59b1c5a76f49b49ede1550ffe62a4c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdf:rest rdf:nodeID="Nf9e4ffac8d314f26a14d7f648acf35b5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Edge">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
-    <rdfs:comment xml:lang="en">An AI system running close to the process it serves.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Ein KI-System, das prozessnah ausgeführt wird.</rdfs:comment>
-    <rdfs:label xml:lang="de">Edge</rdfs:label>
-    <rdfs:label xml:lang="en">Edge</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Merging">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
@@ -210,102 +63,18 @@
     <rdfs:label xml:lang="de">Zusammenführung</rdfs:label>
     <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Augmentation">
+  <rdf:Description rdf:nodeID="Nd81df7c6b76e41a3b71af81b9e6f6bd6">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="Ne6034aa3700345499842ba96373ae6fb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ReinforcementLearning">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="en">Creation of additional data by transforming existing data in order to enlarge a dataset.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Erzeugung zusätzlicher Daten durch Transformation vorhandener Daten, um einen Datensatz zu erweitern.</rdfs:comment>
-    <rdfs:label xml:lang="en">Augmentation</rdfs:label>
-    <rdfs:label xml:lang="de">Augmentierung</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Classification">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
-    <rdfs:comment xml:lang="en">Assignment of inputs to discrete classes.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Zuordnung von Eingaben zu diskreten Klassen.</rdfs:comment>
-    <rdfs:label xml:lang="en">Classification</rdfs:label>
-    <rdfs:label xml:lang="de">Klassifikation</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 9.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#EvaluationData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/aias/odp/iso22989#TestData"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdfs:comment xml:lang="en">Data used to assess the performance of a final model, disjoint from training and validation data.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind.</rdfs:comment>
-    <rdfs:label xml:lang="en">Evaluation Data</rdfs:label>
-    <rdfs:label xml:lang="de">Evaluationsdaten</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.14.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasDataSource">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Acquisition"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#DataSource"/>
-    <rdfs:comment xml:lang="en">Relates an acquisition to the source it obtains data from.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Erfassung mit der Quelle, aus der sie Daten gewinnt.</rdfs:comment>
-    <rdfs:label xml:lang="en">has data source</rdfs:label>
-    <rdfs:label xml:lang="de">hat Datenquelle</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#executes">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
-    <rdfs:comment xml:lang="en">Relates a model to the inference it carries out.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Modell mit der Inferenz, die es ausführt.</rdfs:comment>
-    <rdfs:label xml:lang="en">executes</rdfs:label>
-    <rdfs:label xml:lang="de">führt aus</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Hyperparameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A property of an algorithm governing its behaviour.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Eigenschaft eines Algorithmus, die dessen Verhalten steuert.</rdfs:comment>
-    <rdfs:label xml:lang="de">Hyperparameter</rdfs:label>
-    <rdfs:label xml:lang="en">Hyperparameter</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.4. Placed on the algorithm superclass, so that a training algorithm, a model algorithm and an evaluation algorithm may each carry one: a learning rate, the number of layers of a network, the threshold of a metric.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Storing">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:comment xml:lang="de">Ablage von Daten in einer Datensenke.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Persisting data to a data sink.</rdfs:comment>
-    <rdfs:label xml:lang="de">Speicherung</rdfs:label>
-    <rdfs:label xml:lang="en">Storing</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N129eb38452864856b44e2e3d4896837f">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isEvaluatedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
-    <rdfs:comment xml:lang="en">Relates a model to the evaluation assessing it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Modell mit der Evaluation, die es bewertet.</rdfs:comment>
-    <rdfs:label xml:lang="en">is evaluated by</rdfs:label>
-    <rdfs:label xml:lang="de">wird evaluiert durch</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd00eb743ac094dbdb54c954a55ece638">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N25295219e88d4865ac47e87eff7dfd77"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Validation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:comment xml:lang="en">Confirmation that the requirements for an intended use are met.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind.</rdfs:comment>
-    <rdfs:label xml:lang="en">Validation</rdfs:label>
-    <rdfs:label xml:lang="de">Validierung</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.5.18.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndc98affc29c34db0a80656824155aa11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="Nfec57251327446e2a9eff1749fa247a1"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf7c4af3722364fa898f2b1f08cb76797">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Classification"/>
-    <rdf:rest rdf:nodeID="N8aa3e444cbd642c8b5f671e86032f9e4"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
+    <rdfs:comment xml:lang="en">Machine learning that learns an optimal sequence of actions by interacting with an environment in order to maximise a reward.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Maschinelles Lernen, das eine optimale Abfolge von Aktionen durch Interaktion mit einer Umgebung erlernt, um eine maximale Belohnung zu erzielen.</rdfs:comment>
+    <rdfs:label xml:lang="de">Bestärkendes Lernen</rdfs:label>
+    <rdfs:label xml:lang="en">Reinforcement Learning</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.9.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataProcess">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -318,16 +87,66 @@
     <skos:altLabel xml:lang="en">data processing</skos:altLabel>
     <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10, which describes the transformation of input data into output data without giving it an entry of its own. The class collects the steps that transformation is made of, and carries the wording of the standard as an alternative label.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Cloud">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
-    <rdfs:comment xml:lang="en">An AI system running on cloud infrastructure.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Ein KI-System, das auf Cloud-Infrastruktur ausgeführt wird.</rdfs:comment>
-    <rdfs:label xml:lang="de">Cloud</rdfs:label>
-    <rdfs:label xml:lang="en">Cloud</rdfs:label>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#consistsOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AIComponent"/>
+    <rdfs:comment xml:lang="en">Relates an AI system to a component it is built from.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit einer Komponente, aus der es aufgebaut ist.</rdfs:comment>
+    <rdfs:label xml:lang="de">besteht aus</rdfs:label>
+    <rdfs:label xml:lang="en">consists of</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Acquisition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:comment xml:lang="de">Gewinnung von Daten aus Datenquellen.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Obtaining data from data sources.</rdfs:comment>
+    <rdfs:label xml:lang="en">Acquisition</rdfs:label>
+    <rdfs:label xml:lang="de">Datenerfassung</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isEvaluatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
+    <rdfs:comment xml:lang="en">Relates a model to the evaluation assessing it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Modell mit der Evaluation, die es bewertet.</rdfs:comment>
+    <rdfs:label xml:lang="en">is evaluated by</rdfs:label>
+    <rdfs:label xml:lang="de">wird evaluiert durch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6aa16b32c452485d8116fe3c03d96cb5">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AISystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An engineered system that generates outputs such as predictions, recommendations or decisions from data in order to support human-defined objectives.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ein konstruiertes System, das auf Basis von Daten Ausgaben wie Vorhersagen, Empfehlungen oder Entscheidungen erzeugt, um menschlich definierte Ziele zu unterstützen.</rdfs:comment>
+    <rdfs:label xml:lang="en">AI System</rdfs:label>
+    <rdfs:label xml:lang="de">KI-System</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.4.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Generation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
+    <rdfs:comment xml:lang="en">Creation of new outputs such as text, images or audio from learned representations.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Erzeugung neuer Ausgaben, etwa Texte, Bilder oder Audio, auf Basis gelernter Repräsentationen.</rdfs:comment>
+    <rdfs:label xml:lang="en">Generation</rdfs:label>
+    <rdfs:label xml:lang="de">Generierung</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 9.2.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N695736e37c2148d0898bb9ab21ca3a59">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ReinforcementLearning"/>
+    <rdf:rest rdf:nodeID="N63e4a2e994324bb2aab441725909dc31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#basedOnLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#MLAlgorithm"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
+    <rdfs:comment xml:lang="en">Relates a machine learning algorithm to the kind of learning it performs.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet einen ML-Algorithmus mit der Lernart, die er ausführt.</rdfs:comment>
+    <rdfs:label xml:lang="en">based on learning</rdfs:label>
+    <rdfs:label xml:lang="de">basiert auf Lernart</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ModelAlgorithm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -338,45 +157,22 @@
     <rdfs:label xml:lang="de">Modellalgorithmus</rdfs:label>
     <skos:note xml:lang="en">Derived from ISO/IEC 22989, definition 3.3.7.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Automate">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:comment xml:lang="de">Ausführung eines Vorgangs ohne menschliches Eingreifen.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Carrying out a procedure without human intervention.</rdfs:comment>
-    <rdfs:label xml:lang="en">Automate</rdfs:label>
-    <rdfs:label xml:lang="de">Automatisieren</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. Definition 3.1.7 defines automatic as an adjective, not as a thing a model instantiates. The class is kept for the function it names in a plant.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
+    <rdfs:comment xml:lang="en">A procedure determining the parameters of a model from data according to given criteria.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien.</rdfs:comment>
+    <rdfs:label xml:lang="en">Training Algorithm</rdfs:label>
+    <rdfs:label xml:lang="de">Trainingsalgorithmus</rdfs:label>
+    <skos:note xml:lang="en">Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5323c2b72b824907b4680668dc560594">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Hybrid"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AIType"/>
-    <rdfs:comment xml:lang="en">Relates an AI system to the kind of AI it employs, that is symbolic, subsymbolic or a combination of the two.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit der Art der eingesetzten KI, also symbolisch, subsymbolisch oder kombiniert.</rdfs:comment>
-    <rdfs:label xml:lang="en">has type</rdfs:label>
-    <rdfs:label xml:lang="de">hat Art</rdfs:label>
-    <skos:note xml:lang="en">Relates a system to the kind of AI it is built on, symbolic or subsymbolic.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N048c9c4755a54219bbf2899a44ec6b10">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Cloud">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N998ec8b014b84a399946529d25100b37"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#consistsOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AIComponent"/>
-    <rdfs:comment xml:lang="en">Relates an AI system to a component it is built from.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit einer Komponente, aus der es aufgebaut ist.</rdfs:comment>
-    <rdfs:label xml:lang="de">besteht aus</rdfs:label>
-    <rdfs:label xml:lang="en">consists of</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5969923d6e1b475aba876fcc77d64640">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N504708a7db86464eb6d912ca1db218a9"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
+    <rdfs:comment xml:lang="en">An AI system running on cloud infrastructure.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ein KI-System, das auf Cloud-Infrastruktur ausgeführt wird.</rdfs:comment>
+    <rdfs:label xml:lang="de">Cloud</rdfs:label>
+    <rdfs:label xml:lang="en">Cloud</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Clustering">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -387,117 +183,30 @@
     <rdfs:label xml:lang="en">Clustering</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, clause 5.11.2.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataSink">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="de">Ort, an dem Daten abgelegt werden.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Where data is persisted to.</rdfs:comment>
-    <rdfs:label xml:lang="en">Data Sink</rdfs:label>
-    <rdfs:label xml:lang="de">Datensenke</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model, needed by the storing.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AISystem">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">An engineered system that generates outputs such as predictions, recommendations or decisions from data in order to support human-defined objectives.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Ein konstruiertes System, das auf Basis von Daten Ausgaben wie Vorhersagen, Empfehlungen oder Entscheidungen erzeugt, um menschlich definierte Ziele zu unterstützen.</rdfs:comment>
-    <rdfs:label xml:lang="en">AI System</rdfs:label>
-    <rdfs:label xml:lang="de">KI-System</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.4.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc583140c93654dac901da0bccd49ed63">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-    <rdf:rest rdf:nodeID="Nfdc133c3c73543caa17da55a24fb09e2"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasParameter">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isStoredBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N8e33b787ba0940a8b59bdd443c872030"/>
-    <rdfs:range rdf:nodeID="Nd00eb743ac094dbdb54c954a55ece638"/>
-    <rdfs:comment xml:lang="en">Relates an algorithm to a hyperparameter governing it, and a model to a parameter determined for it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet einen Algorithmus mit einem ihn steuernden Hyperparameter sowie ein Modell mit einem für es bestimmten Parameter.</rdfs:comment>
-    <rdfs:label xml:lang="en">has parameter</rdfs:label>
-    <rdfs:label xml:lang="de">hat Parameter</rdfs:label>
-    <skos:note xml:lang="en">One relation with two domains. The hyperparameter is defined on the algorithm superclass, so a training algorithm, a model algorithm and an evaluation algorithm may each carry one.</skos:note>
+    <rdfs:domain rdf:nodeID="Nff9c6f1aeecc46bc84fda318329b10c5"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Storage"/>
+    <rdfs:comment xml:lang="en">Relates data to the storing that persisted it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet Daten mit der Speicherung, die sie abgelegt hat.</rdfs:comment>
+    <rdfs:label xml:lang="en">is stored by</rdfs:label>
+    <rdfs:label xml:lang="de">wird gespeichert durch</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isValidatedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Validation"/>
-    <rdfs:comment xml:lang="en">Relates a model to the validation confirming it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Modell mit der Validierung, die es bestätigt.</rdfs:comment>
-    <rdfs:label xml:lang="en">is validated by</rdfs:label>
-    <rdfs:label xml:lang="de">wird validiert durch</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ModelParameter">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Algorithm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">An internal variable of a model affecting how its outputs are computed.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden.</rdfs:comment>
-    <rdfs:label xml:lang="en">Model Parameter</rdfs:label>
-    <rdfs:label xml:lang="de">Modellparameter</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.8.</skos:note>
+    <rdfs:comment xml:lang="de">Oberklasse für parametrisierbare mathematische Verfahren.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Superclass of parameterisable mathematical procedures.</rdfs:comment>
+    <rdfs:label xml:lang="en">Algorithm</rdfs:label>
+    <rdfs:label xml:lang="de">Algorithmus</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989, which defines the machine learning algorithm alone, 3.3.6. The superclass and two of the three specialisations are constructs of this model.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="N65bb2090a3b34e9ab8da872f3c319464">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Generation"/>
+    <rdf:rest rdf:nodeID="Na51d62e88f6b40818829d155afff3185"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#MachineLearning">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Prozess zur Optimierung von Modellparametern durch rechnergestützte Verfahren, sodass das Verhalten des Modells die zugrunde liegenden Daten oder Erfahrungen widerspiegelt.</rdfs:comment>
-    <rdfs:label xml:lang="en">Machine Learning</rdfs:label>
-    <rdfs:label xml:lang="de">Maschinelles Lernen</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.5.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd117136dbbbb4564bdd3d884c98cfe8c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataSet">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A collection of data with a shared format.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Sammlung von Daten mit gemeinsamem Format.</rdfs:comment>
-    <rdfs:label xml:lang="en">Data Set</rdfs:label>
-    <rdfs:label xml:lang="de">Datensatz</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.5.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2a9fea77841049a9a00d53b8a0a5ebeb">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N10b357d72d774e78872d630be58da852"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isPerformedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#MachineLearning"/>
-    <rdfs:comment xml:lang="en">Relates a training to the machine learning carrying it out.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Training mit dem maschinellen Lernen, das es durchführt.</rdfs:comment>
-    <rdfs:label xml:lang="en">is performed by</rdfs:label>
-    <rdfs:label xml:lang="de">wird durchgeführt durch</rdfs:label>
-    <skos:note xml:lang="en">A training is performed by a machine learning, not the other way round, so the relation is directed rather than symmetric.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">Characterises the kind of AI employed.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Charakterisiert die Art der eingesetzten KI.</rdfs:comment>
-    <rdfs:label xml:lang="en">AI Type</rdfs:label>
-    <rdfs:label xml:lang="de">KI-Art</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A collecting class of this model for the two kinds the standard defines separately.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N31c990fed08d4ffaa02416f2f8443134">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Model">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A mathematical construction generating inference or predictions from input data.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Mathematische Konstruktion, die auf Basis von Eingangsdaten Inferenz oder Vorhersagen erzeugt.</rdfs:comment>
-    <rdfs:label xml:lang="en">Model</rdfs:label>
-    <rdfs:label xml:lang="de">Modell</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.7. A model is a parameterised instance of an algorithm: the model algorithm describes the procedure without learned parameters, the model carries them.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N74dae1729e62409b8a4c27197cdfe50c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:nodeID="Naa0459c3d8a74e558175c191bf07e35e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4a862143a0d34d109085df8a1ca7cd20">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:nodeID="Ncdf379c2bb6046109b8a5eea855c9084"/>
+  <rdf:Description rdf:nodeID="N6b3d206c01b842bc96de8ab80ab2ac06">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
+    <rdf:rest rdf:nodeID="N3a07673f3748421b9f2cd7e9e9c2de3c"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -508,77 +217,14 @@
     <rdfs:label xml:lang="de">Teilüberwachtes Lernen</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.11.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#determines">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#usesData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
-    <rdfs:comment xml:lang="en">Relates a training to the model parameters it determines.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Training mit den Modellparametern, die es bestimmt.</rdfs:comment>
-    <rdfs:label xml:lang="de">bestimmt</rdfs:label>
-    <rdfs:label xml:lang="en">determines</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Necc46d47baa1406a865532517b4a9597">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N69622d20277242c2b637a171f342e872"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8e7107eedfb14c6d8cd445072a570658">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Filtering"/>
-    <rdf:rest rdf:nodeID="N8c2caa368ae649aea87b3457c3a0035b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nefb98e7aa2aa4f3681b28de0e3ba80ae">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N34024fdfcecc4cd8b5eb82ec1ca49fdf">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
-    <rdf:rest rdf:nodeID="Nd399a02d8d074bab96a29d2ede7470ee"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AIComponent"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:comment xml:lang="en">Relates an AI component to a function it performs.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine KI-Komponente mit einer Funktion, die sie ausführt.</rdfs:comment>
-    <rdfs:label xml:lang="en">has function</rdfs:label>
-    <rdfs:label xml:lang="de">hat Funktion</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIComponent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A functional element that together with further components constitutes an AI system.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Ein funktionales Element, das zusammen mit weiteren Komponenten ein KI-System bildet.</rdfs:comment>
-    <rdfs:label xml:lang="en">AI Component</rdfs:label>
-    <rdfs:label xml:lang="de">KI-Komponente</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.2.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SupervisedLearning">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
-    <rdfs:comment xml:lang="en">Machine learning using labelled data only during training.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet.</rdfs:comment>
-    <rdfs:label xml:lang="en">Supervised Learning</rdfs:label>
-    <rdfs:label xml:lang="de">Überwachtes Lernen</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.12.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ProductionData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdfs:comment xml:lang="en">Data arising during the operation of a deployed AI system, for which the system computes inferences.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet.</rdfs:comment>
-    <rdfs:label xml:lang="de">Betriebsdaten</rdfs:label>
-    <rdfs:label xml:lang="en">Production Data</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.12.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Recall">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
-    <rdfs:comment xml:lang="de">Anteil der gefundenen an allen positiven Fällen.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The proportion of positive cases that were found.</rdfs:comment>
-    <rdfs:label xml:lang="en">Recall</rdfs:label>
-    <rdfs:label xml:lang="de">Trefferquote</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8ea7265daba74e8686882cacc82842af">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N289320927d9145a5b74198aea581d2c6"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:range rdf:nodeID="N5889c1519acf4b58b282ced048525462"/>
+    <rdfs:comment xml:lang="en">Relates a function to the data it works on.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Funktion mit den Daten, auf denen sie arbeitet.</rdfs:comment>
+    <rdfs:label xml:lang="de">nutzt Daten</rdfs:label>
+    <rdfs:label xml:lang="en">uses data</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -618,82 +264,204 @@ Scope: the AI system with its life cycle, the machine learning model with its da
     <foaf:fundedBy rdf:resource="https://dtecbw.de/"/>
     <schema:codeRepository rdf:resource="https://github.com/schiesem/aias"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5d3707e7b1eb439395ff89c789838903">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:nodeID="N7cfd9977d1d2463f9353253f9ee13e2e"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isAcquiredBy">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isPerformedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N4ae838924a6a44ba81735734101b969f"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Acquisition"/>
-    <rdfs:comment xml:lang="en">Relates data to the acquisition that obtained it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet Daten mit der Erfassung, die sie gewonnen hat.</rdfs:comment>
-    <rdfs:label xml:lang="en">is acquired by</rdfs:label>
-    <rdfs:label xml:lang="de">wird erfasst durch</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#MachineLearning"/>
+    <rdfs:comment xml:lang="en">Relates a training to the machine learning carrying it out.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Training mit dem maschinellen Lernen, das es durchführt.</rdfs:comment>
+    <rdfs:label xml:lang="en">is performed by</rdfs:label>
+    <rdfs:label xml:lang="de">wird durchgeführt durch</rdfs:label>
+    <skos:note xml:lang="en">A training is performed by a machine learning, not the other way round, so the relation is directed rather than symmetric.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isStoredBy">
+  <rdf:Description rdf:nodeID="N6c19563d0c0c42949ba4cd289ccc4879">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Clustering"/>
+    <rdf:rest rdf:nodeID="N65bb2090a3b34e9ab8da872f3c319464"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasDataSource">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N4ba6abbfa0474b4f98cd22b8588aea28"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Storing"/>
-    <rdfs:comment xml:lang="en">Relates data to the storing that persisted it.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet Daten mit der Speicherung, die sie abgelegt hat.</rdfs:comment>
-    <rdfs:label xml:lang="en">is stored by</rdfs:label>
-    <rdfs:label xml:lang="de">wird gespeichert durch</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Acquisition"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#DataSource"/>
+    <rdfs:comment xml:lang="en">Relates an acquisition to the source it obtains data from.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Erfassung mit der Quelle, aus der sie Daten gewinnt.</rdfs:comment>
+    <rdfs:label xml:lang="en">has data source</rdfs:label>
+    <rdfs:label xml:lang="de">hat Datenquelle</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Annotation">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AIComponent"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:comment xml:lang="en">Relates an AI component to a function it performs.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine KI-Komponente mit einer Funktion, die sie ausführt.</rdfs:comment>
+    <rdfs:label xml:lang="en">has function</rdfs:label>
+    <rdfs:label xml:lang="de">hat Funktion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Filtering">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="en">Addition of significant information as metadata, for example labels or provenance.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Ergänzung signifikanter Informationen als Metadaten, etwa Labels oder Herkunftsinformationen.</rdfs:comment>
-    <rdfs:label xml:lang="de">Annotation</rdfs:label>
-    <rdfs:label xml:lang="en">Annotation</rdfs:label>
+    <rdfs:comment xml:lang="de">Entfernung unerwünschter Daten.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Removal of unwanted data.</rdfs:comment>
+    <rdfs:label xml:lang="en">Filtering</rdfs:label>
+    <rdfs:label xml:lang="de">Filterung</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#usesData">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#determines">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:range rdf:nodeID="N5969923d6e1b475aba876fcc77d64640"/>
-    <rdfs:comment xml:lang="en">Relates a function to the data it works on.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Funktion mit den Daten, auf denen sie arbeitet.</rdfs:comment>
-    <rdfs:label xml:lang="de">nutzt Daten</rdfs:label>
-    <rdfs:label xml:lang="en">uses data</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
+    <rdfs:comment xml:lang="en">Relates a training to the model parameters it determines.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Training mit den Modellparametern, die es bestimmt.</rdfs:comment>
+    <rdfs:label xml:lang="de">bestimmt</rdfs:label>
+    <rdfs:label xml:lang="en">determines</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfcd072d55610400e9b09c44e06fff344">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SymbolicAI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIType"/>
+    <rdfs:comment xml:lang="de">Techniken, die mit expliziten Symbolen und Regeln arbeiten, um Schlussfolgerungen zu ziehen.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Techniques working with explicit symbols and rules in order to draw inferences.</rdfs:comment>
+    <rdfs:label xml:lang="en">Symbolic AI</rdfs:label>
+    <rdfs:label xml:lang="de">Symbolische KI</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.33.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Classification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
+    <rdfs:comment xml:lang="en">Assignment of inputs to discrete classes.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Zuordnung von Eingaben zu diskreten Klassen.</rdfs:comment>
+    <rdfs:label xml:lang="en">Classification</rdfs:label>
+    <rdfs:label xml:lang="de">Klassifikation</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 9.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Wo ein KI-System ausgeführt wird, also auf Cloud-Infrastruktur, prozessnah am Edge oder auf beide verteilt.</rdfs:comment>
+    <rdfs:label xml:lang="en">System Design</rdfs:label>
+    <rdfs:label xml:lang="de">Systemauslegung</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. Clause 8.6.2 discusses cloud and edge computing without defining the choice between them.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#creates">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Prediction"/>
+    <rdfs:comment xml:lang="en">Relates an inference to the prediction it produces.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Inferenz mit der Vorhersage, die sie erzeugt.</rdfs:comment>
+    <rdfs:label xml:lang="en">creates</rdfs:label>
+    <rdfs:label xml:lang="de">erzeugt</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A function transforming inputs into outputs and thereby representing one step of the AI life cycle.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet.</rdfs:comment>
+    <rdfs:label xml:lang="en">AI Function</rdfs:label>
+    <rdfs:label xml:lang="de">KI-Funktion</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ModelParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An internal variable of a model affecting how its outputs are computed.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Interne Variable eines Modells, die beeinflusst, wie dessen Ausgaben berechnet werden.</rdfs:comment>
+    <rdfs:label xml:lang="en">Model Parameter</rdfs:label>
+    <rdfs:label xml:lang="de">Modellparameter</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.8.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Precision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
+    <rdfs:comment xml:lang="de">Anteil der korrekten Ergebnisse an den als positiv gemeldeten.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The proportion of correct results among those reported positive.</rdfs:comment>
+    <rdfs:label xml:lang="en">Precision</rdfs:label>
+    <rdfs:label xml:lang="de">Präzision</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Storage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:comment xml:lang="de">Ablage von Daten in einer Datensenke.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Persisting data to a data sink.</rdfs:comment>
+    <rdfs:label xml:lang="de">Speicherung</rdfs:label>
+    <rdfs:label xml:lang="en">Storage</rdfs:label>
+    <skos:altLabel xml:lang="en">storing</skos:altLabel>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10, which names the step "storing". The class carries that wording as an alternative label and is named for the thing the step produces, which is how the literature of engineering practice refers to it.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3f2d975a0e4845e98116cec9ad19bdcf">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9317a225a9634d50bb588fffa0e06bc0">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#executes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
+    <rdfs:comment xml:lang="en">Relates a model to the inference it carries out.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Modell mit der Inferenz, die es ausführt.</rdfs:comment>
+    <rdfs:label xml:lang="en">executes</rdfs:label>
+    <rdfs:label xml:lang="de">führt aus</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8dec85da0c9649ef8ee9d74abd3e80c2">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Validation"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="Nd6c07333f762484ba33c9b19ad9eaa91">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingData"/>
+    <rdf:rest rdf:nodeID="N375f47b282c9439598bbc2050b49ded2"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne6faf9ae00904e33a1082684287507cf">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ProductionData"/>
-    <rdf:rest rdf:nodeID="N71594c8ee7594be9898431c9fe6895e6"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="de">Ort, aus dem Daten gewonnen werden.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Where data is obtained from.</rdfs:comment>
+    <rdfs:label xml:lang="en">Data Source</rdfs:label>
+    <rdfs:label xml:lang="de">Datenquelle</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model, needed by the acquisition.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncdf379c2bb6046109b8a5eea855c9084">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="N13f705dae9584cb78942a4135b969244">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
+    <rdf:rest rdf:nodeID="Nd4979c082abe4c78b37ebcdffecfc338"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#EvaluationData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:resource="https://w3id.org/aias/odp/iso22989#TestData"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdfs:comment xml:lang="en">Data used to assess the performance of a final model, disjoint from training and validation data.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden und disjunkt zu Trainings- und Validierungsdaten sind.</rdfs:comment>
+    <rdfs:label xml:lang="en">Evaluation Data</rdfs:label>
+    <rdfs:label xml:lang="de">Evaluationsdaten</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.14.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndf87ef3b050544e5a0e4d9256eb3503f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N2ae3bf47cf7f45d280128804715fd028"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N169a6111d447413bb4e318eebbdf8d41">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Imputation"/>
+    <rdf:rest rdf:nodeID="Nb017ac4158e5455d9a63121b25f75e5d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#EvaluationMetric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A measure against which the performance of a model is assessed.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Maß, anhand dessen die Leistung eines Modells bewertet wird.</rdfs:comment>
+    <rdfs:label xml:lang="en">Evaluation Metric</rdfs:label>
+    <rdfs:label xml:lang="de">Evaluationsmetrik</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Model">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A mathematical construction generating inference or predictions from input data.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Mathematische Konstruktion, die auf Basis von Eingangsdaten Inferenz oder Vorhersagen erzeugt.</rdfs:comment>
+    <rdfs:label xml:lang="en">Model</rdfs:label>
+    <rdfs:label xml:lang="de">Modell</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.7. A model is a parameterised instance of an algorithm: the model algorithm describes the procedure without learned parameters, the model carries them.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Hybrid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
+    <rdfs:comment xml:lang="en">An AI system split between cloud infrastructure and the edge.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ein KI-System, das auf Cloud und Edge verteilt ausgeführt wird.</rdfs:comment>
+    <rdfs:label xml:lang="de">Hybrid</rdfs:label>
+    <rdfs:label xml:lang="en">Hybrid</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SupervisedLearning">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
-    <rdfs:comment xml:lang="en">Machine learning using unlabelled data only during training.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet.</rdfs:comment>
-    <rdfs:label xml:lang="en">Unsupervised Learning</rdfs:label>
-    <rdfs:label xml:lang="de">Unüberwachtes Lernen</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.17.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf5aa70d36d95414f943fe43a2c34d533">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Recall"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N10c87fc12f9f456bbe7007c152af4964">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ProductionData"/>
-    <rdf:rest rdf:nodeID="Nfbcae407428940f6b3c3e7f7c31e23e1"/>
+    <rdfs:comment xml:lang="en">Machine learning using labelled data only during training.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Maschinelles Lernen, das während des Trainings ausschließlich gekennzeichnete Daten verwendet.</rdfs:comment>
+    <rdfs:label xml:lang="en">Supervised Learning</rdfs:label>
+    <rdfs:label xml:lang="de">Überwachtes Lernen</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.12.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#LearningType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -703,18 +471,60 @@ Scope: the AI system with its life cycle, the machine learning model with its da
     <rdfs:label xml:lang="de">Lernart</rdfs:label>
     <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A collecting class of this model for the four kinds the standard defines separately.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ValidationData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdfs:comment xml:lang="en">Data used to compare the performance of candidate models, for example when selecting hyperparameters or models.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen.</rdfs:comment>
-    <rdfs:label xml:lang="en">Validation Data</rdfs:label>
-    <rdfs:label xml:lang="de">Validierungsdaten</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.15.</skos:note>
+  <rdf:Description rdf:nodeID="Nc2cfd2bbfeb64936b1e1e737d1da938c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Normalization"/>
+    <rdf:rest rdf:nodeID="N0ee9caae3a87474c90faddfe4f4d309f"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd724410a0a374306a195596c8f7fe80b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f27be12261d48418c82c53a8c36a8c2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N62accfe3ef66410fa0bb70936d78237c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c878e731e4743439aa9e82e3661419f">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="N80794c38f4df44f0b685c4388360f553"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1490352998bb4dd0ae8f52b1d9d56a92">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#F1Score"/>
+    <rdf:rest rdf:nodeID="N491cb41137d44623a16090f9fcbbf33e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AIType"/>
+    <rdfs:comment xml:lang="en">Relates an AI system to the kind of AI it employs, that is symbolic, subsymbolic or a combination of the two.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit der Art der eingesetzten KI, also symbolisch, subsymbolisch oder kombiniert.</rdfs:comment>
+    <rdfs:label xml:lang="en">has type</rdfs:label>
+    <rdfs:label xml:lang="de">hat Art</rdfs:label>
+    <skos:note xml:lang="en">Relates a system to the kind of AI it is built on, symbolic or subsymbolic.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#usesMetric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nc0650f45669f4324be67368a9c538704"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
+    <rdfs:comment xml:lang="en">Relates an evaluation, or the algorithm it runs, to the metric it measures against.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird.</rdfs:comment>
+    <rdfs:label xml:lang="de">nutzt Metrik</rdfs:label>
+    <rdfs:label xml:lang="en">uses metric</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0650f45669f4324be67368a9c538704">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N8e52fa8a91484340af43b74a07c84c9e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N14a593fbacff443d90fc5b328605c0f4"/>
+    <rdfs:range rdf:nodeID="Nf7d5417de8524536974e2150aa43180d"/>
+    <rdfs:comment xml:lang="en">Relates an algorithm to a hyperparameter governing it, and a model to a parameter determined for it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet einen Algorithmus mit einem ihn steuernden Hyperparameter sowie ein Modell mit einem für es bestimmten Parameter.</rdfs:comment>
+    <rdfs:label xml:lang="en">has parameter</rdfs:label>
+    <rdfs:label xml:lang="de">hat Parameter</rdfs:label>
+    <skos:note xml:lang="en">One relation with two domains. The hyperparameter is defined on the algorithm superclass, so a training algorithm, a model algorithm and an evaluation algorithm may each carry one.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Inference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -725,131 +535,42 @@ Scope: the AI system with its life cycle, the machine learning model with its da
     <rdfs:label xml:lang="de">Inferenz</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.17.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Sampling">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Prediction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="de">Auswahl einer repräsentativen Teilmenge der Daten.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Selection of a representative subset of the data.</rdfs:comment>
-    <rdfs:label xml:lang="en">Sampling</rdfs:label>
-    <rdfs:label xml:lang="de">Stichprobenziehung</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.4.</skos:note>
+    <rdfs:comment xml:lang="de">Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The primary output of an AI system when input data is processed.</rdfs:comment>
+    <rdfs:label xml:lang="en">Prediction</rdfs:label>
+    <rdfs:label xml:lang="de">Vorhersage</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.27.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9f3c201184b34a5e85030cb7f5282a9f">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Labeling"/>
-    <rdf:rest rdf:nodeID="Ne71bf21a1c4a463c9b3a69be436f1e5e"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#MLAlgorithm">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#TestData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"/>
-    <rdfs:comment xml:lang="en">A specialisation of the training algorithm for machine learning, to which a kind of learning is assigned.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Spezialisierung des Trainingsalgorithmus für das maschinelle Lernen, dem eine Lernart zugeordnet ist.</rdfs:comment>
-    <rdfs:label xml:lang="de">ML-Algorithmus</rdfs:label>
-    <rdfs:label xml:lang="en">Machine Learning Algorithm</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.6.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdfs:comment xml:lang="en">Data used to assess the performance of a final model.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Daten, die zur Beurteilung der Leistung eines finalen Modells verwendet werden.</rdfs:comment>
+    <rdfs:label xml:lang="en">Test Data</rdfs:label>
+    <rdfs:label xml:lang="de">Testdaten</rdfs:label>
+    <skos:note xml:lang="en">Equivalent to the evaluation data: the two name the same thing, one in the wording of the standard and one in the wording of practice.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8c1227dad1124550b4ddecf9ee869588">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#createsProcessedData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
+    <rdfs:range rdf:nodeID="N6032cf48f01c4526b42e7b4215631691"/>
+    <rdfs:comment xml:lang="en">Relates a data process to the data it produces.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet einen Datenprozess mit den Daten, die er erzeugt.</rdfs:comment>
+    <rdfs:label xml:lang="en">creates processed data</rdfs:label>
+    <rdfs:label xml:lang="de">erzeugt verarbeitete Daten</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd85351d2d0f849d196d774be01fcac72">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N1d928bcc0ef24cf48f44e62fee33b97e"/>
+    <owl:members rdf:nodeID="Nec6a9117304e4910b2d50832895a0234"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N14e18dee09a146b7876d4c9a947f3818">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="Nc4acd30fff3349b481bb9e36cba75495"/>
+  <rdf:Description rdf:nodeID="N5a00484ac6854e0dacec066e7591f612">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingData"/>
+    <rdf:rest rdf:nodeID="N800f55b39abc421dacd049f764b9da23"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne71bf21a1c4a463c9b3a69be436f1e5e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Merging"/>
-    <rdf:rest rdf:nodeID="N52d7de014ba5472e9c07df48da0320f3"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncf81793fa8084fe9a1f227bb3e6202d2">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#MachineLearning"/>
-    <rdf:rest rdf:nodeID="Nd51fdcae8e6b4284ad5e9e15a388b474"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N504708a7db86464eb6d912ca1db218a9">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="N4a862143a0d34d109085df8a1ca7cd20"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5fa5e37482c648cca33b6401e1b4a03b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AIType"/>
-    <rdf:rest rdf:nodeID="N2a078514e5984606bf301b7f5940302e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe097749896944048f5f4c20407803bf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="Nbe5f4671aad04de999e693d9cc965efb"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc4acd30fff3349b481bb9e36cba75495">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ReinforcementLearning"/>
-    <rdf:rest rdf:nodeID="N3d340e7dad4f49acb91f80a0f2291697"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N24f06b214d8a494eb9c9dba1130c6eca">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8aa3e444cbd642c8b5f671e86032f9e4">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Clustering"/>
-    <rdf:rest rdf:nodeID="N1f4fe913a6fa43e6891658ef470f8303"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N36777b7ea6b94066a3ab030a2f940702">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Naf5dbc1402724552a90ca12497b79e46"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N260cf6edcccf44b599518258e12566e9">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Edge"/>
-    <rdf:rest rdf:nodeID="N5323c2b72b824907b4680668dc560594"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7eca35e802f04cd5a3796995b02383d8">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Acquisition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdfs:comment xml:lang="de">Gewinnung von Daten aus Datenquellen.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Obtaining data from data sources.</rdfs:comment>
-    <rdfs:label xml:lang="en">Acquisition</rdfs:label>
-    <rdfs:label xml:lang="de">Datenerfassung</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N289320927d9145a5b74198aea581d2c6">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Accuracy"/>
-    <rdf:rest rdf:nodeID="Ndcb32060bdfb4e5e8373c8308cb52431"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndcb32060bdfb4e5e8373c8308cb52431">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#F1Score"/>
-    <rdf:rest rdf:nodeID="N89656efd0f954ba8a697e8aee06abfad"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe5f4671aad04de999e693d9cc965efb">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationData"/>
-    <rdf:rest rdf:nodeID="N10c87fc12f9f456bbe7007c152af4964"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
-    <rdfs:comment xml:lang="en">A procedure assessing a model against an evaluation metric.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik.</rdfs:comment>
-    <rdfs:label xml:lang="en">Evaluation Algorithm</rdfs:label>
-    <rdfs:label xml:lang="de">Evaluationsalgorithmus</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N52d7de014ba5472e9c07df48da0320f3">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Normalization"/>
-    <rdf:rest rdf:nodeID="N88162b0079004b88adef4ddbd195eaf4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfdc133c3c73543caa17da55a24fb09e2">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
-    <rdf:rest rdf:nodeID="N5fa5e37482c648cca33b6401e1b4a03b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SystemDesign">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">Where an AI system runs, that is on cloud infrastructure, near the process at the edge, or split between the two.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Wo ein KI-System ausgeführt wird, also auf Cloud-Infrastruktur, prozessnah am Edge oder auf beide verteilt.</rdfs:comment>
-    <rdfs:label xml:lang="en">System Design</rdfs:label>
-    <rdfs:label xml:lang="de">Systemauslegung</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. Clause 8.6.2 discusses cloud and edge computing without defining the choice between them.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#SubSymbolicAI">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -861,214 +582,18 @@ Scope: the AI system with its life cycle, the machine learning model with its da
     <rdfs:label xml:lang="de">Subsymbolische KI</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.34.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N71594c8ee7594be9898431c9fe6895e6">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingData"/>
-    <rdf:rest rdf:nodeID="Na4bfa3be2ccb47c8b3b3603b66e6cf14"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#fulfillsTask">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Prediction"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
-    <rdfs:comment xml:lang="en">Relates a prediction to the task it addresses.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Vorhersage mit der Aufgabe, die sie adressiert.</rdfs:comment>
-    <rdfs:label xml:lang="de">erfüllt Aufgabe</rdfs:label>
-    <rdfs:label xml:lang="en">fulfills task</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N71460ea8701c4d949c00863e68b3553c">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="Ne6faf9ae00904e33a1082684287507cf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Normalization">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Augmentation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="en">Adjustment of data values to a common scale so that they become mathematically comparable.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Anpassung von Datenwerten auf eine gemeinsame Skala, um sie mathematisch vergleichbar zu machen.</rdfs:comment>
-    <rdfs:label xml:lang="de">Normalisierung</rdfs:label>
-    <rdfs:label xml:lang="en">Normalization</rdfs:label>
+    <rdfs:comment xml:lang="en">Creation of additional data by transforming existing data in order to enlarge a dataset.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Erzeugung zusätzlicher Daten durch Transformation vorhandener Daten, um einen Datensatz zu erweitern.</rdfs:comment>
+    <rdfs:label xml:lang="en">Augmentation</rdfs:label>
+    <rdfs:label xml:lang="de">Augmentierung</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5ef87442f6c4491c80425a99e8d3168b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Storing"/>
-    <rdf:rest rdf:nodeID="N3462650e68ec4b02859388069e9bcd7c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4ae838924a6a44ba81735734101b969f">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Nc2908c5be78344f182cd1887418c82e8"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3c8bbac2949d4b09a9907854c0f7229d">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
-    <rdf:rest rdf:nodeID="N53f3cd8b46884159888b94417e16581b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na4bfa3be2ccb47c8b3b3603b66e6cf14">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ValidationData"/>
+  <rdf:Description rdf:nodeID="N90bb3418a2a04be1a99ce658537ab2ef">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N998ec8b014b84a399946529d25100b37">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="Nd117136dbbbb4564bdd3d884c98cfe8c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2e65bb0671e34c0094e94ddcfc32a97e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Automate"/>
-    <rdf:rest rdf:nodeID="N3d59b1c5a76f49b49ede1550ffe62a4c"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N61753c626aeb4c1cb50c4e720e3b5ac4"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
-    <rdfs:comment xml:lang="en">Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt.</rdfs:comment>
-    <rdfs:label xml:lang="en">based on algorithm</rdfs:label>
-    <rdfs:label xml:lang="de">basiert auf Algorithmus</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd51fdcae8e6b4284ad5e9e15a388b474">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdf:rest rdf:nodeID="N3c8bbac2949d4b09a9907854c0f7229d"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#EvaluationMetric">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A measure against which the performance of a model is assessed.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Maß, anhand dessen die Leistung eines Modells bewertet wird.</rdfs:comment>
-    <rdfs:label xml:lang="en">Evaluation Metric</rdfs:label>
-    <rdfs:label xml:lang="de">Evaluationsmetrik</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Naa0459c3d8a74e558175c191bf07e35e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N88162b0079004b88adef4ddbd195eaf4">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sampling"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf9e4ffac8d314f26a14d7f648acf35b5">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
-    <rdf:rest rdf:nodeID="N7d92bd011bb04aca9d529821453b131e"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A function transforming inputs into outputs and thereby representing one step of the AI life cycle.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Funktion, die Eingaben in Ausgaben transformiert und dabei einen Schritt des KI-Lebenszyklus abbildet.</rdfs:comment>
-    <rdfs:label xml:lang="en">AI Function</rdfs:label>
-    <rdfs:label xml:lang="de">KI-Funktion</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A collecting class of this model for the eight functions below.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isComposedOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N048c9c4755a54219bbf2899a44ec6b10"/>
-    <rdfs:range rdf:nodeID="N9d18444dca71485bbdeea2a57631e1f5"/>
-    <rdfs:comment xml:lang="en">Relates a dataset to the data it collects, and data to the samples it consists of.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen.</rdfs:comment>
-    <rdfs:label xml:lang="de">besteht aus</rdfs:label>
-    <rdfs:label xml:lang="en">is composed of</rdfs:label>
-    <skos:note xml:lang="en">One relation used at two levels: a dataset is composed of data, and data of samples. Its domain and range are therefore unions, since each covers both levels.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1d928bcc0ef24cf48f44e62fee33b97e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Cloud"/>
-    <rdf:rest rdf:nodeID="N260cf6edcccf44b599518258e12566e9"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N10b357d72d774e78872d630be58da852">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Acquisition"/>
-    <rdf:rest rdf:nodeID="N2e65bb0671e34c0094e94ddcfc32a97e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N52c66d655cab40048da48c46c82a9d66">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Prediction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="de">Primäre Ausgabe eines KI-Systems, wenn Eingabedaten verarbeitet werden.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The primary output of an AI system when input data is processed.</rdfs:comment>
-    <rdfs:label xml:lang="en">Prediction</rdfs:label>
-    <rdfs:label xml:lang="de">Vorhersage</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.27.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#F1Score">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
-    <rdfs:comment xml:lang="de">Harmonisches Mittel aus Präzision und Trefferquote.</rdfs:comment>
-    <rdfs:comment xml:lang="en">The harmonic mean of precision and recall.</rdfs:comment>
-    <rdfs:label xml:lang="en">F1 Score</rdfs:label>
-    <rdfs:label xml:lang="de">F1-Maß</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Generation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
-    <rdfs:comment xml:lang="en">Creation of new outputs such as text, images or audio from learned representations.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Erzeugung neuer Ausgaben, etwa Texte, Bilder oder Audio, auf Basis gelernter Repräsentationen.</rdfs:comment>
-    <rdfs:label xml:lang="en">Generation</rdfs:label>
-    <rdfs:label xml:lang="de">Generierung</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 9.2.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3e13b503fe0042608a101c20b5fcd408">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ModelAlgorithm"/>
-    <rdf:rest rdf:nodeID="N52c66d655cab40048da48c46c82a9d66"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Naa8dcdcbfd7f470a8d8fbf96c074763b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#SupervisedLearning"/>
-    <rdf:rest rdf:nodeID="Nd724410a0a374306a195596c8f7fe80b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Naf5dbc1402724552a90ca12497b79e46">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
-    <rdf:rest rdf:nodeID="N7eca35e802f04cd5a3796995b02383d8"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4f5f8b0f6adb48c7b641d49978433f42">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:nodeID="N92f9d1d603c240498616dfe637317478"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8d2782a0db16419b80411c5594a86d95">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N497cc0d3d3234659ad7ee80e0b89d33b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Sample">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">An atomic data element processed in large numbers by an ML algorithm or an AI system.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Atomares Datenelement, das von einem ML-Algorithmus oder KI-System in großer Zahl verarbeitet wird.</rdfs:comment>
-    <rdfs:label xml:lang="de">Datenelement</rdfs:label>
-    <rdfs:label xml:lang="en">Sample</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.13.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N61753c626aeb4c1cb50c4e720e3b5ac4">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N34024fdfcecc4cd8b5eb82ec1ca49fdf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N92f9d1d603c240498616dfe637317478">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasDesign">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
-    <rdfs:comment xml:lang="en">Relates an AI system to where it runs.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit dem Ort seiner Ausführung.</rdfs:comment>
-    <rdfs:label xml:lang="en">has design</rdfs:label>
-    <rdfs:label xml:lang="de">hat Auslegung</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataSource">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="de">Ort, aus dem Daten gewonnen werden.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Where data is obtained from.</rdfs:comment>
-    <rdfs:label xml:lang="en">Data Source</rdfs:label>
-    <rdfs:label xml:lang="de">Datenquelle</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model, needed by the acquisition.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N29eecb8319124564810db38d8d13afd9">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="N238d5d73a38f42319be8ba8b97e3059d"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AITask">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A task to be carried out by the AI in order to reach a given objective.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Eine durch die KI auszuführende Aufgabe zur Erreichung eines bestimmten Ziels.</rdfs:comment>
-    <rdfs:label xml:lang="en">AI Task</rdfs:label>
-    <rdfs:label xml:lang="de">KI-Aufgabe</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.35.</skos:note>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Data">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1078,99 +603,38 @@ Scope: the AI system with its life cycle, the machine learning model with its da
     <rdfs:label xml:lang="de">Daten</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.3.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Filtering">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Validation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
-    <rdfs:comment xml:lang="de">Entfernung unerwünschter Daten.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Removal of unwanted data.</rdfs:comment>
-    <rdfs:label xml:lang="en">Filtering</rdfs:label>
-    <rdfs:label xml:lang="de">Filterung</rdfs:label>
-    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:comment xml:lang="en">Confirmation that the requirements for an intended use are met.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind.</rdfs:comment>
+    <rdfs:label xml:lang="en">Validation</rdfs:label>
+    <rdfs:label xml:lang="de">Validierung</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.5.18.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N001ba7b085da4887b748e8ef2f3ab286">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Regression"/>
+  <rdf:Description rdf:nodeID="N701fe18a80eb409ab300020f51455e77">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N6fbbfe2a62924f828e3098418a3457cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32449f3b3f614b6fb4f02b4f1a2c7aa4">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#usesMetric">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N36777b7ea6b94066a3ab030a2f940702"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
-    <rdfs:comment xml:lang="en">Relates an evaluation, or the algorithm it runs, to the metric it measures against.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet eine Evaluation oder den von ihr ausgeführten Algorithmus mit der Metrik, gegen die gemessen wird.</rdfs:comment>
-    <rdfs:label xml:lang="de">nutzt Metrik</rdfs:label>
-    <rdfs:label xml:lang="en">uses metric</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8c2caa368ae649aea87b3457c3a0035b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Imputation"/>
-    <rdf:rest rdf:nodeID="N9f3c201184b34a5e85030cb7f5282a9f"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7d92bd011bb04aca9d529821453b131e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
-    <rdf:rest rdf:nodeID="N5ef87442f6c4491c80425a99e8d3168b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N238d5d73a38f42319be8ba8b97e3059d">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
-    <rdf:rest rdf:nodeID="N2ab81170a2e94412b1def9fd0ea27fb0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N33bb2432102a495da4d89717fb55d270">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
-    <rdf:rest rdf:nodeID="N9317a225a9634d50bb588fffa0e06bc0"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Algorithm">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#F1Score">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="de">Oberklasse für parametrisierbare mathematische Verfahren.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Superclass of parameterisable mathematical procedures.</rdfs:comment>
-    <rdfs:label xml:lang="en">Algorithm</rdfs:label>
-    <rdfs:label xml:lang="de">Algorithmus</rdfs:label>
-    <skos:note xml:lang="en">Not a term of ISO/IEC 22989, which defines the machine learning algorithm alone, 3.3.6. The superclass and two of the three specialisations are constructs of this model.</skos:note>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
+    <rdfs:comment xml:lang="de">Harmonisches Mittel aus Präzision und Trefferquote.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The harmonic mean of precision and recall.</rdfs:comment>
+    <rdfs:label xml:lang="en">F1 Score</rdfs:label>
+    <rdfs:label xml:lang="de">F1-Maß</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfbcae407428940f6b3c3e7f7c31e23e1">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingData"/>
-    <rdf:rest rdf:nodeID="N10aed263df9b4667a58cf121cdaad51b"/>
+  <rdf:Description rdf:nodeID="N4bd7432969f441afb584df370b6a120d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N9f2a726a3f0f43908f8460dd24d30163"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N497cc0d3d3234659ad7ee80e0b89d33b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Annotation"/>
-    <rdf:rest rdf:nodeID="N7726765980c146a09875fa38aa06480c"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
-    <rdfs:comment xml:lang="en">A procedure determining the parameters of a model from data according to given criteria.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verfahren zur Bestimmung der Parameter eines Modells aus Daten nach vorgegebenen Kriterien.</rdfs:comment>
-    <rdfs:label xml:lang="en">Training Algorithm</rdfs:label>
-    <rdfs:label xml:lang="de">Trainingsalgorithmus</rdfs:label>
-    <skos:note xml:lang="en">Derived from ISO/IEC 22989, definition 3.3.6. A particular procedure such as gradient descent is recorded as a named instance of this class rather than as a class of its own.</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N25295219e88d4865ac47e87eff7dfd77">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Hyperparameter"/>
-    <rdf:rest rdf:nodeID="Nfcd072d55610400e9b09c44e06fff344"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasTask">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
-    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
-    <rdfs:comment xml:lang="en">Relates an AI system to a task it fulfils.</rdfs:comment>
-    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit einer Aufgabe, die es erfüllt.</rdfs:comment>
-    <rdfs:label xml:lang="en">has task</rdfs:label>
-    <rdfs:label xml:lang="de">hat Aufgabe</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nedb5a98bfe74422ba5223c9170bc3eaa">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
-    <rdf:rest rdf:nodeID="N65450a43d4244d98a97b1f80c33e6736"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N69622d20277242c2b637a171f342e872">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="N5d3707e7b1eb439395ff89c789838903"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6f96e24994774dd3ae4535e5f7a228ab">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
-    <rdf:rest rdf:nodeID="Ncf81793fa8084fe9a1f227bb3e6202d2"/>
+  <rdf:Description rdf:nodeID="Nbb9b99434ff54c46910761c842320693">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Edge"/>
+    <rdf:rest rdf:nodeID="Ne58bd1fcfa1c4523a4558b4f593f492c"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Evaluation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1181,128 +645,665 @@ Scope: the AI system with its life cycle, the machine learning model with its da
     <rdfs:label xml:lang="en">Evaluation</rdfs:label>
     <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N789385e241e54f009651215032f987ff">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
-    <rdf:rest rdf:nodeID="Nc583140c93654dac901da0bccd49ed63"/>
+  <rdf:Description rdf:nodeID="N62accfe3ef66410fa0bb70936d78237c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ProductionData"/>
+    <rdf:rest rdf:nodeID="Nd6c07333f762484ba33c9b19ad9eaa91"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N89656efd0f954ba8a697e8aee06abfad">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Precision"/>
-    <rdf:rest rdf:nodeID="Nf5aa70d36d95414f943fe43a2c34d533"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Training">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:comment xml:lang="de">Bestimmung oder Verbesserung der Parameter eines Modells anhand von Trainingsdaten.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Determining or improving the parameters of a model from training data.</rdfs:comment>
+    <rdfs:label xml:lang="de">Training</rdfs:label>
+    <rdfs:label xml:lang="en">Training</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.15.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/bibliographicCitation">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasDataSink">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Storage"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#DataSink"/>
+    <rdfs:comment xml:lang="en">Relates a storing to the sink it persists data to.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt.</rdfs:comment>
+    <rdfs:label xml:lang="en">has data sink</rdfs:label>
+    <rdfs:label xml:lang="de">hat Datensenke</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N61920be7c433486c981389f3c017e641">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="N5b31ebc7341047b68f32420f0bd7e14d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ValidationData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdfs:comment xml:lang="en">Data used to compare the performance of candidate models, for example when selecting hyperparameters or models.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Daten, die zum Vergleich der Leistung verschiedener Kandidatenmodelle genutzt werden, etwa zur Auswahl von Hyperparametern oder Modellen.</rdfs:comment>
+    <rdfs:label xml:lang="en">Validation Data</rdfs:label>
+    <rdfs:label xml:lang="de">Validierungsdaten</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.15.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#fulfillsTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Prediction"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
+    <rdfs:comment xml:lang="en">Relates a prediction to the task it addresses.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet eine Vorhersage mit der Aufgabe, die sie adressiert.</rdfs:comment>
+    <rdfs:label xml:lang="de">erfüllt Aufgabe</rdfs:label>
+    <rdfs:label xml:lang="en">fulfills task</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne58bd1fcfa1c4523a4558b4f593f492c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Hybrid"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N25555e0d0cee4342b0292c4e8b19080c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Annotation"/>
+    <rdf:rest rdf:nodeID="Nbf7720dceb974aeb83b29213278e04e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Sample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An atomic data element processed in large numbers by an ML algorithm or an AI system.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Atomares Datenelement, das von einem ML-Algorithmus oder KI-System in großer Zahl verarbeitet wird.</rdfs:comment>
+    <rdfs:label xml:lang="de">Datenelement</rdfs:label>
+    <rdfs:label xml:lang="en">Sample</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.13.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isComposedOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N854511314edf41f798f7193d049133ae"/>
+    <rdfs:range rdf:nodeID="N630947289b87479c8e1a13531d4c97df"/>
+    <rdfs:comment xml:lang="en">Relates a dataset to the data it collects, and data to the samples it consists of.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet einen Datensatz mit den Daten, die er sammelt, sowie Daten mit den Datenelementen, aus denen sie bestehen.</rdfs:comment>
+    <rdfs:label xml:lang="de">besteht aus</rdfs:label>
+    <rdfs:label xml:lang="en">is composed of</rdfs:label>
+    <skos:note xml:lang="en">One relation used at two levels: a dataset is composed of data, and data of samples. Its domain and range are therefore unions, since each covers both levels.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N63e4a2e994324bb2aab441725909dc31">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning"/>
+    <rdf:rest rdf:nodeID="N84cc2757f4894167b70c3e4e5d59a116"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7cfd9977d1d2463f9353253f9ee13e2e">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Hyperparameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A property of an algorithm governing its behaviour.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Eigenschaft eines Algorithmus, die dessen Verhalten steuert.</rdfs:comment>
+    <rdfs:label xml:lang="de">Hyperparameter</rdfs:label>
+    <rdfs:label xml:lang="en">Hyperparameter</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.4. Placed on the algorithm superclass, so that a training algorithm, a model algorithm and an evaluation algorithm may each carry one: a learning rate, the number of layers of a network, the threshold of a metric.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#TrainingData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdfs:comment xml:lang="en">Data used to determine the parameters of a model during training.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Daten, die zur Bestimmung der Parameter eines Modells im Trainingsprozess verwendet werden.</rdfs:comment>
+    <rdfs:label xml:lang="en">Training Data</rdfs:label>
+    <rdfs:label xml:lang="de">Trainingsdaten</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.16.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Automate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AIFunction"/>
+    <rdfs:comment xml:lang="de">Ausführung eines Vorgangs ohne menschliches Eingreifen.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Carrying out a procedure without human intervention.</rdfs:comment>
+    <rdfs:label xml:lang="en">Automate</rdfs:label>
+    <rdfs:label xml:lang="de">Automatisieren</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. Definition 3.1.7 defines automatic as an adjective, not as a thing a model instantiates. The class is kept for the function it names in a plant.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Sampling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
+    <rdfs:comment xml:lang="de">Auswahl einer repräsentativen Teilmenge der Daten.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Selection of a representative subset of the data.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sampling</rdfs:label>
+    <rdfs:label xml:lang="de">Stichprobenziehung</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.4.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N630947289b87479c8e1a13531d4c97df">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nd81df7c6b76e41a3b71af81b9e6f6bd6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naab83e7452904b4aabab14200f6d8cb8">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Characterises the kind of AI employed.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Charakterisiert die Art der eingesetzten KI.</rdfs:comment>
+    <rdfs:label xml:lang="en">AI Type</rdfs:label>
+    <rdfs:label xml:lang="de">KI-Art</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A collecting class of this model for the two kinds the standard defines separately.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nca7cd44367954ea89a2be85290c1248c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#MachineLearning"/>
+    <rdf:rest rdf:nodeID="N3d11106cc0c8404e9dcb636fb085df41"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Edge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
+    <rdfs:comment xml:lang="en">An AI system running close to the process it serves.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ein KI-System, das prozessnah ausgeführt wird.</rdfs:comment>
+    <rdfs:label xml:lang="de">Edge</rdfs:label>
+    <rdfs:label xml:lang="en">Edge</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#UnsupervisedLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
+    <rdfs:comment xml:lang="en">Machine learning using unlabelled data only during training.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Maschinelles Lernen, das während des Trainings ausschließlich nicht gekennzeichnete Daten verwendet.</rdfs:comment>
+    <rdfs:label xml:lang="en">Unsupervised Learning</rdfs:label>
+    <rdfs:label xml:lang="de">Unüberwachtes Lernen</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.17.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec6a9117304e4910b2d50832895a0234">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Accuracy"/>
+    <rdf:rest rdf:nodeID="N1490352998bb4dd0ae8f52b1d9d56a92"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncfc8936c0b0f44c58ac7dbeaa6a985ed">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Filtering"/>
+    <rdf:rest rdf:nodeID="N169a6111d447413bb4e318eebbdf8d41"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb97e4b6e60545e2b9e20d5b2e4e25c5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N695736e37c2148d0898bb9ab21ca3a59"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf6d3651681d14500a36f640d1a259bb5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N37799eb49b354cf795a59d6f559a7af2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
+    <rdfs:comment xml:lang="en">Relates an AI system to where it runs.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit dem Ort seiner Ausführung.</rdfs:comment>
+    <rdfs:label xml:lang="en">has design</rdfs:label>
+    <rdfs:label xml:lang="de">hat Auslegung</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Accuracy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
+    <rdfs:comment xml:lang="de">Anteil der korrekten Ergebnisse an allen Ergebnissen.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The proportion of correct results among all results.</rdfs:comment>
+    <rdfs:label xml:lang="en">Accuracy</rdfs:label>
+    <rdfs:label xml:lang="de">Genauigkeit</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#basedOnAlgorithm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nd646dafa6688486fb1c3c72120430056"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
+    <rdfs:comment xml:lang="en">Relates a model to the model algorithm describing its structure, and a function to the algorithm it runs.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Modell mit dem Modellalgorithmus, der seine Struktur beschreibt, sowie eine Funktion mit dem Algorithmus, den sie ausführt.</rdfs:comment>
+    <rdfs:label xml:lang="en">based on algorithm</rdfs:label>
+    <rdfs:label xml:lang="de">basiert auf Algorithmus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd93e3a92377547648065e5116f6cffbc">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="N6c57d946b84540c8809bf838b215fd87"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isProcessedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nb912fd54dd18442a924fd764fe8bda35"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
+    <rdfs:comment xml:lang="en">Relates data to the data process acting on it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet Daten mit dem Datenprozess, der auf ihnen arbeitet.</rdfs:comment>
+    <rdfs:label xml:lang="en">is processed by</rdfs:label>
+    <rdfs:label xml:lang="de">wird verarbeitet durch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ebde97eab184496b62d685ee70b9eac">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Cloud"/>
+    <rdf:rest rdf:nodeID="Nbb9b99434ff54c46910761c842320693"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndbdfd6627613444a9a449e931beed1fa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N0ec292dc321f43469817a6cba2bc331a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd4979c082abe4c78b37ebcdffecfc338">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
+    <rdf:rest rdf:nodeID="N9378ba58f72648cca5803a62c7e627f6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d92bf8ad1fc4750a255503c6f66c276">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ProductionData"/>
+    <rdf:rest rdf:nodeID="N5a00484ac6854e0dacec066e7591f612"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N14a593fbacff443d90fc5b328605c0f4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N6b3d206c01b842bc96de8ab80ab2ac06"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
+    <rdfs:comment xml:lang="en">A procedure assessing a model against an evaluation metric.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verfahren zur Bewertung eines Modells anhand einer Evaluationsmetrik.</rdfs:comment>
+    <rdfs:label xml:lang="en">Evaluation Algorithm</rdfs:label>
+    <rdfs:label xml:lang="de">Evaluationsalgorithmus</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Labeling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
+    <rdfs:comment xml:lang="en">Assignment of a label to a data element.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Zuordnung eines Labels zu einem Datenelement.</rdfs:comment>
+    <rdfs:label xml:lang="de">Kennzeichnung</rdfs:label>
+    <rdfs:label xml:lang="en">Labeling</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 5.10, where labelling is discussed as part of the annotation rather than defined as a process of its own.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#ProductionData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdfs:comment xml:lang="en">Data arising during the operation of a deployed AI system, for which the system computes inferences.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Daten, die in der Betriebsphase eines eingesetzten KI-Systems anfallen und für die das System Inferenzen berechnet.</rdfs:comment>
+    <rdfs:label xml:lang="de">Betriebsdaten</rdfs:label>
+    <rdfs:label xml:lang="en">Production Data</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.12.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6034aa3700345499842ba96373ae6fb">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="Nec1691493c634edd993f44077f05eed0">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
+    <rdf:rest rdf:nodeID="N6e72e13d22be4c8fbff44ff46beff1d1"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#hasTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
+    <rdfs:comment xml:lang="en">Relates an AI system to a task it fulfils.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein KI-System mit einer Aufgabe, die es erfüllt.</rdfs:comment>
+    <rdfs:label xml:lang="en">has task</rdfs:label>
+    <rdfs:label xml:lang="de">hat Aufgabe</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N3462650e68ec4b02859388069e9bcd7c">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
-    <rdf:rest rdf:nodeID="N8dec85da0c9649ef8ee9d74abd3e80c2"/>
+  <rdf:Description rdf:nodeID="N5eeb414b4b604435afc6462029528989">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Automate"/>
+    <rdf:rest rdf:nodeID="N02d010fdb15e427091ab073e8efbe885"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/fundedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="Nb3451cee2dcd47ec8aa2c82721a7119d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nce2e37c1890c4863aa4fe9d462ac202c">
+  <rdf:Description rdf:nodeID="Nf93267ce716d4c5992e055a9c2d0bf36">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Merging"/>
+    <rdf:rest rdf:nodeID="Nc2cfd2bbfeb64936b1e1e737d1da938c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AIComponent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N7bed1d71d3c2419783180c3a54be50fc"/>
+    <rdfs:comment xml:lang="en">A functional element that together with further components constitutes an AI system.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ein funktionales Element, das zusammen mit weiteren Komponenten ein KI-System bildet.</rdfs:comment>
+    <rdfs:label xml:lang="en">AI Component</rdfs:label>
+    <rdfs:label xml:lang="de">KI-Komponente</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.2.</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N10aed263df9b4667a58cf121cdaad51b">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataSink">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="de">Ort, an dem Daten abgelegt werden.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Where data is persisted to.</rdfs:comment>
+    <rdfs:label xml:lang="en">Data Sink</rdfs:label>
+    <rdfs:label xml:lang="de">Datensenke</rdfs:label>
+    <skos:note xml:lang="en">Not a term of ISO/IEC 22989. A construct of this model, needed by the storing.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N800f55b39abc421dacd049f764b9da23">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ValidationData"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0be8a2c5916d42369c5c920d442f5daa">
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isCreatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
+    <rdfs:comment xml:lang="en">Relates a model to the training that produced it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Modell mit dem Training, das es erzeugt hat.</rdfs:comment>
+    <rdfs:label xml:lang="en">is created by</rdfs:label>
+    <rdfs:label xml:lang="de">wird erzeugt durch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N154d8b7c920f4eeb9a2c15fe09d788a2">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
+    <rdf:rest rdf:nodeID="N703cb0ec666b4d218be28c2ee3452eab"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N34539da52eef43be955dd297fc6a5505">
     <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
-    <rdf:rest rdf:nodeID="N31c990fed08d4ffaa02416f2f8443134"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1f4fe913a6fa43e6891658ef470f8303">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Generation"/>
-    <rdf:rest rdf:nodeID="N001ba7b085da4887b748e8ef2f3ab286"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndb0227df434b4d55ae0225d006110bac">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSource"/>
-    <rdf:rest rdf:nodeID="Nedb5a98bfe74422ba5223c9170bc3eaa"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9d18444dca71485bbdeea2a57631e1f5">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N113034ed22674d17aad2f52a1da91576"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N53f3cd8b46884159888b94417e16581b">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
-    <rdf:rest rdf:nodeID="Nefb98e7aa2aa4f3681b28de0e3ba80ae"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc2908c5be78344f182cd1887418c82e8">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="N74dae1729e62409b8a4c27197cdfe50c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7fb01f43e28342f2b74590662a1f34c7">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AIComponent"/>
-    <rdf:rest rdf:nodeID="N789385e241e54f009651215032f987ff"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ab81170a2e94412b1def9fd0ea27fb0">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSink"/>
-    <rdf:rest rdf:nodeID="Ndb0227df434b4d55ae0225d006110bac"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0bbde3d6389542e1b0721511bf284a59">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="Nf7c4af3722364fa898f2b1f08cb76797"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7bed1d71d3c2419783180c3a54be50fc">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="N4f5f8b0f6adb48c7b641d49978433f42"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb1653018edda4dbda00c6b2b8490bd13">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
-    <rdf:rest rdf:nodeID="Nf10fa742fe4c4efabc8521d10ccf82a0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2a078514e5984606bf301b7f5940302e">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Algorithm"/>
-    <rdf:rest rdf:nodeID="N29eecb8319124564810db38d8d13afd9"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4ba6abbfa0474b4f98cd22b8588aea28">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Nb1653018edda4dbda00c6b2b8490bd13"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3d340e7dad4f49acb91f80a0f2291697">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#SemiSupervisedLearning"/>
-    <rdf:rest rdf:nodeID="Naa8dcdcbfd7f470a8d8fbf96c074763b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8e33b787ba0940a8b59bdd443c872030">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N0be8a2c5916d42369c5c920d442f5daa"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/doi">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfec57251327446e2a9eff1749fa247a1">
-    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"/>
-    <rdf:rest rdf:nodeID="N3e13b503fe0042608a101c20b5fcd408"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdf:rest rdf:nodeID="Nebf71f952b7444339e024222a99fb375"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/codeRepository">
+  <rdf:Description rdf:nodeID="N1eb83ef9b5c5433d8abd4978eb8b6a8e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Validation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#MLAlgorithm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#TrainingAlgorithm"/>
+    <rdfs:comment xml:lang="en">A specialisation of the training algorithm for machine learning, to which a kind of learning is assigned.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Spezialisierung des Trainingsalgorithmus für das maschinelle Lernen, dem eine Lernart zugeordnet ist.</rdfs:comment>
+    <rdfs:label xml:lang="de">ML-Algorithmus</rdfs:label>
+    <rdfs:label xml:lang="en">Machine Learning Algorithm</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.6.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Recall">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
+    <rdfs:comment xml:lang="de">Anteil der gefundenen an allen positiven Fällen.</rdfs:comment>
+    <rdfs:comment xml:lang="en">The proportion of positive cases that were found.</rdfs:comment>
+    <rdfs:label xml:lang="en">Recall</rdfs:label>
+    <rdfs:label xml:lang="de">Trefferquote</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3517b46d804a42668c0e3f09ad7ac321">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="N1f132e055d504f139e5bdbcc176ed23f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N145f586cc26e4dd58db69ae30c31ab32">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="N503263c50bd94b70a726441c96e7c342"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbf7720dceb974aeb83b29213278e04e5">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Augmentation"/>
+    <rdf:rest rdf:nodeID="Ncfc8936c0b0f44c58ac7dbeaa6a985ed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#MachineLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A process optimising the parameters of a model by computational means so that its behaviour reflects the underlying data or experience.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Prozess zur Optimierung von Modellparametern durch rechnergestützte Verfahren, sodass das Verhalten des Modells die zugrunde liegenden Daten oder Erfahrungen widerspiegelt.</rdfs:comment>
+    <rdfs:label xml:lang="en">Machine Learning</rdfs:label>
+    <rdfs:label xml:lang="de">Maschinelles Lernen</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.3.5.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3d11106cc0c8404e9dcb636fb085df41">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdf:rest rdf:nodeID="Nd5a392c8623b4b5dbf314cb3e95463bb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e72e13d22be4c8fbff44ff46beff1d1">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#SystemDesign"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isValidatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Validation"/>
+    <rdfs:comment xml:lang="en">Relates a model to the validation confirming it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet ein Modell mit der Validierung, die es bestätigt.</rdfs:comment>
+    <rdfs:label xml:lang="en">is validated by</rdfs:label>
+    <rdfs:label xml:lang="de">wird validiert durch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb017ac4158e5455d9a63121b25f75e5d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Labeling"/>
+    <rdf:rest rdf:nodeID="Nf93267ce716d4c5992e055a9c2d0bf36"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ec292dc321f43469817a6cba2bc331a">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationData"/>
+    <rdf:rest rdf:nodeID="N8d92bf8ad1fc4750a255503c6f66c276"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec45b61371244eb3ae13a5f3aa0dbacb">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSink"/>
+    <rdf:rest rdf:nodeID="N0df0b4b7c25448f6bc41d74f0acb8885"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2ae3bf47cf7f45d280128804715fd028">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AIComponent"/>
+    <rdf:rest rdf:nodeID="N7c6984b9f934495f88c3b198d54f3889"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#AITask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A task to be carried out by the AI in order to reach a given objective.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Eine durch die KI auszuführende Aufgabe zur Erreichung eines bestimmten Ziels.</rdfs:comment>
+    <rdfs:label xml:lang="en">AI Task</rdfs:label>
+    <rdfs:label xml:lang="de">KI-Aufgabe</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.1.35.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd14536c73c7448cb53e4799572f9059">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:nodeID="Nec45b61371244eb3ae13a5f3aa0dbacb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/bibliographicCitation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb912fd54dd18442a924fd764fe8bda35">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N6c878e731e4743439aa9e82e3661419f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0df0b4b7c25448f6bc41d74f0acb8885">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSource"/>
+    <rdf:rest rdf:nodeID="Ndd8599c5ee8e4daa813545ac093a2293"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#DataSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A collection of data with a shared format.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Sammlung von Daten mit gemeinsamem Format.</rdfs:comment>
+    <rdfs:label xml:lang="en">Data Set</rdfs:label>
+    <rdfs:label xml:lang="de">Datensatz</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, definition 3.2.5.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e52fa8a91484340af43b74a07c84c9e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Evaluation"/>
+    <rdf:rest rdf:nodeID="N6aa16b32c452485d8116fe3c03d96cb5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N42c83940a2924ca7b55bd892b042ac77">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
+    <rdf:rest rdf:nodeID="N38eb26a4504941ccb1c8cacc4a25a52c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6032cf48f01c4526b42e7b4215631691">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nd93e3a92377547648065e5116f6cffbc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#Regression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/aias/odp/iso22989#AITask"/>
+    <rdfs:comment xml:lang="en">Prediction of continuous quantities.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Vorhersage kontinuierlicher Größen.</rdfs:comment>
+    <rdfs:label xml:lang="de">Regression</rdfs:label>
+    <rdfs:label xml:lang="en">Regression</rdfs:label>
+    <skos:note xml:lang="en">ISO/IEC 22989, clause 9.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6fbbfe2a62924f828e3098418a3457cf">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Classification"/>
+    <rdf:rest rdf:nodeID="N6c19563d0c0c42949ba4cd289ccc4879"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd646dafa6688486fb1c3c72120430056">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N13f705dae9584cb78942a4135b969244"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na3bc5f49e4434de8bc9fe20c90368849">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ModelAlgorithm"/>
+    <rdf:rest rdf:nodeID="N3f2d975a0e4845e98116cec9ad19bdcf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N854511314edf41f798f7193d049133ae">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N145f586cc26e4dd58db69ae30c31ab32"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb5b7aa313a2e4b54a19c79f5551cdebe">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Recall"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7812ebc702e5447980a70bd94659c2c6">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Hyperparameter"/>
+    <rdf:rest rdf:nodeID="N7dfbd6b2afa540ca9c829448968766f8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N81f6b11131874ab4a0c2185b6fc1068b">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5b31ebc7341047b68f32420f0bd7e14d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:nodeID="N32449f3b3f614b6fb4f02b4f1a2c7aa4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N267450bc9edf4228b59acce5e60a3875">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd8599c5ee8e4daa813545ac093a2293">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationMetric"/>
+    <rdf:rest rdf:nodeID="N7812ebc702e5447980a70bd94659c2c6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf5231ab7964f413287dec0f9e7253218">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N8ebde97eab184496b62d685ee70b9eac"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ee9caae3a87474c90faddfe4f4d309f">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sampling"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N19ccb498a0d24f4fbfd6ad80dd60883d">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Hyperparameter"/>
+    <rdf:rest rdf:nodeID="N6b013663915840829e3ba33b74b34d0f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd5a392c8623b4b5dbf314cb3e95463bb">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
+    <rdf:rest rdf:nodeID="Nec1691493c634edd993f44077f05eed0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na51d62e88f6b40818829d155afff3185">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Regression"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c57d946b84540c8809bf838b215fd87">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:nodeID="N267450bc9edf4228b59acce5e60a3875"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N98f49d9059f34b0cb8d34b5e619834cf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N25555e0d0cee4342b0292c4e8b19080c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N80794c38f4df44f0b685c4388360f553">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:nodeID="N4565cc3d81234d5090c25d73bb197847"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/doi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/aias/odp/iso22989#isAcquiredBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nb58f3f4a195b4ae09829eca41748d992"/>
+    <rdfs:range rdf:resource="https://w3id.org/aias/odp/iso22989#Acquisition"/>
+    <rdfs:comment xml:lang="en">Relates data to the acquisition that obtained it.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Verbindet Daten mit der Erfassung, die sie gewonnen hat.</rdfs:comment>
+    <rdfs:label xml:lang="en">is acquired by</rdfs:label>
+    <rdfs:label xml:lang="de">wird erfasst durch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N375f47b282c9439598bbc2050b49ded2">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ValidationData"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N812d3a0d136c414cb23352136c166e9c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Data"/>
+    <rdf:rest rdf:nodeID="N3b5eeeb331fd4a2ca42d3850140bbb41"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4565cc3d81234d5090c25d73bb197847">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Sample"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8615fc2bc438459bb132bcbc74832ce0">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Storage"/>
+    <rdf:rest rdf:nodeID="Ncfdf2caa33524ef6b24458e8232c15f3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N02d010fdb15e427091ab073e8efbe885">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataProcess"/>
+    <rdf:rest rdf:nodeID="N154d8b7c920f4eeb9a2c15fe09d788a2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9f2a726a3f0f43908f8460dd24d30163">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#EvaluationAlgorithm"/>
+    <rdf:rest rdf:nodeID="Na3bc5f49e4434de8bc9fe20c90368849"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nff9c6f1aeecc46bc84fda318329b10c5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N3517b46d804a42668c0e3f09ad7ac321"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f132e055d504f139e5bdbcc176ed23f">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:nodeID="N81f6b11131874ab4a0c2185b6fc1068b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N491cb41137d44623a16090f9fcbbf33e">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Precision"/>
+    <rdf:rest rdf:nodeID="Nb5b7aa313a2e4b54a19c79f5551cdebe"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b013663915840829e3ba33b74b34d0f">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#ModelParameter"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3b5eeeb331fd4a2ca42d3850140bbb41">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:nodeID="Nb3451cee2dcd47ec8aa2c82721a7119d"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5889c1519acf4b58b282ced048525462">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N61920be7c433486c981389f3c017e641"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncfdf2caa33524ef6b24458e8232c15f3">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Training"/>
+    <rdf:rest rdf:nodeID="N1eb83ef9b5c5433d8abd4978eb8b6a8e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84cc2757f4894167b70c3e4e5d59a116">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#SupervisedLearning"/>
+    <rdf:rest rdf:nodeID="Naab83e7452904b4aabab14200f6d8cb8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9378ba58f72648cca5803a62c7e627f6">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdf:rest rdf:nodeID="N90bb3418a2a04be1a99ce658537ab2ef"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3a07673f3748421b9f2cd7e9e9c2de3c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Model"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N703cb0ec666b4d218be28c2ee3452eab">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#Inference"/>
+    <rdf:rest rdf:nodeID="N8615fc2bc438459bb132bcbc74832ce0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N503263c50bd94b70a726441c96e7c342">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#DataSet"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf7d5417de8524536974e2150aa43180d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N19ccb498a0d24f4fbfd6ad80dd60883d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://schema.org/codeRepository">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N38eb26a4504941ccb1c8cacc4a25a52c">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AIType"/>
+    <rdf:rest rdf:nodeID="N34539da52eef43be955dd297fc6a5505"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb58f3f4a195b4ae09829eca41748d992">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N812d3a0d136c414cb23352136c166e9c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N458f50a0b12944349779aaec624b8ec4">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#AISystem"/>
+    <rdf:rest rdf:nodeID="N42c83940a2924ca7b55bd892b042ac77"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7dfbd6b2afa540ca9c829448968766f8">
+    <rdf:first rdf:resource="https://w3id.org/aias/odp/iso22989#LearningType"/>
+    <rdf:rest rdf:nodeID="Nca7cd44367954ea89a2be85290c1248c"/>
   </rdf:Description>
 </rdf:RDF>

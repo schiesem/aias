@@ -19,8 +19,8 @@
     "version": "1.0.0",
     "author": [
       "Marvin Schieseck",
-      "Philip Topalis",
       "Alexander Fay",
+      "Philip Topalis",
       "Felix Gehlhoff",
       "Lasse Reinpold"
     ],
@@ -60,25 +60,17 @@
           "type": "label"
         }
       ],
-      "created": [
-        {
-          "identifier": "created",
-          "language": "undefined",
-          "value": "2024-09-01",
-          "type": "label"
-        }
-      ],
       "subject": [
         {
           "identifier": "subject",
           "language": "en",
-          "value": "Ontology Design Pattern",
+          "value": "ISO/IEC 22989",
           "type": "label"
         },
         {
           "identifier": "subject",
           "language": "en",
-          "value": "ISO/IEC 22989",
+          "value": "Ontology Design Pattern",
           "type": "label"
         },
         {
@@ -100,11 +92,27 @@
           "type": "label"
         }
       ],
+      "created": [
+        {
+          "identifier": "created",
+          "language": "undefined",
+          "value": "2024-09-01",
+          "type": "label"
+        }
+      ],
       "hasVersion": [
         {
           "identifier": "hasVersion",
           "language": "undefined",
           "value": "https://w3id.org/aias/odp/iso22989",
+          "type": "iri"
+        }
+      ],
+      "source": [
+        {
+          "identifier": "source",
+          "language": "undefined",
+          "value": "https://www.iso.org/standard/74296.html",
           "type": "iri"
         }
       ],
@@ -122,14 +130,6 @@
           "language": "en",
           "value": "An ontology design pattern for describing an artificial intelligence application, following the terminology of ISO/IEC 22989. It covers three views of the same system: the AI system with the functions of its life cycle and the tasks it addresses, the algorithms and models with the parameters that configure them, and the data with the processes that acquire, prepare and store it. The three meet where a training consumes a dataset and produces a model, which is what lets a model be traced back to the data it was built from. Sixty-one classes and twenty-five relations. The pattern is one of three subdomain patterns of the AIAS information model and is meant to be imported and aligned rather than used on its own.",
           "type": "label"
-        }
-      ],
-      "source": [
-        {
-          "identifier": "source",
-          "language": "undefined",
-          "value": "https://www.iso.org/standard/74296.html",
-          "type": "iri"
         }
       ],
       "title": [
@@ -156,14 +156,6 @@
           "type": "iri"
         }
       ],
-      "preferredNamespacePrefix": [
-        {
-          "identifier": "preferredNamespacePrefix",
-          "language": "undefined",
-          "value": "iso22989",
-          "type": "label"
-        }
-      ],
       "rights": [
         {
           "identifier": "rights",
@@ -172,11 +164,11 @@
           "type": "label"
         }
       ],
-      "publisher": [
+      "preferredNamespacePrefix": [
         {
-          "identifier": "publisher",
+          "identifier": "preferredNamespacePrefix",
           "language": "undefined",
-          "value": "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg",
+          "value": "iso22989",
           "type": "label"
         }
       ],
@@ -188,12 +180,12 @@
           "type": "label"
         }
       ],
-      "codeRepository": [
+      "publisher": [
         {
-          "identifier": "codeRepository",
+          "identifier": "publisher",
           "language": "undefined",
-          "value": "https://github.com/schiesem/aias",
-          "type": "iri"
+          "value": "Helmut-Schmidt-Universität / Universität der Bundeswehr Hamburg",
+          "type": "label"
         }
       ],
       "preferredNamespaceUri": [
@@ -210,6 +202,14 @@
           "language": "en",
           "value": "M. Schieseck, P. Topalis, L. Reinpold, F. Gehlhoff and A. Fay, \"A Formal Model for Artificial Intelligence Applications in Automation Systems,\" 2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA), Padova, Italy, IEEE, September 2024. DOI 10.1109/ETFA61755.2024.10710890",
           "type": "label"
+        }
+      ],
+      "codeRepository": [
+        {
+          "identifier": "codeRepository",
+          "language": "undefined",
+          "value": "https://github.com/schiesem/aias",
+          "type": "iri"
         }
       ],
       "status": [
@@ -333,7 +333,7 @@
       "type": "owl:unionOf"
     },
     {
-      "id": "48",
+      "id": "49",
       "type": "owl:Class"
     },
     {
@@ -365,10 +365,6 @@
       "type": "owl:unionOf"
     },
     {
-      "id": "49",
-      "type": "owl:Class"
-    },
-    {
       "id": "216",
       "type": "owl:unionOf"
     },
@@ -385,11 +381,11 @@
       "type": "owl:unionOf"
     },
     {
-      "id": "98",
+      "id": "34",
       "type": "owl:Class"
     },
     {
-      "id": "34",
+      "id": "98",
       "type": "owl:Class"
     },
     {
@@ -481,7 +477,7 @@
       "type": "owl:Class"
     },
     {
-      "id": "47",
+      "id": "48",
       "type": "owl:Class"
     },
     {
@@ -490,6 +486,10 @@
     },
     {
       "id": "22",
+      "type": "owl:Class"
+    },
+    {
+      "id": "47",
       "type": "owl:Class"
     },
     {
@@ -712,7 +712,7 @@
       },
       "id": "95",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -741,7 +741,7 @@
       },
       "id": "114",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -830,7 +830,7 @@
       },
       "id": "99",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -978,7 +978,7 @@
       },
       "id": "118",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -1199,14 +1199,14 @@
         "altLabel": [
           {
             "identifier": "altLabel",
-            "language": "en",
-            "value": "data processing",
+            "language": "de",
+            "value": "Datenverarbeitung",
             "type": "label"
           },
           {
             "identifier": "altLabel",
-            "language": "de",
-            "value": "Datenverarbeitung",
+            "language": "en",
+            "value": "data processing",
             "type": "label"
           }
         ]
@@ -1230,7 +1230,7 @@
         "de": "Ein Schritt, der Eingabedaten in Ausgabedaten umwandelt.",
         "en": "A step transforming input data into output data."
       },
-      "id": "48",
+      "id": "49",
       "superClasses": [
         "42"
       ],
@@ -1261,7 +1261,7 @@
       },
       "id": "117",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -1342,35 +1342,6 @@
       "id": "113"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#Storing",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "ISO/IEC 22989, clause 5.10.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "de": "Speicherung",
-        "IRI-based": "Storing",
-        "en": "Storing"
-      },
-      "comment": {
-        "de": "Ablage von Daten in einer Datensenke.",
-        "en": "Persisting data to a data sink."
-      },
-      "id": "49",
-      "superClasses": [
-        "42"
-      ],
-      "attributes": []
-    },
-    {
       "instances": 0,
       "union": [
         "7",
@@ -1422,35 +1393,6 @@
       "id": "195"
     },
     {
-      "iri": "https://w3id.org/aias/odp/iso22989#Merging",
-      "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "instances": 0,
-      "annotations": {
-        "note": [
-          {
-            "identifier": "note",
-            "language": "en",
-            "value": "Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one.",
-            "type": "label"
-          }
-        ]
-      },
-      "label": {
-        "de": "Zusammenführung",
-        "IRI-based": "Merging",
-        "en": "Merging"
-      },
-      "comment": {
-        "de": "Zusammenführung mehrerer Datenquellen zu einer.",
-        "en": "Combination of several data sources into one."
-      },
-      "id": "98",
-      "superClasses": [
-        "48"
-      ],
-      "attributes": []
-    },
-    {
       "iri": "https://w3id.org/aias/odp/iso22989#AITask",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
       "instances": 0,
@@ -1480,6 +1422,35 @@
         "en": "A task to be carried out by the AI in order to reach a given objective."
       },
       "id": "34",
+      "attributes": []
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#Merging",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "Not a term of ISO/IEC 22989. A construct of this model, for the step that joins several datasets into one.",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Zusammenführung",
+        "IRI-based": "Merging",
+        "en": "Merging"
+      },
+      "comment": {
+        "de": "Zusammenführung mehrerer Datenquellen zu einer.",
+        "en": "Combination of several data sources into one."
+      },
+      "id": "98",
+      "superClasses": [
+        "49"
+      ],
       "attributes": []
     },
     {
@@ -1833,7 +1804,7 @@
       },
       "id": "96",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -1891,7 +1862,7 @@
       },
       "id": "143",
       "superClasses": [
-        "48"
+        "49"
       ],
       "attributes": []
     },
@@ -2118,7 +2089,7 @@
         "de": "Nachweis, dass die Anforderungen für einen vorgesehenen Verwendungszweck erfüllt sind.",
         "en": "Confirmation that the requirements for an intended use are met."
       },
-      "id": "47",
+      "id": "48",
       "superClasses": [
         "42"
       ],
@@ -2180,6 +2151,43 @@
         "en": "A measure against which the performance of a model is assessed."
       },
       "id": "22",
+      "attributes": []
+    },
+    {
+      "iri": "https://w3id.org/aias/odp/iso22989#Storage",
+      "baseIri": "https://w3id.org/aias/odp/iso22989",
+      "instances": 0,
+      "annotations": {
+        "note": [
+          {
+            "identifier": "note",
+            "language": "en",
+            "value": "ISO/IEC 22989, clause 5.10, which names the step \"storing\". The class carries that wording as an alternative label and is named for the thing the step produces, which is how the literature of engineering practice refers to it.",
+            "type": "label"
+          }
+        ],
+        "altLabel": [
+          {
+            "identifier": "altLabel",
+            "language": "en",
+            "value": "storing",
+            "type": "label"
+          }
+        ]
+      },
+      "label": {
+        "de": "Speicherung",
+        "IRI-based": "Storage",
+        "en": "Storage"
+      },
+      "comment": {
+        "de": "Ablage von Daten in einer Datensenke.",
+        "en": "Persisting data to a data sink."
+      },
+      "id": "47",
+      "superClasses": [
+        "42"
+      ],
       "attributes": []
     },
     {
@@ -4216,7 +4224,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isStoredBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "49",
+      "range": "47",
       "label": {
         "de": "wird gespeichert durch",
         "IRI-based": "isStoredBy",
@@ -4452,7 +4460,7 @@
       "id": "139"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "96",
       "attributes": [
         "anonymous",
@@ -4470,7 +4478,7 @@
       "id": "141"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "143",
       "attributes": [
         "anonymous",
@@ -4488,7 +4496,7 @@
       "id": "144"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "95",
       "attributes": [
         "anonymous",
@@ -4506,7 +4514,7 @@
       "id": "146"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "114",
       "attributes": [
         "anonymous",
@@ -4524,7 +4532,7 @@
       "id": "148"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "99",
       "attributes": [
         "anonymous",
@@ -4542,7 +4550,7 @@
       "id": "151"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "117",
       "attributes": [
         "anonymous",
@@ -4560,7 +4568,7 @@
       "id": "153"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "98",
       "attributes": [
         "anonymous",
@@ -4632,7 +4640,7 @@
       "id": "162"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "118",
       "attributes": [
         "anonymous",
@@ -4904,7 +4912,7 @@
         "IRI-based": "createsProcessedData",
         "en": "creates processed data"
       },
-      "domain": "48",
+      "domain": "49",
       "comment": {
         "de": "Verbindet einen Datenprozess mit den Daten, die er erzeugt.",
         "en": "Relates a data process to the data it produces."
@@ -5097,7 +5105,7 @@
         "IRI-based": "hasDataSink",
         "en": "has data sink"
       },
-      "domain": "49",
+      "domain": "47",
       "comment": {
         "de": "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt.",
         "en": "Relates a storing to the sink it persists data to."
@@ -5363,7 +5371,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isProcessedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "48",
+      "range": "49",
       "label": {
         "de": "wird verarbeitet durch",
         "IRI-based": "isProcessedBy",
@@ -5407,7 +5415,7 @@
       "id": "246"
     },
     {
-      "range": "47",
+      "range": "48",
       "domain": "45",
       "attributes": [
         "anonymous",
@@ -5425,7 +5433,7 @@
       "id": "248"
     },
     {
-      "range": "49",
+      "range": "47",
       "domain": "44",
       "attributes": [
         "anonymous",
@@ -5461,7 +5469,7 @@
       "id": "252"
     },
     {
-      "range": "47",
+      "range": "48",
       "domain": "44",
       "attributes": [
         "anonymous",
@@ -5480,7 +5488,7 @@
     },
     {
       "range": "50",
-      "domain": "49",
+      "domain": "47",
       "attributes": [
         "anonymous",
         "object"
@@ -5516,8 +5524,8 @@
       "id": "257"
     },
     {
-      "range": "47",
-      "domain": "49",
+      "range": "48",
+      "domain": "47",
       "attributes": [
         "anonymous",
         "object"
@@ -5525,7 +5533,7 @@
       "id": "258"
     },
     {
-      "range": "47",
+      "range": "48",
       "domain": "50",
       "attributes": [
         "anonymous",
@@ -5579,7 +5587,7 @@
       "id": "264"
     },
     {
-      "range": "49",
+      "range": "47",
       "domain": "45",
       "attributes": [
         "anonymous",
@@ -5689,7 +5697,7 @@
       "id": "274"
     },
     {
-      "range": "47",
+      "range": "48",
       "domain": "41",
       "attributes": [
         "anonymous",
@@ -5717,7 +5725,7 @@
     },
     {
       "range": "45",
-      "domain": "48",
+      "domain": "49",
       "attributes": [
         "anonymous",
         "object"
@@ -5735,7 +5743,7 @@
     },
     {
       "range": "44",
-      "domain": "48",
+      "domain": "49",
       "attributes": [
         "anonymous",
         "object"
@@ -5752,8 +5760,8 @@
       "id": "281"
     },
     {
-      "range": "49",
-      "domain": "48",
+      "range": "47",
+      "domain": "49",
       "attributes": [
         "anonymous",
         "object"
@@ -5771,7 +5779,7 @@
     },
     {
       "range": "50",
-      "domain": "48",
+      "domain": "49",
       "attributes": [
         "anonymous",
         "object"
@@ -5788,8 +5796,8 @@
       "id": "285"
     },
     {
-      "range": "47",
-      "domain": "48",
+      "range": "48",
+      "domain": "49",
       "attributes": [
         "anonymous",
         "object"
@@ -5860,7 +5868,7 @@
       "id": "293"
     },
     {
-      "range": "49",
+      "range": "47",
       "domain": "41",
       "attributes": [
         "anonymous",
@@ -5914,7 +5922,7 @@
       "id": "299"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "46",
       "attributes": [
         "anonymous",
@@ -5995,7 +6003,7 @@
       "id": "308"
     },
     {
-      "range": "49",
+      "range": "47",
       "domain": "46",
       "attributes": [
         "anonymous",
@@ -6049,7 +6057,7 @@
       "id": "314"
     },
     {
-      "range": "47",
+      "range": "48",
       "domain": "46",
       "attributes": [
         "anonymous",
@@ -6076,7 +6084,7 @@
       "id": "317"
     },
     {
-      "range": "48",
+      "range": "49",
       "domain": "41",
       "attributes": [
         "anonymous",
@@ -6467,7 +6475,7 @@
     {
       "iri": "https://w3id.org/aias/odp/iso22989#isValidatedBy",
       "baseIri": "https://w3id.org/aias/odp/iso22989",
-      "range": "47",
+      "range": "48",
       "label": {
         "de": "wird validiert durch",
         "IRI-based": "isValidatedBy",

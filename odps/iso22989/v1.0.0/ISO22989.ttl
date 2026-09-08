@@ -244,12 +244,13 @@ iso22989:Inference
     skos:note "ISO/IEC 22989, definition 3.1.17."@en ;
     rdfs:subClassOf iso22989:AIFunction .
 
-iso22989:Storing
+iso22989:Storage
     a owl:Class ;
-    rdfs:label "Storing"@en ; rdfs:label "Speicherung"@de ;
+    rdfs:label "Storage"@en ; rdfs:label "Speicherung"@de ;
+    skos:altLabel "storing"@en ;
     rdfs:comment "Persisting data to a data sink."@en ;
     rdfs:comment "Ablage von Daten in einer Datensenke."@de ;
-    skos:note "ISO/IEC 22989, clause 5.10."@en ;
+    skos:note "ISO/IEC 22989, clause 5.10, which names the step \"storing\". The class carries that wording as an alternative label and is named for the thing the step produces, which is how the literature of engineering practice refers to it."@en ;
     rdfs:subClassOf iso22989:AIFunction .
 
 iso22989:Automate
@@ -638,7 +639,7 @@ iso22989:Merging
 
 [] a owl:AllDisjointClasses ;
    owl:members ( iso22989:Acquisition iso22989:DataProcess iso22989:Evaluation
-                 iso22989:Inference iso22989:Storing iso22989:Training
+                 iso22989:Inference iso22989:Storage iso22989:Training
                  iso22989:Validation iso22989:Automate ) .
 
 [] a owl:AllDisjointClasses ;
@@ -829,7 +830,7 @@ iso22989:isStoredBy
     rdfs:comment "Relates data to the storing that persisted it."@en ;
     rdfs:comment "Verbindet Daten mit der Speicherung, die sie abgelegt hat."@de ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] ;
-    rdfs:range iso22989:Storing .
+    rdfs:range iso22989:Storage .
 
 iso22989:isProcessedBy
     a owl:ObjectProperty ;
@@ -860,5 +861,5 @@ iso22989:hasDataSink
     rdfs:label "has data sink"@en ; rdfs:label "hat Datensenke"@de ;
     rdfs:comment "Relates a storing to the sink it persists data to."@en ;
     rdfs:comment "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt."@de ;
-    rdfs:domain iso22989:Storing ;
+    rdfs:domain iso22989:Storage ;
     rdfs:range iso22989:DataSink .

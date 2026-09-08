@@ -132,7 +132,7 @@ iso22989:hasDataSink a owl:ObjectProperty ;
         "has data sink"@en ;
     rdfs:comment "Verbindet eine Speicherung mit der Senke, in der sie Daten ablegt."@de,
         "Relates a storing to the sink it persists data to."@en ;
-    rdfs:domain iso22989:Storing ;
+    rdfs:domain iso22989:Storage ;
     rdfs:range iso22989:DataSink .
 
 iso22989:hasDataSource a owl:ObjectProperty ;
@@ -248,7 +248,7 @@ iso22989:isStoredBy a owl:ObjectProperty ;
         "Relates data to the storing that persisted it."@en ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( iso22989:Data iso22989:DataSet iso22989:Sample ) ] ;
-    rdfs:range iso22989:Storing .
+    rdfs:range iso22989:Storage .
 
 iso22989:isValidatedBy a owl:ObjectProperty ;
     rdfs:label "wird validiert durch"@de,
@@ -644,13 +644,14 @@ iso22989:ModelParameter a owl:Class ;
         "An internal variable of a model affecting how its outputs are computed."@en ;
     skos:note "ISO/IEC 22989, definition 3.3.8."@en .
 
-iso22989:Storing a owl:Class ;
+iso22989:Storage a owl:Class ;
     rdfs:label "Speicherung"@de,
-        "Storing"@en ;
+        "Storage"@en ;
     rdfs:comment "Ablage von Daten in einer Datensenke."@de,
         "Persisting data to a data sink."@en ;
     rdfs:subClassOf iso22989:AIFunction ;
-    skos:note "ISO/IEC 22989, clause 5.10."@en .
+    skos:altLabel "storing"@en ;
+    skos:note "ISO/IEC 22989, clause 5.10, which names the step \"storing\". The class carries that wording as an alternative label and is named for the thing the step produces, which is how the literature of engineering practice refers to it."@en .
 
 iso22989:AIType a owl:Class ;
     rdfs:label "KI-Art"@de,
@@ -783,7 +784,7 @@ iso22989:Data a owl:Class ;
     owl:members ( iso22989:Accuracy iso22989:F1Score iso22989:Precision iso22989:Recall ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( iso22989:Acquisition iso22989:Automate iso22989:DataProcess iso22989:Evaluation iso22989:Inference iso22989:Storing iso22989:Training iso22989:Validation ) .
+    owl:members ( iso22989:Acquisition iso22989:Automate iso22989:DataProcess iso22989:Evaluation iso22989:Inference iso22989:Storage iso22989:Training iso22989:Validation ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( iso22989:Annotation iso22989:Augmentation iso22989:Filtering iso22989:Imputation iso22989:Labeling iso22989:Merging iso22989:Normalization iso22989:Sampling ) .

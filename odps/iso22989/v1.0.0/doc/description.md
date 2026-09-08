@@ -31,7 +31,7 @@ An `AIFunction` is a step of the life cycle. Eight are supplied:
 |---|---|
 | `Acquisition` | records data from a source |
 | `DataProcess` | prepares it, in the eight steps below |
-| `Storing` | writes it to a sink |
+| `Storage` | writes it to a sink |
 | `Training` | produces a model from data |
 | `Validation` | checks the model during training |
 | `Evaluation` | measures the finished model |

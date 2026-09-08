@@ -432,7 +432,7 @@ WHERE {
 | tc1_stanzprozess | Positionssensor | Sensor | Stanzen | ProcessOperator |
 | tc1_stanzprozess | ProCube | ExternalCloud | Evaluation1 | Evaluation |
 | tc1_stanzprozess | ProCube | ExternalCloud | Inferenz1 | Inference |
-| tc1_stanzprozess | ProCube | ExternalCloud | Speicherung | Storing |
+| tc1_stanzprozess | ProCube | ExternalCloud | Speicherung | Storage |
 | tc1_stanzprozess | ProCube | ExternalCloud | Training1 | Training |
 | tc1_stanzprozess | ProCube | ExternalCloud | Zusammenfuehrung | Merging |
 | tc1_stanzprozess | RaspberryPI4 | EdgeDevice | Vorverarbeitung | DataProcess |
@@ -455,11 +455,11 @@ WHERE {
 | tc2_eki_instandhaltung | ProCube | ExternalCloud | Modellevaluation | Evaluation |
 | tc2_eki_instandhaltung | ProCube | ExternalCloud | Modellinferenz | Inference |
 | tc2_eki_instandhaltung | ProCube | ExternalCloud | Modelltraining | Training |
-| tc2_eki_instandhaltung | ProCube | ExternalCloud | Speicherung | Storing |
+| tc2_eki_instandhaltung | ProCube | ExternalCloud | Speicherung | Storage |
 | tc3_eki_primerauftrag | Auftragseinheit | Actuator | Primerauftrag | ProcessOperator |
 | tc3_eki_primerauftrag | Kamera | Sensor | Bilddatenaufnahme | Acquisition |
 | tc3_eki_primerauftrag | Kamera | Sensor | Primerauftrag | ProcessOperator |
-| tc3_eki_primerauftrag | ProCube | ExternalCloud | Datenspeicherung | Storing |
+| tc3_eki_primerauftrag | ProCube | ExternalCloud | Datenspeicherung | Storage |
 | tc3_eki_primerauftrag | ProCube | ExternalCloud | Modelevaluation | Evaluation |
 | tc3_eki_primerauftrag | ProCube | ExternalCloud | Modelltraining | Training |
 | tc3_eki_primerauftrag | RFIDReader | Sensor | RFIDAufnahme | Acquisition |

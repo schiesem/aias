@@ -269,8 +269,8 @@ ex:Vorverarbeitung
     iso22989:createsProcessedData ex:VorverarbeiteteDaten .
 
 ex:Speicherung
-    a iso22989:Storing ;
-    rdfs:label "Storing in the cloud"@en ;
+    a iso22989:Storage ;
+    rdfs:label "Storage in the cloud"@en ;
     rdfs:label "Speicherung in der Cloud"@de ;
     iso22989:hasDataSink ex:CloudAlsSenke .
 

@@ -300,8 +300,8 @@ ex:Datennachverarbeitung
     rdfs:label "Post-processing of the result"@en ; rdfs:label "Datennachverarbeitung"@de .
 
 ex:Speicherung
-    a iso22989:Storing ;
-    rdfs:label "Storing in the cloud"@en ; rdfs:label "Speicherung"@de ;
+    a iso22989:Storage ;
+    rdfs:label "Storage in the cloud"@en ; rdfs:label "Speicherung"@de ;
     iso22989:hasDataSink ex:SenkeProCube .
 
 ex:SenkeProCube a iso22989:DataSink ; rdfs:label "ProCube as a sink"@en .

@@ -50,13 +50,14 @@ IRI `.../iso22989/1.0.0`.
 ### Class names follow the appendix table
 
 The definition tables of the appendix write `AIFunction`, `AITask`,
-`SymbolicAI`, `SubSymbolicAI`, `DataProcessing` and `Storing`. The OWL file
-wrote `Function`, `Task`, `Symbolic`, `SubSymbolic`, `DataProcess` and
-`Storage`. The tables were followed.
+`SymbolicAI` and `SubSymbolicAI` where the OWL file wrote `Function`,
+`Task`, `Symbolic` and `SubSymbolic`. The tables were followed.
 
-`DataProcess` is kept alongside `DataProcessing`, since the appendix uses both:
-`DataProcessing` for the function of the life cycle, `DataProcess` for the
-collecting class of the eight steps below it.
+Two names went the other way. `DataProcess` collects the eight preparation
+steps and carries the wording of the standard, "data processing", as an
+alternative label. `Storage` keeps the name of the OWL file and of the
+running example, with the "storing" of clause 5.10 as its alternative
+label. One name each, so a query has one term to ask for.
 
 ### `isPerformedBy` was symmetric
 
