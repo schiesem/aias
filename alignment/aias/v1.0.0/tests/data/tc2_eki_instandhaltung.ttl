@@ -356,10 +356,11 @@ ex:Modellinferenz
     iso22989:creates  ex:Ergebnisdarstellung .
 
 ex:Ergebnisabruf
-    a iso22989:Inference ;
+    a iso22989:DataProcess ;
     rdfs:label "Fetch and display the result"@en ;
     rdfs:label "Ergebnisabruf und Darstellung"@de ;
-    rdfs:comment "The machine control asks the cloud for the analysis when an operator calls it up. The existing control cannot reach the cloud on its own, which is why the edge device sits between them."@en .
+    rdfs:comment "The machine control asks the cloud for the analysis when an operator calls it up. The existing control cannot reach the cloud on its own, which is why the edge device sits between them."@en ;
+    rdfs:comment "Not an inference: the reasoning happened in ex:Modellinferenz, and this step only fetches the finished prediction and prepares it for display."@en .
 
 ex:Ergebnisdarstellung
     a iso22989:Prediction ;

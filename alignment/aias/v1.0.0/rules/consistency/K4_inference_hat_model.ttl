@@ -1,0 +1,22 @@
+# K4  Jede Inference muss mit mindestens einem Model verbunden sein.
+#
+# Der Anhang schreibt usesModel. Die Relation gibt es nicht; das Muster fuehrt
+# executes, und die laeuft andersherum, vom Modell zur Inferenz. Ein Modell
+# fuehrt eine Inferenz aus, nicht umgekehrt, was der Sache entspricht: das
+# Artefakt ist das Modell, die Inferenz ist, was damit geschieht.
+#
+# Die Regel prueft daher rueckwaerts.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:K4_InferenceShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Inference ;
+    sh:property [
+        sh:path [ sh:inversePath iso22989:executes ] ;
+        sh:class iso22989:Model ;
+        sh:minCount 1 ;
+        sh:message "K4: Jede Inference muss von mindestens einem Model ausgefuehrt werden." ;
+    ] .

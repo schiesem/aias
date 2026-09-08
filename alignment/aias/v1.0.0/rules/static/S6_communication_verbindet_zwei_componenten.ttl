@@ -1,0 +1,24 @@
+# S6  Jede Communication muss mindestens zwei unterschiedliche Componenten
+#     miteinander verbinden.
+#
+# Eine Kommunikation mit nur einem Teilnehmer beschreibt nichts. Gezaehlt
+# werden alle drei Arten der Teilnahme: beidseitig, nur sendend, nur
+# empfangend.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+
+aias:S6_CommunicationShape
+    a sh:NodeShape ;
+    sh:targetClass iso7498:Communication ;
+    sh:property [
+        sh:path [ sh:alternativePath (
+            [ sh:inversePath aias:hasCommunication ]
+            [ sh:inversePath aias:hasInputCommunication ]
+            [ sh:inversePath aias:hasOutputCommunication ]
+        ) ] ;
+        sh:class aias:Component ;
+        sh:minCount 2 ;
+        sh:message "S6: Jede Communication muss mindestens zwei Componenten verbinden." ;
+    ] .

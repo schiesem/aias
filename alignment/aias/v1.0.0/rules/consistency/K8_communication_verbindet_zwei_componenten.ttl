@@ -1,0 +1,25 @@
+# K8  Jede Communication muss mindestens zwei unterschiedliche Componenten
+#     miteinander verbinden.
+#
+# Der Anhang schreibt Resource. Das ist zu eng: ein Produkt kann an einer
+# Kommunikation teilnehmen, etwa ein Werkstueck mit RFID-Tag, das an einen
+# Leser sendet. Genau das fuehrt tc3 mit ex:ScheibeMitRFID. Geprueft wird
+# daher auf Component, wie es die statische Regel S6 tut.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso7498:  <https://w3id.org/aias/odp/iso7498#> .
+
+aias:K8_CommunicationShape
+    a sh:NodeShape ;
+    sh:targetClass iso7498:Communication ;
+    sh:property [
+        sh:path [ sh:alternativePath (
+            [ sh:inversePath aias:hasCommunication ]
+            [ sh:inversePath aias:hasInputCommunication ]
+            [ sh:inversePath aias:hasOutputCommunication ]
+        ) ] ;
+        sh:class aias:Component ;
+        sh:minCount 2 ;
+        sh:message "K8: Jede Communication muss mindestens zwei Componenten verbinden." ;
+    ] .

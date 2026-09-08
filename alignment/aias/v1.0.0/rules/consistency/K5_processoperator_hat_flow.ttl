@@ -1,0 +1,23 @@
+# K5  Jeder ProcessOperator muss ueber hasInput oder hasOutput mit mindestens
+#     einem Flow verbunden sein.
+#
+# Inhaltlich dieselbe Forderung wie S3 der statischen Semantik.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+
+aias:K5_ProcessOperatorShape
+    a sh:NodeShape ;
+    sh:targetClass vdi3682:ProcessOperator ;
+    sh:property [
+        sh:path [ sh:alternativePath (
+            vdi3682:hasInput
+            vdi3682:hasOutput
+            [ sh:inversePath vdi3682:isInput ]
+            [ sh:inversePath vdi3682:isOutput ]
+        ) ] ;
+        sh:class vdi3682:Flow ;
+        sh:minCount 1 ;
+        sh:message "K5: Jeder ProcessOperator muss mit mindestens einem Flow verbunden sein." ;
+    ] .

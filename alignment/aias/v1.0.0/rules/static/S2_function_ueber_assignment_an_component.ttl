@@ -1,0 +1,23 @@
+# S2  Jede Function muss mindestens ueber ein Assignment mit mindestens einer
+#     Component verbunden sein.
+#
+# Die vollstaendige Kette, in einem Pfad: von der Funktion ueber die Zuweisung
+# zur Komponente. Eine KI-Funktion nimmt den ersten Schritt ueber
+# AIAS:isAssignedTo, ein ProcessOperator ueber VDI3682:isAssignedTo.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+
+aias:S2_FunctionShape
+    a sh:NodeShape ;
+    sh:targetClass aias:Function ;
+    sh:property [
+        sh:path (
+            [ sh:alternativePath ( aias:isAssignedTo vdi3682:isAssignedTo ) ]
+            vdi3682:isAssignedTo
+        ) ;
+        sh:class aias:Component ;
+        sh:minCount 1 ;
+        sh:message "S2: Jede Function muss ueber ein Assignment mit einer Component verbunden sein." ;
+    ] .

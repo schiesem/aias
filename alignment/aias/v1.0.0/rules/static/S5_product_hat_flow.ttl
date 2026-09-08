@@ -1,0 +1,22 @@
+# S5  Jedes Product muss mit mindestens einem Flow verbunden sein.
+#
+# Die Gegenrichtung zu S4. Auch hier zwei Schreibweisen: entweder zeigt ein
+# Fluss ueber hasState direkt auf das Produkt, oder beide zeigen auf denselben
+# Zustand.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+
+aias:S5_ProductShape
+    a sh:NodeShape ;
+    sh:targetClass vdi3682:Product ;
+    sh:property [
+        sh:path [ sh:alternativePath (
+            [ sh:inversePath vdi3682:hasState ]
+            ( vdi3682:hasState [ sh:inversePath vdi3682:hasState ] )
+        ) ] ;
+        sh:class vdi3682:Flow ;
+        sh:minCount 1 ;
+        sh:message "S5: Jedes Product muss mit mindestens einem Flow verbunden sein." ;
+    ] .

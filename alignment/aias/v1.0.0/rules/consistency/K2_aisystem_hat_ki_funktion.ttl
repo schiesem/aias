@@ -1,0 +1,25 @@
+# K2  Jedes AISystem muss ueber hasFunction mit mindestens einem Training,
+#     einer Validation, einer Evaluation oder einer Inference verbunden sein.
+#
+# Ein System ohne eine dieser vier Funktionen ist keine KI-Anwendung. Die
+# uebrigen Funktionen des Lebenszyklus, Erfassung, Aufbereitung, Speicherung,
+# reichen dafuer nicht.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:K2_AISystemShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:AISystem ;
+    sh:property [
+        sh:path aias:hasFunction ;
+        sh:qualifiedValueShape [
+            sh:or ( [ sh:class iso22989:Training ]
+                    [ sh:class iso22989:Validation ]
+                    [ sh:class iso22989:Evaluation ]
+                    [ sh:class iso22989:Inference ] ) ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "K2: Jedes AISystem muss ein Training, eine Validation, eine Evaluation oder eine Inference fuehren." ;
+    ] .

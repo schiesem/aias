@@ -1,0 +1,42 @@
+# S4  Jeder Flow muss mindestens einen ProcessOperator und ein Product
+#     miteinander verbinden.
+#
+# Der Weg zum Operator ist eindeutig, isInput oder isOutput. Der Weg zum
+# Produkt ist es nicht: hasState hat State als Range, eine Relation vom Fluss
+# zum Produkt gibt es nicht. Zwei Schreibweisen sind daher zulaessig, und die
+# Regel laesst beide gelten:
+#
+#   ausfuehrlich   Flow --hasState--> State,  Product --hasState--> derselbe State
+#   kurz           Flow --hasState--> Product
+#
+# Die kurze Form nutzt aus, dass Product und State nicht disjunkt sind. Der
+# Reasoner leitet dann ab, dass das Produkt auch ein Zustand ist. Die
+# Testfaelle des Alignments schreiben sie so.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+
+aias:S4_FlowShape
+    a sh:NodeShape ;
+    sh:targetClass vdi3682:Flow ;
+
+    sh:property [
+        sh:path [ sh:alternativePath (
+            vdi3682:isInput
+            vdi3682:isOutput
+            [ sh:inversePath vdi3682:hasInput ]
+            [ sh:inversePath vdi3682:hasOutput ]
+        ) ] ;
+        sh:class vdi3682:ProcessOperator ;
+        sh:minCount 1 ;
+        sh:message "S4: Jeder Flow muss mit mindestens einem ProcessOperator verbunden sein." ;
+    ] ;
+
+    sh:property [
+        sh:path vdi3682:hasState ;
+        sh:or ( [ sh:class vdi3682:State ] [ sh:class vdi3682:Product ]
+                [ sh:class vdi3682:Energy ] [ sh:class vdi3682:Information ] ) ;
+        sh:minCount 1 ;
+        sh:message "S4: Jeder Flow muss ueber hasState mit einem Zustand oder einem Produkt verbunden sein." ;
+    ] .

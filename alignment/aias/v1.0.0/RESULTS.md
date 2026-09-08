@@ -74,7 +74,6 @@ WHERE {
 | Case | inference | input | inputKind | output | task |
 |---|---|---|---|---|---|
 | tc1_stanzprozess | Inferenz1 | VorverarbeiteteDaten | ProductionData | Verschleisszustand | Verschleissklassifikation |
-| tc2_eki_instandhaltung | Ergebnisabruf |  |  |  |  |
 | tc2_eki_instandhaltung | Modellinferenz | Inferenzdaten | ProductionData | Ergebnisdarstellung | Riemenzustand |
 | tc3_eki_primerauftrag | Modelausfuehrung | Inferenzeingabe | ProductionData | Segmentbewertung | Fehlstellenerkennung |
 
@@ -441,7 +440,7 @@ WHERE {
 | tc1_stanzprozess | SiemensS7 | Controller | ZustandsDarstellung | DataProcess |
 | tc2_eki_instandhaltung | Maschinensteuerung | Controller | Anlagensteuerung | Automate |
 | tc2_eki_instandhaltung | Maschinensteuerung | Controller | Datensatzerstellung | Merging |
-| tc2_eki_instandhaltung | Maschinensteuerung | Controller | Ergebnisabruf | Inference |
+| tc2_eki_instandhaltung | Maschinensteuerung | Controller | Ergebnisabruf | DataProcess |
 | tc2_eki_instandhaltung | Maschinensteuerung | Controller | Zeitaufnahme | Acquisition |
 | tc2_eki_instandhaltung | Motorsteuerung | Controller | Positionsregelung | Automate |
 | tc2_eki_instandhaltung | PositionssensorLinks | Sensor | Oeffnen | ProcessOperator |

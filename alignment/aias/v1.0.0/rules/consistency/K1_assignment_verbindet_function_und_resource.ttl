@@ -1,0 +1,32 @@
+# K1  Jedes Assignment muss ueber isAssignedTo eine Function mit mindestens
+#     einer Resource verbinden.
+#
+# Der Anhang schreibt "genau eine Function". Das trifft die Modellierung
+# nicht: eine Zuweisung sammelt mehrere Funktionen auf einer Ressource,
+# ex:ZuwProCube etwa fuenf. Geprueft wird daher auf mindestens eine, wie es
+# S1 der statischen Semantik schon tut.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+
+aias:K1_AssignmentShape
+    a sh:NodeShape ;
+    sh:targetClass vdi3682:Assignment ;
+
+    sh:property [
+        sh:path vdi3682:isAssignedTo ;
+        sh:class aias:Resource ;
+        sh:minCount 1 ;
+        sh:message "K1: Jedes Assignment muss auf mindestens eine Resource zeigen." ;
+    ] ;
+
+    sh:property [
+        sh:path [ sh:alternativePath (
+            [ sh:inversePath aias:isAssignedTo ]
+            [ sh:inversePath vdi3682:isAssignedTo ]
+        ) ] ;
+        sh:class aias:Function ;
+        sh:minCount 1 ;
+        sh:message "K1: Auf jedes Assignment muss mindestens eine Function zeigen." ;
+    ] .

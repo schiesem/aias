@@ -1,0 +1,37 @@
+# K3  Jedes Training, jede Validation und jede Evaluation muss ueber usesData
+#     mit mindestens einem Datensatz verbunden sein.
+#
+# Der Anhang schreibt Dataset. Die Klasse heisst DataSet, und usesData
+# akzeptiert daneben Data und Sample. Geprueft wird gegen alle drei, so wie
+# der Range es vorsieht.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:K3_TrainingShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Training ;
+    sh:property [
+        sh:path iso22989:usesData ;
+        sh:minCount 1 ;
+        sh:message "K3: Jedes Training muss ueber usesData mit Daten verbunden sein." ;
+    ] .
+
+aias:K3_ValidationShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Validation ;
+    sh:property [
+        sh:path iso22989:usesData ;
+        sh:minCount 1 ;
+        sh:message "K3: Jede Validation muss ueber usesData mit Daten verbunden sein." ;
+    ] .
+
+aias:K3_EvaluationShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Evaluation ;
+    sh:property [
+        sh:path iso22989:usesData ;
+        sh:minCount 1 ;
+        sh:message "K3: Jede Evaluation muss ueber usesData mit Daten verbunden sein." ;
+    ] .

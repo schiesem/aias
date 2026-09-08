@@ -1,0 +1,32 @@
+# S1  Jedes Assignment muss mindestens eine Function und eine Resource
+#     miteinander verbinden.
+#
+# Die Zuweisung ist der Mittelknoten der Kette. Von ihr geht eine Kante zur
+# Ressource, und auf sie zeigt mindestens eine Funktion. Der Anhang vermerkt
+# eine Ausnahme fuer den ProcessOperator: der erreicht seine Zuweisung ueber
+# VDI3682:isAssignedTo, nicht ueber AIAS:isAssignedTo. Beide Wege gelten.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+
+aias:S1_AssignmentShape
+    a sh:NodeShape ;
+    sh:targetClass vdi3682:Assignment ;
+
+    sh:property [
+        sh:path vdi3682:isAssignedTo ;
+        sh:class aias:Resource ;
+        sh:minCount 1 ;
+        sh:message "S1: Jedes Assignment muss auf mindestens eine Resource zeigen." ;
+    ] ;
+
+    sh:property [
+        sh:path [ sh:alternativePath (
+            [ sh:inversePath aias:isAssignedTo ]
+            [ sh:inversePath vdi3682:isAssignedTo ]
+        ) ] ;
+        sh:class aias:Function ;
+        sh:minCount 1 ;
+        sh:message "S1: Auf jedes Assignment muss mindestens eine Function zeigen." ;
+    ] .

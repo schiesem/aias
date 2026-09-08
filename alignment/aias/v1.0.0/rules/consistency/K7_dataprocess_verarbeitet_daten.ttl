@@ -1,0 +1,25 @@
+# K7  Jeder DataProcess muss Daten verarbeiten.
+#
+# Der Anhang formuliert: "Jedes DataProcessing muss ueber usesData mit einer
+# DataAcquisition und ueber isAssignedTo mit einem Training oder einer
+# Inference verbunden sein." So ist das nicht modellierbar: usesData hat Data
+# als Range, keine Funktion, und isAssignedTo fuehrt zu einer Zuweisung, nicht
+# zu einer anderen Funktion. Zwischen zwei Funktionen gibt es keine Relation.
+#
+# Gemeint ist, dass eine Aufbereitung nicht im Leeren steht: sie braucht
+# Eingangsdaten. Genau das prueft die Regel, ueber die Gegenrichtung von
+# isProcessedBy. Woher die Daten stammen, beantwortet die Kompetenzfrage nach
+# der Herkunft, nicht diese Regel.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:K7_DataProcessShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:DataProcess ;
+    sh:property [
+        sh:path [ sh:inversePath iso22989:isProcessedBy ] ;
+        sh:minCount 1 ;
+        sh:message "K7: Jeder DataProcess muss Daten verarbeiten, die ueber isProcessedBy auf ihn zeigen." ;
+    ] .

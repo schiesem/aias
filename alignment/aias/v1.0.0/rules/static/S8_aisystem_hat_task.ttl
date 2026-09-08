@@ -1,0 +1,15 @@
+# S8  Jedes AI-System muss mit mindestens einer Task verbunden sein.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:S8_AISystemTaskShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:AISystem ;
+    sh:property [
+        sh:path iso22989:hasTask ;
+        sh:class iso22989:AITask ;
+        sh:minCount 1 ;
+        sh:message "S8: Jedes AISystem muss mit mindestens einer AITask verbunden sein." ;
+    ] .

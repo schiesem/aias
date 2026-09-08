@@ -1,0 +1,15 @@
+# S7  Jedes AI-System muss mit mindestens einer Componente verbunden sein.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:S7_AISystemComponentShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:AISystem ;
+    sh:property [
+        sh:path aias:hasComponent ;
+        sh:class aias:Component ;
+        sh:minCount 1 ;
+        sh:message "S7: Jedes AISystem muss mit mindestens einer Component verbunden sein." ;
+    ] .
