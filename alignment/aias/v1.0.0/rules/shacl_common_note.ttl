@@ -1,0 +1,35 @@
+# Hinweisregel: Speicherung auf einer externen Cloud.
+#
+# Listing "Beispiel fuer eine SHACL-Hinweisregel" des Implementierungskapitels.
+#
+# Die Kette laeuft von der Funktion ueber die Zuweisung zur Ressource. Der
+# erste Schritt ist AIAS:isAssignedTo, der zweite VDI3682:isAssignedTo, und
+# der zweite zeigt von der Zuweisung zur Komponente, nicht umgekehrt.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:StorageOnExternalCloudDSGVOShape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Storage ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Bei der Speicherung personenbezogener Daten sind die Vorgaben von Art. 6 DSGVO zu beachten." ;
+        sh:prefixes aias: ;
+        sh:select """
+            SELECT $this ?assignment ?component
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment a                    vdi3682:Assignment .
+                ?assignment vdi3682:isAssignedTo ?component .
+                ?component  a                    aias:ExternalCloud .
+            }
+        """ ;
+    ] .
+
+aias:
+    sh:declare [ sh:prefix "aias"     ; sh:namespace "https://w3id.org/aias#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] ,
+               [ sh:prefix "vdi3682"  ; sh:namespace "https://w3id.org/aias/odp/vdi3682#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] ,
+               [ sh:prefix "iso22989" ; sh:namespace "https://w3id.org/aias/odp/iso22989#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] .

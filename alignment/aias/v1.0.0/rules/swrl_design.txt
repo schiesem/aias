@@ -1,0 +1,27 @@
+# Erweiterungsregel: das SystemDesign aus der Ressource der Inferenz ableiten.
+#
+# Listing "Beispiel fuer eine SWRL-Erweiterungsregel" des
+# Implementierungskapitels. SWRL-Syntax, wie sie das Werkzeug einliest.
+#
+# Die Kette laeuft Funktion -> Zuweisung -> Ressource. Der erste Schritt ist
+# AIAS:isAssignedTo, der zweite VDI3682:isAssignedTo.
+
+# Edge-Variante
+ISO22989:Inference(?inf)^
+AIAS:isAssignedTo(?inf, ?asgn)^
+VDI3682:isAssignedTo(?asgn, ?edge)^
+AIAS:EdgeDevice(?edge)^
+ISO22989:SystemDesign(?design)^
+ISO22989:AISystem(?system)^
+ISO22989:hasDesign(?system, ?design)
+    -> ISO22989:Edge(?design)
+
+# Cloud-Variante
+ISO22989:Inference(?inf)^
+AIAS:isAssignedTo(?inf, ?asgn)^
+VDI3682:isAssignedTo(?asgn, ?cloud)^
+AIAS:ExternalCloud(?cloud)^
+ISO22989:SystemDesign(?design)^
+ISO22989:AISystem(?system)^
+ISO22989:hasDesign(?system, ?design)
+    -> ISO22989:Cloud(?design)
