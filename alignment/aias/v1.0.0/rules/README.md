@@ -41,3 +41,27 @@ beide Wege gelten, sonst meldete sie jeden Prozessoperator als Verletzung.
 `swrl_design.txt` ist kein ausführbares Format für pyshacl. Die Regel wird
 über die äquivalente SPARQL-Abfrage geprüft: findet sie die Konstellation, die
 die Regel als Prämisse beschreibt?
+
+## Was nicht geschrieben wurde
+
+**E1 bis E14, die Erweiterungsregeln.** E1 bis E12 erzeugen inverse
+Relationen. Zwei davon, `isInput` und `isOutput`, führt das Muster bereits als
+`owl:inverseOf`, der Reasoner leitet sie ohne Regel ab. Die übrigen
+Gegenrelationen gibt es nicht und sie wurden bewusst nicht eingeführt: SPARQL
+liest ein Tripelmuster von beiden Enden, und SHACL hat `sh:inversePath`.
+
+E13 und E14 klassifizieren das `SystemDesign` nach der Ressource, auf der die
+Inferenz läuft. Beide sehen jeweils nur eine Prämisse. In tc3 läuft die
+Inferenz auf einem Edge-Gerät, das Design ist dort aber `Hybrid`, und `Cloud`,
+`Edge` und `Hybrid` sind disjunkt: HermiT erklärt das Modell für inkonsistent.
+Eine Fassung, die alle drei Fälle trifft, bräuchte die Negation, die SWRL
+nicht hat.
+
+**K6.** Sie verlangt, dass jede Ressource eine Funktion trägt. Ein Gateway,
+das nur weiterleitet, wie der Raspberry Pi in tc2, trägt keine und ist
+trotzdem eine sinnvolle Architektur.
+
+**V8 und V9.** Sie fragen, ob die Ausgabe einer Inferenz die Eingabe einer
+Automatisierung ist und umgekehrt. `Automate` hat im Muster keine einzige
+Relation, weder für Eingang noch für Ausgang. Die Verbindung ist nicht
+modellierbar.

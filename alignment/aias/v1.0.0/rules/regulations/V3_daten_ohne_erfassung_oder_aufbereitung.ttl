@@ -1,0 +1,39 @@
+# V3  WENN ein AISystem Training, Validation oder Evaluation mit zugeordneten
+#     Daten nutzt UND KEINE Acquisition oder DataProcess existiert
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+# Der Anhang schreibt DataAcquisition und DataProcessing. Die Klassen heissen
+# Acquisition und DataProcess.
+#
+# Gemeint ist ein Modell, das mit Daten arbeitet, ohne dass ihre Herkunft
+# modelliert waere. Genau dann laesst sich die Dokumentationspflicht nach
+# Art. 10 nicht aus dem Modell beantworten.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V3_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:AISystem ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Bei Hochrisiko-KI sind Herkunft, Relevanz, Qualitaet und Eignung der Trainings- und Validierungsdaten nach EU AI Act, Art. 10 zu dokumentieren." ;
+        sh:select """
+            SELECT $this ?funktion ?daten
+            WHERE {
+                $this      aias:hasFunction  ?funktion .
+                ?funktion  iso22989:usesData ?daten .
+                {   ?funktion a iso22989:Training }
+                UNION
+                {   ?funktion a iso22989:Validation }
+                UNION
+                {   ?funktion a iso22989:Evaluation }
+                FILTER NOT EXISTS { ?a a iso22989:Acquisition }
+                FILTER NOT EXISTS { ?p a iso22989:DataProcess }
+            }
+        """ ;
+    ] .

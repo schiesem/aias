@@ -1,0 +1,35 @@
+# V2  WENN Training, Validation, Evaluation oder Inference existieren
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+# Vier Shapes statt einer Abfrage mit UNION: so nennt die Meldung die Funktion,
+# die den Hinweis ausgeloest hat.
+
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V2_TrainingShape
+    a sh:NodeShape ; sh:targetClass iso22989:Training ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:severity sh:Info ;
+        sh:message "Wurden fuer die Entwicklung der KI weitere Werkzeuge eingesetzt? Wenn ja, ist die Pflicht zur Dokumentation der verwendeten Methoden und Werkzeuge nach Anhang IV, 2a des EU AI Act zu beachten." ;
+        sh:select """SELECT $this WHERE { $this a iso22989:Training }""" ] .
+
+aias:V2_ValidationShape
+    a sh:NodeShape ; sh:targetClass iso22989:Validation ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:severity sh:Info ;
+        sh:message "Wurden fuer die Entwicklung der KI weitere Werkzeuge eingesetzt? Wenn ja, ist die Pflicht zur Dokumentation der verwendeten Methoden und Werkzeuge nach Anhang IV, 2a des EU AI Act zu beachten." ;
+        sh:select """SELECT $this WHERE { $this a iso22989:Validation }""" ] .
+
+aias:V2_EvaluationShape
+    a sh:NodeShape ; sh:targetClass iso22989:Evaluation ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:severity sh:Info ;
+        sh:message "Wurden fuer die Entwicklung der KI weitere Werkzeuge eingesetzt? Wenn ja, ist die Pflicht zur Dokumentation der verwendeten Methoden und Werkzeuge nach Anhang IV, 2a des EU AI Act zu beachten." ;
+        sh:select """SELECT $this WHERE { $this a iso22989:Evaluation }""" ] .
+
+aias:V2_InferenceShape
+    a sh:NodeShape ; sh:targetClass iso22989:Inference ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:severity sh:Info ;
+        sh:message "Wurden fuer die Entwicklung der KI weitere Werkzeuge eingesetzt? Wenn ja, ist die Pflicht zur Dokumentation der verwendeten Methoden und Werkzeuge nach Anhang IV, 2a des EU AI Act zu beachten." ;
+        sh:select """SELECT $this WHERE { $this a iso22989:Inference }""" ] .

@@ -1,0 +1,28 @@
+# V4  Inference auf einer Ressource des Prozesses
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V4_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Inference ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Pruefen, ob es sich aufgrund der Verteilung der Inferenzfunktionen um eine Regelungsaufgabe und ggf. um eine Hochrisikoanwendung handeln koennte." ;
+        sh:select """
+            SELECT $this ?resource ?operator
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                ?operator   vdi3682:isAssignedTo ?a2 ;
+                            a                    vdi3682:ProcessOperator .
+                ?a2         vdi3682:isAssignedTo ?resource .
+            }
+        """ ;
+    ] .

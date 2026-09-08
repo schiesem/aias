@@ -1,0 +1,39 @@
+# V6  WENN eine Storage oder ein DataProcess einer Cloud zugewiesen ist
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+# Der Anhang schreibt DataProcessing, die Klasse heisst DataProcess. Cloud
+# wird als ExternalCloud und InternalCloud aufgezaehlt, weil das Modell keine
+# Sammelklasse dafuer fuehrt.
+#
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V6_StorageShape
+    a sh:NodeShape ; sh:targetClass iso22989:Storage ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:severity sh:Info ;
+        sh:message "Bei unternehmensbezogenen Daten zunaechst die Einwilligung durch den Anlagenbetreiber einholen." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                { ?resource a aias:ExternalCloud } UNION { ?resource a aias:InternalCloud }
+            }
+        """ ] .
+
+aias:V6_DataProcessShape
+    a sh:NodeShape ; sh:targetClass iso22989:DataProcess ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:severity sh:Info ;
+        sh:message "Bei unternehmensbezogenen Daten zunaechst die Einwilligung durch den Anlagenbetreiber einholen." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                { ?resource a aias:ExternalCloud } UNION { ?resource a aias:InternalCloud }
+            }
+        """ ] .

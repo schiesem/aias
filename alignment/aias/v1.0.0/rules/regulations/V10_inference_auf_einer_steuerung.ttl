@@ -1,0 +1,26 @@
+# V10  Inference auf einer Steuerung
+#
+# Vorschriftenregel, severity sh:Info. Sie stellt keine Rechtslage fest,
+# sondern weist auf eine Pruefpflicht hin.
+#
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix aias:     <https://w3id.org/aias#> .
+@prefix vdi3682:  <https://w3id.org/aias/odp/vdi3682#> .
+@prefix iso22989: <https://w3id.org/aias/odp/iso22989#> .
+
+aias:V10_Shape
+    a sh:NodeShape ;
+    sh:targetClass iso22989:Inference ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Info ;
+        sh:message "Die Inferenz wird direkt auf der Steuerung ausgefuehrt. Pruefen, ob eine Hochrisikoeinstufung nach EU AI Act vorliegt." ;
+        sh:select """
+            SELECT $this ?resource
+            WHERE {
+                $this       aias:isAssignedTo    ?assignment .
+                ?assignment vdi3682:isAssignedTo ?resource .
+                ?resource   a                    aias:Controller .
+            }
+        """ ;
+    ] .
